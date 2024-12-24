@@ -1,8 +1,8 @@
 {
-	"name": "Cupertino",
-	"version": "1.0.0",
-	"minAppVersion": "1.6.1",
-	"author": "Alexis C",
-	"authorUrl": "https://github.com/aaaaalexis",
-	"fundingUrl": "https://www.buymeacoffee.com/cittoj"
+  "name": "Cupertino",
+  "version": "1.0.1",
+  "minAppVersion": "1.6.1",
+  "author": "Alexis C",
+  "authorUrl": "https://github.com/aaaaalexis",
+  "fundingUrl": "https://www.buymeacoffee.com/cittoj"
 }
