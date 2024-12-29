@@ -3326,3 +3326,8 @@ body.is-phone {
     padding: 0 16px;
   }
 }
+
+/********** Community Plugin: Templater **********/
+.modal-container:has(.prompt):not(:last-child) {
+  opacity: 0;
+}
