@@ -38,7 +38,7 @@ All features are enable by default, following plugins can be installed to modify
 
 I’ve spent way too much time on customizing Obsidian, thousands of themes with millions of customizations, I believe a lot people do it too. It’s anti-productivity at this point, we need something that just works and is pleasant to use.
 
-1. **Less plguins.** — Plugins are only used for disabling features and fixing issues instead of adding. Cupertino works perfectly out of the box.
+1. **Less plugins.** — Plugins are only used for disabling features and fixing issues instead of adding. Cupertino works perfectly out of the box.
 2. **Less customizations** — Cupertino will never have customization. More customization make you waste more time on fiddling.
 3. **Less visual noise** — Content is the key. Cupertino makes Obsidian blend in system style, so you can focus on what you're typing.
 
