@@ -3124,7 +3124,7 @@ body.is-phone {
     transition: var(--anim-duration-fast);
     border: 1px solid var(--background-modifier-border);
     border-radius: 100%;
-    background-color: var(--modal-background);
+    background-color: rgb(from var(--background-primary) r g b / 50%);
     padding: 14px;
     width: 48px;
     height: 48px;
