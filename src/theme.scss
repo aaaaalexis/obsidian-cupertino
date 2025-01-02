@@ -819,8 +819,8 @@ body.is-tablet {
 
     &.is-pinned {
       top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height));
-      padding-top: 16px;
       border-color: var(--hr-color);
+      padding-top: 16px;
     }
 
     &.is-pinned .nav-header {
@@ -3197,11 +3197,11 @@ body.is-tablet {
   .workspace-tab-header-container,
   .workspace .mod-root .workspace-leaf .view-header {
     position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     background-color: transparent;
     width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
   }
 
   .workspace-tab-header-container {
@@ -3245,9 +3245,9 @@ body.is-mobile {
   .mobile-navbar,
   .workspace-drawer .nav-header {
     position: fixed;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     z-index: var(--layer-status-bar);
     backdrop-filter: blur(50px);
     border: none;
