@@ -573,9 +573,6 @@ body:not(.is-mobile) {
   }
 
   &.show-ribbon {
-    .workspace-ribbon .sidebar-toggle-button {
-      justify-content: flex-end;
-    }
     .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
       padding-left: 0;
     }
@@ -892,6 +889,10 @@ body:not(.is-mobile) {
 
   .view-header {
     height: var(--view-header-height);
+
+    button {
+      padding: 4px 12px;
+    }
   }
 
   .mod-sidedock .workspace-tab-header-container-inner {
@@ -1299,7 +1300,7 @@ body.is-tablet {
   .workspace:has(.workspace-drawer.mod-right.is-pinned) {
     .workspace-tab-header-new-tab {
       right: 56px;
-  }
+    }
     .workspace-tab-header-tab-list {
       right: 16px;
     }
@@ -1322,16 +1323,6 @@ body.is-tablet {
 }
 
 /********** Editor **********/
-body:not(.quick-mode-switch-off) .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
-  border: 1px solid var(--text-accent) !important;
-  background-color: var(--interactive-accent) !important;
-  color: var(--text-on-accent) !important;
-}
-
-body.quick-mode-switch-off .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
-  --icon-color: var(--text-normal);
-}
-
 .markdown-reading-view,
 .markdown-source-view {
   transition: var(--anim-duration-fast) ease-in-out;
@@ -1501,6 +1492,12 @@ tr {
   border-radius: var(--radius-m);
   background-color: var(--background-secondary);
   padding: 16px;
+}
+
+.mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
+  border: 1px solid var(--text-accent) !important;
+  background-color: var(--interactive-accent) !important;
+  color: var(--text-on-accent) !important;
 }
 
 body:not(.is-phone) {
