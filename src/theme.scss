@@ -3189,7 +3189,7 @@ body.is-tablet {
   }
 
   .workspace-tab-header-container {
-    z-index: 100;
+    z-index: 1;
     padding-top: var(--safe-area-inset-top) !important;
     height: calc(var(--safe-area-inset-top) + var(--header-height)) !important;
   }
