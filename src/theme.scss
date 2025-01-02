@@ -278,7 +278,7 @@ body {
   }
 
   &.is-tablet {
-    --dropdown-padding: 4px 40px 4px 20px;
+    --dropdown-padding: 4px 32px 4px 16px;
     --input-height: 40px;
     --prompt-input-height: 56px;
   }
@@ -520,11 +520,11 @@ body.is-tablet {
   input[type="text"]:not(.metadata-container input):not(.prompt input),
   input[type="number"],
   button:not(.clickable-icon):not(.modal:not(.mod-settings) button):not(.view-content button) {
-    padding: 4px 20px;
+    padding: 4px 16px;
   }
 
   .clickable-icon {
-    padding: 4px;
+    padding: 8px;
   }
 }
 
@@ -812,8 +812,22 @@ body.is-tablet {
   .workspace-drawer {
     background-color: var(--background-secondary-alt);
 
+    .view-content:has(.nav-header) > div:not(.nav-header) {
+      margin-bottom: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height) + 80px);
+    }
+
     .nav-header {
       background-color: rgb(from var(--background-secondary-alt) r g b / 50%);
+    }
+
+    &.is-pinned {
+      top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height));
+      padding-top: 16px;
+      border-color: var(--hr-color);
+    }
+
+    &.is-pinned .nav-header {
+      bottom: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height));
     }
 
     &.is-pinned,
@@ -1249,15 +1263,15 @@ body:not(.is-mobile):not(.is-hidden-frameless) {
 
 body.is-tablet {
   .workspace-tabs .clickable-icon {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
   }
 
   .sidebar-toggle-button {
     top: unset !important;
-    bottom: 0;
     background-color: transparent !important;
-    padding: 6px 0 !important;
+    padding: 0 !important;
+    height: 40px !important;
   }
   .sidebar-toggle-button.mod-left {
     left: 16px;
@@ -1268,7 +1282,7 @@ body.is-tablet {
   }
 
   .workspace .mod-root .workspace-tabs .workspace-tab-header-container {
-    padding: calc(var(--safe-area-inset-top) + 6px) 136px 6px 136px !important;
+    padding: calc(var(--safe-area-inset-top) + 4px) 136px 4px 136px !important;
   }
 
   .workspace-tab-header-new-tab {
@@ -1282,17 +1296,18 @@ body.is-tablet {
     height: fit-content !important;
   }
 
-  .workspace:has(.workspace-drawer.mod-right.is-pinned) .workspace-tab-header-new-tab {
-    right: 48px;
+  .workspace:has(.workspace-drawer.mod-right.is-pinned) {
+    .workspace-tab-header-new-tab {
+      right: 56px;
   }
-
-  .workspace:has(.workspace-drawer.mod-right.is-pinned) .workspace-tab-header-tab-list {
-    right: 8px;
+    .workspace-tab-header-tab-list {
+      right: 16px;
+    }
   }
 
   .workspace .mod-root .workspace-tabs:not(:has(.sidebar-toggle-button)) .workspace-tab-header-container {
-    padding-right: 88px;
-    padding-left: 88px;
+    padding-right: 96px !important;
+    padding-left: 96px !important;
   }
 
   &.center-tabs-off {
@@ -1576,6 +1591,10 @@ body.is-phone {
 }
 
 body.is-tablet {
+  .mod-root .workspace-leaf {
+    contain: none !important;
+  }
+
   .view-header {
     padding: 0 16px;
   }
@@ -1961,10 +1980,6 @@ body.is-mobile {
   .modal {
     box-shadow: none !important;
 
-    .modal-content {
-      overflow: visible;
-    }
-
     .modal-nav-action {
       margin-top: unset;
       box-shadow: none !important;
@@ -2124,6 +2139,7 @@ body.is-mobile {
     margin-left: calc(var(--icon-size) + 8px);
   }
   .menu-item-icon {
+    --icon-size: var(--icon-m);
     justify-content: center;
     width: var(--icon-size);
   }
@@ -3186,6 +3202,9 @@ body.is-tablet {
     position: fixed;
     background-color: transparent;
     width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 
   .workspace-tab-header-container {
@@ -3200,7 +3219,7 @@ body.is-tablet {
 
   .view-header-nav-buttons,
   .view-actions {
-    gap: 4px;
+    gap: 0px;
   }
 }
 
@@ -3231,6 +3250,7 @@ body.is-mobile {
     position: fixed;
     bottom: 0;
     left: 0;
+    right: 0;
     z-index: var(--layer-status-bar);
     backdrop-filter: blur(50px);
     border: none;
@@ -3368,6 +3388,12 @@ body.is-tablet {
 }
 .graph-controls-button.mod-animate {
   margin: 0 !important;
+}
+
+/********** Core Plugin: Backlinks **********/
+.backlink-pane,
+.outgoing-link-pane {
+  padding-bottom: unset;
 }
 
 /********** Community Plugin: Style Settings **********/
