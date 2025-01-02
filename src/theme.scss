@@ -3118,7 +3118,7 @@ body.is-mobile {
 body.is-phone {
   &:not(.quick-mode-switch-off) .mod-root .view-actions button:nth-last-child(2) {
     position: fixed;
-    right: 12px;
+    right: max(var(--safe-area-inset-right), 12px);
     bottom: 12px;
     backdrop-filter: blur(50px);
     transition: var(--anim-duration-fast);
