@@ -841,7 +841,7 @@ body:not(.is-phone) {
     }
   }
 
-  &:not(.show-ribbon) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+  &:not(.show-ribbon):not(.hider-sidebar-buttons) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
     margin-left: 40px;
   }
 
