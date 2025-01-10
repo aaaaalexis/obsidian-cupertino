@@ -1049,7 +1049,7 @@ body.mod-macos.is-hidden-frameless {
 
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
-    padding-right: 16px;
+    padding-right: 24px;
   }
   .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
   .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
@@ -1057,7 +1057,7 @@ body.mod-macos.is-hidden-frameless {
   }
   .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
   .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
-    padding-right: 48px;
+    padding-right: 56px;
   }
   .workspace.is-left-sidedock-open.is-right-sidedock-open .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
   .workspace.is-left-sidedock-open.is-right-sidedock-open .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
@@ -1068,7 +1068,11 @@ body.mod-macos.is-hidden-frameless {
 body.mod-windows.is-hidden-frameless,
 body.mod-linux.is-hidden-frameless {
   &.show-ribbon {
+    .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
+      padding-left: 0;
+    }
     .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+      z-index: 11;
       margin-left: 0;
     }
     .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
@@ -1078,6 +1082,28 @@ body.mod-linux.is-hidden-frameless {
     .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
     .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
       padding-left: 88px;
+    }
+
+    &.hider-sidebar-buttons {
+      .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
+      .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
+        padding-left: 48px;
+      }
+    }
+  }
+
+  &.hider-sidebar-buttons {
+    .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
+    .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
+      padding-left: calc(48px + var(--frame-right-space));
+    }
+    .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
+    .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
+      padding-left: calc(40px + var(--frame-right-space));
+    }
+    .workspace.is-left-sidedock-open.is-right-sidedock-open .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
+    .workspace.is-left-sidedock-open.is-right-sidedock-open .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
+      padding-left: 46px;
     }
   }
 
@@ -1095,7 +1121,7 @@ body.mod-linux.is-hidden-frameless {
   }
   .workspace.is-left-sidedock-open.is-right-sidedock-open .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
   .workspace.is-left-sidedock-open.is-right-sidedock-open .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
-    padding-left: 88px;
+    padding-left: 86px;
   }
 }
 
