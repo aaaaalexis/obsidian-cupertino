@@ -3342,7 +3342,7 @@ body.is-tablet {
 .backlink-pane,
 .outgoing-link-pane {
   padding-bottom: unset;
-  overflow: visible;
+  overflow: scroll;
 }
 
 body.is-mobile .embedded-backlinks {
