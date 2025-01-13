@@ -3339,10 +3339,12 @@ body.is-tablet {
 }
 
 /********** Core Plugin: Backlinks **********/
-.backlink-pane,
-.outgoing-link-pane {
-  padding-bottom: unset;
-  overflow: scroll;
+body.is-mobile {
+  .backlink-pane,
+  .outgoing-link-pane {
+    padding-bottom: unset;
+    overflow: visible;
+  }
 }
 
 body.is-mobile .embedded-backlinks {
