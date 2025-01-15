@@ -1599,7 +1599,14 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
 body:not(.is-mobile) {
   .metadata-add-button {
     display: flex;
+    transition: var(--anim-duration-fast) var(--anim-duration-moderate);
     cursor: pointer;
+  }
+
+  .markdown-reading-view .metadata-container:not(:hover) .metadata-add-button {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
   }
 
   .prompt.suggestion {
