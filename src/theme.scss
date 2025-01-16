@@ -2977,14 +2977,14 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     .modal,
     .vertical-tab-content,
     .community-modal-details {
-      background-color: rgb(from var(--background-secondary) r g b / 90%);
+      background-color: rgba(246, 246, 246, 90%);
     }
   }
   &.theme-dark {
     .modal,
     .vertical-tab-content,
     .community-modal-details {
-      background-color: rgb(from var(--background-primary) r g b / 90%);
+      background-color: rgba(30, 30, 30, 90%);
     }
   }
 
