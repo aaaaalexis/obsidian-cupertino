@@ -1,0 +1,100 @@
+body:not(.is-phone) {
+  &.blur-effect-off .prompt {
+    backdrop-filter: none;
+    background-color: var(--background-secondary) !important;
+  }
+
+  .modal-container:has(.prompt):not(:last-child) {
+    opacity: 0;
+  }
+
+  .prompt {
+    backdrop-filter: blur(32px);
+    border: var(--prompt-border-width) solid var(--prompt-border-color);
+    background-color: var(--workspace-background-translucent);
+  }
+
+  .prompt-input {
+    border-color: var(--background-modifier-border);
+    background-color: transparent;
+    font-size: var(--font-ui-large);
+  }
+
+  .prompt-instructions {
+    border-color: var(--background-modifier-border);
+    color: var(--text-faint);
+  }
+
+  .prompt .suggestion-item {
+    padding: 8px 16px;
+  }
+}
+
+body.is-phone {
+  &.is-android {
+    animation: var(--anim-duration-fast) fadeInScale !important;
+  }
+
+  .prompt {
+    --prompt-top: calc(var(--safe-area-inset-top) + 8px);
+    backdrop-filter: blur(32px);
+    animation: var(--anim-duration-slow) blurInScale !important;
+    transition: var(--anim-duration-fast);
+    margin-top: var(--prompt-top);
+    box-shadow: var(--shadow-l);
+    border: var(--prompt-border-width) solid var(--background-modifier-hover);
+    border-radius: var(--radius-l);
+    background-color: var(--modal-background) !important;
+    width: 95vw;
+    height: 70vh;
+  }
+
+  .prompt-input {
+    background-color: transparent !important;
+    padding: 24px 24px !important;
+  }
+
+  .prompt-results {
+    padding: 12px;
+  }
+
+  .prompt .suggestion-item {
+    padding: 12px 16px;
+  }
+}
+
+body.is-tablet {
+  .prompt {
+    --prompt-bottom: 0;
+
+    animation: var(--anim-duration-slow) blurInScale;
+    outline: var(--prompt-border-width) solid var(--background-modifier-hover);
+    background-color: var(--modal-background) !important;
+  }
+
+  .prompt-input {
+    border: none;
+    background-color: transparent !important;
+  }
+
+  .prompt-input-container {
+    display: flex;
+    align-items: center;
+    border-bottom: var(--border-width) solid var(--background-modifier-border);
+  }
+
+  .prompt-input-container::before {
+    margin-left: 16px;
+    -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'></circle><line x1='21' y1='21' x2='16.65' y2='16.65'></line></svg>");
+    -webkit-mask-repeat: no-repeat;
+    display: block;
+    background-color: var(--search-icon-color);
+    width: var(--icon-l);
+    height: var(--icon-l);
+    content: "";
+  }
+
+  .prompt .suggestion-item {
+    padding: 12px 16px;
+  }
+}

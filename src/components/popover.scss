@@ -1,0 +1,6 @@
+.popover {
+  backdrop-filter: blur(16px);
+  animation: var(--anim-duration-slow) blurInScale;
+  border-radius: var(--radius-l);
+  background-color: var(--workspace-background-translucent);
+}

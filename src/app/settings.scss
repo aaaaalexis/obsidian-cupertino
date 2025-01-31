@@ -1,0 +1,308 @@
+body:not(.is-phone) .modal {
+  .vertical-tab-header {
+    background-color: transparent;
+  }
+
+  .modal-sidebar {
+    background-color: transparent;
+  }
+
+  .installed-plugins-container {
+    border: none;
+    padding: 0;
+  }
+}
+
+body:not(.mod-windows):not(.is-mobile),
+body.windows-mode-off:not(.is-mobile) {
+  &:not(.blur-effect-off) {
+    &.theme-light .vertical-tab-header {
+      background-color: rgb(from var(--color-base-30) r g b / 75%);
+    }
+    &.theme-dark .vertical-tab-header {
+      background-color: rgb(from var(--color-base-10) r g b / 75%);
+    }
+    .vertical-tab-content,
+    .community-modal-details {
+      background-color: rgb(from var(--color-base-20) r g b / 75%);
+    }
+  }
+
+  &.blur-effect-off {
+    &.theme-light .vertical-tab-header {
+      background-color: var(--color-base-30);
+    }
+    &.theme-dark .vertical-tab-header {
+      background-color: var(--color-base-10);
+    }
+    .vertical-tab-content,
+    .community-modal-details {
+      background-color: var(--color-base-20);
+    }
+  }
+  &.theme-light .modal {
+    outline: var(--border-width) solid var(--divider-color);
+  }
+  &.theme-dark {
+    .vertical-tab-header {
+      margin: 1px 0 1px 1px;
+      border-radius: var(--modal-radius) 0 0 var(--modal-radius);
+    }
+    .vertical-tab-content {
+      margin: 1px 1px 1px 0;
+      border-radius: 0 var(--modal-radius) var(--modal-radius) 0;
+    }
+  }
+
+  .modal.mod-settings,
+  .modal.mod-community-modal {
+    .mobile-option-setting-item {
+      border: var(--border-width) solid var(--background-modifier-border);
+      border-radius: var(--radius-s);
+      padding: 12px 16px;
+    }
+
+    textarea,
+    input[type="text"]:not(.metadata-container input):not(.prompt input),
+    input[type="number"],
+    input[type="search"] {
+      border: var(--border-width) solid var(--background-modifier-border-hover);
+    }
+  }
+
+  .modal:not(.mod-community-modal) {
+    .setting-item-heading {
+      border: none;
+      padding: 16px 16px 12px;
+    }
+    .setting-item:not(.setting-item-heading) {
+      border-right: var(--border-width) solid var(--background-modifier-border);
+      border-left: var(--border-width) solid var(--background-modifier-border);
+      border-radius: 0;
+      background-color: rgba(var(--mono-rgb-100), 0.02);
+      padding: 12px 16px;
+    }
+    .setting-item-heading + .setting-item,
+    *:not(.setting-item) + .setting-item:not(.setting-item-heading),
+    .setting-item:first-child:not(.setting-item-heading) {
+      border-top: var(--border-width) solid var(--background-modifier-border);
+      border-top-right-radius: var(--radius-s) !important;
+      border-top-left-radius: var(--radius-s) !important;
+    }
+    .setting-item:has(+ .setting-item-heading),
+    .setting-item:has(+ *:not(.setting-item)):not(.setting-item-heading),
+    .setting-item:last-child {
+      border-bottom: var(--border-width) solid var(--background-modifier-border);
+      border-bottom-right-radius: var(--radius-s) !important;
+      border-bottom-left-radius: var(--radius-s) !important;
+    }
+    .setting-item-info:has(.setting-item-name:empty) .setting-item-description {
+      padding: 0;
+    }
+  }
+}
+
+body.is-mobile {
+  &.theme-light .modal.mod-settings,
+  &.theme-light .modal.mod-community-modal {
+    .modal-header,
+    .vertical-tab-header,
+    .vertical-tab-content,
+    .modal-sidebar,
+    .community-modal-details {
+      background-color: var(--background-secondary);
+    }
+  }
+  &.theme-dark .modal.mod-settings,
+  &.theme-dark .modal.mod-community-modal {
+    .modal-header,
+    .vertical-tab-header,
+    .vertical-tab-content,
+    .modal-sidebar,
+    .community-modal-details {
+      background-color: var(--background-primary);
+    }
+  }
+
+  .modal.mod-settings,
+  .modal.mod-community-modal {
+    background-color: transparent;
+
+    .modal-header,
+    .modal-sidebar {
+      border: none !important;
+    }
+
+    .vertical-tab-nav-item {
+      height: unset;
+      min-height: 48px;
+      word-break: break-word;
+    }
+
+    .vertical-tab-header-group-title {
+      padding: 8px;
+      color: var(--text-faint);
+      font-weight: normal;
+      font-size: var(--font-ui-small);
+      text-transform: uppercase;
+    }
+
+    .vertical-tab-header-group-items {
+      border-radius: var(--input-radius);
+      background-color: var(--interactive-normal);
+      overflow: hidden;
+    }
+
+    .community-modal-search-results-wrapper {
+      border: none;
+      padding: 0 16px;
+    }
+
+    .community-modal-search-results {
+      gap: 8px;
+    }
+
+    .community-item {
+      border: none;
+      border-radius: var(--input-radius);
+      background-color: var(--interactive-normal);
+    }
+
+    .community-modal-details {
+      background-color: var(--background-secondary);
+    }
+
+    .setting-item-heading .setting-item-name {
+      color: var(--text-faint);
+      font-weight: normal;
+      font-size: var(--font-ui-small);
+      text-transform: uppercase;
+    }
+  }
+}
+
+body.is-phone {
+  .modal:not(.mod-community-modal) {
+    .setting-item {
+      border: none;
+    }
+    .setting-item:not(.mod-toggle) .setting-item-info {
+      padding: 0 8px;
+    }
+
+    .setting-item.mod-toggle,
+    .setting-item-control .mobile-option-setting-item {
+      border-radius: var(--input-radius);
+      background-color: var(--interactive-normal) !important;
+      padding: 12px 16px;
+    }
+
+    .setting-item.mod-toggle:has(+ .setting-item.mod-toggle) {
+      border-bottom: var(--border-width) solid var(--background-modifier-border);
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .setting-item.mod-toggle + .setting-item.mod-toggle {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    .setting-item-control {
+      align-items: center;
+    }
+
+    .setting-item-control .clickable-icon {
+      background-color: var(--interactive-normal);
+      min-width: var(--input-height);
+      height: var(--input-height);
+    }
+
+    .setting-item-control:not(:has(:not(button))) {
+      flex-direction: column;
+      gap: 0;
+      border-radius: var(--input-radius);
+      overflow: hidden;
+    }
+
+    .setting-item-control:not(:has(:not(button))) > button {
+      border-radius: 0;
+
+      &:not(:last-child) {
+        border-bottom: var(--border-width) solid var(--background-modifier-border);
+      }
+    }
+  }
+
+  .modal.mod-settings,
+  .modal.mod-community-modal {
+    .vertical-tab-header,
+    .vertical-tab-content {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+  }
+}
+
+body.is-tablet {
+  .modal:not(.mod-community-modal) {
+    .setting-item-heading {
+      border: none;
+      padding: 8px;
+    }
+    .setting-item:not(.setting-item-heading) {
+      border-radius: 0;
+      background-color: var(--interactive-normal);
+      padding: 12px 16px;
+    }
+    .setting-item-heading + .setting-item,
+    *:not(.setting-item) + .setting-item:not(.setting-item-heading),
+    .setting-item:first-child:not(.setting-item-heading) {
+      border-top: none !important;
+      border-top-right-radius: var(--radius-s) !important;
+      border-top-left-radius: var(--radius-s) !important;
+    }
+    .setting-item:has(+ .setting-item-heading),
+    .setting-item:has(+ *:not(.setting-item)):not(.setting-item-heading),
+    .setting-item:last-child {
+      border-bottom-right-radius: var(--radius-s) !important;
+      border-bottom-left-radius: var(--radius-s) !important;
+    }
+    .setting-item-info:has(.setting-item-name:empty) .setting-item-description {
+      padding: 0;
+    }
+  }
+
+  .modal.mod-settings,
+  .modal.mod-community-modal {
+    textarea,
+    input[type="text"],
+    input[type="search"],
+    input[type="number"] {
+      background-color: var(--background-modifier-border);
+    }
+    .vertical-tab-header-group-items {
+      gap: 0;
+    }
+    .vertical-tab-nav-item {
+      display: flex;
+      align-items: center;
+      border-radius: 0;
+      padding-left: 16px;
+
+      &:not(:last-child) {
+        border-bottom: var(--border-width) solid var(--background-modifier-border);
+      }
+    }
+
+    button:not(.clickable-icon):not([class*="mod-"]),
+    select,
+    .dropdown {
+      color: var(--text-accent);
+    }
+    select,
+    .dropdown {
+      background-color: var(--background-modifier-hover);
+    }
+  }
+}

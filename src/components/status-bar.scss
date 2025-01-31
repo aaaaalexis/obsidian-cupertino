@@ -1,0 +1,93 @@
+.status-bar {
+  position: absolute !important;
+  right: 4px;
+  bottom: 4px;
+  transition: var(--anim-duration-fast);
+  border: var(--border-width) solid var(--background-modifier-border);
+  border-radius: var(--radius-xl);
+  background-color: var(--background-primary);
+  padding: 4px 8px !important;
+  min-height: unset;
+  color: var(--text-normal);
+}
+
+body.hide-status-off:not(.is-mobile) {
+  .status-bar:not(:hover) {
+    opacity: 0.3;
+    border-color: transparent;
+    background-color: transparent;
+  }
+  .mod-sidedock.mod-right-split .workspace-leaf-content > .node-insert-event,
+  .mod-sidedock.mod-right-split .workspace-leaf-content > .view-content {
+    margin-bottom: 40px;
+  }
+}
+
+body:not(.hide-status-off) .status-bar {
+  right: unset;
+  bottom: 2px;
+  justify-content: center;
+  transition: var(--anim-duration-fast);
+  border-color: transparent;
+  border-radius: 10000px;
+  background-color: rgba(var(--mono-rgb-100), 0.2);
+  padding: 8px !important;
+  max-width: 100%;
+
+  > div {
+    transition: var(--anim-duration-fast);
+  }
+
+  &:not(:hover) {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    max-width: var(--tab-width);
+    height: 4px;
+
+    > div {
+      transform: scale(0.9);
+      opacity: 0;
+      filter: blur(4px);
+      white-space: nowrap;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    transform: scaleY(10);
+    z-index: -1;
+    transition: var(--anim-duration-fast) var(--anim-duration-fast);
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
+
+  &:hover {
+    bottom: 4px;
+    border-color: var(--background-secondary);
+    background-color: rgba(var(--mono-rgb-0), 1);
+    height: 40px;
+
+    &::before {
+      transform: scaleY(1);
+    }
+  }
+}
+
+.status-bar span {
+  white-space: nowrap;
+}
+
+body:not(.hide-status-off):not(.is-grabbing) .app-container.no-transition .status-bar {
+  bottom: 4px;
+  border-color: var(--background-secondary);
+  background-color: rgba(var(--mono-rgb-0), 1);
+  max-width: 100% !important;
+  height: 40px !important;
+
+  > div {
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}

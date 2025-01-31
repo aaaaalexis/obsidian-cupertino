@@ -1,4 +1,21 @@
-@use "app.scss";
+@use "app/root.scss";
+@use "app/animation.scss";
+@use "app/input.scss";
+@use "app/tab.scss";
+@use "app/editor.scss";
+@use "app/frontmatter.scss";
+@use "app/modal.scss";
+@use "app/settings.scss";
+@use "app/sidedock.scss";
+@use "app/mobile.scss";
+@use "app/empty-state.scss";
+
+@use "components/menu.scss";
+@use "components/notice.scss";
+@use "components/popover.scss";
+@use "components/prompt.scss";
+@use "components/status-bar.scss";
+@use "components/tooltip.scss";
 
 @use "plugins-core/backlinks.scss";
 @use "plugins-core/canvas.scss";

@@ -1,0 +1,60 @@
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-16px);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+@keyframes blurInScale {
+  from {
+    transform: scale(1.1);
+    opacity: 0;
+    filter: blur(16px);
+  }
+  50% {
+    transform: scale(0.99);
+  }
+}
+
+body.is-mobile {
+  .workspace-drawer.mod-left {
+    @starting-style {
+      transform: translateX(-100%);
+    }
+  }
+
+  .workspace-drawer.mod-right {
+    @starting-style {
+      transform: translateX(100%);
+    }
+  }
+
+  .workspace-drawer.mod-left,
+  .workspace-drawer.mod-right,
+  .menu {
+    transition-duration: var(--anim-duration-moderate) !important;
+    transition-timing-function: var(--anim-motion-cupertino) !important;
+  }
+}
+
+body.is-phone {
+  .menu {
+    @starting-style {
+      transform: translateY(100%);
+    }
+  }
+}

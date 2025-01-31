@@ -1,0 +1,20 @@
+.notice-container {
+  display: flex;
+  top: unset;
+  bottom: 16px;
+  flex-direction: column;
+  gap: 8px;
+  overflow: visible;
+}
+
+.notice {
+  backdrop-filter: blur(32px);
+  margin-bottom: 0;
+  box-shadow: var(--shadow-s);
+  border: var(--border-width) solid var(--background-modifier-hover);
+  border-radius: var(--radius-l);
+  background-color: var(--modal-background);
+  padding: 16px 24px;
+  overflow: hidden;
+  color: var(--text-muted);
+}

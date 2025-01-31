@@ -1,0 +1,436 @@
+/* @settings
+
+name: Cupertino
+id: cupertino
+settings:
+    -
+        id: cupertino-desc
+        description: Most of the settings are for **turning off** Cupertino customizations. You don't need to change anything if you want to keep all default Cupertino optimizations.
+        type: info-text
+        markdown: true
+    -
+        id: alt-heading-off
+        title: Disable alternative heading style
+        description: Turn off all caps and opacity adjustment for H4, H5 and H6.
+        type: class-toggle
+    -
+        id: active-line-off
+        title: Disable active editing line highlight
+        type: class-toggle
+    -
+        id: full-table-off
+        title: Disable full width table
+        type: class-toggle
+    -
+        id: hide-frontmatter-off
+        title: Show frontmatter foldable heading
+        type: class-toggle
+    -
+        id: compact-mode
+        title: Compact view
+        type: class-toggle
+    -
+        id: desktop-header
+        title: Desktop & Tablet
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: accented-frame-opacity
+        title: Accented window
+        description: Higher value reduces overall interface contrast.
+        type: variable-number-slider
+        default: 0
+        min: 0
+        max: 100
+        step: 5
+    -
+        id: windows-mode-off
+        title: Use macOS style
+        description: Turn off Fluent styling on Windows.
+        type: class-toggle
+    -
+        id: tablet-menu-fix
+        title: Disable menu theming
+        description: Turn off context menu theming on tablet. Enable if you're having touch issues in menu. 
+        type: class-toggle
+    -
+        id: blur-effect-off
+        title: Reduce transparency
+        type: class-toggle
+    -
+        id: center-tabs-off
+        title: Disable centered tabs
+        type: class-toggle
+    -
+        id: hide-nav-header-off
+        title: Disable auto hiding panel actions
+        type: class-toggle
+    -
+        id: hide-status-off
+        title: Always show status bar
+        type: class-toggle
+    -
+        id: mobile-header
+        title: Mobile
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: quick-mode-switch-off
+        title: Disable Quick Mode Switcher
+        type: class-toggle
+    -
+        id: hide-tabs-count-off
+        title: Show tabs count
+        type: class-toggle
+*/
+
+/* General */
+
+body {
+  --anim-motion-cupertino: cubic-bezier(0, 0.5, 0.25, 1);
+  --background-modifier-border: var(--divider-color);
+  --background-modifier-border-focus: hsla(var(--interactive-accent-hsl), 0.5);
+  --background-modifier-message: var(--background-secondary);
+  --background-modifier-hover: rgba(var(--mono-rgb-100), 0.05);
+  --blockquote-border-color: var(--color-base-50);
+  --blockquote-border-thickness: 4px;
+  --caret-color: var(--text-accent);
+  --callout-padding: 16px;
+  --callout-radius: var(--radius-s);
+  --checkbox-radius: var(--radius-xl);
+  --code-white-space: pre-wrap;
+  --code-size: var(--font-smaller);
+  --code-background: var(--background-primary-alt);
+  --code-normal: var(--text-muted);
+  --code-comment: var(--text-faint);
+  --code-function: var(--color-orange);
+  --code-important: var(--color-orange);
+  --code-keyword: var(--color-red);
+  --code-property: var(--color-blue);
+  --code-punctuation: var(--text-muted);
+  --code-string: var(--color-cyan);
+  --code-tag: var(--color-red);
+  --code-value: var(--color-purple);
+  --dialog-width: fit-content;
+  --divider-color-hover: var(--text-normal);
+  --dropdown-background-size: var(--icon-s);
+  --dropdown-padding: 4px 16px 4px 8px;
+  --embed-border-start: none;
+  --embed-block-shadow-hover: none;
+  --font-text-theme: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  --font-interface-theme: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  --hr-color: var(--background-modifier-hover);
+  --icon-opacity: 1;
+  --input-height: 24px;
+  --input-radius: var(--radius-m);
+  --line-height-normal: 1.6;
+  --link-decoration: none;
+  --link-external-decoration: none;
+  --list-spacing: 0.2em;
+  --metadata-padding: 0;
+  --metadata-property-radius-focus: var(--input-radius);
+  --metadata-property-radius-hover: var(--input-radius);
+  --metadata-property-radius: var(--input-radius);
+  --modal-border-color: rgba(255, 255, 255, 0.15) !important;
+  --nav-item-color: var(--text-normal);
+  --nav-item-padding: 8px 8px 8px 24px;
+  --prompt-border-color: var(--modal-border-color);
+  --radius-l: 12px;
+  --radius-m: 6px;
+  --radius-s: 6px;
+  --radius-xl: 12px;
+  --ribbon-background-collapsed: transparent;
+  --ribbon-background: transparent;
+  --ribbon-padding: 4px 8px;
+  --ribbon-width: 56px;
+  --search-icon-size: var(--icon-s);
+  --slider-track-height: 4px;
+  --slider-track-background: var(--background-modifier-border-hover);
+  --tab-background-active: var(--background-primary-alt);
+  --tab-container-background: transparent;
+  --tab-divider-color: transparent;
+  --tab-max-width: var(--tab-width);
+  --tab-outline-width: 0;
+  --tab-radius-active: var(--radius-s);
+  --tab-radius: var(--radius-s);
+  --tag-border-width: var(--border-width);
+  --tag-size: var(--font-smallest);
+  --text-highlight-bg: rgba(var(--color-orange-rgb), 0.25);
+  --text-selection: var(--background-modifier-hover);
+  --titlebar-background-focused: transparent;
+  --titlebar-background: transparent;
+  --toggle-border-width: var(--border-width);
+  --toggle-s-border-width: var(--toggle-border-width);
+  --toggle-s-thumb-height: var(--toggle-thumb-height);
+  --toggle-s-thumb-width: var(--toggle-thumb-width);
+  --toggle-s-width: var(--toggle-width);
+  --toggle-thumb-height: 13px;
+  --toggle-thumb-width: 13px;
+  --toggle-width: 26px;
+  --view-header-height: 40px;
+  --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
+
+  /* Light Theme */
+  &.theme-light {
+    --background-modifier-cover: rgba(170, 170, 170, 0.6);
+    --background-modifier-border-hover: var(--color-base-25);
+    --color-red-rgb: 255, 59, 48;
+    --color-red: #ff3b30;
+    --color-orange-rgb: 255, 149, 0;
+    --color-orange: #ff9500;
+    --color-yellow-rgb: 255, 204, 0;
+    --color-yellow: #ffcc00;
+    --color-green-rgb: 40, 205, 65;
+    --color-green: #28cd41;
+    --color-cyan-rgb: 85, 190, 240;
+    --color-cyan: #55bef0;
+    --color-blue-rgb: 0, 122, 255;
+    --color-blue: #007aff;
+    --color-purple-rgb: 175, 82, 222;
+    --color-purple: #af52de;
+    --color-pink-rgb: 255, 45, 85;
+    --color-pink: #ff2d55;
+    --divider-color: rgba(0, 0, 0, 0.05) !important;
+    --modal-border-color: rgba(0, 0, 0, 0.1);
+    --modal-background: rgb(from var(--background-secondary) r g b / 90%) !important;
+    --input-shadow: inset 0 -0.15px 0 0.5px rgba(0, 0, 0, 0.2), 0 1px 1.5px 0 rgba(0, 0, 0, 0.03), 0 0.3px 0.5px 0 rgba(0, 0, 0, 0.1) !important;
+
+    --code-normal: #383a42;
+    --code-comment: #b6b9c5;
+    --code-function: #b76b02;
+    --code-important: #b76b02;
+    --code-keyword: #e45749;
+    --code-property: #62afef;
+    --code-punctuation: #383a42;
+    --code-string: #0d97b3;
+    --code-tag: #e45749;
+    --code-value: #a626a4;
+
+    .menu,
+    .suggestion-container,
+    .prompt,
+    .modal {
+      outline: var(--prompt-border-width) solid rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  /* Dark Theme */
+  &.theme-dark {
+    --background-modifier-cover: rgba(0, 0, 0, 0.6);
+    --color-red-rgb: 255, 69, 58;
+    --color-red: #ff453a;
+    --color-orange-rgb: 255, 159, 10;
+    --color-orange: #ff9f0a;
+    --color-yellow-rgb: 255, 214, 10;
+    --color-yellow: #ffd60a;
+    --color-green-rgb: 50, 215, 75;
+    --color-green: #32d74b;
+    --color-cyan-rgb: 90, 200, 245;
+    --color-cyan: #5ac8f5;
+    --color-blue-rgb: 10, 132, 255;
+    --color-blue: #0a84ff;
+    --color-purple-rgb: 191, 90, 242;
+    --color-purple: #bf5af2;
+    --color-pink-rgb: 255, 55, 95;
+    --color-pink: #ff375f;
+    --divider-color: rgba(255, 255, 255, 0.05) !important;
+    --modal-border-color: rgba(0, 0, 0, 1);
+    --modal-background: rgb(from var(--color-base-25) r g b / 90%) !important;
+    --interactive-normal: var(--color-base-40);
+    --input-shadow: inset 0 0.5px 0px 0px rgba(255, 255, 255, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1) !important;
+
+    --code-normal: #abb2bf;
+    --code-comment: #5c6370;
+    --code-function: #d19a66;
+    --code-important: #d19a66;
+    --code-keyword: #e16d76;
+    --code-property: #62afef;
+    --code-punctuation: #abb2bf;
+    --code-string: #58b6c2;
+    --code-tag: #e16d76;
+    --code-value: #c678de;
+
+    .menu,
+    .suggestion-container,
+    .prompt,
+    .modal {
+      outline: var(--prompt-border-width) solid black;
+    }
+  }
+
+  &:not(.is-mobile) {
+    --icon-xl: 24px;
+
+    &.theme-light {
+      --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
+      --shadow-l: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+    &.theme-dark {
+      --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
+      --shadow-l: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+  }
+
+  &:not(.is-phone) {
+    --header-height: 48px;
+  }
+
+  &.is-mobile {
+    --background-modifier-form-field: var(--interactive-normal) !important;
+    --border-width: 0.3px;
+    --divider-color: rgba(var(--mono-rgb-100), 0.1) !important;
+    --divider-width: 0.3px;
+    --canvas-dot-pattern: var(--color-base-20);
+    --checkbox-size: var(--icon-m);
+    --icon-xs-stroke-width: 2px;
+    --icon-s-stroke-width: 1.5px;
+    --icon-m-stroke-width: 1.5px;
+    --icon-l-stroke-width: 1.5px;
+    --icon-xl-stroke-width: 1px;
+    --input-height: 44px;
+    --input-radius: 10px;
+    --mobile-sidebar-width: 100%;
+    --mobile-toolbar-height: var(--input-height);
+    --modal-background: rgb(from var(--background-secondary) r g b / 75%) !important;
+    --nav-item-background-active: var(--color-accent);
+    --nav-item-background-selected: var(--color-accent);
+    --nav-item-color-active: var(--text-on-accent);
+    --nav-item-padding: 16px;
+    --radius-l: 16px;
+    --radius-m: 10px;
+    --radius-s: 10px;
+    --radius-xl: 16px;
+    --shadow-s: rgba(0, 0, 0, 0.1) 0px 8px 30px;
+    --slider-thumb-height: 28px;
+    --slider-thumb-y: -12px;
+    --slider-thumb-width: 28px;
+    --slider-track-height: 4px;
+    --tab-switcher-background: var(--modal-background);
+    --tab-switcher-menubar-background: var(--tab-switcher-background);
+    --toggle-border-width: 2px;
+    --toggle-thumb-height: 27px;
+    --toggle-thumb-width: 27px;
+    --toggle-width: 51px;
+    --toolbar-option-width: calc(16px + var(--mobile-toolbar-height));
+    --view-header-height: 44px;
+
+    padding: 0;
+
+    &.theme-light {
+      --interactive-normal: var(--background-primary);
+    }
+    &.theme-dark {
+      --interactive-normal: var(--background-secondary);
+    }
+  }
+
+  &.is-phone {
+    --file-header-justify: flex-start;
+    --mobile-sidebar-max-width: 100%;
+    --tab-outline-width: 1px;
+    --tab-outline-width: 1px;
+  }
+
+  &.is-tablet {
+    --dropdown-padding: 4px 32px 4px 16px;
+    --prompt-input-height: 56px;
+
+    .mod-root {
+      padding-top: var(--safe-area-inset-top);
+    }
+
+    &.show-ribbon {
+      --ribbon-width: 52px;
+    }
+  }
+
+  &:not(.is-focused) {
+    --workspace-background-translucent: var(--background-secondary);
+  }
+
+  &:not(.show-view-header):not(.is-phone) {
+    --view-header-height: 0px;
+
+    .view-header {
+      display: flex !important;
+
+      > div {
+        display: none;
+      }
+    }
+  }
+
+  &.compact-mode {
+    --nav-item-padding: 6px 8px 6px 24px;
+
+    &.is-mobile {
+      --nav-item-padding: 12px 16px;
+      .nav-files-container .tree-item-icon.collapse-icon {
+        right: 16px;
+      }
+      .suggestion-item {
+        padding: 8px 16px !important;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body.theme-dark {
+    --workspace-background-translucent: var(--background-primary);
+
+    .app-container {
+      background-color: var(--background-primary);
+    }
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body.theme-light {
+    --workspace-background-translucent: var(--background-primary);
+
+    .app-container {
+      background-color: var(--background-primary);
+    }
+  }
+}
+
+body,
+body .app-container,
+body.is-mobile .app-container,
+body.is-phone .app-container,
+body.is-tablet .app-container {
+  align-items: center;
+  transition: all var(--anim-duration-moderate) !important;
+  overflow: hidden;
+}
+
+body:not(.is-mobile) {
+  .workspace-ribbon,
+  .workspace-split.mod-root,
+  .workspace-split,
+  .workspace-tabs .workspace-leaf,
+  .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+    background-color: transparent;
+  }
+
+  &:not(.is-translucent) .horizontal-main-container {
+    background-color: var(--background-secondary);
+  }
+
+  .workspace {
+    transition: background-color var(--anim-duration-slow) !important;
+    background-color: hsla(var(--color-accent-hsl), calc(var(--accented-frame-opacity) * 0.005));
+  }
+
+  .workspace-sidedock-vault-profile {
+    border: none !important;
+    --vault-profile-color: var(--text-muted);
+    --icon-color: var(--text-muted);
+  }
+}
+
+.titlebar {
+  background-color: transparent !important;
+}

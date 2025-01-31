@@ -1,0 +1,161 @@
+.clickable-icon {
+  transition: all 0.1s ease-in-out !important;
+  padding: 4px 8px;
+}
+
+.is-flashing {
+  --text-highlight-bg: hsla(var(--color-accent-hsl), 0.25);
+}
+
+.search-input-container {
+  display: flex;
+  align-items: center;
+  overflow: visible;
+
+  &:before {
+    top: unset !important;
+  }
+
+  input {
+    padding-inline-start: 32px !important;
+  }
+}
+
+body:not(.is-mobile) {
+  textarea,
+  input[type="text"]:not(.metadata-container input):not(.prompt input),
+  input[type="number"],
+  input[type="search"],
+  button:not(.clickable-icon),
+  select,
+  .dropdown {
+    box-shadow: var(--input-shadow);
+    border: none;
+    height: unset;
+    min-height: var(--input-height);
+    font-weight: normal;
+    line-height: unset;
+    letter-spacing: -0.015em;
+  }
+  textarea,
+  input[type="text"]:not(.metadata-container input):not(.prompt input),
+  input[type="number"],
+  input[type="search"] {
+    box-shadow: none;
+    border: var(--border-width) solid var(--background-modifier-border);
+
+    &:active,
+    &:focus,
+    &:focus-visible {
+      box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
+    }
+
+    &:disabled,
+    &:disabled:active,
+    &:disabled:focus,
+    &:disabled:focus-visible {
+      box-shadow: none !important;
+      color: var(--text-muted);
+    }
+  }
+
+  button {
+    position: relative;
+    padding: 4px 10px;
+  }
+  button[class*="mod-"]:not(.mod-cancel):not(.mod-destructive):not(.mod-bookmark):not(.mod-secondary)::before {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--button-radius);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    content: "";
+  }
+  select,
+  .dropdown {
+    padding: 4px 32px 4px 10px;
+  }
+
+  .checkbox-container {
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.02) inset, 0px 0.5px 1.5px 0px rgba(0, 0, 0, 0.12) inset;
+
+    &.is-enabled {
+      box-shadow: 0px 0.5px 2.5px 0px rgba(102, 102, 102, 0.75) inset;
+      background: linear-gradient(180deg, rgba(102, 102, 102, 0.75) 0%, rgba(102, 102, 102, 0) 67.71%), var(--interactive-accent);
+      background-blend-mode: overlay, normal;
+    }
+
+    &::after {
+      box-shadow: 0px 0.2px 0.25px 0px rgba(0, 0, 0, 0.12);
+    }
+  }
+}
+
+body.is-mobile {
+  button,
+  select,
+  .dropdown {
+    box-shadow: none !important;
+  }
+
+  .clickable-icon {
+    background-color: transparent;
+    padding: 10px;
+    min-width: var(--input-height);
+    height: var(--input-height);
+  }
+
+  .clickable-icon.is-active {
+    opacity: 1;
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+  }
+
+  .checkbox-container {
+    box-shadow: none;
+    overflow: hidden;
+
+    &::after {
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 3px 8px 0px rgba(0, 0, 0, 0.15), 0px 3px 1px 0px rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    box-shadow: 0px 0.5px 4px 0px rgba(0, 0, 0, 0.12), 0px 6px 13px 0px rgba(0, 0, 0, 0.12);
+  }
+}
+
+body.is-phone {
+  textarea,
+  input[type="text"]:not(.metadata-container input):not(.prompt input),
+  input[type="number"],
+  button:not(.clickable-icon):not(.modal:not(.mod-settings):not(.mod-community-modal) button):not(.view-content button),
+  select,
+  .dropdown {
+    justify-content: flex-start;
+    background-color: var(--interactive-normal);
+    padding: 0 16px;
+    min-height: var(--input-height);
+    font-weight: normal;
+    text-align-last: unset;
+  }
+
+  button:not(.clickable-icon):not(.modal:not(.mod-settings):not(.mod-community-modal) button):not(.view-content button),
+  select,
+  .dropdown {
+    color: var(--text-accent);
+  }
+
+  .setting-item-control button {
+    color: var(--text-accent);
+  }
+}
+
+body.is-tablet {
+  textarea,
+  input[type="text"]:not(.metadata-container input):not(.prompt input),
+  input[type="number"],
+  button:not(.clickable-icon):not(.modal:not(.mod-settings) button):not(.view-content button) {
+    padding: 4px 16px;
+  }
+}
