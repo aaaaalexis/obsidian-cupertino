@@ -41,7 +41,7 @@ body.windows-mode-off:not(.is-mobile) {
     }
   }
   &.theme-light .modal {
-    outline: var(--border-width) solid var(--divider-color);
+    outline: var(--border-width) solid var(--background-modifier-border);
   }
   &.theme-dark {
     .vertical-tab-header {
