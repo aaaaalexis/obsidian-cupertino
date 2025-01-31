@@ -49,6 +49,10 @@ body:not(.is-mobile) {
     cursor: pointer;
   }
 
+  .metadata-property input {
+    border: none;
+  }
+
   .markdown-reading-view .metadata-container:not(:hover) {
     .metadata-property[data-property-key="cssclasses"],
     .metadata-add-button {
