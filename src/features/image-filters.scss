@@ -1,0 +1,95 @@
+/* Dark mode images  */
+/* MIT License | Copyright (c) Stephan Ango (@kepano) */
+
+:root {
+  --image-mix: normal;
+}
+.image-blend-light {
+  --image-mix: multiply;
+}
+
+.theme-dark .markdown-source-view img,
+.theme-dark .markdown-preview-view img {
+  opacity: var(--image-muted);
+  transition: opacity 0.25s linear;
+}
+
+@media print {
+  body {
+    --image-muted: 1;
+  }
+}
+
+.theme-dark .print-preview img,
+.theme-dark .markdown-source-view img:hover,
+.theme-dark .markdown-preview-view img:hover {
+  opacity: 1;
+  transition: opacity 0.25s linear;
+}
+
+.theme-light img {
+  mix-blend-mode: var(--image-mix);
+}
+
+/* Invert  */
+
+// Necessary to set background for screen/multiply to work
+div[src$="#blend"],
+div[src$="#invert"] {
+  background-color: var(--background-primary);
+}
+
+.theme-dark {
+  img[src$="#invert"],
+  div[src$="#invert"] img,
+  span[src$="#invert"] img {
+    filter: invert(1) hue-rotate(180deg);
+    mix-blend-mode: screen;
+  }
+  img[src$="#blend"],
+  div[src$="#blend"] img,
+  span[src$="#blend"] img {
+    mix-blend-mode: screen;
+  }
+  .img-blend {
+    mix-blend-mode: screen;
+  }
+}
+
+.theme-light {
+  img[src$="#blend"],
+  div[src$="#blend"] img,
+  span[src$="#blend"] img {
+    mix-blend-mode: multiply;
+  }
+  img[src$="#invertW"],
+  div[src$="#invertW"] img,
+  span[src$="invertW"] img {
+    filter: invert(1) hue-rotate(180deg);
+  }
+  .img-blend {
+    mix-blend-mode: multiply;
+  }
+}
+
+/* Circle */
+img[src$="#circle"]:not(.emoji),
+span[src$="#circle"] img:not(.emoji),
+span[src$="#round"] img:not(.emoji) {
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
+
+/* Outline */
+img[src$="#outline"],
+div[src$="#outline"] img,
+span[src$="#outline"] img {
+  border: var(--border-width) solid var(--background-modifier-border);
+}
+
+/* Interface */
+img[src$="#interface"],
+span[src$="#interface"] img {
+  border: var(--border-width) solid var(--background-modifier-border);
+  box-shadow: var(--shadow-s);
+}
