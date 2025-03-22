@@ -234,17 +234,32 @@ body.mod-macos.is-hidden-frameless {
     padding: 0 !important;
   }
 
-  .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-header-container-inner {
+  /* One tab */
+  .mod-root .workspace-tabs.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
     padding-right: 24px;
   }
-  .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tab-header-container-inner {
+  .mod-root .workspace-tabs.mod-top-right-space.workspace-tab-header-container-inner {
     padding-left: 80px;
   }
-  .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root .workspace-tab-header-container-inner {
+  .mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
     padding-right: 56px;
   }
-  .workspace.is-left-sidedock-open.is-right-sidedock-open .mod-root .workspace-tab-header-container-inner {
+  .mod-root .workspace-tabs:not(.mod-top-left-space):not(.mod-top-right-space) .workspace-tab-header-container-inner {
     padding-left: 48px;
+  }
+  .mod-root .workspace-tabs.mod-top-left-space:not(.mod-top-right-space):only-of-type .workspace-tab-header-container-inner {
+    padding-right: 56px;
+  }
+  .mod-root .workspace-tabs.mod-top-right-space:not(.mod-top-left-space):only-of-type .workspace-tab-header-container-inner {
+    padding-left: 80px;
+  }
+
+  /* Mutliple tabs */
+  .mod-root .workspace-tabs.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
+    padding-right: 64px;
+  }
+  .mod-root .workspace-tabs.mod-top-right-space:not(.mod-top-left-space) .workspace-tab-header-container-inner {
+    padding-left: 88px;
   }
 }
 
