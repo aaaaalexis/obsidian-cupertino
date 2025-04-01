@@ -1,5 +1,6 @@
 #calendar-container {
   --color-text-today: var(--color-accent);
+  --color-dot: var(--color-base-50);
   padding: 0;
   background-color: transparent;
 
@@ -64,20 +65,25 @@
   }
 
   .dot-container {
-    background-color: var(--color-base-50);
     position: absolute;
-    bottom: 4px;
+    bottom: 2px;
     flex-wrap: nowrap;
     border-radius: 100vh;
-    max-width: 4px;
     min-height: 4px;
+  }
+
+  .filled {
+    stroke: var(--color-dot);
+
+    &:not(:first-child) {
+      display: none;
+    }
   }
 
   .dot,
   .hollow {
-    visibility: hidden;
-    margin: 0;
-    width: 4px;
-    height: 4px;
+    height: 5px;
+    width: 5px;
+    margin: 0 0.5px;
   }
 }
