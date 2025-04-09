@@ -45,20 +45,18 @@
     min-height: 32px;
   }
 
-  .today.active {
-    color: var(--text-on-accent);
-    background-color: var(--color-accent);
-
-    .dot-container {
-      background-color: var(--text-on-accent);
-    }
-  }
-
   .adjacent-month.active {
     opacity: 1;
   }
 
+  .today.active {
+    --color-dot: var(--text-on-accent);
+    color: var(--text-on-accent);
+    background-color: var(--color-accent);
+  }
+
   .active {
+    --color-dot: var(--color-text-today);
     font-weight: bold;
     color: var(--color-text-today);
     background-color: hsla(var(--color-accent-hsl), 0.15);
@@ -70,6 +68,7 @@
     flex-wrap: nowrap;
     border-radius: 100vh;
     min-height: 4px;
+    gap: 1px;
   }
 
   .filled {
@@ -82,8 +81,8 @@
 
   .dot,
   .hollow {
-    height: 5px;
-    width: 5px;
-    margin: 0 0.5px;
+    height: 6px;
+    width: 6px;
+    margin: 0;
   }
 }
