@@ -108,12 +108,14 @@
   }
 
   /* Highlight */
-  .markdown-rendered mark {
+  .markdown-reading-view mark,
+  .markdown-source-view mark {
     box-decoration-break: clone;
     border-radius: var(--radius-s);
     padding: 1px 4px;
+    color: var(--text-normal);
 
-    &:not([style]) {
+    &:not([style]):not([class*="hltr-"]) {
       color: var(--color-orange);
     }
   }
