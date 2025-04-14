@@ -52,11 +52,11 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     content: "";
   }
 
-  &:not(.is-translucent) .horizontal-main-container {
-    background-color: var(--color-base-05);
+  &:not(.is-translucent) .app-container {
+    background-color: color-mix(in srgb, hsl(var(--color-accent-hsl)) calc(var(--accented-frame-opacity) * 0.5%), var(--color-base-05));
   }
 
-  .titlebar-button {
+  .titlebar .titlebar-button {
     justify-content: center;
     width: var(--header-height);
     height: var(--header-height);

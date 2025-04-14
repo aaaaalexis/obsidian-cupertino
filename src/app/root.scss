@@ -404,6 +404,7 @@ body:not(.is-popout-window) .app-container {
 }
 
 body:not(.is-mobile) {
+  .workspace,
   .workspace-ribbon,
   .workspace-split.mod-root,
   .workspace-split,
@@ -412,13 +413,8 @@ body:not(.is-mobile) {
     background-color: transparent;
   }
 
-  &:not(.is-translucent) .horizontal-main-container {
-    background-color: var(--background-secondary);
-  }
-
-  .workspace {
-    transition: background-color var(--anim-duration-slow) !important;
-    background-color: hsla(var(--color-accent-hsl), calc(var(--accented-frame-opacity) * 0.005));
+  &:not(.is-translucent) .app-container {
+    background-color: color-mix(in srgb, hsl(var(--color-accent-hsl)) calc(var(--accented-frame-opacity) * 0.5%), var(--background-secondary));
   }
 
   .workspace-sidedock-vault-profile {
