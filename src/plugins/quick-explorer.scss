@@ -1,0 +1,28 @@
+body.obsidian-themepocalypse:not(.qe-hide-breadcrumbs):not(.hide-status-off):not(.is-mobile) .status-bar {
+  position: var(--status-bar-position) !important;
+}
+
+body.hide-status-off.obsidian-themepocalypse:not(.qe-hide-breadcrumbs):not(.is-mobile) {
+  .mod-root {
+    padding-bottom: 2px;
+  }
+
+  .mod-root .workspace-tab-container {
+    box-shadow: none;
+  }
+
+  .status-bar {
+    background: none !important;
+    border: none !important;
+    width: 100%;
+  }
+}
+
+#quick-explorer {
+  padding: 0;
+}
+
+#quick-explorer .explorable.selected,
+#quick-explorer .explorable:hover {
+  background-color: var(--background-modifier-hover);
+}

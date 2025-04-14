@@ -52,6 +52,7 @@
 @use "plugins/link-favicons";
 @use "plugins/highlightr";
 @use "plugins/checklist";
+@use "plugins/quick-explorer";
 
 @use "support/notebook-themes.scss";
 
@@ -65,3 +66,4 @@
 @use "features/helper-embeds.scss";
 @use "features/helper-tables.scss";
 @use "features/editor-filters.scss";
+
