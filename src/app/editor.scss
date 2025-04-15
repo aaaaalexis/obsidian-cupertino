@@ -459,6 +459,20 @@
         border-radius: 0;
       }
     }
+
+    &:not(.is-popout-window) .workspace.is-left-sidedock-open,
+    &:not(.is-popout-window) .workspace.is-right-sidedock-open {
+      .mod-root .workspace-split.mod-vertical,
+      .mod-root.workspace-split.mod-vertical {
+        gap: 8px;
+
+        hr.workspace-leaf-resize-handle {
+          --divider-width-hover: 4px;
+          right: -6px;
+          border-radius: var(--radius-s);
+        }
+      }
+    }
   }
 
   body:not(.is-phone) {
