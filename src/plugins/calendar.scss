@@ -43,6 +43,10 @@
     position: relative;
     justify-content: center;
     min-height: 32px;
+
+    &:hover {
+      background-color: var(--background-modifier-hover);
+    }
   }
 
   .adjacent-month.active {
