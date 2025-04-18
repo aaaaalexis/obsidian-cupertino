@@ -53,7 +53,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   }
 
   &:not(.is-translucent) .app-container {
-    background-color: color-mix(in srgb, hsl(var(--color-accent-hsl)) calc(var(--accented-frame-opacity) * 0.5%), var(--color-base-05));
+    background-image: var(--color-base-05);
   }
 
   .titlebar .titlebar-button {

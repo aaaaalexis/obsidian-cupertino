@@ -414,7 +414,14 @@ body:not(.is-mobile) {
   }
 
   &:not(.is-translucent) .app-container {
-    background-color: color-mix(in srgb, hsl(var(--color-accent-hsl)) calc(var(--accented-frame-opacity) * 0.5%), var(--background-secondary));
+    background-color: var(--background-secondary);
+  }
+
+  .app-container::before {
+    content: "";
+    inset: 0;
+    position: fixed;
+    background-color: hsla(var(--color-accent-hsl), calc(var(--accented-frame-opacity) * 0.005));
   }
 
   .workspace-sidedock-vault-profile {
