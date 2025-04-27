@@ -16,6 +16,9 @@
   svg.svg-icon {
     fill: none;
   }
+  .collapse-indicator {
+    --cursor: pointer;
+  }
 
   .markdown-rendered p {
     letter-spacing: 0.1px;
@@ -146,6 +149,10 @@
     .callout-title {
       align-items: center;
       gap: 8px;
+    }
+
+    &.is-collapsible .callout-title {
+      cursor: pointer;
     }
 
     .callout-title-inner {
