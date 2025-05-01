@@ -415,6 +415,11 @@
       outline: 1px solid rgba(244, 244, 244, 0.12);
     }
 
+    .workspace.is-left-sidedock-open .workspace-leaf-resize-handle,
+    .workspace.is-right-sidedock-open .workspace-leaf-resize-handle {
+      border-color: transparent;
+    }
+
     .mod-root {
       padding-bottom: 8px;
 
@@ -426,10 +431,6 @@
 
       .workspace-tabs:not(:only-of-type) .workspace-tab-container {
         box-shadow: none;
-      }
-
-      .workspace-leaf-resize-handle {
-        border-color: transparent;
       }
 
       .view-header button {
