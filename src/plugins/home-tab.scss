@@ -1,8 +1,35 @@
+body.is-phone .home-tab {
+  padding-top: calc(var(--safe-area-inset-top) + var(--header-height) + 80px);
+  padding-bottom: 80px;
+
+  .suggestion {
+    padding: 8px 0;
+  }
+
+  .suggester-additional-info {
+    display: none;
+  }
+}
+
 .home-tab-searchbar {
   padding: 0 !important;
   height: calc(var(--input-height) * 1.5) !important;
+  border: none !important;
+
+  &.is-active input[type="search"] {
+    border-radius: var(--input-radius) var(--input-radius) 0 0 !important;
+  }
 
   input[type="search"] {
+    border: var(--border-width) solid var(--background-modifier-border) !important;
     box-shadow: none !important;
   }
+}
+
+.home-tab-suggestion-container {
+  border-top-color: transparent;
+}
+
+.suggester-additional-info {
+  color: var(--text-faint);
 }
