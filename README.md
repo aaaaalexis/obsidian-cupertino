@@ -57,6 +57,20 @@ I’ve spent way too much time on customizing Obsidian, thousands of themes with
 
 Cupertino supports most filter and helper classes from [Minimal](https://github.com/kepano/obsidian-minimal).
 
+### [Cards](https://minimal.guide/Block+types/Cards)
+
+| Class                 | Description                                      |
+| :-------------------- | :----------------------------------------------- |
+| `cards` (required)    | Set all Dataview tables to card layout           |
+| `list-cards`          | Set all bullet lists to card layout              |
+| `cards-align-bottom`  | Align the last element of a card to the bottom   |
+| `cards-cover`         | Images are resized to fill the defined space     |
+| `cards-16-9`          | Fit images in cards to 16:9 ratio                |
+| `cards-1-1`           | Fit images in cards to 1:1 ratio (square)        |
+| `cards-2-1`           | Fit images in cards to 2:1 ratio                 |
+| `cards-2-3`           | Fit images in cards to 2:3 ratio                 |
+| `cards-cols-1` to `8` | Force a specific number of columns (from 1 to 8) |
+
 ### Editor filters
 
 | Class          | Description                                                               |
@@ -66,6 +80,8 @@ Cupertino supports most filter and helper classes from [Minimal](https://github.
 | `low-contrast` | Low background and text contrast                                          |
 
 ### [Image filters](https://minimal.guide/images#Image+filters)
+
+Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
 
 | Filter       | Description                                                                        |
 | :----------- | :--------------------------------------------------------------------------------- |
@@ -81,20 +97,6 @@ Cupertino supports most filter and helper classes from [Minimal](https://github.
 | Class      | Description          |
 | :--------- | :------------------- |
 | `img-grid` | Activate image grids |
-
-### [Cards](https://minimal.guide/Block+types/Cards)
-
-| Class                 | Description                                      |
-| :-------------------- | :----------------------------------------------- |
-| `cards` (required)    | Set all Dataview tables to card layout           |
-| `list-cards`          | Set all bullet lists to card layout              |
-| `cards-align-bottom`  | Align the last element of a card to the bottom   |
-| `cards-cover`         | Images are resized to fill the defined space     |
-| `cards-16-9`          | Fit images in cards to 16:9 ratio                |
-| `cards-1-1`           | Fit images in cards to 1:1 ratio (square)        |
-| `cards-2-1`           | Fit images in cards to 2:1 ratio                 |
-| `cards-2-3`           | Fit images in cards to 2:3 ratio                 |
-| `cards-cols-1` to `8` | Force a specific number of columns (from 1 to 8) |
 
 ### Tables
 
