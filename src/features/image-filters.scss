@@ -1,35 +1,4 @@
-/* Dark mode images  */
 /* MIT License | Copyright (c) Stephan Ango (@kepano) */
-
-:root {
-  --image-mix: normal;
-}
-.image-blend-light {
-  --image-mix: multiply;
-}
-
-.theme-dark .markdown-source-view img,
-.theme-dark .markdown-preview-view img {
-  opacity: var(--image-muted);
-  transition: opacity 0.25s linear;
-}
-
-@media print {
-  body {
-    --image-muted: 1;
-  }
-}
-
-.theme-dark .print-preview img,
-.theme-dark .markdown-source-view img:hover,
-.theme-dark .markdown-preview-view img:hover {
-  opacity: 1;
-  transition: opacity 0.25s linear;
-}
-
-.theme-light img {
-  mix-blend-mode: var(--image-mix);
-}
 
 /* Invert  */
 
