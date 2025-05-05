@@ -1,9 +1,11 @@
 body:not(.is-mobile) {
-  &.blur-effect-off {
-    .modal {
-      backdrop-filter: none;
-      background-color: var(--background-secondary);
-    }
+  &.blur-effect-off .modal {
+    backdrop-filter: none;
+    background-color: var(--background-secondary);
+  }
+
+  &.theme-light .modal {
+    border-width: var(--modal-border-width) 0 0;
   }
 
   &.mod-macos {
