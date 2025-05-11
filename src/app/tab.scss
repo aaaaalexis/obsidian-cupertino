@@ -60,10 +60,13 @@ body:not(.is-phone) {
 
     .workspace-tab-header-inner {
       padding-inline-start: 12px;
-      padding-inline-end: 8px;
+      padding-inline-end: 4px;
     }
     .workspace-tab-header-inner-title {
       line-height: normal;
+    }
+    .workspace-tab-header-inner-close-button {
+      padding: 4px;
     }
 
     .workspace-tab-header-spacer {
