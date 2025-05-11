@@ -71,8 +71,9 @@ body:not(.is-mobile) {
   &:not(.hide-nav-header-off) .mod-sidedock .workspace-leaf-content:not([data-type="zotero-annotation-view"]) > .view-content > .nav-header {
     .nav-buttons-container,
     .nav-action-button,
+    .nav-action-button::after,
     svg.svg-icon {
-      transition: var(--anim-duration-fast) var(--anim-duration-fast) !important;
+      transition: var(--anim-duration-fast) !important;
     }
 
     &:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container {
@@ -86,6 +87,10 @@ body:not(.is-mobile) {
         padding: 2px;
         width: unset;
         height: unset;
+      }
+      .nav-action-button::after {
+        width: 0;
+        height: 0;
       }
       svg.svg-icon {
         --icon-size: 0px;
