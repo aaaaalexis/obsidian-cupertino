@@ -68,6 +68,8 @@ body.windows-mode-off:not(.is-mobile) {
       border-radius: 0;
       background-color: rgba(var(--mono-rgb-100), 0.02);
       padding: 12px 16px;
+      flex-wrap: wrap;
+      gap: 8px;
     }
     .setting-item-heading + .setting-item,
     *:not(.setting-item) + .setting-item:not(.setting-item-heading),
@@ -85,6 +87,12 @@ body.windows-mode-off:not(.is-mobile) {
     }
     .setting-item-info:has(.setting-item-name:empty) .setting-item-description {
       padding: 0;
+    }
+    .setting-item-info {
+      flex: 4;
+    }
+    .setting-item-control {
+      flex: 1;
     }
   }
 }
