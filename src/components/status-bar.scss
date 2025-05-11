@@ -40,7 +40,7 @@ body:not(.hide-status-off) .status-bar {
   &:not(:hover) {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    max-width: var(--tab-width);
+    max-width: 160px;
     height: 4px;
 
     > div {
