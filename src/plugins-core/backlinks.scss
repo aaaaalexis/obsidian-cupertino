@@ -3,10 +3,13 @@ body.is-mobile {
   .outgoing-link-pane {
     padding-bottom: unset;
     overflow: visible;
+    flex: 0;
   }
 }
 
 body.is-mobile .embedded-backlinks {
+  margin-bottom: 160px;
+
   .backlink-pane > .tree-item-self {
     height: var(--input-height);
   }
