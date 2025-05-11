@@ -59,6 +59,30 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
   .multi-select-pill-remove-button {
     margin-inline-end: 0;
   }
+
+  @container (width < 250px) {
+    .metadata-property {
+      flex-wrap: wrap;
+    }
+    .metadata-property .metadata-property-key,
+    .metadata-property .metadata-property-value {
+      padding: 0 16px;
+      min-height: 40px;
+    }
+    .metadata-property .multi-select-container {
+      padding: 8px 0;
+    }
+    .metadata-input,
+    .metadata-input-number,
+    .metadata-input-longtext,
+    .metadata-input-checkbox {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    input::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+  }
 }
 
 body:not(.is-mobile) {
