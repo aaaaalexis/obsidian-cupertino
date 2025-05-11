@@ -31,9 +31,12 @@ body:not(.is-mobile) {
   }
 
   .workspace .workspace-ribbon,
-  .workspace .workspace-ribbon.mod-left:before,
   .workspace .mod-sidedock > .workspace-leaf-resize-handle {
     border: none;
+  }
+
+  .workspace-ribbon.mod-left:before {
+    display: none;
   }
 
   .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
