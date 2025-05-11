@@ -1,6 +1,16 @@
 @media screen, print {
   .markdown-reading-view,
   .markdown-source-view {
+    --bold-color: var(--color-base-100);
+    --h1-color: var(--color-base-100);
+    --h2-color: var(--color-base-100);
+    --h3-color: var(--color-base-100);
+    --h4-color: var(--color-base-100);
+    --h5-color: var(--color-base-100);
+    --h6-color: var(--color-base-100);
+    --inline-title-color: var(--color-base-100);
+    --text-normal: var(--color-base-70);
+
     transition: var(--anim-duration-fast) ease-in-out;
   }
   .markdown-preview-view {
@@ -21,7 +31,7 @@
   }
 
   .markdown-rendered p {
-    letter-spacing: 0.1px;
+    letter-spacing: 0.2px;
   }
 
   /* Animation */
@@ -41,9 +51,7 @@
   /* Title */
   .inline-title,
   .embed-title {
-    margin-bottom: 24px;
-    border-bottom: var(--hr-thickness) solid var(--hr-color);
-    padding-bottom: 16px;
+    margin-bottom: 40px;
   }
 
   /* Image */
