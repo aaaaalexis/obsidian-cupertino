@@ -128,6 +128,14 @@ body:not(.is-phone) {
 
     .workspace-tab-header-inner {
       padding: 0 10px;
+
+      &:hover {
+        background-color: transparent;
+
+        .workspace-tab-header-inner-icon {
+          color: var(--icon-color-focused);
+        }
+      }
     }
 
     .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-icon {
