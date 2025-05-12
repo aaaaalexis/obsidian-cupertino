@@ -48,11 +48,11 @@ body {
       grid-column-gap: var(--img-grid-gap);
       grid-row-gap: 0;
       grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-      > img {
+      > img:not(:active) {
         object-fit: cover !important;
         align-self: stretch;
       }
-      > .internal-embed img {
+      > .internal-embed img:not(:active) {
         object-fit: cover !important;
         align-self: center;
       }
