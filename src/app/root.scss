@@ -430,11 +430,15 @@ body:not(.is-mobile) {
     --vault-profile-color: var(--text-muted);
     --icon-color: var(--text-muted);
   }
-}
 
-.titlebar {
-  background-color: transparent !important;
-  z-index: 1;
+  &.is-frameless:not(.is-hidden-frameless) .titlebar {
+    background-color: var(--background-secondary);
+  }
+
+  .titlebar {
+    background-color: transparent;
+    z-index: 1 !important;
+  }
 }
 
 body:not(.show-view-header):not(.is-phone) {
