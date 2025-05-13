@@ -434,6 +434,7 @@ body:not(.is-mobile) {
 
 .titlebar {
   background-color: transparent !important;
+  z-index: 1;
 }
 
 body:not(.show-view-header):not(.is-phone) {
