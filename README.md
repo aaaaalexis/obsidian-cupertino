@@ -71,14 +71,6 @@ Cupertino supports most filter and helper classes from [Minimal](https://github.
 | `cards-2-3`           | Fit images in cards to 2:3 ratio                 |
 | `cards-cols-1` to `8` | Force a specific number of columns (from 1 to 8) |
 
-### Editor filters
-
-| Class          | Description                                                               |
-| :------------- | :------------------------------------------------------------------------ |
-| `story`        | Centered headings, indented text and wider letter spacing for reading     |
-| `sepia`        | Low contrast with sepia hue from [Flexoki](https://stephango.com/flexoki) |
-| `low-contrast` | Low background and text contrast                                          |
-
 ### [Image filters](https://minimal.guide/images#Image+filters)
 
 Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
