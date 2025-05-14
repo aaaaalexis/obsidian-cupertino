@@ -125,7 +125,7 @@
     box-decoration-break: clone;
     border-radius: var(--radius-s);
     padding: 1px 4px;
-    color: var(--text-normal);
+    color: var(--color-base-100);
 
     &:not([style]):not([class*="hltr-"]) {
       color: var(--color-orange);
