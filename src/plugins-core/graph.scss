@@ -14,3 +14,19 @@
 .graph-controls-button.mod-animate {
   margin: 0 !important;
 }
+
+body.is-phone:not(.transparent-nav-off) {
+  .graph-controls {
+    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
+    inset-inline-end: 8px;
+    max-height: 70vh;
+  }
+
+  .setting-item {
+    padding: 8px 0;
+  }
+
+  .mod-search-setting {
+    padding-top: 0;
+  }
+}

@@ -77,7 +77,7 @@ body.is-phone {
       padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
     }
 
-    .mod-root .view-content > div:not(.markdown-source-view):not(.markdown-reading-view):not(.canvas-wrapper):not(.empty-state) {
+    .mod-root .view-content > div:not(.markdown-source-view):not(.markdown-reading-view):not(.canvas-wrapper):not(.graph-controls):not(.empty-state) {
       padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height));
     }
   }
