@@ -204,6 +204,8 @@ body {
   &.theme-light {
     --background-modifier-cover: rgba(170, 170, 170, 0.6);
     --background-modifier-border-hover: var(--color-base-25);
+    --color-base-80: #494949;
+    --color-base-90: #363636;
     --color-red-rgb: 255, 59, 48;
     --color-red: #ff3b30;
     --color-orange-rgb: 255, 149, 0;
@@ -245,6 +247,8 @@ body {
 
   &.theme-dark {
     --background-modifier-cover: rgba(0, 0, 0, 0.6);
+    --color-base-80: #c0c0c0;
+    --color-base-90: #cdcdcd;
     --color-red-rgb: 255, 69, 58;
     --color-red: #ff453a;
     --color-orange-rgb: 255, 159, 10;
