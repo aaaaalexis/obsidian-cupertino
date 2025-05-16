@@ -10,7 +10,7 @@ body[class*="mk-"] {
 
 body:not(.is-mobile) .mk-sidebar {
   button:not(.clickable-icon) {
-    box-shadow: none;
+    box-shadow: none !important;
   }
 
   .mk-main-menu-container {
@@ -21,10 +21,19 @@ body:not(.is-mobile) .mk-sidebar {
     padding-left: 4px;
   }
 
+  .nav-header {
+    padding: 8px 16px;
+  }
+
   .nav-buttons-container {
     border-radius: 0;
     background-color: transparent;
     padding: 0;
+  }
+
+  .nav-action-button {
+    width: 32px;
+    height: 32px;
   }
 }
 
