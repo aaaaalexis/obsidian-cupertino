@@ -424,8 +424,8 @@
       outline: 1px solid rgba(244, 244, 244, 0.12);
     }
 
-    .workspace.is-left-sidedock-open .workspace-leaf-resize-handle,
-    .workspace.is-right-sidedock-open .workspace-leaf-resize-handle {
+    .workspace.is-left-sidedock-open .mod-root .workspace-leaf-resize-handle,
+    .workspace.is-right-sidedock-open .mod-root .workspace-leaf-resize-handle {
       border-color: transparent;
     }
 
