@@ -51,9 +51,9 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
   }
   .multi-select-pill {
     padding: var(--tag-padding-y) var(--tag-padding-x);
+    line-height: var(--line-height-tight);
   }
   .multi-select-pill-content {
-    overflow: visible;
     margin-inline-start: 0;
   }
   .multi-select-pill-remove-button {
