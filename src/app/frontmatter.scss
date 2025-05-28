@@ -138,4 +138,8 @@ body.is-mobile {
   .metadata-property-warning-icon {
     height: auto;
   }
+
+  input::-webkit-calendar-picker-indicator {
+    display: none;
+  }
 }

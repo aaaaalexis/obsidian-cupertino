@@ -1,0 +1,310 @@
+/* NOT FOR INDEPENDENT USE - Android Mode is built upon the rest of Cupertino components. */
+
+body.is-mobile.is-android {
+  --font-text-theme: "Roboto", sans-serif;
+  --font-interface-theme: "Google Sans", "Roboto", sans-serif;
+  --h1-font: "Google Sans", "Roboto", sans-serif;
+  --h2-font: "Google Sans", "Roboto", sans-serif;
+  --h3-font: "Google Sans", "Roboto", sans-serif;
+  --h4-font: "Google Sans", "Roboto", sans-serif;
+  --h5-font: "Google Sans", "Roboto", sans-serif;
+  --h6-font: "Google Sans", "Roboto", sans-serif;
+  --divider-color: var(--color-base-50) !important;
+  --divider-width: 1px;
+  --radius-xl: 32px;
+  --radius-l: 24px;
+  --radius-m: 16px;
+  --radius-s: 8px;
+  --input-height: 48px;
+  --input-radius: var(--radius-s);
+  --input-font-weight: normal;
+  --toggle-border-width: 2px;
+  --toggle-width: 52px;
+  --toggle-thumb-height: 24px;
+  --toggle-thumb-width: 24px;
+  --slider-thumb-border-width: 2px;
+  --slider-thumb-border-color: var(--interactive-accent);
+  --slider-thumb-height: 44px;
+  --slider-thumb-width: 4px;
+  --slider-thumb-y: -18px;
+  --slider-thumb-radius: 100vh;
+  --slider-track-height: 16px;
+  --modal-header-height: 64px;
+  --tab-switcher-preview-background-shadow: none;
+  --tab-switcher-preview-radius: var(--radius-m);
+
+  /********** Components **********/
+  .checkbox-container {
+    border: 2px solid transparent;
+    box-sizing: content-box;
+    outline: none;
+  }
+  .checkbox-container::after {
+    box-shadow: none;
+  }
+  .checkbox-container:not(.is-enabled) {
+    border-color: var(--text-muted);
+    &::after {
+      background-color: var(--text-muted);
+    }
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    box-shadow: none;
+    outline: 6px solid var(--background-primary);
+  }
+
+  textarea,
+  input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
+  input[type="number"]:not(.metadata-input):not(.ant-input),
+  select,
+  .dropdown {
+    background-color: var(--background-secondary);
+    border: var(--divider-width) solid var(--divider-color);
+    padding: 4px 16px;
+    min-height: 56px;
+  }
+
+  /********** Top Bar **********/
+  .workspace .mod-root .workspace-leaf {
+    .view-header-left .mod-left-split-toggle svg {
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23e3e3e3'%3E%3Cpath d='M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z'/%3E%3C/svg%3E");
+      background-color: var(--icon-color);
+      > * {
+        display: none;
+      }
+    }
+  }
+
+  /********** Mode Switchcer **********/
+
+  &.is-phone:not(.mod-toolbar-open):not(.quick-mode-switch-off) .mod-root .view-actions button:nth-last-child(2) {
+    right: 16px;
+    z-index: var(--layer-cover);
+    backdrop-filter: none;
+    box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
+    border: none;
+    border-radius: var(--radius-m);
+    background-color: var(--background-secondary);
+    width: 56px;
+    height: 56px;
+  }
+  /********** Bottom Bar **********/
+
+  .mobile-navbar,
+  .workspace-drawer .nav-header {
+    background-color: var(--background-secondary);
+    padding: 8px max(var(--safe-area-inset-right), 16px) calc(var(--safe-area-inset-bottom) + 8px) max(var(--safe-area-inset-left), 16px);
+  }
+
+  .mobile-navbar-actions {
+    gap: 32px;
+  }
+
+  .mobile-navbar-action .clickable-icon {
+    padding: 0;
+    width: var(--input-height);
+    height: var(--input-height);
+  }
+
+  .mobile-navbar-action:nth-child(3) {
+    border-radius: var(--radius-m);
+    background-color: var(--interactive-accent);
+    .clickable-icon {
+      color: var(--text-on-accent);
+    }
+    svg {
+      --icon-size: 40px;
+      stroke-width: 1.5px;
+
+      circle {
+        display: none;
+      }
+    }
+  }
+
+  /********** Menu **********/
+  .menu {
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  }
+  .menu-grabber {
+    display: none;
+  }
+
+  .menu-scroll {
+    gap: 2px;
+    padding-top: 16px;
+  }
+  .menu-item:not(.is-label) {
+    flex-direction: row !important;
+    gap: 16px;
+  }
+  .menu-item.tappable:not(:has(.mod-checked)) .menu-item-title {
+    margin-left: 0 !important;
+  }
+  .menu-item {
+    border-radius: var(--radius-m);
+  }
+  .menu-item + .menu-item,
+  .menu-item:has(+ .menu-item) {
+    border-radius: var(--radius-s);
+  }
+  .menu-separator + .menu-item,
+  .menu-item:first-child:has(+ .menu-item) {
+    border-top-right-radius: var(--radius-m);
+    border-top-left-radius: var(--radius-m);
+  }
+  .menu-item:has(+ .menu-separator),
+  .menu-item + .menu-item:last-child {
+    border-bottom-right-radius: var(--radius-m);
+    border-bottom-left-radius: var(--radius-m);
+  }
+
+  /********** Sidebar **********/
+
+  .nav-files-container > div {
+    gap: 2px;
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: transparent;
+    overflow: hidden;
+  }
+
+  .nav-files-container .tree-item:not(:last-child)::before,
+  .nav-files-container .tree-item-children::before {
+    content: none;
+  }
+
+  .nav-files-container .tree-item-self {
+    border-radius: 100vh;
+  }
+
+  /********** Settings **********/
+
+  .modal.mod-settings,
+  .modal.mod-community-modal {
+    .vertical-tab-nav-item {
+      border: none;
+      border-radius: var(--radius-s);
+      background-color: var(--background-primary);
+      min-height: 64px;
+    }
+    .vertical-tab-nav-item-chevron {
+      display: none;
+    }
+
+    .vertical-tab-header {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .vertical-tab-header-group {
+      padding: 0 16px;
+    }
+    .vertical-tab-header-group-items {
+      gap: 2px;
+      border-radius: var(--radius-l);
+      background-color: transparent;
+    }
+    .vertical-tab-header-group-title {
+      display: none;
+    }
+
+    .setting-item-name {
+      text-transform: unset;
+    }
+
+    .vertical-tab-content {
+      background-color: var(--background-primary);
+    }
+  }
+
+  .mod-sidebar-layout {
+    .modal-header {
+      padding: var(--safe-area-inset-top) 16px 0 !important;
+    }
+    .modal-title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      max-width: 100%;
+      height: var(--modal-header-height);
+      font-size: var(--font-ui-large);
+      text-align: left;
+    }
+    .modal-setting-back-button {
+      display: flex;
+      position: relative;
+      top: unset;
+      justify-content: center;
+      align-items: center;
+      transition: var(--anim-duration-fast);
+      border-radius: 100vh;
+      background-color: var(--background-modifier-hover);
+      padding: 0;
+      width: 48px;
+      height: 48px;
+
+      @starting-style {
+        width: 0;
+      }
+    }
+    .modal-setting-back-button-icon {
+      margin-inline-end: 0;
+    }
+
+    .modal-close-button {
+      top: calc(var(--safe-area-inset-top) + 8px);
+      inset-inline-end: 16px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button {
+      border-radius: 100vh;
+      height: 56px;
+      width: unset;
+      padding: 0 24px;
+    }
+    button:not([class*="mod-"]) {
+      background-color: var(--background-secondary) !important;
+    }
+    button[class*="mod-"] {
+      background-color: var(--text-color);
+      color: var(--text-on-accent);
+    }
+    button.mod-cta {
+      background-color: var(--interactive-accent);
+    }
+    .setting-item {
+      border: none;
+    }
+    .setting-item.mod-toggle,
+    .setting-item-control .mobile-option-setting-item {
+      background-color: var(--background-secondary) !important;
+      border-radius: var(--radius-m);
+      padding: 16px;
+    }
+    .setting-item.mod-toggle:has(+ .setting-item.mod-toggle) {
+      border: none;
+      margin-bottom: 2px;
+      border-bottom-right-radius: var(--radius-s);
+      border-bottom-left-radius: var(--radius-s);
+    }
+    .setting-item.mod-toggle + .setting-item.mod-toggle {
+      border-top-right-radius: var(--radius-s);
+      border-top-left-radius: var(--radius-s);
+    }
+  }
+
+  /********** Tab Switcher **********/
+
+  .mobile-tab-switcher-menubar {
+    padding: 8px max(var(--safe-area-inset-right), 16px) calc(var(--safe-area-inset-bottom) + 8px) max(var(--safe-area-inset-left), 16px);
+    border: none;
+  }
+}

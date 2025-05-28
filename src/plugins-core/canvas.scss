@@ -49,7 +49,7 @@
   transition-delay: 3s;
 }
 
-body.is-phone:not(.transparent-nav-off) {
+body.is-phone:not(.transparent-nav-off):not(.is-android) {
   .canvas-controls {
     top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
   }

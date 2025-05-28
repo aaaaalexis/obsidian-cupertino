@@ -43,6 +43,10 @@ body.is-phone .style-settings-heading[data-id="cupertino"] + .style-settings-con
   }
 }
 
+body.is-android .setting-item[data-id="transparent-nav-off"] {
+  display: none;
+}
+
 body.is-tablet .style-settings-heading[data-id="cupertino"] + .style-settings-container {
   .style-settings-heading[data-id="desktop-header"],
   .style-settings-heading[data-id="desktop-header"] + .style-settings-container,

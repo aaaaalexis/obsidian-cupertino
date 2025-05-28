@@ -15,7 +15,7 @@
   margin: 0 !important;
 }
 
-body.is-phone:not(.transparent-nav-off) {
+body.is-phone:not(.transparent-nav-off):not(.is-android) {
   .graph-controls {
     top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
     inset-inline-end: 8px;

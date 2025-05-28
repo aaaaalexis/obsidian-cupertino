@@ -118,7 +118,7 @@ body.is-mobile {
   }
 }
 
-body.is-phone {
+body.is-phone:not(.is-android) {
   textarea,
   input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
   input[type="number"]:not(.metadata-input):not(.ant-input),

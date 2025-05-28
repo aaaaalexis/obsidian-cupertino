@@ -134,7 +134,8 @@ body.is-mobile {
   }
 }
 
-body.is-phone.transparent-nav-off {
+body.is-phone.transparent-nav-off,
+body.is-android {
   .empty-state-action:first-child {
     padding-top: 12px;
   }

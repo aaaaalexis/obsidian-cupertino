@@ -53,7 +53,9 @@ body:not(.is-phone) #cMenuToolbarModalBar button {
 
 body.is-phone {
   &.transparent-nav-off #cMenuToolbarModalBar,
-  &.transparent-nav-off #cMenuToolbarPopoverBar {
+  &.transparent-nav-off #cMenuToolbarPopoverBar,
+  &.is-android #cMenuToolbarModalBar,
+  &.is-android #cMenuToolbarPopoverBar {
     top: 0 !important;
   }
 
