@@ -48,12 +48,6 @@
     color: var(--text-on-accent) !important;
   }
 
-  /* Title */
-  .inline-title,
-  .embed-title {
-    margin-bottom: 40px;
-  }
-
   /* Image */
   img {
     border-radius: var(--radius-s);
@@ -415,6 +409,12 @@
     .workspace.is-left-sidedock-open .mod-root .workspace-leaf-resize-handle,
     .workspace.is-right-sidedock-open .mod-root .workspace-leaf-resize-handle {
       border-color: transparent;
+    }
+
+    /* Title */
+    .inline-title,
+    .embed-title {
+      margin-bottom: 40px;
     }
 
     .mod-root {
