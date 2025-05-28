@@ -342,6 +342,11 @@
         border-left-width: 0 !important;
       }
     }
+
+    .table-col-btn,
+    .table-row-btn {
+      border: none !important;
+    }
   }
 
   .cm-html-embed td,
