@@ -61,7 +61,6 @@ body.is-mobile.is-android {
   .dropdown {
     background-color: var(--background-secondary);
     border: var(--divider-width) solid var(--divider-color);
-    padding: 4px 16px;
     min-height: 56px;
   }
 
@@ -188,17 +187,18 @@ body.is-mobile.is-android {
       border-radius: var(--radius-s);
       background-color: var(--background-primary);
       min-height: 64px;
+      transition: border-radius var(--anim-duration-fast);
+    }
+    .vertical-tab-nav-item.is-active {
+      border-radius: var(--radius-l);
+      background-color: var(--interactive-accent);
+      color: var(--text-on-accent);
     }
     .vertical-tab-nav-item-chevron {
       display: none;
     }
 
     .vertical-tab-header {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-    .vertical-tab-header-group {
       padding: 0 16px;
     }
     .vertical-tab-header-group-items {
@@ -210,12 +210,9 @@ body.is-mobile.is-android {
       display: none;
     }
 
-    .setting-item-name {
+    .setting-item-heading .setting-item-name {
       text-transform: unset;
-    }
-
-    .vertical-tab-content {
-      background-color: var(--background-primary);
+      color: var(--text-accent);
     }
   }
 
@@ -255,8 +252,6 @@ body.is-mobile.is-android {
     }
 
     .modal-close-button {
-      top: calc(var(--safe-area-inset-top) + 8px);
-      inset-inline-end: 16px;
       width: 48px;
       height: 48px;
       display: flex;
@@ -283,21 +278,67 @@ body.is-mobile.is-android {
     .setting-item {
       border: none;
     }
-    .setting-item.mod-toggle,
-    .setting-item-control .mobile-option-setting-item {
-      background-color: var(--background-secondary) !important;
-      border-radius: var(--radius-m);
-      padding: 16px;
+  }
+
+  &.is-phone {
+    .modal.mod-settings .vertical-tab-content,
+    .modal.mod-community-modal .vertical-tab-content {
+      background-color: var(--background-primary);
     }
-    .setting-item.mod-toggle:has(+ .setting-item.mod-toggle) {
-      border: none;
-      margin-bottom: 2px;
-      border-bottom-right-radius: var(--radius-s);
-      border-bottom-left-radius: var(--radius-s);
+
+    .mod-sidebar-layout {
+      .modal-close-button {
+        top: calc(var(--safe-area-inset-top) + 8px);
+        inset-inline-end: 16px;
+      }
+
+      .setting-item.mod-toggle,
+      .setting-item-control .mobile-option-setting-item {
+        background-color: var(--background-secondary) !important;
+        border-radius: var(--radius-m);
+        padding: 16px;
+      }
+      .setting-item.mod-toggle:has(+ .setting-item.mod-toggle) {
+        border: none;
+        margin-bottom: 2px;
+        border-bottom-right-radius: var(--radius-s);
+        border-bottom-left-radius: var(--radius-s);
+      }
+      .setting-item.mod-toggle + .setting-item.mod-toggle {
+        border-top-right-radius: var(--radius-s);
+        border-top-left-radius: var(--radius-s);
+      }
     }
-    .setting-item.mod-toggle + .setting-item.mod-toggle {
-      border-top-right-radius: var(--radius-s);
-      border-top-left-radius: var(--radius-s);
+  }
+
+  &.is-tablet {
+    .mod-sidebar-layout {
+      .modal-close-button {
+        border-radius: 100vh;
+        background-color: var(--background-modifier-hover);
+      }
+
+      .vertical-tab-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .setting-item:not(.setting-item-heading) {
+        border-radius: var(--radius-s);
+      }
+      .setting-item-heading + .setting-item,
+      *:not(.setting-item) + .setting-item:not(.setting-item-heading),
+      .setting-item:first-child:not(.setting-item-heading) {
+        border-top-right-radius: var(--radius-m) !important;
+        border-top-left-radius: var(--radius-m) !important;
+      }
+      .setting-item:has(+ .setting-item-heading),
+      .setting-item:has(+ *:not(.setting-item)):not(.setting-item-heading),
+      .setting-item:last-child {
+        border-bottom-right-radius: var(--radius-m) !important;
+        border-bottom-left-radius: var(--radius-m) !important;
+      }
     }
   }
 
