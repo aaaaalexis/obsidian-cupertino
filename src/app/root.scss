@@ -134,7 +134,6 @@ body {
   --code-string: var(--color-cyan);
   --code-tag: var(--color-red);
   --code-value: var(--color-purple);
-  --dialog-width: fit-content;
   --divider-color-hover: var(--text-faint);
   --dropdown-background-size: var(--icon-s);
   --dropdown-padding: 4px 16px 4px 8px;
@@ -290,6 +289,7 @@ body {
   }
 
   &:not(.is-mobile) {
+    --dialog-width: fit-content;
     --icon-xl: 24px;
 
     &.theme-light {
