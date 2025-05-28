@@ -372,6 +372,12 @@ body:not(.is-mobile):not(.is-hidden-frameless) {
 }
 
 body.is-tablet {
+  .sidebar-toggle-button {
+    padding: 0;
+    height: var(--header-height);
+    align-items: center;
+  }
+
   .workspace-tab-header-container {
     padding: 0 16px !important;
   }
