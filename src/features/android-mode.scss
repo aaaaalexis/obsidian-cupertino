@@ -26,12 +26,13 @@ body.is-mobile.is-android {
   --slider-thumb-border-color: var(--interactive-accent);
   --slider-thumb-height: 44px;
   --slider-thumb-width: 4px;
-  --slider-thumb-y: -18px;
+  --slider-thumb-y: -19px;
   --slider-thumb-radius: 100vh;
   --slider-track-height: 16px;
   --modal-header-height: 64px;
   --tab-switcher-preview-background-shadow: none;
   --tab-switcher-preview-radius: var(--radius-m);
+  --interactive-normal: var(--background-secondary);
 
   /********** Components **********/
   .checkbox-container {
@@ -53,15 +54,26 @@ body.is-mobile.is-android {
     box-shadow: none;
     outline: 6px solid var(--background-primary);
   }
+  input[type="range"]:active,
+  input[type="range"]:focus,
+  input[type="range"]:focus-within,
+  input[type="range"]:hover {
+    --slider-thumb-y: -23px;
+    --slider-thumb-height: 52px;
+    --slider-track-height: 40px;
+  }
 
   textarea,
   input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
-  input[type="number"]:not(.metadata-input):not(.ant-input),
-  select,
-  .dropdown {
-    background-color: var(--background-secondary);
-    border: var(--divider-width) solid var(--divider-color);
-    min-height: 56px;
+  input[type="number"]:not(.metadata-input):not(.ant-input) {
+    background-color: var(--interactive-normal);
+    border-bottom: var(--divider-width) solid var(--divider-color);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
   }
 
   /********** Top Bar **********/
@@ -84,7 +96,7 @@ body.is-mobile.is-android {
     box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
     border: none;
     border-radius: var(--radius-m);
-    background-color: var(--background-secondary);
+    background-color: var(--interactive-normal);
     width: 56px;
     height: 56px;
   }
@@ -213,6 +225,8 @@ body.is-mobile.is-android {
     .setting-item-heading .setting-item-name {
       text-transform: unset;
       color: var(--text-accent);
+      letter-spacing: 0.1px;
+      padding-left: 8px;
     }
   }
 
@@ -259,21 +273,29 @@ body.is-mobile.is-android {
       justify-content: center;
     }
 
-    button {
+    button:not(.clickable-icon) {
       border-radius: 100vh;
-      height: 56px;
-      width: unset;
+      border: var(--divider-width) solid var(--divider-color);
       padding: 0 24px;
+      font-weight: var(--input-font-weight);
+      width: unset;
+
+      &:not([class*="mod-"]) {
+        background-color: var(--interactive-normal) !important;
+      }
+      &[class*="mod-"] {
+        background-color: var(--text-color);
+        color: var(--text-on-accent);
+      }
+      &.mod-cta {
+        background-color: var(--interactive-accent);
+      }
     }
-    button:not([class*="mod-"]) {
-      background-color: var(--background-secondary) !important;
-    }
-    button[class*="mod-"] {
-      background-color: var(--text-color);
-      color: var(--text-on-accent);
-    }
-    button.mod-cta {
-      background-color: var(--interactive-accent);
+    select,
+    .dropdown {
+      padding: 0 24px;
+      border: var(--divider-width) solid var(--divider-color);
+      background-color: var(--interactive-normal);
     }
     .setting-item {
       border: none;
@@ -283,7 +305,7 @@ body.is-mobile.is-android {
   &.is-phone {
     .modal.mod-settings .vertical-tab-content,
     .modal.mod-community-modal .vertical-tab-content {
-      background-color: var(--background-primary);
+      padding: 0 16px 100px;
     }
 
     .mod-sidebar-layout {
@@ -292,19 +314,19 @@ body.is-mobile.is-android {
         inset-inline-end: 16px;
       }
 
-      .setting-item.mod-toggle,
+      .setting-item:not(.setting-item-heading),
       .setting-item-control .mobile-option-setting-item {
-        background-color: var(--background-secondary) !important;
+        background-color: var(--background-primary) !important;
         border-radius: var(--radius-m);
         padding: 16px;
       }
-      .setting-item.mod-toggle:has(+ .setting-item.mod-toggle) {
+      .setting-item:not(.setting-item-heading):has(+ .setting-item:not(.setting-item-heading)) {
         border: none;
         margin-bottom: 2px;
         border-bottom-right-radius: var(--radius-s);
         border-bottom-left-radius: var(--radius-s);
       }
-      .setting-item.mod-toggle + .setting-item.mod-toggle {
+      .setting-item:not(.setting-item-heading) + .setting-item:not(.setting-item-heading) {
         border-top-right-radius: var(--radius-s);
         border-top-left-radius: var(--radius-s);
       }
