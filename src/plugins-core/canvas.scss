@@ -6,6 +6,7 @@
   backdrop-filter: blur(32px);
   box-shadow: none;
   background-color: rgb(from var(--background-secondary) r g b / 50%);
+  border-width: var(--border-width)
 }
 
 .canvas-control-item {
@@ -49,13 +50,15 @@
   transition-delay: 3s;
 }
 
-body.is-phone:not(.transparent-nav-off):not(.is-android) {
+body.is-phone {
+  .canvas-control-item {
+    width: var(--input-height);
+    height: var(--input-height);
+  }
+}
+
+body.is-phone:not(.transparent-nav-off):not(.is-android:not(.material-off)) {
   .canvas-controls {
     top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
-  }
-
-  .canvas-control-item {
-    width: 44px;
-    height: 44px;
   }
 }

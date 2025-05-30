@@ -1,3 +1,6 @@
+.graph-controls {
+  border-radius: var(--radius-s);
+}
 .graph-controls.is-close {
   backdrop-filter: blur(32px);
   border: var(--border-width) solid var(--background-modifier-border);
@@ -15,11 +18,10 @@
   margin: 0 !important;
 }
 
-body.is-phone:not(.transparent-nav-off):not(.is-android) {
+body.is-phone {
   .graph-controls {
-    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
+    top: 8px;
     inset-inline-end: 8px;
-    max-height: 70vh;
   }
 
   .setting-item {
@@ -28,5 +30,12 @@ body.is-phone:not(.transparent-nav-off):not(.is-android) {
 
   .mod-search-setting {
     padding-top: 0;
+  }
+}
+
+body.is-phone:not(.transparent-nav-off):not(.is-android:not(.material-off)) {
+  .graph-controls {
+    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
+    max-height: 70vh;
   }
 }
