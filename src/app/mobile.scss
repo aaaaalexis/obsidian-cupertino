@@ -40,8 +40,8 @@ body.is-phone {
     border-radius: 100%;
     background-color: rgb(from var(--background-secondary) r g b / 50%);
     padding: 12px;
-    width: 44px;
-    height: 44px;
+    width: var(--input-height);
+    height: var(--input-height);
     color: var(--text-muted);
   }
 

@@ -10,7 +10,7 @@ body.is-mobile .reader-active {
     transform: none;
     backdrop-filter: blur(32px);
     border: var(--border-width) solid var(--background-modifier-border);
-    width: 44px;
+    width: var(--input-height);
   }
 
   .reader-mobile-nav button {
