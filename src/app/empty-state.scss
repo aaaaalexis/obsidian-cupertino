@@ -123,7 +123,7 @@ body.is-mobile {
   }
   .empty-state-action:first-child {
     margin-top: 0;
-    padding-top: calc(var(--safe-area-inset-top) + 12px);
+    padding-top: calc(var(--safe-area-inset-top) + 16px);
   }
   .empty-state-action:nth-child(2) {
     background-color: var(--background-secondary) !important;
@@ -135,9 +135,9 @@ body.is-mobile {
 }
 
 body.is-phone.transparent-nav-off,
-body.is-android {
+body.is-phone.is-android:not(.material-off) {
   .empty-state-action:first-child {
-    padding-top: 12px;
+    padding-top: calc(var(--safe-area-inset-top) + 8px);
   }
 }
 
@@ -147,6 +147,6 @@ body.is-tablet {
   }
   .empty-state-action:first-child {
     margin-top: 0;
-    padding-top: 5px;
+    padding-top: 8px;
   }
 }
