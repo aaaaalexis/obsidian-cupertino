@@ -28,6 +28,20 @@
   .checkbox {
     box-shadow: inset 0 0 0 1px var(--checkbox-border-color);
     border: none !important;
+    border-radius: var(--checkbox-radius) !important;
     padding: 0 !important;
+  }
+
+  .checked {
+    border-radius: var(--checkbox-radius) !important;
+    background-color: var(--checkbox-color) !important;
+
+    &:after {
+      display: inherit;
+      background-color: var(--checkbox-marker-color);
+      width: 100%;
+      height: 100%;
+      content: "";
+    }
   }
 }
