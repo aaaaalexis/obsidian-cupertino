@@ -134,7 +134,7 @@ body.is-mobile {
   }
 }
 
-body.is-phone.transparent-nav-off,
+body.is-phone.transparency-off,
 body.is-phone.is-android:not(.material-off) {
   .empty-state-action:first-child {
     padding-top: calc(var(--safe-area-inset-top) + 8px);

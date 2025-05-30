@@ -95,7 +95,7 @@ settings:
         title: Disable quick mode switch
         type: class-toggle
     -
-        id: transparent-nav-off
+        id: transparency-off
         title: Reduced transparency
         type: class-toggle
     -
@@ -152,6 +152,7 @@ body {
   --embed-padding: 16px;
   --font-text-theme: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   --font-interface-theme: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  --file-header-border: none;
   --highlight-mix-blend-mode: none !important;
   --hr-color: var(--background-modifier-hover);
   --icon-opacity: 1;
@@ -353,6 +354,7 @@ body {
     --toggle-width: 51px;
     --toolbar-option-width: calc(16px + var(--mobile-toolbar-height));
     --view-header-height: 44px;
+    --dropdown-padding: 4px 32px 4px 16px;
 
     padding: 0;
 
@@ -369,11 +371,9 @@ body {
     --mobile-sidebar-max-width: 100%;
     --tab-outline-width: 1px;
     --tab-outline-width: 1px;
-    --dropdown-padding: 4px 16px;
   }
 
   &.is-tablet {
-    --dropdown-padding: 4px 32px 4px 16px;
     --prompt-input-height: 56px;
 
     .mod-root {
@@ -383,6 +383,11 @@ body {
     &.show-ribbon {
       --ribbon-width: 52px;
     }
+  }
+
+  &.blur-effect-off,
+  &.transparency-off {
+    --modal-background: var(--background-secondary) !important;
   }
 
   &:not(.is-focused) {

@@ -43,13 +43,17 @@ body.is-phone {
     width: var(--input-height);
     height: var(--input-height);
     color: var(--text-muted);
-  }
-
-  &:not(.transparent-nav-off):not(.is-android:not(.material-off)):not(.mod-toolbar-open):not(.quick-mode-switch-off) .mod-root .view-actions button:nth-last-child(2) {
     margin-bottom: 80px;
   }
 
-  &:not(.transparent-nav-off):not(.is-android:not(.material-off)) .workspace .mod-root .workspace-leaf .view-header {
+  &.transparency-off:not(.quick-mode-switch-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2),
+  &.is-android:not(.material-off):not(.quick-mode-switch-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+    backdrop-filter: none;
+    background-color: var(--background-secondary);
+    margin-bottom: 0;
+  }
+
+  &:not(.transparency-off):not(.is-android:not(.material-off)) .workspace .mod-root .workspace-leaf .view-header {
     position: fixed;
     background-color: transparent;
     padding-top: var(--safe-area-inset-top);
@@ -68,7 +72,7 @@ body.is-phone {
     }
   }
 
-  &:not(.transparent-nav-off):not(.is-android:not(.material-off)) {
+  &:not(.transparency-off):not(.is-android:not(.material-off)) {
     .view-content > .markdown-reading-view > div:first-child {
       padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
     }
@@ -82,7 +86,7 @@ body.is-phone {
     }
   }
 
-  &.transparent-nav-off .mod-root .view-header,
+  &.transparency-off .mod-root .view-header,
   &.is-android:not(.material-off) .mod-root .view-header {
     padding-top: var(--safe-area-inset-top);
   }
@@ -220,11 +224,6 @@ body.is-mobile {
     }
   }
 
-  .workspace-drawer .nav-header {
-    backdrop-filter: blur(32px);
-    border: none;
-  }
-
   .mobile-navbar-action {
     display: flex;
     justify-content: center;
@@ -249,10 +248,17 @@ body.is-mobile {
   .workspace-drawer .nav-header {
     padding: 4px max(var(--safe-area-inset-right), 8px) max(4px, var(--safe-area-inset-bottom)) max(var(--safe-area-inset-left), 8px);
     width: 100%;
+    border: none;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: var(--layer-status-bar);
+    background-color: var(--background-primary);
   }
 }
 
-body.is-mobile:not(.transparent-nav-off):not(.is-android:not(.material-off)) {
+body.is-mobile:not(.transparency-off):not(.is-android:not(.material-off)) {
   &.theme-light .mobile-toolbar {
     background-color: rgb(209, 211, 218);
 
@@ -268,13 +274,12 @@ body.is-mobile:not(.transparent-nav-off):not(.is-android:not(.material-off)) {
     }
   }
 
+  .workspace-drawer .nav-header {
+    backdrop-filter: blur(32px);
+  }
+
   .mobile-navbar,
   .workspace-drawer .nav-header {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: var(--layer-status-bar);
     background-color: transparent;
   }
 
@@ -289,7 +294,7 @@ body.is-mobile:not(.transparent-nav-off):not(.is-android:not(.material-off)) {
   }
 }
 
-body.is-phone:not(.transparent-nav-off):not(.is-android:not(.material-off)) {
+body.is-phone:not(.transparency-off):not(.is-android:not(.material-off)) {
   &.theme-light {
     .workspace-drawer .nav-header {
       background-color: rgb(from var(--background-secondary) r g b / 50%);
@@ -302,7 +307,7 @@ body.is-phone:not(.transparent-nav-off):not(.is-android:not(.material-off)) {
   }
 }
 
-body.is-tablet {
+body.is-tablet:not(.transparency-off):not(.is-android:not(.material-off)) {
   &.theme-dark {
     .workspace-drawer .nav-header {
       background-color: rgb(from var(--background-primary-alt) r g b / 75%);
@@ -310,9 +315,6 @@ body.is-tablet {
     .workspace-drawer.is-pinned .nav-header {
       background-color: rgb(from var(--background-primary) r g b / 75%);
     }
-  }
-  .nav-buttons-container {
-    padding: 0;
   }
 }
 
@@ -359,6 +361,11 @@ body.is-phone {
     width: 100%;
     height: 100%;
     content: "";
+  }
+  &.transparency-off .mobile-tab-switcher-scroll::before,
+  &.is-android:not(.material-off) .mobile-tab-switcher-scroll::before {
+    backdrop-filter: none;
+    background-color: var(--background-secondary);
   }
   .mobile-tab-wrapper {
     z-index: 2;

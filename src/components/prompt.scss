@@ -1,9 +1,9 @@
-body:not(.is-phone) {
-  &.blur-effect-off .prompt {
-    backdrop-filter: none;
-    background-color: var(--background-secondary) !important;
-  }
+body.blur-effect-off .prompt,
+body.transparency-off .prompt {
+  backdrop-filter: none;
+}
 
+body:not(.is-phone) {
   .modal-container:has(.prompt):not(:last-child) {
     opacity: 0;
   }

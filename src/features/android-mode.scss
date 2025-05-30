@@ -1,14 +1,15 @@
 /* NOT FOR INDEPENDENT USE - Android Mode is built upon the rest of Cupertino components. */
 
-body.is-mobile.is-android {
+body.is-mobile.is-android:not(.material-off) {
   --font-text-theme: "Roboto", sans-serif;
   --font-interface-theme: "Google Sans", "Roboto", sans-serif;
-  --h1-font: "Google Sans", "Roboto", sans-serif;
-  --h2-font: "Google Sans", "Roboto", sans-serif;
-  --h3-font: "Google Sans", "Roboto", sans-serif;
-  --h4-font: "Google Sans", "Roboto", sans-serif;
-  --h5-font: "Google Sans", "Roboto", sans-serif;
-  --h6-font: "Google Sans", "Roboto", sans-serif;
+  --h1-font: var(--font-interface-theme);
+  --h2-font: var(--font-interface-theme);
+  --h3-font: var(--font-interface-theme);
+  --h4-font: var(--font-interface-theme);
+  --h5-font: var(--font-interface-theme);
+  --h6-font: var(--font-interface-theme);
+  --border-width: 1px;
   --divider-color: var(--color-base-50) !important;
   --divider-width: 1px;
   --radius-xl: 32px;
@@ -64,15 +65,47 @@ body.is-mobile.is-android {
   }
 
   textarea,
+  textarea,
   input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
-  input[type="number"]:not(.metadata-input):not(.ant-input) {
+  input[type="number"]:not(.ant-input),
+  input[type="search"]:not(.ant-input) {
     background-color: var(--interactive-normal);
-    border-bottom: var(--divider-width) solid var(--divider-color);
+    border-bottom: var(--border-width) solid var(--divider-color);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 
     &:focus {
       box-shadow: none;
+    }
+  }
+
+  textarea,
+  input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
+  input[type="number"]:not(.metadata-input):not(.ant-input),
+  input[type="search"]:not(.ant-input),
+  select,
+  .dropdown {
+    padding-left: 16px;
+  }
+
+  button:not(.clickable-icon):not(.modal:not(.mod-settings):not(.mod-community-modal) button):not(.view-content button):not([class*="mod-"]),
+  select,
+  .dropdown {
+    border: var(--border-width) solid var(--divider-color);
+    background-color: var(--interactive-normal);
+    font-weight: var(--input-font-weight);
+  }
+
+  button:not(.clickable-icon) {
+    border-radius: 100vh;
+
+    &[class*="mod-"] {
+      background-color: var(--text-color);
+      color: var(--text-on-accent);
+      border: none;
+    }
+    &.mod-cta {
+      background-color: var(--interactive-accent);
     }
   }
 
@@ -96,7 +129,6 @@ body.is-mobile.is-android {
     box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
     border: none;
     border-radius: var(--radius-m);
-    background-color: var(--interactive-normal);
     width: 56px;
     height: 56px;
   }
@@ -138,13 +170,16 @@ body.is-mobile.is-android {
   .menu {
     border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   }
+
   .menu-grabber {
-    display: none;
+    top: 16px;
+    height: 4px;
+    width: 32px;
   }
 
   .menu-scroll {
     gap: 2px;
-    padding-top: 16px;
+    padding-top: 34px;
   }
   .menu-item:not(.is-label) {
     flex-direction: row !important;
@@ -190,14 +225,36 @@ body.is-mobile.is-android {
     border-radius: 100vh;
   }
 
+  .nav-folder:not(.is-collapsed) > .nav-folder-title {
+    background-color: var(--nav-item-background-hover);
+  }
+
   /********** Settings **********/
 
+  &.theme-light {
+    .modal.mod-settings,
+    .modal.mod-community-modal {
+      .vertical-tab-nav-item,
+      .setting-item:not(.setting-item-heading) {
+        background-color: var(--background-primary);
+      }
+    }
+  }
+
+  &.theme-dark {
+    .modal.mod-settings,
+    .modal.mod-community-modal {
+      .vertical-tab-nav-item,
+      .setting-item:not(.setting-item-heading) {
+        background-color: var(--background-secondary);
+      }
+    }
+  }
   .modal.mod-settings,
   .modal.mod-community-modal {
     .vertical-tab-nav-item {
       border: none;
       border-radius: var(--radius-s);
-      background-color: var(--background-primary);
       min-height: 64px;
       transition: border-radius var(--anim-duration-fast);
     }
@@ -222,15 +279,21 @@ body.is-mobile.is-android {
       display: none;
     }
 
+    .hotkey-list-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
     .setting-item-heading .setting-item-name {
+      font-family: var(--font-text-theme);
       text-transform: unset;
       color: var(--text-accent);
       letter-spacing: 0.1px;
       padding-left: 8px;
+      font-weight: bold;
     }
-  }
 
-  .mod-sidebar-layout {
     .modal-header {
       padding: var(--safe-area-inset-top) 16px 0 !important;
     }
@@ -256,6 +319,7 @@ body.is-mobile.is-android {
       padding: 0;
       width: 48px;
       height: 48px;
+      order: -1;
 
       @starting-style {
         width: 0;
@@ -273,32 +337,13 @@ body.is-mobile.is-android {
       justify-content: center;
     }
 
-    button:not(.clickable-icon) {
-      border-radius: 100vh;
-      border: var(--divider-width) solid var(--divider-color);
-      padding: 0 24px;
-      font-weight: var(--input-font-weight);
-      width: unset;
-
-      &:not([class*="mod-"]) {
-        background-color: var(--interactive-normal) !important;
-      }
-      &[class*="mod-"] {
-        background-color: var(--text-color);
-        color: var(--text-on-accent);
-      }
-      &.mod-cta {
-        background-color: var(--interactive-accent);
-      }
-    }
-    select,
-    .dropdown {
-      padding: 0 24px;
-      border: var(--divider-width) solid var(--divider-color);
-      background-color: var(--interactive-normal);
-    }
     .setting-item {
       border: none;
+    }
+
+    button:not(.clickable-icon) {
+      padding: 24px;
+      width: unset;
     }
   }
 
@@ -316,7 +361,6 @@ body.is-mobile.is-android {
 
       .setting-item:not(.setting-item-heading),
       .setting-item-control .mobile-option-setting-item {
-        background-color: var(--background-primary) !important;
         border-radius: var(--radius-m);
         padding: 16px;
       }

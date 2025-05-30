@@ -6,7 +6,7 @@
   backdrop-filter: blur(32px);
   box-shadow: none;
   background-color: rgb(from var(--background-secondary) r g b / 50%);
-  border-width: var(--border-width)
+  border-width: var(--border-width);
 }
 
 .canvas-control-item {
@@ -57,7 +57,13 @@ body.is-phone {
   }
 }
 
-body.is-phone:not(.transparent-nav-off):not(.is-android:not(.material-off)) {
+body.is-mobile.transparency-off .canvas-control-group,
+body.is-android:not(.material-off) .canvas-control-group {
+  backdrop-filter: none;
+  background-color: var(--interactive-normal);
+}
+
+body.is-phone:not(.transparency-off):not(.is-android:not(.material-off)) {
   .canvas-controls {
     top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
   }

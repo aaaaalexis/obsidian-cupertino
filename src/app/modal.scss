@@ -1,9 +1,9 @@
-body:not(.is-mobile) {
-  &.blur-effect-off .modal {
-    backdrop-filter: none;
-    background-color: var(--background-secondary);
-  }
+body.blur-effect-off .modal,
+body.transparency-off .modal {
+  backdrop-filter: none;
+}
 
+body:not(.is-mobile) {
   &.theme-light .modal {
     border-width: var(--modal-border-width) 0 0;
   }
@@ -77,7 +77,7 @@ body:not(.is-mobile) {
   }
 }
 
-body.is-mobile {
+body.is-mobile:not(.is-android:not(.material-off)) {
   .modal {
     --interactive-normal: unset !important;
     background-color: var(--modal-background) !important;
@@ -158,14 +158,20 @@ body.is-mobile {
   }
 }
 
-body.is-phone {
+body.is-phone:not(.is-android:not(.material-off)) {
   .modal {
     box-shadow: none !important;
     padding-bottom: var(--safe-area-inset-bottom);
   }
 }
 
-body.is-tablet {
+body.is-phone:not(.transparency-off) {
+  .modal {
+    backdrop-filter: none;
+  }
+}
+
+body.is-tablet:not(.is-android:not(.material-off)) {
   .modal {
     outline: var(--prompt-border-width) solid var(--background-modifier-hover);
   }

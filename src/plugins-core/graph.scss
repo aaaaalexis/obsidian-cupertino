@@ -18,6 +18,12 @@
   margin: 0 !important;
 }
 
+body.is-mobile.transparency-off .graph-controls.is-close,
+body.is-android:not(.material-off) .graph-controls.is-close {
+  backdrop-filter: none;
+  background-color: var(--interactive-normal);
+}
+
 body.is-phone {
   .graph-controls {
     top: 8px;
@@ -33,7 +39,7 @@ body.is-phone {
   }
 }
 
-body.is-phone:not(.transparent-nav-off):not(.is-android:not(.material-off)) {
+body.is-phone:not(.transparency-off):not(.is-android:not(.material-off)) {
   .graph-controls {
     top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
     max-height: 70vh;
