@@ -234,13 +234,6 @@ body {
     --code-string: #0d97b3;
     --code-tag: #e45749;
     --code-value: #a626a4;
-
-    .menu,
-    .suggestion-container,
-    .prompt,
-    .modal {
-      outline: var(--prompt-border-width) solid rgba(0, 0, 0, 0.1);
-    }
   }
 
   &.theme-dark {
@@ -278,13 +271,6 @@ body {
     --code-string: #58b6c2;
     --code-tag: #e16d76;
     --code-value: #c678de;
-
-    .menu,
-    .suggestion-container,
-    .prompt,
-    .modal {
-      outline: var(--prompt-border-width) solid black;
-    }
   }
 
   &:not(.is-mobile) {
@@ -294,10 +280,24 @@ body {
     &.theme-light {
       --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
       --shadow-l: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
+      .menu,
+      .suggestion-container,
+      .prompt,
+      .modal {
+        outline: var(--prompt-border-width) solid rgba(0, 0, 0, 0.1);
+      }
     }
     &.theme-dark {
       --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
       --shadow-l: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
+      .menu,
+      .suggestion-container,
+      .prompt,
+      .modal {
+        outline: var(--prompt-border-width) solid black;
+      }
     }
   }
 
