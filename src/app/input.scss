@@ -118,7 +118,7 @@ body.is-mobile {
   }
 }
 
-body.is-phone:not(.is-android) {
+body.is-phone:not(.is-android:not(.material-off)) {
   textarea,
   input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
   input[type="number"]:not(.metadata-input):not(.ant-input),
@@ -144,7 +144,7 @@ body.is-phone:not(.is-android) {
   }
 }
 
-body.is-tablet {
+body.is-tablet:not(.is-android:not(.material-off)) {
   textarea,
   input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
   input[type="number"]:not(.ant-input),

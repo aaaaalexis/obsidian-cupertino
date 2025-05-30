@@ -176,7 +176,7 @@ body.is-mobile {
   }
 }
 
-body.is-phone:not(.is-android) {
+body.is-phone:not(.is-android:not(.material-off)) {
   .modal:not(.mod-community-modal) {
     .setting-item {
       border: none;

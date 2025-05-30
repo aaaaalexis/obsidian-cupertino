@@ -45,11 +45,11 @@ body.is-phone {
     color: var(--text-muted);
   }
 
-  &:not(.transparent-nav-off):not(.is-android):not(.mod-toolbar-open):not(.quick-mode-switch-off) .mod-root .view-actions button:nth-last-child(2) {
+  &:not(.transparent-nav-off):not(.is-android:not(.material-off)):not(.mod-toolbar-open):not(.quick-mode-switch-off) .mod-root .view-actions button:nth-last-child(2) {
     margin-bottom: 80px;
   }
 
-  &:not(.transparent-nav-off):not(.is-android) .workspace .mod-root .workspace-leaf .view-header {
+  &:not(.transparent-nav-off):not(.is-android:not(.material-off)) .workspace .mod-root .workspace-leaf .view-header {
     position: fixed;
     background-color: transparent;
     padding-top: var(--safe-area-inset-top);
@@ -68,7 +68,7 @@ body.is-phone {
     }
   }
 
-  &:not(.transparent-nav-off):not(.is-android) {
+  &:not(.transparent-nav-off):not(.is-android:not(.material-off)) {
     .view-content > .markdown-reading-view > div:first-child {
       padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
     }
@@ -83,7 +83,7 @@ body.is-phone {
   }
 
   &.transparent-nav-off .mod-root .view-header,
-  &.is-android .mod-root .view-header {
+  &.is-android:not(.material-off) .mod-root .view-header {
     padding-top: var(--safe-area-inset-top);
   }
 
@@ -252,7 +252,7 @@ body.is-mobile {
   }
 }
 
-body.is-mobile:not(.transparent-nav-off):not(.is-android) {
+body.is-mobile:not(.transparent-nav-off):not(.is-android:not(.material-off)) {
   &.theme-light .mobile-toolbar {
     background-color: rgb(209, 211, 218);
 
@@ -289,7 +289,7 @@ body.is-mobile:not(.transparent-nav-off):not(.is-android) {
   }
 }
 
-body.is-phone:not(.transparent-nav-off):not(.is-android) {
+body.is-phone:not(.transparent-nav-off):not(.is-android:not(.material-off)) {
   &.theme-light {
     .workspace-drawer .nav-header {
       background-color: rgb(from var(--background-secondary) r g b / 50%);

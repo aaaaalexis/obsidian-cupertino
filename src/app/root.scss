@@ -102,6 +102,16 @@ settings:
         id: hide-tabs-count-off
         title: Show tabs count
         type: class-toggle
+    -
+        id: android-header
+        title: Android
+        type: heading
+        level: 1
+    -
+        id: material-off
+        title: Disable Android mode
+        description: Turn off Material styling on Android.
+        type: class-toggle
 */
 
 body {

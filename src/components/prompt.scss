@@ -31,10 +31,6 @@ body:not(.is-phone) {
 }
 
 body.is-phone {
-  &.is-android {
-    animation: var(--anim-duration-fast) fadeInScale !important;
-  }
-
   .prompt {
     --prompt-top: calc(var(--safe-area-inset-top) + 8px);
     backdrop-filter: blur(32px);
