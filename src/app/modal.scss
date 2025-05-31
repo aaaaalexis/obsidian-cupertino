@@ -76,6 +76,9 @@ body:not(.is-mobile) {
     }
   }
 }
+body.is-mobile .modal:not(.mod-settings):not(.mod-community-modal) {
+  border-radius: var(--radius-xl);
+}
 
 body.is-mobile:not(.is-android:not(.material-off)) {
   .modal {
@@ -83,7 +86,6 @@ body.is-mobile:not(.is-android:not(.material-off)) {
     background-color: var(--modal-background) !important;
     backdrop-filter: blur(32px);
     box-shadow: none;
-    border-radius: var(--radius-xl);
 
     .modal-header {
       border: none !important;
@@ -161,7 +163,6 @@ body.is-mobile:not(.is-android:not(.material-off)) {
 body.is-phone:not(.is-android:not(.material-off)) {
   .modal {
     box-shadow: none !important;
-    padding-bottom: var(--safe-area-inset-bottom);
   }
 }
 

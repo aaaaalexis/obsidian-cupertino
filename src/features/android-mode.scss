@@ -102,7 +102,7 @@ body.is-mobile.is-android:not(.material-off) {
   .dropdown {
     border: var(--border-width) solid var(--divider-color);
     background-color: var(--interactive-normal);
-    font-weight: var(--input-font-weight);
+    font-weight: bold;
   }
 
   button:not(.clickable-icon) {
@@ -199,6 +199,7 @@ body.is-mobile.is-android:not(.material-off) {
   }
   .menu-item {
     border-radius: var(--radius-m);
+    border: none;
   }
   .menu-item + .menu-item,
   .menu-item:has(+ .menu-item) {
@@ -219,10 +220,9 @@ body.is-mobile.is-android:not(.material-off) {
 
   .nav-files-container > div {
     gap: 2px;
-    margin-bottom: 0;
+    margin-bottom: 96px;
     border-radius: 0;
     background-color: transparent;
-    overflow: hidden;
   }
 
   .nav-files-container .tree-item:not(:last-child)::before,
@@ -307,43 +307,23 @@ body.is-mobile.is-android:not(.material-off) {
       padding: var(--safe-area-inset-top) 16px 0 !important;
     }
     .modal-title {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
       gap: 8px;
-      max-width: 100%;
-      height: var(--modal-header-height);
       font-size: var(--font-ui-large);
       text-align: left;
     }
     .modal-setting-back-button {
-      display: flex;
-      position: relative;
-      top: unset;
-      justify-content: center;
-      align-items: center;
       transition: var(--anim-duration-fast);
       border-radius: 100vh;
       background-color: var(--background-modifier-hover);
-      padding: 0;
-      width: 48px;
-      height: 48px;
-      order: -1;
 
       @starting-style {
         width: 0;
       }
     }
-    .modal-setting-back-button-icon {
-      margin-inline-end: 0;
-    }
 
     .modal-close-button {
       width: 48px;
       height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .setting-item {
@@ -362,7 +342,7 @@ body.is-mobile.is-android:not(.material-off) {
       padding: 0 16px 100px;
     }
 
-    .mod-sidebar-layout {
+    .modal.mod-settings {
       .modal-close-button {
         top: calc(var(--safe-area-inset-top) + 8px);
         inset-inline-end: 16px;
@@ -386,35 +366,77 @@ body.is-mobile.is-android:not(.material-off) {
     }
   }
 
-  &.is-tablet {
-    .mod-sidebar-layout {
-      .modal-close-button {
-        border-radius: 100vh;
-        background-color: var(--background-modifier-hover);
-      }
+  &.is-tablet .modal:not(.mod-community-modal) {
+    .modal-close-button {
+      border-radius: 100vh;
+      background-color: var(--background-modifier-hover);
+    }
 
-      .vertical-tab-content {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-      }
+    .vertical-tab-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
 
-      .setting-item:not(.setting-item-heading) {
-        border-radius: var(--radius-s);
-      }
-      .setting-item-heading + .setting-item,
-      *:not(.setting-item) + .setting-item:not(.setting-item-heading),
-      .setting-item:first-child:not(.setting-item-heading) {
-        border-top-right-radius: var(--radius-m) !important;
-        border-top-left-radius: var(--radius-m) !important;
-      }
-      .setting-item:has(+ .setting-item-heading),
-      .setting-item:has(+ *:not(.setting-item)):not(.setting-item-heading),
-      .setting-item:last-child {
-        border-bottom-right-radius: var(--radius-m) !important;
-        border-bottom-left-radius: var(--radius-m) !important;
+    .setting-item:not(.setting-item-heading) {
+      border-radius: var(--radius-s);
+    }
+    .setting-item-heading + .setting-item,
+    *:not(.setting-item) + .setting-item:not(.setting-item-heading),
+    .setting-item:first-child:not(.setting-item-heading) {
+      border-top-right-radius: var(--radius-m) !important;
+      border-top-left-radius: var(--radius-m) !important;
+    }
+    .setting-item:has(+ .setting-item-heading),
+    .setting-item:has(+ *:not(.setting-item)):not(.setting-item-heading),
+    .setting-item:last-child {
+      border-bottom-right-radius: var(--radius-m) !important;
+      border-bottom-left-radius: var(--radius-m) !important;
+    }
+  }
+
+  /********** Modal **********/
+
+  .modal-container {
+    align-items: center;
+  }
+  .modal:not(.mod-settings):not(.mod-community-modal) {
+    margin: 0 8px;
+
+    .modal-header {
+      padding: 24px 24px 0;
+      border: none;
+    }
+
+    .modal-title {
+      max-width: 100%;
+      text-align: left;
+      font-size: var(--h1-size);
+      font-weight: normal;
+    }
+
+    .modal-content {
+      padding: 16px 24px;
+    }
+
+    .modal-button-container {
+      margin-bottom: 0;
+      flex-direction: row;
+      padding: 0 24px 24px;
+      gap: 4px;
+
+      button {
+        margin: 0;
+        background-color: transparent;
+        color: var(--text-accent);
+        font-weight: bold;
+        padding: 0 16px;
       }
     }
+  }
+
+  .modal[class*="mod-"] .modal-title {
+    text-align: center !important;
   }
 
   /********** Tab Switcher **********/

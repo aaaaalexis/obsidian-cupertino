@@ -91,7 +91,7 @@ body.is-phone {
     padding-top: var(--safe-area-inset-top);
   }
 
-  &:not(.is-ios) {
+  &.is-android:not(.material-off) {
     .mod-root .view-header:has(.view-header-breadcrumb) {
       .view-header-left {
         display: none;
@@ -141,7 +141,8 @@ body.is-phone {
 
 /********** Top Bar (iOS) **********/
 
-body.is-phone.is-ios {
+body.is-phone.is-ios,
+body.is-phone.is-android.material-off {
   .mod-root .view-header-breadcrumb:first-child {
     font-weight: normal;
   }
@@ -254,7 +255,6 @@ body.is-mobile {
     bottom: 0;
     left: 0;
     z-index: var(--layer-status-bar);
-    background-color: var(--background-primary);
   }
 }
 
@@ -294,6 +294,19 @@ body.is-mobile:not(.transparency-off):not(.is-android:not(.material-off)) {
   }
 }
 
+body.is-phone.transparency-off {
+  &.theme-light {
+    .workspace-drawer .nav-header {
+      background-color: var(--background-secondary);
+    }
+  }
+  &.theme-dark {
+    .workspace-drawer .nav-header {
+      background-color: var(--background-primary);
+    }
+  }
+}
+
 body.is-phone:not(.transparency-off):not(.is-android:not(.material-off)) {
   &.theme-light {
     .workspace-drawer .nav-header {
@@ -316,6 +329,11 @@ body.is-tablet:not(.transparency-off):not(.is-android:not(.material-off)) {
       background-color: rgb(from var(--background-primary) r g b / 75%);
     }
   }
+}
+
+body.is-tablet.transparency-off .workspace-drawer.is-pinned .nav-header,
+body.is-tablet.is-android:not(.material-off) .workspace-drawer.is-pinned .nav-header {
+  background-color: var(--background-primary);
 }
 
 /********** Image Viewer **********/

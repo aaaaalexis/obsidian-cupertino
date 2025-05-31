@@ -5,6 +5,7 @@ body.is-mobile.transparency-off:not(.tablet-menu-off) .suggestion-container,
 body.is-mobile.is-android:not(.material-off):not(.tablet-menu-off) .menu,
 body.is-mobile.is-android:not(.material-off):not(.tablet-menu-off) .suggestion-container {
   backdrop-filter: none;
+  background-color: var(--modal-background) !important;
 }
 
 body:not(.is-mobile) .menu,

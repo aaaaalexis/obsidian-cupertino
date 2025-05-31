@@ -354,6 +354,7 @@ body {
     --toggle-width: 51px;
     --toolbar-option-width: calc(16px + var(--mobile-toolbar-height));
     --view-header-height: 44px;
+    --modal-header-height: var(--view-header-height);
     --dropdown-padding: 4px 32px 4px 16px;
 
     padding: 0;
@@ -386,7 +387,8 @@ body {
   }
 
   &.blur-effect-off,
-  &.transparency-off {
+  &.transparency-off,
+  &.is-android:not(.material-off) {
     --modal-background: var(--background-secondary) !important;
   }
 

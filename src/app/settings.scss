@@ -128,6 +128,44 @@ body.is-mobile {
       border: none !important;
     }
 
+    .modal-header {
+      padding: var(--safe-area-inset-top) 8px 0 !important;
+    }
+    .modal-title:not(:has(.modal-setting-back-button)) {
+      padding-left: 16px;
+    }
+    .modal-title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      max-width: 100%;
+      height: var(--modal-header-height);
+    }
+    .modal-setting-back-button {
+      display: flex;
+      position: relative;
+      top: unset;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      width: var(--input-height);
+      height: var(--input-height);
+      order: -1;
+    }
+    .modal-setting-back-button-icon {
+      margin-inline-end: 0;
+    }
+
+    .modal-close-button {
+      width: var(--input-height);
+      height: var(--input-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: var(--safe-area-inset-top);
+      inset-inline-end: 16px;
+    }
+
     .vertical-tab-nav-item {
       height: unset;
       min-height: 48px;
