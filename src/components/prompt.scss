@@ -1,5 +1,6 @@
 body.blur-effect-off .prompt,
-body.transparency-off .prompt {
+body.transparency-off .prompt,
+body.is-android:not(.material-off) .prompt {
   backdrop-filter: none;
 }
 

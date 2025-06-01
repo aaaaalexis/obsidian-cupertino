@@ -28,7 +28,7 @@ body.is-mobile.is-android:not(.material-off) {
   --slider-thumb-y: -19px;
   --slider-thumb-radius: 100vh;
   --slider-track-height: 16px;
-  --modal-header-height: 64px;
+  --view-header-height: 64px;
   --tab-switcher-preview-background-shadow: none;
   --tab-switcher-preview-radius: var(--radius-m);
   --interactive-normal: var(--background-secondary);
@@ -232,6 +232,7 @@ body.is-mobile.is-android:not(.material-off) {
 
   .nav-files-container .tree-item-self {
     border-radius: 100vh;
+    text-indent: 4px;
   }
 
   .nav-folder:not(.is-collapsed) > .nav-folder-title {
@@ -402,6 +403,7 @@ body.is-mobile.is-android:not(.material-off) {
   }
   .modal:not(.mod-settings):not(.mod-community-modal) {
     margin: 0 8px;
+    box-shadow: none;
 
     .modal-header {
       padding: 24px 24px 0;
@@ -437,6 +439,24 @@ body.is-mobile.is-android:not(.material-off) {
 
   .modal[class*="mod-"] .modal-title {
     text-align: center !important;
+  }
+
+  /********** Prompt **********/
+
+  .prompt {
+    box-shadow: none;
+
+    .prompt-input {
+      min-height: var(--view-header-height);
+    }
+
+    .prompt-results {
+      padding: 8px;
+    }
+    .suggestion-item {
+      border-radius: 100vh;
+      padding: 16px 24px;
+    }
   }
 
   /********** Tab Switcher **********/
