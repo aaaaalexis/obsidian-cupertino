@@ -1,0 +1,23 @@
+.block-language-todoist,
+.task-creation-modal-root {
+  button {
+    background-color: var(--interactive-normal) !important;
+    color: var(--color-base-100) !important;
+  }
+}
+
+body:not(.is-mobile) .task-option-dialog {
+  backdrop-filter: blur(32px);
+  border: var(--prompt-border-width) solid var(--prompt-border-color);
+  border-radius: var(--radius-m);
+  background-color: var(--modal-background);
+  padding: 4px;
+}
+
+body:not(.is-mobile).blur-effect-off .task-option-dialog {
+  backdrop-filter: none;
+}
+
+body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
+  border-radius: calc(var(--radius-m) + 6px);
+}
