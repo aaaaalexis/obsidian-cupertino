@@ -7,7 +7,7 @@ body.is-mobile {
     }
 
     .tree-item-self.is-active .tree-item-icon.collapse-icon {
-      background-color: var(--text-normal);
+      background-color: var(--color-base-100);
 
       svg.svg-icon {
         color: var(--nav-item-background-active);

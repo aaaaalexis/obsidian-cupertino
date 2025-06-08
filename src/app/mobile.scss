@@ -120,7 +120,7 @@ body.is-phone {
     .view-header-title-parent .view-header-breadcrumb-separator,
     .view-header-title-parent .view-header-breadcrumb {
       opacity: 0.5;
-      color: var(--text-normal);
+      color: var(--color-base-100);
       padding: 0;
     }
 
@@ -231,7 +231,7 @@ body.is-mobile {
   }
 
   .mobile-toolbar-option {
-    color: var(--text-normal);
+    color: var(--color-base-100);
   }
   .mobile-toolbar-options-list {
     padding: 0;

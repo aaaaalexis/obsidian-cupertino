@@ -230,7 +230,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
       &.is-active {
         --background-modifier-hover: unset;
         background-color: var(--background-modifier-hover);
-        color: var(--text-normal);
+        color: var(--color-base-100);
       }
     }
 
@@ -273,16 +273,16 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     .menu-item.selected:not(.is-label):not(.is-disabled),
     .suggestion-item.is-selected:not(.mod-group) {
       background-color: var(--background-modifier-hover);
-      color: var(--text-normal);
+      color: var(--color-base-100);
 
       .menu-item-icon,
       .suggestion-flair {
-        color: var(--text-normal);
+        color: var(--color-base-100);
       }
     }
 
     .search-suggest-info-text {
-      color: var(--text-normal);
+      color: var(--color-base-100);
     }
   }
 

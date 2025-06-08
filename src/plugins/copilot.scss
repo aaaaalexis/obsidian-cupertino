@@ -50,7 +50,7 @@ body.mod-windows:not(.windows-mode-off) {
 
     [role="menuitem"]:hover {
       background-color: var(--background-modifier-hover);
-      color: var(--text-normal);
+      color: var(--color-base-100);
     }
   }
 }

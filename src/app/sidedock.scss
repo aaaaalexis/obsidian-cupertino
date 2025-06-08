@@ -22,7 +22,7 @@
   background-color: transparent;
 }
 .search-results-children .tree-item-inner {
-  color: var(--text-normal);
+  color: var(--color-base-100);
 }
 
 body:not(.is-mobile) {
@@ -185,7 +185,7 @@ body.is-mobile {
       }
     }
     .search-result-file-title {
-      color: var(--text-normal);
+      color: var(--color-base-100);
     }
     .search-result-file-matches {
       margin: 0;
