@@ -1,11 +1,11 @@
-body:not(.is-mobile).blur-effect-off .menu,
-body:not(.is-mobile).blur-effect-off .suggestion-container,
-body.is-mobile.transparency-off:not(.tablet-menu-off) .menu,
-body.is-mobile.transparency-off:not(.tablet-menu-off) .suggestion-container,
-body.is-mobile.is-android:not(.material-off):not(.tablet-menu-off) .menu,
-body.is-mobile.is-android:not(.material-off):not(.tablet-menu-off) .suggestion-container {
-  backdrop-filter: none;
-  background-color: var(--modal-background) !important;
+body:not(.is-mobile).blur-effect-off,
+body.is-mobile.transparency-off:not(.tablet-menu-off),
+body.is-mobile.is-android:not(.material-off):not(.tablet-menu-off) {
+  .menu,
+  .suggestion-container {
+    backdrop-filter: none;
+    background-color: var(--modal-background) !important;
+  }
 }
 
 body:not(.is-mobile) .menu,
