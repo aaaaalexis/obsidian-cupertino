@@ -137,7 +137,8 @@ body:not(.is-mobile) {
 body.is-mobile {
   .metadata-property-key-input,
   .metadata-property-value {
-    background-color: transparent;
+    background-color: transparent !important;
+    padding: 4px 8px !important;
   }
 
   .metadata-property-warning-icon {

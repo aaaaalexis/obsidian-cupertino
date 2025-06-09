@@ -34,42 +34,28 @@ body.is-mobile.is-android:not(.material-off) {
   --interactive-normal: var(--background-secondary);
 
   /********** Components **********/
-  .checkbox-container {
-    border: 2px solid transparent;
-    box-sizing: content-box;
-    outline: none;
-  }
-  .checkbox-container::after {
-    box-shadow: none;
-  }
-  .checkbox-container:not(.is-enabled) {
-    border-color: var(--text-muted);
-    &::after {
-      background-color: var(--text-muted);
+
+  button:not(.clickable-icon) {
+    border-radius: 100vh;
+
+    &[class*="mod-"] {
+      background-color: var(--text-color);
+      color: var(--text-on-accent);
+      border: none;
+    }
+    &.mod-cta {
+      background-color: var(--interactive-accent);
     }
   }
 
-  input[type="range"] {
-    transition: var(--anim-duration-fast);
-  }
-  input[type="range"]::-webkit-slider-thumb {
-    box-shadow: none;
-    background-color: var(--interactive-accent);
-    outline: 6px solid var(--background-primary);
-  }
-  &.theme-dark input[type="range"]::-webkit-slider-thumb {
-    outline-color: var(--background-secondary);
-  }
-  input[type="range"]:active,
-  input[type="range"]:focus,
-  input[type="range"]:focus-within,
-  input[type="range"]:hover {
-    --slider-thumb-y: -23px;
-    --slider-thumb-height: 52px;
-    --slider-track-height: 40px;
+  button:not(.clickable-icon):not(.modal:not(.mod-settings):not(.mod-community-modal) button):not(.view-content button):not([class*="mod-"]),
+  select,
+  .dropdown {
+    border: var(--border-width) solid var(--divider-color);
+    background-color: var(--interactive-normal);
+    font-weight: bold;
   }
 
-  textarea,
   textarea,
   input[type="text"],
   input[type="number"],
@@ -97,34 +83,38 @@ body.is-mobile.is-android:not(.material-off) {
     background-color: var(--background-primary);
   }
 
-  button:not(.clickable-icon):not(.modal:not(.mod-settings):not(.mod-community-modal) button):not(.view-content button):not([class*="mod-"]),
-  select,
-  .dropdown {
-    border: var(--border-width) solid var(--divider-color);
-    background-color: var(--interactive-normal);
-    font-weight: bold;
+  input[type="range"] {
+    transition: var(--anim-duration-fast);
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    box-shadow: none;
+    background-color: var(--interactive-accent);
+    outline: 6px solid var(--background-primary);
+  }
+  &.theme-dark input[type="range"]::-webkit-slider-thumb {
+    outline-color: var(--background-secondary);
+  }
+  input[type="range"]:active,
+  input[type="range"]:focus,
+  input[type="range"]:focus-within,
+  input[type="range"]:hover {
+    --slider-thumb-y: -23px;
+    --slider-thumb-height: 52px;
+    --slider-track-height: 40px;
   }
 
-  button:not(.clickable-icon) {
-    border-radius: 100vh;
+  .checkbox-container {
+    border: 2px solid transparent;
+    box-sizing: content-box;
+    outline: none;
 
-    &[class*="mod-"] {
-      background-color: var(--text-color);
-      color: var(--text-on-accent);
-      border: none;
+    &::after {
+      box-shadow: none;
     }
-    &.mod-cta {
-      background-color: var(--interactive-accent);
-    }
-  }
-
-  /********** Top Bar **********/
-  .workspace .mod-root .workspace-leaf {
-    .view-header-left .mod-left-split-toggle svg {
-      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23e3e3e3'%3E%3Cpath d='M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z'/%3E%3C/svg%3E");
-      background-color: var(--icon-color);
-      > * {
-        display: none;
+    &:not(.is-enabled) {
+      border-color: var(--text-muted);
+      &::after {
+        background-color: var(--text-muted);
       }
     }
   }
