@@ -435,7 +435,7 @@
       }
     }
 
-    .workspace:not(.is-left-sidedock-open) .mod-root {
+    &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root {
       > .workspace-tabs:first-of-type .workspace-tab-container,
       .mod-horizontal:first-of-type > .workspace-tabs .workspace-tab-container,
       .mod-horizontal > .workspace-split .workspace-tabs:first-of-type .workspace-tab-container {
