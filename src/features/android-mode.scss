@@ -71,7 +71,7 @@ body.is-mobile.is-android:not(.material-off) {
 
   textarea,
   textarea,
-  input[type="text"]:not(.metadata-container input):not(.prompt input),
+  input[type="text"],
   input[type="number"],
   input[type="search"] {
     background-color: var(--interactive-normal);
@@ -85,7 +85,7 @@ body.is-mobile.is-android:not(.material-off) {
   }
 
   textarea,
-  input[type="text"]:not(.metadata-container input):not(.prompt input),
+  input[type="text"],
   input[type="number"]:not(.metadata-input),
   input[type="search"],
   select,

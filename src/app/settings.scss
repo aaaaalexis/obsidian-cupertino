@@ -76,7 +76,7 @@ body.windows-mode-off:not(.is-mobile) {
     }
 
     textarea,
-    input[type="text"]:not(.metadata-container input):not(.prompt input),
+    input[type="text"],
     input[type="number"],
     input[type="search"] {
       border: var(--border-width) solid var(--background-modifier-border-hover);

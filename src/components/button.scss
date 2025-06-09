@@ -1,0 +1,69 @@
+.clickable-icon {
+  transition: all 0.1s ease-in-out !important;
+}
+
+.is-flashing {
+  --text-highlight-bg: hsla(var(--color-accent-hsl), 0.25);
+}
+
+body:not(.is-mobile) {
+  .clickable-icon {
+    padding: 4px 8px;
+  }
+  button:not(.clickable-icon) {
+    padding: 4px 10px;
+    box-shadow: var(--input-shadow);
+    border: none;
+    height: unset;
+    min-height: var(--input-height);
+    font-weight: normal;
+    line-height: unset;
+  }
+  button[class*="mod-"]:not(.mod-cancel):not(.mod-destructive):not(.mod-bookmark):not(.mod-secondary) {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+}
+
+body.is-mobile {
+  button {
+    box-shadow: none !important;
+  }
+
+  .clickable-icon {
+    background-color: transparent;
+    padding: 10px;
+    min-width: var(--input-height);
+    height: var(--input-height);
+
+    &.is-active {
+      opacity: 1;
+      background-color: var(--interactive-accent);
+      color: var(--text-on-accent);
+    }
+  }
+}
+
+body.is-phone:not(.is-android:not(.material-off)) {
+  button:not(.clickable-icon):not(.modal:not(.mod-settings):not(.mod-community-modal) button):not(.view-content button) {
+    justify-content: flex-start;
+    background-color: var(--interactive-normal);
+    padding: 0 16px;
+    min-height: var(--input-height);
+    font-weight: normal;
+    text-align-last: unset;
+    color: var(--text-accent);
+  }
+
+  .setting-item-control button {
+    color: var(--text-accent);
+  }
+}
+
+body.is-tablet:not(.is-android:not(.material-off)) {
+  textarea,
+  input[type="text"],
+  input[type="number"],
+  button:not(.clickable-icon):not(.modal:not(.mod-settings) button):not(.view-content button) {
+    padding: 4px 16px;
+  }
+}

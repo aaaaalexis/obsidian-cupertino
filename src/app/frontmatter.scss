@@ -14,6 +14,11 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
   .metadata-properties {
     border-radius: var(--radius-s);
     background-color: var(--background-secondary);
+
+    input {
+      box-shadow: none !important;
+      border: none !important;
+    }
   }
 
   .metadata-property-icon::before {

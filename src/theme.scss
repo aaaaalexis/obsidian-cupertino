@@ -1,6 +1,5 @@
 @use "app/root.scss";
 @use "app/animation.scss";
-@use "app/input.scss";
 @use "app/tab.scss";
 @use "app/editor.scss";
 @use "app/frontmatter.scss";
@@ -10,11 +9,16 @@
 @use "app/mobile.scss";
 @use "app/empty-state.scss";
 
+@use "components/button.scss";
+@use "components/checkbox.scss";
 @use "components/menu.scss";
 @use "components/notice.scss";
 @use "components/popover.scss";
 @use "components/prompt.scss";
+@use "components/slider.scss";
 @use "components/status-bar.scss";
+@use "components/text-field.scss";
+@use "components/toggle.scss";
 @use "components/tooltip.scss";
 
 @use "plugins-core/backlinks.scss";
@@ -59,7 +63,6 @@
 
 @use "support/notebook-themes.scss";
 
-@use "features/alternate-checkboxes.scss";
 @use "features/callout-icon.scss";
 @use "features/windows-mode.scss";
 @use "features/cards.scss";

@@ -15,10 +15,15 @@ body:not(.is-phone) {
     background-color: var(--workspace-background-translucent);
   }
 
+  .prompt-input-container {
+    border-bottom: var(--border-width) solid var(--background-modifier-border);
+  }
+
   .prompt-input {
-    border-color: var(--background-modifier-border);
     background-color: transparent;
     font-size: var(--font-ui-large);
+    border: none !important;
+    box-shadow: none !important;
   }
 
   .prompt-instructions {
