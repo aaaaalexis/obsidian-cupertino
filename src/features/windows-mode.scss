@@ -112,9 +112,9 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     }
   }
 
-  input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
-  input[type="number"]:not(.ant-input),
-  input[type="search"]:not(.ant-input) {
+  input[type="text"]:not(.metadata-container input):not(.prompt input),
+  input[type="number"],
+  input[type="search"] {
     box-shadow: 0 -0.5px 0 0 var(--color-base-50) inset;
     padding-left: 16px;
 

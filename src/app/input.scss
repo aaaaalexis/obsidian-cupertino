@@ -23,10 +23,10 @@
 
 body:not(.is-mobile) {
   textarea,
-  input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
-  input[type="number"]:not(.ant-input),
-  input[type="search"]:not(.ant-input),
-  button:not(.clickable-icon):not(.ant-btn):not(.excalidraw button),
+  input[type="text"]:not(.metadata-container input):not(.prompt input),
+  input[type="number"],
+  input[type="search"],
+  button:not(.clickable-icon),
   select,
   .dropdown {
     box-shadow: var(--input-shadow);
@@ -37,9 +37,9 @@ body:not(.is-mobile) {
     line-height: unset;
   }
   textarea,
-  input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
-  input[type="number"]:not(.ant-input),
-  input[type="search"]:not(.ant-input) {
+  input[type="text"]:not(.metadata-container input):not(.prompt input),
+  input[type="number"],
+  input[type="search"] {
     box-shadow: none;
     border: var(--border-width) solid var(--background-modifier-border);
 
@@ -58,7 +58,7 @@ body:not(.is-mobile) {
     }
   }
 
-  button:not(.ant-btn):not(.ant-switch):not(.excalidraw button) {
+  button {
     padding: 4px 10px;
   }
   button[class*="mod-"]:not(.mod-cancel):not(.mod-destructive):not(.mod-bookmark):not(.mod-secondary) {
@@ -120,9 +120,9 @@ body.is-mobile {
 
 body.is-phone:not(.is-android:not(.material-off)) {
   textarea,
-  input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
-  input[type="number"]:not(.metadata-input):not(.ant-input),
-  button:not(.clickable-icon):not(.modal:not(.mod-settings):not(.mod-community-modal) button):not(.view-content button):not(.ant-btn):not(.ant-switch):not(.excalidraw button),
+  input[type="text"]:not(.metadata-container input):not(.prompt input),
+  input[type="number"]:not(.metadata-input),
+  button:not(.clickable-icon):not(.modal:not(.mod-settings):not(.mod-community-modal) button):not(.view-content button),
   select,
   .dropdown {
     justify-content: flex-start;
@@ -146,13 +146,9 @@ body.is-phone:not(.is-android:not(.material-off)) {
 
 body.is-tablet:not(.is-android:not(.material-off)) {
   textarea,
-  input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
-  input[type="number"]:not(.ant-input),
-  button:not(.clickable-icon):not(.modal:not(.mod-settings) button):not(.view-content button):not(.ant-btn):not(.ant-switch):not(.excalidraw button) {
+  input[type="text"]:not(.metadata-container input):not(.prompt input),
+  input[type="number"],
+  button:not(.clickable-icon):not(.modal:not(.mod-settings) button):not(.view-content button) {
     padding: 4px 16px;
-  }
-
-  .ant-switch {
-    padding: 0;
   }
 }
