@@ -48,7 +48,7 @@ body.is-mobile.is-android:not(.material-off) {
     }
   }
 
-  button:not(.clickable-icon):not(.modal:not(.mod-sidebar-layout) button):not(.view-content button):not([class*="mod-"]),
+  button:not(.clickable-icon):not([class*="mod-"]),
   select,
   .dropdown {
     border: var(--border-width) solid var(--divider-color);
