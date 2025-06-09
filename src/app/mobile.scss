@@ -74,13 +74,11 @@ body.is-phone {
 
   &:not(.transparency-off):not(.is-android:not(.material-off)) {
     .view-content > .markdown-reading-view > div:first-child {
-      padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
-    }
-
-    .view-content .cm-sizer {
       padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
     }
-
+    .view-content .cm-sizer {
+      padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height));
+    }
     .mod-root .view-content > div:not(.markdown-source-view):not(.markdown-reading-view):not(.canvas-wrapper):not(.graph-controls):not(.empty-state) {
       padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height));
     }
@@ -208,6 +206,11 @@ body.is-phone.is-android.material-off {
 /********** Bottom Bar **********/
 
 body.is-mobile {
+  &.transparency-off .mobile-navbar,
+  &.is-android:not(.material-off) .mobile-navbar {
+    position: unset;
+  }
+
   &:not(.hide-tabs-count-off) {
     .mobile-navbar-action:nth-child(4) .clickable-icon::before {
       background-color: var(--icon-color);
