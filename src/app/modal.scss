@@ -8,24 +8,6 @@ body:not(.is-mobile) {
     border-width: var(--modal-border-width) 0 0;
   }
 
-  &.mod-macos {
-    .modal:not(.mod-settings) {
-      animation: var(--anim-duration-fast) fadeInDown;
-    }
-
-    .modal-container {
-      .modal-title {
-        font-weight: 700;
-        font-size: var(--font-ui-medium);
-      }
-
-      .modal-content,
-      .mod-checkbox {
-        font-size: var(--font-ui-small);
-      }
-    }
-  }
-
   .modal-bg {
     background-color: transparent;
   }
@@ -34,7 +16,17 @@ body:not(.is-mobile) {
     backdrop-filter: blur(32px);
   }
 
-  .modal:not(.mod-settings):not(.mod-community-modal) {
+  .modal:not(.mod-sidebar-layout) {
+    .modal-title {
+      margin: 4px 0 8px;
+      font-weight: 700;
+      font-size: var(--font-ui-medium);
+
+      &:empty {
+        display: none;
+      }
+    }
+
     .modal-title,
     h1,
     h2,
@@ -51,12 +43,9 @@ body:not(.is-mobile) {
       margin: 0;
     }
 
-    .modal-title {
-      margin: 4px 0 8px;
-
-      &:empty {
-        display: none;
-      }
+    .modal-content,
+    .mod-checkbox {
+      font-size: var(--font-ui-small);
     }
 
     .modal-button-container {
@@ -76,12 +65,13 @@ body:not(.is-mobile) {
     }
   }
 }
-body.is-mobile .modal:not(.mod-settings):not(.mod-community-modal) {
+
+body.is-mobile .modal:not(.mod-sidebar-layout) {
   border-radius: var(--radius-xl);
 }
 
 body.is-mobile:not(.is-android:not(.material-off)) {
-  .modal {
+  .modal:not(.mod-sidebar-layout) {
     --interactive-normal: unset !important;
     background-color: var(--modal-background) !important;
     backdrop-filter: blur(32px);
@@ -163,12 +153,6 @@ body.is-mobile:not(.is-android:not(.material-off)) {
 body.is-phone:not(.is-android:not(.material-off)) {
   .modal {
     box-shadow: none !important;
-  }
-}
-
-body.is-phone:not(.transparency-off) {
-  .modal {
-    backdrop-filter: none;
   }
 }
 

@@ -48,12 +48,11 @@ body.is-mobile.is-android:not(.material-off) {
     }
   }
 
-  button:not(.clickable-icon):not(.modal:not(.mod-settings):not(.mod-community-modal) button):not(.view-content button):not([class*="mod-"]),
+  button:not(.clickable-icon):not(.modal:not(.mod-sidebar-layout) button):not(.view-content button):not([class*="mod-"]),
   select,
   .dropdown {
     border: var(--border-width) solid var(--divider-color);
     background-color: var(--interactive-normal);
-    font-weight: bold;
   }
 
   textarea,
@@ -232,8 +231,7 @@ body.is-mobile.is-android:not(.material-off) {
   /********** Settings **********/
 
   &.theme-light {
-    .modal.mod-settings,
-    .modal.mod-community-modal {
+    .modal.mod-sidebar-layout {
       .vertical-tab-nav-item,
       .setting-item:not(.setting-item-heading) {
         background-color: var(--background-primary);
@@ -242,16 +240,14 @@ body.is-mobile.is-android:not(.material-off) {
   }
 
   &.theme-dark {
-    .modal.mod-settings,
-    .modal.mod-community-modal {
+    .modal.mod-sidebar-layout {
       .vertical-tab-nav-item,
       .setting-item:not(.setting-item-heading) {
         background-color: var(--background-secondary);
       }
     }
   }
-  .modal.mod-settings,
-  .modal.mod-community-modal {
+  .modal.mod-sidebar-layout {
     .vertical-tab-nav-item {
       border: none;
       border-radius: var(--radius-s);
@@ -328,12 +324,12 @@ body.is-mobile.is-android:not(.material-off) {
   }
 
   &.is-phone {
-    .modal.mod-settings .vertical-tab-content,
-    .modal.mod-community-modal .vertical-tab-content {
-      padding: 0 16px 100px;
-    }
+    .modal.mod-sidebar-layout {
+      .vertical-tab-content {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
 
-    .modal.mod-settings {
       .modal-close-button {
         top: calc(var(--safe-area-inset-top) + 8px);
         inset-inline-end: 16px;
@@ -391,7 +387,7 @@ body.is-mobile.is-android:not(.material-off) {
   .modal-container {
     align-items: center;
   }
-  .modal:not(.mod-settings):not(.mod-community-modal) {
+  .modal:not(.mod-sidebar-layout) {
     margin: 0 8px;
     box-shadow: none;
 

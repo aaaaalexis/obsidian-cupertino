@@ -63,7 +63,7 @@ body.is-mobile {
 body.is-phone:not(.is-android:not(.material-off)) {
   textarea,
   input[type="text"],
-  input[type="number"]:not(.metadata-input),
+  input[type="number"],
   select,
   .dropdown {
     justify-content: flex-start;

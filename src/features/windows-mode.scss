@@ -203,16 +203,16 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 
   /********** Settings **********/
 
-  &.theme-light .modal.mod-settings .setting-item:not(.setting-item-heading) {
+  &.theme-light .modal.mod-sidebar-layout .setting-item:not(.setting-item-heading) {
     border: var(--border-width) solid rgba(0, 0, 0, 0.05);
     background-color: rgba(255, 255, 255, 1);
   }
-  &.theme-dark .modal.mod-settings .setting-item:not(.setting-item-heading) {
+  &.theme-dark .modal.mod-sidebar-layout .setting-item:not(.setting-item-heading) {
     border: var(--border-width) solid rgba(0, 0, 0, 0.25);
     background-color: rgba(255, 255, 255, 0.05);
   }
 
-  .modal.mod-settings {
+  .modal.mod-sidebar-layout {
     .vertical-tab-header {
       border: none;
     }
@@ -288,7 +288,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   }
 
   /********** Modal **********/
-  .modal:not(.mod-settings):not(.mod-community-modal) {
+  .modal:not(.mod-sidebar-layout) {
     padding: 0;
 
     .modal-title,
@@ -302,10 +302,16 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 
     .modal-title {
       padding: 24px 24px 4px;
+      font-size: var(--font-ui-large);
     }
 
     .modal-content {
       padding: 4px 24px 16px;
+    }
+
+    .modal-content,
+    .mod-checkbox {
+      font-size: var(--font-ui-medium);
     }
 
     .modal-button-container {

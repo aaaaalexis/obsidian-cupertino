@@ -24,6 +24,7 @@ body:not(.is-phone) {
     font-size: var(--font-ui-large);
     border: none !important;
     box-shadow: none !important;
+    height: var(--prompt-input-height) !important;
   }
 
   .prompt-instructions {

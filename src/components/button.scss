@@ -44,7 +44,7 @@ body.is-mobile {
 }
 
 body.is-phone:not(.is-android:not(.material-off)) {
-  button:not(.clickable-icon):not(.modal:not(.mod-settings):not(.mod-community-modal) button):not(.view-content button) {
+  button:not(.clickable-icon):not(.modal:not(.mod-sidebar-layout) button):not(.view-content button) {
     justify-content: flex-start;
     background-color: var(--interactive-normal);
     padding: 0 16px;
@@ -63,7 +63,7 @@ body.is-tablet:not(.is-android:not(.material-off)) {
   textarea,
   input[type="text"],
   input[type="number"],
-  button:not(.clickable-icon):not(.modal:not(.mod-settings) button):not(.view-content button) {
+  button:not(.clickable-icon):not(.modal:not(.mod-sidebar-layout) button):not(.view-content button) {
     padding: 4px 16px;
   }
 }
