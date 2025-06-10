@@ -9,8 +9,9 @@ body.is-mobile.is-android:not(.material-off) {
   --h4-font: var(--font-interface-theme);
   --h5-font: var(--font-interface-theme);
   --h6-font: var(--font-interface-theme);
+  --color-accent-3: hsl(calc(258 - 9), calc(88% * 1.05), calc(66% * 1.375));
+  --text-accent: hsl(calc(258 + 15), calc(88% * 0.93), calc(66% * 0.475));
   --border-width: 1px;
-  --divider-color: var(--color-base-50) !important;
   --divider-width: 1px;
   --radius-xl: 32px;
   --radius-l: 24px;
@@ -28,10 +29,17 @@ body.is-mobile.is-android:not(.material-off) {
   --slider-thumb-y: -19px;
   --slider-thumb-radius: 100vh;
   --slider-track-height: 16px;
-  --view-header-height: 64px;
   --tab-switcher-preview-background-shadow: none;
   --tab-switcher-preview-radius: var(--radius-m);
   --interactive-normal: var(--background-secondary);
+  --nav-item-background-active: var(--color-accent-3);
+  --nav-item-background-selected: var(--color-accent-3);
+  --nav-item-color-active: var(--text-accent);
+  --nav-item-weight-active: bold;
+
+  &.is-phone {
+    --view-header-height: 64px;
+  }
 
   /********** Components **********/
 
@@ -63,23 +71,22 @@ body.is-mobile.is-android:not(.material-off) {
     border-bottom: var(--border-width) solid var(--divider-color);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+    box-shadow: inset 0 0 var(--color-accent);
+    transition: var(--anim-duration-fast);
 
     &:focus {
-      box-shadow: none;
+      box-shadow: inset 0 -2px var(--color-accent);
+      border-color: transparent;
     }
   }
 
   textarea,
   input[type="text"],
-  input[type="number"]:not(.metadata-input),
+  input[type="number"],
   input[type="search"],
   select,
   .dropdown {
     padding-left: 16px;
-  }
-
-  .search-input-container input[type="search"] {
-    background-color: var(--background-primary);
   }
 
   input[type="range"] {
@@ -130,6 +137,12 @@ body.is-mobile.is-android:not(.material-off) {
     width: 56px;
     height: 56px;
   }
+
+  &.is-phone:not(.mode-highlight-off) .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
+    background-color: var(--color-accent-3) !important;
+    color: var(--text-accent) !important;
+  }
+
   /********** Bottom Bar **********/
 
   .mobile-navbar,
@@ -213,6 +226,9 @@ body.is-mobile.is-android:not(.material-off) {
     border-bottom-right-radius: var(--radius-m);
     border-bottom-left-radius: var(--radius-m);
   }
+  .menu-item-icon:empty {
+    display: none;
+  }
 
   /********** Sidebar **********/
 
@@ -265,8 +281,9 @@ body.is-mobile.is-android:not(.material-off) {
     }
     .vertical-tab-nav-item.is-active {
       border-radius: var(--radius-l);
-      background-color: var(--interactive-accent);
-      color: var(--text-on-accent);
+      color: var(--nav-item-color-active);
+      background-color: var(--nav-item-background-active);
+      font-weight: var(--nav-item-weight-active);
     }
     .vertical-tab-nav-item-chevron {
       display: none;
@@ -362,7 +379,6 @@ body.is-mobile.is-android:not(.material-off) {
       border-radius: 100vh;
     }
     .vertical-tab-header {
-      background-color: var(--color-base-25);
       border: none;
     }
 
@@ -437,6 +453,13 @@ body.is-mobile.is-android:not(.material-off) {
 
     .prompt-input {
       min-height: var(--view-header-height);
+      box-shadow: none !important;
+      border: none !important;
+    }
+
+    .prompt-input-container,
+    .prompt-instructions {
+      border: none;
     }
 
     .prompt-results {
