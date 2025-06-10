@@ -52,13 +52,6 @@ body:not(.is-phone) #cMenuToolbarModalBar button {
 }
 
 body.is-phone {
-  &.transparency-off #cMenuToolbarModalBar,
-  &.transparency-off #cMenuToolbarPopoverBar,
-  &.is-android:not(.material-off) #cMenuToolbarModalBar,
-  &.is-android:not(.material-off) #cMenuToolbarPopoverBar {
-    top: 0 !important;
-  }
-
   #cMenuToolbarModalBar,
   #cMenuToolbarPopoverBar {
     top: calc(var(--safe-area-inset-top) + var(--view-header-height)) !important;

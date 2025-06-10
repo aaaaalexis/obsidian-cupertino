@@ -110,10 +110,6 @@ settings:
         title: Disable quick mode switch
         type: class-toggle
     -
-        id: transparency-off
-        title: Reduced transparency
-        type: class-toggle
-    -
         id: hide-tabs-count-off
         title: Show tabs count
         type: class-toggle
@@ -391,9 +387,7 @@ body {
     }
   }
 
-  &.blur-effect-off,
-  &.transparency-off,
-  &.is-android:not(.material-off) {
+  &.blur-effect-off {
     --modal-background: var(--background-secondary) !important;
   }
 

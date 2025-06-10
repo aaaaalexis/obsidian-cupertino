@@ -57,13 +57,7 @@ body.is-phone {
   }
 }
 
-body.is-mobile.transparency-off .canvas-control-group,
-body.is-android:not(.material-off) .canvas-control-group {
-  backdrop-filter: none;
-  background-color: var(--interactive-normal);
-}
-
-body.is-phone:not(.transparency-off):not(.is-android:not(.material-off)) {
+body.is-phone {
   .canvas-controls {
     top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
   }

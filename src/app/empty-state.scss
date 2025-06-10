@@ -137,13 +137,6 @@ body.is-mobile {
   }
 }
 
-body.is-phone.transparency-off,
-body.is-phone.is-android:not(.material-off) {
-  .empty-state-action:first-child {
-    padding-top: calc(var(--safe-area-inset-top) + 8px);
-  }
-}
-
 body.is-tablet {
   .empty-state-container::before {
     margin-top: calc(-1 * var(--header-height));
