@@ -144,12 +144,12 @@ body.is-mobile.is-android:not(.material-off) {
     border-radius: var(--radius-m);
     width: 56px;
     height: 56px;
+    margin-bottom: calc(8px + var(--input-height) + var(--safe-area-inset-bottom) + 8px);
   }
 
   &.is-phone:not(.mode-highlight-off) .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
     background-color: var(--interactive-accent-active) !important;
     color: var(--text-accent-active) !important;
-    margin-bottom: calc(8px + var(--input-height) + var(--safe-area-inset-bottom) + 8px);
   }
 
   /********** Bottom Bar **********/
