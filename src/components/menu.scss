@@ -152,7 +152,7 @@ body.is-phone {
   }
 }
 
-body.is-tablet:not(.tablet-menu-off) {
+body.is-tablet:not(.is-android:not(.material-off)) {
   &.theme-light {
     .menu-item:not(.is-label[data-section="title"]) {
       background-color: rgb(from var(--background-primary) r g b / 50%);

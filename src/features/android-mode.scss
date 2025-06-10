@@ -165,6 +165,15 @@ body.is-mobile.is-android:not(.material-off) {
   }
 
   /********** Menu **********/
+
+  &.is-tablet .menu {
+    border-radius: var(--radius-xl);
+
+    .menu-scroll {
+      padding: 16px;
+    }
+  }
+
   .menu {
     border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   }
@@ -188,7 +197,7 @@ body.is-mobile.is-android:not(.material-off) {
   }
   .menu-item {
     border-radius: var(--radius-m);
-    border: none;
+    border: none !important;
   }
   .menu-item + .menu-item,
   .menu-item:has(+ .menu-item) {
