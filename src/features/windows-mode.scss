@@ -215,6 +215,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   .modal.mod-sidebar-layout {
     .vertical-tab-header {
       border: none;
+      background-color: transparent;
     }
 
     .vertical-tab-header-group-title {
