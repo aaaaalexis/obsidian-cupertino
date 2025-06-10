@@ -9,10 +9,8 @@ body.is-mobile.is-android:not(.material-off) {
   --h4-font: var(--font-interface-theme);
   --h5-font: var(--font-interface-theme);
   --h6-font: var(--font-interface-theme);
-  --color-accent-3: hsl(calc(258 - 9), calc(88% * 1.05), calc(66% * 1.375));
-  --text-accent: hsl(calc(258 + 15), calc(88% * 0.93), calc(66% * 0.475));
   --border-width: 1px;
-  --divider-width: 1px;
+  --divider-color: rgba(var(--mono-rgb-100), 0.3) !important;
   --radius-xl: 32px;
   --radius-l: 24px;
   --radius-m: 16px;
@@ -31,11 +29,21 @@ body.is-mobile.is-android:not(.material-off) {
   --slider-track-height: 16px;
   --tab-switcher-preview-background-shadow: none;
   --tab-switcher-preview-radius: var(--radius-m);
-  --interactive-normal: var(--background-secondary);
-  --nav-item-background-active: var(--color-accent-3);
-  --nav-item-background-selected: var(--color-accent-3);
-  --nav-item-color-active: var(--text-accent);
+  --nav-item-background-active: var(--interactive-accent-active);
+  --nav-item-background-selected: var(--interactive-accent-active);
+  --nav-item-color-active: var(--text-accent-active);
   --nav-item-weight-active: bold;
+
+  &.theme-light {
+    --interactive-normal: var(--background-primary);
+    --text-accent-active: hsl(calc(258 + 15), calc(88% * 0.93), calc(66% * 0.475));
+    --interactive-accent-active: hsl(calc(258 - 9), calc(88% * 1.05), calc(66% * 1.375));
+  }
+  &.theme-dark {
+    --interactive-normal: var(--background-secondary);
+    --text-accent-active: hsl(calc(258 - 9), calc(88% * 1.05), calc(66% * 1.375));
+    --interactive-accent-active: hsl(calc(var(--accent-h) + 7), calc(var(--accent-s) * 0.78), calc(var(--accent-l) * 0.45));
+  }
 
   &.is-phone {
     --view-header-height: 64px;
@@ -75,7 +83,7 @@ body.is-mobile.is-android:not(.material-off) {
     transition: var(--anim-duration-fast);
 
     &:focus {
-      box-shadow: inset 0 -2px var(--color-accent);
+      box-shadow: inset 0 -3px var(--color-accent);
       border-color: transparent;
     }
   }
@@ -95,10 +103,10 @@ body.is-mobile.is-android:not(.material-off) {
   input[type="range"]::-webkit-slider-thumb {
     box-shadow: none;
     background-color: var(--interactive-accent);
-    outline: 6px solid var(--background-primary);
+    outline: 6px solid var(--background-secondary);
   }
   &.theme-dark input[type="range"]::-webkit-slider-thumb {
-    outline-color: var(--background-secondary);
+    outline-color: var(--background-primary);
   }
   input[type="range"]:active,
   input[type="range"]:focus,
@@ -139,15 +147,15 @@ body.is-mobile.is-android:not(.material-off) {
   }
 
   &.is-phone:not(.mode-highlight-off) .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
-    background-color: var(--color-accent-3) !important;
-    color: var(--text-accent) !important;
+    background-color: var(--interactive-accent-active) !important;
+    color: var(--text-accent-active) !important;
+    margin-bottom: calc(8px + var(--input-height) + var(--safe-area-inset-bottom) + 8px);
   }
 
   /********** Bottom Bar **********/
 
   .mobile-navbar,
   .workspace-drawer .nav-header {
-    background-color: var(--background-secondary);
     padding: 8px max(var(--safe-area-inset-right), 16px) calc(var(--safe-area-inset-bottom) + 8px) max(var(--safe-area-inset-left), 16px);
   }
 
@@ -159,22 +167,6 @@ body.is-mobile.is-android:not(.material-off) {
     padding: 0;
     width: var(--input-height);
     height: var(--input-height);
-  }
-
-  .mobile-navbar-action:nth-child(3) {
-    border-radius: var(--radius-m);
-    background-color: var(--interactive-accent);
-    .clickable-icon {
-      color: var(--text-on-accent);
-    }
-    svg {
-      --icon-size: 40px;
-      stroke-width: 1.5px;
-
-      circle {
-        display: none;
-      }
-    }
   }
 
   /********** Menu **********/
@@ -322,13 +314,8 @@ body.is-mobile.is-android:not(.material-off) {
       text-align: left;
     }
     .modal-setting-back-button {
-      transition: var(--anim-duration-fast);
       border-radius: 100vh;
       background-color: var(--background-modifier-hover);
-
-      @starting-style {
-        width: 0;
-      }
     }
 
     .modal-close-button {

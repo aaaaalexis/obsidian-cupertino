@@ -321,7 +321,7 @@ body {
     --background-modifier-form-field: var(--interactive-normal) !important;
     --border-width: 0.3px;
     --divider-color: rgba(var(--mono-rgb-100), 0.1) !important;
-    --divider-width: 0.3px;
+    --divider-width: var(--border-width);
     --canvas-dot-pattern: var(--color-base-20);
     --checkbox-size: var(--icon-m);
     --icon-xs-stroke-width: 2px;
