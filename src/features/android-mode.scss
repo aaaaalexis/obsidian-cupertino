@@ -275,12 +275,6 @@ body.is-mobile.is-android:not(.material-off) {
       display: none;
     }
 
-    .hotkey-list-container {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
     .setting-item-heading .setting-item-name {
       font-family: var(--font-text-theme);
       text-transform: unset;
@@ -288,6 +282,9 @@ body.is-mobile.is-android:not(.material-off) {
       letter-spacing: 0.1px;
       padding-left: 8px;
       font-weight: bold;
+    }
+    .setting-item:not(:last-child):not(.setting-item-heading) {
+      margin-bottom: 2px;
     }
 
     .modal-header {
@@ -357,12 +354,6 @@ body.is-mobile.is-android:not(.material-off) {
     .modal-close-button {
       border-radius: 100vh;
       background-color: var(--background-modifier-hover);
-    }
-
-    .vertical-tab-content {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
     }
 
     .setting-item:not(.setting-item-heading) {
