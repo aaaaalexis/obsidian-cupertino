@@ -267,6 +267,7 @@ body.is-mobile {
 
   .workspace-drawer .nav-header {
     backdrop-filter: blur(32px);
+    background-color: rgb(from var(--background-secondary) r g b / 50%);
   }
 
   .mobile-navbar,
@@ -282,19 +283,6 @@ body.is-mobile {
     inset: -16px 0 0;
     pointer-events: none;
     content: "";
-  }
-}
-
-body.is-phone {
-  &.theme-light {
-    .workspace-drawer .nav-header {
-      background-color: rgb(from var(--background-secondary) r g b / 50%);
-    }
-  }
-  &.theme-dark {
-    .workspace-drawer .nav-header {
-      background-color: rgb(from var(--background-primary) r g b / 75%);
-    }
   }
 }
 
