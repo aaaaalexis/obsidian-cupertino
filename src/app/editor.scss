@@ -12,6 +12,7 @@
     --text-normal: var(--color-base-80);
 
     transition: var(--anim-duration-fast) ease-in-out;
+    letter-spacing: 0.2px;
   }
   .markdown-preview-view {
     scrollbar-gutter: auto;
@@ -28,10 +29,6 @@
   }
   .collapse-indicator {
     --cursor: pointer;
-  }
-
-  .markdown-rendered p {
-    letter-spacing: 0.2px;
   }
 
   /* Animation */
