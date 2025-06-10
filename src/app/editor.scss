@@ -118,7 +118,7 @@
   .markdown-source-view mark {
     box-decoration-break: clone;
     border-radius: var(--radius-s);
-    padding: 1px 4px;
+    padding: 2px 4px;
     color: var(--color-base-100);
 
     &:not([style]):not([class*="hltr-"]) {
@@ -128,7 +128,19 @@
 
   .cm-s-obsidian span.cm-highlight {
     color: var(--color-orange);
-    padding: 1px 0;
+    box-decoration-break: clone;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+  .cm-line .cm-highlight:nth-child(1 of .cm-highlight) {
+    border-top-left-radius: var(--radius-s);
+    border-bottom-left-radius: var(--radius-s);
+    padding-left: 4px;
+  }
+  .cm-line .cm-highlight:nth-last-child(1 of .cm-highlight) {
+    border-top-right-radius: var(--radius-s);
+    border-bottom-right-radius: var(--radius-s);
+    padding-right: 4px;
   }
 
   /* Link */
