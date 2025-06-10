@@ -52,6 +52,9 @@
   .empty-state-action {
     cursor: pointer;
   }
+  .empty-state-action.tappable {
+    color: var(--interactive-accent);
+  }
   .empty-state-action.mod-close {
     display: none;
   }
