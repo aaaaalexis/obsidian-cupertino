@@ -402,3 +402,30 @@ body.is-phone {
     content: "";
   }
 }
+
+/********** Find and Replace **********/
+
+body.is-tablet:not(.transparency-off):not(.is-android:not(.material-off)) {
+  .document-search-container {
+    position: fixed;
+    bottom: 0;
+    border: none;
+    background-color: transparent;
+    padding-bottom: var(--safe-area-inset-bottom);
+    width: 100%;
+
+    &::before {
+      z-index: -2 !important;
+      backdrop-filter: blur(16px) saturate(1.5);
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      z-index: -1;
+      mask: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.013) 4.7%, hsla(0, 0%, 0%, 0.049) 8.9%, hsla(0, 0%, 0%, 0.104) 12.8%, hsla(0, 0%, 0%, 0.175) 16.6%, hsla(0, 0%, 0%, 0.259) 20.4%, hsla(0, 0%, 0%, 0.352) 24.4%, hsla(0, 0%, 0%, 0.45) 28.8%, hsla(0, 0%, 0%, 0.55) 33.8%, hsla(0, 0%, 0%, 0.648) 39.6%, hsla(0, 0%, 0%, 0.741) 46.3%, hsla(0, 0%, 0%, 0.825) 54.1%, hsla(0, 0%, 0%, 0.896) 63.2%, hsla(0, 0%, 0%, 0.951) 73.8%, hsla(0, 0%, 0%, 0.987) 86%, hsl(0, 0%, 0%) 100%);
+      inset: -16px 0 0;
+      pointer-events: none;
+      content: "";
+    }
+  }
+}
