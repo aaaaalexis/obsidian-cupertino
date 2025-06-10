@@ -329,56 +329,59 @@ body.is-mobile.is-android:not(.material-off) {
     }
   }
 
-  &.is-phone {
-    .modal.mod-sidebar-layout {
-      .vertical-tab-content {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
+  &.is-phone .modal.mod-sidebar-layout {
+    .vertical-tab-content {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
 
-      .modal-close-button {
-        top: calc(var(--safe-area-inset-top) + 8px);
-        inset-inline-end: 16px;
-      }
+    .modal-close-button {
+      top: calc(var(--safe-area-inset-top) + 8px);
+      inset-inline-end: 16px;
+    }
 
-      .setting-item:not(.setting-item-heading),
-      .setting-item-control .mobile-option-setting-item {
-        border-radius: var(--radius-m);
-        padding: 16px;
-      }
-      .setting-item:not(.setting-item-heading):has(+ .setting-item:not(.setting-item-heading)) {
-        border: none;
-        margin-bottom: 2px;
-        border-bottom-right-radius: var(--radius-s);
-        border-bottom-left-radius: var(--radius-s);
-      }
-      .setting-item:not(.setting-item-heading) + .setting-item:not(.setting-item-heading) {
-        border-top-right-radius: var(--radius-s);
-        border-top-left-radius: var(--radius-s);
-      }
+    .setting-item:not(.setting-item-heading),
+    .setting-item-control .mobile-option-setting-item {
+      border-radius: var(--radius-m);
+      padding: 16px;
+    }
+    .setting-item:not(.setting-item-heading):has(+ .setting-item:not(.setting-item-heading)) {
+      border: none;
+      margin-bottom: 2px;
+      border-bottom-right-radius: var(--radius-s);
+      border-bottom-left-radius: var(--radius-s);
+    }
+    .setting-item:not(.setting-item-heading) + .setting-item:not(.setting-item-heading) {
+      border-top-right-radius: var(--radius-s);
+      border-top-left-radius: var(--radius-s);
     }
   }
 
-  &.is-tablet .modal:not(.mod-community-modal) {
+  &.is-tablet .modal.mod-sidebar-layout {
     .modal-close-button {
       border-radius: 100vh;
-      background-color: var(--background-modifier-hover);
+    }
+    .vertical-tab-header {
+      background-color: var(--color-base-25);
+      border: none;
     }
 
-    .setting-item:not(.setting-item-heading) {
-      border-radius: var(--radius-s);
-    }
-    .setting-item-heading + .setting-item,
-    *:not(.setting-item) + .setting-item:not(.setting-item-heading),
-    .setting-item:first-child:not(.setting-item-heading) {
-      border-top-right-radius: var(--radius-m) !important;
-      border-top-left-radius: var(--radius-m) !important;
-    }
-    .setting-item:has(+ .setting-item-heading),
-    .setting-item:has(+ *:not(.setting-item)):not(.setting-item-heading),
-    .setting-item:last-child {
-      border-bottom-right-radius: var(--radius-m) !important;
-      border-bottom-left-radius: var(--radius-m) !important;
+    &:not(.mod-community-modal) {
+      .setting-item:not(.setting-item-heading) {
+        border-radius: var(--radius-s);
+      }
+      .setting-item-heading + .setting-item,
+      *:not(.setting-item) + .setting-item:not(.setting-item-heading),
+      .setting-item:first-child:not(.setting-item-heading) {
+        border-top-right-radius: var(--radius-m) !important;
+        border-top-left-radius: var(--radius-m) !important;
+      }
+      .setting-item:has(+ .setting-item-heading),
+      .setting-item:has(+ *:not(.setting-item)):not(.setting-item-heading),
+      .setting-item:last-child {
+        border-bottom-right-radius: var(--radius-m) !important;
+        border-bottom-left-radius: var(--radius-m) !important;
+      }
     }
   }
 
