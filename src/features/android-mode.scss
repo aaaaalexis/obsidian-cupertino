@@ -197,6 +197,9 @@ body.is-mobile.is-android:not(.material-off) {
     flex-direction: row !important;
     gap: 16px;
   }
+  .menu-item:not(.is-label[data-section="title"]) {
+    background-color: var(--interactive-normal);
+  }
   .menu-item.tappable:not(:has(.mod-checked)) .menu-item-title {
     margin-left: 0 !important;
   }

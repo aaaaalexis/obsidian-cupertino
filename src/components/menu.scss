@@ -62,14 +62,6 @@ body.is-tablet:not(.tablet-menu-off) {
     white-space: normal;
   }
 
-  .menu-item:not(.is-label) {
-    flex-direction: row-reverse;
-    padding: 16px;
-  }
-  .menu-item-title {
-    white-space: normal;
-  }
-
   .menu-scroll {
     background-color: transparent;
     max-height: 80vh;
@@ -81,6 +73,13 @@ body.is-tablet:not(.tablet-menu-off) {
     --icon-size: var(--icon-m);
     justify-content: center;
     width: var(--icon-size);
+  }
+  .menu-item:not(.is-label) {
+    flex-direction: row-reverse;
+    padding: 16px;
+  }
+  .menu-item-title {
+    white-space: normal;
   }
   .menu-item.is-label {
     border: none !important;
