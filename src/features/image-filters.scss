@@ -12,8 +12,8 @@ div[src$="#invert"] {
   img[src$="#invert"],
   div[src$="#invert"] img,
   span[src$="#invert"] img {
-    filter: invert(1) hue-rotate(180deg);
     mix-blend-mode: screen;
+    filter: invert(1) hue-rotate(180deg);
   }
   img[src$="#blend"],
   div[src$="#blend"] img,
@@ -59,6 +59,6 @@ span[src$="#outline"] img {
 /* Interface */
 img[src$="#interface"],
 span[src$="#interface"] img {
-  border: var(--border-width) solid var(--background-modifier-border);
   box-shadow: var(--shadow-s);
+  border: var(--border-width) solid var(--background-modifier-border);
 }

@@ -439,10 +439,10 @@ body:not(.is-mobile) {
   }
 
   .app-container::before {
-    content: "";
-    inset: 0;
     position: fixed;
+    inset: 0;
     background-color: hsla(var(--color-accent-hsl), calc(var(--accented-frame-opacity) * 0.005));
+    content: "";
   }
 
   .workspace-sidedock-vault-profile {
@@ -456,8 +456,8 @@ body:not(.is-mobile) {
   }
 
   .titlebar {
-    background-color: transparent;
     z-index: 1 !important;
+    background-color: transparent;
   }
 }
 

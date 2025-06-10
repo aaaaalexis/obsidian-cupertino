@@ -55,9 +55,9 @@ body.is-mobile.is-android:not(.material-off) {
     border-radius: 100vh;
 
     &[class*="mod-"] {
+      border: none;
       background-color: var(--text-color);
       color: var(--text-on-accent);
-      border: none;
     }
     &.mod-cta {
       background-color: var(--interactive-accent);
@@ -75,12 +75,12 @@ body.is-mobile.is-android:not(.material-off) {
   input[type="text"],
   input[type="number"],
   input[type="search"] {
-    background-color: var(--interactive-normal);
+    transition: var(--anim-duration-fast);
+    box-shadow: inset 0 0 var(--color-accent);
     border-bottom: var(--border-width) solid var(--divider-color);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    box-shadow: inset 0 0 var(--color-accent);
-    transition: var(--anim-duration-fast);
+    background-color: var(--interactive-normal);
 
     &:focus {
       box-shadow: inset 0 -3px var(--color-accent);
@@ -101,9 +101,9 @@ body.is-mobile.is-android:not(.material-off) {
     transition: var(--anim-duration-fast);
   }
   input[type="range"]::-webkit-slider-thumb {
+    outline: 6px solid var(--background-secondary);
     box-shadow: none;
     background-color: var(--interactive-accent);
-    outline: 6px solid var(--background-secondary);
   }
   &.theme-dark input[type="range"]::-webkit-slider-thumb {
     outline-color: var(--background-primary);
@@ -118,9 +118,9 @@ body.is-mobile.is-android:not(.material-off) {
   }
 
   .checkbox-container {
-    border: 2px solid transparent;
     box-sizing: content-box;
     outline: none;
+    border: 2px solid transparent;
 
     &::after {
       box-shadow: none;
@@ -139,12 +139,12 @@ body.is-mobile.is-android:not(.material-off) {
     right: 16px;
     z-index: var(--layer-cover);
     backdrop-filter: none;
+    margin-bottom: calc(8px + var(--input-height) + var(--safe-area-inset-bottom) + 8px);
     box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
     border: none;
     border-radius: var(--radius-m);
     width: 56px;
     height: 56px;
-    margin-bottom: calc(8px + var(--input-height) + var(--safe-area-inset-bottom) + 8px);
   }
 
   &.is-phone:not(.mode-highlight-off) .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
@@ -185,8 +185,8 @@ body.is-mobile.is-android:not(.material-off) {
 
   .menu-grabber {
     top: 16px;
-    height: 4px;
     width: 32px;
+    height: 4px;
   }
 
   .menu-scroll {
@@ -201,8 +201,8 @@ body.is-mobile.is-android:not(.material-off) {
     margin-left: 0 !important;
   }
   .menu-item {
-    border-radius: var(--radius-m);
     border: none !important;
+    border-radius: var(--radius-m);
   }
   .menu-item + .menu-item,
   .menu-item:has(+ .menu-item) {
@@ -266,15 +266,15 @@ body.is-mobile.is-android:not(.material-off) {
   }
   .modal.mod-sidebar-layout {
     .vertical-tab-nav-item {
+      transition: border-radius var(--anim-duration-fast);
       border: none;
       border-radius: var(--radius-s);
       min-height: 64px;
-      transition: border-radius var(--anim-duration-fast);
     }
     .vertical-tab-nav-item.is-active {
       border-radius: var(--radius-l);
-      color: var(--nav-item-color-active);
       background-color: var(--nav-item-background-active);
+      color: var(--nav-item-color-active);
       font-weight: var(--nav-item-weight-active);
     }
     .vertical-tab-nav-item-chevron {
@@ -294,12 +294,12 @@ body.is-mobile.is-android:not(.material-off) {
     }
 
     .setting-item-heading .setting-item-name {
-      font-family: var(--font-text-theme);
-      text-transform: unset;
-      color: var(--text-accent);
-      letter-spacing: 0.1px;
       padding-left: 8px;
+      color: var(--text-accent);
       font-weight: bold;
+      font-family: var(--font-text-theme);
+      letter-spacing: 0.1px;
+      text-transform: unset;
     }
     .setting-item:not(:last-child):not(.setting-item-heading) {
       margin-bottom: 2px;
@@ -335,8 +335,8 @@ body.is-mobile.is-android:not(.material-off) {
 
   &.is-phone .modal.mod-sidebar-layout {
     .vertical-tab-content {
-      padding-left: 16px;
       padding-right: 16px;
+      padding-left: 16px;
     }
 
     .modal-close-button {
@@ -350,8 +350,8 @@ body.is-mobile.is-android:not(.material-off) {
       padding: 16px;
     }
     .setting-item:not(.setting-item-heading):has(+ .setting-item:not(.setting-item-heading)) {
-      border: none;
       margin-bottom: 2px;
+      border: none;
       border-bottom-right-radius: var(--radius-s);
       border-bottom-left-radius: var(--radius-s);
     }
@@ -398,15 +398,15 @@ body.is-mobile.is-android:not(.material-off) {
     box-shadow: none;
 
     .modal-header {
-      padding: 24px 24px 0;
       border: none;
+      padding: 24px 24px 0;
     }
 
     .modal-title {
       max-width: 100%;
-      text-align: left;
-      font-size: var(--h1-size);
       font-weight: normal;
+      font-size: var(--h1-size);
+      text-align: left;
     }
 
     .modal-content {
@@ -414,17 +414,17 @@ body.is-mobile.is-android:not(.material-off) {
     }
 
     .modal-button-container {
-      margin-bottom: 0;
       flex-direction: row;
-      padding: 0 24px 24px;
       gap: 4px;
+      margin-bottom: 0;
+      padding: 0 24px 24px;
 
       button {
         margin: 0;
         background-color: transparent;
+        padding: 0 16px;
         color: var(--text-accent);
         font-weight: bold;
-        padding: 0 16px;
       }
     }
   }
@@ -439,9 +439,9 @@ body.is-mobile.is-android:not(.material-off) {
     box-shadow: none;
 
     .prompt-input {
-      min-height: var(--view-header-height);
       box-shadow: none !important;
       border: none !important;
+      min-height: var(--view-header-height);
     }
 
     .prompt-input-container,
@@ -461,7 +461,7 @@ body.is-mobile.is-android:not(.material-off) {
   /********** Tab Switcher **********/
 
   .mobile-tab-switcher-menubar {
-    padding: 8px max(var(--safe-area-inset-right), 16px) calc(var(--safe-area-inset-bottom) + 8px) max(var(--safe-area-inset-left), 16px);
     border: none;
+    padding: 8px max(var(--safe-area-inset-right), 16px) calc(var(--safe-area-inset-bottom) + 8px) max(var(--safe-area-inset-left), 16px);
   }
 }

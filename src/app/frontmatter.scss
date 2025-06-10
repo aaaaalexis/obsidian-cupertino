@@ -51,8 +51,8 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
     font-weight: normal;
   }
   .metadata-add-button:hover {
-    color: var(--text-muted);
     background-color: transparent;
+    color: var(--text-muted);
   }
 
   .multi-select-pill {
@@ -83,8 +83,8 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
     .metadata-input-number,
     .metadata-input-longtext,
     .metadata-input-checkbox {
-      padding: 0 !important;
       margin: 0 !important;
+      padding: 0 !important;
     }
     input::-webkit-calendar-picker-indicator {
       display: none;

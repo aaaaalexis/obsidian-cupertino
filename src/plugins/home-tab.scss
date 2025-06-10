@@ -12,17 +12,17 @@ body.is-phone .home-tab {
 }
 
 .home-tab-searchbar {
+  border: none !important;
   padding: 0 !important;
   height: calc(var(--input-height) * 1.5) !important;
-  border: none !important;
 
   &.is-active input[type="search"] {
     border-radius: var(--input-radius) var(--input-radius) 0 0 !important;
   }
 
   input[type="search"] {
-    border: var(--border-width) solid var(--background-modifier-border) !important;
     box-shadow: none !important;
+    border: var(--border-width) solid var(--background-modifier-border) !important;
   }
 }
 

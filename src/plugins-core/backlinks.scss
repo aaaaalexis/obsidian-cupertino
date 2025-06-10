@@ -1,9 +1,9 @@
 body.is-mobile {
   .backlink-pane,
   .outgoing-link-pane {
+    flex: 0;
     padding-bottom: unset;
     overflow: visible;
-    flex: 0;
   }
 }
 

@@ -47,9 +47,9 @@ body:not(.is-mobile) {
   }
   select,
   .dropdown {
-    padding: 4px 32px 4px 10px;
     box-shadow: var(--input-shadow);
     border: none;
+    padding: 4px 32px 4px 10px;
   }
 }
 

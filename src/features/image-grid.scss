@@ -17,9 +17,9 @@ body {
 
 .img-grid {
   .image-embed.is-loaded {
-    line-height: 0;
     display: flex;
     align-items: stretch;
+    line-height: 0;
     img {
       background-color: transparent;
       &:active {
@@ -49,12 +49,12 @@ body {
       grid-row-gap: 0;
       grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
       > img:not(:active) {
-        object-fit: cover !important;
         align-self: stretch;
+        object-fit: cover !important;
       }
       > .internal-embed img:not(:active) {
-        object-fit: cover !important;
         align-self: center;
+        object-fit: cover !important;
       }
     }
     > div:has(img) > p {

@@ -18,11 +18,11 @@ body:not(.is-phone) {
   }
 
   .prompt-input {
-    background-color: transparent;
-    font-size: var(--font-ui-large);
-    border: none !important;
     box-shadow: none !important;
+    border: none !important;
+    background-color: transparent;
     height: var(--prompt-input-height) !important;
+    font-size: var(--font-ui-large);
   }
 
   .prompt-instructions {

@@ -34,15 +34,15 @@ body:not(.is-phone) {
   .workspace .mod-root .workspace-tabs {
     &:not(.mod-stacked) {
       .workspace-tab-header {
+        flex: unset;
         opacity: 0.5;
+        transition: var(--anim-duration-fast) !important;
+        container-type: unset;
         border: none;
         background-color: var(--background-modifier-hover);
         padding: 0;
-        container-type: unset;
-        flex: unset;
         width: calc-size(auto, size);
         min-width: var(--tab-width);
-        transition: var(--anim-duration-fast) !important;
 
         &::before,
         &::after {
@@ -60,9 +60,9 @@ body:not(.is-phone) {
 
       .workspace-tab-header.mod-active.is-active {
         @starting-style {
+          transform: translateX(-16px);
           width: 0 !important;
           min-width: 0 !important;
-          transform: translateX(-16px);
         }
       }
       .workspace-tab-header.mod-active:not(.is-active) {
@@ -81,8 +81,8 @@ body:not(.is-phone) {
       padding-inline-end: 4px;
     }
     .workspace-tab-header-inner-title {
-      line-height: normal;
       flex: unset;
+      line-height: normal;
     }
     .workspace-tab-header:not(.is-active):not(.autofit-tab) .workspace-tab-header-inner-title {
       padding-right: 18px;
@@ -376,9 +376,9 @@ body:not(.is-mobile):not(.is-hidden-frameless) {
 
 body.is-tablet {
   .sidebar-toggle-button {
+    align-items: center;
     padding: 0;
     height: var(--header-height);
-    align-items: center;
   }
 
   .workspace-tab-header-container {

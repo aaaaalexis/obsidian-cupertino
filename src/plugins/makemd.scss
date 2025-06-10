@@ -58,10 +58,10 @@ body.is-mobile {
   .mk-title-container .mk-toolbar-button {
     display: flex;
     position: absolute;
-    padding: 10px;
     right: 0;
     justify-content: center;
     align-items: center;
+    padding: 10px;
     width: 40px;
     height: 40px;
   }
@@ -82,8 +82,8 @@ body.is-mobile {
 
 body.is-phone {
   .mk-palette-search {
-    padding: 0 16px;
     margin: 0 16px;
+    padding: 0 16px;
   }
   .mk-menu-input-wrapper {
     padding: 0 16px;
@@ -92,8 +92,8 @@ body.is-phone {
     padding: 8px 16px;
   }
   .mk-menu-section {
-    font-size: var(--font-ui-medium);
-    padding: var(--tag-padding-y) var(--tag-padding-x);
     border-radius: 100vh;
+    padding: var(--tag-padding-y) var(--tag-padding-x);
+    font-size: var(--font-ui-medium);
   }
 }

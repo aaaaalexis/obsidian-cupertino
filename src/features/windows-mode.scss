@@ -156,8 +156,8 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   /********** Editor **********/
 
   .mod-root .workspace-tab-container {
-    box-shadow: none !important;
     outline: var(--border-width) solid var(--background-modifier-hover);
+    box-shadow: none !important;
   }
 
   /********** Sidebar **********/

@@ -21,23 +21,23 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
     }
 
     .workspace-tab-header-container-inner {
-      margin: 0 !important;
       flex-direction: column;
-      width: 100%;
+      margin: 0 !important;
       background-color: transparent;
+      width: 100%;
     }
 
     .workspace-tab-header {
-      padding: 0 8px;
       background-color: transparent;
+      padding: 0 8px;
       height: 32px;
     }
 
     .workspace-tab-header-inner {
-      padding: 0 4px;
       gap: 8px;
-      background-color: transparent;
       transition: var(--anim-duration-fast);
+      background-color: transparent;
+      padding: 0 4px;
 
       &:hover {
         opacity: 1;

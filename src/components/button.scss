@@ -11,9 +11,9 @@ body:not(.is-mobile) {
     padding: 4px 8px;
   }
   button:not(.clickable-icon) {
-    padding: 4px 10px;
     box-shadow: var(--input-shadow);
     border: none;
+    padding: 4px 10px;
     height: unset;
     min-height: var(--input-height);
     font-weight: normal;
@@ -49,9 +49,9 @@ body.is-phone:not(.is-android:not(.material-off)) {
     background-color: var(--interactive-normal);
     padding: 0 16px;
     min-height: var(--input-height);
+    color: var(--text-accent);
     font-weight: normal;
     text-align-last: unset;
-    color: var(--text-accent);
   }
 
   .setting-item-control button {

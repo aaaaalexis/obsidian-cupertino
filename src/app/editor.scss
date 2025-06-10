@@ -129,10 +129,10 @@
   }
 
   .cm-s-obsidian span.cm-highlight {
-    color: var(--color-orange);
     box-decoration-break: clone;
     padding-top: 2px;
     padding-bottom: 2px;
+    color: var(--color-orange);
   }
   .cm-line .cm-highlight:nth-child(1 of .cm-highlight) {
     border-top-left-radius: var(--radius-s);

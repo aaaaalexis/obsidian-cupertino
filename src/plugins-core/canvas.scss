@@ -5,8 +5,8 @@
 .canvas-control-group {
   backdrop-filter: blur(32px);
   box-shadow: none;
-  background-color: rgb(from var(--background-secondary) r g b / 50%);
   border-width: var(--border-width);
+  background-color: rgb(from var(--background-secondary) r g b / 50%);
 }
 
 .canvas-control-item {

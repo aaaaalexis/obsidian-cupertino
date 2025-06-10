@@ -72,9 +72,9 @@ body.is-mobile .modal:not(.mod-sidebar-layout) {
 body.is-mobile:not(.is-android:not(.material-off)) {
   .modal:not(.mod-sidebar-layout) {
     --interactive-normal: unset !important;
-    background-color: var(--modal-background) !important;
     backdrop-filter: blur(32px);
     box-shadow: none;
+    background-color: var(--modal-background) !important;
 
     .modal-header {
       border: none !important;
@@ -98,8 +98,8 @@ body.is-mobile:not(.is-android:not(.material-off)) {
 
   .modal:not([class*="mod-"]:not(.mod-file-rename)) {
     bottom: var(--safe-area-inset-bottom);
-    padding: 0;
     margin: 0 8px;
+    padding: 0;
 
     .modal-header {
       padding: 24px 0 8px;

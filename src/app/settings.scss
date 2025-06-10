@@ -62,12 +62,12 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
       padding: 16px 16px 12px;
     }
     .setting-item:not(.setting-item-heading) {
+      gap: 8px;
       border-right: var(--border-width) solid var(--background-modifier-border);
       border-left: var(--border-width) solid var(--background-modifier-border);
       border-radius: 0;
       background-color: rgba(var(--mono-rgb-100), 0.02);
       padding: 12px 16px;
-      gap: 8px;
     }
     .setting-item-heading + .setting-item,
     *:not(.setting-item) + .setting-item:not(.setting-item-heading),
@@ -137,21 +137,21 @@ body.is-mobile {
       top: unset;
       justify-content: center;
       align-items: center;
+      order: -1;
       padding: 0;
       width: var(--input-height);
       height: var(--input-height);
-      order: -1;
     }
     .modal-setting-back-button-icon {
       margin-inline-end: 0;
     }
 
     .modal-close-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: var(--input-height);
       height: var(--input-height);
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .vertical-tab-nav-item {

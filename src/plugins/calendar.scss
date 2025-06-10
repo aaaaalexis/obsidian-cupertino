@@ -1,8 +1,8 @@
 #calendar-container {
   --color-text-today: var(--color-accent);
   --color-dot: var(--color-base-50);
-  padding: 0;
   background-color: transparent;
+  padding: 0;
 
   .title {
     font-size: var(--font-ui-large);
@@ -35,14 +35,14 @@
   .day,
   .week-num {
     display: flex;
+    position: relative;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     border-radius: 100vh;
     padding: 8px;
-    font-weight: 500;
-    position: relative;
-    justify-content: center;
     min-height: 32px;
+    font-weight: 500;
 
     &:hover {
       background-color: var(--background-modifier-hover);
@@ -55,24 +55,24 @@
 
   .today.active {
     --color-dot: var(--text-on-accent);
-    color: var(--text-on-accent);
     background-color: var(--color-accent);
+    color: var(--text-on-accent);
   }
 
   .active {
     --color-dot: var(--color-text-today);
-    font-weight: bold;
-    color: var(--color-text-today);
     background-color: hsla(var(--color-accent-hsl), 0.15);
+    color: var(--color-text-today);
+    font-weight: bold;
   }
 
   .dot-container {
     position: absolute;
     bottom: 2px;
     flex-wrap: nowrap;
+    gap: 1px;
     border-radius: 100vh;
     min-height: 4px;
-    gap: 1px;
   }
 
   .filled {
@@ -85,8 +85,8 @@
 
   .dot,
   .hollow {
-    height: 6px;
-    width: 6px;
     margin: 0;
+    width: 6px;
+    height: 6px;
   }
 }
