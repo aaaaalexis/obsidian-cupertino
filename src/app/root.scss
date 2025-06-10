@@ -41,6 +41,26 @@ settings:
         title: Compact list view
         type: class-toggle
     -
+        id: android-header
+        title: Android
+        type: heading
+        level: 1
+    -
+        id: material-off
+        title: Disable Android mode
+        description: Turn off Material styling on Android.
+        type: class-toggle
+    -
+        id: windows-header
+        title: Windows
+        type: heading
+        level: 1
+    -
+        id: windows-mode-off
+        title: Disable Windows mode
+        description: Turn off Fluent styling on Windows.
+        type: class-toggle
+    -
         id: desktop-header
         title: Desktop
         type: heading
@@ -54,11 +74,6 @@ settings:
         min: 0
         max: 100
         step: 5
-    -
-        id: windows-mode-off
-        title: Disable Windows mode
-        description: Turn off Fluent styling on Windows.
-        type: class-toggle
     -
         id: hide-nav-header-off
         title: Disable compact panel actions
@@ -101,16 +116,6 @@ settings:
     -
         id: hide-tabs-count-off
         title: Show tabs count
-        type: class-toggle
-    -
-        id: android-header
-        title: Android
-        type: heading
-        level: 1
-    -
-        id: material-off
-        title: Disable Android mode
-        description: Turn off Material styling on Android.
         type: class-toggle
 */
 

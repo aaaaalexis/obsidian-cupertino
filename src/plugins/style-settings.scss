@@ -19,7 +19,8 @@
 }
 
 body:not(.mod-windows) .style-settings-heading[data-id="cupertino"] + .style-settings-container {
-  .setting-item[data-id="windows-mode-off"] {
+  .style-settings-heading[data-id="windows-header"],
+  .style-settings-heading[data-id="windows-header"] + .style-settings-container {
     display: none;
   }
 }
