@@ -94,6 +94,15 @@
     border-top: none;
   }
 
+  .HyperMD-codeblock-begin,
+  .HyperMD-codeblock-end {
+    color: var(--text-faint) !important;
+
+    &:not(:has(.cm-formatting-code-block)) {
+      height: 12px;
+    }
+  }
+
   .HyperMD-codeblock {
     padding-right: 16px !important;
   }
@@ -104,13 +113,6 @@
     box-shadow: none !important;
     padding: 8px !important;
     line-height: 100%;
-  }
-
-  .markdown-reading-view .markdown-rendered button.copy-code-button {
-    inset-inline-end: 4px;
-  }
-  .markdown-source-view .markdown-rendered button.copy-code-button {
-    inset-inline-end: 36px;
   }
 
   /* Highlight */
