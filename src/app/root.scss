@@ -159,6 +159,7 @@ body {
   --icon-opacity: 1;
   --inline-title-size: 2em;
   --input-height: 24px;
+  --input-radius: var(--radius-s);
   --interactive-normal: var(--color-base-25);
   --line-height-normal: 1.6;
   --list-spacing: 0.2em;
@@ -172,10 +173,11 @@ body {
   --nav-item-color: var(--color-base-100);
   --nav-item-padding: 8px 8px 8px 24px;
   --prompt-border-color: var(--modal-border-color);
-  --radius-l: 12px;
-  --radius-m: 6px;
+  --clickable-icon-radius: 100vh;
+  --radius-l: 20px;
+  --radius-m: 12px;
   --radius-s: 6px;
-  --radius-xl: 12px;
+  --radius-xl: 32px;
   --ribbon-background-collapsed: transparent;
   --ribbon-background: transparent;
   --ribbon-padding: 4px 8px;
