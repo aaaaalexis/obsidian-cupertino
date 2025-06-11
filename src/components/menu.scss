@@ -24,9 +24,13 @@ body:not(.is-mobile) .suggestion-container {
 
   .menu-item,
   .suggestion-item {
-    border-radius: 4px;
-    padding: var(--size-4-1) var(--size-4-2);
+    border-radius: calc(var(--radius-m) - 4px);
+    padding: 4px 12px;
     font-size: var(--font-ui-small);
+
+    .svg-icon {
+      --icon-size: var(--icon-xs);
+    }
   }
   .menu-item.selected:not(.is-label):not(.is-disabled),
   .suggestion-item.is-selected:not(.mod-group) {

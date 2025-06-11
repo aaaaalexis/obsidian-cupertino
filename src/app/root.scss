@@ -291,6 +291,9 @@ body {
 
   &:not(.is-mobile) {
     --dialog-width: fit-content;
+    --icon-xs: 12px;
+    --icon-s: 14px;
+    --icon-m: 16px;
     --icon-xl: 24px;
 
     &.theme-light {
