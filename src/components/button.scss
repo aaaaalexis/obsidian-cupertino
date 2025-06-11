@@ -11,16 +11,14 @@ body:not(.is-mobile) {
     padding: 4px 8px;
   }
   button:not(.clickable-icon) {
-    box-shadow: var(--input-shadow);
+    padding: 4px 12px;
+    box-shadow: none;
     border: none;
     padding: 4px 10px;
     height: unset;
     min-height: var(--input-height);
     font-weight: normal;
     line-height: unset;
-  }
-  button[class*="mod-"]:not(.mod-cancel):not(.mod-destructive):not(.mod-bookmark):not(.mod-secondary) {
-    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
   }
 }
 

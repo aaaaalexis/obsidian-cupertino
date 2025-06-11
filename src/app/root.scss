@@ -159,7 +159,7 @@ body {
   --icon-opacity: 1;
   --inline-title-size: 2em;
   --input-height: 24px;
-  --input-radius: var(--radius-m);
+  --interactive-normal: var(--color-base-25);
   --line-height-normal: 1.6;
   --list-spacing: 0.2em;
   --metadata-gap: 0;
@@ -181,7 +181,10 @@ body {
   --ribbon-padding: 4px 8px;
   --ribbon-width: 56px;
   --search-icon-size: var(--icon-s);
-  --slider-track-height: 4px;
+  --slider-thumb-height: 18px;
+  --slider-thumb-width: 28px;
+  --slider-thumb-radius: var(--toggle-thumb-radius);
+  --slider-track-height: 6px;
   --slider-track-background: var(--background-modifier-border-hover);
   --tab-background-active: var(--background-primary-alt);
   --tab-container-background: transparent;
@@ -201,14 +204,14 @@ body {
   --text-selection: var(--background-modifier-hover);
   --titlebar-background-focused: transparent;
   --titlebar-background: transparent;
-  --toggle-border-width: var(--border-width);
+  --toggle-border-width: 1.5px;
   --toggle-s-border-width: var(--toggle-border-width);
   --toggle-s-thumb-height: var(--toggle-thumb-height);
   --toggle-s-thumb-width: var(--toggle-thumb-width);
   --toggle-s-width: var(--toggle-width);
   --toggle-thumb-height: 13px;
-  --toggle-thumb-width: 13px;
-  --toggle-width: 26px;
+  --toggle-thumb-width: 21px;
+  --toggle-width: 36px;
   --view-header-height: 40px;
   --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
 
