@@ -44,7 +44,9 @@ input[data-task="X"]:checked::after,
 li[data-task="X"] > input:checked::after,
 li[data-task="X"] > p > input:checked::after,
 .checked:after,
-.checkbox-item input:checked::after {
+.checkbox-item input:checked::after,
+.mod-checkbox input[type="checkbox"]:checked::after,
+.tasks-modal-checkbox:checked::after {
   -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDEyIDEyIj48cGF0aCBmaWxsPSIjMDAwIiBkPSJNNS4zNDEgOC44N2MuMjA0IDAgLjM2OS0uMDkzLjQ5NC0uMjgyTDguNiA0LjIzYy4xMzMtLjIyMS4yNDctLjUxNy0uMDA2LS43MTEtLjI2LS4yMS0uNTk0LS4xMzMtLjc2NS4xNDdMNS4zMTggNy43IDQuMTI0IDYuMTU5Yy0uMTg5LS4yNDgtLjU0LS4zNy0uNzgzLS4xMDYtLjIwMy4yMTItLjE1My41MDcuMDA2LjcyM2wxLjQ3NyAxLjgxMmMuMTU2LjIwNC4zMTMuMjgzLjUxNy4yODNaIi8+PC9zdmc+") !important;
 }
 
