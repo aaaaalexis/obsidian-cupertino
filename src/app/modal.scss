@@ -1,4 +1,4 @@
-body.blur-effect-off .modal{
+body.blur-effect-off .modal {
   backdrop-filter: none;
 }
 
@@ -12,7 +12,7 @@ body:not(.is-mobile) {
   }
 
   .modal {
-    backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px) saturate(1.5);
   }
 
   .modal:not(.mod-sidebar-layout) {
@@ -72,7 +72,7 @@ body.is-mobile .modal:not(.mod-sidebar-layout) {
 body.is-mobile:not(.is-android:not(.material-off)) {
   .modal:not(.mod-sidebar-layout) {
     --interactive-normal: unset !important;
-    backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px) saturate(1.5);
     box-shadow: none;
     background-color: var(--modal-background) !important;
 

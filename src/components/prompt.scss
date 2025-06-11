@@ -8,7 +8,7 @@ body:not(.is-phone) {
   }
 
   .prompt {
-    backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px) saturate(1.5);
     border: var(--prompt-border-width) solid var(--prompt-border-color);
     background-color: var(--workspace-background-translucent);
   }

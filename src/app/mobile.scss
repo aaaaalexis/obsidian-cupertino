@@ -17,7 +17,7 @@ body.is-phone {
     position: fixed;
     right: max(var(--safe-area-inset-right), 8px);
     bottom: 16px;
-    backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px) saturate(1.5);
     margin-bottom: calc(4px + var(--input-height) + var(--safe-area-inset-bottom));
     border: var(--border-width) solid var(--background-modifier-border);
     border-radius: 100%;
@@ -186,7 +186,7 @@ body.is-phone {
 /********** Pull Action **********/
 
 .pull-action {
-  backdrop-filter: blur(32px);
+  backdrop-filter: blur(32px) saturate(1.5);
   animation: fadeInDown var(--anim-duration-fast);
   box-shadow: var(--shadow-s);
   border: var(--border-width) solid var(--background-modifier-border);
@@ -266,7 +266,7 @@ body.is-mobile {
   }
 
   .workspace-drawer .nav-header {
-    backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px) saturate(1.5);
     background-color: rgb(from var(--background-secondary) r g b / 50%);
   }
 
@@ -301,7 +301,7 @@ body.is-tablet {
 
 body.is-mobile {
   .mobile-image-viewer {
-    backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px) saturate(1.5);
     animation: var(--anim-duration-fast) fadeInScale;
     background-color: var(--workspace-background-translucent);
   }
@@ -333,7 +333,7 @@ body.is-phone {
   .mobile-tab-switcher-scroll::before {
     position: absolute;
     z-index: -1;
-    backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px) saturate(1.5);
     box-shadow: var(--shadow-l);
     border-radius: 32px 32px 0 0;
     background-color: var(--modal-background);
