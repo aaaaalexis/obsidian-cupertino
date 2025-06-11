@@ -173,7 +173,7 @@ body.is-mobile {
     }
 
     .vertical-tab-header-group-items {
-      border-radius: var(--input-radius);
+      border-radius: var(--radius-m);
       background-color: var(--interactive-normal);
       overflow: hidden;
     }
@@ -198,11 +198,13 @@ body.is-mobile {
 
     .community-item {
       border: none;
-      border-radius: var(--input-radius);
+      border-radius: var(--radius-m);
+      background-color: var(--interactive-normal);
+      padding: 16px 20px;
     }
 
     .community-modal-details {
-      background-color: var(--background-secondary);
+      background-color: transparent;
     }
 
     .setting-item-heading .setting-item-name {
@@ -222,8 +224,8 @@ body.is-phone:not(.is-android:not(.material-off)) .modal.mod-sidebar-layout {
 
   .vertical-tab-header,
   .vertical-tab-content {
-    padding-right: 16px;
-    padding-left: 16px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   .setting-item {
@@ -235,9 +237,9 @@ body.is-phone:not(.is-android:not(.material-off)) .modal.mod-sidebar-layout {
 
   .setting-item.mod-toggle,
   .setting-item-control .mobile-option-setting-item {
-    border-radius: var(--input-radius);
+    border-radius: var(--radius-m);
     background-color: var(--interactive-normal) !important;
-    padding: 12px 20px;
+    padding: 16px 20px;
   }
 
   .setting-item.mod-toggle:has(+ .setting-item.mod-toggle) {
@@ -260,7 +262,7 @@ body.is-phone:not(.is-android:not(.material-off)) .modal.mod-sidebar-layout {
   .setting-item-control:not(:has(:not(button))) {
     flex-direction: column;
     gap: 0;
-    border-radius: var(--input-radius);
+    border-radius: var(--radius-m);
     overflow: hidden;
   }
 

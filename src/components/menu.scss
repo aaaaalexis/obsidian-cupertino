@@ -79,7 +79,7 @@ body.is-tablet:not(.tablet-menu-off) {
   }
   .menu-item:not(.is-label) {
     flex-direction: row-reverse;
-    padding: 16px;
+    padding: 16px 20px;
   }
   .menu-item-title {
     white-space: normal;
@@ -125,6 +125,9 @@ body.is-tablet:not(.tablet-menu-off) {
 body.is-phone {
   .menu {
     box-shadow: none;
+    border-radius: var(--radius-xl);
+    margin: 0 8px 8px;
+    width: unset;
   }
   .menu-grabber {
     position: absolute;
@@ -136,19 +139,22 @@ body.is-phone {
   .menu-scroll {
     padding: 40px 20px calc(var(--safe-area-inset-bottom) + 16px);
   }
+  .menu-item {
+    border-radius: var(--radius-m);
+  }
   .menu-item + .menu-item,
   .menu-item:has(+ .menu-item) {
     border-radius: 0;
   }
   .menu-separator + .menu-item,
   .menu-item:first-child:has(+ .menu-item) {
-    border-top-right-radius: var(--radius-s);
-    border-top-left-radius: var(--radius-s);
+    border-top-right-radius: var(--radius-m);
+    border-top-left-radius: var(--radius-m);
   }
   .menu-item:has(+ .menu-separator),
   .menu-item + .menu-item:last-child {
-    border-bottom-right-radius: var(--radius-s);
-    border-bottom-left-radius: var(--radius-s);
+    border-bottom-right-radius: var(--radius-m);
+    border-bottom-left-radius: var(--radius-m);
   }
 }
 

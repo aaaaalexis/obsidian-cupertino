@@ -2,17 +2,37 @@ body.blur-effect-off .modal {
   backdrop-filter: none;
 }
 
-body:not(.is-mobile) {
+body {
   &.theme-light .modal {
     border-width: var(--modal-border-width) 0 0;
   }
 
-  .modal-bg {
-    background-color: transparent;
-  }
-
   .modal {
     backdrop-filter: blur(32px) saturate(1.5);
+  }
+
+  .modal-button-container {
+    justify-content: center;
+    gap: 6px;
+
+    button {
+      flex-grow: 1;
+      width: auto;
+      line-height: var(--line-height-normal);
+      border-radius: var(--clickable-icon-radius);
+    }
+
+    .mod-checkbox {
+      justify-content: center;
+      margin-bottom: 8px;
+      width: 100%;
+    }
+  }
+}
+
+body:not(.is-mobile) {
+  .modal-bg {
+    background-color: transparent;
   }
 
   .modal:not(.mod-sidebar-layout) {
@@ -47,24 +67,6 @@ body:not(.is-mobile) {
     .mod-checkbox {
       font-size: var(--font-ui-small);
     }
-
-    .modal-button-container {
-      justify-content: center;
-      gap: 6px;
-
-      button {
-        flex-grow: 1;
-        width: 0;
-        line-height: var(--line-height-normal);
-        border-radius: var(--clickable-icon-radius);
-      }
-
-      .mod-checkbox {
-        justify-content: center;
-        margin-bottom: 8px;
-        width: 100%;
-      }
-    }
   }
 }
 
@@ -72,89 +74,53 @@ body.is-mobile .modal:not(.mod-sidebar-layout) {
   border-radius: var(--radius-xl);
 }
 
-body.is-mobile:not(.is-android:not(.material-off)) {
-  .modal:not(.mod-sidebar-layout) {
-    --interactive-normal: unset !important;
-    backdrop-filter: blur(32px) saturate(1.5);
-    box-shadow: none;
-    background-color: var(--modal-background) !important;
+body.is-mobile:not(.is-android:not(.material-off)) .modal:not(.mod-sidebar-layout) {
+  box-shadow: none;
+  margin: 0 8px 8px;
 
-    .modal-header {
-      border: none !important;
-    }
-
-    .modal-nav-action {
-      margin-top: unset;
-      box-shadow: none !important;
-      background-color: transparent;
-      padding: 16px 12px;
-      height: unset;
-
-      &:first-of-type {
-        left: 16px;
-      }
-      &:last-of-type {
-        right: 16px;
-      }
-    }
+  .modal-header {
+    border: none !important;
+    padding: 24px 24px 0;
   }
 
-  .modal:not([class*="mod-"]:not(.mod-file-rename)) {
-    bottom: var(--safe-area-inset-bottom);
-    margin: 0 8px;
-    padding: 0;
+  .modal-title {
+    max-width: 100%;
+    text-align: start;
+  }
 
-    .modal-header {
-      padding: 24px 0 8px;
-      color: var(--text-muted);
-    }
-
-    .modal-content {
-      padding: 8px 16px 24px;
-      color: var(--text-muted);
-      text-align: center;
-    }
-
-    .modal-content p {
-      margin: 0.1em;
-    }
-
-    .setting-item {
-      margin-top: 16px;
-      border: none;
-    }
-
-    textarea {
-      line-height: var(--input-height);
-    }
+  .modal-content {
+    padding: 8px 24px;
+    font-size: var(--font-ui-small);
 
     .modal-button-container {
-      gap: 0;
-      margin: 0;
-      padding: 0;
-
-      button {
-        justify-content: center;
-        margin: 0;
-        border-top: var(--border-width) solid var(--background-modifier-border);
-        border-radius: 0;
-        background-color: transparent;
-        padding: 32px 0;
-        color: var(--text-accent);
-        font-size: var(--font-ui-medium);
-      }
-
-      .mod-destructive,
-      .mod-warning {
-        color: var(--text-error);
-      }
+      padding: 0 0 16px;
     }
   }
-}
 
-body.is-phone:not(.is-android:not(.material-off)) {
-  .modal {
+  .modal-button-container {
+    margin: 0;
+    padding: 0 16px 16px;
+
+    button {
+      margin: 0;
+      font-size: var(--font-ui-medium);
+      text-align: center;
+      justify-content: center;
+      min-height: 48px;
+    }
+  }
+
+  .modal-nav-action {
+    margin-top: unset;
     box-shadow: none !important;
+    background-color: transparent;
+    padding: 24px;
+    height: unset;
+
+    &:first-of-type {
+      inset-inline-start: unset;
+      right: 6em;
+    }
   }
 }
 

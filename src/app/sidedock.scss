@@ -209,7 +209,7 @@ body.is-mobile {
       background-color: var(--interactive-normal);
 
       &:not(.node-insert-event) {
-        padding: 8px 16px;
+        padding: 8px 20px;
       }
     }
     .search-result-file-title {
@@ -226,12 +226,12 @@ body.is-mobile {
   }
 
   .nav-files-container {
-    padding: 8px 16px !important;
+    padding: 8px 20px !important;
 
     & > div {
       gap: 0;
       margin-bottom: 80px;
-      border-radius: var(--input-radius);
+      border-radius: var(--radius-m);
       background-color: var(--interactive-normal);
 
       > .tree-item {
