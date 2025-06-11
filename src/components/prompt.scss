@@ -1,4 +1,4 @@
-body.blur-effect-off .prompt{
+body.blur-effect-off .prompt {
   backdrop-filter: none;
 }
 
@@ -10,7 +10,7 @@ body:not(.is-phone) {
   .prompt {
     backdrop-filter: blur(32px) saturate(1.5);
     border: var(--prompt-border-width) solid var(--prompt-border-color);
-    background-color: var(--workspace-background-translucent);
+    background-color: var(--modal-background);
   }
 
   .prompt-input-container {
@@ -38,7 +38,7 @@ body:not(.is-phone) {
 body.is-phone {
   .prompt {
     --prompt-top: calc(var(--safe-area-inset-top) + 8px);
-    backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px) saturate(1.5);
     animation: var(--anim-duration-slow) blurInScale !important;
     transition: var(--anim-duration-fast);
     margin-top: var(--prompt-top);
