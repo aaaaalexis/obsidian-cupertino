@@ -16,10 +16,13 @@ body:not(.is-mobile) {
   }
 
   .modal:not(.mod-sidebar-layout) {
+    .modal-close-button {
+      display: none;
+    }
+
     .modal-title {
       margin: 4px 0 8px;
-      font-weight: 700;
-      font-size: var(--font-ui-medium);
+      font-weight: bold;
 
       &:empty {
         display: none;
@@ -27,11 +30,8 @@ body:not(.is-mobile) {
     }
 
     .modal-title,
-    h1,
-    h2,
-    h3,
-    p {
-      text-align: center;
+    .modal-content {
+      padding: 0 4px;
     }
 
     button {
@@ -42,6 +42,7 @@ body:not(.is-mobile) {
       margin: 0;
     }
 
+    .modal-title,
     .modal-content,
     .mod-checkbox {
       font-size: var(--font-ui-small);
@@ -49,11 +50,13 @@ body:not(.is-mobile) {
 
     .modal-button-container {
       justify-content: center;
+      gap: 6px;
 
       button {
         flex-grow: 1;
         width: 0;
         line-height: var(--line-height-normal);
+        border-radius: var(--clickable-icon-radius);
       }
 
       .mod-checkbox {

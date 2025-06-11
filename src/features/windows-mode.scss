@@ -292,15 +292,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   .modal:not(.mod-sidebar-layout) {
     padding: 0;
 
-    .modal-title,
-    .modal-content,
-    h1,
-    h2,
-    h3,
-    p {
-      text-align: left;
-    }
-
     .modal-title {
       padding: 24px 24px 4px;
       font-size: var(--font-ui-large);
@@ -320,6 +311,10 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
       border-top: var(--border-width) solid var(--background-modifier-border);
       background-color: var(--divider-color);
       padding: 24px;
+
+      button {
+        border-radius: var(--button-radius);
+      }
     }
 
     .modal-content > .modal-button-container {
