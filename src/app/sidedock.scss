@@ -47,6 +47,9 @@ body:not(.is-mobile) {
 
   .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
     padding: 4px 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .view-content > .node-insert-event {
@@ -84,6 +87,7 @@ body:not(.is-mobile) {
       gap: 4px;
       background-color: transparent;
       padding: 0;
+      box-shadow: none;
 
       .nav-action-button {
         flex-grow: 0;
@@ -91,6 +95,7 @@ body:not(.is-mobile) {
         padding: 2px;
         width: unset;
         height: unset;
+        opacity: 1;
       }
       .nav-action-button::after {
         width: 0;
@@ -100,24 +105,46 @@ body:not(.is-mobile) {
         --icon-size: 0px;
       }
     }
+
+    &:hover .nav-action-button {
+      padding: 8px !important;
+    }
+  }
+
+  &.hide-nav-header-off {
+    .nav-buttons-container {
+      border-radius: calc(var(--clickable-icon-radius) + 2px);
+      background-color: var(--background-modifier-hover);
+      padding: 2px;
+      box-shadow: none;
+      width: 100%;
+    }
+    .nav-action-button {
+      flex-grow: 1;
+    }
   }
 
   /* Panel actions style */
   .nav-buttons-container {
-    border-radius: calc(var(--clickable-icon-radius) + 2px);
-    background-color: var(--background-modifier-hover);
-    padding: 2px;
+    border-radius: 100vh;
+    background-color: var(--modal-background);
+    padding: 4px;
+    box-shadow: var(--shadow-s);
+    width: fit-content;
+    gap: 0;
   }
   .nav-action-button {
     position: relative;
-    flex-grow: 1;
-    padding: 4px;
     height: 100%;
   }
   .nav-action-button.is-active,
   .nav-action-button.is-active:hover {
     background-color: var(--interactive-normal);
     color: var(--icon-color);
+  }
+  .nav-header .search-input-container {
+    margin: 8px auto;
+    width: 100%;
   }
 
   /* Hide indent line */

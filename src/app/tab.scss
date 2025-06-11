@@ -117,7 +117,10 @@ body:not(.is-phone) {
   }
 
   .workspace .mod-sidedock {
+    --tab-radius: var(--clickable-icon-radius);
+
     .workspace-tab-header-container-inner {
+      -webkit-app-region: no-drag;
       gap: 0px;
       transition: var(--anim-duration-fast);
     }
@@ -127,21 +130,27 @@ body:not(.is-phone) {
 
     .workspace-tab-header-container-inner:hover {
       background-color: var(--background-modifier-hover);
+
+      .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+        color: var(--text-on-accent);
+      }
+    }
+
+    .workspace-tab-header {
+      border-radius: var(--tab-radius);
+      transition: var(--anim-duration-fast);
+
+      &.is-active {
+        background-color: var(--color-accent);
+      }
     }
 
     .workspace-tab-header-inner {
       padding: 0 10px;
-
-      &:hover {
-        background-color: transparent;
-
-        .workspace-tab-header-inner-icon {
-          color: var(--icon-color-focused);
-        }
-      }
+      transition: var(--anim-duration-fast);
     }
 
-    .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+    .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:not(:hover) {
       opacity: 0.5;
     }
   }
