@@ -6,7 +6,7 @@ body:not(.is-mobile) .checkbox-container {
   }
 
   &::after {
-    box-shadow: 0px 0.2px 0.25px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: none;
   }
 }
 
@@ -15,6 +15,6 @@ body.is-mobile .checkbox-container {
   overflow: hidden;
 
   &::after {
-    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 3px 8px 0px rgba(0, 0, 0, 0.15), 0px 3px 1px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: none;
   }
 }

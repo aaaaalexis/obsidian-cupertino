@@ -1,16 +1,18 @@
+input[type="range"]::-webkit-slider-thumb {
+  &:active,
+  &:focus,
+  &:focus-within {
+    background-color: transparent;
+    transform: scale(1.5);
+    box-shadow: inset 1px 1px 2px 0px white, inset -1px -1px 2px 0px white, inset 0 0 4px lightgrey, inset 1px 1px 2px 0px white, inset -1px -1px 2px 0px white, inset 0 0 1px 1px grey !important;
+    backdrop-filter: blur(4px) saturate(1.5);
+  }
+}
+
 body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
   input[type="range"]::-webkit-slider-thumb {
     box-shadow: 0px 0 6px 0px rgba(0, 0, 0, 0.06) !important;
     border: none !important;
-
-    &:active,
-    &:focus,
-    &:focus-within {
-      background-color: transparent;
-      transform: scale(1.3);
-      box-shadow: inset 1px 1px 2px 0px white, inset -1px -1px 2px 0px white, inset 0 0 4px lightgrey, inset 1px 1px 2px 0px white, inset -1px -1px 2px 0px white, inset 0 0 1px 1px grey !important;
-      backdrop-filter: blur(4px) saturate(1.5);
-    }
   }
 }
 
