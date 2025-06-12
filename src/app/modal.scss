@@ -71,7 +71,7 @@ body:not(.is-mobile) {
   }
 }
 
-body.is-mobile:not(.is-android:not(.material-off)) .modal:not(.mod-sidebar-layout) {
+body.is-mobile .modal:not(.mod-sidebar-layout) {
   margin: 0 8px 8px;
   border-radius: var(--modal-radius);
   background-color: var(--modal-background);
@@ -111,7 +111,7 @@ body.is-mobile:not(.is-android:not(.material-off)) .modal:not(.mod-sidebar-layou
   .modal-nav-action {
     margin-top: unset;
     box-shadow: none !important;
-    background-color: transparent;
+    background-color: transparent !important;
     padding: 24px;
     height: unset;
 

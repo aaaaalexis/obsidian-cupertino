@@ -117,10 +117,6 @@ body.is-mobile {
       z-index: 1;
       background-color: transparent;
     }
-    .modal-title:not(:has(.modal-setting-back-button)) {
-      padding-left: 8px;
-      font-size: var(--inline-title-size);
-    }
     .modal-title {
       display: flex;
       flex-direction: row;
@@ -231,79 +227,86 @@ body.is-mobile {
   }
 }
 
-body.is-phone:not(.is-android:not(.material-off)) .modal.mod-sidebar-layout {
-  .modal-close-button {
-    top: var(--safe-area-inset-top);
-    inset-inline-end: 20px;
-  }
-
-  .modal-header {
-    position: absolute;
-  }
-  .modal-content {
-    position: absolute;
-    inset: 0;
-  }
-
-  .vertical-tab-header,
-  .vertical-tab-content {
-    padding-top: calc(var(--safe-area-inset-top) + var(--modal-header-height) + 16px);
-    padding-right: 20px;
-    padding-left: 20px;
-  }
-
-  .setting-item {
-    border: none;
-  }
-  .setting-item:not(.mod-toggle) .setting-item-info {
-    padding: 0 8px;
-  }
-
-  .setting-item-heading + .setting-item:not(.mod-toggle) {
-    padding-top: 0;
-  }
-
-  .setting-item.mod-toggle,
-  .setting-item-control .mobile-option-setting-item {
-    border-radius: var(--radius-m);
-    background-color: var(--interactive-normal) !important;
-    padding: 16px 20px;
-  }
-
-  .setting-item.mod-toggle:has(+ .setting-item.mod-toggle) {
-    border-bottom: var(--border-width) solid var(--background-modifier-border);
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-
-  .setting-item.mod-toggle + .setting-item.mod-toggle {
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-  }
-
-  .setting-item-control .clickable-icon {
-    background-color: var(--interactive-normal);
-    min-width: var(--input-height);
-    height: var(--input-height);
-  }
-
-  .setting-item-control:not(:has(:not(button))) {
-    flex-direction: column;
-    gap: 0;
-    border-radius: var(--radius-m);
-    overflow: hidden;
-  }
-
-  .setting-item-control:not(:has(:not(button))) > button {
-    border-radius: 0;
-
-    &:not(:last-child) {
-      border-bottom: var(--border-width) solid var(--background-modifier-border);
+body.is-phone {
+  .modal.mod-sidebar-layout {
+    .modal-header {
+      position: absolute;
+    }
+    .modal-title:not(:has(.modal-setting-back-button)) {
+      padding-left: 8px;
+      font-size: var(--inline-title-size);
+    }
+    .modal-content {
+      position: absolute;
+      inset: 0;
+    }
+    .vertical-tab-header,
+    .vertical-tab-content {
+      padding-top: calc(var(--safe-area-inset-top) + var(--modal-header-height) + 16px);
+      padding-right: 20px;
+      padding-left: 20px;
     }
   }
 
-  .community-modal-readme {
-    padding: 0;
+  &:not(.is-android:not(.material-off)) .modal.mod-sidebar-layout {
+    .modal-close-button {
+      top: var(--safe-area-inset-top);
+      inset-inline-end: 20px;
+    }
+
+    .setting-item {
+      border: none;
+    }
+    .setting-item:not(.mod-toggle) .setting-item-info {
+      padding: 0 8px;
+    }
+
+    .setting-item-heading + .setting-item:not(.mod-toggle) {
+      padding-top: 0;
+    }
+
+    .setting-item.mod-toggle,
+    .setting-item-control .mobile-option-setting-item {
+      border-radius: var(--radius-m);
+      background-color: var(--interactive-normal) !important;
+      padding: 16px 20px;
+    }
+
+    .setting-item.mod-toggle:has(+ .setting-item.mod-toggle) {
+      border-bottom: var(--border-width) solid var(--background-modifier-border);
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .setting-item.mod-toggle + .setting-item.mod-toggle {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    .setting-item-control .clickable-icon {
+      background-color: var(--interactive-normal);
+      min-width: var(--input-height);
+      height: var(--input-height);
+    }
+
+    .setting-item-control:not(:has(:not(button))) {
+      flex-direction: column;
+      gap: 0;
+      border-radius: var(--radius-m);
+      overflow: hidden;
+    }
+
+    .setting-item-control:not(:has(:not(button))) > button {
+      border-radius: 0;
+
+      &:not(:last-child) {
+        border-bottom: var(--border-width) solid var(--background-modifier-border);
+      }
+    }
+
+    .community-modal-readme {
+      padding: 0;
+    }
   }
 }
 
