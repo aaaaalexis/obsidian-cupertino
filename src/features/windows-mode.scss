@@ -12,6 +12,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   --radius-m: 5px;
   --radius-s: 5px;
   --radius-xl: 10px;
+  --clickable-icon-radius: var(--radius-s);
   --toggle-thumb-height: 12px;
   --toggle-thumb-width: 12px;
   --toggle-width: 40px;
@@ -172,10 +173,15 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   .nav-buttons-container {
     gap: 0;
     padding: 0;
+    border-radius: var(--radius-s);
+    background-color: var(--background-modifier-hover);
+    box-shadow: none;
+    width: 100%;
   }
 
   .nav-action-button {
     padding: 8px;
+    flex: 1;
   }
 
   .nav-action-button.is-active {
@@ -288,6 +294,10 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 
     .search-suggest-info-text {
       color: var(--color-base-100);
+    }
+
+    .svg-icon {
+      --icon-size: var(--icon-m);
     }
   }
 

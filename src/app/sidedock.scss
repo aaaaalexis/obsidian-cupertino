@@ -7,13 +7,11 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  overflow: hidden;
 }
 .tree-item-self {
   align-items: center;
   transition: background-color var(--anim-duration-fast);
   margin-bottom: 0;
-  border-radius: 0;
 
   &:hover {
     cursor: pointer;
@@ -237,12 +235,12 @@ body.is-mobile {
 
       > .tree-item {
         &:nth-child(2) > .tree-item-self {
-          border-top-right-radius: var(--input-radius);
-          border-top-left-radius: var(--input-radius);
+          border-top-right-radius: var(--radius-m);
+          border-top-left-radius: var(--radius-m);
         }
         &:last-child > .tree-item-self {
-          border-bottom-right-radius: var(--input-radius);
-          border-bottom-left-radius: var(--input-radius);
+          border-bottom-right-radius: var(--radius-m);
+          border-bottom-left-radius: var(--radius-m);
         }
       }
     }
