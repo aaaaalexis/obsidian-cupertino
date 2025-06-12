@@ -29,6 +29,12 @@ body.is-phone:not(.quick-mode-switch-off) {
     width: var(--input-height);
     height: var(--input-height);
     color: var(--text-muted);
+    box-shadow: var(--glass-top-glow-shadow) !important;
+  }
+
+  &:not(.mode-highlight-off) .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
+    background-color: rgb(from var(--interactive-accent) r g b / 35%) !important;
+    color: var(--text-accent) !important;
   }
 
   &.is-android:not(.material-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
@@ -66,6 +72,16 @@ body.is-phone {
     background-color: transparent;
     width: 100%;
 
+    .view-action {
+      --icon-color: var(--text-normal);
+      box-shadow: var(--glass-bottom-glow-shadow) !important;
+      backdrop-filter: blur(4px) saturate(1.5);
+      background-color: var(--modal-background);
+    }
+  }
+
+  .workspace .mod-root .workspace-leaf .view-header,
+  .modal-header {
     &::before {
       position: absolute;
       z-index: -1;
@@ -75,11 +91,6 @@ body.is-phone {
       content: "";
       inset: 0;
       height: calc(100% + 16px);
-    }
-
-    .view-action {
-      box-shadow: var(--liquid-glass-clear-shadow) !important;
-      backdrop-filter: blur(4px) saturate(1.5);
     }
   }
 
@@ -208,8 +219,9 @@ body.is-mobile {
 
   .mobile-navbar-actions,
   .workspace-drawer .nav-buttons-container {
+    --icon-color: var(--text-normal);
     gap: 8px;
-    box-shadow: var(--liquid-glass-clear-shadow) !important;
+    box-shadow: var(--glass-top-glow-shadow) !important;
     background-color: var(--modal-background);
     backdrop-filter: blur(4px) saturate(1.5);
     justify-content: flex-start;

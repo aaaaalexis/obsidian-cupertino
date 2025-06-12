@@ -4,7 +4,7 @@ input[type="range"]::-webkit-slider-thumb {
   &:focus-within {
     background-color: transparent;
     transform: scale(1.5);
-    box-shadow: var(--liquid-glass-clear-shadow) !important;
+    box-shadow: var(--glass-shadow) !important;
     backdrop-filter: blur(4px) saturate(1.5);
   }
 }
