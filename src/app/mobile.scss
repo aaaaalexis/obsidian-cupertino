@@ -60,6 +60,20 @@ body.is-mobile {
     text-align: center;
     justify-content: center;
   }
+  .view-action {
+    &,
+    & > svg.svg-icon {
+      transition: var(--anim-duration-moderate) var(--anim-motion-liquid) !important;
+    }
+
+    &:active {
+      transform: scale(1.05);
+
+      > svg.svg-icon {
+        transform: scale(0.9);
+      }
+    }
+  }
 
   .workspace .mod-root .workspace-leaf .view-header {
     height: fit-content;
@@ -205,6 +219,15 @@ body.is-mobile {
     border-radius: var(--clickable-icon-radius);
     padding: 0 8px;
     pointer-events: auto;
+    transition: var(--anim-duration-moderate) var(--anim-motion-liquid) !important;
+
+    &:active {
+      transform: scale(1.01);
+
+      .nav-action-button:active {
+        transform: scale(0.9);
+      }
+    }
   }
   .mobile-navbar-action {
     display: flex;
