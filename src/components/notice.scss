@@ -8,7 +8,7 @@
 }
 
 .notice {
-  backdrop-filter: blur(4px) saturate(1.5);
+  backdrop-filter: blur(var(--blur-s)) saturate(1.5);
   margin-bottom: 0;
   box-shadow: var(--shadow-s);
   border: var(--border-width) solid var(--background-modifier-hover);

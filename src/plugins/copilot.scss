@@ -34,7 +34,7 @@
 body.mod-windows:not(.windows-mode-off) {
   .model-select-content,
   .chain-select-content {
-    backdrop-filter: blur(32px) saturate(1.5);
+    backdrop-filter: blur(var(--blur-l)) saturate(1.5);
     outline: none !important;
     border: var(--border-width) solid var(--background-modifier-border-hover);
     border-radius: calc(var(--radius-m) + 6px);

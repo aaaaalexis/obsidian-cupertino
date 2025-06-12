@@ -46,7 +46,7 @@ body:not(.hide-status-off) .status-bar {
     > div {
       transform: scale(0.9);
       opacity: 0;
-      filter: blur(4px);
+      filter: blur(var(--blur-s));
       white-space: nowrap;
     }
   }

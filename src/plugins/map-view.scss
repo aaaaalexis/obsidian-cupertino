@@ -7,7 +7,7 @@
   }
 
   .leaflet-bar {
-    backdrop-filter: blur(32px) saturate(1.5);
+    backdrop-filter: blur(var(--blur-l)) saturate(1.5);
     border: var(--border-width) solid var(--background-modifier-border) !important;
     border-radius: var(--radius-s);
     background-color: rgb(from var(--background-secondary) r g b / 50%) !important;
@@ -39,7 +39,7 @@
   }
 
   .map-view-graph-controls {
-    backdrop-filter: blur(32px) saturate(1.5);
+    backdrop-filter: blur(var(--blur-l)) saturate(1.5);
     border: var(--border-width) solid var(--background-modifier-border);
     border-radius: var(--radius-s);
     background-color: rgb(from var(--background-secondary) r g b / 50%) !important;

@@ -5,7 +5,7 @@ input[type="range"]::-webkit-slider-thumb {
     background-color: transparent;
     transform: scale(1.5);
     box-shadow: var(--shadow-xs) !important;
-    backdrop-filter: blur(4px) saturate(1.5);
+    backdrop-filter: blur(var(--blur-s)) saturate(1.5);
   }
 }
 

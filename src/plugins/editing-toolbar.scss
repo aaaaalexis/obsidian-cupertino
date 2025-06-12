@@ -1,6 +1,6 @@
 #cMenuToolbarModalBar,
 #cMenuToolbarPopoverBar {
-  backdrop-filter: blur(32px) saturate(1.5);
+  backdrop-filter: blur(var(--blur-l)) saturate(1.5);
   background-color: var(--modal-background);
   padding: 4px;
   height: fit-content !important;

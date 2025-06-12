@@ -3,7 +3,7 @@
 }
 
 .canvas-control-group {
-  backdrop-filter: blur(32px) saturate(1.5);
+  backdrop-filter: blur(var(--blur-l)) saturate(1.5);
   box-shadow: none;
   border-width: var(--border-width);
   background-color: rgb(from var(--background-secondary) r g b / 50%);
@@ -18,7 +18,7 @@
 
 .canvas-card-menu {
   gap: 8px;
-  backdrop-filter: blur(32px) saturate(1.5);
+  backdrop-filter: blur(var(--blur-l)) saturate(1.5);
   box-shadow: none;
   border: var(--border-width) solid var(--background-modifier-border);
   background-color: rgb(from var(--background-secondary) r g b / 50%) !important;

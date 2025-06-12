@@ -20,7 +20,7 @@ body.is-phone:not(.quick-mode-switch-off) {
     position: fixed;
     right: 28px;
     bottom: 0;
-    backdrop-filter: blur(4px) saturate(1.5);
+    backdrop-filter: blur(var(--blur-s)) saturate(1.5);
     margin-bottom: var(--safe-area-inset-bottom);
     border-radius: var(--clickable-icon-radius);
     background-color: var(--modal-background);
@@ -92,7 +92,7 @@ body.is-phone {
     .view-action {
       --icon-color: var(--text-normal);
       box-shadow: var(--shadow-invert-clear) !important;
-      backdrop-filter: blur(4px) saturate(1.5);
+      backdrop-filter: blur(var(--blur-s)) saturate(1.5);
       background-color: var(--modal-background);
     }
   }
@@ -163,7 +163,7 @@ body.is-phone {
 /********** Pull Action **********/
 
 .pull-action {
-  backdrop-filter: blur(4px) saturate(1.5);
+  backdrop-filter: blur(var(--blur-s)) saturate(1.5);
   animation: fadeInDown var(--anim-duration-fast);
   box-shadow: var(--shadow-s);
   border: var(--border-width) solid var(--background-modifier-border);
@@ -216,7 +216,7 @@ body.is-mobile {
     gap: 8px;
     box-shadow: var(--shadow-s) !important;
     background-color: var(--modal-background);
-    backdrop-filter: blur(4px) saturate(1.5);
+    backdrop-filter: blur(var(--blur-s)) saturate(1.5);
     justify-content: flex-start;
     width: fit-content;
     border-radius: var(--clickable-icon-radius);
@@ -281,7 +281,7 @@ body.is-tablet .workspace-drawer .nav-header {
 
 body.is-mobile {
   .mobile-image-viewer {
-    backdrop-filter: blur(32px) saturate(1.5);
+    backdrop-filter: blur(var(--blur-l)) saturate(1.5);
     animation: var(--anim-duration-fast) fadeInScale;
     background-color: var(--workspace-background-translucent);
   }
@@ -313,7 +313,7 @@ body.is-phone {
   .mobile-tab-switcher-scroll::before {
     position: absolute;
     z-index: -1;
-    backdrop-filter: blur(8px) saturate(1.5);
+    backdrop-filter: blur(var(--blur-m)) saturate(1.5);
     box-shadow: var(--shadow-l);
     border-radius: 32px 32px 0 0;
     background-color: var(--modal-background);
@@ -352,7 +352,7 @@ body.is-tablet {
 
     &::before {
       z-index: -2 !important;
-      backdrop-filter: blur(16px) saturate(1.5);
+      backdrop-filter: blur(var(--blur-l)) saturate(1.5);
     }
     &::before,
     &::after {

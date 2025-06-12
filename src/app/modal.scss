@@ -8,7 +8,7 @@ body {
   }
 
   .modal:not(.mod-sidebar-layout) {
-    backdrop-filter: blur(8px) saturate(1.5);
+    backdrop-filter: blur(var(--blur-m)) saturate(1.5);
     box-shadow: var(--shadow-s);
   }
 
