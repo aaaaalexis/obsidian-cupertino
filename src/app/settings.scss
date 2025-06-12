@@ -97,6 +97,13 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
 }
 
 body.is-mobile {
+  &.theme-light .modal.mod-sidebar-layout {
+    .vertical-tab-header,
+    .vertical-tab-content {
+      background-color: var(--background-secondary);
+    }
+  }
+
   .modal.mod-sidebar-layout {
     background-color: transparent;
 
@@ -111,7 +118,8 @@ body.is-mobile {
       background-color: transparent;
     }
     .modal-title:not(:has(.modal-setting-back-button)) {
-      padding-left: 16px;
+      padding-left: 8px;
+      font-size: var(--inline-title-size);
     }
     .modal-title {
       display: flex;
@@ -239,7 +247,7 @@ body.is-phone:not(.is-android:not(.material-off)) .modal.mod-sidebar-layout {
 
   .vertical-tab-header,
   .vertical-tab-content {
-    padding-top: calc(var(--safe-area-inset-top) + var(--modal-header-height));
+    padding-top: calc(var(--safe-area-inset-top) + var(--modal-header-height) + 16px);
     padding-right: 20px;
     padding-left: 20px;
   }
