@@ -269,6 +269,10 @@ body.is-mobile {
   }
 }
 
+body.is-tablet .workspace-drawer .nav-header {
+  padding: 4px 0 var(--safe-area-inset-bottom);
+}
+
 /********** Image Viewer **********/
 
 body.is-mobile {
