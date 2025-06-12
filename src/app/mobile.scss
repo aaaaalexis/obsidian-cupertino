@@ -18,7 +18,7 @@ body.is-phone:not(.quick-mode-switch-off) {
   }
   .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     position: fixed;
-    right: 28px;
+    right: 20px;
     bottom: 0;
     backdrop-filter: blur(var(--blur-s)) saturate(1.5);
     margin-bottom: var(--safe-area-inset-bottom);
@@ -251,7 +251,7 @@ body.is-mobile {
     left: 0;
     z-index: var(--layer-status-bar);
     border: none;
-    padding: 4px 28px var(--safe-area-inset-bottom);
+    padding: 4px 20px var(--safe-area-inset-bottom);
     width: 100%;
   }
 
