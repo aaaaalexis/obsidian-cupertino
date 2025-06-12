@@ -337,7 +337,7 @@ body {
     --nav-item-background-active: var(--color-accent);
     --nav-item-background-selected: var(--color-accent);
     --nav-item-color-active: var(--text-on-accent);
-    --nav-item-padding: 16px;
+    --nav-item-padding: 16px 20px;
     --radius-l: 16px;
     --radius-m: 10px;
     --radius-s: 10px;
@@ -477,7 +477,7 @@ body.compact-mode {
   --nav-item-padding: 6px 8px 6px 24px;
 
   &.is-mobile {
-    --nav-item-padding: 12px 16px;
+    --nav-item-padding: 12px 20px;
     .nav-files-container .tree-item-icon.collapse-icon {
       right: 16px;
     }

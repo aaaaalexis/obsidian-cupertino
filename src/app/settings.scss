@@ -67,7 +67,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
       border-left: var(--border-width) solid var(--background-modifier-border);
       border-radius: 0;
       background-color: rgba(var(--mono-rgb-100), 0.02);
-      padding: 12px 16px;
+      padding: 12px 20px;
     }
     .setting-item-heading + .setting-item,
     *:not(.setting-item) + .setting-item:not(.setting-item-heading),
@@ -184,7 +184,7 @@ body.is-mobile {
 
     .community-modal-search-results-wrapper {
       border: none;
-      padding: 0 16px;
+      padding: 0 20px;
     }
 
     .community-modal-search-results {
@@ -233,7 +233,7 @@ body.is-phone:not(.is-android:not(.material-off)) .modal.mod-sidebar-layout {
   .setting-item-control .mobile-option-setting-item {
     border-radius: var(--input-radius);
     background-color: var(--interactive-normal) !important;
-    padding: 12px 16px;
+    padding: 12px 20px;
   }
 
   .setting-item.mod-toggle:has(+ .setting-item.mod-toggle) {
@@ -286,7 +286,7 @@ body.is-tablet .modal.mod-sidebar-layout {
   .setting-item:not(.setting-item-heading) {
     border-radius: 0;
     background-color: var(--interactive-normal);
-    padding: 12px 16px;
+    padding: 12px 20px;
   }
   .setting-item-heading + .setting-item,
   *:not(.setting-item) + .setting-item:not(.setting-item-heading),

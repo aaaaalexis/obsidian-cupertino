@@ -47,7 +47,7 @@ body.is-phone:not(.is-android:not(.material-off)) {
   button:not(.clickable-icon) {
     justify-content: flex-start;
     background-color: var(--interactive-normal);
-    padding: 0 16px;
+    padding: 0 20px;
     min-height: var(--input-height);
     color: var(--text-accent);
     font-weight: normal;
