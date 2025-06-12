@@ -80,6 +80,10 @@ body.is-mobile {
 }
 
 body.is-phone {
+  &.theme-light .modal.mod-sidebar-layout .modal-header::before {
+    background-color: var(--background-secondary);
+  }
+
   .workspace .mod-root .workspace-leaf .view-header {
     position: fixed;
     background-color: transparent;
@@ -94,7 +98,7 @@ body.is-phone {
   }
 
   .workspace .mod-root .workspace-leaf .view-header,
-  .modal-header {
+  .modal.mod-sidebar-layout .modal-header {
     &::before {
       position: absolute;
       z-index: -1;
