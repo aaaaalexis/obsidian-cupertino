@@ -1,4 +1,8 @@
 body:not(.is-mobile) {
+  .modal-close-button {
+    z-index: 1;
+  }
+
   .vertical-tab-content {
     container-type: inline-size;
   }
