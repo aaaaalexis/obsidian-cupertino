@@ -22,7 +22,6 @@ body.is-phone:not(.quick-mode-switch-off) {
     bottom: 0;
     backdrop-filter: blur(4px) saturate(1.5);
     margin-bottom: var(--safe-area-inset-bottom);
-    border: var(--border-width) solid var(--background-modifier-border);
     border-radius: var(--clickable-icon-radius);
     background-color: var(--modal-background);
     padding: 10px;
@@ -262,6 +261,11 @@ body.is-mobile {
   }
   .nav-action-button {
     flex-grow: 0 !important;
+
+    &.is-active {
+      background-color: transparent !important;
+      color: var(--color-accent) !important;
+    }
   }
 }
 
