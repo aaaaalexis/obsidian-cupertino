@@ -64,7 +64,8 @@ body:not(.hide-status-off) .status-bar {
   &:hover {
     bottom: 4px;
     border-color: var(--background-secondary);
-    background-color: rgba(var(--mono-rgb-0), 1);
+    background-color: var(--background-secondary);
+    box-shadow: var(--shadow-s);
     height: 40px;
 
     &::before {

@@ -141,7 +141,7 @@ body.is-mobile {
       width: var(--modal-header-height);
       height: var(--modal-header-height);
       border-radius: var(--clickable-icon-radius);
-      box-shadow: var(--glass-bottom-glow-shadow);
+      box-shadow: var(--shadow-invert-s);
     }
     .modal-setting-back-button-icon {
       margin-inline-end: 0;
@@ -153,7 +153,7 @@ body.is-mobile {
       align-items: center;
       width: var(--modal-header-height);
       height: var(--modal-header-height);
-      box-shadow: var(--glass-bottom-glow-shadow);
+      box-shadow: var(--shadow-invert-s);
       border-radius: var(--clickable-icon-radius);
 
       &::before {

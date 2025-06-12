@@ -58,45 +58,41 @@ body:not(.is-mobile) .suggestion-container {
 body.is-phone,
 body.is-tablet:not(.tablet-menu-off) {
   .menu {
-    backdrop-filter: blur(32px) saturate(1.5);
+    backdrop-filter: blur(8px) saturate(1.5);
     background-color: var(--modal-background);
     padding: 0;
     overflow: hidden;
     white-space: normal;
+    box-shadow: var(--shadow-s);
+    border-radius: var(--radius-xl);
   }
 
   .menu-scroll {
     background-color: transparent;
     max-height: 80vh;
   }
-  .menu-scroll:has(.mod-checked) .menu-item.tappable:not(:has(.mod-checked)) .menu-item-title {
-    margin-left: calc(var(--icon-size) + 8px);
+  .menu-item {
+    font-size: var(--font-ui-medium);
+    padding: 16px;
+    gap: 16px;
   }
   .menu-item-icon {
-    --icon-size: var(--icon-m);
+    color: var(--text-normal);
     justify-content: center;
-    width: var(--icon-size);
-  }
-  .menu-item:not(.is-label) {
-    flex-direction: row-reverse;
-    padding: 16px 20px;
+
+    > svg.svg-icon {
+      --icon-size: var(--icon-m);
+    }
   }
   .menu-item-title {
     white-space: normal;
   }
   .menu-item.is-label {
     border: none !important;
-    background-color: transparent;
-  }
-  .menu-item:not(.is-label[data-section="title"]) {
-    background-color: rgb(from var(--background-secondary-alt) r g b / 75%);
-  }
-  .menu-item:not(:has(+ .menu-separator)):not(:last-child) {
-    border-bottom: var(--border-width) solid var(--background-modifier-border-hover);
   }
 
   .menu-separator {
-    border: none;
+    margin: 8px 16px;
   }
 
   .suggestion-container {
@@ -124,8 +120,6 @@ body.is-tablet:not(.tablet-menu-off) {
 
 body.is-phone {
   .menu {
-    box-shadow: none;
-    border-radius: var(--radius-xl);
     margin: 0 8px 8px;
     width: unset;
   }
@@ -137,24 +131,10 @@ body.is-phone {
     height: 5px;
   }
   .menu-scroll {
-    padding: 40px 20px calc(var(--safe-area-inset-bottom) + 16px);
+    padding: 40px 20px var(--safe-area-inset-bottom);
   }
   .menu-item {
     border-radius: var(--radius-m);
-  }
-  .menu-item + .menu-item,
-  .menu-item:has(+ .menu-item) {
-    border-radius: 0;
-  }
-  .menu-separator + .menu-item,
-  .menu-item:first-child:has(+ .menu-item) {
-    border-top-right-radius: var(--radius-m);
-    border-top-left-radius: var(--radius-m);
-  }
-  .menu-item:has(+ .menu-separator),
-  .menu-item + .menu-item:last-child {
-    border-bottom-right-radius: var(--radius-m);
-    border-bottom-left-radius: var(--radius-m);
   }
 }
 

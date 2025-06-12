@@ -7,8 +7,9 @@ body {
     border-width: var(--modal-border-width) 0 0;
   }
 
-  .modal {
-    backdrop-filter: blur(32px) saturate(1.5);
+  .modal:not(.mod-sidebar-layout) {
+    backdrop-filter: blur(8px) saturate(1.5);
+    box-shadow: var(--shadow-s);
   }
 
   .modal-button-container {
@@ -55,7 +56,7 @@ body:not(.is-mobile) {
     }
 
     button {
-      position: relative;
+      min-height: 28px;
     }
 
     .modal-header {
@@ -70,13 +71,10 @@ body:not(.is-mobile) {
   }
 }
 
-body.is-mobile .modal:not(.mod-sidebar-layout) {
-  border-radius: var(--radius-xl);
-}
-
 body.is-mobile:not(.is-android:not(.material-off)) .modal:not(.mod-sidebar-layout) {
-  box-shadow: none;
   margin: 0 8px 8px;
+  border-radius: var(--modal-radius);
+  background-color: var(--modal-background);
 
   .modal-header {
     border: none !important;

@@ -8,9 +8,10 @@ body:not(.is-phone) {
   }
 
   .prompt {
-    backdrop-filter: blur(32px) saturate(1.5);
+    backdrop-filter: blur(8px) saturate(1.5);
     border: var(--prompt-border-width) solid var(--prompt-border-color);
     background-color: var(--modal-background);
+    animation: var(--anim-duration-slow) blurInScale;
   }
 
   .prompt-input-container {
@@ -38,25 +39,33 @@ body:not(.is-phone) {
 body.is-phone {
   .prompt {
     --prompt-top: calc(var(--safe-area-inset-top) + 8px);
-    backdrop-filter: blur(32px) saturate(1.5);
+    backdrop-filter: blur(8px) saturate(1.5);
     animation: var(--anim-duration-slow) blurInScale !important;
     transition: var(--anim-duration-fast);
     margin-top: var(--prompt-top);
     box-shadow: var(--shadow-l);
     border: var(--prompt-border-width) solid var(--background-modifier-hover);
-    border-radius: var(--radius-l);
+    border-radius: var(--radius-xl);
     background-color: var(--modal-background) !important;
     width: 95vw;
     height: 70vh;
   }
 
+  .prompt-input-container {
+    margin: 16px 40px 0;
+  }
+
   .prompt-input {
     background-color: transparent !important;
-    padding: 24px 24px !important;
+    padding: 0 !important;
+  }
+
+  .search-input-clear-button {
+    inset-inline-end: 0;
   }
 
   .prompt-results {
-    padding: 12px;
+    padding: 16px 20px;
   }
 
   .prompt .suggestion-item {

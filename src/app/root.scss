@@ -123,6 +123,7 @@ body {
   --background-modifier-message: var(--background-secondary);
   --background-modifier-hover: rgba(var(--mono-rgb-100), 0.05);
   --bold-modifier: 300;
+  --border-width: 0.3px;
   --blockquote-background-color: var(--background-primary-alt);
   --blockquote-border-color: var(--text-faint);
   --blockquote-border-thickness: 6px;
@@ -241,7 +242,7 @@ body {
     --color-pink-rgb: 255, 45, 85;
     --color-pink: #ff2d55;
     --divider-color: rgba(0, 0, 0, 0.05) !important;
-    --modal-background: rgb(from var(--background-secondary) r g b / 90%) !important;
+    --modal-background: rgb(from var(--background-secondary) r g b / 50%) !important;
     --input-shadow: inset 0 -0.15px 0 0.5px rgba(0, 0, 0, 0.2), 0 1px 1.5px 0 rgba(0, 0, 0, 0.03), 0 0.3px 0.5px 0 rgba(0, 0, 0, 0.1) !important;
 
     --code-normal: #383a42;
@@ -254,6 +255,14 @@ body {
     --code-string: #0d97b3;
     --code-tag: #e45749;
     --code-value: #a626a4;
+
+    --shadow-xs: 0 0 0 var(--border-width) var(--background-modifier-border), inset 1px 1px 2px 0px white, inset -1px -1px 2px 0px white, inset 0 0 4px lightgrey, inset 1px 1px 2px 0px white, inset -1px -1px 2px 0px white, inset 0 0 1px 1px grey;
+    --shadow-clear: 0 0 0 var(--border-width) var(--background-modifier-border), inset 0 2px 4px rgba(255, 255, 255, 0.5), inset 0 -2px 4px rgba(255, 255, 255, 0.1), inset 0 0 2px rgba(255, 255, 255, 0.1), inset 0 16px 16px rgba(192, 192, 192, 0.15), 0 1px 2px rgba(0, 0, 0, 0.075), 0 1px 8px rgba(0, 0, 0, 0.05);
+    --shadow-invert-clear: 0 0 0 var(--border-width) var(--background-modifier-border), inset 0 2px 4px rgba(255, 255, 255, 0.1), inset 0 -2px 4px rgba(255, 255, 255, 0.5), inset 0 0 2px rgba(255, 255, 255, 0.1), inset 0 16px 16px rgba(192, 192, 192, 0.15), 0 1px 2px rgba(0, 0, 0, 0.075), 0 1px 8px rgba(0, 0, 0, 0.05);
+    --shadow-s: var(--shadow-clear), 0 6px 14px rgba(0, 0, 0, 0.08);
+    --shadow-l: var(--shadow-clear), 0 11px 34px rgba(0, 0, 0, 0.2);
+    --shadow-invert-s: var(--shadow-invert-clear), 0 6px 14px rgba(0, 0, 0, 0.08);
+    --shadow-invert-l: var(--shadow-invert-clear), 0 11px 34px rgba(0, 0, 0, 0.2);
   }
 
   &.theme-dark {
@@ -277,7 +286,7 @@ body {
     --color-pink-rgb: 255, 55, 95;
     --color-pink: #ff375f;
     --divider-color: rgba(255, 255, 255, 0.05) !important;
-    --modal-background: rgb(from var(--color-base-25) r g b / 90%) !important;
+    --modal-background: rgb(from var(--color-base-25) r g b / 75%) !important;
     --interactive-normal: var(--color-base-40);
     --input-shadow: inset 0 0.5px 0px 0px rgba(255, 255, 255, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1) !important;
 
@@ -291,6 +300,14 @@ body {
     --code-string: #58b6c2;
     --code-tag: #e16d76;
     --code-value: #c678de;
+
+    --shadow-xs: 0 0 0 var(--border-width) var(--background-modifier-border), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(255, 255, 255, 0.1), inset 0 0 4px rgba(255, 255, 255, 0.1), inset 0 0 1px 4px rgba(96, 96, 96, 0.1);
+    --shadow-clear: 0 0 0 var(--border-width) var(--background-modifier-border), inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px rgba(255, 255, 255, 0.05), inset 0 0 2px rgba(255, 255, 255, 0.1), inset 0 0 1px 2px rgba(96, 96, 96, 0.1);
+    --shadow-invert-clear: 0 0 0 var(--border-width) var(--background-modifier-border), inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px rgba(255, 255, 255, 0.2), inset 0 0 2px rgba(255, 255, 255, 0.1), inset 0 0 1px 2px rgba(96, 96, 96, 0.1);
+    --shadow-s: var(--shadow-clear), 0 6px 14px rgba(0, 0, 0, 0.15);
+    --shadow-l: var(--shadow-clear), 0 11px 34px rgba(0, 0, 0, 0.5);
+    --shadow-invert-s: var(--shadow-invert-clear), 0 6px 14px rgba(0, 0, 0, 0.15);
+    --shadow-invert-l: var(--shadow-invert-clear), 0 11px 34px rgba(0, 0, 0, 0.5);
   }
 
   &:not(.is-mobile) {
@@ -301,9 +318,6 @@ body {
     --icon-xl: 24px;
 
     &.theme-light {
-      --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
-      --shadow-l: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-
       .menu,
       .suggestion-container,
       .prompt,
@@ -330,7 +344,6 @@ body {
 
   &.is-mobile {
     --background-modifier-form-field: var(--interactive-normal) !important;
-    --border-width: 0.3px;
     --divider-color: rgba(var(--mono-rgb-100), 0.1) !important;
     --divider-width: var(--border-width);
     --canvas-dot-pattern: var(--color-base-20);
@@ -343,7 +356,7 @@ body {
     --input-height: 48px;
     --mobile-sidebar-width: 100%;
     --mobile-toolbar-height: var(--input-height);
-    --modal-background: rgb(from var(--background-secondary) r g b / 50%) !important;
+    --modal-background: rgb(from var(--background-secondary) r g b / 75%) !important;
     --nav-item-background-active: var(--color-accent);
     --nav-item-background-selected: var(--color-accent);
     --nav-item-color-active: var(--text-on-accent);
@@ -352,7 +365,6 @@ body {
     --radius-m: 24px;
     --radius-s: 16px;
     --radius-xl: 40px;
-    --shadow-s: rgba(0, 0, 0, 0.1) 0px 8px 30px;
     --slider-thumb-height: 25px;
     --slider-thumb-y: -10px;
     --slider-thumb-width: 38px;
@@ -365,21 +377,16 @@ body {
     --toolbar-option-width: calc(16px + var(--mobile-toolbar-height));
     --view-header-height: 44px;
     --modal-header-height: var(--view-header-height);
+    --modal-radius: var(--radius-xl);
     --dropdown-padding: 4px 32px 4px 16px;
 
     padding: 0;
 
     &.theme-light {
       --interactive-normal: var(--background-primary);
-      --glass-shadow: 0 0 0 var(--border-width) var(--background-modifier-border), inset 1px 1px 2px 0px white, inset -1px -1px 2px 0px white, inset 0 0 4px lightgrey, inset 1px 1px 2px 0px white, inset -1px -1px 2px 0px white, inset 0 0 1px 1px grey;
-      --glass-top-glow-shadow: 0 0 0 var(--border-width) var(--background-modifier-border), inset 0 2px 4px rgba(255, 255, 255, 0.5), inset 0 -2px 4px rgba(255, 255, 255, 0.1), inset 0 0 2px rgba(255, 255, 255, 0.1), inset 0 16px 16px rgba(192, 192, 192, 0.15), 0 1px 2px rgba(0, 0, 0, 0.075), 0 1px 8px rgba(0, 0, 0, 0.05);
-      --glass-bottom-glow-shadow: 0 0 0 var(--border-width) var(--background-modifier-border), inset 0 2px 4px rgba(255, 255, 255, 0.1), inset 0 -2px 4px rgba(255, 255, 255, 0.5), inset 0 0 2px rgba(255, 255, 255, 0.1), inset 0 16px 16px rgba(192, 192, 192, 0.15), 0 1px 2px rgba(0, 0, 0, 0.075), 0 1px 8px rgba(0, 0, 0, 0.05);
     }
     &.theme-dark {
       --interactive-normal: var(--background-secondary);
-      --glass-shadow: 0 0 0 var(--border-width) var(--background-modifier-border), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(255, 255, 255, 0.1), inset 0 0 4px rgba(255, 255, 255, 0.1), inset 0 0 1px 4px rgba(96, 96, 96, 0.1);
-      --glass-top-glow-shadow: 0 0 0 var(--border-width) var(--background-modifier-border), inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px rgba(255, 255, 255, 0.05), inset 0 0 2px rgba(255, 255, 255, 0.1), inset 0 0 1px 2px rgba(96, 96, 96, 0.1);
-      --glass-bottom-glow-shadow: 0 0 0 var(--border-width) var(--background-modifier-border), inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px rgba(255, 255, 255, 0.2), inset 0 0 2px rgba(255, 255, 255, 0.1), inset 0 0 1px 2px rgba(96, 96, 96, 0.1);
     }
   }
 
