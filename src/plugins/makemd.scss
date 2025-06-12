@@ -14,7 +14,7 @@ body:not(.is-mobile) .mk-sidebar {
   }
 
   .mk-main-menu-container {
-    margin: 4px 16px 0;
+    margin: 4px 20px 0;
   }
 
   .mk-main-menu-button-primary {
@@ -22,7 +22,7 @@ body:not(.is-mobile) .mk-sidebar {
   }
 
   .nav-header {
-    padding: 8px 16px;
+    padding: 8px 20px;
   }
 
   .nav-buttons-container {
@@ -82,14 +82,14 @@ body.is-mobile {
 
 body.is-phone {
   .mk-palette-search {
-    margin: 0 16px;
-    padding: 0 16px;
+    margin: 0 20px;
+    padding: 0 20px;
   }
   .mk-menu-input-wrapper {
-    padding: 0 16px;
+    padding: 0 20px;
   }
   .mk-menu-sections {
-    padding: 8px 16px;
+    padding: 8px 20px;
   }
   .mk-menu-section {
     border-radius: 100vh;

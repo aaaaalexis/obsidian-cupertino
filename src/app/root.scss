@@ -164,6 +164,7 @@ body {
   --list-spacing: 0.2em;
   --metadata-gap: 0;
   --metadata-padding: 0;
+  --metadata-input-height: var(--input-height) !important;
   --metadata-property-radius-focus: var(--input-radius);
   --metadata-property-radius-hover: var(--input-radius);
   --metadata-property-radius: var(--input-radius);

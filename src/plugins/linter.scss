@@ -51,13 +51,13 @@
   }
 
   div:not(.setting-item) > .setting-item-info {
-    padding: 16px 16px 12px;
+    padding: 20px 20px 12px;
   }
   div:has(.setting-item:not(:only-child)) > .setting-item-name {
-    padding: 16px 16px 0;
+    padding: 20px 20px 0;
   }
   div:has(.setting-item:not(:only-child)) > .setting-item-description {
-    padding: 0 16px;
+    padding: 0 20px;
   }
 
   textarea.full-width {

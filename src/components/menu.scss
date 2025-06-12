@@ -110,7 +110,7 @@ body.is-tablet:not(.tablet-menu-off) {
       margin: 0;
       border-bottom: var(--border-width) solid var(--background-modifier-border-hover);
       border-radius: 0;
-      padding: 8px 16px;
+      padding: 8px 20px;
       min-height: var(--input-height);
     }
     .suggestion-item:last-child {
@@ -131,7 +131,7 @@ body.is-phone {
     height: 5px;
   }
   .menu-scroll {
-    padding: 40px 16px calc(var(--safe-area-inset-bottom) + 16px);
+    padding: 40px 20px calc(var(--safe-area-inset-bottom) + 16px);
   }
   .menu-item + .menu-item,
   .menu-item:has(+ .menu-item) {

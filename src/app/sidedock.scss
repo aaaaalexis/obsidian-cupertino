@@ -42,11 +42,11 @@ body:not(.is-mobile) {
 
   .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
   .workspace-split.mod-sidedock .workspace-leaf-content > .view-content {
-    padding: 4px 16px 0;
+    padding: 4px 20px 0;
   }
 
   .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
-    padding: 4px 16px;
+    padding: 4px 20px;
   }
 
   .view-content > .node-insert-event {
@@ -54,7 +54,7 @@ body:not(.is-mobile) {
   }
 
   .search-row {
-    margin: 4px 16px;
+    margin: 4px 20px;
   }
 
   .view-content .nav-header {

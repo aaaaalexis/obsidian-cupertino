@@ -59,7 +59,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
 
     .setting-item-heading {
       border: none;
-      padding: 16px 16px 12px;
+      padding: 20px 20px 12px;
     }
     .setting-item:not(.setting-item-heading) {
       gap: 8px;
@@ -318,7 +318,7 @@ body.is-tablet .modal.mod-sidebar-layout {
     display: flex;
     align-items: center;
     border-radius: 0;
-    padding-left: 16px;
+    padding-left: 20px;
 
     &:not(:last-child) {
       border-bottom: var(--border-width) solid var(--background-modifier-border);
