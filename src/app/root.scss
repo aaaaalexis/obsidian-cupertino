@@ -167,6 +167,7 @@ body {
   --input-height: 24px;
   --input-radius: var(--radius-s);
   --interactive-normal: var(--color-base-25);
+  --interactive-accent-clear: rgb(from var(--interactive-accent) r g b / 35%);
   --line-height-normal: 1.6;
   --list-spacing: 0.2em;
   --metadata-gap: 0;

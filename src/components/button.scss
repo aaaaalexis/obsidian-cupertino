@@ -3,7 +3,7 @@
 }
 
 .is-flashing {
-  --text-highlight-bg: hsla(var(--color-accent-hsl), 0.25);
+  --text-highlight-bg: var(--interactive-accent-clear);
 }
 
 body:not(.is-mobile) {

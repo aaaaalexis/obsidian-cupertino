@@ -32,7 +32,7 @@ body.is-phone:not(.quick-mode-switch-off) {
   }
 
   &:not(.mode-highlight-off) .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
-    background-color: rgb(from var(--interactive-accent) r g b / 35%) !important;
+    background-color: var(--interactive-accent-clear) !important;
     color: var(--text-accent) !important;
   }
 
@@ -171,6 +171,12 @@ body.is-phone {
   padding: 12px 24px;
   width: fit-content;
   font-weight: var(--font-bold);
+  min-height: var(--input-height);
+
+  &.mod-activated {
+    background-color: var(--interactive-accent-clear);
+    color: var(--text-accent);
+  }
 }
 
 /********** Bottom Bar **********/
