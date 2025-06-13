@@ -65,11 +65,11 @@ body.is-phone {
   }
 
   .prompt-results {
-    padding: 8px;
+    padding: 12px;
   }
 
   .prompt .suggestion-item {
-    padding: 12px 20px;
+    padding: 16px;
   }
 }
 
@@ -101,9 +101,5 @@ body.is-tablet {
     width: var(--icon-l);
     height: var(--icon-l);
     content: "";
-  }
-
-  .prompt .suggestion-item {
-    padding: 12px 20px;
   }
 }

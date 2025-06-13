@@ -58,9 +58,6 @@ body.is-phone:not(.is-android:not(.material-off)) {
 }
 
 body.is-tablet:not(.is-android:not(.material-off)) {
-  textarea,
-  input[type="text"],
-  input[type="number"],
   button:not(.clickable-icon) {
     padding: 4px 20px;
   }
