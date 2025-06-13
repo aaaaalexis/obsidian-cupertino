@@ -125,7 +125,7 @@ body:not(.is-phone) {
 
 body.is-phone {
   .note-toolbar-setting-modal-container {
-    padding-bottom: var(--safe-area-inset-bottom) !important;
+    padding-bottom: max(var(--safe-area-inset-bottom), 16px) !important;
     width: 100% !important;
   }
 }

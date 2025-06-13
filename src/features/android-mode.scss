@@ -147,7 +147,6 @@ body.is-mobile.is-android:not(.material-off) {
     right: 16px;
     z-index: var(--layer-cover);
     backdrop-filter: none;
-    margin-bottom: var(--safe-area-inset-bottom);
     box-shadow: var(--shadow-l) !important;
     border: none;
     border-radius: var(--radius-s);
@@ -164,7 +163,7 @@ body.is-mobile.is-android:not(.material-off) {
 
   .mobile-navbar,
   .workspace-drawer .nav-header {
-    padding: 8px 16px var(--safe-area-inset-bottom);
+    padding: 8px 16px max(var(--safe-area-inset-bottom), 16px);
   }
 
   /********** Menu **********/

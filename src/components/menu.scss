@@ -121,7 +121,7 @@ body.is-phone {
     height: 5px;
   }
   .menu-scroll {
-    padding: 40px 20px var(--safe-area-inset-bottom);
+    padding: 40px 20px max(var(--safe-area-inset-bottom), 16px);
   }
   .menu-item {
     border-radius: var(--radius-m);

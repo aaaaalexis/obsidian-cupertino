@@ -145,7 +145,7 @@ body.is-mobile {
     left: 0;
     z-index: var(--layer-status-bar);
     border: none;
-    padding: 4px max(var(--safe-area-inset-right), 8px) var(--safe-area-inset-bottom) max(var(--safe-area-inset-left), 8px) !important;
+    padding: 4px max(var(--safe-area-inset-right), 8px) max(var(--safe-area-inset-bottom), 16px) max(var(--safe-area-inset-left), 8px) !important;
     height: fit-content;
 
     &::before {

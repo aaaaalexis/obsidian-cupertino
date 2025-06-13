@@ -178,7 +178,7 @@ body.is-mobile {
     right: 0;
     background-color: var(--background-primary);
     content: "";
-    height: calc(16px + var(--input-height) + var(--safe-area-inset-bottom));
+    height: calc(16px + var(--input-height) + max(var(--safe-area-inset-bottom), 16px));
   }
 
   .mobile-navbar {
@@ -255,7 +255,7 @@ body.is-mobile {
 }
 
 body.is-tablet .workspace-drawer .nav-header {
-  padding: 4px 0 var(--safe-area-inset-bottom);
+  padding: 4px 0 max(var(--safe-area-inset-bottom), 16px);
 }
 
 /********** Image Viewer **********/
@@ -308,7 +308,7 @@ body.is-phone {
   }
 
   .mobile-tab-switcher-menubar {
-    padding: 4px max(var(--safe-area-inset-right), 8px) var(--safe-area-inset-bottom) max(var(--safe-area-inset-left), 8px);
+    padding: 4px max(var(--safe-area-inset-right), 8px) max(var(--safe-area-inset-bottom), 16px) max(var(--safe-area-inset-left), 8px);
   }
   .mobile-tab-switcher-menubar > div:not(:last-child) {
     z-index: 2;
@@ -329,7 +329,7 @@ body.is-tablet {
     bottom: 0;
     border: none;
     background-color: transparent;
-    padding-bottom: var(--safe-area-inset-bottom);
+    padding-bottom: max(var(--safe-area-inset-bottom), 16px);
     width: 100%;
 
     &::before {
