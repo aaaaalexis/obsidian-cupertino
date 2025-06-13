@@ -1,4 +1,8 @@
 body:not(.is-mobile) {
+  .modal.mod-sidebar-layout {
+    backdrop-filter: blur(var(--blur-l)) saturate(1.5);
+  }
+
   .modal-close-button {
     z-index: 1;
   }
@@ -30,8 +34,6 @@ body:not(.is-mobile) {
 
 body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
   .modal.mod-sidebar-layout {
-    backdrop-filter: blur(var(--blur-l)) saturate(1.5);
-
     .vertical-tab-header,
     .vertical-tab-content {
       background-color: transparent;
@@ -218,6 +220,7 @@ body.is-phone {
       padding-left: 8px;
       font-size: var(--inline-title-size);
       font-weight: var(--font-bold);
+      margin-top: 24px;
     }
     .modal-content {
       position: absolute;

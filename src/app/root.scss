@@ -4,11 +4,6 @@ name: Cupertino
 id: cupertino
 settings:
     -
-        id: cupertino-desc
-        description: Most of the settings are for **turning off** Cupertino customizations. You don't need to change anything if you want to keep all default Cupertino optimizations.
-        type: info-text
-        markdown: true
-    -
         id: material-off
         title: Disable Android mode
         description: Turn off Material styling on Android.
@@ -18,6 +13,11 @@ settings:
         title: Disable Windows mode
         description: Turn off Fluent styling on Windows.
         type: class-toggle
+    -
+        id: cupertino-desc
+        description: Most of the settings are for **turning off** Cupertino customizations. You don't need to change anything if you want to keep all default Cupertino optimizations.
+        type: info-text
+        markdown: true
     -
         id: active-line-off
         title: Disable active editing line highlight
@@ -129,7 +129,6 @@ body {
   --inline-title-size: 2em;
   --input-height: 24px;
   --input-radius: var(--radius-s);
-  --interactive-normal: var(--color-base-25);
   --interactive-hover: var(--interactive-normal) !important;
   --interactive-accent-clear: rgb(from var(--interactive-accent) r g b / 35%);
   --line-height-normal: 1.6;
@@ -210,6 +209,7 @@ body {
     --color-pink-rgb: 255, 45, 85;
     --color-pink: #ff2d55;
     --modal-background: rgb(from var(--background-secondary) r g b / 75%) !important;
+    --interactive-normal: var(--color-base-25);
     --input-shadow: inset 0 -0.15px 0 0.5px rgba(0, 0, 0, 0.2), 0 1px 1.5px 0 rgba(0, 0, 0, 0.03), 0 0.3px 0.5px 0 rgba(0, 0, 0, 0.1) !important;
 
     --code-normal: #383a42;
