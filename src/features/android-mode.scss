@@ -241,7 +241,7 @@ body.is-mobile.is-android:not(.material-off) {
   }
 
   .nav-files-container .tree-item-self {
-    border-radius: 100vh;
+    border-radius: 100vh !important;
     text-indent: 4px;
   }
 
