@@ -21,7 +21,7 @@ body.is-phone:not(.quick-mode-switch-off) {
     right: 20px;
     bottom: 0;
     backdrop-filter: blur(var(--blur-s)) saturate(1.5);
-    margin-bottom: var(--safe-area-inset-bottom);
+    margin-bottom: max(var(--safe-area-inset-bottom), 16px);
     border-radius: var(--clickable-icon-radius);
     background-color: var(--modal-background);
     padding: 10px;
@@ -199,53 +199,62 @@ body.is-mobile {
   }
 
   .mobile-navbar {
+    max-width: calc(100% - var(--input-height) - 8px);
     background-color: transparent;
     pointer-events: none;
   }
 
   .mobile-navbar-actions,
-  .workspace-drawer .nav-buttons-container {
+  .workspace-drawer .nav-buttons-container,
+  .mobile-toolbar-options-list {
     --icon-color: var(--text-normal);
     gap: 8px;
     box-shadow: var(--shadow-s) !important;
     background-color: var(--modal-background);
     backdrop-filter: blur(var(--blur-s)) saturate(1.5);
     justify-content: flex-start;
-    width: fit-content;
+    max-width: fit-content;
     border-radius: var(--clickable-icon-radius);
     padding: 0 8px;
     pointer-events: auto;
     transition: var(--anim-duration-moderate) var(--anim-motion-liquid) !important;
 
     &:active {
-      transform: scale(1.01);
+      transform: scale(1.05);
 
       .nav-action-button:active {
-        transform: scale(0.9);
+        transform: scale(0.8);
       }
     }
   }
   .mobile-navbar-action {
     display: flex;
     justify-content: center;
+    min-width: 0;
   }
-  .mobile-toolbar-option {
-    color: var(--color-base-100);
+
+  .mobile-toolbar-options-container {
+    gap: 8px;
+  }
+  .mobile-toolbar {
+    background-color: transparent;
+    overflow: visible;
   }
   .mobile-toolbar-options-list {
-    padding: 0;
+    gap: 4px;
+    width: calc(100% - var(--input-height) - 8px - var(--input-height) - 8px);
   }
 
   .mobile-navbar,
-  .workspace-drawer .nav-header {
+  .workspace-drawer .nav-header,
+  .mobile-toolbar {
     position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: var(--layer-status-bar);
     border: none;
-    padding: 4px 20px var(--safe-area-inset-bottom);
-    width: 100%;
+    padding: 4px 20px max(var(--safe-area-inset-bottom), 16px);
   }
 
   .workspace-drawer .nav-header {

@@ -374,7 +374,7 @@ body {
     --toggle-thumb-height: 25px;
     --toggle-thumb-width: 38px;
     --toggle-width: 68px;
-    --toolbar-option-width: calc(16px + var(--mobile-toolbar-height));
+    --toolbar-option-width: var(--mobile-toolbar-height);
     --view-header-height: 44px;
     --modal-header-height: var(--view-header-height);
     --modal-radius: var(--radius-xl);
