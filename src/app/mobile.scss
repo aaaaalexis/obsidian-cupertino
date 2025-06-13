@@ -203,7 +203,7 @@ body.is-mobile {
     transition: var(--anim-duration-moderate) var(--anim-motion-liquid) !important;
 
     &:active {
-      transform: scale(1.05);
+      transform: scale(1.02);
 
       .nav-action-button:active {
         transform: scale(0.8);
