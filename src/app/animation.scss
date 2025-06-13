@@ -52,6 +52,11 @@ body.is-mobile {
     transition: all;
     transition-duration: var(--anim-duration-moderate) !important;
     transition-timing-function: var(--anim-motion-cupertino) !important;
+
+    will-change: transform;
+    &[style*="transform"]:not([style*="transition: transform 150ms ease-in-out"]):not([style*="transition-delay: 0s"]) {
+      transition: none;
+    }
   }
 
   .view-action,
@@ -76,15 +81,6 @@ body.is-mobile {
   .suggestion-item {
     &:active {
       transform: scale(0.8);
-    }
-  }
-}
-
-body.is-phone {
-  .menu,
-  .mobile-tab-switcher {
-    @starting-style {
-      transform: translateY(100%);
     }
   }
 }
