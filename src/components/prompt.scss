@@ -52,7 +52,7 @@ body.is-phone {
   }
 
   .prompt-input-container {
-    margin: 16px 40px 0;
+    margin: 8px 28px 0;
   }
 
   .prompt-input {
@@ -65,7 +65,7 @@ body.is-phone {
   }
 
   .prompt-results {
-    padding: 16px 20px;
+    padding: 8px;
   }
 
   .prompt .suggestion-item {
@@ -90,7 +90,6 @@ body.is-tablet {
   .prompt-input-container {
     display: flex;
     align-items: center;
-    border-bottom: var(--border-width) solid var(--background-modifier-border);
   }
 
   .prompt-input-container::before {
