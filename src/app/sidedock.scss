@@ -168,14 +168,21 @@ body.is-mobile {
   .workspace-drawer {
     border-radius: 0;
 
-    .workspace-drawer-header {
-      padding-top: 0;
-    }
     .workspace-drawer-inner {
       background-color: transparent;
+      overflow: visible;
+      gap: 16px;
+    }
+
+    .workspace-drawer-header {
+      padding: 0 24px;
+    }
+    .workspace-drawer-header-left {
+      gap: 4px;
     }
     .workspace-drawer-header-info {
-      font-size: var(--font-ui-smaller);
+      color: var(--text-faint);
+      margin: 0;
     }
     .workspace-drawer-header-icon {
       margin: 0;
