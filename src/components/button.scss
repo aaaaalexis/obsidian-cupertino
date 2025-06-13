@@ -29,14 +29,16 @@ body.is-mobile {
 
   .clickable-icon {
     background-color: transparent;
-    padding: 10px;
-    min-width: var(--input-height);
-    height: var(--input-height);
+    padding: 12px;
 
     &.is-active {
       opacity: 1;
       background-color: var(--interactive-accent);
       color: var(--text-on-accent);
+    }
+
+    &.mobile-tap {
+      opacity: unset;
     }
   }
 }
