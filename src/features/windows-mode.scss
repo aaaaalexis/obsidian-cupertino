@@ -264,6 +264,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   .menu,
   .suggestion-container {
     border-radius: calc(var(--radius-m) + 6px);
+    border: var(--prompt-border-width) solid var(--prompt-border-color);
 
     > div {
       padding: 6px;
@@ -349,6 +350,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   /********** Prompt **********/
   .prompt {
     background-color: var(--modal-background);
+    border: var(--prompt-border-width) solid var(--prompt-border-color);
   }
 
   .prompt-input {

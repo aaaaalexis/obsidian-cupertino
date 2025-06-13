@@ -8,7 +8,6 @@
 
 body:not(.is-mobile) .task-option-dialog {
   backdrop-filter: blur(var(--blur-l)) saturate(1.5);
-  border: var(--prompt-border-width) solid var(--prompt-border-color);
   border-radius: var(--radius-m);
   background-color: var(--modal-background);
   padding: 4px;

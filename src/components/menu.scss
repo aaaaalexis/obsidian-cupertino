@@ -1,10 +1,10 @@
 body:not(.is-mobile) .menu,
 body:not(.is-mobile) .suggestion-container {
   backdrop-filter: blur(var(--blur-s)) saturate(1.5);
-  border: var(--prompt-border-width) solid var(--prompt-border-color);
   border-radius: var(--radius-m);
   background-color: var(--modal-background);
   padding: 0;
+  border: none;
 
   > div {
     padding: 4px;

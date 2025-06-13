@@ -5,7 +5,7 @@ body:not(.is-phone) {
 
   .prompt {
     backdrop-filter: blur(var(--blur-m)) saturate(1.5);
-    border: var(--prompt-border-width) solid var(--prompt-border-color);
+    border: none;
     background-color: var(--modal-background);
     animation: var(--anim-duration-slow) blurInScale;
   }
