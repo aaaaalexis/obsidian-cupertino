@@ -46,7 +46,10 @@ body.is-mobile {
   .workspace-drawer.mod-left,
   .workspace-drawer.mod-right,
   .menu,
-  .mobile-tab-switcher {
+  .mobile-tab-switcher,
+  .menu-item,
+  .suggestion-item {
+    transition: all;
     transition-duration: var(--anim-duration-moderate) !important;
     transition-timing-function: var(--anim-motion-cupertino) !important;
   }
@@ -66,6 +69,13 @@ body.is-mobile {
       > svg.svg-icon {
         transform: scale(0.8);
       }
+    }
+  }
+
+  .menu-item.tappable,
+  .suggestion-item {
+    &:active {
+      transform: scale(0.8);
     }
   }
 }
