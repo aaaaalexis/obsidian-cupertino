@@ -72,8 +72,6 @@ body.is-tablet:not(.tablet-menu-off) {
     max-height: 80vh;
   }
   .menu-item {
-    font-size: var(--font-ui-medium);
-    padding: 16px;
     gap: 16px;
   }
   .menu-item-icon {
@@ -135,33 +133,16 @@ body.is-phone {
   }
   .menu-item {
     border-radius: var(--radius-m);
+    font-size: var(--font-ui-medium);
+    padding: 16px;
   }
 }
 
-body.is-tablet:not(.is-android:not(.material-off)) {
-  &.theme-light {
-    .menu-item:not(.is-label[data-section="title"]) {
-      background-color: rgb(from var(--background-primary) r g b / 50%);
-    }
-  }
-  &.theme-dark {
-    .menu-item:not(.is-label[data-section="title"]) {
-      background-color: rgb(from var(--background-secondary-alt) r g b / 25%);
-    }
-  }
-
-  .menu {
-    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.2);
-    background-color: rgb(from var(--background-secondary) r g b / 90%);
-    min-width: 240px;
+body.is-tablet {
+  .menu-scroll {
+    padding: 12px 8px;
   }
   .menu-item {
-    border-radius: 0;
-  }
-  .menu-item.is-label {
-    padding: 8px;
-  }
-  .menu-separator {
-    margin: 4px;
+    padding: 12px 16px;
   }
 }
