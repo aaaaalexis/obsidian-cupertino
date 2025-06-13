@@ -46,9 +46,6 @@ body:not(.is-mobile) {
 
   .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
     padding: 4px 20px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
   }
 
   .view-content > .node-insert-event {
@@ -124,6 +121,11 @@ body:not(.is-mobile) {
   }
 
   /* Panel actions style */
+  .nav-header {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
   .nav-buttons-container {
     border-radius: 100vh;
     background-color: var(--modal-background);
