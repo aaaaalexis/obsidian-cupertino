@@ -1,7 +1,3 @@
-body.blur-effect-off .modal {
-  backdrop-filter: none;
-}
-
 body {
   &.theme-light .modal {
     border-width: var(--modal-border-width) 0 0;

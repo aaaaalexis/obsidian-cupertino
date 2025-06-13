@@ -9,6 +9,16 @@ settings:
         type: info-text
         markdown: true
     -
+        id: material-off
+        title: Disable Android mode
+        description: Turn off Material styling on Android.
+        type: class-toggle
+    -
+        id: windows-mode-off
+        title: Disable Windows mode
+        description: Turn off Fluent styling on Windows.
+        type: class-toggle
+    -
         id: active-line-off
         title: Disable active editing line highlight
         type: class-toggle
@@ -41,26 +51,6 @@ settings:
         title: Compact list view
         type: class-toggle
     -
-        id: android-header
-        title: Android
-        type: heading
-        level: 1
-    -
-        id: material-off
-        title: Disable Android mode
-        description: Turn off Material styling on Android.
-        type: class-toggle
-    -
-        id: windows-header
-        title: Windows
-        type: heading
-        level: 1
-    -
-        id: windows-mode-off
-        title: Disable Windows mode
-        description: Turn off Fluent styling on Windows.
-        type: class-toggle
-    -
         id: desktop-header
         title: Desktop
         type: heading
@@ -85,33 +75,6 @@ settings:
     -
         id: image-zoom-off
         title: Disable image zoom
-        type: class-toggle
-    -
-        id: blur-effect-off
-        title: Reduce transparency
-        type: class-toggle
-    -
-        id: tablet-header
-        title: Tablet
-        type: heading
-        level: 1
-    -
-        id: tablet-menu-off
-        title: Disable tablet menu theming
-        description: Turn off custom context menu styling on tablet.
-        type: class-toggle
-    -
-        id: mobile-header
-        title: Mobile
-        type: heading
-        level: 1
-    -
-        id: quick-mode-switch-off
-        title: Disable quick mode switch
-        type: class-toggle
-    -
-        id: hide-tabs-count-off
-        title: Show tabs count
         type: class-toggle
 */
 
@@ -208,7 +171,6 @@ body {
   --table-header-border-width: 0;
   --table-header-weight: var(--font-weight);
   --table-row-last-border-width: 0;
-  --tag-border-width: var(--border-width);
   --tag-size: var(--font-smallest);
   --text-highlight-bg: rgba(var(--color-orange-rgb), 0.25);
   --text-selection: var(--background-modifier-hover);
@@ -407,10 +369,6 @@ body {
     &.show-ribbon {
       --ribbon-width: 52px;
     }
-  }
-
-  &.blur-effect-off {
-    --modal-background: var(--background-secondary) !important;
   }
 
   &:not(.is-focused) {

@@ -142,7 +142,7 @@ body.is-mobile.is-android:not(.material-off) {
 
   /********** Mode Switchcer **********/
 
-  &.is-phone:not(.mod-toolbar-open):not(.quick-mode-switch-off) .mod-root .view-actions button:nth-last-child(2) {
+  &.is-phone:not(.mod-toolbar-open) .mod-root .view-actions button:nth-last-child(2) {
     right: 16px;
     z-index: var(--layer-cover);
     backdrop-filter: none;
@@ -164,11 +164,6 @@ body.is-mobile.is-android:not(.material-off) {
   .mobile-navbar,
   .workspace-drawer .nav-header {
     padding: 8px 16px var(--safe-area-inset-bottom);
-  }
-  .mobile-navbar-action .clickable-icon {
-    padding: 0;
-    width: var(--input-height);
-    height: var(--input-height);
   }
 
   /********** Menu **********/

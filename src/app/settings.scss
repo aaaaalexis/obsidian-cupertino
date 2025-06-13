@@ -29,28 +29,14 @@ body:not(.is-mobile) {
 }
 
 body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
-  &:not(.blur-effect-off) {
-    &.theme-light .vertical-tab-header {
-      background-color: rgb(from var(--color-base-30) r g b / 75%);
-    }
-    &.theme-dark .vertical-tab-header {
-      background-color: rgb(from var(--color-base-10) r g b / 75%);
-    }
-    .vertical-tab-content {
-      background-color: rgb(from var(--color-base-20) r g b / 75%);
-    }
+  &.theme-light .vertical-tab-header {
+    background-color: rgb(from var(--color-base-30) r g b / 75%);
   }
-
-  &.blur-effect-off {
-    &.theme-light .vertical-tab-header {
-      background-color: var(--color-base-30);
-    }
-    &.theme-dark .vertical-tab-header {
-      background-color: var(--color-base-10);
-    }
-    .vertical-tab-content {
-      background-color: var(--color-base-20);
-    }
+  &.theme-dark .vertical-tab-header {
+    background-color: rgb(from var(--color-base-10) r g b / 75%);
+  }
+  .vertical-tab-content {
+    background-color: rgb(from var(--color-base-20) r g b / 75%);
   }
 
   .modal.mod-sidebar-layout:not(.mod-community-modal) {
@@ -149,7 +135,7 @@ body.is-mobile {
       align-items: center;
       width: var(--modal-header-height);
       height: var(--modal-header-height);
-      box-shadow: var(--shadow-invert-s);
+      box-shadow: var(--shadow-invert-clear);
       border-radius: var(--clickable-icon-radius);
 
       &::before {

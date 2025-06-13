@@ -1,7 +1,3 @@
-body.blur-effect-off .prompt {
-  backdrop-filter: none;
-}
-
 body:not(.is-phone) {
   .modal-container:has(.prompt):not(:last-child) {
     opacity: 0;

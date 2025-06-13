@@ -14,10 +14,6 @@ body:not(.is-mobile) .task-option-dialog {
   padding: 4px;
 }
 
-body:not(.is-mobile).blur-effect-off .task-option-dialog {
-  backdrop-filter: none;
-}
-
 body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   border-radius: calc(var(--radius-m) + 6px);
 }

@@ -1,11 +1,3 @@
-body:not(.is-mobile).blur-effect-off {
-  .menu,
-  .suggestion-container {
-    backdrop-filter: none;
-    background-color: var(--modal-background) !important;
-  }
-}
-
 body:not(.is-mobile) .menu,
 body:not(.is-mobile) .suggestion-container {
   backdrop-filter: blur(var(--blur-s)) saturate(1.5);
@@ -56,7 +48,7 @@ body:not(.is-mobile) .suggestion-container {
 }
 
 body.is-phone,
-body.is-tablet:not(.tablet-menu-off) {
+body.is-tablet {
   .menu {
     backdrop-filter: blur(var(--blur-m)) saturate(1.5);
     background-color: var(--modal-background);

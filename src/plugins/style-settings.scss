@@ -19,43 +19,26 @@
 }
 
 body:not(.mod-windows) .style-settings-heading[data-id="cupertino"] + .style-settings-container {
-  .style-settings-heading[data-id="windows-header"],
-  .style-settings-heading[data-id="windows-header"] + .style-settings-container {
-    display: none;
-  }
-}
-
-body:not(.is-mobile) .style-settings-heading[data-id="cupertino"] + .style-settings-container {
-  .style-settings-heading[data-id="tablet-header"],
-  .style-settings-heading[data-id="tablet-header"] + .style-settings-container,
-  .style-settings-heading[data-id="mobile-header"],
-  .style-settings-heading[data-id="mobile-header"] + .style-settings-container {
-    display: none;
-  }
-}
-
-body.is-phone .style-settings-heading[data-id="cupertino"] + .style-settings-container {
-  .style-settings-heading[data-id="desktop-header"],
-  .style-settings-heading[data-id="desktop-header"] + .style-settings-container,
-  .style-settings-heading[data-id="tablet-header"],
-  .style-settings-heading[data-id="tablet-header"] + .style-settings-container,
-  .setting-item[data-id="center-tabs-off"] {
+  .setting-item[data-id="windows-mode-off"] {
     display: none;
   }
 }
 
 body:not(.is-android) .style-settings-heading[data-id="cupertino"] + .style-settings-container {
-  .style-settings-heading[data-id="android-header"],
-  .style-settings-heading[data-id="android-header"] + .style-settings-container {
+  .setting-item[data-id="material-off"] {
     display: none;
   }
 }
 
-body.is-tablet .style-settings-heading[data-id="cupertino"] + .style-settings-container {
+body.is-mobile .style-settings-heading[data-id="cupertino"] + .style-settings-container {
   .style-settings-heading[data-id="desktop-header"],
-  .style-settings-heading[data-id="desktop-header"] + .style-settings-container,
-  .style-settings-heading[data-id="mobile-header"],
-  .style-settings-heading[data-id="mobile-header"] + .style-settings-container {
+  .style-settings-heading[data-id="desktop-header"] + .style-settings-container {
+    display: none;
+  }
+}
+
+body.is-phone .style-settings-heading[data-id="cupertino"] + .style-settings-container {
+  .setting-item[data-id="center-tabs-off"] {
     display: none;
   }
 }
