@@ -32,6 +32,7 @@ body.is-mobile.is-android:not(.material-off) {
   --nav-item-background-active: var(--interactive-accent-active);
   --nav-item-background-selected: var(--interactive-accent-active);
   --nav-item-color-active: var(--text-accent-active);
+  --nav-item-padding: 16px 24px !important;
   --nav-item-weight-active: var(--font-bold);
 
   --shadow-s: rgba(0, 0, 0, 0.1) 0px 8px 30px !important;
@@ -53,7 +54,7 @@ body.is-mobile.is-android:not(.material-off) {
   }
 
   &.is-phone {
-    --view-header-height: 48px;
+    --view-header-height: var(--input-height);
   }
 
   /********** Components **********/
@@ -168,71 +169,79 @@ body.is-mobile.is-android:not(.material-off) {
 
   /********** Menu **********/
 
-  &.is-tablet .menu {
-    border-radius: var(--radius-xl);
+  &.is-phone .menu {
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    margin: 0;
+
+    .menu-grabber {
+      top: 16px;
+      width: 32px;
+      height: 4px;
+    }
+    .menu-separator {
+      border-color: transparent;
+    }
 
     .menu-scroll {
-      padding: 16px;
+      gap: 2px;
+      padding-top: 34px;
+    }
+    .menu-item:not(.is-label) {
+      flex-direction: row !important;
+      gap: 16px;
+    }
+    .menu-item:not(.is-label[data-section="title"]) {
+      background-color: var(--interactive-normal);
+    }
+    .menu-item.tappable:not(:has(.mod-checked)) .menu-item-title {
+      margin-left: 0 !important;
+    }
+    .menu-item {
+      border: none !important;
+      border-radius: var(--radius-l);
+    }
+    .menu-item + .menu-item,
+    .menu-item:has(+ .menu-item) {
+      border-radius: var(--radius-s);
+    }
+    .menu-separator + .menu-item,
+    .menu-item:first-child:has(+ .menu-item) {
+      border-top-right-radius: var(--radius-l);
+      border-top-left-radius: var(--radius-l);
+    }
+    .menu-item:has(+ .menu-separator),
+    .menu-item + .menu-item:last-child {
+      border-bottom-right-radius: var(--radius-l);
+      border-bottom-left-radius: var(--radius-l);
+    }
+    .menu-item-icon:empty {
+      display: none;
     }
   }
 
-  .menu {
-    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-    margin: 0;
-  }
-
-  .menu-grabber {
-    top: 16px;
-    width: 32px;
-    height: 4px;
-  }
-  .menu-separator {
-    border-color: transparent;
-  }
-
-  .menu-scroll {
-    gap: 2px;
-    padding-top: 34px;
-  }
-  .menu-item:not(.is-label) {
-    flex-direction: row !important;
-    gap: 16px;
-  }
-  .menu-item:not(.is-label[data-section="title"]) {
-    background-color: var(--interactive-normal);
-  }
-  .menu-item.tappable:not(:has(.mod-checked)) .menu-item-title {
-    margin-left: 0 !important;
-  }
-  .menu-item {
-    border: none !important;
+  &.is-tablet .menu {
     border-radius: var(--radius-m);
-  }
-  .menu-item + .menu-item,
-  .menu-item:has(+ .menu-item) {
-    border-radius: var(--radius-s);
-  }
-  .menu-separator + .menu-item,
-  .menu-item:first-child:has(+ .menu-item) {
-    border-top-right-radius: var(--radius-m);
-    border-top-left-radius: var(--radius-m);
-  }
-  .menu-item:has(+ .menu-separator),
-  .menu-item + .menu-item:last-child {
-    border-bottom-right-radius: var(--radius-m);
-    border-bottom-left-radius: var(--radius-m);
-  }
-  .menu-item-icon:empty {
-    display: none;
+
+    .menu-scroll {
+      padding: 8px 0;
+    }
+
+    .menu-separator {
+      margin: 4px 0;
+    }
   }
 
   /********** Sidebar **********/
 
-  .nav-files-container > div {
-    gap: 2px;
-    margin-bottom: 96px;
-    border-radius: 0;
-    background-color: transparent;
+  .nav-files-container {
+    padding: 0 16px 8px !important;
+
+    > div {
+      gap: 2px;
+      margin-bottom: 96px;
+      border-radius: 0;
+      background-color: transparent;
+    }
   }
 
   .nav-files-container .tree-item:not(:last-child)::before,
@@ -242,11 +251,25 @@ body.is-mobile.is-android:not(.material-off) {
 
   .nav-files-container .tree-item-self {
     border-radius: 100vh !important;
-    text-indent: 4px;
+    padding-inline-end: 16px;
   }
 
   .nav-folder:not(.is-collapsed) > .nav-folder-title {
     background-color: var(--nav-item-background-hover);
+  }
+
+  .workspace-drawer {
+    .workspace-drawer-active-tab-header {
+      margin: 0 16px;
+    }
+
+    .view-content {
+      padding: 0 16px 96px;
+    }
+
+    .view-content > div:not(.nav-header):not(:empty) {
+      border-radius: var(--radius-m);
+    }
   }
 
   /********** Settings **********/
@@ -269,6 +292,12 @@ body.is-mobile.is-android:not(.material-off) {
     }
   }
   .modal.mod-sidebar-layout {
+    .vertical-tab-header,
+    .vertical-tab-content {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+
     .vertical-tab-nav-item {
       transition: border-radius var(--anim-duration-fast);
       border: none;
@@ -334,7 +363,7 @@ body.is-mobile.is-android:not(.material-off) {
 
     .setting-item:not(.setting-item-heading),
     .setting-item-control .mobile-option-setting-item {
-      border-radius: var(--radius-m);
+      border-radius: var(--radius-l);
       padding: 16px;
     }
     .setting-item:not(.setting-item-heading):has(+ .setting-item:not(.setting-item-heading)) {
@@ -412,21 +441,19 @@ body.is-mobile.is-android:not(.material-off) {
 
   /********** Prompt **********/
 
+  &.is-phone .prompt-results {
+    padding: 0 16px 16px;
+  }
+
   .prompt {
     .prompt-input {
       box-shadow: none !important;
       border: none !important;
-      min-height: var(--view-header-height);
-    }
-
-    .prompt-input-container,
-    .prompt-instructions {
-      border: none;
     }
 
     .suggestion-item {
       border-radius: 100vh;
-      padding: 16px 24px;
+      padding: var(--nav-item-padding);
     }
   }
 

@@ -22,6 +22,10 @@ body:not(.is-phone) {
     font-size: var(--font-ui-large);
   }
 
+  .prompt-results {
+    padding: 16px;
+  }
+
   .prompt-instructions {
     border-color: var(--background-modifier-border);
     color: var(--text-faint);
@@ -50,7 +54,7 @@ body.is-phone {
   }
 
   .prompt-input-container {
-    margin: 16px 36px;
+    margin: 16px 40px;
     border: none;
   }
 
@@ -61,6 +65,7 @@ body.is-phone {
 
   .search-input-clear-button {
     inset-inline-end: 0;
+    width: unset;
   }
 
   .prompt-results {
@@ -68,7 +73,15 @@ body.is-phone {
   }
 
   .prompt .suggestion-item {
-    padding: 16px;
+    padding: var(--nav-item-padding);
+  }
+
+  .suggestion-item {
+    gap: 8px;
+  }
+
+  .suggestion-flair {
+    margin: 0 !important;
   }
 }
 
@@ -89,16 +102,5 @@ body.is-tablet {
   .prompt-input-container {
     display: flex;
     align-items: center;
-  }
-
-  .prompt-input-container::before {
-    margin-left: 20px;
-    -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'></circle><line x1='21' y1='21' x2='16.65' y2='16.65'></line></svg>");
-    -webkit-mask-repeat: no-repeat;
-    display: block;
-    background-color: var(--search-icon-color);
-    width: var(--icon-l);
-    height: var(--icon-l);
-    content: "";
   }
 }
