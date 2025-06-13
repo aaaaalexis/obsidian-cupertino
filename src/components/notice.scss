@@ -18,3 +18,10 @@
   overflow: hidden;
   color: var(--text-muted);
 }
+
+body.is-phone .notice-container {
+  bottom: max(var(--safe-area-inset-bottom), 16px);
+  margin-bottom: 56px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
