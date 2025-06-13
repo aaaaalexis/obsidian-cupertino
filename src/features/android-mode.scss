@@ -313,11 +313,6 @@ body.is-mobile.is-android:not(.material-off) {
       background-color: var(--interactive-normal);
     }
 
-    .modal-close-button {
-      width: 48px;
-      height: 48px;
-    }
-
     .setting-item {
       border: none;
     }
@@ -357,9 +352,6 @@ body.is-mobile.is-android:not(.material-off) {
   }
 
   &.is-tablet .modal.mod-sidebar-layout {
-    .modal-close-button {
-      border-radius: 100vh;
-    }
     .vertical-tab-header {
       border: none;
     }
