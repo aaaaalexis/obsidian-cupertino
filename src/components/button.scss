@@ -17,7 +17,7 @@ body:not(.is-mobile) {
     padding: 4px 10px;
     height: unset;
     min-height: var(--input-height);
-    font-weight: normal;
+    font-weight: var(--font-normal);
     line-height: unset;
   }
 }
@@ -48,7 +48,7 @@ body.is-phone:not(.is-android:not(.material-off)) {
     padding: 0 20px;
     min-height: var(--input-height);
     color: var(--text-accent);
-    font-weight: normal;
+    font-weight: var(--font-normal);
     text-align-last: unset;
   }
 

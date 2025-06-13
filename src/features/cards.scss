@@ -62,7 +62,7 @@ body {
       &:first-child a,
       &:has(span > img) ~ td a {
         display: block;
-        font-weight: bold;
+        font-weight: var(--font-bold);
         font-size: var(--h1-size);
       }
       &:first-child:not(:has(img)),
@@ -155,8 +155,7 @@ body {
       width: 32px;
       height: 32px;
       content: "";
-      font-weight: 500;
-      font-size: var(--font-adaptive-small);
+      font-weight: var(--font-medium);
       text-align: right;
     }
     thead:before {
@@ -187,7 +186,7 @@ body {
     }
     thead > tr > th {
       border: none;
-      font-weight: 400;
+      font-weight: var(--font-normal);
       font-size: var(--font-ui-small);
     }
 
@@ -247,7 +246,7 @@ body {
   div > ul > li > a {
     --link-decoration: none;
     --link-external-decoration: none;
-    font-weight: bold;
+    font-weight: var(--font-bold);
   }
   div ul ul {
     display: block;

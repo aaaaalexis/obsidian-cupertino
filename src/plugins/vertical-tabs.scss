@@ -7,7 +7,7 @@
   }
   .tree-item.is-tab.is-highlighted .tree-item-self {
     background-color: var(--nav-item-background-active);
-    font-weight: normal;
+    font-weight: var(--font-normal);
   }
   .tree-item-self {
     --nav-item-padding: 0px 8px 0px 12px;

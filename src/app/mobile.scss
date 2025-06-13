@@ -170,7 +170,7 @@ body.is-phone {
   background-color: var(--modal-background);
   padding: 12px 24px;
   width: fit-content;
-  font-weight: 600;
+  font-weight: var(--font-bold);
 }
 
 /********** Bottom Bar **********/

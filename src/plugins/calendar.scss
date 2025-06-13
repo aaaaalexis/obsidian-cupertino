@@ -9,16 +9,16 @@
   }
 
   .title .month {
-    font-weight: bold;
+    font-weight: var(--font-bold);
   }
 
   .title .year {
     color: var(--color-accent);
-    font-weight: normal;
+    font-weight: var(--font-normal);
   }
 
   .reset-button {
-    font-weight: normal;
+    font-weight: var(--font-normal);
     font-size: var(--font-ui-small);
     letter-spacing: normal;
     text-transform: unset;
@@ -42,7 +42,7 @@
     border-radius: 100vh;
     padding: 8px;
     min-height: 32px;
-    font-weight: 500;
+    font-weight: var(--font-medium);
 
     &:hover {
       background-color: var(--background-modifier-hover);
@@ -63,7 +63,7 @@
     --color-dot: var(--color-text-today);
     background-color: hsla(var(--color-accent-hsl), 0.15);
     color: var(--color-text-today);
-    font-weight: bold;
+    font-weight: var(--font-bold);
   }
 
   .dot-container {

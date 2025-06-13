@@ -48,7 +48,7 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
     width: 100%;
     height: 40px;
     color: var(--text-faint);
-    font-weight: normal;
+    font-weight: var(--font-normal);
   }
   .metadata-add-button:hover {
     background-color: transparent;

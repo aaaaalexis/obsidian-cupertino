@@ -21,7 +21,7 @@ body:not(.is-mobile) {
   .dropdown {
     height: unset;
     min-height: var(--input-height);
-    font-weight: normal;
+    font-weight: var(--font-normal);
     line-height: unset;
   }
   textarea,
@@ -71,7 +71,7 @@ body.is-phone:not(.is-android:not(.material-off)) {
     background-color: var(--interactive-normal);
     padding: 0 20px;
     min-height: var(--input-height);
-    font-weight: normal;
+    font-weight: var(--font-normal);
     text-align-last: unset;
   }
 

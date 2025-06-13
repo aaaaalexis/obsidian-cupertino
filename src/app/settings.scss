@@ -178,7 +178,7 @@ body.is-mobile {
     .vertical-tab-header-group-title {
       padding: 8px;
       color: var(--text-faint);
-      font-weight: normal;
+      font-weight: var(--font-normal);
       font-size: var(--font-ui-small);
       text-transform: uppercase;
     }
@@ -220,7 +220,7 @@ body.is-mobile {
 
     .setting-item-heading .setting-item-name {
       color: var(--text-faint);
-      font-weight: normal;
+      font-weight: var(--font-normal);
       font-size: var(--font-ui-small);
       text-transform: uppercase;
     }
@@ -235,6 +235,7 @@ body.is-phone {
     .modal-title:not(:has(.modal-setting-back-button)) {
       padding-left: 8px;
       font-size: var(--inline-title-size);
+      font-weight: var(--font-bold);
     }
     .modal-content {
       position: absolute;

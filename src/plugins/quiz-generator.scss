@@ -38,7 +38,7 @@
 
     &.correct-choice-qg {
       background-color: rgb(from var(--color-green) r g b / 50%) !important;
-      font-weight: bold;
+      font-weight: var(--font-bold);
     }
 
     &.incorrect-choice-qg {

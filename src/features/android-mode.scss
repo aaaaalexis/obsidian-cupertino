@@ -17,7 +17,7 @@ body.is-mobile.is-android:not(.material-off) {
   --radius-s: 8px;
   --input-height: 48px;
   --input-radius: var(--radius-s);
-  --input-font-weight: normal;
+  --input-font-weight: var(--font-normal);
   --toggle-border-width: 2px;
   --toggle-width: 52px;
   --toggle-thumb-height: 24px;
@@ -32,7 +32,7 @@ body.is-mobile.is-android:not(.material-off) {
   --nav-item-background-active: var(--interactive-accent-active);
   --nav-item-background-selected: var(--interactive-accent-active);
   --nav-item-color-active: var(--text-accent-active);
-  --nav-item-weight-active: bold;
+  --nav-item-weight-active: var(--font-bold);
 
   --shadow-s: rgba(0, 0, 0, 0.1) 0px 8px 30px !important;
   --shadow-l: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
@@ -302,7 +302,7 @@ body.is-mobile.is-android:not(.material-off) {
     .setting-item-heading .setting-item-name {
       padding-left: 8px;
       color: var(--text-accent);
-      font-weight: bold;
+      font-weight: var(--font-bold);
       font-family: var(--font-text-theme);
       letter-spacing: 0.1px;
       text-transform: unset;
@@ -399,7 +399,7 @@ body.is-mobile.is-android:not(.material-off) {
 
     .modal-title {
       max-width: 100%;
-      font-weight: normal;
+      font-weight: var(--font-normal);
       font-size: var(--h1-size);
     }
 
@@ -419,7 +419,7 @@ body.is-mobile.is-android:not(.material-off) {
         background-color: transparent;
         padding: 0 16px;
         color: var(--text-accent);
-        font-weight: bold;
+        font-weight: var(--font-bold);
         flex-grow: 0;
       }
     }
