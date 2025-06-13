@@ -131,6 +131,9 @@ body.is-phone {
 }
 
 body.is-tablet {
+  .menu {
+    border-radius: var(--radius-m);
+  }
   .menu-scroll {
     padding: 12px 8px;
   }
