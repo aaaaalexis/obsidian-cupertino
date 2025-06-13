@@ -47,12 +47,15 @@ body.is-phone {
     border: var(--prompt-border-width) solid var(--background-modifier-hover);
     border-radius: var(--radius-xl);
     background-color: var(--modal-background) !important;
-    width: 95vw;
+    left: 8px;
+    right: 8px;
+    width: unset;
     height: 70vh;
   }
 
   .prompt-input-container {
-    margin: 8px 28px 0;
+    margin: 16px 36px;
+    border: none;
   }
 
   .prompt-input {
@@ -65,7 +68,7 @@ body.is-phone {
   }
 
   .prompt-results {
-    padding: 12px;
+    padding: 0 20px 20px;
   }
 
   .prompt .suggestion-item {
