@@ -163,7 +163,7 @@ body.is-mobile {
 
   .nn-left-pane-scroller,
   .nn-file-list {
-    padding: 12px 20px 96px;
+    padding: 0 20px 96px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -251,13 +251,13 @@ body.is-mobile {
     overflow: hidden;
   }
   .nn-date-group-header + .nn-file-item {
-    border-top-right-radius: var(--radius-m);
-    border-top-left-radius: var(--radius-m);
+    border-top-right-radius: var(--input-radius);
+    border-top-left-radius: var(--input-radius);
   }
   .nn-file-item:has(+ .nn-date-group-header),
   .nn-file-item:last-child {
-    border-bottom-right-radius: var(--radius-m);
-    border-bottom-left-radius: var(--radius-m);
+    border-bottom-right-radius: var(--input-radius);
+    border-bottom-left-radius: var(--input-radius);
   }
   .nn-file-item:not(:last-child)::after {
     left: 20px;

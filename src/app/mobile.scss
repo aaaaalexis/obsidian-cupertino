@@ -70,17 +70,18 @@ body.is-phone {
     background-color: var(--background-secondary);
   }
 
+  .view-action,
+  .workspace-drawer-header-icon {
+    --icon-color: var(--text-normal);
+    box-shadow: var(--shadow-invert-clear) !important;
+    backdrop-filter: blur(var(--blur-s)) saturate(1.5);
+    background-color: var(--modal-background);
+  }
+
   .workspace .mod-root .workspace-leaf .view-header {
     position: fixed;
     background-color: transparent;
     width: 100%;
-
-    .view-action {
-      --icon-color: var(--text-normal);
-      box-shadow: var(--shadow-invert-clear) !important;
-      backdrop-filter: blur(var(--blur-s)) saturate(1.5);
-      background-color: var(--modal-background);
-    }
   }
 
   .workspace .mod-root .workspace-leaf .view-header,
@@ -185,7 +186,7 @@ body.is-mobile {
     }
   }
 
-  .view-content::before {
+  .mod-root .view-content::before {
     position: absolute;
     z-index: 1;
     mask: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.013) 1.8%, hsla(0, 0%, 0%, 0.049) 3.2%, hsla(0, 0%, 0%, 0.104) 4.6%, hsla(0, 0%, 0%, 0.175) 6.2%, hsla(0, 0%, 0%, 0.259) 8.1%, hsla(0, 0%, 0%, 0.352) 10.7%, hsla(0, 0%, 0%, 0.45) 14.1%, hsla(0, 0%, 0%, 0.55) 18.7%, hsla(0, 0%, 0%, 0.648) 24.5%, hsla(0, 0%, 0%, 0.741) 31.9%, hsla(0, 0%, 0%, 0.825) 41%, hsla(0, 0%, 0%, 0.896) 52.2%, hsla(0, 0%, 0%, 0.951) 65.6%, hsla(0, 0%, 0%, 0.987) 81.4%, hsl(0, 0%, 0%) 100%);
@@ -250,10 +251,6 @@ body.is-mobile {
   .workspace-drawer .nav-header {
     display: flex;
     justify-content: center;
-  }
-  .nav-buttons-container {
-    justify-content: space-between;
-    padding: 0;
   }
   .nav-action-button {
     flex-grow: 0 !important;
