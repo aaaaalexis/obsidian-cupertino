@@ -80,18 +80,18 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     }
 
     &.mod-minimize svg {
-      -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIyIiBmaWxsPSJub25lIiB2aWV3Qm94PSIwIDAgMTIgMiI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTS41OTggMS4yMDFBLjYwNC42MDQgMCAwIDEgMCAuNjA0LjYxLjYxIDAgMCAxIC41OTggMGgxMC44MDRjLjMyNCAwIC41OTguMjgxLjU5OC42MDRhLjYwNS42MDUgMCAwIDEtLjU5OC41OTdILjU5OFoiLz48L3N2Zz4=");
+      -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='2' fill='none' viewBox='0 0 12 2'%3e%3cpath fill='black' d='M.598 1.201A.604.604 0 0 1 0 .604.61.61 0 0 1 .598 0h10.804c.324 0 .598.281.598.604a.605.605 0 0 1-.598.597H.598Z'/%3e%3c/svg%3e");
     }
     &.mod-maximize svg {
-      -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDEyIDEyIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMS43NyAxMkMuODI1IDEyIDAgMTEuMTc1IDAgMTAuMjNWMS43N0MwIC44My44MjggMCAxLjc3IDBoOC40NkMxMS4xNjcgMCAxMiAuODMzIDEyIDEuNzd2OC40NmMwIC45NDItLjgzIDEuNzctMS43NyAxLjc3SDEuNzdabTguNDMxLTEuMjAxYS42MDUuNjA1IDAgMCAwIC41OTgtLjU5OFYxLjhhLjYwNi42MDYgMCAwIDAtLjU5OS0uNkgxLjhhLjYwNS42MDUgMCAwIDAtLjYuNnY4LjRjMCAuMzI1LjI3My41OTguNTk4LjU5OEgxMC4yWiIvPjwvc3ZnPg==");
+      -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' viewBox='0 0 12 12'%3e%3cpath fill='black' d='M1.77 12C.825 12 0 11.175 0 10.23V1.77C0 .83.828 0 1.77 0h8.46C11.167 0 12 .833 12 1.77v8.46c0 .942-.83 1.77-1.77 1.77H1.77Zm8.431-1.201a.605.605 0 0 0 .598-.598V1.8a.606.606 0 0 0-.599-.6H1.8a.605.605 0 0 0-.6.6v8.4c0 .325.273.598.598.598H10.2Z'/%3e%3c/svg%3e");
     }
     &.mod-close svg {
-      -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDEyIDEyIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJtNiA2Ljg0OC00Ljk3NSA0Ljk3NGEuNjE4LjYxOCAwIDAgMS0uODU2LjAwNi42MTguNjE4IDAgMCAxIC4wMDYtLjg1NUw1LjE1IDUuOTk4LjE3NSAxLjAyNGMtLjIyNi0uMjI3LS4yNC0uNjI4IDAtLjg1YS42MDYuNjA2IDAgMCAxIC44NSAwbDQuOTc0IDQuOTc1TDEwLjk3NC4xNzRhLjYwNi42MDYgMCAwIDEgLjg1IDAgLjYwNi42MDYgMCAwIDEgMCAuODVMNi44NDggNS45OThsNC45NzQgNC45NzVhLjYwNi42MDYgMCAwIDEgMCAuODVjLS4yMjIuMjM5LS42MjMuMjI1LS44NSAwTDYgNi44NDdaIi8+PC9zdmc+");
+      -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' viewBox='0 0 12 12'%3e%3cpath fill='black' d='m6 6.848-4.975 4.974a.618.618 0 0 1-.856.006.618.618 0 0 1 .006-.855L5.15 5.998.175 1.024c-.226-.227-.24-.628 0-.85a.606.606 0 0 1 .85 0l4.974 4.975L10.974.174a.606.606 0 0 1 .85 0 .606.606 0 0 1 0 .85L6.848 5.998l4.974 4.975a.606.606 0 0 1 0 .85c-.222.239-.623.225-.85 0L6 6.847Z'/%3e%3c/svg%3e");
     }
   }
 
   .is-maximized .titlebar .titlebar-button-container.mod-right .titlebar-button.mod-maximize svg {
-    -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDEyIDEyIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTAuNzk5IDMuNTU3QzEwLjc5OSAyLjI3IDkuNjcgMS4yIDguMzk2IDEuMkgyLjUwMmExLjgwOCAxLjgwOCAwIDAgMSAxLjctMS4yaDQuMTk0QzEwLjM1MiAwIDEyIDEuNjQxIDEyIDMuNTk4djQuMmMwIC4xOTItLjAzLjM3OC0uMDg4LjU1N2ExLjcxNCAxLjcxNCAwIDAgMS0uMjQuNDg3IDEuODEzIDEuODEzIDAgMCAxLS44NzMuNjU2VjMuNTU3Wk0xLjc2OSAxMkMuODI2IDEyIDAgMTEuMTc1IDAgMTAuMjNWNC4xNzJjMC0uOTQxLjgyOC0xLjc3IDEuNzctMS43N2g2LjA1OGMuOTUgMCAxLjc3LjgyIDEuNzcgMS43N3Y2LjA1OGMwIC45NDItLjgyOSAxLjc3LTEuNzcgMS43N0gxLjc3Wm02LjAzLTEuMjAxYS42MS42MSAwIDAgMCAuNjAzLS41OTh2LTZhLjYxLjYxIDAgMCAwLS42MDMtLjYwM2gtNkEuNjEuNjEgMCAwIDAgMS4yIDQuMnY2YzAgLjMyNS4yNzMuNTk4LjU5OC41OThoNloiLz48L3N2Zz4=");
+    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' viewBox='0 0 12 12'%3e%3cpath fill='black' d='M10.799 3.557C10.799 2.27 9.67 1.2 8.396 1.2H2.502a1.808 1.808 0 0 1 1.7-1.2h4.194C10.352 0 12 1.641 12 3.598v4.2c0 .758-.484 1.45-1.201 1.7V3.557ZM1.769 12C.826 12 0 11.175 0 10.23V4.172c0-.941.828-1.77 1.77-1.77h6.058c.945 0 1.77.825 1.77 1.77v6.058c0 .942-.829 1.77-1.77 1.77H1.77Zm6.03-1.201a.61.61 0 0 0 .603-.598v-6a.607.607 0 0 0-.603-.603h-6A.61.61 0 0 0 1.2 4.2v6c0 .325.273.598.598.598h6Z'/%3e%3c/svg%3e");
   }
 
   .menu,
