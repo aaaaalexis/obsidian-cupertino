@@ -292,18 +292,18 @@ body.mod-macos.is-hidden-frameless {
   }
 
   .mod-root .workspace-tabs.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
-    padding-right: 24px;
+    padding-right: 20px;
   }
   .mod-root .workspace-tabs.mod-top-right-space.workspace-tab-header-container-inner,
   .mod-root .workspace-tabs.mod-top-right-space:not(.mod-top-left-space) .workspace-tab-header-container-inner {
-    padding-left: 80px;
+    padding-left: 82px;
   }
   .mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
   .mod-root .workspace-tabs.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
-    padding-right: 56px;
+    padding-right: 52px;
   }
   .mod-root .workspace-tabs:not(.mod-top-left-space):not(.mod-top-right-space) .workspace-tab-header-container-inner {
-    padding-left: 48px;
+    padding-left: 50px;
   }
   .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tabs:not(.mod-top) .workspace-tab-header-container-inner {
     padding-left: 40px;

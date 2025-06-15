@@ -168,7 +168,7 @@ body:not(.is-mobile) {
     &:not([style*="overflow: hidden;"]) {
       display: flex !important;
       position: absolute;
-      transition-delay: var(--anim-duration-moderate);
+      transition-delay: var(--anim-duration-fast);
       margin: 8px;
       height: -webkit-fill-available;
       box-shadow: var(--shadow-l);
@@ -221,7 +221,7 @@ body:not(.is-mobile) {
       right: 0;
 
       &::before {
-        inset: -8px -8px -8px 0;
+        inset: -8px -8px -8px auto;
       }
     }
 
