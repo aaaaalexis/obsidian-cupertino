@@ -19,21 +19,23 @@ body.center-tabs-off .mod-root .workspace-tab-header-container-inner {
 }
 
 body:not(.is-phone) {
-  &:not(.show-ribbon):not(.hider-sidebar-buttons) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
-    margin-left: 40px;
-  }
-
   .workspace-tab-header-container {
     overflow: hidden;
-    align-items: center;
   }
 
   .workspace-tab-header-container-inner {
-    margin: 0;
-    height: 32px;
+    margin: 12px 0;
     position: relative;
     border-radius: var(--tab-radius);
     padding: 0;
+  }
+
+  .workspace-tab-header-new-tab,
+  .workspace-tab-header-tab-list,
+  .sidebar-toggle-button {
+    margin: 12px 0;
+    padding: unset;
+    height: auto !important;
   }
 
   .workspace .mod-root .workspace-tabs {
@@ -109,16 +111,6 @@ body:not(.is-phone) {
     .workspace-tab-header-spacer {
       display: none;
     }
-
-    .workspace-tab-header-new-tab,
-    .workspace-tab-header-tab-list {
-      margin: 0;
-      padding: unset;
-    }
-    .workspace-tab-header-tab-list .clickable-icon {
-      padding: 0;
-      width: 16px;
-    }
   }
 
   .workspace .mod-sidedock {
@@ -160,8 +152,7 @@ body:not(.is-phone) {
     }
 
     &.mod-left-split .sidebar-toggle-button.mod-left {
-      position: absolute;
-      left: max(var(--frame-left-space), 8px);
+      order: -1;
     }
   }
 }
@@ -170,7 +161,7 @@ body:not(.is-mobile) {
   .workspace-tab-header-container .clickable-icon {
     padding: 4px;
     width: 32px;
-    height: 32px;
+    height: 100%;
   }
 
   .sidebar-toggle-button {
@@ -183,7 +174,6 @@ body:not(.is-mobile) {
   .workspace-ribbon .clickable-icon {
     padding: 4px;
     width: 40px;
-    height: 32px;
   }
 }
 
@@ -191,8 +181,11 @@ body.mod-macos.is-hidden-frameless {
   &:not(.is-fullscreen) .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
     padding-left: var(--frame-left-space);
   }
+  &:not(.is-fullscreen).show-ribbon .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+    padding-left: calc(var(--frame-left-space) + 8px);
+  }
   &:not(.is-fullscreen) .mod-sidedock.mod-left-split.is-sidedock-collapsed .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
-    padding-left: calc(var(--frame-left-space) - 8px);
+    padding-left: calc(var(--frame-left-space) - 16px);
   }
 
   &.is-fullscreen {
@@ -217,13 +210,6 @@ body.mod-macos.is-hidden-frameless {
   }
 
   &.show-ribbon {
-    .mod-sidedock.mod-left-split .sidebar-toggle-button.mod-left {
-      left: calc(var(--frame-left-space) + 8px);
-    }
-    .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
-      margin-left: 48px;
-    }
-
     .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-header-container-inner {
       padding-right: 0;
       padding-left: 32px;
