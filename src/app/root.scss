@@ -280,7 +280,11 @@ body {
   }
 
   &:not(.is-phone) {
-    --header-height: 48px;
+    --header-height: 56px;
+
+    .mod-sidedock.is-sidedock-collapsed {
+      --header-height: 40px;
+    }
   }
 
   &.is-mobile {

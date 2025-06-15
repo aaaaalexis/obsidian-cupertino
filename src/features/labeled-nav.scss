@@ -8,6 +8,10 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
     }
   }
 
+  .mod-sidedock.mod-left-split.is-sidedock-collapsed .mod-top-left-space .workspace-tab-header-container {
+    padding-top: calc(var(--header-height) + 8px) !important;
+  }
+
   .mod-sidedock.mod-left-split .mod-top-left-space {
     --sidebar-tab-text-display: flex;
 
@@ -16,20 +20,22 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
     }
 
     .workspace-tab-header-container {
-      padding: var(--header-height) 8px 0 !important;
+      padding: var(--header-height) 0 0 !important;
       height: fit-content;
     }
 
     .workspace-tab-header-container-inner {
+      border-radius: 0;
+      padding: 0 20px;
       flex-direction: column;
       margin: 0 !important;
       background-color: transparent;
       width: 100%;
+      height: fit-content;
     }
 
     .workspace-tab-header {
       background-color: transparent;
-      padding: 0 8px;
       height: 32px;
     }
 

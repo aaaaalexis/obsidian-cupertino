@@ -40,12 +40,9 @@ body:not(.is-mobile) {
   }
 
   .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
-  .workspace-split.mod-sidedock .workspace-leaf-content > .view-content {
-    padding: 4px 20px 0;
-  }
-
+  .workspace-split.mod-sidedock .workspace-leaf-content > .view-content,
   .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
-    padding: 4px 20px;
+    padding: 0 20px 8px;
   }
 
   .view-content > .node-insert-event {
@@ -152,6 +149,85 @@ body:not(.is-mobile) {
   .tree-item-children {
     margin-bottom: 0;
     border-inline-start: none;
+  }
+
+  /* Hover to show sidedock */
+  .mod-sidedock {
+    transition: var(--anim-duration-fast) var(--anim-motion-cupertino);
+
+    .workspace-tab-header-container {
+      -webkit-app-region: no-drag !important;
+    }
+  }
+
+  .mod-sidedock.is-sidedock-collapsed {
+    z-index: var(--layer-sidedock);
+    transition: var(--anim-duration-fast);
+    border-radius: var(--radius-m);
+
+    &:not([style*="overflow: hidden;"]) {
+      display: flex !important;
+      position: absolute;
+      transition-delay: var(--anim-duration-moderate);
+      margin: 8px;
+      height: -webkit-fill-available;
+      box-shadow: var(--shadow-l);
+      backdrop-filter: var(--blur-l);
+      background: var(--modal-background) !important;
+      width: 8px !important;
+
+      .workspace-tab-header-container {
+        padding-left: 4px;
+      }
+
+      .workspace-tab-header-container-inner {
+        margin: 4px 0;
+      }
+
+      .workspace-leaf-content > .node-insert-event,
+      .workspace-leaf-content > .view-content {
+        padding: 4px 12px 0;
+      }
+
+      div {
+        visibility: visible !important;
+        -webkit-app-region: no-drag !important;
+      }
+
+      &:hover {
+        width: 320px !important;
+
+        &::before {
+          width: 8px;
+        }
+
+        ~ .mod-root .workspace-tab-header-container,
+        ~ .mod-root .workspace-tab-header-container-inner,
+        &:has(~ .mod-root .workspace-tab-header-container),
+        &:has(~ .mod-root .workspace-tab-header-container-inner) {
+          -webkit-app-region: no-drag;
+        }
+      }
+    }
+
+    &::before {
+      position: absolute;
+      inset: -8px 0 -8px -8px;
+      min-width: 8px;
+      content: "";
+    }
+
+    &.mod-right-split {
+      right: 0;
+
+      &::before {
+        inset: -8px -8px -8px 0;
+      }
+    }
+
+    &:not(:hover) {
+      opacity: 0;
+    }
   }
 }
 
