@@ -440,21 +440,14 @@
       }
     }
 
-    &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root {
-      > .workspace-tabs:first-of-type .workspace-tab-container,
-      .mod-horizontal:first-of-type > .workspace-tabs .workspace-tab-container,
-      .mod-horizontal > .workspace-split .workspace-tabs:first-of-type .workspace-tab-container {
-        margin-left: 8px;
-      }
+    &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
+      margin-left: 8px;
+      border-radius: var(--radius-s);
     }
-    .workspace:not(.is-right-sidedock-open) .mod-root {
-      > .workspace-tabs:last-of-type .workspace-tab-container,
-      .mod-horizontal:last-of-type > .workspace-tabs .workspace-tab-container,
-      .mod-horizontal > .workspace-split .workspace-tabs:last-of-type .workspace-tab-container {
-        margin-right: 8px;
-      }
+    .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
+      margin-right: 8px;
+      border-radius: var(--radius-s);
     }
-
     &:not(.is-popout-window) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
       background-color: var(--background-primary);
 
