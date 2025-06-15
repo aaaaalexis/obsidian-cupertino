@@ -16,7 +16,7 @@ body:not(.is-phone) {
   }
 
   .prompt {
-    backdrop-filter: blur(var(--blur-m)) saturate(1.5);
+    backdrop-filter: var(--blur-m);
     border: none;
     background-color: var(--modal-background);
     animation: var(--anim-duration-slow) blurInScale;
@@ -65,7 +65,7 @@ body.is-mobile {
 body.is-phone {
   .prompt {
     --prompt-top: calc(var(--safe-area-inset-top) + 8px);
-    backdrop-filter: blur(var(--blur-m)) saturate(1.5);
+    backdrop-filter: var(--blur-m);
     animation: var(--anim-duration-slow) blurInScale !important;
     transition: var(--anim-duration-fast);
     margin-top: var(--prompt-top);

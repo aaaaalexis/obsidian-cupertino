@@ -170,7 +170,7 @@ body {
       position: absolute;
       flex-direction: column;
       z-index: 10;
-      backdrop-filter: blur(var(--blur-l)) saturate(1.5);
+      backdrop-filter: var(--blur-l);
       margin: 24px 0 0 0;
       outline: var(--prompt-border-width) solid rgba(0, 0, 0, 0.15);
       box-shadow: var(--shadow-s);

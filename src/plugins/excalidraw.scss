@@ -41,7 +41,7 @@ body.is-mobile .excalidraw.theme--dark {
   .mobile-misc-tools-container {
     top: 0;
     right: 0;
-    backdrop-filter: blur(var(--blur-l)) saturate(1.5);
+    backdrop-filter: var(--blur-l);
     border: none;
     border: var(--border-width) solid var(--background-modifier-border);
     border-radius: var(--radius-s);

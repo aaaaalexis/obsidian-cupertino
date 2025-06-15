@@ -1,6 +1,6 @@
 body:not(.is-mobile) .menu,
 body:not(.is-mobile) .suggestion-container {
-  backdrop-filter: blur(var(--blur-s)) saturate(1.5);
+  backdrop-filter: var(--blur-s);
   border-radius: var(--radius-m);
   background-color: var(--modal-background);
   padding: 0;
@@ -50,7 +50,7 @@ body:not(.is-mobile) .suggestion-container {
 body.is-phone,
 body.is-tablet {
   .menu {
-    backdrop-filter: blur(var(--blur-m)) saturate(1.5);
+    backdrop-filter: var(--blur-m);
     background-color: var(--modal-background);
     padding: 0;
     overflow: hidden;
@@ -86,7 +86,7 @@ body.is-tablet {
   }
 
   .suggestion-container {
-    backdrop-filter: blur(var(--blur-l)) saturate(1.5);
+    backdrop-filter: var(--blur-l);
     border: none;
     background-color: rgb(from var(--background-secondary-alt) r g b / 75%) !important;
 

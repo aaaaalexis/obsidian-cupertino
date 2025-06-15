@@ -26,7 +26,7 @@ body {
   }
 
   .modal:not(.mod-sidebar-layout) {
-    backdrop-filter: blur(var(--blur-m)) saturate(1.5);
+    backdrop-filter: var(--blur-m);
     box-shadow: var(--shadow-s);
   }
 

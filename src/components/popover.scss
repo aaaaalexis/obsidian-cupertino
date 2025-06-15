@@ -1,5 +1,5 @@
 .popover {
-  backdrop-filter: blur(var(--blur-l)) saturate(1.5);
+  backdrop-filter: var(--blur-l);
   animation: var(--anim-duration-fast) fadeInScale;
   border-radius: var(--radius-l);
   background-color: var(--workspace-background-translucent);

@@ -20,7 +20,7 @@ body.is-phone {
     position: fixed;
     right: 20px;
     bottom: 0;
-    backdrop-filter: blur(var(--blur-s)) saturate(1.5);
+    backdrop-filter: var(--blur-s);
     margin-bottom: max(var(--safe-area-inset-bottom), 16px);
     border-radius: var(--clickable-icon-radius);
     background-color: var(--modal-background);
@@ -74,7 +74,7 @@ body.is-phone {
   .workspace-drawer-header-icon {
     --icon-color: var(--text-normal);
     box-shadow: var(--shadow-invert-clear) !important;
-    backdrop-filter: blur(var(--blur-s)) saturate(1.5);
+    backdrop-filter: var(--blur-s);
     background-color: var(--modal-background);
   }
 
@@ -150,7 +150,7 @@ body.is-phone {
 /********** Pull Action **********/
 
 .pull-action {
-  backdrop-filter: blur(var(--blur-s)) saturate(1.5);
+  backdrop-filter: var(--blur-s);
   animation: fadeInDown var(--anim-duration-fast);
   box-shadow: var(--shadow-s);
   border: var(--border-width) solid var(--background-modifier-border);
@@ -194,7 +194,7 @@ body.is-mobile {
     gap: 8px;
     box-shadow: var(--shadow-s) !important;
     background-color: var(--modal-background);
-    backdrop-filter: blur(var(--blur-s)) saturate(1.5);
+    backdrop-filter: var(--blur-s);
     justify-content: flex-start;
     max-width: fit-content;
     border-radius: var(--clickable-icon-radius);
@@ -262,7 +262,7 @@ body.is-tablet .workspace-drawer .nav-header {
 
 body.is-mobile {
   .mobile-image-viewer {
-    backdrop-filter: blur(var(--blur-l)) saturate(1.5);
+    backdrop-filter: var(--blur-l);
     animation: var(--anim-duration-fast) fadeInScale;
     background-color: var(--workspace-background-translucent);
   }
@@ -295,7 +295,7 @@ body.is-phone {
   .mobile-tab-switcher-scroll::before {
     position: absolute;
     z-index: -1;
-    backdrop-filter: blur(var(--blur-m)) saturate(1.5);
+    backdrop-filter: var(--blur-m);
     box-shadow: var(--shadow-l);
     border-radius: 32px 32px 0 0;
     background-color: var(--modal-background);
@@ -334,7 +334,7 @@ body.is-tablet {
 
     &::before {
       z-index: -2 !important;
-      backdrop-filter: blur(var(--blur-l)) saturate(1.5);
+      backdrop-filter: var(--blur-l);
     }
     &::before,
     &::after {

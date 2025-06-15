@@ -1,6 +1,6 @@
 body:not(.is-mobile) {
   .modal.mod-sidebar-layout {
-    backdrop-filter: blur(var(--blur-l)) saturate(1.5);
+    backdrop-filter: var(--blur-l);
   }
 
   .modal-close-button {
@@ -42,7 +42,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
     .vertical-tab-header {
       margin: 8px;
       background-color: var(--modal-background);
-      backdrop-filter: blur(var(--blur-l)) saturate(1.5);
+      backdrop-filter: var(--blur-l);
       box-shadow: var(--shadow-clear);
       border-radius: var(--radius-m);
       border: none;

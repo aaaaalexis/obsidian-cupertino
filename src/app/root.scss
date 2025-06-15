@@ -91,9 +91,9 @@ body {
   --blockquote-border-color: var(--text-faint);
   --blockquote-border-thickness: 6px;
   --blockquote-color: var(--text-muted);
-  --blur-s: 4px;
-  --blur-m: 8px;
-  --blur-l: 16px;
+  --blur-s: blur(4px) saturate(1.5) brightness(1.1);
+  --blur-m: blur(8px) saturate(1.5) brightness(1.1);
+  --blur-l: blur(16px) saturate(1.5) brightness(1.1);
   --caret-color: var(--text-accent);
   --callout-padding: 16px;
   --callout-radius: var(--radius-s);

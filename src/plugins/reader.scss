@@ -8,7 +8,7 @@ body.is-mobile .reader-active {
     left: unset;
     flex-direction: column;
     transform: none;
-    backdrop-filter: blur(var(--blur-l)) saturate(1.5);
+    backdrop-filter: var(--blur-l);
     border: var(--border-width) solid var(--background-modifier-border);
     width: var(--input-height);
   }

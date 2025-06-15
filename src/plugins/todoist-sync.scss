@@ -7,7 +7,7 @@
 }
 
 body:not(.is-mobile) .task-option-dialog {
-  backdrop-filter: blur(var(--blur-l)) saturate(1.5);
+  backdrop-filter: var(--blur-l);
   border-radius: var(--radius-m);
   background-color: var(--modal-background);
   padding: 4px;
