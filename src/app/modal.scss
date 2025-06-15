@@ -32,13 +32,13 @@ body {
 
   .modal-button-container {
     justify-content: center;
-    gap: 6px;
+    gap: 8px;
 
     button {
-      flex-grow: 1;
       width: auto;
       line-height: var(--line-height-normal);
       border-radius: var(--clickable-icon-radius);
+      flex: 1 1 calc(50% - 4px);
     }
 
     .mod-checkbox {
@@ -140,13 +140,24 @@ body.is-mobile .modal:not(.mod-sidebar-layout) {
   }
 }
 
+body.is-phone:not(.is-android:not(.material-off)) {
+  .modal:not(.mod-sidebar-layout) {
+    margin: 0 8px 8px;
+  }
+
+  .modal-button-container button {
+    flex: 1 1 calc(50% - 4px);
+  }
+}
+
 body.is-tablet:not(.is-android:not(.material-off)) {
   .modal {
     outline: var(--prompt-border-width) solid var(--background-modifier-hover);
+    margin: 0;
+    padding: 0;
   }
 
   .modal-title {
     font-size: var(--font-ui-medium);
-    text-align: center;
   }
 }

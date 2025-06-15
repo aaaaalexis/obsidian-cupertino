@@ -340,9 +340,7 @@ body.is-mobile {
     }
     .tree-item:not(:last-child)::before {
       position: absolute;
-      left: 20px;
-      right: 0;
-      bottom: 0;
+      inset: 0 20px;
       border-bottom: var(--border-width) solid var(--background-modifier-border);
       content: "";
     }
@@ -360,13 +358,9 @@ body.is-mobile {
     }
     .tree-item-children::before {
       position: absolute;
-      left: 10px;
-      top: 0;
-      right: 0;
+      inset: 0 20px 0 8px;
       border-top: var(--border-width) solid var(--background-modifier-border);
-      width: 100%;
       content: "";
-      width: calc(100% - 10px);
     }
     .tree-item-icon.collapse-icon {
       right: 20px;
@@ -390,7 +384,7 @@ body.is-tablet {
 
   .workspace-drawer {
     &.is-pinned {
-      border-color: var(--hr-color);
+      border: none;
       background-color: var(--background-primary);
       padding-top: calc(var(--safe-area-inset-top) + 16px);
     }

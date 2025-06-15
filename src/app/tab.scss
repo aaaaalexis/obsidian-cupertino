@@ -23,14 +23,17 @@ body:not(.is-phone) {
     margin-left: 40px;
   }
 
-  .workspace {
-    .workspace-tab-header-container-inner {
-      margin: 0;
-      height: 32px;
-      position: relative;
-      border-radius: var(--tab-radius);
-      padding: 0;
-    }
+  .workspace-tab-header-container {
+    overflow: hidden;
+    align-items: center;
+  }
+
+  .workspace-tab-header-container-inner {
+    margin: 0;
+    height: 32px;
+    position: relative;
+    border-radius: var(--tab-radius);
+    padding: 0;
   }
 
   .workspace .mod-root .workspace-tabs {
@@ -164,10 +167,6 @@ body:not(.is-phone) {
 }
 
 body:not(.is-mobile) {
-  .workspace-tab-header-container {
-    overflow: hidden;
-    align-items: center;
-  }
   .workspace-tab-header-container .clickable-icon {
     padding: 4px;
     width: 32px;
@@ -401,7 +400,7 @@ body.is-tablet {
   }
 
   .workspace-tab-header-container-inner {
-    margin: 6px 0;
     padding-left: 88px !important;
+    height: 40px !important;
   }
 }
