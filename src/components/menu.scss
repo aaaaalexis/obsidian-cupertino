@@ -47,15 +47,13 @@ body:not(.is-mobile) .suggestion-container {
   }
 }
 
-body.is-phone,
-body.is-tablet {
+body.is-mobile {
   .menu {
     backdrop-filter: var(--blur-m);
     background-color: var(--modal-background);
     padding: 0;
     overflow: hidden;
     white-space: normal;
-    box-shadow: var(--shadow-s);
     border-radius: var(--radius-xl);
   }
 
@@ -133,6 +131,7 @@ body.is-phone {
 body.is-tablet {
   .menu {
     border-radius: var(--radius-m);
+    box-shadow: var(--shadow-l);
   }
   .menu-scroll {
     padding: 12px 8px;
