@@ -394,8 +394,8 @@ body.is-mobile {
   }
 }
 
-body.is-phone .workspace-drawer {
-  padding-top: calc(var(--safe-area-inset-top) + 16px);
+body.is-phone .workspace-drawer-header-left {
+  margin-top: 16px;
 }
 
 body.is-tablet {
