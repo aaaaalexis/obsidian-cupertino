@@ -62,7 +62,8 @@ body.is-mobile {
   .view-action,
   .workspace-drawer-header-icon,
   .modal-close-button,
-  .mobile-toolbar-floating-options {
+  .mobile-toolbar-floating-options,
+  .search-input-clear-button {
     &,
     & > svg.svg-icon {
       transition: var(--anim-duration-moderate) var(--anim-motion-liquid) !important;
