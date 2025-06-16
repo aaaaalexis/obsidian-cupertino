@@ -377,6 +377,10 @@ body {
   }
 }
 
+.app-container {
+  transition-delay: 0 !important;
+}
+
 body:not(.is-popout-window),
 body:not(.is-popout-window) .app-container {
   align-items: center;
