@@ -38,7 +38,7 @@ body:not(.is-phone) {
     height: auto !important;
   }
 
-  .workspace .mod-root .workspace-tabs {
+  .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
     &:not(.mod-stacked) {
       .workspace-tab-header {
         flex: unset;
