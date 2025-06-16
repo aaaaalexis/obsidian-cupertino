@@ -12,7 +12,7 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
   }
 
   .metadata-properties {
-    border-radius: var(--radius-m);
+    border-radius: var(--metadata-property-radius);
     background-color: var(--background-secondary);
 
     input {

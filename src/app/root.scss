@@ -136,9 +136,9 @@ body {
   --metadata-gap: 0;
   --metadata-padding: 0;
   --metadata-input-height: var(--input-height) !important;
-  --metadata-property-radius-focus: var(--input-radius);
-  --metadata-property-radius-hover: var(--input-radius);
-  --metadata-property-radius: var(--input-radius);
+  --metadata-property-radius: var(--radius-m);
+  --metadata-property-radius-hover: var(--metadata-property-radius);
+  --metadata-property-radius-focus: var(--metadata-property-radius);
   --modal-border-color: rgba(255, 255, 255, 0.1);
   --nav-item-color: var(--color-base-100);
   --nav-item-padding: 8px 8px 8px 24px;
@@ -183,7 +183,7 @@ body {
   --toggle-thumb-height: 13px;
   --toggle-thumb-width: 21px;
   --toggle-width: 36px;
-  --view-header-height: 40px;
+  --view-header-height: 48px;
   --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
 
   &.theme-light {
@@ -315,7 +315,7 @@ body {
     --toggle-thumb-width: 38px;
     --toggle-width: 68px;
     --toolbar-option-width: var(--mobile-toolbar-height);
-    --view-header-height: 44px;
+    --view-header-height: var(--input-height);
     --modal-header-height: var(--view-header-height);
     --modal-radius: var(--radius-xl);
     --dropdown-padding: 4px 32px 4px 16px;
