@@ -67,35 +67,15 @@ body.is-phone {
     --prompt-top: 0;
     --prompt-bottom: 0;
     border-radius: 0;
-    background-color: var(--modal-background);
+    background-color: var(--modal-background) !important;
     backdrop-filter: var(--blur-m);
     height: 100%;
     justify-content: space-between;
-
-    &::before,
-    &::after {
-      position: absolute;
-      background-color: var(--background-secondary);
-      content: "";
-      inset: 0;
-    }
-
-    &::before {
-      z-index: 1;
-
-      mask: linear-gradient(to top, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.013) 1.8%, hsla(0, 0%, 0%, 0.049) 3.2%, hsla(0, 0%, 0%, 0.104) 4.6%, hsla(0, 0%, 0%, 0.175) 6.2%, hsla(0, 0%, 0%, 0.259) 8.1%, hsla(0, 0%, 0%, 0.352) 10.7%, hsla(0, 0%, 0%, 0.45) 14.1%, hsla(0, 0%, 0%, 0.55) 18.7%, hsla(0, 0%, 0%, 0.648) 24.5%, hsla(0, 0%, 0%, 0.741) 31.9%, hsla(0, 0%, 0%, 0.825) 41%, hsla(0, 0%, 0%, 0.896) 52.2%, hsla(0, 0%, 0%, 0.951) 65.6%, hsla(0, 0%, 0%, 0.987) 81.4%, hsl(0, 0%, 0%) 100%);
-      height: var(--safe-area-inset-top);
-    }
-    &::after {
-      mask: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.013) 1.8%, hsla(0, 0%, 0%, 0.049) 3.2%, hsla(0, 0%, 0%, 0.104) 4.6%, hsla(0, 0%, 0%, 0.175) 6.2%, hsla(0, 0%, 0%, 0.259) 8.1%, hsla(0, 0%, 0%, 0.352) 10.7%, hsla(0, 0%, 0%, 0.45) 14.1%, hsla(0, 0%, 0%, 0.55) 18.7%, hsla(0, 0%, 0%, 0.648) 24.5%, hsla(0, 0%, 0%, 0.741) 31.9%, hsla(0, 0%, 0%, 0.825) 41%, hsla(0, 0%, 0%, 0.896) 52.2%, hsla(0, 0%, 0%, 0.951) 65.6%, hsla(0, 0%, 0%, 0.987) 81.4%, hsl(0, 0%, 0%) 100%);
-      top: auto;
-      height: calc(16px + var(--input-height) + max(var(--safe-area-inset-bottom), 16px));
-    }
   }
 
   .prompt-input-container {
     --search-clear-button-size: var(--icon-s);
-    margin: 0 32px max(var(--safe-area-inset-bottom), 16px);
+    margin: 0 20px max(var(--safe-area-inset-bottom), 16px);
     border: none;
     align-items: center;
     gap: 8px;
@@ -137,7 +117,8 @@ body.is-phone {
   }
 
   .prompt-results {
-    padding: var(--safe-area-inset-top) 20px 20px;
+    mask: linear-gradient(to bottom, transparent, black calc(var(--safe-area-inset-top) + 16px), black calc(100vh - var(--safe-area-inset-bottom) - var(--input-height) - 16px), transparent calc(100vh - var(--safe-area-inset-bottom)));
+    padding: calc(var(--safe-area-inset-top) + 16px) 20px 128px;
   }
 
   .prompt .suggestion-item {
