@@ -8,7 +8,9 @@
   padding: 0;
 }
 .graph-controls-button {
-  padding: 8px;
+  padding: unset !important;
+  width: 40px;
+  height: 40px;
 }
 .graph-controls-button.mod-open {
   border-bottom: var(--border-width) solid var(--background-modifier-border);
@@ -18,20 +20,28 @@
   margin: 0 !important;
 }
 
-body.is-phone {
+body:not(.is-mobile) {
   .graph-controls {
-    top: 8px;
-    inset-inline-end: 8px;
-  }
-
-  .mod-search-setting {
-    padding-top: 0;
+    top: 12px;
   }
 }
 
+body.is-mobile {
+  .graph-controls-button {
+    width: var(--input-height);
+    height: var(--input-height);
+  }
+}
 body.is-phone {
   .graph-controls {
-    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
+    top: 20px;
+    inset-inline-end: 20px;
     max-height: 70vh;
+  }
+}
+body.is-tablet {
+  .graph-controls {
+    top: 16px;
+    right: 16px;
   }
 }

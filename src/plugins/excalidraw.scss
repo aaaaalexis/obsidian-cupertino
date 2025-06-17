@@ -13,7 +13,7 @@ body.is-mobile .excalidraw.theme--dark {
   --ui-font: unset !important;
 
   .FixedSideContainer_side_top {
-    inset: 8px !important;
+    inset: 0 !important;
   }
 
   button {
@@ -29,8 +29,8 @@ body.is-mobile .excalidraw.theme--dark {
   .sidebar-trigger,
   .ToolIcon__icon {
     padding: 8px;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
 
     svg {
       width: var(--icon-m);
@@ -40,7 +40,7 @@ body.is-mobile .excalidraw.theme--dark {
 
   .mobile-misc-tools-container {
     top: 0;
-    right: 0;
+    right: 12px;
     backdrop-filter: var(--blur-l);
     border: none;
     border: var(--border-width) solid var(--background-modifier-border);

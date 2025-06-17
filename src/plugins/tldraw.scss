@@ -11,6 +11,13 @@
   .tlui-button__menu {
     padding: 0 16px;
   }
+
+  .tlui-button__menu,
+  .tlui-button {
+    background-color: transparent !important;
+    padding: 0 !important;
+    justify-content: center !important;
+  }
 }
 
 body:not(.is-mobile) .tldraw-view-content {

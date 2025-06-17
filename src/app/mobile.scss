@@ -78,14 +78,12 @@ body.is-phone {
     background-color: var(--modal-background);
   }
 
-  .workspace .mod-root .workspace-leaf .view-header {
+  .mod-root .workspace-leaf-content[data-type="markdown"] .view-header,
+  .modal.mod-sidebar-layout .modal-header {
     position: fixed;
     background-color: transparent;
     width: 100%;
-  }
 
-  .workspace .mod-root .workspace-leaf .view-header,
-  .modal.mod-sidebar-layout .modal-header {
     &::before {
       position: absolute;
       z-index: -1;
@@ -103,9 +101,6 @@ body.is-phone {
     padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
   }
   .view-content .cm-sizer {
-    padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height));
-  }
-  .mod-root .view-content > div:not(.markdown-source-view):not(.markdown-reading-view):not(.canvas-wrapper):not(.graph-controls):not(.empty-state) {
     padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height));
   }
 
@@ -169,18 +164,6 @@ body.is-phone {
 /********** Bottom Bar **********/
 
 body.is-mobile {
-  .mod-root .view-content::before {
-    position: absolute;
-    z-index: 1;
-    mask: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.013) 1.8%, hsla(0, 0%, 0%, 0.049) 3.2%, hsla(0, 0%, 0%, 0.104) 4.6%, hsla(0, 0%, 0%, 0.175) 6.2%, hsla(0, 0%, 0%, 0.259) 8.1%, hsla(0, 0%, 0%, 0.352) 10.7%, hsla(0, 0%, 0%, 0.45) 14.1%, hsla(0, 0%, 0%, 0.55) 18.7%, hsla(0, 0%, 0%, 0.648) 24.5%, hsla(0, 0%, 0%, 0.741) 31.9%, hsla(0, 0%, 0%, 0.825) 41%, hsla(0, 0%, 0%, 0.896) 52.2%, hsla(0, 0%, 0%, 0.951) 65.6%, hsla(0, 0%, 0%, 0.987) 81.4%, hsl(0, 0%, 0%) 100%);
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--background-primary);
-    content: "";
-    height: calc(16px + var(--input-height) + max(var(--safe-area-inset-bottom), 16px));
-  }
-
   .mobile-navbar {
     max-width: calc(100% - var(--input-height) - 8px);
     background-color: transparent;
@@ -193,7 +176,6 @@ body.is-mobile {
     --icon-color: var(--text-normal);
     gap: 8px;
     box-shadow: var(--shadow-s) !important;
-    background-color: var(--modal-background);
     backdrop-filter: var(--blur-s);
     justify-content: flex-start;
     max-width: fit-content;
@@ -252,6 +234,18 @@ body.is-mobile {
       color: var(--color-accent) !important;
     }
   }
+}
+
+body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::before{
+  position: absolute;
+  z-index: 1;
+  mask: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.013) 1.8%, hsla(0, 0%, 0%, 0.049) 3.2%, hsla(0, 0%, 0%, 0.104) 4.6%, hsla(0, 0%, 0%, 0.175) 6.2%, hsla(0, 0%, 0%, 0.259) 8.1%, hsla(0, 0%, 0%, 0.352) 10.7%, hsla(0, 0%, 0%, 0.45) 14.1%, hsla(0, 0%, 0%, 0.55) 18.7%, hsla(0, 0%, 0%, 0.648) 24.5%, hsla(0, 0%, 0%, 0.741) 31.9%, hsla(0, 0%, 0%, 0.825) 41%, hsla(0, 0%, 0%, 0.896) 52.2%, hsla(0, 0%, 0%, 0.951) 65.6%, hsla(0, 0%, 0%, 0.987) 81.4%, hsl(0, 0%, 0%) 100%);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--background-primary);
+  content: "";
+  height: calc(16px + var(--input-height) + max(var(--safe-area-inset-bottom), 16px));
 }
 
 body.is-tablet .workspace-drawer .nav-header {
