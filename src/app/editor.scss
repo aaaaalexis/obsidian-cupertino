@@ -438,6 +438,33 @@
       .view-header button {
         padding: 4px 12px;
       }
+
+      .workspace-leaf-content[data-type="markdown"] {
+        .view-header {
+          background-color: transparent !important;
+          position: absolute;
+          inset: 0 0 auto;
+
+          &::before {
+            position: absolute;
+            z-index: -1;
+            mask: linear-gradient(to top, transparent, black);
+            background-color: var(--background-primary);
+            pointer-events: none;
+            content: "";
+            inset: 0;
+            height: 100%;
+          }
+        }
+
+        // Content pusher
+        .view-content > .markdown-reading-view > div:first-child {
+          padding-top: calc(var(--file-margins) + var(--view-header-height));
+        }
+        .view-content .cm-scroller {
+          padding-top: calc(var(--file-margins) + var(--view-header-height)) !important;
+        }
+      }
     }
 
     &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
