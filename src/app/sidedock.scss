@@ -195,14 +195,17 @@ body:not(.is-mobile) {
       background: var(--modal-background) !important;
       width: 8px !important;
 
-      .mod-top-left-space {
+      .mod-top {
         --header-height: 40px;
 
         .workspace-tab-header-container {
           padding-left: 4px;
         }
         .workspace-tab-header-container-inner {
-          margin: 4px 0 4px 48px;
+          margin: 4px 0;
+        }
+        &.mod-top-left-space .workspace-tab-header-container-inner {
+          margin-left: 48px;
         }
       }
 
