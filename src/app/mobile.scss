@@ -18,7 +18,7 @@ body.is-phone {
   }
   .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     position: fixed;
-    right: 20px;
+    right: 28px;
     bottom: 0;
     backdrop-filter: var(--blur-s);
     margin-bottom: max(var(--safe-area-inset-bottom), 16px);
@@ -225,7 +225,7 @@ body.is-mobile {
     left: 0;
     z-index: var(--layer-status-bar);
     border: none;
-    padding: 0 20px max(var(--safe-area-inset-bottom), 16px);
+    padding: 0 28px max(var(--safe-area-inset-bottom), 16px);
   }
 
   .nav-action-button {
