@@ -75,6 +75,8 @@ body.is-phone {
   }
 
   .mod-root .workspace-leaf-content[data-type="markdown"] .view-header,
+  .mod-root .workspace-leaf-content[data-type="graph"] .view-header,
+  .mod-root .workspace-leaf-content[data-type="canvas"] .view-header,
   .modal.mod-sidebar-layout .modal-header {
     position: fixed;
     background-color: transparent;
@@ -238,7 +240,9 @@ body.is-mobile {
   }
 }
 
-body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .view-content {
+body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .view-content,
+body.is-phone .mod-root .workspace-leaf-content[data-type="graph"] .view-content,
+body.is-phone .mod-root .workspace-leaf-content[data-type="canvas"] .view-content {
   mask: linear-gradient(
     to bottom,
     transparent,

@@ -28,13 +28,13 @@ body:not(.is-mobile) {
 
 body.is-mobile {
   .graph-controls-button {
-    width: var(--input-height);
-    height: var(--input-height);
+    width: var(--view-header-height);
+    height: var(--view-header-height);
   }
 }
 body.is-phone {
   .graph-controls {
-    top: 20px;
+    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 20px);
     inset-inline-end: 20px;
     max-height: 70vh;
   }
