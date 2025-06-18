@@ -307,6 +307,9 @@ body.is-phone {
   .mobile-tab-switcher {
     justify-content: flex-end;
     animation: none !important;
+    margin: 0 8px 8px;
+    width: unset;
+    height: unset;
   }
 
   .mobile-tab-switcher-scroll {
@@ -319,10 +322,10 @@ body.is-phone {
     z-index: -1;
     backdrop-filter: var(--blur-m);
     box-shadow: var(--shadow-l);
-    border-radius: 32px 32px 0 0;
+    border-radius: var(--radius-xl);
     background-color: var(--modal-background);
     width: 100%;
-    height: 100%;
+    height: -webkit-fill-available;
     content: "";
   }
   .mobile-tab-wrapper {
@@ -331,9 +334,13 @@ body.is-phone {
 
   .mobile-tab-switcher-menubar {
     padding: 4px max(var(--safe-area-inset-right), 8px) max(var(--safe-area-inset-bottom), 16px) max(var(--safe-area-inset-left), 8px);
+    border: none;
   }
-  .mobile-tab-switcher-menubar > div:not(:last-child) {
+  .mobile-tab-switcher-menu-button {
     z-index: 2;
+    padding: 8px 20px;
+    border-radius: var(--clickable-icon-radius);
+    box-shadow: var(--shadow-s);
   }
   .mobile-tab-switcher-menubar .mobile-tab-switcher-menu-spacer:last-child .clickable-icon::before {
     position: fixed;
