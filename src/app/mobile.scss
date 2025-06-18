@@ -83,17 +83,28 @@ body.is-phone {
     position: fixed;
     background-color: transparent;
     width: 100%;
+  }
 
-    &::before {
-      position: absolute;
-      z-index: -1;
-      mask: linear-gradient(to top, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.013) 1.8%, hsla(0, 0%, 0%, 0.049) 3.2%, hsla(0, 0%, 0%, 0.104) 4.6%, hsla(0, 0%, 0%, 0.175) 6.2%, hsla(0, 0%, 0%, 0.259) 8.1%, hsla(0, 0%, 0%, 0.352) 10.7%, hsla(0, 0%, 0%, 0.45) 14.1%, hsla(0, 0%, 0%, 0.55) 18.7%, hsla(0, 0%, 0%, 0.648) 24.5%, hsla(0, 0%, 0%, 0.741) 31.9%, hsla(0, 0%, 0%, 0.825) 41%, hsla(0, 0%, 0%, 0.896) 52.2%, hsla(0, 0%, 0%, 0.951) 65.6%, hsla(0, 0%, 0%, 0.987) 81.4%, hsl(0, 0%, 0%) 100%);
-      background-color: var(--background-primary);
-      pointer-events: none;
-      content: "";
-      inset: 0;
-      height: calc(100% + 16px);
-    }
+  .modal.mod-sidebar-layout .vertical-tabs-container {
+    mask: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(0, 0, 0, 0.013) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.168),
+      rgba(0, 0, 0, 0.049) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.314),
+      rgba(0, 0, 0, 0.104) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.44),
+      rgba(0, 0, 0, 0.175) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.547),
+      rgba(0, 0, 0, 0.259) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.637),
+      rgba(0, 0, 0, 0.352) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.712),
+      rgba(0, 0, 0, 0.45) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.774),
+      rgba(0, 0, 0, 0.55) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.824),
+      rgba(0, 0, 0, 0.648) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.864),
+      rgba(0, 0, 0, 0.741) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.896),
+      rgba(0, 0, 0, 0.825) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.922),
+      rgba(0, 0, 0, 0.896) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.944),
+      rgba(0, 0, 0, 0.951) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.963),
+      rgba(0, 0, 0, 0.987) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.981),
+      black calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px)
+    );
   }
 
   // Content pusher
@@ -232,16 +243,42 @@ body.is-mobile {
   }
 }
 
-body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::before{
-  position: absolute;
-  z-index: 1;
-  mask: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.013) 1.8%, hsla(0, 0%, 0%, 0.049) 3.2%, hsla(0, 0%, 0%, 0.104) 4.6%, hsla(0, 0%, 0%, 0.175) 6.2%, hsla(0, 0%, 0%, 0.259) 8.1%, hsla(0, 0%, 0%, 0.352) 10.7%, hsla(0, 0%, 0%, 0.45) 14.1%, hsla(0, 0%, 0%, 0.55) 18.7%, hsla(0, 0%, 0%, 0.648) 24.5%, hsla(0, 0%, 0%, 0.741) 31.9%, hsla(0, 0%, 0%, 0.825) 41%, hsla(0, 0%, 0%, 0.896) 52.2%, hsla(0, 0%, 0%, 0.951) 65.6%, hsla(0, 0%, 0%, 0.987) 81.4%, hsl(0, 0%, 0%) 100%);
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--background-primary);
-  content: "";
-  height: calc(16px + var(--input-height) + max(var(--safe-area-inset-bottom), 16px));
+body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .view-content {
+  mask: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 0, 0, 0.013) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.168),
+    rgba(0, 0, 0, 0.049) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.314),
+    rgba(0, 0, 0, 0.104) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.44),
+    rgba(0, 0, 0, 0.175) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.547),
+    rgba(0, 0, 0, 0.259) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.637),
+    rgba(0, 0, 0, 0.352) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.712),
+    rgba(0, 0, 0, 0.45) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.774),
+    rgba(0, 0, 0, 0.55) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.824),
+    rgba(0, 0, 0, 0.648) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.864),
+    rgba(0, 0, 0, 0.741) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.896),
+    rgba(0, 0, 0, 0.825) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.922),
+    rgba(0, 0, 0, 0.896) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.944),
+    rgba(0, 0, 0, 0.951) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.963),
+    rgba(0, 0, 0, 0.987) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.981),
+    black calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px),
+    black calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px)),
+    rgba(0, 0, 0, 0.987) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.981),
+    rgba(0, 0, 0, 0.951) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.963),
+    rgba(0, 0, 0, 0.896) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.944),
+    rgba(0, 0, 0, 0.825) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.922),
+    rgba(0, 0, 0, 0.741) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.896),
+    rgba(0, 0, 0, 0.648) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.864),
+    rgba(0, 0, 0, 0.55) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.824),
+    rgba(0, 0, 0, 0.45) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.774),
+    rgba(0, 0, 0, 0.352) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.712),
+    rgba(0, 0, 0, 0.259) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.637),
+    rgba(0, 0, 0, 0.175) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.547),
+    rgba(0, 0, 0, 0.104) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.44),
+    rgba(0, 0, 0, 0.049) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.314),
+    rgba(0, 0, 0, 0.013) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.168),
+    transparent calc(100vh - var(--safe-area-inset-bottom))
+  );
 }
 
 body.is-tablet .workspace-drawer .nav-header {
