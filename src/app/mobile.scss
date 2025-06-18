@@ -222,10 +222,6 @@ body.is-mobile {
     padding: 0 20px max(var(--safe-area-inset-bottom), 16px);
   }
 
-  .workspace-drawer .nav-header {
-    display: flex;
-    justify-content: center;
-  }
   .nav-action-button {
     flex-grow: 0 !important;
 
