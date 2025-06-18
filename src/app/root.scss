@@ -136,7 +136,7 @@ body {
   --metadata-gap: 0;
   --metadata-padding: 0;
   --metadata-input-height: var(--input-height) !important;
-  --metadata-property-radius: var(--radius-m);
+  --metadata-property-radius: var(--radius-m) !important;
   --metadata-property-radius-hover: var(--metadata-property-radius);
   --metadata-property-radius-focus: var(--metadata-property-radius);
   --modal-border-color: rgba(255, 255, 255, 0.1);
@@ -319,7 +319,6 @@ body {
     --toggle-thumb-width: 38px;
     --toggle-width: 68px;
     --toolbar-option-width: var(--mobile-toolbar-height);
-    --view-header-height: var(--input-height);
     --modal-header-height: var(--view-header-height);
     --modal-radius: var(--radius-xl);
     --dropdown-padding: 4px 32px 4px 16px;
@@ -339,6 +338,7 @@ body {
     --mobile-sidebar-max-width: 100%;
     --tab-outline-width: 1px;
     --tab-outline-width: 1px;
+    --view-header-height: 44px;
   }
 
   &.is-tablet {
