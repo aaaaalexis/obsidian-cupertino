@@ -9,7 +9,6 @@ body {
     align-items: center;
     width: var(--modal-header-height);
     height: var(--modal-header-height);
-    box-shadow: var(--shadow-invert-clear);
     border-radius: var(--clickable-icon-radius);
 
     &::before {

@@ -43,7 +43,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
       margin: 8px;
       background-color: var(--modal-background);
       backdrop-filter: var(--blur-l);
-      box-shadow: var(--shadow-clear);
+      box-shadow: var(--shadow-s);
       border-radius: var(--radius-m);
       border: none;
     }
@@ -104,6 +104,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
 
 body.is-mobile {
   &.theme-light .modal.mod-sidebar-layout {
+    &,
     .vertical-tab-header,
     .vertical-tab-content {
       background-color: var(--background-secondary);
@@ -111,7 +112,7 @@ body.is-mobile {
   }
 
   .modal.mod-sidebar-layout {
-    background-color: transparent;
+    background-color: var(--background-primary);
 
     .modal-header,
     .modal-sidebar {
@@ -143,7 +144,6 @@ body.is-mobile {
       width: var(--modal-header-height);
       height: var(--modal-header-height);
       border-radius: var(--clickable-icon-radius);
-      box-shadow: var(--shadow-invert-s);
     }
     .modal-setting-back-button-icon {
       margin-inline-end: 0;

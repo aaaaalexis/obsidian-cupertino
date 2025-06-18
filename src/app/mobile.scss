@@ -23,12 +23,11 @@ body.is-phone {
     backdrop-filter: var(--blur-s);
     margin-bottom: max(var(--safe-area-inset-bottom), 16px);
     border-radius: var(--clickable-icon-radius);
-    background-color: var(--modal-background);
     padding: 10px;
     width: var(--input-height);
     height: var(--input-height);
     color: var(--text-muted);
-    box-shadow: var(--shadow-s) !important;
+    box-shadow: var(--shadow-xs) !important;
   }
 
   &:not(.mode-highlight-off) .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
@@ -66,16 +65,13 @@ body.is-mobile {
 }
 
 body.is-phone {
-  &.theme-light .modal.mod-sidebar-layout .modal-header::before {
-    background-color: var(--background-secondary);
-  }
-
   .view-action,
-  .workspace-drawer-header-icon {
+  .workspace-drawer-header-icon,
+  .modal-setting-back-button,
+  .modal-close-button {
     --icon-color: var(--text-normal);
-    box-shadow: var(--shadow-invert-clear) !important;
+    box-shadow: var(--shadow-invert-xs) !important;
     backdrop-filter: var(--blur-s);
-    background-color: var(--modal-background);
   }
 
   .mod-root .workspace-leaf-content[data-type="markdown"] .view-header,
@@ -159,7 +155,6 @@ body.is-phone {
   backdrop-filter: var(--blur-s);
   animation: fadeInDown var(--anim-duration-fast);
   box-shadow: var(--shadow-s);
-  border: var(--border-width) solid var(--background-modifier-border);
   background-color: var(--modal-background);
   padding: 12px 24px;
   width: fit-content;
@@ -186,7 +181,7 @@ body.is-mobile {
   .mobile-toolbar-options-list {
     --icon-color: var(--text-normal);
     gap: 8px;
-    box-shadow: var(--shadow-s) !important;
+    box-shadow: var(--shadow-xs) !important;
     backdrop-filter: var(--blur-s);
     justify-content: flex-start;
     max-width: fit-content;
