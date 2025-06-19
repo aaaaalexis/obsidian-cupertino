@@ -278,30 +278,30 @@ body.mod-macos.is-hidden-frameless {
   }
 
   .mod-root .workspace-tabs.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
-    padding-right: 20px;
+    padding-right: 4px;
   }
   .mod-root .workspace-tabs.mod-top-right-space.workspace-tab-header-container-inner,
   .mod-root .workspace-tabs.mod-top-right-space:not(.mod-top-left-space) .workspace-tab-header-container-inner {
-    padding-left: 82px;
+    padding-left: 96px;
   }
   .mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
   .mod-root .workspace-tabs.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
-    padding-right: 52px;
+    padding-right: 36px;
   }
   .mod-root .workspace-tabs:not(.mod-top-left-space):not(.mod-top-right-space) .workspace-tab-header-container-inner {
-    padding-left: 50px;
+    padding-left: 64px;
   }
   .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tabs:not(.mod-top) .workspace-tab-header-container-inner {
-    padding-left: 40px;
-  }
-  .workspace.is-right-sidedock-open:not(.is-left-sidedock-open) .mod-root .workspace-tabs:not(.mod-top) .workspace-tab-header-container-inner {
     padding-left: 56px;
   }
+  .workspace.is-right-sidedock-open:not(.is-left-sidedock-open) .mod-root .workspace-tabs:not(.mod-top) .workspace-tab-header-container-inner {
+    padding-left: 72px;
+  }
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tabs.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
-    padding-right: 64px;
+    padding-right: 44px;
   }
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tabs.mod-top-right-space:not(.mod-top-left-space) .workspace-tab-header-container-inner {
-    padding-left: 88px;
+    padding-left: 104px;
   }
 }
 
