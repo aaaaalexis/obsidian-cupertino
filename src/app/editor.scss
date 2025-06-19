@@ -438,6 +438,16 @@
         box-shadow: none;
       }
 
+      .view-header {
+        justify-content: space-between;
+      }
+
+      .view-header-title-container {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+      }
+
       .view-header button {
         padding: 4px 12px;
       }
