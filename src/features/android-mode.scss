@@ -72,7 +72,7 @@ body.is-mobile.is-android:not(.material-off) {
   button:not(.clickable-icon):not([class*="mod-"]),
   select,
   .dropdown {
-    border: var(--border-width) solid var(--divider-color);
+    border: var(--border-width) solid var(--background-modifier-border);
     background-color: var(--interactive-normal);
   }
 
@@ -82,7 +82,7 @@ body.is-mobile.is-android:not(.material-off) {
   input[type="search"] {
     transition: var(--anim-duration-fast);
     box-shadow: inset 0 0 var(--color-accent);
-    border-bottom: var(--border-width) solid var(--divider-color);
+    border-bottom: var(--border-width) solid var(--background-modifier-border);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
     background-color: var(--interactive-normal);

@@ -413,13 +413,6 @@
   }
 
   body:not(.is-mobile) {
-    &.theme-light .mod-root .workspace-tab-container {
-      outline: 1px solid rgba(31, 34, 37, 0.09);
-    }
-    &.theme-dark .mod-root .workspace-tab-container {
-      outline: 1px solid rgba(244, 244, 244, 0.12);
-    }
-
     .workspace.is-left-sidedock-open .mod-root .workspace-leaf-resize-handle,
     .workspace.is-right-sidedock-open .mod-root .workspace-leaf-resize-handle {
       border-color: transparent;

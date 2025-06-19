@@ -272,7 +272,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 
     .menu-separator {
       margin: 4px 0;
-      background-color: var(--divider-color);
+      background-color: var(--background-modifier-border);
     }
 
     .menu-item,
@@ -323,7 +323,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     .modal-button-container {
       margin: 0;
       border-top: var(--border-width) solid var(--background-modifier-border);
-      background-color: var(--divider-color);
+      background-color: var(--background-modifier-border);
       padding: 24px;
 
       button {

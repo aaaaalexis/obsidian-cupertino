@@ -153,7 +153,7 @@ body {
   --ribbon-padding: 4px 8px;
   --ribbon-width: 56px;
   --search-icon-size: var(--icon-s);
-  --shadow-editor: inset 0 0 0 var(--border-width) var(--divider-color), var(--shadow-base), rgba(0, 0, 0, 0.04) 0px 2px 8px -2px, rgba(0, 0, 0, 0.04) 0px 2px 4px -2px;
+  --shadow-editor: inset 0 0 0 var(--border-width) var(--background-modifier-border), var(--shadow-base), rgba(0, 0, 0, 0.04) 0px 2px 8px -2px, rgba(0, 0, 0, 0.04) 0px 2px 4px -2px;
   --slider-thumb-border-width: 0;
   --slider-thumb-height: 18px;
   --slider-thumb-width: 28px;
@@ -226,8 +226,8 @@ body {
 
     --shadow-base: inset 0 1px 1px -1px rgba(255, 255, 255, 0.9), inset 0 -1px 1px -1px rgba(255, 255, 255, 0.9);
     --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(96, 96, 96, 0.05), 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.05);
-    --shadow-s: inset 0 0 0 var(--border-width) var(--divider-color), var(--shadow-base), 0 6px 14px rgba(0, 0, 0, 0.08);
-    --shadow-l: inset 0 0 0 var(--border-width) var(--divider-color), var(--shadow-base), 0 11px 34px rgba(0, 0, 0, 0.2);
+    --shadow-s: var(--shadow-base), 0 6px 14px rgba(0, 0, 0, 0.08);
+    --shadow-l: var(--shadow-base), 0 11px 34px rgba(0, 0, 0, 0.2);
   }
 
   &.theme-dark {
@@ -267,12 +267,21 @@ body {
 
     --shadow-base: inset 0 1px 1px -1px rgba(255, 255, 255, 0.3), inset 0 -1px 1px -1px rgba(255, 255, 255, 0.3), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-xs: inset 0 8px 48px rgba(255, 255, 255, 0.08), var(--shadow-base);
-    --shadow-s: inset 0 0 0 var(--border-width) var(--divider-color), var(--shadow-base), 0 6px 14px rgba(0, 0, 0, 0.15);
-    --shadow-l: inset 0 0 0 var(--border-width) var(--divider-color), var(--shadow-base), 0 11px 34px rgba(0, 0, 0, 0.5);
+    --shadow-s: var(--shadow-base), 0 6px 14px rgba(0, 0, 0, 0.15);
+    --shadow-l: var(--shadow-base), 0 11px 34px rgba(0, 0, 0, 0.5);
   }
 
   &:not(.is-mobile) {
     --dialog-width: fit-content;
+
+    .menu,
+    .suggestion-container,
+    .prompt,
+    .modal,
+    .mod-root .workspace-tab-container {
+      outline: var(--border-width) solid var(--background-modifier-border);
+      border: none;
+    }
   }
 
   &:not(.is-phone) {
