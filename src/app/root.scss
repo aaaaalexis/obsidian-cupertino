@@ -222,14 +222,10 @@ body {
     --code-tag: #e45749;
     --code-value: #a626a4;
 
-    --shadow-base: inset 0 1px 2px rgba(255, 255, 255, 0.75), inset 0 -2px 1px -2px rgba(255, 255, 255, 0.75), 0 1px 2px rgba(0, 0, 0, 0.075), 0 1px 8px rgba(0, 0, 0, 0.05);
-    --shadow-invert-base: inset 0 2px 1px -2px rgba(255, 255, 255, 0.75), inset 0 -1px 2px rgba(255, 255, 255, 0.75), 0 1px 2px rgba(0, 0, 0, 0.075), 0 1px 8px rgba(0, 0, 0, 0.05);
+    --shadow-base: inset 0 1px 1px -1px rgba(255, 255, 255, 0.9), inset 0 -1px 1px -1px rgba(255, 255, 255, 0.9), 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.05);
     --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(96, 96, 96, 0.05);
     --shadow-s: inset 0 0 0 var(--border-width) var(--divider-color), var(--shadow-base), 0 6px 14px rgba(0, 0, 0, 0.08);
     --shadow-l: inset 0 0 0 var(--border-width) var(--divider-color), var(--shadow-base), 0 11px 34px rgba(0, 0, 0, 0.2);
-    --shadow-invert-xs: var(--shadow-invert-base), inset 0 8px 48px rgba(96, 96, 96, 0.05);
-    --shadow-invert-s: var(--shadow-invert-base), 0 6px 14px rgba(0, 0, 0, 0.08);
-    --shadow-invert-l: var(--shadow-invert-base), 0 11px 34px rgba(0, 0, 0, 0.2);
   }
 
   &.theme-dark {
@@ -267,14 +263,10 @@ body {
     --code-tag: #e16d76;
     --code-value: #c678de;
 
-    --shadow-base: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px 1px rgba(255, 255, 255, 0.1), inset 0 4px 16px rgba(255, 255, 255, 0.025);
-    --shadow-invert-base: inset 0 1px 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
+    --shadow-base: inset 0 1px 1px -1px rgba(255, 255, 255, 0.9), inset 0 -1px 1px -1px rgba(255, 255, 255, 0.9), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-xs: inset 0 8px 48px rgba(255, 255, 255, 0.08), var(--shadow-base);
     --shadow-s: inset 0 0 0 var(--border-width) var(--divider-color), var(--shadow-base), 0 6px 14px rgba(0, 0, 0, 0.15);
     --shadow-l: inset 0 0 0 var(--border-width) var(--divider-color), var(--shadow-base), 0 11px 34px rgba(0, 0, 0, 0.5);
-    --shadow-invert-xs: inset 0 8px 48px rgba(255, 255, 255, 0.08), var(--shadow-invert-base);
-    --shadow-invert-s: var(--shadow-invert-base), 0 6px 14px rgba(0, 0, 0, 0.15);
-    --shadow-invert-l: var(--shadow-invert-base), 0 11px 34px rgba(0, 0, 0, 0.5);
   }
 
   &:not(.is-mobile) {

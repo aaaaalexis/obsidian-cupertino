@@ -35,13 +35,9 @@ body.is-mobile.is-android:not(.material-off) {
   --nav-item-padding: 16px 24px !important;
   --nav-item-weight-active: var(--font-bold);
   --shadow-base: none;
-  --shadow-invert-base: none;
   --shadow-xs: none;
   --shadow-s: rgba(0, 0, 0, 0.1) 0px 8px 30px !important;
   --shadow-l: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
-  --shadow-invert-xs: none;
-  --shadow-invert-s: var(--shadow-s);
-  --shadow-invert-l: var(--shadow-l);
 
   &.theme-light {
     --interactive-normal: var(--background-secondary);

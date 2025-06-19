@@ -70,7 +70,7 @@ body.is-phone {
   .modal-setting-back-button,
   .modal-close-button {
     --icon-color: var(--text-normal);
-    box-shadow: var(--shadow-invert-xs) !important;
+    box-shadow: var(--shadow-xs) !important;
     backdrop-filter: var(--blur-s);
   }
 
