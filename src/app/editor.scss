@@ -450,17 +450,10 @@
           background-color: transparent !important;
           position: absolute;
           inset: 0 0 auto;
+        }
 
-          &::before {
-            position: absolute;
-            z-index: -1;
-            mask: linear-gradient(to top, transparent, black);
-            background-color: var(--background-primary);
-            pointer-events: none;
-            content: "";
-            inset: 0;
-            height: 100%;
-          }
+        .view-content {
+          mask: linear-gradient(to bottom, transparent, black var(--view-header-height));
         }
 
         // Content pusher
