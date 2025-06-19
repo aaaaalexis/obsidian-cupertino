@@ -179,7 +179,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     width: 100%;
   }
 
-  .nav-action-button {
+  &:not(.hide-nav-header-off) .mod-sidedock .nav-header:hover .nav-action-button {
     padding: 8px !important;
     flex: 1;
   }
