@@ -80,8 +80,9 @@ body:not(.hide-status-off) .status-bar {
 
 body:not(.hide-status-off):not(.is-grabbing) .app-container.no-transition .status-bar {
   bottom: 4px;
-  border-color: var(--background-secondary);
-  background-color: rgba(var(--mono-rgb-0), 1);
+  border-color: transparent;
+  background-color: var(--color-accent);
+  color: var(--text-on-accent);
   max-width: 100% !important;
   height: 40px !important;
 
