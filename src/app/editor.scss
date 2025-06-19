@@ -76,7 +76,7 @@
   /* Codeblock */
   .markdown-rendered pre,
   .HyperMD-codeblock {
-    box-shadow: rgba(0, 0, 0, 0.04) 0px 2px 8px -2px, rgba(0, 0, 0, 0.04) 0px 2px 4px -2px;
+    box-shadow: var(--shadow-editor);
     border: var(--border-width) solid var(--background-modifier-border);
   }
 
@@ -151,6 +151,8 @@
   /* Callout */
   .callout {
     background-color: rgba(var(--callout-color), 0.15);
+    box-shadow: var(--shadow-editor);
+    backdrop-filter: var(--blur-s);
 
     p:last-child {
       margin-bottom: 0;
@@ -395,6 +397,7 @@
   .markdown-rendered blockquote {
     border-radius: var(--callout-radius);
     padding: 12px 16px 12px 32px;
+    box-shadow: var(--shadow-editor);
   }
 
   .el-blockquote {
