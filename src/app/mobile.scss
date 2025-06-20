@@ -14,7 +14,7 @@ body.is-mobile.is-ios {
 
 body.is-phone {
   .mod-root .view-header {
-    z-index: 2;
+    z-index: 3;
   }
   .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     position: fixed;
@@ -65,6 +65,10 @@ body.is-mobile {
 }
 
 body.is-phone {
+  &.theme-light .modal.mod-sidebar-layout .modal-header::before {
+    background-color: var(--background-secondary);
+  }
+
   .view-action,
   .workspace-drawer-header-icon,
   .modal-setting-back-button,
@@ -81,28 +85,30 @@ body.is-phone {
     position: fixed;
     background-color: transparent;
     width: 100%;
+
+    &::before {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      inset: 0;
+      background-color: var(--background-primary);
+      pointer-events: none;
+      height: calc(100% + 16px);
+      mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 14%, hsla(0, 0%, 0%, 0.951) 26.2%, hsla(0, 0%, 0%, 0.896) 36.8%, hsla(0, 0%, 0%, 0.825) 45.9%, hsla(0, 0%, 0%, 0.741) 53.7%, hsla(0, 0%, 0%, 0.648) 60.4%, hsla(0, 0%, 0%, 0.55) 66.2%, hsla(0, 0%, 0%, 0.45) 71.2%, hsla(0, 0%, 0%, 0.352) 75.6%, hsla(0, 0%, 0%, 0.259) 79.6%, hsla(0, 0%, 0%, 0.175) 83.4%, hsla(0, 0%, 0%, 0.104) 87.2%, hsla(0, 0%, 0%, 0.049) 91.1%, hsla(0, 0%, 0%, 0.013) 95.3%, hsla(0, 0%, 0%, 0) 100%);
+    }
   }
 
-  .modal.mod-sidebar-layout .vertical-tabs-container {
-    mask: linear-gradient(
-      to bottom,
-      transparent,
-      rgba(0, 0, 0, 0.013) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.168),
-      rgba(0, 0, 0, 0.049) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.314),
-      rgba(0, 0, 0, 0.104) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.44),
-      rgba(0, 0, 0, 0.175) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.547),
-      rgba(0, 0, 0, 0.259) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.637),
-      rgba(0, 0, 0, 0.352) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.712),
-      rgba(0, 0, 0, 0.45) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.774),
-      rgba(0, 0, 0, 0.55) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.824),
-      rgba(0, 0, 0, 0.648) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.864),
-      rgba(0, 0, 0, 0.741) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.896),
-      rgba(0, 0, 0, 0.825) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.922),
-      rgba(0, 0, 0, 0.896) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.944),
-      rgba(0, 0, 0, 0.951) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.963),
-      rgba(0, 0, 0, 0.987) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.981),
-      black calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px)
-    );
+  .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::before,
+  .mod-root .workspace-leaf-content[data-type="graph"] .view-content::before,
+  .mod-root .workspace-leaf-content[data-type="canvas"] .view-content::before {
+    position: absolute;
+    z-index: 2;
+    content: "";
+    inset: auto 0 0;
+    background-color: var(--background-primary);
+    pointer-events: none;
+    height: calc(var(--safe-area-inset-bottom) + var(--input-height) + 16px);
+    mask: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.013) 3.4%, hsla(0, 0%, 0%, 0.049) 7.3%, hsla(0, 0%, 0%, 0.104) 11.4%, hsla(0, 0%, 0%, 0.175) 15.9%, hsla(0, 0%, 0%, 0.259) 20.5%, hsla(0, 0%, 0%, 0.352) 25.2%, hsla(0, 0%, 0%, 0.45) 30.1%, hsla(0, 0%, 0%, 0.55) 34.9%, hsla(0, 0%, 0%, 0.648) 39.8%, hsla(0, 0%, 0%, 0.741) 44.5%, hsla(0, 0%, 0%, 0.825) 49.1%, hsla(0, 0%, 0%, 0.896) 53.6%, hsla(0, 0%, 0%, 0.951) 57.7%, hsla(0, 0%, 0%, 0.987) 61.6%, hsl(0, 0%, 0%) 65%);
   }
 
   // Content pusher
@@ -238,46 +244,6 @@ body.is-mobile {
       color: var(--color-accent) !important;
     }
   }
-}
-
-body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .view-content,
-body.is-phone .mod-root .workspace-leaf-content[data-type="graph"] .view-content,
-body.is-phone .mod-root .workspace-leaf-content[data-type="canvas"] .view-content {
-  mask: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(0, 0, 0, 0.013) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.168),
-    rgba(0, 0, 0, 0.049) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.314),
-    rgba(0, 0, 0, 0.104) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.44),
-    rgba(0, 0, 0, 0.175) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.547),
-    rgba(0, 0, 0, 0.259) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.637),
-    rgba(0, 0, 0, 0.352) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.712),
-    rgba(0, 0, 0, 0.45) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.774),
-    rgba(0, 0, 0, 0.55) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.824),
-    rgba(0, 0, 0, 0.648) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.864),
-    rgba(0, 0, 0, 0.741) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.896),
-    rgba(0, 0, 0, 0.825) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.922),
-    rgba(0, 0, 0, 0.896) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.944),
-    rgba(0, 0, 0, 0.951) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.963),
-    rgba(0, 0, 0, 0.987) calc((var(--safe-area-inset-top) + var(--view-header-height) + 16px) * 0.981),
-    black calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px),
-    black calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px)),
-    rgba(0, 0, 0, 0.987) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.981),
-    rgba(0, 0, 0, 0.951) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.963),
-    rgba(0, 0, 0, 0.896) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.944),
-    rgba(0, 0, 0, 0.825) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.922),
-    rgba(0, 0, 0, 0.741) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.896),
-    rgba(0, 0, 0, 0.648) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.864),
-    rgba(0, 0, 0, 0.55) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.824),
-    rgba(0, 0, 0, 0.45) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.774),
-    rgba(0, 0, 0, 0.352) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.712),
-    rgba(0, 0, 0, 0.259) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.637),
-    rgba(0, 0, 0, 0.175) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.547),
-    rgba(0, 0, 0, 0.104) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.44),
-    rgba(0, 0, 0, 0.049) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.314),
-    rgba(0, 0, 0, 0.013) calc(100vh - (var(--safe-area-inset-bottom) + var(--input-height) + 16px) * 0.168),
-    transparent calc(100vh - var(--safe-area-inset-bottom))
-  );
 }
 
 body.is-tablet .workspace-drawer .nav-header {
