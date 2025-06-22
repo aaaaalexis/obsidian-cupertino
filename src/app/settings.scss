@@ -43,7 +43,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
       margin: 8px;
       background-color: var(--modal-background);
       backdrop-filter: var(--blur-l);
-      box-shadow: var(--shadow-xs);
+      box-shadow: var(--shadow-s);
       border-radius: var(--radius-m);
       border: none;
     }

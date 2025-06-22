@@ -223,8 +223,8 @@ body {
 
     --shadow-base: inset 0 1px 1px -1px rgba(255, 255, 255, 0.9), inset 0 -1px 1px -1px rgba(255, 255, 255, 0.9);
     --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(96, 96, 96, 0.05), 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.05);
-    --shadow-s: var(--shadow-base), 0px 7px 22px 0px rgba(0, 0, 0, 0.25);
-    --shadow-l: var(--shadow-base), 0px 40px 100px 0px rgba(0, 0, 0, 0.4);
+    --shadow-s: var(--shadow-base), inset 0 1px 2px 0 rgba(255, 255, 255, 0.6), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
+    --shadow-l: var(--shadow-base), 0 0 1px 0 rgba(0, 0, 0, 0.7), 0 18px 60px 0 rgba(0, 0, 0, 0.3);
   }
 
   &.theme-dark {
@@ -264,8 +264,8 @@ body {
 
     --shadow-base: inset 0 1px 1px -1px rgba(255, 255, 255, 0.3), inset 0 -1px 1px -1px rgba(255, 255, 255, 0.3), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-xs: inset 0 8px 48px rgba(255, 255, 255, 0.08), var(--shadow-base);
-    --shadow-s: var(--shadow-base), 0 6px 14px rgba(0, 0, 0, 0.15);
-    --shadow-l: var(--shadow-base), 0 11px 34px rgba(0, 0, 0, 0.5);
+    --shadow-s: var(--shadow-base), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
+    --shadow-l: var(--shadow-base), 0 0 1px 0 rgba(0, 0, 0, 0.7), 0 18px 60px 0 rgba(0, 0, 0, 0.3);
   }
 
   &:not(.is-mobile) {
