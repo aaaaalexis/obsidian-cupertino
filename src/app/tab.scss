@@ -27,7 +27,6 @@ body:not(.is-phone) {
     margin: 12px 0;
     position: relative;
     border-radius: var(--tab-radius);
-    padding: 0;
   }
 
   .workspace-tab-header-new-tab,
@@ -120,6 +119,7 @@ body:not(.is-phone) {
       -webkit-app-region: no-drag;
       gap: 0px;
       transition: var(--anim-duration-fast);
+      padding: 2px;
     }
     .workspace-tab-header-container-inner:not(:hover) .workspace-tab-header.is-active {
       background-color: transparent;
@@ -127,10 +127,6 @@ body:not(.is-phone) {
 
     .workspace-tab-header-container-inner:hover {
       background-color: var(--background-modifier-hover);
-
-      .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
-        color: var(--text-on-accent);
-      }
     }
 
     .workspace-tab-header {
@@ -138,12 +134,13 @@ body:not(.is-phone) {
       transition: var(--anim-duration-fast);
 
       &.is-active {
-        background-color: var(--color-accent);
+        background-color: var(--background-primary);
+        box-shadow: var(--shadow-base);
       }
     }
 
     .workspace-tab-header-inner {
-      padding: 0 10px;
+      padding: 4px 10px;
       transition: var(--anim-duration-fast);
     }
 
