@@ -473,11 +473,11 @@
 
     &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
       margin-left: 8px;
-      border-radius: var(--radius-s);
+      border-radius: var(--radius-window);
     }
     .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
       margin-right: 8px;
-      border-radius: var(--radius-s);
+      border-radius: var(--radius-window);
     }
     &:not(.is-popout-window) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
       background-color: var(--background-primary);

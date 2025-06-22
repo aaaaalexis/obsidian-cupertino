@@ -171,7 +171,7 @@ body:not(.is-mobile) {
   .mod-sidedock.is-sidedock-collapsed {
     z-index: var(--layer-sidedock);
     transition: var(--anim-duration-fast);
-    border-radius: var(--radius-s);
+    border-radius: var(--radius-window);
 
     &:not([style*="overflow: hidden;"]) {
       display: flex !important;
