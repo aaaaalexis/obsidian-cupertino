@@ -222,8 +222,8 @@ body {
 
     --shadow-base: inset 0 1px 1px -1px rgba(255, 255, 255, 0.9), inset 0 -1px 1px -1px rgba(255, 255, 255, 0.9);
     --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(96, 96, 96, 0.05), 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.05);
-    --shadow-s: var(--shadow-base), 0 6px 14px rgba(0, 0, 0, 0.08);
-    --shadow-l: var(--shadow-base), 0 11px 34px rgba(0, 0, 0, 0.2);
+    --shadow-s: var(--shadow-base), 0px 7px 22px 0px rgba(0, 0, 0, 0.25);
+    --shadow-l: var(--shadow-base), 0px 40px 100px 0px rgba(0, 0, 0, 0.4);
   }
 
   &.theme-dark {

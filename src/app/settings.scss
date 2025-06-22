@@ -43,7 +43,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
       margin: 8px;
       background-color: var(--modal-background);
       backdrop-filter: var(--blur-l);
-      box-shadow: var(--shadow-s);
+      box-shadow: var(--shadow-xs);
       border-radius: var(--radius-m);
       border: none;
     }
@@ -57,7 +57,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
       border-right: var(--border-width) solid var(--background-modifier-border);
       border-left: var(--border-width) solid var(--background-modifier-border);
       border-radius: 0;
-      background-color: rgba(var(--mono-rgb-100), 0.02);
+      background-color: rgba(var(--mono-rgb-100), 0.01);
       padding: 12px 20px;
     }
     .setting-item-heading + .setting-item,
