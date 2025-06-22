@@ -73,8 +73,9 @@ body:not(.is-mobile) {
   }
 
   /* Auto hide panel actions */
-  &:not(.hide-nav-header-off) .mod-sidedock .workspace-leaf-content > .nav-header,
-  &:not(.hide-nav-header-off) .mod-sidedock .workspace-leaf-content:not([data-type="zotero-annotation-view"]) > .view-content > .nav-header {
+  .mod-sidedock .workspace-leaf-content > .nav-header,
+  .mod-sidedock .workspace-leaf-content:not([data-type="zotero-annotation-view"]) > .view-content > .nav-header {
+    &,
     .nav-buttons-container,
     .nav-action-button,
     .nav-action-button::after,
@@ -106,29 +107,16 @@ body:not(.is-mobile) {
     }
 
     &:hover .nav-action-button {
-      padding: 4px 8px;
-    }
-  }
-
-  &.hide-nav-header-off {
-    .nav-buttons-container {
-      border-radius: calc(var(--clickable-icon-radius) + 2px);
-      background-color: var(--background-modifier-hover);
-      padding: 2px;
-      box-shadow: none;
-      width: 100%;
-    }
-    .nav-action-button {
-      flex-grow: 1;
+      padding: 8px;
     }
   }
 
   /* Panel actions style */
   .nav-buttons-container {
     border-radius: 100vh;
-    background-color: var(--modal-background);
+    background-color: var(--background-primary);
     padding: 4px;
-    box-shadow: var(--shadow-s);
+    box-shadow: var(--shadow-xs);
     width: fit-content;
     gap: 0;
   }

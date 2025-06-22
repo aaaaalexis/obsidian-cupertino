@@ -74,7 +74,7 @@ body:not(.is-mobile) {
     }
   }
 
-  &:not(.hide-nav-header-off) .nn-pane-header {
+  .nn-pane-header {
     .nn-header-actions,
     .nn-icon-button,
     .nn-icon-button > span,
