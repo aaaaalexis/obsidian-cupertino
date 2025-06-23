@@ -59,10 +59,6 @@ body:not(.is-mobile) {
     margin: 4px 20px;
   }
 
-  .view-content .nav-header {
-    padding: 4px 0;
-  }
-
   /* Unfocused window opacity */
   &:not(.is-focused) {
     .workspace-ribbon,
@@ -96,6 +92,7 @@ body:not(.is-mobile) {
         width: unset;
         height: unset;
         opacity: 1;
+        min-height: 0;
       }
       .nav-action-button::after {
         width: 0;

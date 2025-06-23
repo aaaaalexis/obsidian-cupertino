@@ -77,9 +77,6 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
     .setting-item-info:has(.setting-item-name:empty) .setting-item-description {
       padding: 0;
     }
-    .setting-item-control {
-      flex: 1;
-    }
   }
 
   .modal.mod-community-modal {

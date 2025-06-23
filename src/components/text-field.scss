@@ -14,14 +14,16 @@
 }
 
 body:not(.is-mobile) {
-  textarea,
+  textarea {
+    font-weight: var(--font-normal);
+    line-height: unset;
+  }
   input[type="text"],
   input[type="number"],
   input[type="search"],
   select,
   .dropdown {
-    height: unset;
-    min-height: var(--input-height);
+    height: var(--input-height);
     font-weight: var(--font-normal);
     line-height: unset;
   }

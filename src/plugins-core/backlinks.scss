@@ -1,3 +1,16 @@
+body:not(.is-mobile) .embedded-backlinks {
+  .nav-header {
+    justify-content: unset;
+  }
+  .search-input-container {
+    height: 40px;
+
+    input {
+      height: 100%;
+    }
+  }
+}
+
 body.is-mobile {
   .backlink-pane,
   .outgoing-link-pane {

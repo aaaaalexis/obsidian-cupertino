@@ -180,7 +180,7 @@ body {
   --toggle-thumb-height: 13px;
   --toggle-thumb-width: 21px;
   --toggle-width: 36px;
-  --view-header-height: 48px;
+  --view-header-height: var(--header-height);
   --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
 
   &.theme-light {
