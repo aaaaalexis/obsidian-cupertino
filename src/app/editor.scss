@@ -439,16 +439,6 @@
         box-shadow: none;
       }
 
-      .view-header {
-        justify-content: space-between;
-      }
-
-      .view-header-title-container {
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-      }
-
       .workspace-leaf-content[data-type="markdown"] {
         .view-header {
           background-color: transparent !important;
