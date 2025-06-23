@@ -24,8 +24,15 @@ body:not(.is-phone) {
 
   .prompt-input-container {
     --search-clear-button-size: var(--search-icon-size);
-    border-bottom: var(--border-width) solid var(--background-modifier-border);
+    border: none;
     align-items: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0 16px;
+      border-bottom: var(--border-width) solid var(--background-modifier-border);
+    }
   }
 
   .prompt-input {
