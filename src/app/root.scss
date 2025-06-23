@@ -180,7 +180,7 @@ body {
   --toggle-thumb-height: 13px;
   --toggle-thumb-width: 21px;
   --toggle-width: 36px;
-  --view-header-height: var(--header-height);
+  --view-header-height: var(--header-height) !important;
   --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
 
   &.theme-light {
@@ -270,9 +270,6 @@ body {
 
   &:not(.is-mobile) {
     --dialog-width: fit-content;
-  }
-
-  &:not(.is-phone) {
     --header-height: 56px;
   }
 
@@ -288,7 +285,7 @@ body {
     --icon-m-stroke-width: 1.5px;
     --icon-l-stroke-width: 1.5px;
     --icon-xl-stroke-width: 1px;
-    --input-height: 48px;
+    --input-height: 44px;
     --input-radius: var(--radius-m);
     --mobile-sidebar-width: 100%;
     --mobile-toolbar-height: var(--input-height);
@@ -297,6 +294,7 @@ body {
     --nav-item-background-selected: var(--color-accent);
     --nav-item-color-active: var(--text-on-accent);
     --nav-item-padding: 16px 20px;
+    --header-height: var(--input-height);
     --radius-l: 32px;
     --radius-m: 24px;
     --radius-s: 16px;
@@ -332,7 +330,6 @@ body {
     --mobile-sidebar-max-width: 100%;
     --tab-outline-width: 1px;
     --tab-outline-width: 1px;
-    --view-header-height: 44px;
   }
 
   &.is-tablet {

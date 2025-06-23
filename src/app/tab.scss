@@ -11,30 +11,9 @@ body.center-tabs-off .mod-root .workspace-tab-header-container-inner {
   container-type: inline-size;
 }
 
-@container (max-width: 480px) {
-  .mod-root .workspace-tab-header-container-inner {
-    justify-content: flex-start !important;
-    padding: 0 !important;
-  }
-}
-
 body:not(.is-phone) {
   .workspace-tab-header-container {
     overflow: hidden;
-  }
-
-  .workspace-tab-header-container-inner {
-    margin: 12px 0;
-    position: relative;
-    border-radius: var(--tab-radius);
-  }
-
-  .workspace-tab-header-new-tab,
-  .workspace-tab-header-tab-list,
-  .sidebar-toggle-button {
-    margin: 12px 0;
-    padding: unset;
-    height: auto !important;
   }
 
   .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
@@ -155,10 +134,31 @@ body:not(.is-phone) {
 }
 
 body:not(.is-mobile) {
+  @container (max-width: 480px) {
+    .mod-root .workspace-tab-header-container-inner {
+      justify-content: flex-start !important;
+      padding: 0 !important;
+    }
+  }
+
   .workspace-tab-header-container .clickable-icon {
     padding: 4px;
     width: 32px;
     height: 100%;
+  }
+
+  .workspace-tab-header-container-inner {
+    margin: 12px 0;
+    position: relative;
+    border-radius: var(--tab-radius);
+  }
+
+  .workspace-tab-header-new-tab,
+  .workspace-tab-header-tab-list,
+  .sidebar-toggle-button {
+    margin: 12px 0;
+    padding: unset;
+    height: auto !important;
   }
 
   .sidebar-toggle-button {
@@ -372,10 +372,28 @@ body:not(.is-mobile):not(.is-hidden-frameless) {
 }
 
 body.is-tablet {
+  @container (max-width: 640px) {
+    .mod-root .workspace-tab-header-container-inner {
+      justify-content: flex-start !important;
+      padding: 0 !important;
+    }
+  }
+
+  .workspace-tab-header-new-tab,
+  .workspace-tab-header-tab-list,
+  .sidebar-toggle-button {
+    margin: 0;
+  }
+
   .sidebar-toggle-button {
     align-items: center;
-    padding: 0;
-    height: var(--header-height);
+    padding: 0 !important;
+    height: var(--header-height) !important;
+    width: var(--header-height);
+
+    .clickable-icon {
+      padding: 0;
+    }
   }
 
   .workspace-tab-header-container {
@@ -383,7 +401,7 @@ body.is-tablet {
   }
 
   .workspace-tab-header-container-inner {
-    padding-left: 88px !important;
+    padding: 0 0 0 88px;
     height: 40px !important;
   }
 }

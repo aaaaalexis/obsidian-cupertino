@@ -300,10 +300,15 @@ body.is-mobile {
       gap: 8px;
     }
     .workspace-drawer-active-tab-header {
+      height: var(--input-height);
       margin: 0 20px;
       background-color: var(--interactive-normal);
       padding: 0;
       width: fit-content;
+
+      select {
+        width: 100%;
+      }
     }
     .workspace-drawer-active-tab-title {
       margin-left: 20px;

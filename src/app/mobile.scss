@@ -23,9 +23,9 @@ body.is-phone {
     backdrop-filter: var(--blur-s);
     margin-bottom: max(var(--safe-area-inset-bottom), 16px);
     border-radius: var(--clickable-icon-radius);
-    padding: 10px;
-    width: var(--input-height);
-    height: var(--input-height);
+    padding: 12px;
+    width: auto;
+    height: auto;
     color: var(--text-muted);
     box-shadow: var(--shadow-xs) !important;
   }
@@ -204,6 +204,10 @@ body.is-mobile {
       .nav-action-button:active {
         transform: scale(0.8);
       }
+    }
+
+    .clickable-icon {
+      padding: 12px;
     }
   }
   .mobile-navbar-action {

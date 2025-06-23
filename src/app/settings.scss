@@ -145,9 +145,13 @@ body.is-mobile {
       background-color: var(--modal-background);
     }
 
+    .modal-content {
+      --input-height: 52px;
+    }
+
     .vertical-tab-nav-item {
       height: unset;
-      min-height: 48px;
+      min-height: var(--input-height);
       word-break: break-word;
     }
 
