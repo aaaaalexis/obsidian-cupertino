@@ -82,7 +82,6 @@ body {
   --background-modifier-message: var(--background-secondary);
   --background-modifier-hover: rgba(var(--mono-rgb-100), 0.05);
   --bold-modifier: 300;
-  --border-width: 0.3px;
   --blockquote-background-color: var(--background-primary-alt);
   --blockquote-border-color: var(--text-faint);
   --blockquote-border-thickness: var(--radius-s);
@@ -108,7 +107,6 @@ body {
   --code-string: var(--color-cyan);
   --code-tag: var(--color-red);
   --code-value: var(--color-purple);
-  --divider-color: rgba(var(--mono-rgb-100), 0.1) !important;
   --divider-color-hover: var(--text-faint);
   --dropdown-background-size: var(--icon-s);
   --dropdown-padding: 4px 16px 4px 8px;
@@ -206,6 +204,7 @@ body {
     --color-purple: #af52de;
     --color-pink-rgb: 255, 45, 85;
     --color-pink: #ff2d55;
+    --divider-color: rgba(31, 34, 37, 0.09) !important;
     --modal-background: rgb(from var(--background-secondary) r g b / 75%) !important;
     --interactive-normal: var(--color-base-25);
     --input-shadow: inset 0 -0.15px 0 0.5px rgba(0, 0, 0, 0.2), 0 1px 1.5px 0 rgba(0, 0, 0, 0.03), 0 0.3px 0.5px 0 rgba(0, 0, 0, 0.1) !important;
@@ -247,6 +246,7 @@ body {
     --color-purple: #bf5af2;
     --color-pink-rgb: 255, 55, 95;
     --color-pink: #ff375f;
+    --divider-color: rgba(244, 244, 244, 0.12) !important;
     --modal-background: rgb(from var(--color-base-00) r g b / 90%) !important;
     --interactive-normal: var(--color-base-40);
     --input-shadow: inset 0 0.5px 0px 0px rgba(255, 255, 255, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1) !important;
@@ -270,15 +270,6 @@ body {
 
   &:not(.is-mobile) {
     --dialog-width: fit-content;
-
-    .menu,
-    .suggestion-container,
-    .prompt,
-    .modal,
-    .mod-root .workspace-tab-container {
-      outline: var(--border-width) solid var(--background-modifier-border);
-      border: none;
-    }
   }
 
   &:not(.is-phone) {
@@ -287,6 +278,7 @@ body {
 
   &.is-mobile {
     --background-modifier-form-field: var(--interactive-normal) !important;
+    --border-width: 0.3px;
     --divider-color: rgba(var(--mono-rgb-100), 0.1) !important;
     --divider-width: var(--border-width);
     --canvas-dot-pattern: var(--color-base-20);
