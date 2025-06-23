@@ -45,6 +45,10 @@ body:not(.is-mobile) {
     display: none;
   }
 
+  .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event {
+    overflow: scroll;
+  }
+
   .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
   .workspace-split.mod-sidedock .workspace-leaf-content > .view-content,
   .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
@@ -57,6 +61,13 @@ body:not(.is-mobile) {
 
   .search-row {
     margin: 4px 20px;
+  }
+
+  .mod-sidedock .workspace-tab-container,
+  .mod-sidedock .workspace-leaf,
+  .mod-sidedock .workspace-leaf-content {
+    contain: size !important;
+    overflow: visible;
   }
 
   /* Unfocused window opacity */
