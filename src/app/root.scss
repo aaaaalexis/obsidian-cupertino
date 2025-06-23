@@ -92,7 +92,7 @@ body {
   --caret-color: var(--text-accent);
   --callout-padding: 16px;
   --callout-radius: var(--radius-s);
-  --checkbox-radius: var(--radius-xl);
+  --checkbox-radius: var(--clickable-icon-radius);
   --code-border-width: var(--border-width);
   --code-white-space: pre-wrap;
   --code-size: var(--font-smaller);
@@ -134,14 +134,15 @@ body {
   --metadata-property-radius-hover: var(--metadata-property-radius);
   --metadata-property-radius-focus: var(--metadata-property-radius);
   --modal-border-color: rgba(255, 255, 255, 0.1);
+  --modal-radius: var(--radius-xl);
   --nav-item-color: var(--color-base-100);
   --nav-item-padding: 8px 8px 8px 24px;
   --prompt-border-color: var(--modal-border-color);
   --clickable-icon-radius: 100vh;
-  --radius-l: 24px;
-  --radius-m: 16px;
+  --radius-l: 20px;
+  --radius-m: 12px;
   --radius-s: 8px;
-  --radius-xl: 32px;
+  --radius-xl: 28px;
   --radius-window: 6px;
   --ribbon-background-collapsed: transparent;
   --ribbon-background: transparent;
@@ -313,7 +314,6 @@ body {
     --toggle-width: 68px;
     --toolbar-option-width: var(--mobile-toolbar-height);
     --modal-header-height: var(--view-header-height);
-    --modal-radius: var(--radius-xl);
     --dropdown-padding: 4px 32px 4px 16px;
 
     padding: 0;

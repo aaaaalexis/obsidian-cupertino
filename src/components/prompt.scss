@@ -55,6 +55,7 @@ body:not(.is-phone) {
 
   .prompt .suggestion-item {
     padding: 8px 20px;
+    border-radius: var(--radius-m);
   }
 }
 

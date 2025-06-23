@@ -165,7 +165,7 @@ body.is-mobile.is-android:not(.material-off) {
   /********** Menu **********/
 
   &.is-phone .menu {
-    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    border-radius: var(--modal-radius) var(--modal-radius) 0 0;
     margin: 0;
 
     .menu-grabber {
