@@ -40,11 +40,6 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
     }
 
     .vertical-tab-header {
-      margin: 8px;
-      background-color: var(--modal-background);
-      backdrop-filter: var(--blur-l);
-      box-shadow: var(--shadow-s);
-      border-radius: var(--radius-m);
       border: none;
     }
 
