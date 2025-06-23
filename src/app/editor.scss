@@ -77,7 +77,7 @@
   .markdown-rendered pre,
   .HyperMD-codeblock {
     box-shadow: var(--shadow-editor);
-    border: var(--border-width) solid var(--background-modifier-border);
+    border: none;
   }
 
   .HyperMD-codeblock-begin {
@@ -159,6 +159,7 @@
     }
 
     pre {
+      box-shadow: none;
       border: var(--border-width) solid var(--background-modifier-border);
     }
 
