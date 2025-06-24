@@ -197,12 +197,13 @@ body.is-mobile {
     padding: 0 8px;
     pointer-events: auto;
     transition: var(--anim-duration-moderate) var(--anim-motion-liquid) !important;
+    overflow: hidden;
 
     &:active {
       transform: scale(1.02);
 
       .nav-action-button:active {
-        transform: scale(0.8);
+        transform: scale(0.9);
       }
     }
 
@@ -210,10 +211,30 @@ body.is-mobile {
       padding: 12px;
     }
   }
-  .mobile-navbar-action {
+  .mobile-navbar-action,
+  .nav-action-button {
     display: flex;
     justify-content: center;
     min-width: 0;
+    position: relative;
+
+    &::before {
+      background-color: white;
+      content: "";
+      position: absolute;
+      inset: 0;
+      filter: var(--blur-l);
+      transition: var(--anim-duration-fast);
+      border-radius: 100vh;
+      opacity: 0;
+      transform: none;
+      z-index: -1;
+    }
+
+    &:active::before {
+      opacity: 0.25;
+      transform: scale(5);
+    }
   }
 
   .mobile-toolbar-options-container {
