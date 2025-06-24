@@ -280,7 +280,7 @@ body.is-mobile {
     }
 
     .workspace-drawer-header {
-      padding: 0 24px;
+      padding: 0 var(--side-padding) 0 calc(var(--side-padding) + 4px);
     }
     .workspace-drawer-header-left {
       gap: 4px;
@@ -302,7 +302,8 @@ body.is-mobile {
     .workspace-drawer-active-tab-header {
       height: var(--input-height);
       margin: 0 var(--side-padding);
-      background-color: var(--interactive-normal);
+      background-color: transparent;
+      box-shadow: var(--shadow-xs);
       padding: 0;
       width: fit-content;
 
