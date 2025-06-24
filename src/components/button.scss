@@ -8,14 +8,13 @@
 
 body:not(.is-mobile) {
   .clickable-icon {
-    padding: 4px 8px;
+    padding: 4px 12px;
     min-height: 32px;
   }
   button:not(.clickable-icon) {
     padding: 4px 12px;
     box-shadow: none;
     border: none;
-    padding: 4px 10px;
     font-weight: var(--font-normal);
     line-height: unset;
   }

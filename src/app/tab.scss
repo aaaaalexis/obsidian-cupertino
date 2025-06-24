@@ -143,7 +143,7 @@ body:not(.is-mobile) {
 
   .workspace-tab-header-container .clickable-icon {
     padding: 4px;
-    width: 32px;
+    width: 40px;
     height: 100%;
   }
 
@@ -151,6 +151,14 @@ body:not(.is-mobile) {
     margin: 12px 0;
     position: relative;
     border-radius: var(--tab-radius);
+  }
+
+  .mod-top-left-space .workspace-tab-header-container-inner {
+    margin-left: -2px;
+  }
+
+  .mod-top-right-space .workspace-tab-header-container-inner {
+    margin-right: -2px;
   }
 
   .workspace-tab-header-new-tab,
