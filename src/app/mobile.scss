@@ -196,16 +196,7 @@ body.is-mobile {
     border-radius: var(--clickable-icon-radius);
     padding: 0 8px;
     pointer-events: auto;
-    transition: var(--anim-duration-moderate) var(--anim-motion-liquid) !important;
     overflow: hidden;
-
-    &:active {
-      transform: scale(1.02);
-
-      .nav-action-button:active {
-        transform: scale(0.9);
-      }
-    }
 
     .clickable-icon {
       padding: 12px;

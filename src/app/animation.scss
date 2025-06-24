@@ -75,16 +75,21 @@ body.is-mobile {
   .workspace-drawer-header-icon,
   .modal-close-button,
   .mobile-toolbar-floating-options,
-  .search-input-clear-button {
+  .search-input-clear-button,
+  .mobile-navbar-actions,
+  .workspace-drawer .nav-buttons-container,
+  .mobile-toolbar-options-list {
     &,
-    & > svg.svg-icon {
+    & > svg.svg-icon,
+    .nav-action-button {
       transition: var(--anim-duration-moderate) var(--anim-motion-liquid) !important;
     }
 
     &:active {
       transform: scale(1.1);
 
-      > svg.svg-icon {
+      > svg.svg-icon,
+      .nav-action-button:active {
         transform: scale(0.9);
       }
     }

@@ -86,9 +86,9 @@ body {
   --blockquote-border-color: var(--text-faint);
   --blockquote-border-thickness: var(--radius-s);
   --blockquote-color: var(--text-muted);
-  --blur-s: blur(4px) saturate(1.5) brightness(1.1);
-  --blur-m: blur(8px) saturate(1.5) brightness(1.1);
-  --blur-l: blur(16px) saturate(1.5) brightness(1.1);
+  --blur-s: blur(4px) saturate(1.5) brightness(1.05);
+  --blur-m: blur(8px) saturate(1.5) brightness(1.05);
+  --blur-l: blur(16px) saturate(1.5) brightness(1.05);
   --caret-color: var(--text-accent);
   --callout-padding: 16px;
   --callout-radius: var(--radius-s);
@@ -225,7 +225,7 @@ body {
     --code-tag: #e45749;
     --code-value: #a626a4;
 
-    --shadow-base: inset 0 1px 1px -1px rgba(255, 255, 255, 0.9), inset 0 -1px 1px -1px rgba(255, 255, 255, 0.9);
+    --shadow-base: inset 0 0 1px 2px rgba(255, 255, 255, 0.5), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 1px rgba(255, 255, 255, 0.3);
     --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(96, 96, 96, 0.05), 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.05);
     --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
     --shadow-l: var(--shadow-base), inset 0 0 1px 1px white, 0 0 1px 0 rgba(0, 0, 0, 0.7), 0 18px 60px 0 rgba(0, 0, 0, 0.3);
@@ -267,7 +267,7 @@ body {
     --code-tag: #e16d76;
     --code-value: #c678de;
 
-    --shadow-base: inset 0 1px 1px -1px rgba(255, 255, 255, 0.3), inset 0 -1px 1px -1px rgba(255, 255, 255, 0.3), inset 0 4px 16px rgba(255, 255, 255, 0.025);
+    --shadow-base: inset 1px 1px 1px -1px rgba(255, 255, 255, 0.5), inset -1px -1px 1px -1px rgba(255, 255, 255, 0.3), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-xs: inset 0 8px 48px rgba(255, 255, 255, 0.08), var(--shadow-base);
     --shadow-s: var(--shadow-base), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
     --shadow-l: var(--shadow-base), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 0 rgba(0, 0, 0, 0.7), 0 18px 60px 0 rgba(0, 0, 0, 0.3);
@@ -322,11 +322,9 @@ body {
 
     &.theme-light {
       --interactive-normal: var(--background-primary);
-      --shadow-base: inset 0 1px 1px -1px rgba(255, 255, 255, 0.9), inset 0 -1px 1px -1px rgba(255, 255, 255, 0.9);
     }
     &.theme-dark {
       --interactive-normal: var(--background-secondary);
-      --shadow-base: inset 0 1px 1px -1px rgba(255, 255, 255, 0.9), inset 0 -1px 1px -1px rgba(255, 255, 255, 0.9), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     }
   }
 
