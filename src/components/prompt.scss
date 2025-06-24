@@ -113,8 +113,8 @@ body.is-phone {
   .search-input-clear-button {
     position: relative;
     inset-inline-end: 0;
-    width: var(--input-height);
-    height: var(--input-height);
+    width: 48px;
+    height: 48px;
     flex-shrink: 0;
   }
   .search-input-clear-button:after {
