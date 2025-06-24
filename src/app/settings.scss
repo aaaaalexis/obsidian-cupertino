@@ -157,6 +157,10 @@ body.is-mobile {
 
     .vertical-tab-header-group-title {
       padding: 8px;
+    }
+
+    .vertical-tab-header-group-title,
+    .setting-item-heading .setting-item-name {
       color: var(--text-faint);
       font-size: var(--font-ui-medium);
     }
@@ -194,11 +198,6 @@ body.is-mobile {
 
     .community-modal-details {
       background-color: transparent;
-    }
-
-    .setting-item-heading .setting-item-name {
-      color: var(--text-faint);
-      font-size: var(--font-ui-medium);
     }
   }
 }
