@@ -108,13 +108,13 @@ body.is-mobile .modal:not(.mod-sidebar-layout) {
     font-size: var(--font-ui-small);
 
     .modal-button-container {
-      padding: 0 0 16px;
+      padding: 0 0 var(--side-padding);
     }
   }
 
   .modal-button-container {
     margin: 0;
-    padding: 0 16px 16px;
+    padding: 0 var(--side-padding) var(--side-padding);
 
     button {
       margin: 0;

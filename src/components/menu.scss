@@ -80,7 +80,7 @@ body.is-mobile {
   }
 
   .menu-separator {
-    margin: 8px 16px;
+    margin: 8px var(--side-padding);
   }
 
   .suggestion-container {
@@ -97,7 +97,7 @@ body.is-mobile {
       margin: 0;
       border-bottom: var(--border-width) solid var(--background-modifier-border-hover);
       border-radius: 0;
-      padding: 8px 20px;
+      padding: 8px var(--side-padding);
       min-height: var(--input-height);
     }
     .suggestion-item:last-child {
@@ -119,12 +119,12 @@ body.is-phone {
     height: 5px;
   }
   .menu-scroll {
-    padding: 40px 20px max(var(--safe-area-inset-bottom), 16px);
+    padding: 40px var(--side-padding) max(var(--safe-area-inset-bottom), 16px);
   }
   .menu-item {
     border-radius: var(--radius-m);
     font-size: var(--font-ui-medium);
-    padding: 16px;
+    padding: 16px var(--side-padding);
   }
 }
 
@@ -137,6 +137,6 @@ body.is-tablet {
     padding: 12px 8px;
   }
   .menu-item {
-    padding: 12px 16px;
+    padding: 12px var(--side-padding);
   }
 }

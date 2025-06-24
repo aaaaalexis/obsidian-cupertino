@@ -28,7 +28,7 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
   .metadata-property-key {
     align-items: center;
     border: none;
-    padding: 0 8px 0 20px;
+    padding: 0 8px 0 var(--side-padding);
   }
 
   .metadata-property-value {
@@ -44,7 +44,7 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
   .metadata-add-button {
     gap: 8px;
     margin: 0;
-    padding: 0 20px;
+    padding: 0 var(--side-padding);
     width: 100%;
     height: 40px;
     color: var(--text-faint);
@@ -73,7 +73,7 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
     }
     .metadata-property .metadata-property-key,
     .metadata-property .metadata-property-value {
-      padding: 0 20px;
+      padding: 0 var(--side-padding);
       min-height: 40px;
     }
     .metadata-property .multi-select-container {

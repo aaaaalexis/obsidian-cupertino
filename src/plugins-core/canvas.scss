@@ -65,13 +65,13 @@ body.is-mobile {
 }
 body.is-phone {
   .canvas-controls {
-    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 20px);
-    right: 20px;
+    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + var(--side-padding));
+    right: var(--side-padding);
   }
 }
 body.is-tablet {
   .canvas-controls {
-    top: 16px;
-    right: 16px;
+    top: var(--side-padding);
+    right: var(--side-padding);
   }
 }

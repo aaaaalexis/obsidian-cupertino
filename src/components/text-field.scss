@@ -72,7 +72,7 @@ body.is-phone:not(.is-android:not(.material-off)) {
   .dropdown {
     justify-content: flex-start;
     background-color: var(--interactive-normal);
-    padding: 0 20px;
+    padding: 0 var(--side-padding);
     min-height: var(--input-height);
     font-weight: var(--font-normal);
     text-align-last: unset;
@@ -88,6 +88,6 @@ body.is-tablet:not(.is-android:not(.material-off)) {
   textarea,
   input[type="text"],
   input[type="number"] {
-    padding: 4px 20px;
+    padding: 4px var(--side-padding);
   }
 }

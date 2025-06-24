@@ -46,7 +46,7 @@ body.is-phone:not(.is-android:not(.material-off)) {
   button:not(.clickable-icon) {
     justify-content: flex-start;
     background-color: var(--interactive-normal);
-    padding: 0 20px;
+    padding: 0 var(--side-padding);
     min-height: var(--input-height);
     color: var(--text-accent);
     font-weight: var(--font-normal);
@@ -60,6 +60,6 @@ body.is-phone:not(.is-android:not(.material-off)) {
 
 body.is-tablet:not(.is-android:not(.material-off)) {
   button:not(.clickable-icon) {
-    padding: 4px 20px;
+    padding: 4px var(--side-padding);
   }
 }

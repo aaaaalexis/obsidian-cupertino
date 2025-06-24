@@ -22,7 +22,7 @@ body.is-mobile {
     }
 
     .tree-item-inner {
-      padding-left: 20px;
+      padding-left: var(--side-padding);
     }
   }
 }

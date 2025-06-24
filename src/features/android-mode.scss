@@ -37,6 +37,7 @@ body.is-mobile.is-android:not(.material-off) {
   --shadow-xs: none;
   --shadow-s: rgba(0, 0, 0, 0.1) 0px 8px 30px !important;
   --shadow-l: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
+  --side-padding: 16px !important;
 
   &.theme-light {
     --interactive-normal: var(--background-secondary);
@@ -98,7 +99,7 @@ body.is-mobile.is-android:not(.material-off) {
   input[type="search"],
   select,
   .dropdown {
-    padding-left: 16px;
+    padding-left: var(--side-padding);
   }
 
   input[type="range"] {
@@ -140,7 +141,7 @@ body.is-mobile.is-android:not(.material-off) {
   /********** Mode Switchcer **********/
 
   &.is-phone:not(.mod-toolbar-open) .mod-root .view-actions button:nth-last-child(2) {
-    right: 16px;
+    right: var(--side-padding);
     z-index: var(--layer-cover);
     backdrop-filter: none;
     box-shadow: var(--shadow-l) !important;
@@ -159,7 +160,7 @@ body.is-mobile.is-android:not(.material-off) {
 
   .mobile-navbar,
   .workspace-drawer .nav-header {
-    padding: 8px 16px max(var(--safe-area-inset-bottom), 16px);
+    padding: 8px var(--side-padding) max(var(--safe-area-inset-bottom), 16px);
   }
 
   /********** Menu **********/
@@ -229,7 +230,7 @@ body.is-mobile.is-android:not(.material-off) {
   /********** Sidebar **********/
 
   .nav-files-container {
-    padding: 0 16px 8px !important;
+    padding: 0 var(--side-padding) 8px !important;
 
     > div {
       gap: 2px;
@@ -246,7 +247,7 @@ body.is-mobile.is-android:not(.material-off) {
 
   .nav-files-container .tree-item-self {
     border-radius: 100vh !important;
-    padding-inline-end: 16px;
+    padding-inline-end: var(--side-padding);
   }
 
   .nav-folder:not(.is-collapsed) > .nav-folder-title {
@@ -255,11 +256,11 @@ body.is-mobile.is-android:not(.material-off) {
 
   .workspace-drawer {
     .workspace-drawer-active-tab-header {
-      margin: 0 16px;
+      margin: 0 var(--side-padding);
     }
 
     .view-content {
-      padding: 0 16px 96px;
+      padding: 0 var(--side-padding) 96px;
     }
 
     .view-content > div:not(.nav-header):not(:empty) {
@@ -287,12 +288,6 @@ body.is-mobile.is-android:not(.material-off) {
     }
   }
   .modal.mod-sidebar-layout {
-    .vertical-tab-header,
-    .vertical-tab-content {
-      padding-right: 16px;
-      padding-left: 16px;
-    }
-
     .vertical-tab-nav-item {
       transition: border-radius var(--anim-duration-fast);
       border: none;
@@ -346,20 +341,15 @@ body.is-mobile.is-android:not(.material-off) {
   }
 
   &.is-phone .modal.mod-sidebar-layout {
-    .vertical-tab-content {
-      padding-right: 16px;
-      padding-left: 16px;
-    }
-
     .modal-close-button {
       top: var(--safe-area-inset-top);
-      inset-inline-end: 16px;
+      inset-inline-end: var(--side-padding);
     }
 
     .setting-item:not(.setting-item-heading),
     .setting-item-control .mobile-option-setting-item {
       border-radius: var(--radius-l);
-      padding: 16px;
+      padding: var(--side-padding);
     }
     .setting-item:not(.setting-item-heading):has(+ .setting-item:not(.setting-item-heading)) {
       margin-bottom: 2px;
@@ -426,7 +416,7 @@ body.is-mobile.is-android:not(.material-off) {
       button {
         margin: 0;
         background-color: transparent;
-        padding: 0 16px;
+        padding: 0 var(--side-padding);
         color: var(--text-accent);
         font-weight: var(--font-bold);
         flex-grow: 0;
@@ -437,7 +427,7 @@ body.is-mobile.is-android:not(.material-off) {
   /********** Prompt **********/
 
   &.is-phone .prompt-results {
-    padding: 0 16px 16px;
+    padding: 0 var(--side-padding) var(--side-padding);
   }
 
   .prompt {
@@ -456,6 +446,6 @@ body.is-mobile.is-android:not(.material-off) {
 
   .mobile-tab-switcher-menubar {
     border: none;
-    padding: 8px max(var(--safe-area-inset-right), 16px) calc(var(--safe-area-inset-bottom) + 8px) max(var(--safe-area-inset-left), 16px);
+    padding: 8px var(--side-padding) calc(var(--safe-area-inset-bottom) + 8px);
   }
 }

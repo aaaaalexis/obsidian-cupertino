@@ -83,7 +83,7 @@
     border: var(--input-border-width) solid var(--background-modifier-border);
     border-radius: var(--radius-l);
     background-color: var(--background-modifier-hover);
-    padding: 4px 16px;
+    padding: 4px var(--side-padding);
     width: 100%;
     color: var(--color-base-100);
     text-align: left;
@@ -130,7 +130,7 @@ body.is-mobile {
   }
   .empty-state-action:nth-child(2) {
     background-color: var(--background-secondary) !important;
-    padding: 4px 16px;
+    padding: 4px var(--side-padding);
   }
   .empty-state-action:nth-child(n + 3) {
     margin: 4px 0;

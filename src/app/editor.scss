@@ -536,7 +536,7 @@
     }
 
     .view-header {
-      padding: 0 16px;
+      padding: 0 var(--side-padding);
 
       button {
         height: 100%;

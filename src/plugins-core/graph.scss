@@ -34,14 +34,14 @@ body.is-mobile {
 }
 body.is-phone {
   .graph-controls {
-    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 20px);
-    inset-inline-end: 20px;
+    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + var(--side-padding));
+    inset-inline-end: var(--side-padding);
     max-height: 70vh;
   }
 }
 body.is-tablet {
   .graph-controls {
-    top: 16px;
-    right: 16px;
+    top: var(--side-padding);
+    right: var(--side-padding);
   }
 }

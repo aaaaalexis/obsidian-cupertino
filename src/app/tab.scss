@@ -397,7 +397,7 @@ body.is-tablet {
   }
 
   .workspace-tab-header-container {
-    padding: 0 16px !important;
+    padding: 0 var(--side-padding) !important;
   }
 
   .workspace-tab-header-container-inner {

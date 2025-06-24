@@ -52,7 +52,7 @@ body:not(.is-mobile) {
   .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
   .workspace-split.mod-sidedock .workspace-leaf-content > .view-content,
   .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
-    padding: 0 20px 8px;
+    padding: 0 var(--side-padding) 8px;
   }
 
   .view-content > .node-insert-event {
@@ -60,7 +60,7 @@ body:not(.is-mobile) {
   }
 
   .search-row {
-    margin: 4px 20px;
+    margin: 4px var(--side-padding);
   }
 
   .mod-sidedock .workspace-tab-container,
@@ -301,7 +301,7 @@ body.is-mobile {
     }
     .workspace-drawer-active-tab-header {
       height: var(--input-height);
-      margin: 0 20px;
+      margin: 0 var(--side-padding);
       background-color: var(--interactive-normal);
       padding: 0;
       width: fit-content;
@@ -311,14 +311,14 @@ body.is-mobile {
       }
     }
     .workspace-drawer-active-tab-title {
-      margin-left: 20px;
+      margin-left: var(--side-padding);
     }
     .workspace-drawer-active-tab-chevron {
       margin-right: 4px;
     }
 
     .view-content {
-      padding: 0 20px 96px;
+      padding: 0 var(--side-padding) 96px;
       overflow: auto;
     }
     .view-content > div:not(.nav-header):not(:empty) {
@@ -326,12 +326,12 @@ body.is-mobile {
       background-color: var(--interactive-normal);
 
       &:not(.node-insert-event) {
-        padding: 8px 20px;
+        padding: 8px var(--side-padding);
       }
     }
 
     .search-row {
-      margin: 4px 20px;
+      margin: 4px var(--side-padding);
     }
     .search-result-file-title {
       color: var(--color-base-100);
@@ -342,12 +342,12 @@ body.is-mobile {
       border: var(--border-width) solid var(--background-modifier-border);
     }
     .search-result-file-match {
-      padding: 16px;
+      padding: 16px var(--side-padding);
     }
   }
 
   .nav-files-container {
-    padding: 0 20px 8px !important;
+    padding: 0 var(--side-padding) 8px !important;
 
     & > div {
       gap: 0;
@@ -372,13 +372,13 @@ body.is-mobile {
     }
     .tree-item:not(:last-child)::before {
       position: absolute;
-      inset: 0 20px;
+      inset: 0 var(--side-padding);
       border-bottom: var(--border-width) solid var(--background-modifier-border);
       content: "";
     }
     .tree-item-self {
       border-radius: 0;
-      padding-inline-end: 20px;
+      padding-inline-end: var(--side-padding);
     }
     .tree-item-self:focus-within {
       color: var(--nav-item-color);
@@ -390,12 +390,12 @@ body.is-mobile {
     }
     .tree-item-children::before {
       position: absolute;
-      inset: 0 20px 0 8px;
+      inset: 0 var(--side-padding) 0 8px;
       border-top: var(--border-width) solid var(--background-modifier-border);
       content: "";
     }
     .tree-item-icon.collapse-icon {
-      right: 20px;
+      right: var(--side-padding);
       margin-inline-start: unset;
     }
   }

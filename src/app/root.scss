@@ -183,6 +183,11 @@ body {
   --view-header-height: var(--header-height) !important;
   --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
 
+  --side-padding: 20px;
+  @media (max-width: 402px) {
+    --side-padding: 16px;
+  }
+
   &.theme-light {
     --background-modifier-cover: rgba(170, 170, 170, 0.6);
     --background-modifier-border-hover: var(--color-base-25);
@@ -293,7 +298,7 @@ body {
     --nav-item-background-active: var(--color-accent);
     --nav-item-background-selected: var(--color-accent);
     --nav-item-color-active: var(--text-on-accent);
-    --nav-item-padding: 16px 20px;
+    --nav-item-padding: 16px var(--side-padding);
     --header-height: var(--input-height);
     --radius-l: 32px;
     --radius-m: 24px;
@@ -433,12 +438,12 @@ body.compact-mode {
   --nav-item-padding: 6px 8px 6px 24px;
 
   &.is-mobile {
-    --nav-item-padding: 12px 20px;
+    --nav-item-padding: 12px var(--side-padding);
     .nav-files-container .tree-item-icon.collapse-icon {
-      right: 16px;
+      right: var(--side-padding);
     }
     .suggestion-item {
-      padding: 8px 16px !important;
+      padding: 8px var(--side-padding) !important;
     }
   }
 }

@@ -45,7 +45,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
 
     .setting-item-heading {
       border: none;
-      padding: 20px 20px 12px;
+      padding: var(--side-padding) var(--side-padding) 12px;
     }
     .setting-item:not(.setting-item-heading) {
       gap: 8px;
@@ -53,7 +53,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
       border-left: var(--border-width) solid var(--background-modifier-border);
       border-radius: 0;
       background-color: rgba(var(--mono-rgb-100), 0.01);
-      padding: 12px 20px;
+      padding: 12px var(--side-padding);
     }
     .setting-item-heading + .setting-item,
     *:not(.setting-item) + .setting-item:not(.setting-item-heading),
@@ -79,7 +79,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
     .community-modal-search-summary {
       border: none !important;
       background-color: transparent !important;
-      padding: 4px 20px !important;
+      padding: 4px var(--side-padding) !important;
       gap: 0 !important;
       margin: 0;
     }
@@ -112,7 +112,7 @@ body.is-mobile {
     }
 
     .modal-header {
-      padding: var(--safe-area-inset-top) 20px 0 !important;
+      padding: var(--safe-area-inset-top) var(--side-padding) 0 !important;
       z-index: 1;
       background-color: transparent;
     }
@@ -179,7 +179,7 @@ body.is-mobile {
 
     .community-modal-search-results-wrapper {
       border: none;
-      padding: 0 20px;
+      padding: 0 var(--side-padding);
     }
 
     .community-modal-search-results {
@@ -191,7 +191,7 @@ body.is-mobile {
       border: none;
       border-radius: var(--radius-m);
       background-color: var(--interactive-normal);
-      padding: 16px 20px;
+      padding: 16px var(--side-padding);
     }
 
     .community-modal-details {
@@ -225,15 +225,15 @@ body.is-phone {
     .vertical-tab-header,
     .vertical-tab-content {
       padding-top: calc(var(--safe-area-inset-top) + var(--modal-header-height) + 16px);
-      padding-right: 20px;
-      padding-left: 20px;
+      padding-right: var(--side-padding);
+      padding-left: var(--side-padding);
     }
   }
 
   &:not(.is-android:not(.material-off)) .modal.mod-sidebar-layout {
     .modal-close-button {
       top: var(--safe-area-inset-top);
-      inset-inline-end: 20px;
+      inset-inline-end: var(--side-padding);
     }
 
     .setting-item {
@@ -251,7 +251,7 @@ body.is-phone {
     .setting-item-control .mobile-option-setting-item {
       border-radius: var(--radius-m);
       background-color: var(--interactive-normal) !important;
-      padding: 16px 20px;
+      padding: 16px var(--side-padding);
     }
 
     .setting-item.mod-toggle:has(+ .setting-item.mod-toggle) {
@@ -305,7 +305,7 @@ body.is-tablet .modal.mod-sidebar-layout {
   .setting-item:not(.setting-item-heading) {
     border-radius: 0;
     background-color: var(--interactive-normal);
-    padding: 12px 20px;
+    padding: 12px var(--side-padding);
   }
   .setting-item-heading + .setting-item,
   *:not(.setting-item) + .setting-item:not(.setting-item-heading),
@@ -337,7 +337,7 @@ body.is-tablet .modal.mod-sidebar-layout {
     display: flex;
     align-items: center;
     border-radius: 0;
-    padding-left: 20px;
+    padding-left: var(--side-padding);
 
     &:not(:last-child) {
       border-bottom: var(--border-width) solid var(--background-modifier-border);

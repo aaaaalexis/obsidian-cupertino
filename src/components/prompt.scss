@@ -7,7 +7,7 @@
   width: var(--icon-l);
   height: var(--icon-l);
   content: "";
-  left: 20px;
+  left: var(--side-padding);
 }
 
 body:not(.is-phone) {
@@ -45,7 +45,7 @@ body:not(.is-phone) {
   }
 
   .prompt-results {
-    padding: 16px;
+    padding: var(--side-padding);
   }
 
   .prompt-instructions {
@@ -54,7 +54,7 @@ body:not(.is-phone) {
   }
 
   .prompt .suggestion-item {
-    padding: 8px 20px;
+    padding: 8px var(--side-padding);
     border-radius: var(--radius-m);
   }
 }
@@ -126,7 +126,7 @@ body.is-phone {
 
   .prompt-results {
     mask: linear-gradient(to bottom, transparent, black calc(var(--safe-area-inset-top) + 16px), black calc(100vh - var(--safe-area-inset-bottom) - var(--input-height) - 16px), transparent calc(100vh - var(--safe-area-inset-bottom)));
-    padding: calc(var(--safe-area-inset-top) + 16px) 20px 128px;
+    padding: calc(var(--safe-area-inset-top) + 16px) var(--side-padding) 128px;
   }
 
   .prompt .suggestion-item {

@@ -121,7 +121,7 @@ body.is-phone {
 
   .mod-root {
     .view-header {
-      padding: var(--safe-area-inset-top) 20px 0;
+      padding: var(--safe-area-inset-top) var(--side-padding) 0;
     }
 
     .view-header-left,
@@ -333,9 +333,11 @@ body.is-phone {
   }
   .mobile-tab-switcher-menu-button {
     z-index: 2;
-    padding: 8px 20px;
+    flex: 1;
+    height: var(--input-height);
     border-radius: var(--clickable-icon-radius);
     box-shadow: var(--shadow-s);
+    justify-content: center;
   }
   .mobile-tab-switcher-menubar .mobile-tab-switcher-menu-spacer:last-child .clickable-icon::before {
     position: fixed;
