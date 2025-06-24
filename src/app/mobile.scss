@@ -409,6 +409,9 @@ body.is-phone {
   .mobile-tab-switcher-menu-spacer .clickable-icon {
     box-shadow: var(--shadow-s);
   }
+  .mobile-tab-switcher-menu-spacer:first-child {
+    z-index: 2;
+  }
   .mobile-tab-switcher-menu-spacer:last-child .clickable-icon {
     padding-left: var(--side-padding);
     padding-right: var(--side-padding);
@@ -419,6 +422,12 @@ body.is-phone {
       inset: 0;
       content: "";
     }
+  }
+
+  .mobile-tab .mobile-tab-pin,
+  .mobile-tab .close-button {
+    width: 32px;
+    height: 32px;
   }
 }
 
