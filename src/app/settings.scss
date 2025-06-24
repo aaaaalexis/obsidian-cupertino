@@ -224,6 +224,11 @@ body.is-phone {
       padding-right: var(--side-padding);
       padding-left: var(--side-padding);
     }
+
+    &.mod-community-modal .modal-sidebar,
+    .community-modal-info {
+      padding-top: calc(var(--safe-area-inset-top) + var(--modal-header-height) + 24px);
+    }
   }
 
   &:not(.is-android:not(.material-off)) .modal.mod-sidebar-layout {
