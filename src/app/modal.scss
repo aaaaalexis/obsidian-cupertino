@@ -1,8 +1,4 @@
 body {
-  &.theme-light .modal {
-    border-width: var(--modal-border-width) 0 0;
-  }
-
   &.is-mobile .modal-close-button {
     display: flex;
     justify-content: center;

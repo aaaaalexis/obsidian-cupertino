@@ -133,11 +133,12 @@ body {
   --metadata-property-radius: var(--radius-m) !important;
   --metadata-property-radius-hover: var(--metadata-property-radius);
   --metadata-property-radius-focus: var(--metadata-property-radius);
-  --modal-border-color: rgba(255, 255, 255, 0.1);
+  --modal-border-color: var(--divider-color);
+  --modal-border-width: 0;
   --modal-radius: var(--radius-xl);
   --nav-item-color: var(--color-base-100);
   --nav-item-padding: 8px 8px 8px 24px;
-  --prompt-border-color: var(--modal-border-color);
+  --prompt-border-color: var(--divider-color);
   --clickable-icon-radius: 100vh;
   --radius-l: 20px;
   --radius-m: 12px;
