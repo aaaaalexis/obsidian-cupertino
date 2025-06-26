@@ -124,7 +124,7 @@ body.is-phone {
   .menu-item {
     border-radius: var(--radius-m);
     font-size: var(--font-ui-medium);
-    padding: 16px var(--side-padding);
+    padding: var(--nav-item-padding);
   }
 }
 

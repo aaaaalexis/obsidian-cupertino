@@ -343,7 +343,7 @@ body.is-mobile {
       border: var(--border-width) solid var(--background-modifier-border);
     }
     .search-result-file-match {
-      padding: 16px var(--side-padding);
+      padding: var(--nav-item-padding);
     }
   }
 

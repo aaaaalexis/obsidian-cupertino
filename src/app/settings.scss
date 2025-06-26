@@ -145,8 +145,16 @@ body.is-mobile {
       background-color: var(--modal-background);
     }
 
-    .modal-content {
-      --input-height: 52px;
+    .vertical-tab-nav-item,
+    textarea,
+    input[type="text"],
+    input[type="search"],
+    input[type="number"],
+    button,
+    select,
+    .dropdown {
+      height: unset;
+      padding: var(--nav-item-padding) !important;
     }
 
     .vertical-tab-nav-item {
@@ -193,7 +201,7 @@ body.is-mobile {
       border: none;
       border-radius: var(--radius-m);
       background-color: var(--interactive-normal);
-      padding: 16px var(--side-padding);
+      padding: var(--nav-item-padding);
     }
 
     .community-modal-details {
@@ -251,7 +259,7 @@ body.is-phone {
     .setting-item-control .mobile-option-setting-item {
       border-radius: var(--radius-m);
       background-color: var(--interactive-normal) !important;
-      padding: 16px var(--side-padding);
+      padding: var(--nav-item-padding);
     }
 
     .setting-item.mod-toggle:has(+ .setting-item.mod-toggle) {
