@@ -151,7 +151,7 @@ body.is-mobile.is-android:not(.material-off) {
     height: var(--input-height);
   }
 
-  &.is-phone:not(.mode-highlight-off) .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
+  &.is-phone .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
     background-color: var(--interactive-accent-active) !important;
     color: var(--text-accent-active) !important;
   }

@@ -31,24 +31,12 @@ settings:
         title: Disable compact properties
         type: class-toggle
     -
-        id: mode-highlight-off
-        title: Disable editing mode indicator
-        type: class-toggle
-    -
-        id: hide-embed-title-off
-        title: Disable hiding embed title
-        type: class-toggle
-    -
         id: clean-link-off
         title: Disable clean link style
         type: class-toggle
     -
         id: full-width-off
         title: Disable full width elements
-        type: class-toggle
-    -
-        id: compact-mode
-        title: Compact list view
         type: class-toggle
     -
         id: desktop-header
@@ -372,20 +360,6 @@ body:not(.show-view-header):not(.is-phone) {
 
     > div {
       display: none;
-    }
-  }
-}
-
-body.compact-mode {
-  --nav-item-padding: 6px 8px 6px 24px;
-
-  &.is-mobile {
-    --nav-item-padding: 12px var(--side-padding);
-    .nav-files-container .tree-item-icon.collapse-icon {
-      right: var(--side-padding);
-    }
-    .suggestion-item {
-      padding: 8px var(--side-padding) !important;
     }
   }
 }

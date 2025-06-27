@@ -101,7 +101,7 @@ body.is-phone {
     box-shadow: var(--shadow-xs-tinted) !important;
   }
 
-  &:not(.mode-highlight-off) .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
+  .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
     background-color: var(--interactive-accent-clear) !important;
     color: var(--text-accent) !important;
   }

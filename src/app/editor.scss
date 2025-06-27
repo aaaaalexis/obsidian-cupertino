@@ -40,7 +40,7 @@
   }
 
   /* Mode switcher */
-  body:not(.mode-highlight-off) .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
+  .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
     background-color: var(--interactive-accent) !important;
     color: var(--text-on-accent) !important;
   }
@@ -364,10 +364,6 @@
   }
 
   /* Embed */
-  body:not(.hide-embed-title-off) .embed-title {
-    display: none;
-  }
-
   .workspace-leaf-content[data-type="markdown"] {
     .markdown-embed,
     .file-embed {
