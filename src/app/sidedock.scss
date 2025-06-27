@@ -228,7 +228,7 @@ body:not(.is-mobile) {
         -webkit-app-region: no-drag !important;
       }
 
-      .workspace-leaf-resize-handle {
+      > .workspace-leaf-resize-handle {
         display: none;
       }
     }
