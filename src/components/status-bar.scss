@@ -12,13 +12,13 @@
 
 body.hide-status-off:not(.is-mobile) {
   .status-bar:not(:hover) {
-    opacity: 0.3;
+    opacity: 0.5;
     border-color: transparent;
     background-color: transparent;
   }
-  .mod-sidedock.mod-right-split .workspace-leaf-content > .node-insert-event,
-  .mod-sidedock.mod-right-split .workspace-leaf-content > .view-content {
-    margin-bottom: 40px;
+  .mod-sidedock.mod-right-split .workspace-tabs:last-of-type .node-insert-event,
+  .mod-sidedock.mod-right-split .workspace-tabs:last-of-type .view-content {
+    padding-bottom: 36px;
   }
 }
 
