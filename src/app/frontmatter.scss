@@ -15,7 +15,7 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
     border-radius: var(--metadata-property-radius);
     background-color: var(--background-secondary);
 
-    input {
+    input:not([type="checkbox"]) {
       box-shadow: none !important;
       border: none !important;
     }
@@ -26,11 +26,10 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
   }
 
   .metadata-property-key {
-    align-items: center;
-    border: none;
-    padding: 0 8px 0 var(--side-padding);
+    padding: 8px 8px 8px var(--side-padding);
   }
 
+  .metadata-property-key,
   .metadata-property-value {
     border: none;
     min-height: 40px;
@@ -39,6 +38,14 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
   .metadata-property-value input:not([type="checkbox"]) {
     box-shadow: none !important;
     border: none !important;
+  }
+
+  .multi-select-container,
+  .metadata-input,
+  .metadata-input-number,
+  .metadata-input-longtext,
+  .metadata-input-checkbox {
+    padding: 8px;
   }
 
   .metadata-add-button {
@@ -70,14 +77,23 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
   @container (width < 250px) {
     .metadata-property {
       flex-wrap: wrap;
+
+      &::before {
+        border-bottom: var(--border-width) solid var(--background-modifier-border);
+        content: "";
+        inset: 0 8px;
+        position: absolute;
+      }
     }
+
     .metadata-property .metadata-property-key,
-    .metadata-property .metadata-property-value {
-      padding: 0 var(--side-padding);
+    .metadata-property .metadata-property-value,
+    .metadata-add-button {
+      padding: 8px;
       min-height: 40px;
     }
     .metadata-property .multi-select-container {
-      padding: 8px 0;
+      padding: 0;
     }
     .metadata-input,
     .metadata-input-number,
@@ -90,6 +106,11 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
       display: none;
     }
   }
+}
+
+.workspace-split:not(.mod-root) .metadata-container .metadata-properties {
+  --metadata-property-radius: var(--radius-m) !important;
+  background-color: var(--background-primary);
 }
 
 body:not(.is-mobile) {
