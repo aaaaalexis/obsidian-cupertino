@@ -2,8 +2,12 @@ body:not(.is-mobile) .embedded-backlinks {
   .nav-header {
     justify-content: unset;
   }
+  .nav-buttons-container {
+    box-shadow: none !important;
+  }
   .search-input-container {
     height: 40px;
+    width: calc(100% - 184px);
 
     input {
       height: 100%;
