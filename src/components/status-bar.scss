@@ -3,7 +3,7 @@
   bottom: 4px;
   transition: var(--anim-duration-fast);
   border: var(--border-width) solid var(--background-modifier-border);
-  border-radius: var(--radius-xl);
+  border-radius: var(--clickable-icon-radius);
   background-color: var(--background-primary);
   padding: 4px 8px !important;
   min-height: unset;
