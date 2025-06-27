@@ -1,5 +1,9 @@
 body:not(.is-mobile) .checkbox-container {
   box-shadow: none;
+
+  &::after {
+    box-shadow: none;
+  }
 }
 
 body.is-mobile .checkbox-container {
