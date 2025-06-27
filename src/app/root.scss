@@ -275,7 +275,7 @@ body {
   }
 
   &:not(.is-mobile) {
-    --dialog-width: fit-content;
+    --dialog-width: min-content;
     --header-height: 56px;
   }
 
