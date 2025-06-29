@@ -42,7 +42,7 @@ body.is-mobile {
 
   &.theme-light {
     --interactive-normal: var(--background-primary);
-    --shadow-border: none;
+    --shadow-border: 0 0 transparent;
   }
   &.theme-dark {
     --interactive-normal: var(--background-secondary);
