@@ -291,6 +291,9 @@ body.is-mobile {
       height: var(--view-header-height);
     }
 
+    .workspace-drawer-tab-container {
+      overflow: visible;
+    }
     .workspace-drawer-active-tab-container {
       background-color: transparent;
       gap: 8px;
@@ -299,6 +302,7 @@ body.is-mobile {
       height: var(--input-height);
       margin: 0 var(--side-padding);
       background-color: transparent;
+      backdrop-filter: var(--blur-s);
       box-shadow: var(--shadow-xs);
       padding: 0;
       width: fit-content;
