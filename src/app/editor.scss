@@ -73,6 +73,10 @@
     padding: 2px 4px;
   }
 
+  pre[class*="language-"] code {
+    border-radius: 0;
+  }
+
   /* Codeblock */
   .markdown-rendered pre,
   .HyperMD-codeblock {
@@ -109,6 +113,7 @@
     box-shadow: none !important;
     padding: 8px !important;
     line-height: 100%;
+    background-color: transparent !important;
   }
 
   /* Highlight */
