@@ -102,7 +102,7 @@ body.is-phone {
   }
 
   .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
-    background-color: var(--interactive-accent-clear) !important;
+    background-color: var(--text-highlight-bg) !important;
     color: var(--text-accent) !important;
   }
 
@@ -251,7 +251,7 @@ body.is-phone {
   min-height: var(--input-height);
 
   &.mod-activated {
-    background-color: var(--interactive-accent-clear);
+    background-color: var(--text-highlight-bg);
     color: var(--text-accent);
   }
 }

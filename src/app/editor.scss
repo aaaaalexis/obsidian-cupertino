@@ -120,7 +120,7 @@
     color: var(--color-base-100);
 
     &:not([style]):not([class*="hltr-"]) {
-      color: var(--color-orange);
+      color: var(--text-accent);
     }
   }
 
@@ -128,7 +128,7 @@
     box-decoration-break: clone;
     padding-top: 2px;
     padding-bottom: 2px;
-    color: var(--color-orange);
+    color: var(--text-accent);
   }
   .cm-line .cm-highlight:nth-child(1 of .cm-highlight) {
     border-top-left-radius: var(--radius-s);
