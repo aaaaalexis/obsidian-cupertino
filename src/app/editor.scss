@@ -449,10 +449,8 @@
         }
 
         // Content pusher
-        .view-content > .markdown-reading-view > div:first-child {
-          padding-top: calc(var(--file-margins) + var(--view-header-height));
-        }
-        .view-content .cm-scroller {
+        .view-content > .markdown-reading-view > div:first-child,
+        .view-content > .markdown-source-view > .cm-editor > .cm-scroller {
           padding-top: calc(var(--file-margins) + var(--view-header-height)) !important;
         }
       }

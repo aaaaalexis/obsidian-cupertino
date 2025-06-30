@@ -184,8 +184,8 @@ body.is-phone {
 
   // Content pusher
   .view-content > .markdown-reading-view > div:first-child,
-  .view-content .cm-scroller,
-  .markdown-source-view .document-search-container {
+  .view-content > .markdown-source-view > .cm-editor > .cm-scroller,
+  .view-content > .markdown-source-view .document-search-container {
     padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px) !important;
   }
 
