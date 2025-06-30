@@ -207,7 +207,7 @@ body.is-phone {
 
 body.is-mobile {
   &:not(.hide-tabs-count-off) {
-    .mobile-navbar-action:nth-child(4) .clickable-icon::before {
+    .mobile-navbar-action:nth-last-child(2) .clickable-icon::before {
       background-color: var(--icon-color);
       width: 24px;
       height: 24px;
