@@ -26,8 +26,14 @@ body.is-mobile .excalidraw.theme--dark {
     height: var(--default-button-size);
   }
 
+  .ToolIcon {
+    padding: 0 !important;
+    height: unset;
+  }
+
   .sidebar-trigger,
-  .ToolIcon__icon {
+  .ToolIcon__icon,
+  .dropdown-menu-button {
     padding: 8px;
     width: 40px;
     height: 40px;
