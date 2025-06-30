@@ -406,6 +406,21 @@
     margin-left: 16px;
   }
 
+  .cm-line:not(.HyperMD-quote) + .cm-line.HyperMD-quote {
+    border-top-left-radius: var(--callout-radius);
+    border-top-right-radius: var(--callout-radius);
+    overflow: hidden;
+    padding-top: 12px !important;
+  }
+  .cm-line.HyperMD-quote:has(+ .cm-line:not(.HyperMD-quote)) {
+    border-bottom-left-radius: var(--callout-radius);
+    border-bottom-right-radius: var(--callout-radius);
+    overflow: hidden;
+    padding-bottom: 12px !important;
+  }
+
+  /***/
+
   body:not(.is-mobile) {
     &.theme-light .mod-root .workspace-tab-container {
       box-shadow: rgba(0, 0, 0, 0.04) 0px 24px 48px, rgba(0, 0, 0, 0.02) 0px 4px 16px;
