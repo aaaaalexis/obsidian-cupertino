@@ -4,7 +4,7 @@ input[type="checkbox"]:checked {
   border: none;
 }
 
-li[data-task]:not([data-task="x"]):not([data-task="X"]):not([data-task="-"]):not([data-task="?"]):not([data-task="!"]):not([data-task="i"]) input[type="checkbox"]:checked,
+li[data-task]:not([data-task="x"]):not([data-task="X"]):not([data-task="-"]):not([data-task="?"]):not([data-task="!"]):not([data-task="i"]) > input[type="checkbox"]:checked,
 input[type="checkbox"][data-task]:checked:not([data-task="x"]):not([data-task="X"]):not([data-task="-"]):not([data-task="?"]):not([data-task="!"]):not([data-task="i"]) {
   --checkbox-color: transparent;
 
