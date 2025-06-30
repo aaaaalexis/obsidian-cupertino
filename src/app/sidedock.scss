@@ -8,10 +8,6 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-.search-input-container {
-  margin: 8px auto;
-  width: 100%;
-}
 
 .nav-files-container > div {
   display: flex;
@@ -61,6 +57,11 @@ body:not(.is-mobile) {
 
   .search-row {
     margin: 4px var(--side-padding);
+  }
+
+  .search-input-container {
+    margin: 8px auto;
+    width: 100%;
   }
 
   .mod-sidedock .workspace-tab-container,
