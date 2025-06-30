@@ -73,6 +73,10 @@ body:not(.is-mobile) {
     }
   }
 
+  .workspace-drawer-vault-switcher {
+    height: 100%;
+  }
+
   /* Unfocused window opacity */
   &:not(.is-focused) {
     .workspace-ribbon,
