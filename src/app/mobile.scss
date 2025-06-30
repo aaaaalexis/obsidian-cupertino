@@ -74,11 +74,14 @@ body.is-phone {
   }
 
   // Content pusher
-  .view-content > .markdown-reading-view > div:first-child {
-    padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
+  .view-content > .markdown-reading-view > div:first-child,
+  .view-content .cm-scroller,
+  .markdown-source-view .document-search-container {
+    padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px) !important;
   }
-  .view-content .cm-sizer {
-    padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height));
+
+  .markdown-source-view .document-search-container ~ .cm-editor .cm-scroller {
+    padding: var(--file-margins) !important;
   }
   .mod-root .view-content > div:not(.markdown-source-view):not(.markdown-reading-view):not(.canvas-wrapper):not(.graph-controls):not(.empty-state) {
     padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height));
@@ -179,6 +182,10 @@ body.is-phone {
     .view-header-breadcrumb:first-child {
       opacity: 1;
       color: var(--interactive-accent);
+    }
+
+    .document-search-container {
+      z-index: 0;
     }
   }
 }
