@@ -154,7 +154,7 @@ body.is-mobile {
     select,
     .dropdown {
       height: unset;
-      padding: var(--nav-item-padding) !important;
+      padding: var(--nav-item-padding);
     }
 
     .vertical-tab-nav-item {

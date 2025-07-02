@@ -1,16 +1,15 @@
 .search-input-container {
-  --search-icon-size: var(--icon-xs);
   display: flex;
   align-items: center;
   overflow: visible;
 
   &:before {
     top: unset !important;
-    inset-inline-start: 8px;
+    inset-inline-start: calc(var(--input-height) / 2 - 4px);
   }
 
   input {
-    padding-inline-start: 24px !important;
+    padding-inline-start: var(--input-height) !important;
     width: 100%;
   }
 }
@@ -70,6 +69,10 @@ body:not(.is-mobile) {
     padding: 4px 32px 4px 12px;
     box-shadow: none;
     border: none;
+  }
+
+  .search-input-container {
+    --search-icon-size: var(--icon-xs);
   }
 }
 
