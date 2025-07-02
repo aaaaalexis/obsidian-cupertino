@@ -439,6 +439,16 @@
       border-color: transparent;
     }
 
+    .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root {
+      padding-right: 8px;
+      .mod-top-right-space .workspace-tab-header-container {
+        padding-right: 4px !important;
+      }
+    }
+    .workspace.is-right-sidedock-open:not(.is-left-sidedock-open) .mod-root {
+      padding-left: 8px;
+    }
+
     .mod-root {
       padding-bottom: 8px;
 
@@ -477,11 +487,9 @@
     }
 
     &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
-      margin-left: 8px;
       border-radius: var(--radius-window);
     }
     .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
-      margin-right: 8px;
       border-radius: var(--radius-window);
     }
     &:not(.is-popout-window) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
@@ -496,20 +504,6 @@
         box-shadow: none;
         border: 0px solid transparent !important;
         border-radius: 0;
-      }
-    }
-
-    &:not(.is-popout-window) .workspace.is-left-sidedock-open,
-    &:not(.is-popout-window) .workspace.is-right-sidedock-open {
-      .mod-root .workspace-split.mod-vertical,
-      .mod-root.workspace-split.mod-vertical {
-        gap: 8px;
-
-        hr.workspace-leaf-resize-handle {
-          --divider-width-hover: 4px;
-          right: -6px;
-          border-radius: var(--radius-s);
-        }
       }
     }
   }
