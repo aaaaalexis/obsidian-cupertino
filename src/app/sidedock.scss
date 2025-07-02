@@ -48,7 +48,7 @@ body:not(.is-mobile) {
   .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
   .workspace-split.mod-sidedock .workspace-leaf-content > .view-content,
   .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
-    padding: 0 var(--side-padding) 8px;
+    padding: 0 12px 8px;
   }
 
   .view-content > .node-insert-event {
@@ -72,9 +72,12 @@ body:not(.is-mobile) {
       overflow: visible;
     }
   }
+  .workspace-sidedock-vault-profile {
+    padding: var(--side-padding);
 
-  .workspace-drawer-vault-switcher {
-    height: 100%;
+    .workspace-drawer-vault-switcher {
+      height: 100%;
+    }
   }
 
   /* Unfocused window opacity */

@@ -336,12 +336,6 @@ body:not(.is-mobile) {
     content: "";
   }
 
-  .workspace-sidedock-vault-profile {
-    border: none !important;
-    --vault-profile-color: var(--text-muted);
-    --icon-color: var(--text-muted);
-  }
-
   &.is-frameless:not(.is-hidden-frameless) .titlebar {
     background-color: var(--background-secondary);
   }
