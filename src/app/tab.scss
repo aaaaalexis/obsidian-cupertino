@@ -92,6 +92,12 @@ body:not(.is-phone) {
     }
   }
 
+  .workspace .mod-root .workspace-tabs.mod-stacked {
+    .workspace-tab-header-container-inner {
+      display: none;
+    }
+  }
+
   .workspace .mod-sidedock {
     --tab-radius: var(--clickable-icon-radius);
 
