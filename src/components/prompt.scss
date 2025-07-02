@@ -1,11 +1,5 @@
 .prompt-input-container::before {
-  -webkit-mask-size: 100% 100%;
-  -webkit-mask-repeat: no-repeat;
   position: absolute;
-  background-color: var(--search-icon-color);
-  width: var(--search-icon-size);
-  height: var(--search-icon-size);
-  content: "";
   left: var(--side-padding);
 }
 
