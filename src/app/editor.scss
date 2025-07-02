@@ -441,9 +441,6 @@
 
     .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root {
       padding-right: 8px;
-      .mod-top-right-space .workspace-tab-header-container {
-        padding-right: 4px !important;
-      }
     }
     .workspace.is-right-sidedock-open:not(.is-left-sidedock-open) .mod-root {
       padding-left: 8px;

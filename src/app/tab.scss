@@ -163,7 +163,6 @@ body:not(.is-mobile) {
   .mod-sidedock .mod-top-left-space .workspace-tab-header-container-inner {
     margin-left: -2px;
   }
-
   .mod-sidedock .mod-top-right-space .workspace-tab-header-container-inner {
     margin-right: -2px;
   }
@@ -254,14 +253,18 @@ body.mod-macos.is-hidden-frameless {
     padding: 0 !important;
   }
 
+  .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .mod-top-right-space .workspace-tab-header-container {
+    padding-right: 4px !important;
+  }
+
   .mod-root .workspace-tabs.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
     padding-left: 12px;
   }
-  .mod-root .workspace-tabs.mod-top-right-space:not(.mod-top-left-space) .workspace-tab-header-container-inner {
-    padding-left: 112px;
-  }
   .mod-root .workspace-tabs.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
     padding-right: 28px;
+  }
+  .mod-root .workspace-tabs:not(.mod-top-left-space).mod-top-right-space .workspace-tab-header-container-inner {
+    padding-left: 112px;
   }
   .mod-root .workspace-tabs:not(.mod-top-left-space):not(.mod-top-right-space) .workspace-tab-header-container-inner,
   .mod-root .workspace-tabs:not(.mod-top) .workspace-tab-header-container-inner {
@@ -285,6 +288,22 @@ body.mod-linux.is-hidden-frameless {
     .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root .workspace-tab-header-container-inner {
       padding-left: 88px;
     }
+  }
+
+  .workspace-tab-header-container {
+    padding-left: 12px !important;
+    padding-right: 12px;
+  }
+
+  .workspace-tabs:not(.mod-top-left-space).mod-top-right-space .workspace-tab-header-container {
+    padding-right: calc(var(--frame-right-space) - 8px);
+  }
+  .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+    padding-right: var(--frame-right-space);
+  }
+
+  .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root .mod-top-left-space .workspace-tab-header-container {
+    padding-left: 4px !important;
   }
 
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-header-container-inner {

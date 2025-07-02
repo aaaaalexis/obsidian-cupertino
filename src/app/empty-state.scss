@@ -1,9 +1,3 @@
-.view-header,
-.view-content,
-.workspace-tab-container {
-  transition: all var(--anim-duration-fast);
-}
-
 .workspace-leaf-content[data-type="empty"] .empty-state {
   .empty-state-container {
     display: flex;

@@ -42,6 +42,14 @@
   }
 }
 
+.view-header,
+.view-content {
+  transition: all var(--anim-duration-fast);
+}
+.mod-root {
+  transition: padding var(--anim-duration-fast);
+}
+
 body.is-mobile {
   .workspace-drawer.mod-left {
     @starting-style {
