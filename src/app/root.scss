@@ -4,15 +4,30 @@ name: Cupertino
 id: cupertino
 settings:
     -
-        id: material-off
-        title: Disable Android mode
-        description: Turn off Material styling on Android.
-        type: class-toggle
+        id: windows-header
+        title: On Windows
+        type: heading
+        level: 1
     -
         id: windows-mode-off
         title: Disable Windows mode
         description: Turn off Fluent styling on Windows.
         type: class-toggle
+    -
+        id: android-header
+        title: On Android
+        type: heading
+        level: 1
+    -
+        id: material-off
+        title: Disable Android mode
+        description: Turn off Material styling on Android.
+        type: class-toggle
+    -
+        id: general-header
+        title: General
+        type: heading
+        level: 1
     -
         id: cupertino-desc
         description: Most of the settings are for **turning off** Cupertino customizations. You don't need to change anything if you want to keep all default Cupertino optimizations.
