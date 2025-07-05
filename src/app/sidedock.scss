@@ -55,6 +55,9 @@ body:not(.is-mobile) {
     padding: 0 12px 8px;
     overflow-y: overlay;
   }
+
+  .workspace-split.mod-sidedock .view-content > .nav-header {
+    padding: 0 0 8px;
   }
 
   .view-content > .node-insert-event {
