@@ -18,7 +18,9 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   --toggle-width: 40px;
   --toggle-border-width: 4px;
   --slider-thumb-border-width: 4px;
+  --slider-thumb-width: 18px;
   --slider-track-background: var(--color-base-50);
+  --slider-track-height: 4px;
   --ribbon-width: 64px;
   --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
   --side-padding: 16px;
