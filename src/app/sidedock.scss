@@ -206,7 +206,7 @@ body:not(.is-mobile) {
         --header-height: 40px;
 
         .workspace-tab-header-container {
-          padding-left: 4px;
+          padding-left: 4px !important;
           padding-right: 4px !important;
         }
         .workspace-tab-header-container-inner {

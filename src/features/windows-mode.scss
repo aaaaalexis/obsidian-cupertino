@@ -228,23 +228,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     content: "";
   }
 
-  .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs {
-    &.mod-top-right-space .workspace-tab-header-container {
-      padding-right: calc(32px + var(--frame-right-space));
-    }
-    &.mod-top-left-space .workspace-tab-header-container-inner {
-      margin-left: 36px;
-    }
-  }
-
-  .mod-sidedock.mod-left-split.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tab-header-container {
-    padding-left: 4px !important;
-    padding-right: 4px;
-  }
-  .mod-sidedock.mod-right-split.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tab-header-container {
-    padding-left: 4px !important;
-  }
-
   /********** Settings **********/
 
   &.theme-light .modal.mod-sidebar-layout .setting-item:not(.setting-item-heading) {
