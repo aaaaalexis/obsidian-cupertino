@@ -105,7 +105,8 @@ body:not(.is-phone) {
       -webkit-app-region: no-drag;
       gap: 0px;
       transition: var(--anim-duration-fast);
-      padding: 2px;
+      padding: 0;
+      outline: 2px solid transparent;
     }
     .workspace-tab-header-container-inner:not(:hover) .workspace-tab-header.is-active {
       background-color: transparent;
@@ -113,6 +114,7 @@ body:not(.is-phone) {
 
     .workspace-tab-header-container-inner:hover {
       background-color: var(--background-modifier-hover);
+      outline-color: var(--background-modifier-hover);
 
       .workspace-tab-header.is-active {
         background-color: var(--background-primary);
@@ -158,13 +160,6 @@ body:not(.is-mobile) {
     margin: 12px 0;
     position: relative;
     border-radius: var(--tab-radius);
-  }
-
-  .mod-sidedock .mod-top-left-space .workspace-tab-header-container-inner {
-    margin-left: -2px;
-  }
-  .mod-sidedock .mod-top-right-space .workspace-tab-header-container-inner {
-    margin-right: -2px;
   }
 
   .workspace-tab-header-new-tab,
