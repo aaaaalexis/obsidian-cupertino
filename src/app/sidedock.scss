@@ -223,6 +223,14 @@ body:not(.is-mobile) {
         }
       }
 
+      &.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+        padding-left: max(var(--frame-left-space), 4px) !important;
+      }
+
+      &.mod-right-split .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+        padding-right: max(calc(32px + var(--frame-right-space)), 48px) !important;
+      }
+
       div {
         visibility: visible !important;
         -webkit-app-region: no-drag !important;
@@ -240,19 +248,11 @@ body:not(.is-mobile) {
       content: "";
     }
 
-    &.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
-      padding-left: max(var(--frame-left-space), 4px) !important;
-    }
-
     &.mod-right-split {
       right: 0;
 
       &::before {
         inset: -8px -8px -8px auto;
-      }
-
-      .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
-        padding-right: max(calc(32px + var(--frame-right-space)), 48px) !important;
       }
     }
 
