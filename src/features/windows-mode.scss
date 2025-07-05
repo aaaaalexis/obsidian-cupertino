@@ -338,6 +338,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   .prompt {
     background-color: var(--modal-background);
     border: var(--prompt-border-width) solid var(--prompt-border-color);
+    animation: none;
   }
 
   .prompt-input {
