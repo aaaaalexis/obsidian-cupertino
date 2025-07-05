@@ -1,6 +1,29 @@
 body:not(.is-mobile) {
   .modal.mod-sidebar-layout {
     backdrop-filter: var(--blur-l);
+
+    .modal-sidebar {
+      padding-top: 0;
+    }
+  }
+
+  .modal.mod-community-modal {
+    .setting-item,
+    .community-modal-search-summary {
+      border: none !important;
+      background-color: transparent !important;
+      padding: 4px 12px !important;
+      gap: 0 !important;
+      margin: 0;
+    }
+
+    .setting-item-name {
+      padding: 0;
+    }
+
+    .community-modal-search-results-wrapper {
+      border: none;
+    }
   }
 
   .modal-close-button {
@@ -71,25 +94,6 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
     }
     .setting-item-info:has(.setting-item-name:empty) .setting-item-description {
       padding: 0;
-    }
-  }
-
-  .modal.mod-community-modal {
-    .setting-item,
-    .community-modal-search-summary {
-      border: none !important;
-      background-color: transparent !important;
-      padding: 4px var(--side-padding) !important;
-      gap: 0 !important;
-      margin: 0;
-    }
-
-    .setting-item-name {
-      padding: 0;
-    }
-
-    .community-modal-search-results-wrapper {
-      border: none;
     }
   }
 }
