@@ -78,18 +78,18 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
     .metadata-property {
       flex-wrap: wrap;
 
-      &::before {
+      &:not(:last-child)::before {
         border-bottom: var(--border-width) solid var(--background-modifier-border);
         content: "";
         inset: 0 8px;
         position: absolute;
+        pointer-events: none;
       }
     }
 
-    .metadata-property .metadata-property-key,
     .metadata-property .metadata-property-value,
     .metadata-add-button {
-      padding: 8px;
+      padding: 8px var(--side-padding);
       min-height: 40px;
     }
     .metadata-property .multi-select-container {
