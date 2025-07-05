@@ -184,19 +184,6 @@ body:not(.is-mobile) {
 }
 
 body.mod-macos.is-hidden-frameless {
-  &:not(.is-fullscreen) .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
-    padding-left: var(--frame-left-space);
-  }
-  &:not(.is-fullscreen).show-ribbon .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
-    padding-left: calc(var(--frame-left-space) + 8px);
-  }
-  &:not(.is-fullscreen) .mod-sidedock.mod-left-split.is-sidedock-collapsed .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
-    padding-left: calc(var(--frame-left-space) - 8px);
-  }
-  .mod-sidedock.mod-right-split.is-sidedock-collapsed .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
-    padding-right: max(calc(32px + var(--frame-right-space)), 48px) !important;
-  }
-
   &.is-fullscreen {
     --frame-left-space: 0;
 
@@ -228,6 +215,10 @@ body.mod-macos.is-hidden-frameless {
     .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root .workspace-tab-header-container-inner {
       padding-right: 8px;
     }
+  }
+
+  .mod-sidedock.mod-left-split.is-sidedock-collapsed .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+    padding-left: calc(var(--frame-left-space) - 8px) !important;
   }
 
   .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) + .mod-root {
