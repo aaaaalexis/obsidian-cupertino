@@ -217,10 +217,6 @@ body.mod-macos.is-hidden-frameless {
     }
   }
 
-  .mod-sidedock.mod-left-split.is-sidedock-collapsed .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
-    padding-left: calc(var(--frame-left-space) - 8px) !important;
-  }
-
   .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) + .mod-root {
     .workspace-tab-header-container {
       overflow: hidden !important;
@@ -258,6 +254,8 @@ body.mod-macos.is-hidden-frameless {
 
 body.mod-windows.is-hidden-frameless,
 body.mod-linux.is-hidden-frameless {
+  --frame-right-space: 144px;
+
   &.show-ribbon {
     .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
       padding-left: 0;
@@ -280,7 +278,7 @@ body.mod-linux.is-hidden-frameless {
   }
 
   .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
-    padding-right: var(--frame-right-space);
+    padding-right: var(--frame-right-space) !important;
   }
 
   .mod-root .workspace-tabs.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {

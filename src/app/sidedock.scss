@@ -204,7 +204,7 @@ body:not(.is-mobile) {
           margin: 4px 0;
         }
         &.mod-top-left-space .workspace-tab-header-container-inner {
-          margin-left: 48px;
+          margin-left: 40px;
         }
       }
 
@@ -238,6 +238,10 @@ body:not(.is-mobile) {
       inset: -8px 0 -8px -8px;
       min-width: 8px;
       content: "";
+    }
+
+    &.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+      padding-left: max(var(--frame-left-space), 4px) !important;
     }
 
     &.mod-right-split {
