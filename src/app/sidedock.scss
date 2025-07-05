@@ -258,6 +258,10 @@ body:not(.is-mobile) {
 
     &:not(:hover) {
       opacity: 0;
+
+      div {
+        pointer-events: none;
+      }
     }
   }
 

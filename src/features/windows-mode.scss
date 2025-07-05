@@ -19,6 +19,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   --toggle-border-width: 4px;
   --slider-thumb-border-width: 4px;
   --slider-track-background: var(--color-base-50);
+  --ribbon-width: 64px;
   --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
   --side-padding: 16px;
   --shadow-xs: none;
@@ -135,6 +136,15 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   }
 
   /********** Sidebar **********/
+
+  &.show-ribbon .mod-sidedock.is-sidedock-collapsed .workspace-tabs.mod-top-left-space {
+    .workspace-tab-header-container {
+      padding-left: 4px !important;
+    }
+    .workspace-tab-header-container-inner {
+      margin-left: 0 !important;
+    }
+  }
 
   .mod-sidedock {
     .workspace-leaf {

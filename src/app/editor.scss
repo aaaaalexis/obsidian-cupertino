@@ -439,7 +439,7 @@
       border-color: transparent;
     }
 
-    .workspace:not(.is-left-sidedock-open) .mod-root {
+    &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root {
       margin-left: 8px;
 
       .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
