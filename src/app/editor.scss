@@ -439,11 +439,13 @@
       border-color: transparent;
     }
 
-    .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root {
-      padding-right: 8px;
+    .workspace:not(.is-left-sidedock-open) .mod-root .workspace-split.mod-horizontal:first-of-type .workspace-tab-container,
+    .workspace:not(.is-left-sidedock-open) .mod-root > .workspace-tabs:first-of-type .workspace-tab-container {
+      margin-left: 8px;
     }
-    .workspace.is-right-sidedock-open:not(.is-left-sidedock-open) .mod-root {
-      padding-left: 8px;
+    .workspace:not(.is-right-sidedock-open) .mod-root .workspace-split.mod-horizontal:last-of-type .workspace-tab-container,
+    .workspace:not(.is-right-sidedock-open) .mod-root > .workspace-tabs:last-of-type .workspace-tab-container {
+      margin-right: 8px;
     }
 
     .mod-root {

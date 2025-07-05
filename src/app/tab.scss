@@ -174,7 +174,7 @@ body:not(.is-mobile) {
     align-items: center;
     padding: 0;
     height: var(--header-height);
-    z-index: 100 !important;
+    z-index: 11 !important;
   }
   .sidebar-toggle-button .clickable-icon,
   .workspace-ribbon .clickable-icon {
@@ -191,14 +191,16 @@ body.mod-macos.is-hidden-frameless {
     padding-left: calc(var(--frame-left-space) + 8px);
   }
   &:not(.is-fullscreen) .mod-sidedock.mod-left-split.is-sidedock-collapsed .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
-    padding-left: calc(var(--frame-left-space) - 16px);
+    padding-left: calc(var(--frame-left-space) - 8px);
+  }
+  .mod-sidedock.mod-right-split.is-sidedock-collapsed .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+    padding-right: 44px !important;
   }
 
   &.is-fullscreen {
     --frame-left-space: 0;
 
     .mod-root .workspace-tab-header-container {
-      z-index: 11;
       overflow: visible;
     }
 
@@ -246,10 +248,6 @@ body.mod-macos.is-hidden-frameless {
   .sidebar-toggle-button.mod-right {
     position: relative !important;
     padding: 0 !important;
-  }
-
-  .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .mod-top-right-space .workspace-tab-header-container {
-    padding-right: 4px !important;
   }
 
   .mod-root .workspace-tabs.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {

@@ -32,6 +32,10 @@
 }
 
 body:not(.is-mobile) {
+  .workspace-drop-overlay {
+    z-index: 11;
+  }
+
   .workspace .workspace-ribbon,
   .workspace .mod-sidedock > .workspace-leaf-resize-handle {
     border: none;
@@ -184,7 +188,7 @@ body:not(.is-mobile) {
 
   .mod-sidedock.is-sidedock-collapsed {
     z-index: var(--layer-sidedock);
-    transition: var(--anim-duration-fast);
+    transition: var(--anim-duration-fast), margin 0s;
     border-radius: var(--radius-window);
 
     &:not([style*="overflow: hidden;"]) {
@@ -203,12 +207,13 @@ body:not(.is-mobile) {
 
         .workspace-tab-header-container {
           padding-left: 4px;
+          padding-right: 4px !important;
         }
         .workspace-tab-header-container-inner {
           margin: 4px 0;
         }
         &.mod-top-left-space .workspace-tab-header-container-inner {
-          margin-left: 46px;
+          margin-left: 40px;
         }
       }
 
