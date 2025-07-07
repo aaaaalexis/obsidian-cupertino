@@ -344,6 +344,13 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     animation: none;
   }
 
+  .prompt-input-container {
+    margin: 0;
+    background-color: transparent;
+    border-radius: 0;
+    border-bottom: var(--prompt-border-width) solid var(--background-modifier-border);
+  }
+
   .prompt-input {
     padding: 32px 24px;
     font-size: unset;
