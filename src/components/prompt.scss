@@ -28,7 +28,7 @@ body:not(.is-phone) {
     &::after {
       content: "";
       position: absolute;
-      inset: 0 16px;
+      inset: 0 var(--side-padding);
       border-bottom: var(--border-width) solid var(--background-modifier-border);
       pointer-events: none;
     }

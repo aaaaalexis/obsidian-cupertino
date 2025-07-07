@@ -157,12 +157,23 @@ body.is-mobile {
     button,
     select,
     .dropdown {
+      --input-height: 52px;
+
       height: unset;
-      padding: var(--nav-item-padding);
+      padding: var(--nav-item-padding) !important;
+      border-bottom: none;
+      position: relative;
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        inset: 0 var(--side-padding);
+        border-bottom: var(--border-width) solid var(--background-modifier-border);
+        pointer-events: none;
+      }
     }
 
     .vertical-tab-nav-item {
-      height: unset;
       min-height: var(--input-height);
       word-break: break-word;
     }
@@ -250,6 +261,7 @@ body.is-phone {
 
     .setting-item {
       border: none;
+      position: relative;
     }
     .setting-item:not(.mod-toggle) .setting-item-info {
       padding: 0 8px;
@@ -267,9 +279,16 @@ body.is-phone {
     }
 
     .setting-item.mod-toggle:has(+ .setting-item.mod-toggle) {
-      border-bottom: var(--border-width) solid var(--background-modifier-border);
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        inset: 0 var(--side-padding);
+        border-bottom: var(--border-width) solid var(--background-modifier-border);
+        pointer-events: none;
+      }
     }
 
     .setting-item.mod-toggle + .setting-item.mod-toggle {
@@ -292,10 +311,6 @@ body.is-phone {
 
     .setting-item-control:not(:has(:not(button))) > button {
       border-radius: 0;
-
-      &:not(:last-child) {
-        border-bottom: var(--border-width) solid var(--background-modifier-border);
-      }
     }
 
     .community-modal-readme {
