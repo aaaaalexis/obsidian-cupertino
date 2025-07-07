@@ -43,7 +43,8 @@
 }
 
 .view-header,
-.view-content {
+.view-content,
+.workspace-tab-header-container-inner {
   transition: all var(--anim-duration-fast);
 }
 .mod-root,

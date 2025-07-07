@@ -167,6 +167,11 @@ body:not(.is-mobile) {
     height: 100%;
   }
 
+  .workspace-tab-header-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
   .workspace-tab-header-container-inner {
     margin: 12px 0;
     position: relative;
@@ -195,101 +200,81 @@ body:not(.is-mobile) {
 }
 
 body.mod-macos.is-hidden-frameless {
-  &.is-fullscreen {
-    --frame-left-space: 0px;
-
-    .mod-root .workspace-tab-header-container {
-      overflow: visible;
-    }
-
-    &.show-ribbon {
-      .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
-      .mod-root .sidebar-toggle-button.mod-left {
-        z-index: var(--layer-popover);
-        margin-left: calc(-1 * var(--ribbon-width));
-      }
-
-      .mod-sidedock.is-sidedock-collapsed.mod-left-split .mod-top-left-space .workspace-tab-header-container {
-        margin-left: 0;
-      }
-    }
-  }
-
-  &.show-ribbon {
-    .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-header-container-inner {
-      padding-right: 0;
-      padding-left: 32px;
-    }
-    .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tab-header-container-inner {
-      padding-left: 80px;
-    }
-    .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root .workspace-tab-header-container-inner {
-      padding-right: 8px;
-    }
-  }
-
-  .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) + .mod-root {
-    .workspace-tab-header-container {
-      overflow: hidden !important;
-    }
-    .sidebar-toggle-button.mod-left {
-      transition: none !important;
-      transition-duration: 0s !important;
-    }
-  }
-
   .workspace-tab-header-container {
-    padding-left: 12px;
     padding-right: 12px !important;
   }
-
   .sidebar-toggle-button.mod-right {
     position: relative !important;
     padding: 0 !important;
   }
 
-  // .mod-root .workspace-tabs.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
-  //   padding-left: 12px;
-  // }
-  // .mod-root .workspace-tabs.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
-  //   padding-right: 28px;
-  // }
-  // .mod-root .workspace-tabs:not(.mod-top-left-space).mod-top-right-space .workspace-tab-header-container-inner {
-  //   padding-left: 112px;
-  // }
-  // .mod-root .workspace-tabs:not(.mod-top-left-space):not(.mod-top-right-space) .workspace-tab-header-container-inner,
-  // .mod-root .workspace-tabs:not(.mod-top) .workspace-tab-header-container-inner {
-  //   padding-left: 80px;
-  // }
+  &.is-fullscreen.show-ribbon {
+    .mod-root .workspace-tab-header-container {
+      z-index: var(--layer-popover);
+      margin-left: calc(-1 * var(--ribbon-width));
+    }
+  }
+
+  &.is-fullscreen {
+    .mod-root .workspace-tabs.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
+      padding-left: 80px;
+    }
+    .mod-root .workspace-tabs.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
+      padding-left: 48px !important;
+      padding-right: 0;
+    }
+  }
+
+  &.show-ribbon {
+    &:not(.is-fullscreen) .mod-sidedock.is-sidedock-collapsed .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
+      margin-left: 96px;
+    }
+    .mod-root .workspace-tabs.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
+      padding-left: 60px;
+    }
+    .mod-root .workspace-tabs.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
+      padding-left: 20px;
+      padding-right: 0;
+    }
+  }
+
+  .mod-root .workspace-tabs.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
+    padding-left: 4px;
+  }
+  .mod-root .workspace-tabs.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
+    padding-right: 36px;
+  }
+  .mod-root .workspace-tabs:not(.mod-top-left-space).mod-top-right-space .workspace-tab-header-container-inner {
+    padding-left: 120px;
+  }
+  .mod-root .workspace-tabs:not(.mod-top-left-space):not(.mod-top-right-space).mod-top .workspace-tab-header-container-inner,
+  .mod-root .workspace-tabs:not(.mod-top) .workspace-tab-header-container-inner {
+    padding-left: 80px;
+  }
 }
 
 body.mod-windows.is-hidden-frameless,
 body.mod-linux.is-hidden-frameless {
-  --frame-right-space: 144px;
-
-  &.show-ribbon {
-    .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
-      padding-left: 0;
-    }
-    .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
-      z-index: 11;
-      margin-left: 0;
-    }
-    .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-header-container-inner {
-      padding-left: calc(88px + var(--frame-right-space));
-    }
-    .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root .workspace-tab-header-container-inner {
-      padding-left: 88px;
-    }
-  }
-
   .workspace-tab-header-container {
     padding-left: 12px !important;
-    padding-right: 12px;
   }
-
   .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
     padding-right: var(--frame-right-space) !important;
+  }
+
+  &.show-ribbon {
+    .mod-root .workspace-tabs.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
+      padding-left: 252px;
+    }
+    .mod-root .workspace-tabs.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
+      padding-left: 120px;
+    }
+    .mod-root .workspace-tabs:not(.mod-top-left-space).mod-top-right-space .workspace-tab-header-container-inner {
+      padding-left: 244px;
+    }
+    .mod-root .workspace-tabs:not(.mod-top) .workspace-tab-header-container-inner {
+      padding-left: 80px;
+    }
   }
 
   .mod-root .workspace-tabs.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
@@ -300,8 +285,9 @@ body.mod-linux.is-hidden-frameless {
   }
   .mod-root .workspace-tabs:not(.mod-top-left-space).mod-top-right-space .workspace-tab-header-container-inner {
     padding-left: 244px;
+    padding-right: 0 !important;
   }
-  .mod-root .workspace-tabs:not(.mod-top-left-space):not(.mod-top-right-space) .workspace-tab-header-container-inner,
+  .mod-root .workspace-tabs:not(.mod-top-left-space):not(.mod-top-right-space).mod-top .workspace-tab-header-container-inner,
   .mod-root .workspace-tabs:not(.mod-top) .workspace-tab-header-container-inner {
     padding-left: 120px;
   }

@@ -289,9 +289,12 @@ body {
     --shadow-l-tinted: var(--shadow-l);
   }
 
-  &.is-maximized.show-ribbon,
-  &.is-fullscreen.show-ribbon {
-    --ribbon-width: 64px;
+  &.is-fullscreen {
+    --frame-left-space: 0px;
+
+    .show-ribbon {
+      --ribbon-width: 64px;
+    }
   }
 
   &:not(.is-mobile) {
