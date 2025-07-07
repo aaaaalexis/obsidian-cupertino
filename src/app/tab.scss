@@ -338,6 +338,8 @@ body.is-tablet {
   .workspace-tab-header-tab-list,
   .sidebar-toggle-button {
     margin: 0;
+    min-width: var(--input-height);
+    justify-content: center;
   }
 
   .sidebar-toggle-button {
