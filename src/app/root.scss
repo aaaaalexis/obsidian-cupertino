@@ -408,8 +408,3 @@ body:not(.show-view-header):not(.is-phone) {
     }
   }
 }
-
-body.is-ios .lucide-more-vertical,
-body.mod-macos .lucide-more-vertical {
-  transform: none;
-}

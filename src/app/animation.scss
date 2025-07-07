@@ -78,35 +78,4 @@ body.is-mobile {
       transition: none;
     }
   }
-
-  .view-action,
-  .workspace-drawer-header-icon,
-  .modal-close-button,
-  .mobile-toolbar-floating-options,
-  .search-input-clear-button,
-  .mobile-navbar-actions,
-  .workspace-drawer .nav-buttons-container,
-  .mobile-toolbar-options-list {
-    &,
-    & > svg.svg-icon,
-    .nav-action-button {
-      transition: var(--anim-duration-moderate) var(--anim-motion-liquid) !important;
-    }
-
-    &:active {
-      transform: scale(1.1);
-
-      > svg.svg-icon,
-      .nav-action-button:active {
-        transform: scale(0.9);
-      }
-    }
-  }
-
-  .menu-item.tappable,
-  .suggestion-item {
-    &:active {
-      transform: scale(0.9);
-    }
-  }
 }
