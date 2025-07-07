@@ -1,13 +1,19 @@
-body:not(.is-mobile) .embedded-backlinks {
+.embedded-backlinks {
   .nav-header {
-    justify-content: unset;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 8px;
   }
   .nav-buttons-container {
     box-shadow: none !important;
+    position: relative;
+    top: 0;
+    flex-wrap: nowrap;
+    gap: 0;
   }
   .search-input-container {
-    height: 40px;
-    width: calc(100% - 184px);
+    order: -1;
+    margin: 0 !important;
 
     input {
       height: 100%;
@@ -30,12 +36,14 @@ body.is-mobile .embedded-backlinks {
   .backlink-pane > .tree-item-self {
     height: var(--input-height);
   }
-  .nav-action-button.is-active {
-    opacity: 1;
-    background-color: var(--interactive-accent);
-    color: white;
-  }
-  .search-input-container {
-    width: calc(100% - 188px);
+  .nav-action-button {
+    width: var(--input-height);
+    height: var(--input-height);
+
+    &.is-active {
+      opacity: 1;
+      background-color: var(--interactive-accent);
+      color: white;
+    }
   }
 }
