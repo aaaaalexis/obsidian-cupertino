@@ -98,12 +98,13 @@ body.is-phone {
     width: auto;
     height: auto;
     color: var(--text-muted);
-    box-shadow: var(--shadow-xs-tinted) !important;
+    box-shadow: var(--shadow-xs) !important;
   }
 
   .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
     background-color: var(--text-highlight-bg) !important;
     color: var(--text-accent) !important;
+    box-shadow: var(--shadow-xs-tinted) !important;
   }
 
   &.is-android:not(.material-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
