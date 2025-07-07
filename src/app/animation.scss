@@ -46,8 +46,9 @@
 .view-content {
   transition: all var(--anim-duration-fast);
 }
-.mod-root {
-  transition: padding var(--anim-duration-fast);
+.mod-root,
+.workspace-tab-header-container {
+  transition: padding var(--anim-duration-fast), margin var(--anim-duration-fast);
 }
 
 body.is-mobile {
