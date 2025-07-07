@@ -1,3 +1,10 @@
+@media print {
+  .markdown-rendered pre,
+  .HyperMD-codeblock {
+    box-shadow: none !important;
+  }
+}
+
 @media screen, print {
   .markdown-reading-view,
   .markdown-source-view {
@@ -118,7 +125,8 @@
 
   /* Highlight */
   .markdown-reading-view mark,
-  .markdown-source-view mark {
+  .markdown-source-view mark,
+  .markdown-rendered mark {
     box-decoration-break: clone;
     border-radius: var(--radius-s);
     padding: 2px 4px;
