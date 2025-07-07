@@ -19,18 +19,14 @@ body:not(.is-phone) {
     --search-clear-button-size: var(--search-icon-size);
     border: none;
     align-items: center;
+    box-shadow: var(--shadow-xs);
+    background-color: var(--background-primary);
+    margin: 8px 8px 0;
+    border-radius: var(--radius-m);
 
     &::before {
       width: var(--icon-l);
       height: var(--icon-l);
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0 var(--side-padding);
-      border-bottom: var(--border-width) solid var(--background-modifier-border);
-      pointer-events: none;
     }
   }
 
@@ -38,7 +34,6 @@ body:not(.is-phone) {
     box-shadow: none !important;
     border: none !important;
     background-color: transparent;
-    height: 56px !important;
     font-size: var(--font-ui-large);
     margin-left: 24px;
   }
