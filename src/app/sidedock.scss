@@ -167,20 +167,6 @@ body:not(.is-mobile) {
   }
 
   /* Hover to show sidedock */
-  &.show-ribbon {
-    .mod-sidedock.mod-left-split.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
-      transition-delay: var(--anim-duration-fast);
-
-      &:hover {
-        transition-delay: var(--anim-duration-slow);
-      }
-
-      .mod-top-left-space .workspace-tab-header-container {
-        padding-left: calc(var(--frame-left-space) + 48px) !important;
-      }
-    }
-  }
-
   .mod-sidedock {
     transition: var(--anim-duration-fast) var(--anim-motion-cupertino);
 
@@ -197,7 +183,7 @@ body:not(.is-mobile) {
     &:not([style*="overflow: hidden;"]) {
       display: flex !important;
       position: absolute;
-      transition-delay: var(--anim-duration-fast);
+      transition-delay: var(--anim-duration-moderate);
       margin: 8px;
       height: -webkit-fill-available;
       box-shadow: var(--shadow-l);

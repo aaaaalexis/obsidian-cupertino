@@ -196,7 +196,7 @@ body:not(.is-mobile) {
 
 body.mod-macos.is-hidden-frameless {
   &.is-fullscreen {
-    --frame-left-space: 0;
+    --frame-left-space: 0px;
 
     .mod-root .workspace-tab-header-container {
       overflow: visible;
@@ -209,8 +209,8 @@ body.mod-macos.is-hidden-frameless {
         margin-left: calc(-1 * var(--ribbon-width));
       }
 
-      .mod-sidedock.mod-left-split .sidebar-toggle-button.mod-left {
-        left: 16px;
+      .mod-sidedock.is-sidedock-collapsed.mod-left-split .mod-top-left-space .workspace-tab-header-container {
+        margin-left: 0;
       }
     }
   }
@@ -248,19 +248,19 @@ body.mod-macos.is-hidden-frameless {
     padding: 0 !important;
   }
 
-  .mod-root .workspace-tabs.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
-    padding-left: 12px;
-  }
-  .mod-root .workspace-tabs.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
-    padding-right: 28px;
-  }
-  .mod-root .workspace-tabs:not(.mod-top-left-space).mod-top-right-space .workspace-tab-header-container-inner {
-    padding-left: 112px;
-  }
-  .mod-root .workspace-tabs:not(.mod-top-left-space):not(.mod-top-right-space) .workspace-tab-header-container-inner,
-  .mod-root .workspace-tabs:not(.mod-top) .workspace-tab-header-container-inner {
-    padding-left: 80px;
-  }
+  // .mod-root .workspace-tabs.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
+  //   padding-left: 12px;
+  // }
+  // .mod-root .workspace-tabs.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
+  //   padding-right: 28px;
+  // }
+  // .mod-root .workspace-tabs:not(.mod-top-left-space).mod-top-right-space .workspace-tab-header-container-inner {
+  //   padding-left: 112px;
+  // }
+  // .mod-root .workspace-tabs:not(.mod-top-left-space):not(.mod-top-right-space) .workspace-tab-header-container-inner,
+  // .mod-root .workspace-tabs:not(.mod-top) .workspace-tab-header-container-inner {
+  //   padding-left: 80px;
+  // }
 }
 
 body.mod-windows.is-hidden-frameless,
