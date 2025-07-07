@@ -45,18 +45,26 @@ body:not(.is-mobile) {
     display: none;
   }
 
+  .workspace-split.mod-sidedock {
+    .workspace-leaf {
+      contain: size !important;
+    }
+
+    .workspace-tab-container,
+    .workspace-leaf,
+    .workspace-leaf-content {
+      overflow: visible !important;
+    }
+  }
+
   .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event {
     overflow: scroll;
   }
 
   .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
-  .workspace-split.mod-sidedock .workspace-leaf-content > .view-content,
+  .workspace-split.mod-sidedock .workspace-leaf-content > .view-content:not(.node-insert-event) > div:not(.metadata-container),
   .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
     padding: 0 12px 8px;
-  }
-
-  .view-content > .node-insert-event {
-    padding: 0;
   }
 
   .search-row {
