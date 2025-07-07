@@ -12,8 +12,16 @@ body.center-tabs-off .mod-root .workspace-tab-header-container-inner {
 }
 
 body:not(.is-phone) {
-  .workspace-tab-header-container {
-    overflow: hidden;
+  .workspace .mod-root .workspace-tabs {
+    .workspace-tab-header-container {
+      overflow: hidden;
+    }
+    .workspace-tab-header-container-inner {
+      flex-grow: 1;
+    }
+    .workspace-tab-header-spacer {
+      display: none;
+    }
   }
 
   .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
@@ -56,7 +64,6 @@ body:not(.is-phone) {
     }
 
     .workspace-tab-header-container-inner {
-      flex-grow: 1;
       justify-content: center;
       gap: 4px;
       padding: 0;
@@ -86,15 +93,19 @@ body:not(.is-phone) {
         background-color: var(--background-modifier-hover);
       }
     }
-
-    .workspace-tab-header-spacer {
-      display: none;
-    }
   }
 
   .workspace .mod-root .workspace-tabs.mod-stacked {
-    .workspace-tab-header-container-inner {
-      display: none;
+    .workspace-tab-container .workspace-tab-header-inner-close-button {
+      padding: 4px 12px;
+      min-height: 32px;
+      justify-content: center;
+      border-radius: var(--clickable-icon-radius);
+    }
+
+    .workspace-tab-container .workspace-tab-header-inner {
+      padding: 12px;
+      gap: 4px;
     }
   }
 
