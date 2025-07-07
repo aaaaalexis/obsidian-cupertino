@@ -30,6 +30,7 @@ body:not(.is-phone) {
       position: absolute;
       inset: 0 16px;
       border-bottom: var(--border-width) solid var(--background-modifier-border);
+      pointer-events: none;
     }
   }
 
