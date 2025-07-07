@@ -63,6 +63,24 @@ body.is-mobile {
   }
   .menu-item {
     gap: 16px;
+
+    &::before {
+      background-color: white;
+      content: "";
+      position: absolute;
+      inset: 0;
+      filter: var(--blur-l);
+      transition: var(--anim-duration-fast);
+      border-radius: 100vh;
+      opacity: 0;
+      transform: none;
+      z-index: -1;
+    }
+
+    &:active::before {
+      opacity: 0.25;
+      transform: scale(10);
+    }
   }
   .menu-item-icon {
     color: var(--text-normal);
