@@ -373,7 +373,6 @@ body.is-phone {
   .mobile-tab-switcher {
     justify-content: flex-end;
     animation: none !important;
-    margin: 0 8px 8px;
     width: unset;
     height: unset;
 
@@ -387,23 +386,21 @@ body.is-phone {
     height: unset;
     max-height: 80vh;
   }
-  .mobile-tab-switcher-scroll::before {
-    position: absolute;
-    z-index: -1;
-    backdrop-filter: var(--blur-m);
-    box-shadow: var(--shadow-l);
-    border-radius: var(--radius-xl);
-    background-color: var(--modal-background);
-    width: 100%;
-    height: -webkit-fill-available;
-    content: "";
-  }
   .mobile-tab-wrapper {
     z-index: 2;
   }
-
+  .mobile-tab-switcher-menubar::before {
+    position: absolute;
+    z-index: -1;
+    background-color: var(--background-secondary);
+    mask: linear-gradient(transparent, black 25%);
+    width: 100%;
+    height: 100%;
+    content: "";
+    left: 0;
+  }
   .mobile-tab-switcher-menubar {
-    padding: 4px var(--side-padding) 16px;
+    padding: 0 var(--side-padding) max(var(--safe-area-inset-bottom), 16px);
     border: none;
   }
   .mobile-tab-switcher-menu-button {
@@ -411,12 +408,12 @@ body.is-phone {
     flex: 1;
     height: var(--input-height);
     border-radius: var(--clickable-icon-radius);
-    box-shadow: var(--shadow-s);
+    box-shadow: var(--shadow-l);
     justify-content: center;
   }
 
   .mobile-tab-switcher-menu-spacer .clickable-icon {
-    box-shadow: var(--shadow-s);
+    box-shadow: var(--shadow-l);
   }
   .mobile-tab-switcher-menu-spacer:first-child {
     z-index: 2;
