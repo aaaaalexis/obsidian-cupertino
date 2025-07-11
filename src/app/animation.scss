@@ -92,11 +92,12 @@ body.is-phone {
   }
 
   .prompt-input-container {
-    transition: var(--anim-duration-slow) var(--anim-motion-cupertino) var(--anim-duration-moderate);
+    transition: var(--anim-duration-slow) var(--anim-motion-cupertino) var(--anim-duration-slow);
 
     @starting-style {
       filter: var(--blur-s);
       transform: scaleX(0.75) !important;
+      opacity: 0;
     }
   }
 
@@ -105,7 +106,8 @@ body.is-phone {
     transition: all var(--anim-duration-moderate) !important;
 
     opacity: 0;
-    filter: var(--blur-s);
+    filter: var(--blur-m);
+    transform: scale(1.1) !important;
   }
 
   /* Tab Switcher In */
@@ -117,6 +119,7 @@ body.is-phone {
     }
   }
 
+  /* Tab Switcher Out */
   .mobile-tab-switcher[style*="opacity: 0;"] {
     transition: var(--anim-duration-moderate) !important;
     transform: translateY(100%) !important;
