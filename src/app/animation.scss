@@ -21,23 +21,12 @@
 
 @keyframes blurInScale {
   from {
-    transform: scale(1.1);
+    transform: scale(1.25);
     opacity: 0;
     filter: blur(16px);
   }
-  50% {
-    transform: scale(0.99);
-  }
-}
-
-@keyframes blurInScaleLiquid {
-  from {
-    transform: scaleX(1.25) scaleY(1.05);
-    opacity: 0;
-    filter: blur(4px);
-  }
   30% {
-    transform: scaleX(0.99);
+    transform: scale(0.99);
     filter: blur(0px);
   }
 }

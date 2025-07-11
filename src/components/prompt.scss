@@ -12,7 +12,7 @@ body:not(.is-phone) {
     backdrop-filter: var(--blur-m);
     border: none;
     background-color: var(--modal-background);
-    animation: var(--anim-duration-slow) blurInScaleLiquid var(--anim-motion-cupertino);
+    animation: var(--anim-duration-slow) blurInScale var(--anim-motion-cupertino);
   }
 
   .prompt-input-container {
