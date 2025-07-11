@@ -77,7 +77,7 @@ body.is-phone {
 
   .prompt-input-container {
     --search-clear-button-size: var(--icon-s);
-    margin: 0 var(--side-padding) max(var(--safe-area-inset-bottom), 16px);
+    margin: 0 var(--side-padding) var(--side-padding);
     border: none;
     align-items: center;
     gap: 8px;
@@ -98,7 +98,7 @@ body.is-phone {
   .prompt-input,
   .search-input-clear-button {
     border-radius: var(--clickable-icon-radius);
-    box-shadow: var(--shadow-l) !important;
+    box-shadow: var(--shadow-xs) !important;
     backdrop-filter: var(--blur-s);
     background-color: var(--modal-background) !important;
     margin: 0;
