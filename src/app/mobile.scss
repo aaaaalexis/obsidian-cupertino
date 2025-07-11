@@ -121,9 +121,16 @@ body.is-mobile {
     height: var(--view-header-height);
     gap: 8px;
   }
-  .view-action.clickable-icon {
+  .view-action.clickable-icon,
+  .workspace-drawer-header-icon {
+    --icon-color: var(--text-normal);
+    --icon-color-hover: var(--text-normal);
+    --icon-color-active: var(--text-normal);
+    --icon-color-focus: var(--text-normal);
+    color: var(--text-normal);
     width: var(--view-header-height);
     height: var(--view-header-height);
+    margin: 0;
   }
   .view-header-title-container {
     height: var(--view-header-height);
