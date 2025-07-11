@@ -93,7 +93,7 @@ body.is-phone {
     right: 28px;
     bottom: 0;
     backdrop-filter: var(--blur-s);
-    margin-bottom: max(var(--safe-area-inset-bottom), 16px);
+    margin-bottom: var(--safe-area-inset-bottom);
     border-radius: var(--clickable-icon-radius);
     padding: 12px;
     width: auto;
@@ -106,6 +106,11 @@ body.is-phone {
     background-color: var(--text-highlight-bg) !important;
     color: var(--text-accent) !important;
     box-shadow: var(--shadow-xs-tinted) !important;
+  }
+
+  &.mod-toolbar-open .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
+    right: var(--side-padding);
+    margin-bottom: var(--side-padding);
   }
 
   &.is-android:not(.material-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
@@ -305,6 +310,7 @@ body.is-mobile {
   .mobile-toolbar {
     background-color: transparent;
     overflow: visible;
+    padding: 0 var(--side-padding) var(--side-padding) !important;
   }
   .mobile-toolbar-options-list {
     gap: 4px;
