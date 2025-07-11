@@ -10,8 +10,7 @@
 .notice {
   backdrop-filter: var(--blur-s);
   margin-bottom: 0;
-  box-shadow: var(--shadow-s);
-  border: var(--border-width) solid var(--background-modifier-hover);
+  box-shadow: var(--shadow-l);
   border-radius: var(--radius-l);
   background-color: var(--modal-background);
   padding: 16px 24px;
