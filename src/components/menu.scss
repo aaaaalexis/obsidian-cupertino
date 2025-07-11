@@ -6,6 +6,21 @@ body:not(.is-mobile) .suggestion-container {
   padding: 0;
   border: none;
 
+  &:not(:hover) {
+    backdrop-filter: var(--blur-l);
+
+    .menu-item.selected:not(.is-label):not(.is-disabled),
+    .suggestion-item.is-selected:not(.mod-group) {
+      background-color: var(--background-modifier-border-hover);
+      color: var(--text-normal);
+
+      .menu-item-icon,
+      .suggestion-flair {
+        color: var(--text-normal);
+      }
+    }
+  }
+
   > div {
     padding: 4px;
   }
