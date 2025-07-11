@@ -81,3 +81,55 @@ body.is-mobile {
     }
   }
 }
+
+body.is-phone {
+  /* Prompt In*/
+  .prompt {
+    transition: all var(--anim-duration-slow) !important;
+
+    @starting-style {
+      opacity: 0;
+      filter: var(--blur-s);
+      transform: none;
+    }
+  }
+
+  .prompt-results {
+    transition: var(--anim-duration-slow) var(--anim-motion-cupertino);
+
+    @starting-style {
+      transform: translateY(80px);
+    }
+  }
+
+  .prompt-input-container {
+    transition: var(--anim-duration-slow) var(--anim-motion-cupertino) var(--anim-duration-moderate);
+
+    @starting-style {
+      filter: var(--blur-s);
+      transform: scaleX(0.75) !important;
+    }
+  }
+
+  /* Prompt Out */
+  .modal-bg[style*="opacity: 0;"] ~ .prompt {
+    transition: all var(--anim-duration-moderate) !important;
+
+    opacity: 0;
+    filter: var(--blur-s);
+  }
+
+  /* Tab Switcher In */
+  .mobile-tab-switcher {
+    transition: var(--anim-duration-slow) var(--anim-motion-cupertino) !important;
+
+    @starting-style {
+      transform: translateY(100%);
+    }
+  }
+
+  .mobile-tab-switcher[style*="opacity: 0;"] {
+    transition: var(--anim-duration-moderate) !important;
+    transform: translateY(100%) !important;
+  }
+}
