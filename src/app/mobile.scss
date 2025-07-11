@@ -315,6 +315,7 @@ body.is-mobile {
   .mobile-toolbar-options-list {
     gap: 4px;
     width: calc(100% - var(--input-height) - 8px - var(--input-height) - 8px);
+    overflow: scroll;
   }
 
   .mobile-navbar,
