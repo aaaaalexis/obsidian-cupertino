@@ -93,6 +93,7 @@ body {
   --blur-m: blur(8px) saturate(1.5) brightness(1.05);
   --blur-l: blur(16px) saturate(1.5) brightness(1.05);
   --caret-color: var(--text-accent);
+  --callout-border-width: var(--border-width);
   --callout-padding: 16px;
   --callout-radius: var(--radius-s);
   --checkbox-radius: var(--clickable-icon-radius);

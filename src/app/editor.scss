@@ -193,11 +193,6 @@
     .callout-content > *:last-child {
       margin-bottom: 0 !important;
     }
-
-    .callout-content .callout {
-      border: var(--border-width) solid var(--background-modifier-border);
-      background-color: transparent;
-    }
   }
 
   .callout:not([data-callout]) {
