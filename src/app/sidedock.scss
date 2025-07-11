@@ -61,14 +61,14 @@ body:not(.is-mobile) {
     overflow: scroll;
   }
 
-  .workspace-split.mod-sidedock .workspace-leaf-content > .view-content {
-    padding: 0;
-  }
-
   .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
-  .workspace-split.mod-sidedock .workspace-leaf-content > .view-content > div,
+  .workspace-split.mod-sidedock .workspace-leaf-content > .view-content,
   .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
     padding: 0 12px 8px;
+
+    > div {
+      padding: 0;
+    }
   }
 
   .search-row {
