@@ -143,6 +143,7 @@ body.is-mobile {
     height: var(--view-header-height);
     text-align: center;
     justify-content: center;
+    font-weight: var(--font-bold);
   }
 
   .workspace .mod-root .workspace-leaf .view-header {
