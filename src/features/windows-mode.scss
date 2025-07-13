@@ -80,7 +80,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   }
 
   /********** Components **********/
-
   button[class*="mod-"]:not(.view-action) {
     box-shadow: var(--input-shadow) !important;
     background-image: none !important;
@@ -88,6 +87,17 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     &::before {
       display: none;
     }
+  }
+
+  button:not(.clickable-icon),
+  select,
+  .dropdown {
+    box-shadow: var(--input-shadow);
+  }
+
+  select,
+  .dropdown {
+    padding: 6px 32px 6px 16px;
   }
 
   input[type="text"],
@@ -102,11 +112,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
       box-shadow: 0 -2px 0 0 var(--interactive-accent) inset;
       border-color: var(--background-modifier-border);
     }
-  }
-
-  select,
-  .dropdown {
-    padding: 6px 32px 6px 16px;
   }
 
   input[type="range"]::-webkit-slider-thumb {
