@@ -13,6 +13,11 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   --radius-xl: 10px;
   --radius-window: var(--radius-s);
   --clickable-icon-radius: var(--radius-s);
+  --icon-xs-stroke-width: 1.5px;
+  --icon-s-stroke-width: 1.5px;
+  --icon-m-stroke-width: 1.5px;
+  --icon-l-stroke-width: 1.5px;
+  --icon-xl-stroke-width: 1.5px;
   --toggle-thumb-height: 12px;
   --toggle-thumb-width: 12px;
   --toggle-width: 40px;
