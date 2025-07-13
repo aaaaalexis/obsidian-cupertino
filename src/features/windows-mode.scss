@@ -172,6 +172,10 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
       padding: 8px !important;
       flex: 1;
     }
+
+    .nav-buttons-container {
+      width: 100%;
+    }
   }
 
   .nav-buttons-container {
@@ -180,7 +184,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     border-radius: var(--radius-s);
     background-color: var(--background-modifier-hover);
     box-shadow: none;
-    width: 100%;
   }
 
   .nav-action-button.is-active {
