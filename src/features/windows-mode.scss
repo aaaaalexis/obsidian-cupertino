@@ -27,7 +27,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   --slider-track-background: var(--color-base-50);
   --slider-track-height: 4px;
   --ribbon-width: 64px;
-  --modal-background: rgb(from var(--background-secondary) r g b / 90%) !important;
   --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
   --side-padding: 16px;
   --shadow-xs: none;
@@ -35,17 +34,19 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 
   &.theme-light {
     --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07) !important;
-    --shadow-l: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px !important;
+    --shadow-l: 0px 32px 64px 0px rgba(0, 0, 0, 0.19), 0px 2px 21px 0px rgba(0, 0, 0, 0.15) !important;
     --input-shadow: 0px 0px 0px 1px var(--background-modifier-border), 0 -0.5px 0 0 rgba(0, 0, 0, 0.25) inset !important;
     --interactive-normal: var(--background-primary);
+    --modal-background: rgb(from var(--color-base-00) r g b / 90%) !important;
     --modal-border-color: rgba(0, 0, 0, 0.1);
     --slider-thumb-border-color: var(--color-base-00);
   }
   &.theme-dark {
     --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07) !important;
-    --shadow-l: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px !important;
+    --shadow-l: 0px 32px 64px 0px rgba(0, 0, 0, 0.37), 0px 2px 21px 0px rgba(0, 0, 0, 0.37) !important;
     --input-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0 0.5px 0 0 rgba(255, 255, 255, 0.1) inset !important;
     --interactive-normal: var(--color-base-35);
+    --modal-background: rgb(from var(--color-base-25) r g b / 75%) !important;
     --modal-border-color: rgba(255, 255, 255, 0.1);
     --slider-thumb-border-color: var(--color-base-35);
 
@@ -70,13 +71,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 
   &.is-hidden-frameless .titlebar .titlebar-button-container.mod-right .titlebar-button {
     height: var(--header-height);
-  }
-
-  .menu,
-  .suggestion-container,
-  .prompt,
-  .modal {
-    outline: none;
   }
 
   /********** Components **********/
@@ -266,7 +260,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   .menu,
   .suggestion-container {
     border-radius: calc(var(--radius-m) + 6px);
-    border: var(--prompt-border-width) solid var(--prompt-border-color);
+    border: var(--border-width) solid var(--background-modifier-border);
 
     > div {
       padding: 6px;
@@ -305,7 +299,17 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 
   /********** Modal **********/
   &.theme-dark .modal:not(.mod-sidebar-layout) .modal-button-container {
-    background-color: var(--color-base-00);
+    background-color: var(--color-base-05);
+    border-top-color: var(--color-base-00);
+  }
+
+  .modal {
+    border: var(--border-width) solid var(--background-modifier-border);
+  }
+
+  .modal-bg {
+    background-color: black;
+    opacity: 0.3 !important;
   }
 
   .modal:not(.mod-sidebar-layout) {
