@@ -443,6 +443,11 @@
       border-color: transparent;
     }
 
+    &.is-popout-window .workspace .mod-root {
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+
     &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
       margin-left: 8px;
 
