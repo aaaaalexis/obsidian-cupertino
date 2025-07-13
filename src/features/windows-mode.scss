@@ -266,7 +266,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 
     .menu-separator {
       margin: 4px 0;
-      background-color: var(--background-modifier-border);
     }
 
     .menu-item,
@@ -292,7 +291,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     }
 
     .svg-icon {
-      --icon-size: var(--icon-m);
+      --icon-size: var(--icon-s);
     }
   }
 
