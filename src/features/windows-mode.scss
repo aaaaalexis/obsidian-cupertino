@@ -22,6 +22,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   --slider-track-background: var(--color-base-50);
   --slider-track-height: 4px;
   --ribbon-width: 64px;
+  --modal-background: rgb(from var(--background-secondary) r g b / 90%) !important;
   --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
   --side-padding: 16px;
   --shadow-xs: none;
@@ -32,7 +33,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     --shadow-l: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px !important;
     --input-shadow: 0px 0px 0px 1px var(--background-modifier-border), 0 -0.5px 0 0 rgba(0, 0, 0, 0.25) inset !important;
     --interactive-normal: var(--background-primary);
-    --modal-background: rgb(from var(--background-secondary) r g b / 90%) !important;
     --modal-border-color: rgba(0, 0, 0, 0.1);
     --slider-thumb-border-color: var(--color-base-00);
   }
@@ -41,7 +41,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     --shadow-l: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px !important;
     --input-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0 0.5px 0 0 rgba(255, 255, 255, 0.1) inset !important;
     --interactive-normal: var(--color-base-35);
-    --modal-background: rgb(from var(--background-primary) r g b / 90%) !important;
     --modal-border-color: rgba(255, 255, 255, 0.1);
     --slider-thumb-border-color: var(--color-base-35);
 
@@ -293,8 +292,13 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   }
 
   /********** Modal **********/
+  &.theme-dark .modal:not(.mod-sidebar-layout) .modal-button-container {
+    background-color: var(--color-base-00);
+  }
+
   .modal:not(.mod-sidebar-layout) {
     padding: 0;
+    min-width: 480px;
 
     .modal-title {
       padding: 24px 24px 4px;
