@@ -100,6 +100,7 @@ body.is-phone {
     height: auto;
     color: var(--text-muted);
     box-shadow: var(--shadow-xs) !important;
+    transition: var(--anim-duration-moderate);
   }
 
   .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
@@ -273,6 +274,7 @@ body.is-phone {
 
 body.is-mobile {
   .mobile-navbar {
+    transition: var(--anim-duration-moderate);
     max-width: calc(100% - 48px - 8px);
     background-color: transparent;
     pointer-events: none;
