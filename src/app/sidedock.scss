@@ -66,7 +66,7 @@ body:not(.is-mobile) {
   .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
     padding: 0 12px 8px;
 
-    > div {
+    > div:not(.nav-buttons-container) {
       padding: 0;
     }
   }
@@ -121,17 +121,17 @@ body:not(.is-mobile) {
       background-color: transparent;
       padding: 0;
       box-shadow: none;
+      flex-grow: 0;
 
-      .nav-action-button {
-        flex-grow: 0;
+      .nav-action-button.clickable-icon {
         background-color: var(--background-modifier-hover);
         padding: 2px;
-        width: unset;
-        height: unset;
+        width: 0;
+        height: 0;
         opacity: 1;
         min-height: 0;
       }
-      .nav-action-button::after {
+      .nav-action-button.clickable-icon::after {
         width: 0;
         height: 0;
       }
@@ -145,14 +145,15 @@ body:not(.is-mobile) {
   .nav-buttons-container {
     border-radius: 100vh;
     background-color: var(--background-primary);
-    padding: 4px;
+    padding: 2px;
     box-shadow: var(--shadow-xs);
     width: fit-content;
     gap: 0;
   }
-  .nav-action-button {
+  .nav-action-button.clickable-icon {
     position: relative;
-    height: 100%;
+    padding: 0;
+    width: 40px;
   }
   .nav-action-button.is-active,
   .nav-action-button.is-active:hover {
