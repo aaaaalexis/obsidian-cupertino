@@ -1,0 +1,36 @@
+body:not(.is-mobile) {
+  .mod-sidedock .workspace-leaf-content > .nav-header,
+  .mod-sidedock .workspace-leaf-content:not([data-type="zotero-annotation-view"]) > .view-content > .nav-header {
+    &,
+    .nav-buttons-container,
+    .nav-action-button,
+    .nav-action-button::after,
+    svg.svg-icon {
+      transition: var(--anim-duration-fast) !important;
+    }
+
+    &:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container {
+      gap: 4px;
+      background-color: transparent;
+      padding: 0;
+      box-shadow: none;
+      flex-grow: 0;
+
+      .nav-action-button.clickable-icon {
+        background-color: var(--background-modifier-hover);
+        padding: 2px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+        min-height: 0;
+      }
+      .nav-action-button.clickable-icon::after {
+        width: 0;
+        height: 0;
+      }
+      svg.svg-icon {
+        --icon-size: 0px;
+      }
+    }
+  }
+}

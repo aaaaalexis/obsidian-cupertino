@@ -1,0 +1,97 @@
+body:not(.is-mobile) {
+  .mod-sidedock {
+    transition: var(--anim-duration-fast) var(--anim-motion-cupertino);
+
+    .workspace-tab-header-container {
+      -webkit-app-region: no-drag !important;
+    }
+  }
+
+  .mod-sidedock.is-sidedock-collapsed {
+    z-index: var(--layer-sidedock);
+    transition: var(--anim-duration-fast), margin 0s;
+    border-radius: var(--radius-window);
+
+    &:not([style*="overflow: hidden;"]) {
+      display: flex !important;
+      position: absolute;
+      transition-delay: var(--anim-duration-moderate);
+      margin: 8px;
+      height: -webkit-fill-available;
+      box-shadow: var(--shadow-l);
+      backdrop-filter: var(--blur-l);
+      background: var(--modal-background) !important;
+      width: 8px !important;
+
+      .workspace-tabs {
+        --header-height: 40px;
+
+        .workspace-tab-header-container {
+          padding-left: 4px !important;
+          padding-right: 4px !important;
+        }
+        .workspace-tab-header-container-inner {
+          margin: 4px 0;
+        }
+        &.mod-top-left-space .workspace-tab-header-container-inner {
+          margin-left: 40px;
+        }
+      }
+
+      &:hover {
+        width: 320px !important;
+
+        &::before {
+          width: 8px;
+        }
+
+        ~ .mod-root .workspace-tab-header-container,
+        ~ .mod-root .workspace-tab-header-container-inner,
+        &:has(~ .mod-root .workspace-tab-header-container),
+        &:has(~ .mod-root .workspace-tab-header-container-inner) {
+          -webkit-app-region: no-drag;
+        }
+      }
+
+      &.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+        padding-left: max(var(--frame-left-space), 4px) !important;
+      }
+
+      &.mod-right-split .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+        padding-right: max(calc(32px + var(--frame-right-space)), 48px) !important;
+      }
+
+      div {
+        visibility: visible !important;
+        -webkit-app-region: no-drag !important;
+      }
+
+      > .workspace-leaf-resize-handle {
+        display: none;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      inset: -8px 0 -8px -8px;
+      min-width: 8px;
+      content: "";
+    }
+
+    &.mod-right-split {
+      right: 0;
+
+      &::before {
+        inset: -8px -8px -8px auto;
+      }
+    }
+
+    &:not(:hover) {
+      opacity: 0;
+
+      div {
+        pointer-events: none;
+      }
+    }
+  }
+}

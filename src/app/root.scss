@@ -305,6 +305,12 @@ body {
 
   &:not(.is-focused) {
     --workspace-background-translucent: var(--background-secondary);
+
+    .workspace-ribbon,
+    .mod-sidedock > div,
+    .mod-root .workspace-tab-header-container {
+      opacity: 0.5;
+    }
   }
 
   &.is-popout-window {
