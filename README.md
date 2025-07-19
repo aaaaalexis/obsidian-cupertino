@@ -111,30 +111,35 @@ Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
 
 ![Preview of alternate checkboxes.](img/checkbox.png)
 
-| Syntax  | Description |
-| ------- | ----------- |
-| `- [ ]` | To-do       |
-| `- [/]` | Incomplete  |
-| `- [x]` | Done        |
-| `- [-]` | Canceled    |
-| `- [>]` | Forwarded   |
-| `- [<]` | Scheduling  |
-| `- [?]` | Question    |
-| `- [!]` | Important   |
-| `- [*]` | Star        |
-| `- ["]` | Quote       |
-| `- [l]` | Location    |
-| `- [b]` | Bookmark    |
-| `- [i]` | Information |
-| `- [S]` | Savings     |
-| `- [I]` | Idea        |
-| `- [p]` | Pros        |
-| `- [c]` | Cons        |
-| `- [f]` | Fire        |
-| `- [k]` | Key         |
-| `- [w]` | Win         |
-| `- [u]` | Up          |
-| `- [d]` | Down        |
+| Syntax           | Description |
+| ---------------- | ----------- |
+| `- [ ]`          | To-do       |
+| `- [/]`          | Incomplete  |
+| `- [x]`, `- [X]` | Done        |
+| `- [-]`          | Canceled    |
+| `- [>]`          | Forwarded   |
+| `- [<]`, `- [D]` | Scheduling  |
+| `- [?]`          | Question    |
+| `- [!]`          | Important   |
+| `- [*]`          | Star        |
+| `- ["]`          | Quote       |
+| `- [l]`          | Location    |
+| `- [b]`          | Bookmark    |
+| `- [i]`          | Information |
+| `- [S]`          | Savings     |
+| `- [I]`          | Idea        |
+| `- [p]`, `- [P]` | Pros        |
+| `- [c]`, `- [C]` | Cons        |
+| `- [f]`          | Fire        |
+| `- [k]`          | Key         |
+| `- [w]`          | Win         |
+| `- [u]`          | Up          |
+| `- [d]`          | Down        |
+| `- [+]`          | Add         |
+| `- [B]`          | Brainstorm  |
+| `- [a]`          | Alarm       |
+| `- [n]`, `- [N]` | Note        |
+| `- [R]`          | Review      |
 
 ## Credits
 
