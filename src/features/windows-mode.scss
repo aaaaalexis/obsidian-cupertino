@@ -31,6 +31,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   --side-padding: 16px;
   --shadow-xs: none;
   --frame-right-space: 144px;
+  --divider-color: rgba(var(--mono-rgb-100), 0.05) !important;
 
   &.theme-light {
     --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07) !important;
