@@ -44,7 +44,7 @@ body:not(.is-phone) {
   }
 
   .prompt-results {
-    padding: calc(var(--side-padding) / 2) var(--side-padding) calc(var(--side-padding) + 16px);
+    padding: calc(var(--side-padding) / 2) calc(var(--side-padding) / 2) calc(var(--side-padding) + 16px);
   }
 
   .prompt-instructions {
