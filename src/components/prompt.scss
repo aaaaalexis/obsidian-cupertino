@@ -19,14 +19,18 @@ body:not(.is-phone) {
     --search-clear-button-size: var(--search-icon-size);
     border: none;
     align-items: center;
-    box-shadow: var(--shadow-xs);
-    background-color: var(--background-primary);
-    margin: 8px 8px 0;
-    border-radius: var(--radius-m);
 
     &::before {
       width: var(--icon-l);
       height: var(--icon-l);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0 var(--side-padding);
+      border-bottom: var(--border-width) solid var(--background-modifier-border);
+      pointer-events: none;
     }
   }
 
@@ -34,21 +38,25 @@ body:not(.is-phone) {
     box-shadow: none !important;
     border: none !important;
     background-color: transparent;
+    height: 56px !important;
     font-size: var(--font-ui-large);
     margin-left: 24px;
   }
 
   .prompt-results {
-    padding: var(--side-padding);
+    padding: calc(var(--side-padding) / 2) var(--side-padding) calc(var(--side-padding) + 16px);
   }
 
   .prompt-instructions {
-    border-color: var(--background-modifier-border);
+    border: none;
     color: var(--text-faint);
+    position: absolute;
+    inset: auto 0 0;
+    background: linear-gradient(rgba(var(--mono-rgb-0), 0), var(--background-primary));
   }
 
   .prompt .suggestion-item {
-    padding: 8px var(--side-padding);
+    padding: 12px var(--side-padding);
     border-radius: var(--radius-m);
   }
 }
