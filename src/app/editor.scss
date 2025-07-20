@@ -448,6 +448,11 @@
       margin-right: 8px;
     }
 
+    .workspace.is-left-sidedock-open .mod-root,
+    .workspace.is-right-sidedock-open .mod-root {
+      gap: 8px;
+    }
+
     &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
       margin-left: 8px;
 
