@@ -156,6 +156,11 @@ body:not(.is-mobile) {
 }
 
 body.is-mobile {
+  .metadata-property-key {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   .metadata-property-key-input,
   .metadata-property-value,
   .metadata-input-number {
