@@ -12,15 +12,43 @@ input[type="checkbox"]:checked::after,
   -webkit-mask-size: 100% 100%;
 }
 
-li[data-task]:not([data-task="x"]):not([data-task="X"]):not([data-task="-"]):not([data-task="?"]):not([data-task="!"]):not([data-task="i"]):not([data-task="+"]) > input[type="checkbox"]:checked,
-input[type="checkbox"][data-task]:checked:not([data-task="x"]):not([data-task="X"]):not([data-task="-"]):not([data-task="?"]):not([data-task="!"]):not([data-task="i"]):not([data-task="+"]) {
-  --checkbox-color: transparent;
+li[data-task],
+input[type="checkbox"][data-task]:checked {
+  &[data-task=">"],
+  &[data-task="<"],
+  &[data-task="D"],
+  &[data-task="*"],
+  &[data-task='"'],
+  &[data-task="“"],
+  &[data-task="l"],
+  &[data-task="b"],
+  &[data-task="S"],
+  &[data-task="I"],
+  &[data-task="p"],
+  &[data-task="P"],
+  &[data-task="c"],
+  &[data-task="C"],
+  &[data-task="f"],
+  &[data-task="k"],
+  &[data-task="w"],
+  &[data-task="u"],
+  &[data-task="d"],
+  &[data-task="B"],
+  &[data-task="a"],
+  &[data-task="n"],
+  &[data-task="N"],
+  &[data-task="R"] {
+    &,
+    input[type="checkbox"]:checked {
+      --checkbox-color: transparent;
 
-  &:hover {
-    background-color: transparent;
+      &:hover {
+        background-color: transparent;
 
-    &::after {
-      background-color: var(--checkbox-color-hover);
+        &::after {
+          background-color: var(--checkbox-color-hover);
+        }
+      }
     }
   }
 }
@@ -38,18 +66,11 @@ li[data-task="/"] > p > input:checked {
 
 // Done
 .task-list-item:not([data-task]) input[type="checkbox"],
-.metadata-input-checkbox:checked::after,
-input[data-task="x"]:checked::after,
-li[data-task="x"] > input:checked::after,
-li[data-task="x"] > p > input:checked::after,
-input[data-task="X"]:checked::after,
-li[data-task="X"] > input:checked::after,
-li[data-task="X"] > p > input:checked::after,
 .checked:after,
-.checkbox-item input:checked::after,
-.mod-checkbox input[type="checkbox"]:checked::after,
+div:checked::after,
+input[type="checkbox"]:checked::after,
 .tasks-modal-checkbox:checked::after {
-  -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' viewBox='0 0 20 20'%3e%3cpath fill='black' d='m12.998 6.084-4.17 6.7-1.982-2.56c-.244-.322-.46-.41-.742-.41a.788.788 0 0 0-.782.801c0 .225.088.44.235.635l2.45 3.008c.255.342.528.478.86.478.332 0 .615-.156.82-.478l4.59-7.227c.118-.205.245-.43.245-.644 0-.46-.4-.752-.83-.752-.255 0-.508.156-.694.449Z'/%3e%3c/svg%3e") !important;
+  -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' viewBox='0 0 20 20'%3e%3cpath fill='black' d='m12.998 6.084-4.17 6.7-1.982-2.56c-.244-.322-.46-.41-.742-.41a.788.788 0 0 0-.782.801c0 .225.088.44.235.635l2.45 3.008c.255.342.528.478.86.478.332 0 .615-.156.82-.478l4.59-7.227c.118-.205.245-.43.245-.644 0-.46-.4-.752-.83-.752-.255 0-.508.156-.694.449Z'/%3e%3c/svg%3e");
 }
 
 // Canceled
