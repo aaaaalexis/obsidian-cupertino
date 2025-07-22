@@ -398,34 +398,45 @@
 
   /* Blockquote */
 
+  .el-blockquote + .el-blockquote {
+    margin-top: 3em;
+  }
+
   .markdown-rendered blockquote {
-    border-radius: var(--callout-radius);
-    padding: 12px 16px 12px 32px;
-  }
-
-  .el-blockquote {
+    padding-inline-start: 16px;
     position: relative;
+    margin: 32px 16px !important;
+  }
+  .markdown-rendered blockquote::before {
+    border-width: 16px;
+    border-style: solid;
+    border-color: var(--blockquote-background-color);
+    inset: -16px -16px -16px calc(-16px - var(--blockquote-border-thickness));
+    content: "";
+    position: absolute;
+    border-radius: var(--radius-s);
+    pointer-events: none;
+  }
+  .markdown-rendered blockquote:has(p:dir(rtl))::before {
+    inset: -16px calc(-16px - var(--blockquote-border-thickness)) -16px -16px;
   }
 
-  .el-blockquote::before {
-    border-radius: 100vh;
+  .HyperMD-quote {
+    background-color: var(--blockquote-background-color);
+    border: solid var(--blockquote-background-color);
+    border-width: 0 16px 0 16px;
   }
-
-  .cm-line.HyperMD-quote > span:first-child {
-    margin-left: 16px;
+  .HyperMD-quote:first-child,
+  .cm-line:not(.HyperMD-quote) + .HyperMD-quote {
+    border-top-width: 16px;
+    border-top-left-radius: var(--radius-s);
+    border-top-right-radius: var(--radius-s);
   }
-
-  .cm-line:not(.HyperMD-quote) + .cm-line.HyperMD-quote {
-    border-top-left-radius: var(--callout-radius);
-    border-top-right-radius: var(--callout-radius);
-    overflow: hidden;
-    padding-top: 12px !important;
-  }
+  .HyperMD-quote:last-child,
   .cm-line.HyperMD-quote:has(+ .cm-line:not(.HyperMD-quote)) {
-    border-bottom-left-radius: var(--callout-radius);
-    border-bottom-right-radius: var(--callout-radius);
-    overflow: hidden;
-    padding-bottom: 12px !important;
+    border-bottom-width: 16px;
+    border-bottom-left-radius: var(--radius-s);
+    border-bottom-right-radius: var(--radius-s);
   }
 
   /***/

@@ -86,7 +86,7 @@ body {
   --bold-modifier: 300;
   --blockquote-background-color: var(--background-primary-alt);
   --blockquote-border-color: var(--text-faint);
-  --blockquote-border-thickness: var(--radius-s);
+  --blockquote-border-thickness: 2px;
   --blockquote-color: var(--text-muted);
   --blur-s: blur(8px) saturate(1.5) brightness(1.025);
   --blur-m: blur(12px) saturate(1.5) brightness(1.025);
