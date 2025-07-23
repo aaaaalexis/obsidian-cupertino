@@ -1,6 +1,7 @@
 body.is-mobile {
   --background-modifier-form-field: var(--interactive-normal) !important;
   --border-width: 0.3px;
+  --blur-s: blur(2px) saturate(1.5) brightness(1.025);
   --divider-color: rgba(var(--mono-rgb-100), 0.1) !important;
   --divider-width: var(--border-width);
   --canvas-dot-pattern: var(--color-base-20);
@@ -14,7 +15,7 @@ body.is-mobile {
   --input-radius: var(--radius-m);
   --mobile-sidebar-width: 100%;
   --mobile-toolbar-height: var(--input-height);
-  --modal-background: rgb(from var(--background-secondary) r g b / 75%) !important;
+  --modal-background: rgb(from var(--background-secondary) r g b / 50%) !important;
   --modal-radius: var(--radius-xl);
   --nav-item-background-active: var(--color-accent);
   --nav-item-background-selected: var(--color-accent);
@@ -104,8 +105,7 @@ body.is-phone {
   }
 
   .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
-    background-color: var(--text-highlight-bg) !important;
-    color: var(--text-accent) !important;
+    background-color: var(--interactive-accent) !important;
     box-shadow: var(--shadow-xs-tinted) !important;
   }
 
@@ -264,11 +264,6 @@ body.is-phone {
   width: fit-content;
   font-weight: var(--font-bold);
   min-height: var(--input-height);
-
-  &.mod-activated {
-    background-color: var(--text-highlight-bg);
-    color: var(--text-accent);
-  }
 }
 
 /********** Bottom Bar **********/
