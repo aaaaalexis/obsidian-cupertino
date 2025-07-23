@@ -44,15 +44,12 @@ body:not(.is-phone) {
   }
 
   .prompt-results {
-    padding: calc(var(--side-padding) / 2) calc(var(--side-padding) / 2) calc(var(--side-padding) + 16px);
+    padding: calc(var(--side-padding) / 2);
   }
 
   .prompt-instructions {
     border: none;
     color: var(--text-faint);
-    position: absolute;
-    inset: auto 0 0;
-    background: linear-gradient(rgba(var(--mono-rgb-0), 0), var(--background-primary));
   }
 
   .prompt .suggestion-item {
