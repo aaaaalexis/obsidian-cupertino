@@ -68,37 +68,37 @@ body:not(.is-phone) {
       .workspace-tab-header.mod-active:not(.is-active) {
         min-width: 0 !important;
       }
+
+      .workspace-tab-header-inner {
+        padding-inline-start: 12px;
+        padding-inline-end: 4px;
+      }
+      .workspace-tab-header:not(.is-active):not(.autofit-tab) .workspace-tab-header-inner-title {
+        padding-right: 18px;
+      }
+      .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-close-button,
+      .workspace-tab-header:not(.is-active) .workspace-tab-header-status-container {
+        position: absolute;
+        inset-inline-end: 4px;
+      }
+      .workspace-tab-header-inner-title {
+        flex: unset;
+        line-height: normal;
+      }
+      .workspace-tab-header-inner-close-button,
+      .workspace-tab-header-status-icon {
+        padding: 4px;
+
+        &:hover {
+          background-color: var(--background-modifier-hover);
+        }
+      }
     }
 
     .workspace-tab-header-container-inner {
       flex-grow: 1;
       justify-content: center;
       gap: 4px;
-    }
-
-    .workspace-tab-header-inner {
-      padding-inline-start: 12px;
-      padding-inline-end: 4px;
-    }
-    .workspace-tab-header-inner-title {
-      flex: unset;
-      line-height: normal;
-    }
-    .workspace-tab-header:not(.is-active):not(.autofit-tab) .workspace-tab-header-inner-title {
-      padding-right: 18px;
-    }
-    .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-close-button,
-    .workspace-tab-header:not(.is-active) .workspace-tab-header-status-container {
-      position: absolute;
-      inset-inline-end: 4px;
-    }
-    .workspace-tab-header-inner-close-button,
-    .workspace-tab-header-status-icon {
-      padding: 4px;
-
-      &:hover {
-        background-color: var(--background-modifier-hover);
-      }
     }
 
     .workspace-tab-header-spacer {
