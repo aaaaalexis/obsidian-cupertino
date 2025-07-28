@@ -13,6 +13,7 @@ input[type="checkbox"]:checked::after,
 }
 
 input[type="checkbox"][data-indeterminate="true"]:not(:checked) {
+  --checkbox-color: var(--checkbox-border-color) !important;
   background-color: var(--checkbox-color);
 
   &:after {
@@ -90,14 +91,8 @@ input[type="checkbox"]:checked::after,
 // Canceled
 input[data-task="-"]:checked,
 li[data-task="-"] > input:checked,
-li[data-task="-"] > p > input:checked,
-input[type="checkbox"][data-indeterminate="true"]:not(:checked) {
+li[data-task="-"] > p > input:checked {
   --checkbox-color: var(--checkbox-border-color);
-  border: none;
-
-  &:hover {
-    background-color: var(--checkbox-color-hover);
-  }
 
   &:after {
     -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' viewBox='0 0 20 20'%3e%3cpath fill='black' d='M6.025 9.121c-.595 0-.966.313-.966.86 0 .537.39.84.966.84h7.891c.566 0 .947-.303.947-.84 0-.547-.361-.86-.947-.86h-7.89Z'/%3e%3c/svg%3e");
@@ -126,8 +121,14 @@ li[data-task="D"] > p > input:checked::after {
 // Question
 input[data-task="?"]:checked,
 li[data-task="?"] > input:checked,
-li[data-task="?"] > p > input:checked {
+li[data-task="?"] > p > input:checked,
+input[type="checkbox"][data-indeterminate="true"]:not(:checked) {
   --checkbox-color: var(--color-pink);
+  border: none;
+
+  &:hover {
+    background-color: var(--checkbox-color-hover);
+  }
 
   &:after {
     -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' viewBox='0 0 20 20'%3e%3cpath fill='black' d='M8.643 14.004c0 .576.507 1.045 1.093 1.045s1.094-.46 1.094-1.045c0-.586-.498-1.055-1.094-1.055-.595 0-1.093.479-1.093 1.055ZM6.924 6.553a1.665 1.665 0 0 0-.088.498c0 .449.361.693.693.693.342 0 .567-.166.752-.4l.176-.244c.361-.586.879-.918 1.553-.918.908 0 1.504.517 1.504 1.279 0 .684-.42 1.016-1.3 1.63-.722.509-1.269 1.036-1.269 2.032v.127c0 .527.293.8.81.8.509 0 .821-.322.821-.722v-.117c0-.566.322-.928 1.026-1.387.976-.644 1.68-1.23 1.68-2.441 0-1.68-1.495-2.569-3.214-2.569-1.738 0-2.87.811-3.144 1.739Z'/%3e%3c/svg%3e");
