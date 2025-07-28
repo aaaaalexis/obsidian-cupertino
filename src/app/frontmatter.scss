@@ -12,10 +12,10 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
   }
 
   .metadata-properties {
-    border-radius: var(--radius-s);
+    border-radius: var(--metadata-property-radius);
     background-color: var(--background-secondary);
 
-    input {
+    input:not([type="checkbox"]) {
       box-shadow: none !important;
       border: none !important;
     }
@@ -26,11 +26,11 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
   }
 
   .metadata-property-key {
+    padding: 4px 8px 4px 16px;
     align-items: center;
-    border: none;
-    padding: 0 8px 0 20px;
   }
 
+  .metadata-property-key,
   .metadata-property-value {
     border: none;
     min-height: 40px;
@@ -41,14 +41,21 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
     border: none !important;
   }
 
+  .multi-select-container,
+  .metadata-input,
+  .metadata-input-number,
+  .metadata-input-longtext {
+    padding: 8px;
+  }
+
   .metadata-add-button {
     gap: 8px;
     margin: 0;
-    padding: 0 20px;
+    padding: 0 12px;
     width: 100%;
     height: 40px;
     color: var(--text-faint);
-    font-weight: normal;
+    font-weight: var(--font-normal);
   }
   .metadata-add-button:hover {
     background-color: transparent;
@@ -70,14 +77,23 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
   @container (width < 250px) {
     .metadata-property {
       flex-wrap: wrap;
+
+      &:not(:last-child)::before {
+        border-bottom: var(--border-width) solid var(--background-modifier-border);
+        content: "";
+        inset: 0 8px;
+        position: absolute;
+        pointer-events: none;
+      }
     }
-    .metadata-property .metadata-property-key,
-    .metadata-property .metadata-property-value {
-      padding: 0 20px;
+
+    .metadata-property .metadata-property-value,
+    .metadata-add-button {
+      padding: 8px var(--side-padding);
       min-height: 40px;
     }
     .metadata-property .multi-select-container {
-      padding: 8px 0;
+      padding: 0;
     }
     .metadata-input,
     .metadata-input-number,
@@ -90,6 +106,11 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
       display: none;
     }
   }
+}
+
+.workspace-split:not(.mod-root) .metadata-container .metadata-properties {
+  --metadata-property-radius: var(--radius-m) !important;
+  background-color: var(--background-primary);
 }
 
 body:not(.is-mobile) {
@@ -135,6 +156,11 @@ body:not(.is-mobile) {
 }
 
 body.is-mobile {
+  .metadata-property-key {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   .metadata-property-key-input,
   .metadata-property-value,
   .metadata-input-number {
