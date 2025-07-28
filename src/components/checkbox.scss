@@ -12,6 +12,20 @@ input[type="checkbox"]:checked::after,
   -webkit-mask-size: 100% 100%;
 }
 
+input[type="checkbox"][data-indeterminate="true"]:not(:checked) {
+  background-color: var(--checkbox-color);
+
+  &:after {
+    top: 0;
+    inset-inline-start: 0;
+    -webkit-mask-position: 50% 50%;
+    -webkit-mask-size: 100% 100%;
+    background-color: var(--checkbox-marker-color);
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+  }
+}
+
 li[data-task],
 input[type="checkbox"][data-task]:checked {
   &[data-task=">"],
@@ -76,8 +90,14 @@ input[type="checkbox"]:checked::after,
 // Canceled
 input[data-task="-"]:checked,
 li[data-task="-"] > input:checked,
-li[data-task="-"] > p > input:checked {
+li[data-task="-"] > p > input:checked,
+input[type="checkbox"][data-indeterminate="true"]:not(:checked) {
   --checkbox-color: var(--checkbox-border-color);
+  border: none;
+
+  &:hover {
+    background-color: var(--checkbox-color-hover);
+  }
 
   &:after {
     -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' viewBox='0 0 20 20'%3e%3cpath fill='black' d='M6.025 9.121c-.595 0-.966.313-.966.86 0 .537.39.84.966.84h7.891c.566 0 .947-.303.947-.84 0-.547-.361-.86-.947-.86h-7.89Z'/%3e%3c/svg%3e");
