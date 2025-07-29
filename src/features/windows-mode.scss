@@ -250,6 +250,27 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
       margin-bottom: 4px;
     }
   }
+  .modal.mod-sidebar-layout.mod-community-modal {
+    .modal-sidebar {
+      padding-top: 0;
+    }
+
+    .community-modal-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 12px;
+    }
+
+    .setting-item:not(.setting-item-heading),
+    .setting-item-name,
+    .community-modal-search-summary {
+      padding: 0;
+      margin: 0;
+      border: none;
+      background-color: transparent;
+    }
+  }
 
   /********** Menu and Suggestions **********/
   .menu,
