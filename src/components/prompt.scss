@@ -103,7 +103,7 @@ body.is-phone {
   .prompt-input,
   .search-input-clear-button {
     border-radius: var(--clickable-icon-radius);
-    box-shadow: var(--shadow-l) !important;
+    box-shadow: var(--shadow-xs) !important;
     backdrop-filter: var(--blur-s);
     background-color: var(--modal-background) !important;
     margin: 0;
