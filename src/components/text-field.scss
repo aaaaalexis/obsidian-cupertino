@@ -72,6 +72,7 @@ body.is-phone:not(.is-android:not(.material-off)) {
     min-height: var(--input-height);
     font-weight: normal;
     text-align-last: unset;
+    text-align: start;
   }
 
   select,
