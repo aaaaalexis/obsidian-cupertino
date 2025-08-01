@@ -59,6 +59,7 @@ body.is-phone {
     position: fixed;
     background-color: transparent;
     width: 100%;
+    z-index: 2;
 
     &::before {
       position: absolute;
