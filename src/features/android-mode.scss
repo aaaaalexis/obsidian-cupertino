@@ -10,7 +10,6 @@ body.is-mobile.is-android:not(.material-off) {
   --h5-font: var(--font-interface-theme);
   --h6-font: var(--font-interface-theme);
   --border-width: 1px;
-  --divider-color: rgba(var(--mono-rgb-100), 0.3) !important;
   --radius-xl: 32px;
   --radius-l: 24px;
   --radius-m: 16px;
@@ -46,7 +45,7 @@ body.is-mobile.is-android:not(.material-off) {
   }
 
   &.is-phone {
-    --view-header-height: 64px;
+    --view-header-height: 48px;
   }
 
   /********** Components **********/
@@ -143,8 +142,8 @@ body.is-mobile.is-android:not(.material-off) {
     box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
     border: none;
     border-radius: var(--radius-m);
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
   }
 
   &.is-phone:not(.mode-highlight-off) .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
@@ -157,10 +156,6 @@ body.is-mobile.is-android:not(.material-off) {
   .mobile-navbar,
   .workspace-drawer .nav-header {
     padding: 8px max(var(--safe-area-inset-right), 16px) calc(var(--safe-area-inset-bottom) + 8px) max(var(--safe-area-inset-left), 16px);
-  }
-
-  .mobile-navbar-actions {
-    gap: 32px;
   }
 
   .mobile-navbar-action .clickable-icon {
