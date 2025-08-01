@@ -153,9 +153,9 @@ body.is-mobile {
     .modal-close-button {
       display: flex;
       justify-content: center;
-      align-items: center;
       width: var(--input-height);
       height: var(--input-height);
+      line-height: 40px;
     }
 
     .vertical-tab-nav-item {
