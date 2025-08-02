@@ -56,19 +56,17 @@ body:not(.is-mobile) {
       overflow: visible !important;
     }
   }
-
-  .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event {
-    overflow: scroll;
-  }
-
   .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
   .workspace-split.mod-sidedock .workspace-leaf-content > .view-content,
   .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
-    padding: 0 12px 8px;
+    padding: 0 12px;
 
     > div:not(.nav-buttons-container) {
       padding: 0;
     }
+  }
+  .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
+    padding-bottom: 8px;
   }
 
   .search-row {
