@@ -10,7 +10,7 @@ body.is-mobile.is-android:not(.material-off) {
   --h5-font: var(--font-interface-theme);
   --h6-font: var(--font-interface-theme);
   --border-width: 1px;
-  --divider-color: rgba(var(--mono-rgb-100), 0.3) !important;
+  --button-radius: 100vh;
   --radius-xl: 32px;
   --radius-l: 24px;
   --radius-m: 16px;
@@ -34,6 +34,9 @@ body.is-mobile.is-android:not(.material-off) {
   --nav-item-color-active: var(--text-accent-active);
   --nav-item-padding: 16px 24px !important;
   --nav-item-weight-active: var(--font-bold);
+  --blur-s: blur(8px);
+  --blur-m: blur(16px);
+  --blur-l: blur(32px);
   --shadow-xs: none;
   --shadow-s: rgba(0, 0, 0, 0.1) 0px 8px 30px !important;
   --shadow-l: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
@@ -55,19 +58,6 @@ body.is-mobile.is-android:not(.material-off) {
   }
 
   /********** Components **********/
-
-  button:not(.clickable-icon) {
-    border-radius: 100vh;
-
-    &[class*="mod-"] {
-      border: none;
-      background-color: var(--text-color);
-      color: var(--text-on-accent);
-    }
-    &.mod-cta {
-      background-color: var(--interactive-accent);
-    }
-  }
 
   button:not(.clickable-icon):not([class*="mod-"]),
   select,
@@ -149,6 +139,7 @@ body.is-mobile.is-android:not(.material-off) {
     border-radius: var(--radius-s);
     width: var(--input-height);
     height: var(--input-height);
+    background-color: var(--background-secondary);
   }
 
   &.is-phone .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
@@ -161,6 +152,12 @@ body.is-mobile.is-android:not(.material-off) {
   .mobile-navbar,
   .workspace-drawer .nav-header {
     padding: 8px var(--side-padding) max(var(--safe-area-inset-bottom), 16px);
+  }
+
+  .mobile-navbar-actions,
+  .workspace-drawer .nav-buttons-container,
+  .mobile-toolbar-options-list {
+    background-color: var(--background-secondary);
   }
 
   /********** Menu **********/
@@ -288,6 +285,19 @@ body.is-mobile.is-android:not(.material-off) {
     }
   }
   .modal.mod-sidebar-layout {
+    .vertical-tab-nav-item,
+    textarea,
+    input[type="text"],
+    input[type="search"],
+    input[type="number"],
+    button,
+    select,
+    .dropdown {
+      &:not(:last-child)::after {
+        content: none;
+      }
+    }
+
     .vertical-tab-nav-item {
       transition: border-radius var(--anim-duration-fast);
       border: none;
@@ -420,6 +430,7 @@ body.is-mobile.is-android:not(.material-off) {
         color: var(--text-accent);
         font-weight: var(--font-bold);
         flex-grow: 0;
+        flex: 0;
       }
     }
   }

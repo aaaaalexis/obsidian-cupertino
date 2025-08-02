@@ -113,11 +113,6 @@ body.is-phone {
     right: var(--side-padding);
     margin-bottom: var(--side-padding);
   }
-
-  &.is-android:not(.material-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
-    backdrop-filter: none;
-    background-color: var(--background-secondary);
-  }
 }
 
 /********** Top Bar **********/
