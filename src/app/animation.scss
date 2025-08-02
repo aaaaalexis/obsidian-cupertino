@@ -117,18 +117,21 @@ body.is-phone {
   }
 
   .mobile-navbar,
+  .mod-root .view-content::before,
   .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2) {
     @starting-style {
       opacity: 0;
     }
   }
   &.hide-cursor .mobile-navbar,
+  &.hide-cursor .mod-root .view-content::before,
   &.hide-cursor .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2) {
     opacity: 0;
   }
 
   &:not(.hide-cursor) {
     .mobile-navbar,
+    .mod-root .view-content::before,
     .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2) {
       animation: fadeInUpDelay var(--anim-duration-slow);
     }

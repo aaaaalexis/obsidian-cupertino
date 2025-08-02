@@ -481,3 +481,37 @@ body.is-tablet {
     }
   }
 }
+
+/********** HDR element **********/
+
+body.is-ios.theme-light {
+  .mod-root .workspace-leaf-content .view-actions button:not(:nth-last-child(2))::after,
+  .mobile-navbar-actions::after,
+  .mobile-toolbar-options-list::after,
+  .workspace-drawer .nav-buttons-container::after,
+  .workspace-drawer-active-tab-header::after,
+  .prompt-input-container::after,
+  .search-input-clear-button::before {
+    position: absolute;
+    backdrop-filter: brightness(1.5);
+    mask: linear-gradient(white, white) padding-box, linear-gradient(white, white) border-box;
+    mask-composite: exclude, add;
+    filter: blur(1px);
+    inset: 0;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    background: linear-gradient(to bottom left, white, transparent, white) border-box no-repeat;
+    pointer-events: none;
+    content: "";
+  }
+
+  .prompt-input-container::after {
+    margin-right: 56px;
+    border-radius: var(--clickable-icon-radius);
+  }
+
+  .prompt-input-container::after,
+  .search-input-clear-button::before {
+    backdrop-filter: brightness(1.2);
+  }
+}
