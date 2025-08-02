@@ -6,13 +6,13 @@ Cupertino is an Obsidian theme, optimized for **desktop and mobile devices**. Br
 
 [Support me and my work](https://www.buymeacoffee.com/sevenaxis) so I can keep regular updates and fixes. You’re also welcomed to submit pull requests.
 
-<a href="https://www.buymeacoffee.com/sevenaxis"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=sevenaxis&button_colour=BD5FFF&font_colour=ffffff&font_family=Inter&outline_colour=000000&coffee_colour=FFDD00" /></a>
+<a href="https://www.buymeacoffee.com/sevenaxis" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## Overview
 
 - **Native & minimal** — Clean, native look and feel on all of your devices, so you can focus on your content.
 
-  ![Two screenshots showcasing Cupertino on macOS. The first shows how Cupertino utilizes background blur. The second showcases the stylized text editor.](img/native.png)
+  ![Two screenshots showcasing Cupertino on macOS. The first shows how Cupertino utilizes background blur. The second showcases the stylized text editor.](img/desktop.png)
 
 - **Optimized for mobile** — Redesigned modals, menu, editor, search, and more, with comfortable spacing for usability.
 
@@ -71,6 +71,16 @@ Cupertino supports most filter and helper classes from [Minimal](https://github.
 | `cards-2-3`           | Fit images in cards to 2:3 ratio                 |
 | `cards-cols-1` to `8` | Force a specific number of columns (from 1 to 8) |
 
+### [Block width](https://minimal.guide/features/block-width)
+
+| Class                                   | Description                           |
+| :-------------------------------------- | :------------------------------------ |
+| `wide`                                  | Entire note uses wide line width      |
+| `max`                                   | Entire note uses max line width       |
+| `table-100`, `img-100`, `iframe-100`    | Fill 100% of the pane width           |
+| `table-max`, `img-max`, `iframe-max`    | Fill the max line width (default 90%) |
+| `table-wide`, `img-wide`, `iframe-wide` | Fill the wide line width              |
+
 ### [Image filters](https://minimal.guide/images#Image+filters)
 
 Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
@@ -111,35 +121,38 @@ Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
 
 ![Preview of alternate checkboxes.](img/checkbox.png)
 
-| Syntax           | Description |
-| ---------------- | ----------- |
-| `- [ ]`          | To-do       |
-| `- [/]`          | Incomplete  |
-| `- [x]`, `- [X]` | Done        |
-| `- [-]`          | Canceled    |
-| `- [>]`          | Forwarded   |
-| `- [<]`, `- [D]` | Scheduling  |
-| `- [?]`          | Question    |
-| `- [!]`          | Important   |
-| `- [*]`          | Star        |
-| `- ["]`          | Quote       |
-| `- [l]`          | Location    |
-| `- [b]`          | Bookmark    |
-| `- [i]`          | Information |
-| `- [S]`          | Savings     |
-| `- [I]`          | Idea        |
-| `- [p]`, `- [P]` | Pros        |
-| `- [c]`, `- [C]` | Cons        |
-| `- [f]`          | Fire        |
-| `- [k]`          | Key         |
-| `- [w]`          | Win         |
-| `- [u]`          | Up          |
-| `- [d]`          | Down        |
-| `- [+]`          | Add         |
-| `- [B]`          | Brainstorm  |
-| `- [a]`          | Alarm       |
-| `- [n]`, `- [N]` | Note        |
-| `- [R]`          | Review      |
+| Syntax  | Description |
+| ------- | ----------- |
+| `- [ ]` | To-do       |
+| `- [/]` | Incomplete  |
+| `- [x]` | Done        |
+| `- [-]` | Canceled    |
+| `- [>]` | Forwarded   |
+| `- [<]` | Scheduling  |
+| `- [?]` | Question    |
+| `- [!]` | Important   |
+| `- [*]` | Star        |
+| `- ["]` | Quote       |
+| `- [l]` | Location    |
+| `- [b]` | Bookmark    |
+| `- [i]` | Information |
+| `- [S]` | Savings     |
+| `- [I]` | Idea        |
+| `- [p]` | Pros        |
+| `- [c]` | Cons        |
+| `- [f]` | Fire        |
+| `- [k]` | Key         |
+| `- [w]` | Win         |
+| `- [u]` | Up          |
+| `- [d]` | Down        |
+| `- [+]` | Add         |
+| `- [B]` | Brainstorm  |
+| `- [a]` | Alarm       |
+| `- [n]` | Note        |
+| `- [R]` | Review      |
+| `- [t]` | Time        |
+| `- [P]` | Phone       |
+| `- [L]` | Love        |
 
 ## Credits
 
