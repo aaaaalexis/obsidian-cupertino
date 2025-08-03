@@ -229,16 +229,11 @@ body {
     --code-value: #a626a4;
 
     --shadow-base: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025);
-    --shadow-tinted: inset 0 0 1px 0px rgba(0, 0, 0, 0.15), inset 1px 2px 1px rgba(255, 255, 255, 0.2), inset -1px -2px 1px rgba(255, 255, 255, 0.2), inset 0px 4px 16px rgba(255, 255, 255, 0.1);
     --shadow-border: 0 0 1px 0 rgba(0, 0, 0, 0.4);
 
     --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.035), 0 1px 32px rgba(0, 0, 0, 0.075);
     --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
     --shadow-l: var(--shadow-border), inset 0 0 1px 1px white, 0 18px 60px 0 rgba(0, 0, 0, 0.3);
-
-    --shadow-xs-tinted: var(--shadow-tinted), inset 0 -8px 48px rgba(96, 96, 96, 0.05), 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.05);
-    --shadow-s-tinted: var(--shadow-tinted), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
-    --shadow-l-tinted: var(--shadow-tinted), 0 18px 60px 0 rgba(0, 0, 0, 0.3);
   }
 
   &.theme-dark {
@@ -278,16 +273,11 @@ body {
     --code-value: #c678de;
 
     --shadow-base: inset 1px 2px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -2px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
-    --shadow-tinted: inset 1px 2px 1px rgba(255, 255, 255, 0.15), inset -1px -2px 1px rgba(255, 255, 255, 0.15), inset 0px 4px 16px rgba(255, 255, 255, 0.1);
     --shadow-border: 0 0 1px 0 rgba(255, 255, 255, 0.3);
 
     --shadow-xs: inset 0 8px 48px rgba(255, 255, 255, 0.08), var(--shadow-base);
     --shadow-s: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
     --shadow-l: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 0 rgba(0, 0, 0, 0.7), 0 18px 60px 0 rgba(0, 0, 0, 0.3);
-
-    --shadow-xs-tinted: var(--shadow-tinted), inset 0 -8px 48px rgba(96, 96, 96, 0.05), 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.05);
-    --shadow-s-tinted: var(--shadow-tinted), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
-    --shadow-l-tinted: var(--shadow-tinted), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 0 rgba(0, 0, 0, 0.7), 0 18px 60px 0 rgba(0, 0, 0, 0.3);
   }
 
   &.is-fullscreen {

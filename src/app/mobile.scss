@@ -106,7 +106,7 @@ body.is-phone {
 
   .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
     background-color: var(--interactive-accent) !important;
-    box-shadow: var(--shadow-xs-tinted) !important;
+    box-shadow: var(--shadow-xs) !important;
   }
 
   &.mod-toolbar-open .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
@@ -275,7 +275,7 @@ body.is-phone {
 .pull-action {
   backdrop-filter: var(--blur-s);
   animation: fadeInDown var(--anim-duration-fast);
-  box-shadow: var(--shadow-s-tinted);
+  box-shadow: var(--shadow-xs), var(--shadow-s);
   background-color: var(--modal-background);
   padding: 12px 24px;
   width: fit-content;
