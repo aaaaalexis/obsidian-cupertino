@@ -1,8 +1,4 @@
 body {
-  .modal-bg {
-    background-color: transparent;
-  }
-
   .modal:not(.mod-sidebar-layout) {
     backdrop-filter: var(--blur-m);
     box-shadow: var(--shadow-s);
@@ -31,6 +27,10 @@ body {
 }
 
 body:not(.is-mobile) {
+  .modal-bg {
+    background-color: transparent;
+  }
+
   .modal:not(.mod-sidebar-layout) {
     .modal-close-button {
       display: none;
@@ -89,9 +89,9 @@ body.is-mobile {
   }
 
   .modal:not(.mod-sidebar-layout) {
-    margin: 0 8px 8px;
+    backdrop-filter: var(--blur-l);
     border-radius: var(--modal-radius);
-    background-color: var(--modal-background);
+    background-color: var(--modal-background) !important;
 
     .modal-header {
       border: none !important;
@@ -141,10 +141,9 @@ body.is-mobile {
 }
 
 body.is-phone {
-  .modal:not(.mod-sidebar-layout) {
-    margin: 0 8px 8px;
+  .modal {
+    padding-bottom: var(--safe-area-inset-bottom);
   }
-
   .modal-button-container button {
     flex: 1 1 calc(50% - 4px);
   }

@@ -16,7 +16,7 @@ body.is-mobile {
   --mobile-sidebar-width: 100%;
   --mobile-toolbar-height: var(--input-height);
   --modal-background: rgb(from var(--background-secondary) r g b / 50%) !important;
-  --modal-radius: var(--radius-xl);
+  --modal-radius: var(--radius-xl) var(--radius-xl) 0 0;
   --nav-item-background-active: var(--color-accent);
   --nav-item-background-selected: var(--color-accent);
   --nav-item-color-active: var(--text-on-accent);
