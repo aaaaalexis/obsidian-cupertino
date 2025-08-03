@@ -101,7 +101,7 @@ body.is-phone {
   }
 
   .prompt-input,
-  .search-input-clear-button {
+  .prompt-input-container .search-input-clear-button {
     border-radius: var(--clickable-icon-radius);
     box-shadow: var(--shadow-xs) !important;
     backdrop-filter: var(--blur-s);
@@ -109,14 +109,14 @@ body.is-phone {
     margin: 0;
   }
 
-  .search-input-clear-button {
+  .prompt-input-container .search-input-clear-button {
     position: relative;
     inset-inline-end: 0;
     width: 48px;
     height: 48px;
     flex-shrink: 0;
   }
-  .search-input-clear-button:after {
+  .prompt-input-container .search-input-clear-button:after {
     -webkit-mask-position: 50% 50%;
     -webkit-mask-size: 100% 100%;
 
