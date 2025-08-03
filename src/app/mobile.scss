@@ -275,7 +275,7 @@ body.is-phone {
 .pull-action {
   backdrop-filter: var(--blur-s);
   animation: fadeInDown var(--anim-duration-fast);
-  box-shadow: var(--shadow-xs), var(--shadow-s);
+  box-shadow: var(--shadow-xs);
   background-color: var(--modal-background);
   padding: 12px 24px;
   width: fit-content;
