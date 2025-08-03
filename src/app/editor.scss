@@ -66,11 +66,21 @@
     img:not([width]):not([class]) {
       background-color: var(--background-secondary);
       width: 100%;
-      height: 100%;
+      height: fit-content;
       max-height: 480px;
       object-fit: contain;
       text-align: center;
     }
+  }
+
+  .image-embed:not(.canvas-node-content)[alt]:after {
+    display: block;
+    margin-top: 4px;
+    margin-inline-start: calc(var(--radius-s) / 2);
+    content: attr(alt);
+    color: var(--text-faint);
+    font-size: var(--font-smallest);
+    line-height: var(--line-height-normal);
   }
 
   /* Code */
