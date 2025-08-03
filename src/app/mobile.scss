@@ -480,13 +480,16 @@ body.is-tablet {
 /********** HDR element **********/
 
 body.is-ios.theme-light {
-  .mod-root .workspace-leaf-content .view-actions button:not(:nth-last-child(2))::after,
+  .mod-left-split-toggle.clickable-icon::after,
+  .mod-root .workspace-leaf-content .view-action::after,
   .mobile-navbar-actions::after,
   .mobile-toolbar-options-list::after,
   .workspace-drawer .nav-buttons-container::after,
-  .workspace-drawer-active-tab-header::after,
+  .workspace-drawer-header-icon.clickable-icon::after,
   .prompt-input-container::after,
-  .search-input-clear-button::before {
+  .prompt-input-container .search-input-clear-button::before,
+  .modal-setting-back-button::after,
+  .modal-close-button::after {
     position: absolute;
     backdrop-filter: brightness(1.5);
     mask: linear-gradient(white, white) padding-box, linear-gradient(white, white) border-box;

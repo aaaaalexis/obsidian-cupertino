@@ -167,9 +167,7 @@ body.is-mobile {
     .workspace-drawer-active-tab-header {
       height: var(--input-height);
       margin: 0 var(--side-padding);
-      background-color: transparent;
-      backdrop-filter: var(--blur-s);
-      box-shadow: var(--shadow-xs);
+      background-color: var(--background-primary);
       padding: 0;
       width: fit-content;
 
