@@ -1,4 +1,4 @@
-body:not(.is-mobile) .checkbox-container {
+.checkbox-container {
   transition: var(--anim-duration-moderate);
   box-shadow: none;
 
@@ -9,9 +9,7 @@ body:not(.is-mobile) .checkbox-container {
 }
 
 body:not(.mod-windows:not(.windows-mode-off)):not(.is-android:not(.material-off)) .checkbox-container {
-  &:active:after,
-  &:focus:after,
-  &:focus-within:after {
+  &:active:after {
     transform-origin: center;
     scale: 1.5;
     backdrop-filter: var(--blur-s);
@@ -19,9 +17,7 @@ body:not(.mod-windows:not(.windows-mode-off)):not(.is-android:not(.material-off)
     background-color: transparent;
   }
 
-  &.is-enabled:active:after,
-  &.is-enabled:focus:after,
-  &.is-enabled:focus-within:after {
+  &.is-enabled:active:after {
     transform-origin: center right;
   }
 }
