@@ -1,16 +1,27 @@
 body:not(.is-mobile) .checkbox-container {
+  transition: var(--anim-duration-moderate);
   box-shadow: none;
 
   &::after {
+    transition: var(--anim-duration-moderate);
     box-shadow: none;
   }
 }
 
-body.is-mobile .checkbox-container {
-  box-shadow: none;
-  overflow: hidden;
+body:not(.mod-windows:not(.windows-mode-off)):not(.is-android:not(.material-off)) .checkbox-container {
+  &:active:after,
+  &:focus:after,
+  &:focus-within:after {
+    transform-origin: center;
+    scale: 1.5;
+    backdrop-filter: var(--blur-s);
+    box-shadow: var(--shadow-xs);
+    background-color: transparent;
+  }
 
-  &::after {
-    box-shadow: none;
+  &.is-enabled:active:after,
+  &.is-enabled:focus:after,
+  &.is-enabled:focus-within:after {
+    transform-origin: center right;
   }
 }

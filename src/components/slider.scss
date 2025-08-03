@@ -1,12 +1,13 @@
-body:not(.mod-windows:not(.windows-mode-off)) input[type="range"]::-webkit-slider-thumb {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.05) !important;
+body:not(.mod-windows:not(.windows-mode-off)):not(.is-android:not(.material-off)) input[type="range"]::-webkit-slider-thumb {
+  transition: var(--anim-duration-moderate);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.05);
 
   &:active,
   &:focus,
   &:focus-within {
-    background-color: transparent;
     transform: scale(1.5);
-    box-shadow: var(--shadow-xs) !important;
     backdrop-filter: var(--blur-s);
+    box-shadow: var(--shadow-xs);
+    background-color: transparent;
   }
 }
