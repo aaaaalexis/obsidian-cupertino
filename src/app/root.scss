@@ -126,6 +126,7 @@ body {
   --input-radius: var(--radius-s);
   --interactive-hover: var(--interactive-normal) !important;
   --line-height-normal: 1.6;
+  --list-marker-color: var(--text-accent);
   --list-spacing: 0.2em;
   --metadata-gap: 0;
   --metadata-padding: 0;
@@ -170,6 +171,10 @@ body {
   --table-header-border-width: 0;
   --table-header-weight: var(--font-weight);
   --table-row-last-border-width: 0;
+  --tag-border-width: var(--border-width);
+  --tag-padding-x: 0.5em;
+  --tag-size: var(--font-smallest);
+  --tag-weight: var(--font-bold);
   --text-highlight-bg: hsla(var(--color-accent-hsl), 0.25);
   --text-selection: var(--background-modifier-hover);
   --titlebar-background-focused: transparent;
@@ -182,6 +187,8 @@ body {
   --toggle-thumb-height: 13px;
   --toggle-thumb-width: 21px;
   --toggle-width: 36px;
+  --p-spacing: 1.75rem;
+  --heading-spacing: 2em;
   --view-header-height: var(--header-height) !important;
   --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
 

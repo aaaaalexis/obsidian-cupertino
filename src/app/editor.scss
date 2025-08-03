@@ -9,6 +9,7 @@
   .markdown-reading-view,
   .markdown-source-view {
     --bold-color: var(--color-base-100);
+    --italic-color: var(--color-base-100);
     --h1-color: var(--color-base-100);
     --h2-color: var(--color-base-100);
     --h3-color: var(--color-base-100);
@@ -16,9 +17,10 @@
     --h5-color: var(--color-base-100);
     --h6-color: var(--color-base-100);
     --inline-title-color: var(--color-base-100);
-    --text-normal: var(--color-base-80);
+    --text-normal: var(--color-base-70);
 
     transition: var(--anim-duration-fast) ease-in-out;
+    letter-spacing: 0.1px;
   }
   .markdown-preview-view {
     scrollbar-gutter: auto;
