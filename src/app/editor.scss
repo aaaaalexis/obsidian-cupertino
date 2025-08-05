@@ -8,16 +8,16 @@
 @media screen, print {
   .markdown-reading-view,
   .markdown-source-view {
-    --bold-color: var(--color-base-100);
-    --italic-color: var(--color-base-100);
-    --h1-color: var(--color-base-100);
-    --h2-color: var(--color-base-100);
-    --h3-color: var(--color-base-100);
-    --h4-color: var(--color-base-100);
-    --h5-color: var(--color-base-100);
-    --h6-color: var(--color-base-100);
-    --inline-title-color: var(--color-base-100);
-    --text-normal: var(--color-base-70);
+    --bold-color: rgb(var(--mono-rgb-100));
+    --italic-color: rgb(var(--mono-rgb-100));
+    --inline-title-color: rgb(var(--mono-rgb-100));
+    --h1-color: rgb(var(--mono-rgb-100));
+    --h2-color: rgb(var(--mono-rgb-100));
+    --h3-color: rgb(var(--mono-rgb-100));
+    --h4-color: rgb(var(--mono-rgb-100));
+    --h5-color: rgb(var(--mono-rgb-100));
+    --h6-color: rgb(var(--mono-rgb-100));
+    --text-normal: var(--color-base-80);
 
     transition: var(--anim-duration-fast) ease-in-out;
     letter-spacing: 0.1px;
@@ -37,6 +37,10 @@
   }
   .collapse-indicator {
     --cursor: pointer;
+  }
+  i,
+  em {
+    font-weight: var(--font-medium);
   }
 
   /* Animation */
@@ -141,6 +145,7 @@
     border-radius: var(--radius-s);
     padding: 2px 4px;
     color: var(--color-base-100);
+    font-weight: var(--font-medium);
 
     &:not([style]):not([class*="hltr-"]) {
       color: var(--text-accent);
@@ -148,6 +153,7 @@
   }
 
   .cm-s-obsidian span.cm-highlight {
+    font-weight: var(--font-medium);
     box-decoration-break: clone;
     padding-top: 2px;
     padding-bottom: 2px;
@@ -227,15 +233,10 @@
       position: absolute;
       top: 4px;
       bottom: 4px;
-      left: -12px;
+      inset-inline-start: -12px;
       border-left: 4px solid var(--background-modifier-border-hover);
       border-radius: var(--input-radius);
       content: "";
-    }
-
-    &[dir="rtl"]::after {
-      right: -12px;
-      left: unset;
     }
   }
 
@@ -419,6 +420,7 @@
     padding-bottom: 12px;
     border-radius: calc(var(--blockquote-border-thickness) / 2) var(--radius-s) var(--radius-s) calc(var(--blockquote-border-thickness) / 2);
     padding-inline-end: 16px;
+    font-size: var(--font-small);
   }
   .markdown-rendered blockquote::before {
     background: var(--blockquote-border-color);

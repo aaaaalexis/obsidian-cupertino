@@ -85,6 +85,7 @@ body {
   --background-modifier-hover: rgba(var(--mono-rgb-100), 0.05);
   --bold-modifier: 300;
   --blockquote-background-color: var(--background-primary-alt);
+  --blockquote-border-color: var(--text-faint);
   --blockquote-border-thickness: 4px;
   --blockquote-color: var(--text-muted);
   --blur-s: blur(4px) saturate(1.5) brightness(1.025);
@@ -94,7 +95,7 @@ body {
   --callout-border-width: var(--border-width);
   --callout-padding: 16px;
   --callout-radius: var(--radius-s);
-  --checkbox-radius: var(--clickable-icon-radius);
+  --checkbox-radius: calc(var(--radius-s) / 2);
   --code-border-width: var(--border-width);
   --code-white-space: pre-wrap;
   --code-size: var(--font-smaller);
@@ -171,10 +172,10 @@ body {
   --table-header-border-width: 0;
   --table-header-weight: var(--font-weight);
   --table-row-last-border-width: 0;
-  --tag-border-width: var(--border-width);
-  --tag-padding-x: 0.5em;
+  --table-text-size: var(--font-small);
+  --tag-padding-y: 0.35em;
   --tag-size: var(--font-smallest);
-  --tag-weight: var(--font-bold);
+  --tag-weight: var(--font-medium);
   --text-highlight-bg: hsla(var(--color-accent-hsl), 0.25);
   --text-selection: var(--background-modifier-hover);
   --titlebar-background-focused: transparent;
@@ -187,8 +188,6 @@ body {
   --toggle-thumb-height: 13px;
   --toggle-thumb-width: 21px;
   --toggle-width: 36px;
-  --p-spacing: 1.75rem;
-  --heading-spacing: 2em;
   --view-header-height: var(--header-height) !important;
   --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
 
