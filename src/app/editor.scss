@@ -413,48 +413,48 @@
   }
 
   /* Blockquote */
+
+  .el-blockquote + .el-blockquote {
+    margin-top: 3em;
+  }
+
   .markdown-rendered blockquote {
-    border-inline-start: none;
+    padding-inline-start: 16px;
     position: relative;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    border-radius: calc(var(--blockquote-border-thickness) / 2) var(--radius-s) var(--radius-s) calc(var(--blockquote-border-thickness) / 2);
-    padding-inline-end: 16px;
+    margin: 32px 16px !important;
     font-size: var(--font-small);
   }
   .markdown-rendered blockquote::before {
-    background: var(--blockquote-border-color);
-    width: var(--blockquote-border-thickness);
-    inset-inline-start: 0;
-    top: 0;
-    bottom: 0;
+    border-width: 16px;
+    border-style: solid;
+    border-color: var(--blockquote-background-color);
+    inset: -16px -16px -16px calc(-16px - var(--blockquote-border-thickness));
     content: "";
-    border-radius: var(--radius-s);
     position: absolute;
+    border-radius: var(--radius-s);
     pointer-events: none;
   }
-
-  .markdown-source-view.mod-cm6 .HyperMD-quote {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-indent: 0 !important;
-    padding-inline-start: 10px;
-    padding-inline-end: 16px;
-
-    &:not(.cm-active) {
-      padding-inline-start: 24px;
-
-      .cm-formatting {
-        display: none;
-      }
-    }
+  .markdown-rendered blockquote:has(p:dir(rtl))::before {
+    inset: -16px calc(-16px - var(--blockquote-border-thickness)) -16px -16px;
   }
-  .markdown-source-view.mod-cm6 .HyperMD-quote:before,
-  .markdown-source-view.mod-cm6 .cm-blockquote-border:before {
-    background: var(--blockquote-border-color);
-    width: var(--blockquote-border-thickness) !important;
-    border-radius: var(--radius-s);
-    border-inline-start: none !important;
+
+  .HyperMD-quote {
+    background-color: var(--blockquote-background-color);
+    border: solid var(--blockquote-background-color);
+    border-width: 0 16px 0 16px;
+    font-size: var(--font-small);
+  }
+  .HyperMD-quote:first-child,
+  .cm-line:not(.HyperMD-quote) + .HyperMD-quote {
+    border-top-width: 16px;
+    border-top-left-radius: var(--radius-s);
+    border-top-right-radius: var(--radius-s);
+  }
+  .HyperMD-quote:last-child,
+  .cm-line.HyperMD-quote:has(+ .cm-line:not(.HyperMD-quote)) {
+    border-bottom-width: 16px;
+    border-bottom-left-radius: var(--radius-s);
+    border-bottom-right-radius: var(--radius-s);
   }
 
   /***/
