@@ -71,24 +71,35 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
       padding: var(--side-padding) var(--side-padding) 12px;
     }
     .setting-item:not(.setting-item-heading) {
+      border: none;
       gap: 8px;
-      border-right: var(--border-width) solid var(--background-modifier-border);
-      border-left: var(--border-width) solid var(--background-modifier-border);
       border-radius: 0;
-      background-color: rgba(var(--mono-rgb-100), 0.01);
+      background-color: rgba(var(--mono-rgb-100), 0.025);
       padding: 12px var(--side-padding);
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0 var(--side-padding);
+        height: var(--border-width);
+        background-color: var(--background-modifier-border);
+        pointer-events: none;
+      }
     }
     .setting-item-heading + .setting-item,
     *:not(.setting-item) + .setting-item:not(.setting-item-heading),
     .setting-item:first-child:not(.setting-item-heading) {
-      border-top: var(--border-width) solid var(--background-modifier-border);
       border-top-right-radius: var(--radius-s) !important;
       border-top-left-radius: var(--radius-s) !important;
+
+      &::before {
+        content: none;
+      }
     }
     .setting-item:has(+ .setting-item-heading),
     .setting-item:has(+ *:not(.setting-item)):not(.setting-item-heading),
     .setting-item:last-child {
-      border-bottom: var(--border-width) solid var(--background-modifier-border);
       border-bottom-right-radius: var(--radius-s) !important;
       border-bottom-left-radius: var(--radius-s) !important;
     }
