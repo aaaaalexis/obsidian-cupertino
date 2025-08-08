@@ -156,7 +156,7 @@ Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
 
 ## Credits
 
-- **@kepano** - **[Minimal](https://github.com/kepano/obsidian-minimal)**: Cards, image grids, image filters
+- **@kepano** - **[Minimal](https://github.com/kepano/obsidian-minimal)**: Cards, image filters
 
 ## Licensing
 

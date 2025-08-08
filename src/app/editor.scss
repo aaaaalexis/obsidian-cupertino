@@ -88,6 +88,29 @@
     line-height: var(--line-height-normal);
   }
 
+  /*Image grid*/
+  .img-grid .markdown-preview-section {
+    .el-p > p:has(> .image-embed),
+    .el-p > p:has(> img) {
+      --p-spacing: 4px;
+
+      line-height: 0;
+      display: flex;
+      gap: 4px;
+
+      > .image-embed {
+        flex-grow: 1;
+        flex-shrink: 0;
+      }
+
+      img {
+        overflow: auto;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
   /* Code */
   .markdown-rendered code,
   .cm-s-obsidian .cm-inline-code:not(.cm-formatting) {
