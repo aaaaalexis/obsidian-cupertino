@@ -98,6 +98,15 @@
     border-radius: 0;
   }
 
+  kbd {
+    box-shadow: var(--shadow-editor);
+    border: 1px solid var(--background-modifier-border);
+    background-color: var(--background-primary);
+    padding: var(--tag-padding-y) var(--tag-padding-x);
+    font-weight: var(--font-medium);
+    font-family: var(--font-text);
+  }
+
   /* Codeblock */
   .markdown-rendered pre,
   .HyperMD-codeblock {
