@@ -1,6 +1,3 @@
-input[type="range"]::-webkit-slider-thumb {
-  border: none;
-}
 body:not(.mod-windows:not(.windows-mode-off)):not(.is-android:not(.material-off)) input[type="range"]::-webkit-slider-thumb {
   transition: var(--anim-duration-moderate);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.05);
