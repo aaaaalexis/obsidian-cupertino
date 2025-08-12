@@ -1,5 +1,9 @@
 /* https://github.com/damiankorcz/Alternative-Checkboxes-Reference-Set */
 
+input[type="checkbox"] {
+  border-width: 1.5px;
+}
+
 input[type="checkbox"]:checked {
   border: none;
 }
