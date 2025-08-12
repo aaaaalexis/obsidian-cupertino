@@ -15,7 +15,7 @@ body.is-mobile {
   --input-height: 44px;
   --input-radius: var(--radius-m);
   --mobile-sidebar-width: 100%;
-  --mobile-toolbar-height: var(--input-height);
+  --mobile-toolbar-height: auto;
   --modal-background: rgb(from var(--background-secondary) r g b / 50%) !important;
   --modal-radius: var(--radius-xl) var(--radius-xl) 0 0;
   --nav-item-background-active: var(--color-accent);
@@ -320,6 +320,12 @@ body.is-mobile {
     position: relative;
   }
 
+  .mobile-toolbar-option {
+    --icon-size: var(--icon-l);
+    --icon-stroke: var(--icon-l-stroke-width);
+
+    padding: 12px;
+  }
   .mobile-toolbar-options-container {
     gap: 8px;
   }
@@ -330,7 +336,7 @@ body.is-mobile {
   }
   .mobile-toolbar-options-list {
     gap: 4px;
-    width: calc(100% - var(--input-height) - 8px - var(--input-height) - 8px);
+    width: calc(100% - 48px - 8px - 48px - 8px);
     overflow: scroll;
   }
 
