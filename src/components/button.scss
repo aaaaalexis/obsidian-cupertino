@@ -3,7 +3,7 @@
 }
 
 body:not(.is-mobile) {
-  .clickable-icon:not(.input-right-decorator) {
+  .clickable-icon {
     padding: 4px 12px;
     min-height: 32px;
   }
@@ -13,6 +13,11 @@ body:not(.is-mobile) {
     border: none;
     font-weight: var(--font-normal);
     line-height: unset;
+  }
+
+  .input-right-decorator {
+    padding: 2px 4px;
+    min-height: unset;
   }
 }
 
