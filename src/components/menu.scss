@@ -64,7 +64,7 @@ body:not(.is-mobile) .suggestion-container {
 
 body.is-mobile {
   .menu {
-    backdrop-filter: var(--blur-l);
+    backdrop-filter: var(--blur-m);
     background-color: var(--modal-background);
     padding: 0;
     overflow: hidden;

@@ -89,7 +89,7 @@ body.is-mobile {
   }
 
   .modal:not(.mod-sidebar-layout) {
-    backdrop-filter: var(--blur-l);
+    backdrop-filter: var(--blur-s);
     border-radius: var(--modal-radius);
     background-color: var(--modal-background) !important;
 
