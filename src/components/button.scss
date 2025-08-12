@@ -3,7 +3,7 @@
 }
 
 body:not(.is-mobile) {
-  .clickable-icon {
+  .clickable-icon:not(.input-right-decorator) {
     padding: 4px 12px;
     min-height: 32px;
   }
