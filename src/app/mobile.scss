@@ -65,11 +65,8 @@ body.is-mobile {
   }
 }
 
-body.is-phone {
-  --file-header-justify: flex-start;
-  --mobile-sidebar-max-width: 100%;
-  --tab-outline-width: 1px;
-  --tab-outline-width: 1px;
+body.is-mobile .workspace > .mod-root {
+  padding-top: 0;
 }
 
 body.is-tablet {
