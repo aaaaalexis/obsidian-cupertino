@@ -19,7 +19,7 @@ body.is-mobile .workspace > .mod-root {
 body.is-phone {
   &:not(.quick-mode-switch-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     position: fixed;
-    right: max(var(--safe-area-inset-right), 8px);
+    right: max(var(--safe-area-inset-right), 16px);
     bottom: 16px;
     backdrop-filter: blur(32px);
     margin-bottom: calc(4px + var(--input-height) + var(--safe-area-inset-bottom));
@@ -212,7 +212,7 @@ body.is-phone {
 
 body.is-mobile {
   &:not(.hide-tabs-count-off) {
-    .mobile-navbar-action:nth-last-child(2) .clickable-icon::before {
+    .mobile-navbar-action-tabs .clickable-icon::before {
       background-color: var(--icon-color);
       width: 24px;
       height: 24px;
@@ -223,9 +223,14 @@ body.is-mobile {
       -webkit-mask-repeat: no-repeat;
     }
 
-    .mobile-navbar-tabs-action {
+    .mobile-navbar-action-tabs svg,
+    .mobile-navbar-tabs-number {
       display: none;
     }
+  }
+
+  .mobile-navbar-actions {
+    --icon-size: var(--icon-l);
   }
 
   .mobile-navbar-action {
