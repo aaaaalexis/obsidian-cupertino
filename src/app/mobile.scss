@@ -10,6 +10,10 @@ body.is-mobile.is-ios {
   }
 }
 
+body.is-mobile .workspace > .mod-root {
+  padding-top: 0;
+}
+
 /********** Mode Switchcer **********/
 
 body.is-phone {
