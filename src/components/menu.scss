@@ -93,6 +93,7 @@ body.is-mobile {
   .menu-item-icon {
     color: var(--text-normal);
     justify-content: center;
+    order: 0 !important;
 
     > svg.svg-icon {
       --icon-size: var(--icon-m);
