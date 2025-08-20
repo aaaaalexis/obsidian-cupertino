@@ -97,7 +97,7 @@ body:not(.is-phone) {
 
     .workspace-tab-header-container-inner {
       flex-grow: 1;
-      justify-content: center;
+      justify-content: safe center;
       gap: 4px;
     }
 
