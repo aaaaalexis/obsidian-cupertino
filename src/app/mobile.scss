@@ -293,6 +293,7 @@ body.is-mobile {
   .mobile-navbar-actions,
   .workspace-drawer .nav-buttons-container,
   .mobile-toolbar-options-list {
+    --icon-size: var(--icon-l);
     --icon-color: var(--text-normal);
     gap: 8px;
     box-shadow: var(--shadow-xs) !important;
@@ -306,6 +307,7 @@ body.is-mobile {
 
     .clickable-icon {
       padding: 12px;
+      width: auto;
     }
   }
   .mobile-navbar-action,
