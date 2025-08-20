@@ -82,7 +82,7 @@ body.is-tablet {
 
 /********** Mode Switchcer **********/
 
-html:not([style*="--keyboard-height: 0px;"]) body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+html:not(:not([style*="--keyboard-height"]), [style*="--keyboard-height: 0px;"]) body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
   margin-bottom: 0;
 }
 
