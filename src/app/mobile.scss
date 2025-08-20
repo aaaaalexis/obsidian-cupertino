@@ -65,8 +65,12 @@ body.is-mobile {
   }
 }
 
-body.is-mobile .workspace > .mod-root {
-  padding-top: 0;
+body.is-phone {
+  --menu-shadow: none;
+
+  .workspace > .mod-root {
+    padding-top: 0;
+  }
 }
 
 body.is-tablet {
