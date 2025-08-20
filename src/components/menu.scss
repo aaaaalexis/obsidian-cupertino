@@ -144,10 +144,10 @@ body.is-mobile {
 body.is-phone {
   .menu-grabber {
     position: absolute;
-    top: 8px;
     align-self: center;
     width: 36px;
     height: 5px;
+    z-index: 1;
   }
   .menu-scroll {
     padding: 40px var(--side-padding) max(var(--safe-area-inset-bottom), 16px);
