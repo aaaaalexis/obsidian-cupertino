@@ -136,19 +136,4 @@ body.is-phone {
       animation: fadeInUpDelay var(--anim-duration-slow);
     }
   }
-
-  /* Tab Switcher In */
-  .mobile-tab-switcher {
-    transition: var(--anim-duration-slow) var(--anim-motion-cupertino) !important;
-
-    @starting-style {
-      transform: translateY(100%);
-    }
-  }
-
-  /* Tab Switcher Out */
-  .mobile-tab-switcher[style*="opacity: 0;"] {
-    transition: var(--anim-duration-moderate) !important;
-    transform: translateY(100%) !important;
-  }
 }
