@@ -219,7 +219,7 @@
     box-shadow: var(--shadow-editor);
 
     p:first-child {
-      margin-block-start: 8px;
+      margin-block-start: 8px !important;
     }
 
     p:last-child {
