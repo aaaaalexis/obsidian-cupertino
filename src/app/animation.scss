@@ -28,15 +28,13 @@
   }
 }
 
-@keyframes blurInScale {
+@keyframes bounceInScale {
   from {
     transform: scale(1.25);
     opacity: 0;
-    filter: blur(16px);
   }
   30% {
     transform: scale(0.99);
-    filter: blur(0px);
   }
 }
 

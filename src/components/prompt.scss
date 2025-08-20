@@ -12,7 +12,7 @@ body:not(.is-phone) {
     backdrop-filter: var(--blur-m);
     border: none;
     background-color: var(--modal-background);
-    animation: var(--anim-duration-slow) blurInScale var(--anim-motion-cupertino);
+    animation: var(--anim-duration-slow) bounceInScale var(--anim-motion-cupertino);
   }
 
   .prompt-input-container {
@@ -145,7 +145,7 @@ body.is-tablet {
   .prompt {
     --prompt-bottom: 0;
 
-    animation: var(--anim-duration-slow) blurInScale;
+    animation: var(--anim-duration-slow) bounceInScale;
     outline: var(--prompt-border-width) solid var(--background-modifier-hover);
     background-color: var(--modal-background) !important;
   }
