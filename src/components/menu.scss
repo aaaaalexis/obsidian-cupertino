@@ -78,6 +78,14 @@ body.is-tablet:not(.tablet-menu-off) {
     flex-direction: row-reverse;
     padding: 16px;
   }
+  .menu-group .menu-item:last-child {
+    border-bottom-left-radius: var(--radius-s);
+    border-bottom-right-radius: var(--radius-s);
+  }
+  .menu-group .menu-item:first-child {
+    border-top-left-radius: var(--radius-s);
+    border-top-right-radius: var(--radius-s);
+  }
   .menu-item-title {
     white-space: normal;
   }
