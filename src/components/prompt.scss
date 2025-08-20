@@ -87,7 +87,7 @@ body.is-phone {
     align-items: center;
     gap: 8px;
     position: absolute;
-    inset: auto 0 0;
+    inset: auto 0 var(--safe-area-inset-bottom);
     z-index: 1;
   }
 

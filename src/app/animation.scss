@@ -102,7 +102,7 @@ body.is-phone {
   }
 
   .prompt-input-container {
-    transition: var(--anim-duration-slow) var(--anim-motion-cupertino) var(--anim-duration-slow);
+    transition: var(--anim-duration-slow) var(--anim-motion-cupertino);
 
     @starting-style {
       filter: var(--blur-s);

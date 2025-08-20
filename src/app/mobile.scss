@@ -56,7 +56,6 @@ body.is-mobile {
     --font-ui-small: calc(var(--font-text-size) * 0.937 + 1px);
     --font-ui-medium: calc(var(--font-text-size) + 1px);
     --font-ui-large: calc(var(--font-text-size) * 1.2 + 1px);
-    --safe-area-inset-bottom: 28px;
 
     .markdown-preview-view,
     .markdown-source-view {
@@ -82,6 +81,10 @@ body.is-tablet {
 }
 
 /********** Mode Switchcer **********/
+
+html:not([style*="--keyboard-height: 0px;"]) body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+  margin-bottom: 0;
+}
 
 body.is-phone {
   .mod-root .view-header {

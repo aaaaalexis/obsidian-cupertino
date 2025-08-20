@@ -1,4 +1,8 @@
 body {
+  .modal-bg {
+    background-color: transparent;
+  }
+
   .modal:not(.mod-sidebar-layout) {
     backdrop-filter: var(--blur-m);
     box-shadow: var(--shadow-s);
@@ -27,10 +31,6 @@ body {
 }
 
 body:not(.is-mobile) {
-  .modal-bg {
-    background-color: transparent;
-  }
-
   .modal:not(.mod-sidebar-layout) {
     .modal-close-button {
       display: none;
