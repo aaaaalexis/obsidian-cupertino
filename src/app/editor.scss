@@ -178,6 +178,7 @@
     padding: 2px 4px;
     color: var(--color-base-100);
     font-weight: var(--font-medium);
+    background-color: hsla(var(--color-accent-hsl), 0.25);
 
     &:not([style]):not([class*="hltr-"]) {
       color: var(--text-accent);
@@ -190,6 +191,7 @@
     padding-top: 2px;
     padding-bottom: 2px;
     color: var(--text-accent);
+    background-color: hsla(var(--color-accent-hsl), 0.25);
   }
   .cm-line .cm-highlight:nth-child(1 of .cm-highlight) {
     border-top-left-radius: var(--radius-s);
@@ -200,10 +202,6 @@
     border-top-right-radius: var(--radius-s);
     border-bottom-right-radius: var(--radius-s);
     padding-right: 4px;
-  }
-
-  .is-flashing {
-    outline: var(--border-width) solid var(--color-accent);
   }
 
   /* Link */
