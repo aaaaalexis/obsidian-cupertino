@@ -84,12 +84,12 @@ body.is-phone {
   .markdown-source-view .document-search-container {
     padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px) !important;
   }
-
+  .mod-root .view-content > div:not(.markdown-source-view, .markdown-reading-view, .canvas-wrapper, .graph-controls, .empty-state, .bases-header, .bases-view),
+  .mod-root .workspace-leaf-content[data-type="bases"] .view-content {
+    padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height));
+  }
   .markdown-source-view .document-search-container ~ .cm-editor .cm-scroller {
     padding: var(--file-margins) !important;
-  }
-  .mod-root .view-content > div:not(.markdown-source-view):not(.markdown-reading-view):not(.canvas-wrapper):not(.graph-controls):not(.empty-state) {
-    padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height));
   }
 
   // iOS icon
