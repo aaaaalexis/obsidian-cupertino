@@ -301,6 +301,10 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     .svg-icon {
       --icon-size: var(--icon-s);
     }
+
+    .bases-toolbar-menu-item {
+      border-radius: var(--radius-m) !important;
+    }
   }
 
   /********** Modal **********/

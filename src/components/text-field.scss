@@ -74,11 +74,15 @@ body:not(.is-mobile) {
   .search-input-container {
     --search-icon-size: var(--icon-xs);
   }
+  .combobox .search-input-container {
+    margin: 0;
+  }
 }
 
 body.is-mobile {
   select,
-  .dropdown {
+  .dropdown,
+  .combobox-button {
     box-shadow: none !important;
   }
 }
@@ -88,7 +92,8 @@ body.is-phone:not(.is-android:not(.material-off)) {
   input[type="text"],
   input[type="number"],
   select,
-  .dropdown {
+  .dropdown,
+  .combobox-button {
     justify-content: flex-start;
     background-color: var(--interactive-normal);
     padding: 0 var(--side-padding);
@@ -98,7 +103,8 @@ body.is-phone:not(.is-android:not(.material-off)) {
   }
 
   select,
-  .dropdown {
+  .dropdown,
+  .combobox-button {
     color: var(--text-accent);
   }
 }

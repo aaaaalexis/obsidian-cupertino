@@ -60,6 +60,23 @@ body:not(.is-mobile) .suggestion-container {
   .search-suggest-item:not(.mod-group).is-selected {
     --text-muted: var(--text-on-accent);
   }
+
+  .bases-query-container input {
+    border: none;
+  }
+  .bases-toolbar-menu-container .search-input-container {
+    margin: 0;
+  }
+  .bases-toolbar-menu-item-icon,
+  .filter-row-actions > button {
+    min-height: unset;
+  }
+  .bases-toolbar-menu-item {
+    border-radius: calc(var(--radius-m) - 4px) !important;
+  }
+  .bases-toolbar-menu-form {
+    padding: 0;
+  }
 }
 
 body.is-mobile {
@@ -99,16 +116,9 @@ body.is-mobile {
       --icon-size: var(--icon-m);
     }
   }
-  .menu-item:not(:last-child) .menu-item-title::after {
-    content: "";
-    position: absolute;
-    height: var(--border-width);
-    background: var(--background-modifier-border);
-    inset: auto 0 -16px;
-  }
   .menu-item-title {
     white-space: normal;
-    position: relative;
+  position: relative;
   }
   .menu-item.is-label {
     border: none !important;
@@ -155,6 +165,42 @@ body.is-phone {
   .menu-item {
     font-size: var(--font-ui-medium);
     padding: var(--nav-item-padding);
+  }
+  .menu-item:not(:last-child) .menu-item-title::after {
+    content: "";
+    position: absolute;
+    height: var(--border-width);
+    background: var(--background-modifier-border);
+    inset: auto 0 -16px;
+  }
+
+  .mod-views .suggestion-group,
+  .mod-properties .suggestion-group,
+  .mod-views .bases-toolbar-menu-container-header,
+  .mod-properties .bases-toolbar-menu-container-header,
+  .mod-views .bases-toolbar-menu-form,
+  .mod-properties .bases-toolbar-menu-form {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .bases-toolbar-menu-container .search-input-container {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .bases-toolbar-menu-item-icon {
+    padding: revert-layer;
+  }
+  .menu .suggestion-group .suggestion-item {
+    padding: 16px;
+  }
+  .menu .suggestion-group .suggestion-item:first-child {
+    border-top-left-radius: var(--radius-m);
+    border-top-right-radius: var(--radius-m);
+  }
+  .menu .suggestion-group .suggestion-item:last-child {
+    border-bottom-left-radius: var(--radius-m);
+    border-bottom-right-radius: var(--radius-m);
   }
 }
 
