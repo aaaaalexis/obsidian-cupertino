@@ -155,6 +155,50 @@ body.is-phone {
     border-bottom-right-radius: var(--radius-s);
     border-bottom-left-radius: var(--radius-s);
   }
+
+  .menu .suggestion-group .suggestion-item {
+    padding: 16px;
+  }
+  .menu .suggestion-group .suggestion-item:not(.is-label) {
+    background-color: rgb(from var(--background-secondary-alt) r g b/75%);
+  }
+  .menu .suggestion-group .suggestion-item:first-child {
+    border-top-left-radius: var(--radius-s);
+    border-top-right-radius: var(--radius-s);
+  }
+  .menu .suggestion-group .suggestion-item:last-child {
+    border-bottom-left-radius: var(--radius-s);
+    border-bottom-right-radius: var(--radius-s);
+  }
+
+  .mod-views .suggestion-group,
+  .mod-properties .suggestion-group,
+  .mod-views .bases-toolbar-menu-container-header,
+  .mod-properties .bases-toolbar-menu-container-header,
+  .mod-views .bases-toolbar-menu-form,
+  .mod-properties .bases-toolbar-menu-form {
+    padding: 0;
+  }
+  .bases-toolbar-menu-container .search-input-container {
+    margin: 0;
+    width: 100%;
+    padding-bottom: 8px;
+  }
+  .bases-toolbar-menu-container .search-input-container input {
+    background-color: rgb(from var(--background-secondary-alt) r g b/75%);
+    border-radius: var(--input-radius);
+  }
+  .bases-toolbar-items .suggestion-group {
+    border-radius: var(--radius-s);
+  }
+  .bases-toolbar-items .suggestion-group[data-group="actions"] {
+    padding-top: 8px;
+    border-top: none;
+  }
+  .bases-toolbar-menu-item-icon {
+    padding: 0;
+    height: auto;
+  }
 }
 
 body.is-tablet:not(.is-android:not(.material-off)) {

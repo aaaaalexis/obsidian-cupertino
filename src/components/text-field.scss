@@ -55,7 +55,8 @@ body:not(.is-mobile) {
 
 body.is-mobile {
   select,
-  .dropdown {
+  .dropdown,
+  .combobox-button {
     box-shadow: none !important;
   }
 }
@@ -65,7 +66,8 @@ body.is-phone:not(.is-android:not(.material-off)) {
   input[type="text"],
   input[type="number"],
   select,
-  .dropdown {
+  .dropdown,
+  .combobox-button {
     justify-content: flex-start;
     background-color: var(--interactive-normal);
     padding: 0 20px;
@@ -76,7 +78,8 @@ body.is-phone:not(.is-android:not(.material-off)) {
   }
 
   select,
-  .dropdown {
+  .dropdown,
+  .combobox-button {
     color: var(--text-accent);
   }
 }
