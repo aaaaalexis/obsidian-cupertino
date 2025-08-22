@@ -196,7 +196,7 @@ body {
   --table-row-last-border-width: 0;
   --tag-border-width: var(--border-width);
   --tag-size: var(--font-smallest);
-  --text-highlight-bg: hsla(var(--color-accent-hsl), 0.25) !important;
+  --tag-weight: var(--font-medium);
   --text-selection: var(--background-modifier-hover);
   --titlebar-background-focused: transparent;
   --titlebar-background: transparent;
@@ -397,6 +397,10 @@ body.is-popout-window {
     background-color: var(--background-primary);
   }
 }
+body:not(.mod-windows:not(.windows-mode-off)):not(.is-android:not(.material-off)) * {
+  -electron-corner-smoothing: 60%;
+}
+
 body:not(.is-popout-window),
 body:not(.is-popout-window) .app-container {
   align-items: center;
@@ -974,6 +978,8 @@ body.is-tablet .workspace-tab-header-container-inner {
     border-radius: var(--radius-s);
     padding: 2px 4px;
     color: var(--color-base-100);
+    font-weight: var(--font-medium);
+    background-color: hsla(var(--color-accent-hsl), 0.25);
   }
   .markdown-reading-view mark:not([style]):not([class*=hltr-]),
   .markdown-source-view mark:not([style]):not([class*=hltr-]) {
@@ -984,6 +990,7 @@ body.is-tablet .workspace-tab-header-container-inner {
     padding-top: 2px;
     padding-bottom: 2px;
     color: var(--text-accent);
+    background-color: hsla(var(--color-accent-hsl), 0.25);
   }
   .cm-line .cm-highlight:nth-child(1 of .cm-highlight) {
     border-top-left-radius: var(--radius-s);
@@ -2293,11 +2300,12 @@ body.is-phone .view-content .cm-scroller,
 body.is-phone .markdown-source-view .document-search-container {
   padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px) !important;
 }
+body.is-phone .mod-root .view-content > div:not(.markdown-source-view, .markdown-reading-view, .canvas-wrapper, .graph-controls, .empty-state, .bases-header, .bases-view),
+body.is-phone .mod-root .workspace-leaf-content[data-type=bases] .view-content {
+  padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height));
+}
 body.is-phone .markdown-source-view .document-search-container ~ .cm-editor .cm-scroller {
   padding: var(--file-margins) !important;
-}
-body.is-phone .mod-root .view-content > div:not(.markdown-source-view):not(.markdown-reading-view):not(.canvas-wrapper):not(.graph-controls):not(.empty-state) {
-  padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height));
 }
 body.is-phone:not(.is-android:not(.material-off)) .mod-left-split-toggle {
   position: relative;
@@ -3401,6 +3409,48 @@ body.is-phone .menu-item + .menu-item:last-child {
   border-bottom-right-radius: var(--radius-s);
   border-bottom-left-radius: var(--radius-s);
 }
+body.is-phone .menu .suggestion-group .suggestion-item {
+  padding: 16px;
+}
+body.is-phone .menu .suggestion-group .suggestion-item:not(.is-label) {
+  background-color: rgb(from var(--background-secondary-alt) r g b/75%);
+}
+body.is-phone .menu .suggestion-group .suggestion-item:first-child {
+  border-top-left-radius: var(--radius-s);
+  border-top-right-radius: var(--radius-s);
+}
+body.is-phone .menu .suggestion-group .suggestion-item:last-child {
+  border-bottom-left-radius: var(--radius-s);
+  border-bottom-right-radius: var(--radius-s);
+}
+body.is-phone .mod-views .suggestion-group,
+body.is-phone .mod-properties .suggestion-group,
+body.is-phone .mod-views .bases-toolbar-menu-container-header,
+body.is-phone .mod-properties .bases-toolbar-menu-container-header,
+body.is-phone .mod-views .bases-toolbar-menu-form,
+body.is-phone .mod-properties .bases-toolbar-menu-form {
+  padding: 0;
+}
+body.is-phone .bases-toolbar-menu-container .search-input-container {
+  margin: 0;
+  width: 100%;
+  padding-bottom: 8px;
+}
+body.is-phone .bases-toolbar-menu-container .search-input-container input {
+  background-color: rgb(from var(--background-secondary-alt) r g b/75%);
+  border-radius: var(--input-radius);
+}
+body.is-phone .bases-toolbar-items .suggestion-group {
+  border-radius: var(--radius-s);
+}
+body.is-phone .bases-toolbar-items .suggestion-group[data-group=actions] {
+  padding-top: 8px;
+  border-top: none;
+}
+body.is-phone .bases-toolbar-menu-item-icon {
+  padding: 0;
+  height: auto;
+}
 
 body.is-tablet:not(.is-android:not(.material-off)).theme-light .menu-item:not(.is-label[data-section=title]) {
   background-color: rgb(from var(--background-primary) r g b/50%);
@@ -3688,7 +3738,8 @@ body:not(.is-mobile) .dropdown {
 }
 
 body.is-mobile select,
-body.is-mobile .dropdown {
+body.is-mobile .dropdown,
+body.is-mobile .combobox-button {
   box-shadow: none !important;
 }
 
@@ -3696,7 +3747,8 @@ body.is-phone:not(.is-android:not(.material-off)) textarea,
 body.is-phone:not(.is-android:not(.material-off)) input[type=text],
 body.is-phone:not(.is-android:not(.material-off)) input[type=number],
 body.is-phone:not(.is-android:not(.material-off)) select,
-body.is-phone:not(.is-android:not(.material-off)) .dropdown {
+body.is-phone:not(.is-android:not(.material-off)) .dropdown,
+body.is-phone:not(.is-android:not(.material-off)) .combobox-button {
   justify-content: flex-start;
   background-color: var(--interactive-normal);
   padding: 0 20px;
@@ -3706,7 +3758,8 @@ body.is-phone:not(.is-android:not(.material-off)) .dropdown {
   text-align: start;
 }
 body.is-phone:not(.is-android:not(.material-off)) select,
-body.is-phone:not(.is-android:not(.material-off)) .dropdown {
+body.is-phone:not(.is-android:not(.material-off)) .dropdown,
+body.is-phone:not(.is-android:not(.material-off)) .combobox-button {
   color: var(--text-accent);
 }
 
