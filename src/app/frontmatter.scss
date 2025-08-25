@@ -155,6 +155,10 @@ body:not(.is-mobile) {
 }
 
 body.is-mobile {
+  .metadata-container {
+    --metadata-property-radius: var(--radius-s);
+  }
+
   .metadata-property-key {
     padding-top: 0;
     padding-bottom: 0;
