@@ -422,3 +422,7 @@ body:not(.show-view-header):not(.is-phone) {
     }
   }
 }
+
+svg.svg-icon {
+  fill: none !important ;
+}
