@@ -40,14 +40,7 @@
 }
 .canvas-node-label {
   left: 2px;
-  transition: var(--anim-duration-fast) var(--anim-duration-moderate);
-}
-
-.canvas-node-container:not(:hover) + .canvas-node-label:not(:hover) {
-  top: 20px;
-  opacity: 0;
-  z-index: -1;
-  transition-delay: 3s;
+  transition: var(--anim-duration-fast);
 }
 
 body.is-phone {
