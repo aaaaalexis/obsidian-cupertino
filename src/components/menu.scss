@@ -141,6 +141,9 @@ body.is-phone {
   .menu-scroll {
     padding: 40px 20px calc(var(--safe-area-inset-bottom) + 16px);
   }
+  .menu-item-icon {
+    order: 0 !important;
+  }
   .menu-item + .menu-item,
   .menu-item:has(+ .menu-item) {
     border-radius: 0;
