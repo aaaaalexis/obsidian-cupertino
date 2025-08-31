@@ -52,7 +52,8 @@ body:not(.is-mobile) {
 
     .workspace-tab-container,
     .workspace-leaf,
-    .workspace-leaf-content {
+    .workspace-leaf-content,
+    .workspace-leaf-content > .view-content {
       overflow: visible !important;
     }
   }
