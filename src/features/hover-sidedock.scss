@@ -1,4 +1,4 @@
-body:not(.is-mobile) {
+body:not(.is-mobile):not(.hover-sidedock-off) {
   .mod-sidedock {
     transition: var(--anim-duration-fast) var(--anim-motion-cupertino);
 
