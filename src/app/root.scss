@@ -4,6 +4,15 @@ name: Cupertino
 id: cupertino
 settings:
     -
+        id: macos-header
+        title: On macOS
+        type: heading
+        level: 1
+    -
+        id: sidedock-alt
+        title: macOS Tahoe style sidebar
+        type: class-toggle
+    -
         id: windows-header
         title: On Windows
         type: heading
@@ -67,6 +76,10 @@ settings:
         min: 0
         max: 100
         step: 5
+    -
+        id: hover-sidedock-off
+        title: Disable hover sidebar
+        type: class-toggle
     -
         id: hide-status-off
         title: Disable compact status bar
