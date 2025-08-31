@@ -36,6 +36,10 @@ body.is-phone {
     backdrop-filter: none;
     background-color: var(--background-secondary);
   }
+
+  &.mod-toolbar-open .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
+    margin-bottom: var(--side-padding);
+  }
 }
 
 /********** Top Bar **********/
