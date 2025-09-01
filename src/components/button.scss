@@ -6,6 +6,12 @@ body:not(.is-mobile) {
   .clickable-icon {
     padding: 4px 12px;
     min-height: 32px;
+
+    &:not([aria-disabled="true"]):hover,
+    &.has-active-menu {
+      box-shadow: var(--shadow-xs);
+      background-color: var(--background-primary);
+    }
   }
   button:not(.clickable-icon) {
     padding: 4px 12px;
