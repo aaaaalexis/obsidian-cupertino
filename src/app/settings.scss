@@ -7,6 +7,10 @@ body:not(.is-mobile) {
     }
   }
 
+  .setting-item-name {
+    overflow: visible;
+  }
+
   .modal.mod-community-modal {
     .setting-item,
     .community-modal-search-summary {
