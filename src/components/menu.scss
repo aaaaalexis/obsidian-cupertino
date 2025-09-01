@@ -2,7 +2,6 @@ body:not(.is-mobile) .menu,
 body:not(.is-mobile) .suggestion-container {
   backdrop-filter: var(--blur-s);
   border-radius: var(--radius-m);
-  background-color: var(--modal-background);
   padding: 0;
   border: none;
 
@@ -118,7 +117,7 @@ body.is-mobile {
   }
   .menu-item-title {
     white-space: normal;
-  position: relative;
+    position: relative;
   }
   .menu-item.is-label {
     border: none !important;

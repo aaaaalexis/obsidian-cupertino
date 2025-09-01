@@ -232,7 +232,8 @@ body {
     --color-pink-rgb: 255, 45, 85;
     --color-pink: #ff2d55;
     --divider-color: rgba(31, 34, 37, 0.09) !important;
-    --modal-background: rgb(from var(--background-secondary) r g b / 75%) !important;
+    --menu-background: rgb(from var(--background-secondary) r g b / 75%) !important;
+    --modal-background: rgb(from var(--background-primary) r g b / 90%) !important;
     --interactive-normal: var(--color-base-25);
     --input-shadow: inset 0 -0.15px 0 0.5px rgba(0, 0, 0, 0.2), 0 1px 1.5px 0 rgba(0, 0, 0, 0.03), 0 0.3px 0.5px 0 rgba(0, 0, 0, 0.1) !important;
 
@@ -276,7 +277,8 @@ body {
     --color-pink-rgb: 255, 55, 95;
     --color-pink: #ff375f;
     --divider-color: rgba(244, 244, 244, 0.12) !important;
-    --modal-background: rgb(from var(--color-base-00) r g b / 90%) !important;
+    --modal-background: rgb(from var(--background-primary) r g b / 75%) !important;
+    --modal-background: rgb(from var(--background-primary) r g b / 90%) !important;
     --interactive-normal: var(--color-base-40);
     --input-shadow: inset 0 0.5px 0px 0px rgba(255, 255, 255, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1) !important;
 

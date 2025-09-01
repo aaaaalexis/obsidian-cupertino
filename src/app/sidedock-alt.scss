@@ -49,7 +49,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt {
     box-shadow: none !important;
   }
   &.theme-light .mod-sidedock.mod-left-split {
-    background-color: var(--color-base-10);
+    background-color: var(--background-primary-alt);
     outline: var(--border-width) solid white;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05);
   }
