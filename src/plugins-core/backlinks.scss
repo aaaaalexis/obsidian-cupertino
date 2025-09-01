@@ -21,6 +21,12 @@
   }
 }
 
+body:not(.is-mobile) .search-result-file-match-destination-file,
+body:not(.is-mobile) .search-result-file-match-destination-file-icon {
+  box-shadow: none;
+  color: var(--text-normal);
+}
+
 body.is-mobile {
   .backlink-pane,
   .outgoing-link-pane {
