@@ -45,18 +45,6 @@ body:not(.is-mobile) {
     display: none;
   }
 
-  .workspace-split.mod-sidedock {
-    .workspace-leaf {
-      contain: size !important;
-    }
-
-    .workspace-tab-container,
-    .workspace-leaf,
-    .workspace-leaf-content,
-    .workspace-leaf-content > .view-content {
-      overflow: visible !important;
-    }
-  }
   .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
   .workspace-split.mod-sidedock .workspace-leaf-content > .view-content,
   .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
@@ -82,10 +70,8 @@ body:not(.is-mobile) {
   .mod-sidedock .workspace-tab-container,
   .mod-sidedock .workspace-leaf,
   .mod-sidedock .workspace-leaf-content {
-    &:hover {
-      contain: size !important;
-      overflow: visible;
-    }
+    contain: size !important;
+    overflow: visible;
   }
   .workspace-sidedock-vault-profile {
     padding: var(--side-padding);
