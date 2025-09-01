@@ -44,6 +44,10 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt {
     }
   }
 
+  &:not(.is-focused) .mod-sidedock.mod-left-split {
+    background-color: var(--color-base-20) !important;
+    box-shadow: none !important;
+  }
   &.theme-light .mod-sidedock.mod-left-split {
     background-color: var(--color-base-10);
     outline: var(--border-width) solid white;
