@@ -15,6 +15,10 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt {
     background-color: var(--color-base-05);
   }
 
+  &.is-popout-window .workspace .mod-root {
+    margin-left: 0;
+    margin-right: 0;
+  }
   &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
     margin-left: 0;
     .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
