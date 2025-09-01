@@ -49,9 +49,16 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt {
     }
   }
 
-  &:not(.is-focused) .mod-sidedock.mod-left-split {
+  &:not(.is-focused) .mod-sidedock {
     background-color: var(--color-base-20) !important;
     box-shadow: none !important;
+  }
+  .mod-sidedock {
+    background-color: color-mix(in srgb, var(--background-primary) 98%, var(--color-accent));
+  }
+
+  &.is-fullscreen .mod-sidedock.mod-left-split {
+    border-radius: var(--radius-m);
   }
   &.theme-light .mod-sidedock.mod-left-split {
     outline: var(--border-width) solid white;
@@ -62,7 +69,6 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt {
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
   }
   .mod-sidedock.mod-left-split {
-    background-color: color-mix(in srgb, var(--background-primary) 98%, var(--color-accent));
     z-index: var(--layer-sidedock);
     border-radius: var(--radius-window);
     display: flex !important;
