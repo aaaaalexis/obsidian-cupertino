@@ -41,8 +41,7 @@ body:not(.mod-windows):not(.is-android) .style-settings-heading[data-id="cuperti
   .style-settings-heading[data-id="windows-header"],
   .style-settings-heading[data-id="windows-header"] + .style-settings-container,
   .style-settings-heading[data-id="android-header"],
-  .style-settings-heading[data-id="android-header"] + .style-settings-container,
-  .style-settings-heading[data-id="general-header"] {
+  .style-settings-heading[data-id="android-header"] + .style-settings-container {
     display: none;
   }
 }
