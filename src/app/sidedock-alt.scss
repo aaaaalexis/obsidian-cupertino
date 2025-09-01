@@ -10,7 +10,8 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt {
   &:not(.is-translucent).theme-light .app-container {
     background-color: var(--background-primary);
   }
-  &:not(.is-translucent).theme-dark div:is(.app-container, .mod-root .view-header, .mod-root .view-content) {
+  &:not(.is-translucent).theme-dark div:is(.app-container, .mod-root .view-header, .mod-root .view-content),
+  .mod-root .workspace-leaf-content[data-type="markdown"] .view-header::before {
     background-color: var(--color-base-05);
   }
 
@@ -49,20 +50,19 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt {
     box-shadow: none !important;
   }
   &.theme-light .mod-sidedock.mod-left-split {
-    background-color: var(--background-primary-alt);
     outline: var(--border-width) solid white;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05);
   }
   &.theme-dark .mod-sidedock.mod-left-split {
-    background-color: var(--background-primary);
     outline: var(--border-width) solid var(--background-modifier-border);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
   }
   .mod-sidedock.mod-left-split {
+    background-color: color-mix(in srgb, var(--background-primary) 98%, var(--color-accent));
     z-index: var(--layer-sidedock);
     border-radius: var(--radius-window);
     display: flex !important;
-    margin: 8px;
+    margin: 8px 0 8px 8px;
     height: -webkit-fill-available;
 
     .workspace-tabs {
