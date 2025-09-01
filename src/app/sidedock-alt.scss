@@ -7,12 +7,11 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt {
     --nav-item-background-active: rgba(0, 0, 0, 0.5);
   }
 
-  &:not(.is-translucent).theme-light .app-container {
-    background-color: var(--background-primary);
+  &.is-translucent .mod-root {
+    background-color: var(--background-primary) !important;
   }
-  &:not(.is-translucent).theme-dark div:is(.app-container, .mod-root .view-header, .mod-root .view-content),
-  .mod-root .workspace-leaf-content[data-type="markdown"] .view-header::before {
-    background-color: var(--color-base-05);
+  &:not(.is-translucent) .app-container {
+    background-color: var(--background-primary);
   }
 
   &.is-popout-window .workspace .mod-root {
@@ -53,7 +52,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt {
     background-color: var(--color-base-20) !important;
     box-shadow: none !important;
   }
-  .mod-sidedock {
+  &:not(.is-translucent) .mod-sidedock {
     background-color: color-mix(in srgb, var(--background-primary) 98%, var(--color-accent));
   }
 
@@ -62,11 +61,11 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt {
   }
   &.theme-light .mod-sidedock.mod-left-split {
     outline: var(--border-width) solid white;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05), -32px 0px 0 32px var(--background-primary);
   }
   &.theme-dark .mod-sidedock.mod-left-split {
     outline: var(--border-width) solid var(--background-modifier-border);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), -32px 0px 0 32px var(--background-primary);
   }
   .mod-sidedock.mod-left-split {
     z-index: var(--layer-sidedock);
