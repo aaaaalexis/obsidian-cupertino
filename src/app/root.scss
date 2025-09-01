@@ -77,12 +77,12 @@ settings:
         max: 100
         step: 5
     -
-        id: hover-sidedock-off
-        title: Disable hover sidebar
-        type: class-toggle
-    -
         id: hide-status-off
         title: Disable compact status bar
+        type: class-toggle
+    -
+        id: hover-sidedock-off
+        title: Disable hover sidebar
         type: class-toggle
     -
         id: image-zoom-off
