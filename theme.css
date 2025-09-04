@@ -459,6 +459,10 @@ body.compact-mode.is-mobile .suggestion-item {
   padding: 8px 16px !important;
 }
 
+svg.svg-icon {
+  fill: none !important;
+}
+
 @keyframes fadeInUp {
   0% {
     transform: translateY(16px);
@@ -867,9 +871,6 @@ body.is-tablet .workspace-tab-header-container-inner {
   .mod-fade::before,
   .mod-fade::after {
     display: none;
-  }
-  svg.svg-icon {
-    fill: none;
   }
   .collapse-indicator {
     --cursor: pointer;
@@ -1540,6 +1541,9 @@ body:not(.is-mobile) .prompt.suggestion .suggestion-item {
   font-size: var(--font-ui-small);
 }
 
+body.is-mobile .metadata-container {
+  --metadata-property-radius: var(--radius-s);
+}
 body.is-mobile .metadata-property-key {
   padding-top: 0;
   padding-bottom: 0;
@@ -2260,6 +2264,9 @@ body.is-phone:not(.quick-mode-switch-off) .mod-root .workspace-leaf-content[data
 body.is-phone.is-android:not(.material-off):not(.quick-mode-switch-off) .mod-root .workspace-leaf-content[data-type=markdown] .view-actions button:nth-last-child(2) {
   backdrop-filter: none;
   background-color: var(--background-secondary);
+}
+body.is-phone.mod-toolbar-open .mod-root .workspace-leaf-content[data-mode=source] .view-actions button:nth-last-child(2) {
+  margin-bottom: var(--side-padding);
 }
 
 /********** Top Bar **********/
@@ -3395,6 +3402,9 @@ body.is-phone .menu-grabber {
 body.is-phone .menu-scroll {
   padding: 40px 20px calc(var(--safe-area-inset-bottom) + 16px);
 }
+body.is-phone .menu-item-icon {
+  order: 0 !important;
+}
 body.is-phone .menu-item + .menu-item,
 body.is-phone .menu-item:has(+ .menu-item) {
   border-radius: 0;
@@ -3536,13 +3546,14 @@ body.is-phone .prompt {
   backdrop-filter: blur(32px);
   animation: var(--anim-duration-slow) blurInScale !important;
   transition: var(--anim-duration-fast);
-  margin-top: var(--prompt-top);
   box-shadow: var(--shadow-l);
   border: var(--prompt-border-width) solid var(--background-modifier-hover);
   border-radius: var(--radius-l);
   background-color: var(--modal-background) !important;
   width: 95vw;
-  height: 70vh;
+  height: auto;
+  bottom: calc(var(--keyboard-height) + 12px);
+  padding-bottom: 0;
 }
 body.is-phone .prompt-input {
   background-color: transparent !important;
@@ -3861,14 +3872,7 @@ body.is-mobile .embedded-backlinks .search-input-container {
 
 .canvas-node-label {
   left: 2px;
-  transition: var(--anim-duration-fast) var(--anim-duration-moderate);
-}
-
-.canvas-node-container:not(:hover) + .canvas-node-label:not(:hover) {
-  top: 20px;
-  opacity: 0;
-  z-index: -1;
-  transition-delay: 3s;
+  transition: var(--anim-duration-fast);
 }
 
 body.is-phone .canvas-control-item {
