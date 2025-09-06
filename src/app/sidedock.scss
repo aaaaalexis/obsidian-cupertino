@@ -32,7 +32,8 @@
 }
 
 body:not(.is-mobile) {
-  .workspace-drop-overlay {
+  .workspace-drop-overlay,
+  .workspace-ribbon {
     z-index: 11;
   }
 
