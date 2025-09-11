@@ -449,49 +449,63 @@
 
   /* Blockquote */
 
-  .el-blockquote + .el-blockquote {
-    margin-top: 3em;
+  .markdown-rendered blockquote {
+    position: relative;
+    border-radius: var(--radius-s);
+    border-inline-start: none;
+    padding-inline: calc(32px + var(--blockquote-border-thickness)) 16px;
+    padding-block: 16px;
+  }
+  .markdown-rendered blockquote > blockquote {
+    padding-inline-start: calc(16px + var(--blockquote-border-thickness));
+    padding-block: 0 !important;
+  }
+  .markdown-rendered blockquote > blockquote::before {
+    top: 0;
+    bottom: 0;
+    inset-inline-start: 0;
   }
 
-  .markdown-rendered blockquote {
-    padding-inline-start: 16px;
-    position: relative;
-    margin: 32px 16px !important;
-    font-size: var(--font-small);
-  }
   .markdown-rendered blockquote::before {
-    border-width: 16px;
-    border-style: solid;
-    border-color: var(--blockquote-background-color);
-    inset: -16px -16px -16px calc(-16px - var(--blockquote-border-thickness));
-    content: "";
     position: absolute;
+    top: 16px;
+    bottom: 16px;
+    inset-inline-start: 16px;
     border-radius: var(--radius-s);
+    background-color: var(--blockquote-border-color);
+    width: var(--blockquote-border-thickness);
     pointer-events: none;
-  }
-  .markdown-rendered blockquote:has(p:dir(rtl))::before {
-    inset: -16px calc(-16px - var(--blockquote-border-thickness)) -16px -16px;
+    content: "";
   }
 
   .HyperMD-quote {
-    background-color: var(--blockquote-background-color);
     border: solid var(--blockquote-background-color);
     border-width: 0 16px 0 16px;
-    font-size: var(--font-small);
+    background-color: var(--blockquote-background-color);
+    &::before {
+      width: 0 !important;
+    }
   }
   .HyperMD-quote:first-child,
-  .cm-line:not(.HyperMD-quote) + .HyperMD-quote {
+  .cm-sizer > div > div > *:not(.HyperMD-quote) + .HyperMD-quote {
     border-top-width: 16px;
-    border-top-left-radius: var(--radius-s);
-    border-top-right-radius: var(--radius-s);
+    border-start-start-radius: var(--radius-s);
+    border-start-end-radius: var(--radius-s);
+    &::before {
+      border-start-start-radius: var(--radius-s);
+      border-start-end-radius: var(--radius-s);
+    }
   }
   .HyperMD-quote:last-child,
-  .cm-line.HyperMD-quote:has(+ .cm-line:not(.HyperMD-quote)) {
+  .cm-sizer > div > div > .HyperMD-quote:has(+ *:not(.HyperMD-quote)) {
     border-bottom-width: 16px;
-    border-bottom-left-radius: var(--radius-s);
-    border-bottom-right-radius: var(--radius-s);
+    border-end-start-radius: var(--radius-s);
+    border-end-end-radius: var(--radius-s);
+    &::before {
+      border-end-start-radius: var(--radius-s);
+      border-end-end-radius: var(--radius-s);
+    }
   }
-
   /***/
 
   body:not(.is-mobile) {
