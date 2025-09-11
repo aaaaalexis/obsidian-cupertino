@@ -2242,7 +2242,7 @@ body.is-mobile.is-ios .markdown-source-view {
   font-size: calc(var(--font-text-size) + 1px);
 }
 
-body.is-mobile .workspace > .mod-root {
+body.is-phone .workspace > .mod-root {
   padding-top: 0;
 }
 
