@@ -17,7 +17,7 @@ body.is-mobile {
   --mobile-sidebar-width: 100%;
   --mobile-toolbar-height: auto;
   --modal-background: rgb(from var(--background-secondary) r g b / 75%) !important;
-  --modal-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  --modal-radius: var(--radius-xl);
   --nav-item-background-active: var(--color-accent);
   --nav-item-background-selected: var(--color-accent);
   --nav-item-color-active: var(--text-on-accent);
@@ -67,6 +67,7 @@ body.is-mobile {
 
 body.is-phone {
   --menu-shadow: none;
+  --modal-radius: var(--radius-xl) var(--radius-xl) 0 0;
 
   .workspace > .mod-root {
     padding-top: 0;
