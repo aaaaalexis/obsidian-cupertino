@@ -130,7 +130,6 @@ body.is-mobile {
 
     .workspace-drawer-inner {
       background-color: transparent;
-      overflow: visible;
       gap: 16px;
     }
 
@@ -174,6 +173,9 @@ body.is-mobile {
       padding: 0 var(--side-padding) 96px;
       overflow: auto;
     }
+    &.is-pinned .view-content > div:not(.nav-header):not(:empty) {
+      background-color: var(--background-secondary);
+    }
     .view-content > div:not(.nav-header):not(:empty) {
       border-radius: var(--input-radius);
       background-color: var(--interactive-normal);
@@ -199,6 +201,9 @@ body.is-mobile {
     }
   }
 
+  .workspace-drawer.is-pinned .nav-files-container > div {
+    background-color: var(--background-secondary);
+  }
   .nav-files-container {
     padding: 0 var(--side-padding) 8px !important;
 
@@ -269,14 +274,13 @@ body.is-tablet {
 
   .workspace-drawer {
     &.is-pinned {
-      border: none;
       background-color: var(--background-primary);
       padding-top: calc(var(--safe-area-inset-top) + 16px);
     }
   }
 
-  .workspace-ribbon {
-    padding-left: 12px;
+  .workspace-drawer-ribbon {
+    left: 8px;
   }
 
   .side-dock-actions {

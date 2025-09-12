@@ -188,6 +188,11 @@ body.is-mobile {
       }
     }
 
+    select,
+    .dropdown {
+      padding: 16px 32px 16px 20px !important;
+    }
+
     .vertical-tab-nav-item {
       min-height: var(--input-height);
       word-break: break-word;

@@ -80,10 +80,6 @@ body.is-tablet {
   .mod-root {
     padding-top: var(--safe-area-inset-top);
   }
-
-  &.show-ribbon {
-    --ribbon-width: 52px;
-  }
 }
 
 /********** Mode Switchcer **********/
@@ -315,8 +311,9 @@ body.is-mobile {
     overflow: hidden;
 
     .clickable-icon {
-      padding: 12px;
-      width: auto;
+      width: 48px;
+      height: 48px;
+      padding: 0;
     }
   }
   .mobile-navbar-action,
