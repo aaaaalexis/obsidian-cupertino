@@ -204,7 +204,8 @@ body {
   --toggle-thumb-width: 21px;
   --toggle-width: 36px;
   --view-header-height: var(--header-height) !important;
-  --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
+  // --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
+  --workspace-background-translucent: var(--background-secondary);
 
   --side-padding: 20px;
   @media (max-width: 402px) {

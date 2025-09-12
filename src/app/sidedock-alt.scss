@@ -52,8 +52,9 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt {
     background-color: var(--color-base-20) !important;
     box-shadow: none !important;
   }
-  &:not(.is-translucent) .mod-sidedock {
-    background-color: color-mix(in srgb, var(--background-primary) 98%, var(--color-accent));
+  // &:not(.is-translucent) .mod-sidedock {
+  .mod-sidedock {
+    background-color: color-mix(in srgb, var(--background-primary) 98%, var(--color-accent)) !important;
   }
 
   &.is-fullscreen .mod-sidedock.mod-left-split {
