@@ -18,12 +18,13 @@ Cupertino is an Obsidian theme, optimized for **desktop and mobile devices**. Br
 
   ![Three screenshots showcasing Cupertino on mobile. The first shows file navigation sidebar with comfortable spacing. The second highlights the mode switcher within the editor. The third displays a redesigned search interface.](img/mobile.png)
 
+- **Liquid Glass** — Meticulously crafted, expressive and delightful interface. (Requires [Style Settings](https://github.com/mgmeyers/obsidian-style-settings))
+
+  ![Screenshot showing Liquid Glass style effect in Cupertino theme.](img/liquid-glass.png)
+
 - **Windows Mode** — Fluent Design UI for native feeling on Windows (Enabled by default, can be disabled with [Style Settings](https://github.com/mgmeyers/obsidian-style-settings))
 
   ![Screenshot of Cupertino theme for Obsidian running on Windows.](img/windows.png)
-
-> [!NOTE]
-> Make sure to enable "Translucent window" in Obsidian Appearance settings.
 
 ## Plugins
 
