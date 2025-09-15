@@ -41,9 +41,10 @@ body:not(.is-mobile) {
     display: none;
   }
 
-  .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
-  .workspace-split.mod-sidedock .workspace-leaf-content > .view-content,
-  .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
+  &.show-ribbon .workspace-split.mod-sidedock.mod-left-split .workspace-leaf-content > div:is(.node-insert-event, .view-content, .nav-header) {
+    padding-left: 0px;
+  }
+  .workspace-split.mod-sidedock .workspace-leaf-content > div:is(.node-insert-event, .view-content, .nav-header) {
     padding: 0 12px;
 
     > div:not(.nav-buttons-container) {

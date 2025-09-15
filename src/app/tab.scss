@@ -263,6 +263,10 @@ body.mod-linux.is-hidden-frameless {
   }
 
   &.show-ribbon {
+    .mod-sidedock.mod-left-split .workspace-tab-header-container {
+      padding-left: 0px !important;
+    }
+
     .mod-root .workspace-tabs.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
       padding-left: 252px;
     }
