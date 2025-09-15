@@ -124,7 +124,7 @@ body:not(.is-mobile) {
 
   .metadata-add-button,
   .metadata-property[data-property-key="cssclasses"] {
-    transition: var(--anim-duration-fast);
+    transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
   }
 
   &:not(.hide-frontmatter-off) .markdown-reading-view .metadata-container:not(:hover) {

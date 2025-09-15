@@ -95,7 +95,8 @@ body {
   --anim-duration-fast: 160ms;
   --anim-duration-moderate: 320ms;
   --anim-duration-slow: 640ms;
-  --anim-motion-cupertino: cubic-bezier(0.32, 0.72, 0, 1);
+  --anim-motion-cupertino: cubic-bezier(0.32, 0.72, 0, 1.1);
+  --anim-motion-cupertino-calm: cubic-bezier(0.32, 0.72, 0, 1);
   --background-modifier-border: var(--divider-color);
   --background-modifier-border-focus: hsla(var(--interactive-accent-hsl), 0.5);
   --background-modifier-message: var(--background-secondary);

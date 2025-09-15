@@ -1,9 +1,9 @@
 .checkbox-container {
-  transition: var(--anim-duration-moderate);
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
   box-shadow: none !important;
 
   &::after {
-    transition: var(--anim-duration-moderate);
+    transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
     box-shadow: none;
   }
 }

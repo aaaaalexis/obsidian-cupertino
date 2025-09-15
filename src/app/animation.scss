@@ -48,6 +48,14 @@
   transition: padding var(--anim-duration-fast), margin var(--anim-duration-fast);
 }
 
+body:not(.is-mobile) .modal {
+  transition: var(--anim-duration-slow) var(--anim-motion-cupertino);
+
+  @starting-style {
+    transform: scale(0.98);
+  }
+}
+
 body.is-mobile {
   .workspace-drawer.mod-left {
     @starting-style {
@@ -69,7 +77,7 @@ body.is-mobile {
   .suggestion-item {
     transition: all;
     transition-duration: var(--anim-duration-moderate) !important;
-    transition-timing-function: var(--anim-motion-cupertino) !important;
+    transition-timing-function: var(--anim-motion-cupertino-calm) !important;
 
     will-change: transform;
     &[style*="transform"]:not([style*="transition: transform 150ms ease-in-out"]):not([style*="transition-delay: 0s"]) {

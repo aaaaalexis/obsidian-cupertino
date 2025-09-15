@@ -26,7 +26,7 @@ body:not(.hide-status-off) .status-bar {
   right: unset;
   bottom: 2px;
   justify-content: center;
-  transition: var(--anim-duration-fast);
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino), background-color 0s;
   border-color: transparent;
   border-radius: 100vh;
   background-color: rgba(var(--mono-rgb-100), 0.2);
