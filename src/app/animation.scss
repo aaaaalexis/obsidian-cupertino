@@ -48,7 +48,7 @@
   transition: padding var(--anim-duration-fast), margin var(--anim-duration-fast);
 }
 
-body:not(.is-mobile) .modal {
+body:not(.mod-windows:not(.windows-mode-off)):not(.is-android:not(.material-off)) .modal {
   transition: var(--anim-duration-slow) var(--anim-motion-cupertino);
 
   @starting-style {
