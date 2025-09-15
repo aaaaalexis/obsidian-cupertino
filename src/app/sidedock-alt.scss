@@ -75,7 +75,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt {
     margin: 8px 0 8px 8px;
     height: -webkit-fill-available;
 
-    .workspace-tabs {
+    .workspace-tabs.mod-top {
       --header-height: 40px;
 
       .workspace-tab-header-container {
