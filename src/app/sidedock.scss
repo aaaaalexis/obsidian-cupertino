@@ -16,12 +16,7 @@
 }
 .tree-item-self {
   align-items: center;
-  transition: background-color var(--anim-duration-fast);
   margin-bottom: 0;
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 .search-results-info .dropdown {
   box-shadow: none !important;
@@ -80,6 +75,9 @@ body:not(.is-mobile) {
     .workspace-drawer-vault-switcher {
       height: 100%;
     }
+  }
+  .workspace-drawer-vault-actions .clickable-icon:first-child {
+    display: none;
   }
 
   /* Panel actions style */
