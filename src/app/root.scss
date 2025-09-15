@@ -91,6 +91,10 @@ settings:
 */
 
 body {
+  --anim-duration-superfast: 80ms;
+  --anim-duration-fast: 160ms;
+  --anim-duration-moderate: 320ms;
+  --anim-duration-slow: 640ms;
   --anim-motion-cupertino: cubic-bezier(0.32, 0.72, 0, 1);
   --background-modifier-border: var(--divider-color);
   --background-modifier-border-focus: hsla(var(--interactive-accent-hsl), 0.5);
@@ -155,6 +159,7 @@ body {
   --modal-border-width: 0;
   --nav-item-color: var(--color-base-100);
   --nav-item-padding: 8px 8px 8px 24px;
+  --nav-item-background-hover: transparent;
   --prompt-border-color: var(--divider-color);
   --clickable-icon-radius: 100vh;
   --radius-l: 20px;
