@@ -1,0 +1,26 @@
+.cg-note-toolbar-container[data-tbar-position="top"] {
+  background-color: transparent !important;
+  position: absolute !important;
+  inset: var(--view-header-height) 0 auto !important;
+  padding: 0 !important;
+
+  .cg-note-toolbar-callout {
+    border-bottom: none !important;
+    background-color: transparent !important;
+  }
+}
+
+body.is-phone .cg-note-toolbar-container[data-tbar-position="top"] {
+  top: calc(var(--safe-area-inset-top) + var(--view-header-height)) !important;
+}
+
+body:not(.is-mobile) .mod-root .workspace-leaf-content[data-type="markdown"] .cg-note-toolbar-container[data-tbar-position="top"] + .view-content > .markdown-reading-view > div:first-child:not(.document-search-container),
+body:not(.is-mobile) .mod-root .workspace-leaf-content[data-type="markdown"] .cg-note-toolbar-container[data-tbar-position="top"] + .view-content > .markdown-source-view > .cm-editor > .cm-scroller {
+  padding-top: calc(var(--file-margins) + var(--view-header-height) + var(--cg-nt-item-icon-size) + (var(--cg-nt-item-padding-y) * 2) + (var(--cg-nt-tbar-margin-y) * 2)) !important;
+}
+
+body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .cg-note-toolbar-container[data-tbar-position="top"] + .view-content > .markdown-reading-view > div:first-child,
+body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .cg-note-toolbar-container[data-tbar-position="top"] + .view-content > .markdown-source-view > .cm-editor > .cm-scroller,
+body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .cg-note-toolbar-container[data-tbar-position="top"] + .view-content > .markdown-source-view .document-search-container {
+  padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px + var(--cg-nt-item-icon-size) + (var(--cg-nt-item-padding-y) * 2) + (var(--cg-nt-tbar-margin-y) * 2)) !important;
+}
