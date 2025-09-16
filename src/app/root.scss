@@ -321,7 +321,7 @@ body {
     --header-height: 56px;
   }
 
-  &:not(.is-focused) {
+  &:not(.is-mobile):not(.is-focused) {
     --workspace-background-translucent: var(--background-secondary);
 
     .workspace-ribbon,
