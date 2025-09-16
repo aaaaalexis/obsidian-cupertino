@@ -1,0 +1,60 @@
+.style-settings-container {
+  padding: 0;
+}
+
+.style-settings-heading {
+  margin: 0 !important;
+  border: none !important;
+}
+
+.style-settings-heading[data-id="cupertino"] + .style-settings-container {
+  .style-settings-heading {
+    pointer-events: none;
+
+    .style-settings-collapse-indicator,
+    .extra-setting-button {
+      visibility: hidden;
+    }
+  }
+}
+
+body:is(.is-mobile, .mod-windows:not(.windows-mode-off)) .style-settings-heading[data-id="cupertino"] + .style-settings-container {
+  .style-settings-heading[data-id="macos-header"],
+  .style-settings-heading[data-id="macos-header"] + .style-settings-container {
+    display: none;
+  }
+}
+body:not(.mod-windows) .style-settings-heading[data-id="cupertino"] + .style-settings-container {
+  .style-settings-heading[data-id="windows-header"],
+  .style-settings-heading[data-id="windows-header"] + .style-settings-container {
+    display: none;
+  }
+}
+body:not(.is-android) .style-settings-heading[data-id="cupertino"] + .style-settings-container {
+  .style-settings-heading[data-id="android-header"],
+  .style-settings-heading[data-id="android-header"] + .style-settings-container {
+    display: none;
+  }
+}
+
+body:not(.mod-windows):not(.is-android) .style-settings-heading[data-id="cupertino"] + .style-settings-container {
+  .style-settings-heading[data-id="windows-header"],
+  .style-settings-heading[data-id="windows-header"] + .style-settings-container,
+  .style-settings-heading[data-id="android-header"],
+  .style-settings-heading[data-id="android-header"] + .style-settings-container {
+    display: none;
+  }
+}
+
+body.is-mobile .style-settings-heading[data-id="cupertino"] + .style-settings-container {
+  .style-settings-heading[data-id="desktop-header"],
+  .style-settings-heading[data-id="desktop-header"] + .style-settings-container {
+    display: none;
+  }
+}
+
+body.is-phone .style-settings-heading[data-id="cupertino"] + .style-settings-container {
+  .setting-item[data-id="center-tabs-off"] {
+    display: none;
+  }
+}
