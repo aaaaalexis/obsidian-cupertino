@@ -437,18 +437,6 @@ body:not(.is-mobile) {
   }
 }
 
-body:not(.show-view-header):not(.is-phone) {
-  --view-header-height: 0px;
-
-  .view-header {
-    display: flex !important;
-
-    > div {
-      display: none;
-    }
-  }
-}
-
 svg.svg-icon {
   fill: none !important ;
 }
