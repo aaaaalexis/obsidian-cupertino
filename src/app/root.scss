@@ -47,6 +47,10 @@ settings:
         title: Disable active editing line highlight
         type: class-toggle
     -
+        id: tabs-autosize-off
+        title: Disable auto sizing tabs
+        type: class-toggle
+    -
         id: center-tabs-off
         title: Disable centered tabs
         type: class-toggle
@@ -187,7 +191,6 @@ body {
   --tab-outline-width: 0;
   --tab-radius-active: var(--radius-s);
   --tab-radius: var(--radius-s);
-  --tab-width: 100px;
   --table-border-width: var(--border-width);
   --table-column-first-border-width: 0;
   --table-column-last-border-width: 0;
