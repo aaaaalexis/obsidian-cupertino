@@ -45,14 +45,9 @@ body:not(.is-mobile) {
       }
     }
 
-    .modal-title,
-    .modal-content {
-      padding: 0 4px;
-    }
-
     button {
       height: unset;
-      padding: 8px 12px;
+      border-radius: 100vh;
     }
 
     .modal-header {
