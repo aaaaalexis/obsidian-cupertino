@@ -1,52 +1,32 @@
-.omnisearch-result > div {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  width: 100%;
+body:not(.is-phone) .omnisearch-input-field .prompt-input {
+  margin-left: 0;
 }
 
-.omnisearch-result__icon {
-  display: none;
-}
-.omnisearch-result__title {
-  align-items: baseline;
-  width: 100%;
-}
-.omnisearch-result__extension {
-  flex-grow: 1;
-}
-.omnisearch-result__body {
-  margin: 0;
-  width: 100%;
-}
-.omnisearch-highlight {
-  text-decoration: none;
-}
-
-body.is-phone .omnisearch-modal {
-  .omnisearch-input-field {
-    border-bottom: var(--border-width) solid var(--background-modifier-border);
-    width: 100%;
-
-    input.prompt-input {
-      margin: 0;
-      padding-right: 120px;
-    }
-  }
-
-  .omnisearch-input-container__buttons {
+body.is-phone {
+  .omnisearch-input-container {
+    margin: 0 var(--side-padding) var(--side-padding);
     position: absolute;
-    right: 8px;
-    bottom: 8px;
-    padding: 0;
-    width: unset;
-
-    button {
-      border-radius: 100vh !important;
-    }
+    inset: auto 0 var(--safe-area-inset-bottom);
+    z-index: 1;
+    flex-direction: row;
   }
+  .omnisearch-input-field .prompt-input {
+    padding-left: var(--side-padding) !important;
+  }
+}
 
-  .omnisearch-highlight {
-    color: var(--text-accent);
+@media only screen and (min-width: 600px) {
+  .omnisearch-input-container__buttons {
+    margin-inline-end: 8px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .omnisearch-input-container__buttons {
+    padding: 0 0 0 8px;
+    width: fit-content;
+  }
+  .omnisearch-input-container__buttons button {
+    min-height: 48px !important;
   }
 }

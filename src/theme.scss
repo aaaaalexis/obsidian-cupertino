@@ -27,45 +27,8 @@
 @use "plugins-core/graph.scss";
 @use "plugins-core/outline.scss";
 
-@use "plugins/advanced-tables.scss";
-@use "plugins/better-search-view.scss";
-@use "plugins/calendar.scss";
-@use "plugins/copilot.scss";
-@use "plugins/dataview.scss";
-@use "plugins/editing-toolbar.scss";
-@use "plugins/excalidraw.scss";
-@use "plugins/execute-code.scss";
-@use "plugins/folder-notes.scss";
-@use "plugins/home-tab.scss";
-@use "plugins/ink.scss";
-@use "plugins/kanban.scss";
-@use "plugins/linter.scss";
-@use "plugins/map-view.scss";
-@use "plugins/note-toolbar.scss";
-@use "plugins/omnisearch.scss";
-@use "plugins/oz-calendar.scss";
-@use "plugins/projects.scss";
-@use "plugins/quiz-generator.scss";
-@use "plugins/settings-search.scss";
-@use "plugins/style-settings.scss";
-@use "plugins/tasks.scss";
-@use "plugins/tldraw.scss";
-@use "plugins/trash-explorer.scss";
-@use "plugins/vertical-tabs.scss";
-@use "plugins/reader.scss";
-@use "plugins/makemd.scss";
-@use "plugins/link-favicons.scss";
-@use "plugins/highlightr.scss";
-@use "plugins/checklist.scss";
-@use "plugins/quick-explorer.scss";
-@use "plugins/autofit-tabs.scss";
-@use "plugins/todoist-sync.scss";
-@use "plugins/lifeos.scss";
 @use "plugins/notebook-navigator.scss";
-@use "plugins/hider.scss";
-@use "plugins/pixel-banner.scss";
-
-@use "support/notebook-themes.scss";
+@use "plugins/omnisearch.scss";
 
 @use "features/callout-icon.scss";
 @use "features/windows-mode.scss";

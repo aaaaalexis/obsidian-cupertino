@@ -1,9 +1,0 @@
-.workspace .mod-root {
-  .workspace-tab-header-container-inner:has(.workspace-tab-header.autofit-tab.out-of-view) {
-    justify-content: unset !important;
-    padding-left: 0 !important;
-  }
-  .workspace-tab-header.autofit-tab .workspace-tab-header-inner-close-button {
-    right: 4px;
-  }
-}

@@ -2,29 +2,27 @@
   transition: all 0.1s ease-in-out !important;
 }
 
-body:not(.is-mobile) {
-  .clickable-icon {
-    padding: 4px 12px;
-    min-height: 32px;
+.clickable-icon {
+  padding: 4px 12px;
+  min-height: 32px;
 
-    &:not([aria-disabled="true"]):hover,
-    &.has-active-menu {
-      box-shadow: var(--shadow-xs);
-      background-color: var(--background-primary);
-    }
+  &:not([aria-disabled="true"]):hover,
+  &.has-active-menu {
+    box-shadow: var(--shadow-xs);
+    background-color: var(--background-primary);
   }
-  button:not(.clickable-icon) {
-    padding: 4px 12px;
-    box-shadow: none;
-    border: none;
-    font-weight: var(--font-normal);
-    line-height: unset;
-  }
+}
+button:not(.clickable-icon) {
+  padding: 4px 12px;
+  box-shadow: none;
+  border: none;
+  font-weight: var(--font-normal);
+  line-height: unset;
+}
 
-  .input-right-decorator {
-    padding: 2px 4px;
-    min-height: unset;
-  }
+.input-right-decorator {
+  padding: 2px 4px;
+  min-height: unset;
 }
 
 body.is-mobile {

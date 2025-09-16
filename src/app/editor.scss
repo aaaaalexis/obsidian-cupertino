@@ -208,7 +208,7 @@
   }
 
   /* Callout */
-  .callout {
+  .callout:not([data-callout="note-toolbar"]) {
     background: linear-gradient(rgba(var(--callout-color), 0.1), rgba(var(--callout-color), 0.15));
     backdrop-filter: var(--blur-s);
     box-shadow: var(--shadow-editor);
