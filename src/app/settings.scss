@@ -60,7 +60,7 @@ body:not(.is-mobile) {
 }
 
 body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) {
-  .modal.mod-sidebar-layout {
+  .modal.mod-sidebar-layout:not(.mod-community-modal) {
     .vertical-tab-header,
     .vertical-tab-content {
       background-color: transparent;
