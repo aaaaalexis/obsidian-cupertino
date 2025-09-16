@@ -84,10 +84,6 @@ body.is-tablet {
 
 /********** Mode Switchcer **********/
 
-html:not(:not([style*="--keyboard-height"]), [style*="--keyboard-height: 0px;"]) body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
-  margin-bottom: 0;
-}
-
 body.is-phone {
   .mod-root .view-header {
     z-index: 3;
@@ -105,12 +101,14 @@ body.is-phone {
     box-shadow: var(--shadow-xs) !important;
     transition: var(--anim-duration-moderate);
   }
+  &.mod-toolbar-open .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+    margin-bottom: var(--side-padding);
+  }
 
   .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
     background-color: var(--interactive-accent) !important;
     box-shadow: var(--shadow-xs) !important;
   }
-
   &.mod-toolbar-open .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
     right: var(--side-padding);
     margin-bottom: var(--side-padding);
@@ -186,9 +184,7 @@ body.is-phone {
     }
   }
 
-  .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::before,
-  .mod-root .workspace-leaf-content[data-type="graph"] .view-content::before,
-  .mod-root .workspace-leaf-content[data-type="canvas"] .view-content::before {
+  .mod-root .workspace-leaf-content:is([data-type="markdown"], [data-type="graph"], [data-type="canvas"]) .view-content::before {
     position: absolute;
     z-index: 2;
     content: "";
@@ -197,6 +193,9 @@ body.is-phone {
     pointer-events: none;
     height: calc(var(--safe-area-inset-bottom) + var(--input-height) + 16px);
     mask: linear-gradient(to top, hsla(0, 0%, 0%, 0.8) 0%, hsla(0, 0%, 0%, 0.79) 13.1%, hsla(0, 0%, 0%, 0.761) 24.5%, hsla(0, 0%, 0%, 0.717) 34.4%, hsla(0, 0%, 0%, 0.66) 43%, hsla(0, 0%, 0%, 0.593) 50.4%, hsla(0, 0%, 0%, 0.518) 56.8%, hsla(0, 0%, 0%, 0.44) 62.4%, hsla(0, 0%, 0%, 0.36) 67.4%, hsla(0, 0%, 0%, 0.282) 72%, hsla(0, 0%, 0%, 0.207) 76.3%, hsla(0, 0%, 0%, 0.14) 80.5%, hsla(0, 0%, 0%, 0.083) 84.8%, hsla(0, 0%, 0%, 0.039) 89.4%, hsla(0, 0%, 0%, 0.01) 94.4%, hsla(0, 0%, 0%, 0) 100%);
+  }
+  &.mod-toolbar-open .mod-root .workspace-leaf-content:is([data-type="markdown"], [data-type="graph"], [data-type="canvas"]) .view-content::before {
+    height: calc(var(--input-height) + 16px);
   }
 
   // Content pusher
@@ -349,7 +348,7 @@ body.is-mobile {
   .mobile-toolbar {
     position: fixed;
     right: 0;
-    bottom: 0;
+    bottom: max(var(--keyboard-height), 0px);
     left: 0;
     z-index: var(--layer-status-bar);
     border: none;
