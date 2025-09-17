@@ -76,13 +76,13 @@ Cupertino supports most filter and helper classes from [Minimal](https://github.
 
 ### [Block width](https://minimal.guide/features/block-width)
 
-| Class                                   | Description                           |
-| :-------------------------------------- | :------------------------------------ |
-| `wide`                                  | Entire note uses wide line width      |
-| `max`                                   | Entire note uses max line width       |
-| `table-100`, `img-100`, `iframe-100`    | Fill 100% of the pane width           |
-| `table-max`, `img-max`, `iframe-max`    | Fill the max line width (default 90%) |
-| `table-wide`, `img-wide`, `iframe-wide` | Fill the wide line width              |
+| Class                                                                           | Description                           |
+| :------------------------------------------------------------------------------ | :------------------------------------ |
+| `wide`                                                                          | Entire note uses wide line width      |
+| `max`                                                                           | Entire note uses max line width       |
+| `table-100`, `img-100`, `iframe-100`, `map-100`, `chart-100`, `bases-100`       | Fill 100% of the pane width           |
+| `table-max`, `img-max`, `iframe-max`, `map-max`, `chart-max`, `bases-max`       | Fill the max line width (default 90%) |
+| `table-wide`, `img-wide`, `iframe-wide`, `map-wide`, `chart-wide`, `bases-wide` | Fill the wide line width              |
 
 ### [Image filters](https://minimal.guide/images#Image+filters)
 
