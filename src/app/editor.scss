@@ -6,8 +6,7 @@
 }
 
 @media screen, print {
-  .markdown-reading-view,
-  .markdown-source-view {
+  body {
     --bold-color: rgb(var(--mono-rgb-100));
     --italic-color: rgb(var(--mono-rgb-100));
     --inline-title-color: rgb(var(--mono-rgb-100));
@@ -17,6 +16,9 @@
     --h4-color: rgb(var(--mono-rgb-100));
     --h5-color: rgb(var(--mono-rgb-100));
     --h6-color: rgb(var(--mono-rgb-100));
+  }
+  .markdown-reading-view,
+  .markdown-source-view {
     --text-normal: var(--color-base-80);
 
     transition: var(--anim-duration-fast) ease-in-out;
