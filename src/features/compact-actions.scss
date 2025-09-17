@@ -1,6 +1,12 @@
-body:not(.is-mobile) {
+body:not(.is-mobile).compact-actions-off .nav-buttons-container {
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+body:not(.is-mobile):not(.compact-actions-off) {
   .mod-sidedock .workspace-leaf-content > .nav-header,
-  .mod-sidedock .workspace-leaf-content:not([data-type="zotero-annotation-view"]) > .view-content > .nav-header {
+  .mod-sidedock .workspace-leaf-content > .view-content > .nav-header {
     &,
     .nav-buttons-container,
     .nav-action-button,
