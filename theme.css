@@ -48,6 +48,10 @@ settings:
         title: Disable active editing line highlight
         type: class-toggle
     -
+        id: tabs-autosize-off
+        title: Disable auto sizing tabs
+        type: class-toggle
+    -
         id: center-tabs-off
         title: Disable centered tabs
         type: class-toggle
@@ -77,6 +81,10 @@ settings:
         min: 0
         max: 100
         step: 5
+    -
+        id: compact-actions-off
+        title: Disable compact panel actions
+        type: class-toggle
     -
         id: hide-status-off
         title: Disable compact status bar
@@ -148,8 +156,6 @@ body {
   --input-radius: var(--radius-s);
   --interactive-hover: var(--interactive-normal) !important;
   --line-height-normal: 1.6;
-  --list-marker-color: var(--text-accent);
-  --list-spacing: 0.2em;
   --metadata-gap: 0;
   --metadata-padding: 0;
   --metadata-input-height: var(--input-height) !important;
@@ -187,7 +193,6 @@ body {
   --tab-outline-width: 0;
   --tab-radius-active: var(--radius-s);
   --tab-radius: var(--radius-s);
-  --tab-width: 100px;
   --table-border-width: var(--border-width);
   --table-column-first-border-width: 0;
   --table-column-last-border-width: 0;
@@ -310,12 +315,12 @@ body.is-fullscreen .show-ribbon {
 body:not(.is-mobile) {
   --header-height: 56px;
 }
-body:not(.is-focused) {
+body:not(.is-mobile):not(.is-focused) {
   --workspace-background-translucent: var(--background-secondary);
 }
-body:not(.is-focused) .workspace-ribbon,
-body:not(.is-focused) .mod-sidedock > div,
-body:not(.is-focused) .mod-root .workspace-tab-header-container {
+body:not(.is-mobile):not(.is-focused) .workspace-ribbon,
+body:not(.is-mobile):not(.is-focused) .mod-sidedock > div,
+body:not(.is-mobile):not(.is-focused) .mod-root .workspace-tab-header-container {
   opacity: 0.5;
 }
 body.is-popout-window {
@@ -403,16 +408,6 @@ body:not(.is-mobile) .titlebar .titlebar-button-container.mod-right .titlebar-bu
 }
 body:not(.is-mobile) .is-maximized .titlebar .titlebar-button-container.mod-right .titlebar-button.mod-maximize svg {
   -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' viewBox='0 0 12 12'%3e%3cpath fill='black' d='M10.799 3.557C10.799 2.27 9.67 1.2 8.396 1.2H2.502a1.808 1.808 0 0 1 1.7-1.2h4.194C10.352 0 12 1.641 12 3.598v4.2c0 .758-.484 1.45-1.201 1.7V3.557ZM1.769 12C.826 12 0 11.175 0 10.23V4.172c0-.941.828-1.77 1.77-1.77h6.058c.945 0 1.77.825 1.77 1.77v6.058c0 .942-.829 1.77-1.77 1.77H1.77Zm6.03-1.201a.61.61 0 0 0 .603-.598v-6a.607.607 0 0 0-.603-.603h-6A.61.61 0 0 0 1.2 4.2v6c0 .325.273.598.598.598h6Z'/%3e%3c/svg%3e");
-}
-
-body:not(.show-view-header):not(.is-phone) {
-  --view-header-height: 0px;
-}
-body:not(.show-view-header):not(.is-phone) .view-header {
-  display: flex !important;
-}
-body:not(.show-view-header):not(.is-phone) .view-header > div {
-  display: none;
 }
 
 svg.svg-icon {
@@ -578,7 +573,17 @@ body:not(.is-phone) .workspace .mod-root .workspace-tabs .workspace-tab-header-c
 body:not(.is-phone) .workspace .mod-root .workspace-tabs .workspace-tab-header-spacer {
   display: none;
 }
-body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked):not(.mod-stacked) .workspace-tab-header {
+body:not(.is-phone):not(.tabs-autosize-off) {
+  --tab-width: 100px;
+}
+body:not(.is-phone):not(.tabs-autosize-off) .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  width: calc-size(auto, size);
+  min-width: var(--tab-width);
+}
+body:not(.is-phone):not(.tabs-autosize-off) .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+  min-width: 200px;
+}
+body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
   flex: unset;
   opacity: 0.5;
   transition: var(--anim-duration-fast) !important;
@@ -586,27 +591,22 @@ body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked):not(.
   border: none;
   background-color: var(--background-modifier-hover);
   padding: 0;
-  width: calc-size(auto, size);
-  min-width: var(--tab-width);
 }
-body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked):not(.mod-stacked) .workspace-tab-header::before, body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked):not(.mod-stacked) .workspace-tab-header::after {
+body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header::before, body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header::after {
   display: none;
 }
-body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked):not(.mod-stacked) .workspace-tab-header.is-active {
-  min-width: 200px;
-}
-body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked):not(.mod-stacked) .workspace-tab-header.is-active {
+body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
   opacity: 1;
   box-shadow: none;
 }
 @starting-style {
-  body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked):not(.mod-stacked) .workspace-tab-header.mod-active.is-active {
+  body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.mod-active.is-active {
     transform: translateX(-16px);
     width: 0 !important;
     min-width: 0 !important;
   }
 }
-body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked):not(.mod-stacked) .workspace-tab-header.mod-active:not(.is-active) {
+body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.mod-active:not(.is-active) {
   min-width: 0 !important;
 }
 body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
@@ -866,8 +866,7 @@ body.is-tablet .workspace-tab-header-container-inner {
   }
 }
 @media screen, print {
-  .markdown-reading-view,
-  .markdown-source-view {
+  body {
     --bold-color: rgb(var(--mono-rgb-100));
     --italic-color: rgb(var(--mono-rgb-100));
     --inline-title-color: rgb(var(--mono-rgb-100));
@@ -877,6 +876,9 @@ body.is-tablet .workspace-tab-header-container-inner {
     --h4-color: rgb(var(--mono-rgb-100));
     --h5-color: rgb(var(--mono-rgb-100));
     --h6-color: rgb(var(--mono-rgb-100));
+  }
+  .markdown-reading-view,
+  .markdown-source-view {
     --text-normal: var(--color-base-80);
     transition: var(--anim-duration-fast) ease-in-out;
     letter-spacing: 0.1px;
@@ -2117,9 +2119,6 @@ body.is-tablet .modal.mod-sidebar-layout button:not(.clickable-icon):not([class*
 body.is-tablet .modal.mod-sidebar-layout select,
 body.is-tablet .modal.mod-sidebar-layout .dropdown {
   color: var(--text-accent);
-}
-body.is-tablet .modal.mod-sidebar-layout select,
-body.is-tablet .modal.mod-sidebar-layout .dropdown {
   background-color: var(--background-modifier-hover);
 }
 
@@ -2132,6 +2131,7 @@ body.is-tablet .modal.mod-sidebar-layout .dropdown {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  overflow: visible;
 }
 
 .nav-files-container > div {
@@ -2887,6 +2887,12 @@ body.is-tablet .document-search-container::before, body.is-tablet .document-sear
   inset: -16px 0 0;
   pointer-events: none;
   content: "";
+}
+body.is-tablet .document-search-container input {
+  background-color: var(--background-modifier-hover);
+}
+body.is-tablet .document-search-container .document-search-buttons {
+  flex-grow: 0;
 }
 
 /********** HDR element **********/
@@ -4409,6 +4415,54 @@ body.is-mobile .workspace-drawer .workspace-leaf-content[data-type=outline] .vie
   padding-left: var(--side-padding);
 }
 
+.style-settings-container {
+  padding: 0;
+}
+
+.style-settings-heading {
+  margin: 0 !important;
+  border: none !important;
+}
+
+.style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading {
+  pointer-events: none;
+}
+.style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading .style-settings-collapse-indicator,
+.style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading .extra-setting-button {
+  visibility: hidden;
+}
+
+body:is(.is-mobile, .mod-windows:not(.windows-mode-off)) .style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading[data-id=macos-header],
+body:is(.is-mobile, .mod-windows:not(.windows-mode-off)) .style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading[data-id=macos-header] + .style-settings-container {
+  display: none;
+}
+
+body:not(.mod-windows) .style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading[data-id=windows-header],
+body:not(.mod-windows) .style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading[data-id=windows-header] + .style-settings-container {
+  display: none;
+}
+
+body:not(.is-android) .style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading[data-id=android-header],
+body:not(.is-android) .style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading[data-id=android-header] + .style-settings-container {
+  display: none;
+}
+
+body:not(.mod-windows):not(.is-android) .style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading[data-id=windows-header],
+body:not(.mod-windows):not(.is-android) .style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading[data-id=windows-header] + .style-settings-container,
+body:not(.mod-windows):not(.is-android) .style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading[data-id=android-header],
+body:not(.mod-windows):not(.is-android) .style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading[data-id=android-header] + .style-settings-container {
+  display: none;
+}
+
+body.is-mobile .style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading[data-id=desktop-header],
+body.is-mobile .style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading[data-id=desktop-header] + .style-settings-container {
+  display: none;
+}
+
+body.is-phone .style-settings-heading[data-id=cupertino] + .style-settings-container .setting-item[data-id=center-tabs-off] {
+  display: none;
+}
+
 body {
   --nn-theme-list-header-bg: var(--background-secondary);
   --nn-theme-list-bg: var(--background-secondary);
@@ -4427,10 +4481,12 @@ body {
   border-right: none !important;
 }
 
-body.is-mobile .nn-mobile {
+body.is-mobile.theme-light {
   --nn-theme-mobile-nav-bg: var(--background-secondary);
+}
+
+body.is-mobile .nn-mobile {
   --nn-theme-mobile-toolbar-button-icon-color: var(--text-normal);
-  --nn-theme-list-header-bg: var(--background-secondary);
   padding: 0 !important;
   border-radius: 0 !important;
 }
@@ -4455,6 +4511,7 @@ body.is-mobile .nn-mobile .nn-mobile-toolbar {
   box-shadow: var(--shadow-xs);
   border: none;
   border-radius: var(--clickable-icon-radius);
+  background-color: transparent;
   padding: 0 8px;
   max-width: fit-content;
   overflow: hidden;
@@ -4465,6 +4522,8 @@ body.is-mobile .nn-mobile .nn-mobile-toolbar-button {
   width: 48px;
   height: 48px;
   line-height: 1;
+  align-items: center;
+  justify-content: center !important;
 }
 body.is-mobile .nn-mobile .nn-mobile-toolbar-button span {
   line-height: 1;
@@ -4499,6 +4558,47 @@ body.is-phone .omnisearch-input-field .prompt-input {
     min-height: 48px !important;
   }
 }
+.cg-note-toolbar-container[data-tbar-position=top] {
+  background-color: transparent !important;
+  position: absolute !important;
+  inset: var(--view-header-height) 0 auto !important;
+  padding: 0 !important;
+}
+.cg-note-toolbar-container[data-tbar-position=top] .cg-note-toolbar-callout {
+  border-bottom: none !important;
+  background-color: transparent !important;
+}
+
+body.is-phone .cg-note-toolbar-container[data-tbar-position=top] {
+  top: calc(var(--safe-area-inset-top) + var(--view-header-height)) !important;
+}
+
+body:not(.is-mobile) .mod-root .workspace-leaf-content[data-type=markdown] .cg-note-toolbar-container[data-tbar-position=top] + .view-content > .markdown-reading-view > div:first-child:not(.document-search-container),
+body:not(.is-mobile) .mod-root .workspace-leaf-content[data-type=markdown] .cg-note-toolbar-container[data-tbar-position=top] + .view-content > .markdown-source-view > .cm-editor > .cm-scroller {
+  padding-top: calc(var(--file-margins) + var(--view-header-height) + var(--cg-nt-item-icon-size) + var(--cg-nt-item-padding-y) * 2 + var(--cg-nt-tbar-margin-y) * 2) !important;
+}
+
+body.is-phone .mod-root .workspace-leaf-content[data-type=markdown] .cg-note-toolbar-container[data-tbar-position=top] + .view-content > .markdown-reading-view > div:first-child,
+body.is-phone .mod-root .workspace-leaf-content[data-type=markdown] .cg-note-toolbar-container[data-tbar-position=top] + .view-content > .markdown-source-view > .cm-editor > .cm-scroller,
+body.is-phone .mod-root .workspace-leaf-content[data-type=markdown] .cg-note-toolbar-container[data-tbar-position=top] + .view-content > .markdown-source-view .document-search-container {
+  padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px + var(--cg-nt-item-icon-size) + var(--cg-nt-item-padding-y) * 2 + var(--cg-nt-tbar-margin-y) * 2) !important;
+}
+
+.select-image-icon img {
+  background-color: transparent !important;
+}
+
+body:not(.is-mobile) .workspace-leaf-content[data-type=markdown] .pixel-banner-image,
+body:not(.is-mobile) .workspace-leaf-content[data-type=markdown] .select-image-icon {
+  margin-top: var(--view-header-height);
+}
+
+body.is-phone .workspace-leaf-content[data-type=markdown] .pixel-banner-image,
+body.is-phone .workspace-leaf-content[data-type=markdown] .select-image-icon {
+  margin-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
+  background-color: transparent;
+}
+
 .callout-icon .lucide-pencil,
 .callout-icon .lucide-clipboard-list,
 .callout-icon .lucide-info,
@@ -5855,28 +5955,34 @@ body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapse
   pointer-events: none;
 }
 
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content > .nav-header,
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content > .nav-header .nav-buttons-container,
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content > .nav-header .nav-action-button,
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content > .nav-header .nav-action-button::after,
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content > .nav-header svg.svg-icon,
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content:not([data-type=zotero-annotation-view]) > .view-content > .nav-header,
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content:not([data-type=zotero-annotation-view]) > .view-content > .nav-header .nav-buttons-container,
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content:not([data-type=zotero-annotation-view]) > .view-content > .nav-header .nav-action-button,
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content:not([data-type=zotero-annotation-view]) > .view-content > .nav-header .nav-action-button::after,
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content:not([data-type=zotero-annotation-view]) > .view-content > .nav-header svg.svg-icon {
+body:not(.is-mobile).compact-actions-off .nav-buttons-container {
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .nav-header,
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .nav-header .nav-buttons-container,
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .nav-header .nav-action-button,
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .nav-header .nav-action-button::after,
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .nav-header svg.svg-icon,
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-content > .nav-header,
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-content > .nav-header .nav-buttons-container,
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-content > .nav-header .nav-action-button,
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-content > .nav-header .nav-action-button::after,
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-content > .nav-header svg.svg-icon {
   transition: var(--anim-duration-moderate) var(--anim-motion-cupertino) !important;
 }
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container,
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content:not([data-type=zotero-annotation-view]) > .view-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container {
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container,
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container {
   gap: 4px;
   background-color: transparent;
   padding: 0;
   box-shadow: none;
   flex-grow: 0;
 }
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container .nav-action-button.clickable-icon,
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content:not([data-type=zotero-annotation-view]) > .view-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container .nav-action-button.clickable-icon {
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container .nav-action-button.clickable-icon,
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container .nav-action-button.clickable-icon {
   background-color: var(--background-modifier-hover);
   padding: 2px;
   width: 0;
@@ -5884,13 +5990,13 @@ body:not(.is-mobile) .mod-sidedock .workspace-leaf-content:not([data-type=zotero
   opacity: 1;
   min-height: 0;
 }
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container .nav-action-button.clickable-icon::after,
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content:not([data-type=zotero-annotation-view]) > .view-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container .nav-action-button.clickable-icon::after {
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container .nav-action-button.clickable-icon::after,
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container .nav-action-button.clickable-icon::after {
   width: 0;
   height: 0;
 }
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container svg.svg-icon,
-body:not(.is-mobile) .mod-sidedock .workspace-leaf-content:not([data-type=zotero-annotation-view]) > .view-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container svg.svg-icon {
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container svg.svg-icon,
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container svg.svg-icon {
   --icon-size: 0px;
 }
 
