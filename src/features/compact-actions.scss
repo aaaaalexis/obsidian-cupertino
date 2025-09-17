@@ -1,7 +1,12 @@
 body:not(.is-mobile).compact-actions-off .nav-buttons-container {
-  background-color: transparent;
+  background-color: transparent !important;
   padding: 0;
   box-shadow: none;
+}
+
+body.mod-windows:not(.windows-mode-off):not(.is-mobile).compact-actions-off .nav-action-button {
+  padding: 8px;
+  flex: 0 !important;
 }
 
 body:not(.is-mobile):not(.compact-actions-off) {
