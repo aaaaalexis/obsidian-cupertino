@@ -2,6 +2,7 @@ body {
   --nn-theme-list-header-bg: var(--background-secondary);
   --nn-theme-list-bg: var(--background-secondary);
 }
+
 .notebook-navigator {
   padding: 0 !important;
 }
@@ -16,10 +17,11 @@ body {
   }
 }
 
-body.is-mobile .nn-mobile {
+body.is-mobile.theme-light {
   --nn-theme-mobile-nav-bg: var(--background-secondary);
+}
+body.is-mobile .nn-mobile {
   --nn-theme-mobile-toolbar-button-icon-color: var(--text-normal);
-  --nn-theme-list-header-bg: var(--background-secondary);
 
   padding: 0 !important;
   border-radius: 0 !important;
@@ -46,6 +48,7 @@ body.is-mobile .nn-mobile {
     box-shadow: var(--shadow-xs);
     border: none;
     border-radius: var(--clickable-icon-radius);
+    background-color: transparent;
     padding: 0 8px;
     max-width: fit-content;
     overflow: hidden;
@@ -56,6 +59,9 @@ body.is-mobile .nn-mobile {
     width: 48px;
     height: 48px;
     line-height: 1;
+    align-items: center;
+    justify-content: center !important;
+
     span {
       line-height: 1;
     }
