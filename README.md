@@ -10,6 +10,8 @@ Cupertino is an Obsidian theme, optimized for **desktop and mobile devices**. Br
 
 ## Overview
 
+![A screenshots showcasing Cupertino's light mode on macOS.](img/screenshot.png)
+
 - **Native & minimal** — Clean, native look and feel on all of your devices, so you can focus on your content.
 
   ![Two screenshots showcasing Cupertino on macOS. The first shows how Cupertino utilizes background blur. The second showcases the stylized text editor.](img/desktop.png)
