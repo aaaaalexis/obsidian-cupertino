@@ -1,10 +1,13 @@
 body {
-  --nn-theme-list-header-bg: var(--background-secondary);
-  --nn-theme-list-bg: var(--background-secondary);
+  --nn-theme-nav-header-bg: transparent;
+  --nn-theme-nav-bg: transparent;
+  --nn-theme-list-header-bg: transparent;
+  --nn-theme-list-bg: transparent;
 }
 
 .notebook-navigator {
   padding: 0 !important;
+  background-color: transparent;
 }
 .nn-search-input {
   height: 100% !important;
@@ -17,10 +20,8 @@ body {
   }
 }
 
-body.is-mobile.theme-light {
-  --nn-theme-mobile-nav-bg: var(--background-secondary);
-}
 body.is-mobile .nn-mobile {
+  --nn-theme-mobile-nav-bg: transparent;
   --nn-theme-mobile-toolbar-button-icon-color: var(--text-normal);
 
   padding: 0 !important;
