@@ -157,9 +157,11 @@ body.is-mobile.is-android:not(.material-off) {
   }
 
   .mobile-navbar-actions,
-  .workspace-drawer .nav-buttons-container,
   .mobile-toolbar-options-list {
     background-color: var(--modal-background);
+  }
+  .workspace-drawer .nav-buttons-container {
+    background-color: var(--background-primary);
   }
 
   /********** Menu **********/
@@ -235,6 +237,12 @@ body.is-mobile.is-android:not(.material-off) {
   }
 
   /********** Sidebar **********/
+
+  .workspace-drawer-header-icon,
+  .modal-setting-back-button,
+  .modal-close-button {
+    background-color: var(--background-primary) !important;
+  }
 
   .nav-files-container {
     padding: 0 var(--side-padding) 8px !important;
@@ -346,9 +354,6 @@ body.is-mobile.is-android:not(.material-off) {
     .modal-header {
       padding: var(--safe-area-inset-top) 16px 0 !important;
     }
-    .modal-setting-back-button {
-      background-color: var(--interactive-normal);
-    }
 
     .setting-item {
       border: none;
@@ -447,14 +452,13 @@ body.is-mobile.is-android:not(.material-off) {
 
   /********** Prompt **********/
 
-  &.is-phone .prompt-results {
-    padding: 0 var(--side-padding) var(--side-padding);
-  }
-
   .prompt {
-    .prompt-input {
+    .prompt-input,
+    .prompt-input-container .search-input-clear-button {
       box-shadow: none !important;
       border: none !important;
+      background-color: var(--background-primary) !important;
+      border-radius: var(--clickable-icon-radius) !important;
     }
 
     .suggestion-item {
