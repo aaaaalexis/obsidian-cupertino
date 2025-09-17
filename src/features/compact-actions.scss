@@ -28,6 +28,7 @@ body:not(.is-mobile):not(.compact-actions-off) {
         width: 0;
         height: 0;
         opacity: 1;
+        min-width: 0;
         min-height: 0;
       }
       .nav-action-button.clickable-icon::after {

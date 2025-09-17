@@ -2,15 +2,17 @@
   transition: all 0.1s ease-in-out !important;
 }
 
-.clickable-icon {
-  padding: 4px 12px;
-  min-height: 32px;
-
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) .workspace .clickable-icon {
   &:not([aria-disabled="true"]):hover,
   &.has-active-menu {
     box-shadow: var(--shadow-xs);
     background-color: var(--background-primary);
   }
+}
+.clickable-icon {
+  padding: 4px 12px;
+  min-width: 32px;
+  min-height: 32px;
 }
 button:not(.clickable-icon) {
   padding: 4px 12px;
