@@ -1,0 +1,18 @@
+.select-image-icon img {
+  background-color: transparent !important;
+}
+
+body:not(.is-mobile) .workspace-leaf-content[data-type="markdown"] {
+  .pixel-banner-image,
+  .select-image-icon {
+    margin-top: var(--view-header-height);
+  }
+}
+
+body.is-phone .workspace-leaf-content[data-type="markdown"] {
+  .pixel-banner-image,
+  .select-image-icon {
+    margin-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
+    background-color: transparent;
+  }
+}
