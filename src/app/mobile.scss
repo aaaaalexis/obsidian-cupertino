@@ -475,6 +475,14 @@ body.is-tablet {
       pointer-events: none;
       content: "";
     }
+
+    input {
+      background-color: var(--background-modifier-hover);
+    }
+
+    .document-search-buttons {
+      flex-grow: 0;
+    }
   }
 }
 
