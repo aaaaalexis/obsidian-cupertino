@@ -31,8 +31,7 @@ input[type="checkbox"][data-indeterminate="true"]:not(:checked) {
   }
 }
 
-li[data-task],
-input[type="checkbox"][data-task]:checked {
+li[data-task] {
   &[data-task=">"],
   &[data-task="<"],
   &[data-task="*"],
@@ -56,8 +55,7 @@ input[type="checkbox"][data-task]:checked {
   &[data-task="t"],
   &[data-task="P"],
   &[data-task="L"] {
-    &,
-    input[type="checkbox"]:checked {
+    & > input[type="checkbox"]:checked {
       --checkbox-color: transparent;
 
       &:hover {
