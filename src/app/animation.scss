@@ -1,22 +1,35 @@
 @keyframes fadeInUp {
-  0% {
+  from {
     transform: translateY(16px);
     opacity: 0;
-  }
-}
-
-@keyframes fadeInUpDelay {
-  0% {
-    transform: translateY(80px);
-  }
-  50% {
-    transform: translateY(80px);
   }
 }
 
 @keyframes fadeInDown {
   from {
     transform: translateY(-16px);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUpLarge {
+  0% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInDownLarge {
+  0% {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-80px);
     opacity: 0;
   }
 }
@@ -123,23 +136,30 @@ body.is-phone {
   }
 
   .mobile-navbar,
-  .mod-root .view-content::before,
-  .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2) {
+  .mobile-toolbar {
     @starting-style {
       opacity: 0;
     }
   }
+
   &.hide-cursor .mobile-navbar,
+  &.hide-cursor .mobile-toolbar,
   &.hide-cursor .mod-root .view-content::before,
   &.hide-cursor .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2) {
     opacity: 0;
   }
 
   &:not(.hide-cursor) {
-    .mobile-navbar,
-    .mod-root .view-content::before,
-    .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2) {
-      animation: fadeInUpDelay var(--anim-duration-slow);
+    .mobile-navbar {
+      animation: fadeInDownLarge var(--anim-duration-moderate) var(--anim-motion-cupertino);
     }
+    .mobile-toolbar {
+      animation: fadeInUpLarge var(--anim-duration-slow) var(--anim-motion-cupertino);
+    }
+  }
+
+  /* Keyboard Out */
+  &.keyboard-animating .mobile-toolbar-options-list {
+    background-color: var(--background-primary);
   }
 }

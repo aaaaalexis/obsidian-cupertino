@@ -72,6 +72,21 @@ body.is-phone {
   .workspace > .mod-root {
     padding-top: 0;
   }
+
+  .app-container {
+    max-height: calc(100vh - var(--keyboard-height)) !important;
+    transition: var(--anim-duration-moderate);
+  }
+}
+
+html[style*="--keyboard-height"]:not([style*="--keyboard-height: 0px"]) body.is-phone {
+  &:not(.mod-toolbar-open) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+    opacity: 0;
+    margin-bottom: var(--side-padding);
+  }
+  .mod-root .workspace-leaf-content:is([data-type="markdown"], [data-type="graph"], [data-type="canvas"]) .view-content::before {
+    height: calc(var(--input-height) + 16px);
+  }
 }
 
 body.is-tablet {
@@ -99,19 +114,16 @@ body.is-phone {
     width: auto;
     height: auto;
     box-shadow: var(--shadow-xs) !important;
-    transition: var(--anim-duration-moderate);
+    transition: var(--anim-duration-moderate) var(--anim-motion-cupertino), opacity var(--anim-duration-moderate) !important;
   }
   &.mod-toolbar-open .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+    right: var(--side-padding);
     margin-bottom: var(--side-padding);
   }
 
   .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
     background-color: var(--interactive-accent) !important;
     box-shadow: var(--shadow-xs) !important;
-  }
-  &.mod-toolbar-open .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
-    right: var(--side-padding);
-    margin-bottom: var(--side-padding);
   }
 }
 
@@ -173,6 +185,7 @@ body.is-phone {
     width: 100%;
 
     &::before {
+      transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
       position: absolute;
       z-index: -1;
       content: "";
@@ -193,9 +206,6 @@ body.is-phone {
     pointer-events: none;
     height: calc(var(--safe-area-inset-bottom) + var(--input-height) + 16px);
     mask: linear-gradient(to top, hsla(0, 0%, 0%, 0.8) 0%, hsla(0, 0%, 0%, 0.79) 13.1%, hsla(0, 0%, 0%, 0.761) 24.5%, hsla(0, 0%, 0%, 0.717) 34.4%, hsla(0, 0%, 0%, 0.66) 43%, hsla(0, 0%, 0%, 0.593) 50.4%, hsla(0, 0%, 0%, 0.518) 56.8%, hsla(0, 0%, 0%, 0.44) 62.4%, hsla(0, 0%, 0%, 0.36) 67.4%, hsla(0, 0%, 0%, 0.282) 72%, hsla(0, 0%, 0%, 0.207) 76.3%, hsla(0, 0%, 0%, 0.14) 80.5%, hsla(0, 0%, 0%, 0.083) 84.8%, hsla(0, 0%, 0%, 0.039) 89.4%, hsla(0, 0%, 0%, 0.01) 94.4%, hsla(0, 0%, 0%, 0) 100%);
-  }
-  &.mod-toolbar-open .mod-root .workspace-leaf-content:is([data-type="markdown"], [data-type="graph"], [data-type="canvas"]) .view-content::before {
-    height: calc(var(--input-height) + 16px);
   }
 
   // Content pusher
@@ -307,6 +317,7 @@ body.is-mobile {
     padding: 0 8px;
     pointer-events: auto;
     overflow: hidden;
+    transition: var(--anim-duration-moderate);
 
     .clickable-icon {
       width: 48px;
@@ -332,6 +343,7 @@ body.is-mobile {
     gap: 8px;
   }
   .mobile-toolbar {
+    transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
     background-color: transparent;
     overflow: visible;
     padding: 0 var(--side-padding) var(--side-padding) !important;
