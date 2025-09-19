@@ -14,6 +14,68 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glas
     background-color: var(--background-primary);
   }
 
+  // Side panels
+  &:not(.is-focused) .mod-sidedock {
+    background-color: var(--color-base-20) !important;
+    box-shadow: none !important;
+  }
+  .mod-sidedock {
+    transition: var(--anim-duration-moderate) var(--anim-motion-cupertino) !important;
+  }
+
+  &.theme-light .mod-sidedock.mod-left-split {
+    outline: var(--border-width) solid white;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05), -32px 0px 0 32px var(--background-primary);
+  }
+
+  &.theme-dark .mod-sidedock.mod-left-split {
+    outline: var(--border-width) solid var(--background-modifier-border);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), -32px 0px 0 32px var(--background-primary);
+  }
+
+  &.show-ribbon {
+    .workspace-ribbon.mod-left {
+      padding-left: 16px;
+      padding-right: 0px;
+      overflow: visible;
+    }
+    .mod-sidedock.mod-left-split {
+      margin-left: calc(-1 * var(--ribbon-width) + 8px);
+      padding-left: var(--ribbon-width);
+    }
+    .mod-sidedock.mod-left-split.is-sidedock-collapsed {
+      opacity: 0;
+    }
+  }
+  .mod-sidedock.mod-left-split {
+    z-index: var(--layer-sidedock);
+    border-radius: var(--radius-window);
+    display: flex;
+    margin: 8px 0 8px 8px;
+    height: -webkit-fill-available;
+
+    .workspace-tabs.mod-top {
+      --header-height: 40px;
+
+      .workspace-tab-header-container {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+      }
+      .workspace-tab-header-container-inner {
+        margin: 4px 0;
+      }
+    }
+
+    .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+      padding-left: max(var(--frame-left-space), 4px) !important;
+    }
+  }
+
+  .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
+    border-inline-start: var(--divider-width) solid var(--divider-color);
+  }
+
+  // Editor panel
   &.is-popout-window .workspace .mod-root {
     margin-left: 0;
     margin-right: 0;
@@ -48,51 +110,10 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glas
     }
   }
 
-  &:not(.is-focused) .mod-sidedock {
-    background-color: var(--color-base-20) !important;
-    box-shadow: none !important;
-  }
+  // ----------------------------------------------------------------
+  // Style Settings: Tint off
   // &:not(.is-translucent):not(.sidedock-glass-tint-off) .mod-sidedock {
   &:not(.sidedock-glass-tint-off) .mod-sidedock {
     background-color: color-mix(in srgb, var(--background-primary) 98%, var(--color-accent)) !important;
-  }
-
-  &.is-fullscreen .mod-sidedock.mod-left-split {
-    border-radius: var(--radius-m);
-  }
-  &.theme-light .mod-sidedock.mod-left-split {
-    outline: var(--border-width) solid white;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05), -32px 0px 0 32px var(--background-primary);
-  }
-  &.theme-dark .mod-sidedock.mod-left-split {
-    outline: var(--border-width) solid var(--background-modifier-border);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), -32px 0px 0 32px var(--background-primary);
-  }
-  .mod-sidedock.mod-left-split {
-    z-index: var(--layer-sidedock);
-    border-radius: var(--radius-window);
-    display: flex;
-    margin: 8px 0 8px 8px;
-    height: -webkit-fill-available;
-
-    .workspace-tabs.mod-top {
-      --header-height: 40px;
-
-      .workspace-tab-header-container {
-        padding-left: 4px !important;
-        padding-right: 4px !important;
-      }
-      .workspace-tab-header-container-inner {
-        margin: 4px 0;
-      }
-    }
-
-    .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
-      padding-left: max(var(--frame-left-space), 4px) !important;
-    }
-  }
-
-  .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
-    border-inline-start: var(--divider-width) solid var(--divider-color);
   }
 }
