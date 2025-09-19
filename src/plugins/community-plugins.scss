@@ -2,3 +2,20 @@
 .rapid-notes-modal .prompt-input {
   margin-left: 0;
 }
+
+// Editing Toolbar https://github.com/PKM-er/obsidian-editing-toolbar
+body:not(.is-mobile) {
+  #editingToolbarModalBar.top,
+  #editingToolbarPopoverBar {
+    top: var(--view-header-height);
+  }
+}
+body.is-phone {
+  #editingToolbarModalBar.top,
+  #editingToolbarPopoverBar {
+    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
+  }
+}
+.editingToolbarCommandItem {
+  min-height: unset !important;
+}
