@@ -10,8 +10,12 @@ settings:
         type: heading
         level: 1
     -
-        id: sidedock-alt
-        title: macOS Tahoe style sidebar
+        id: sidedock-glass-off
+        title: Disable Liquid Glass sidebar
+        type: class-toggle
+    -
+        id: sidedock-glass-tint-off
+        title: Disable sidebar tinting
         type: class-toggle
     -
         id: windows-header
@@ -52,6 +56,10 @@ settings:
         title: Disable auto sizing tabs
         type: class-toggle
     -
+        id: block-width-off
+        title: Disable block width
+        type: class-toggle
+    -
         id: center-tabs-off
         title: Disable centered tabs
         type: class-toggle
@@ -82,16 +90,17 @@ settings:
         max: 100
         step: 5
     -
+        id: hover-sidedock
+        title: Hover sidebar
+        description: Might cause crashes on some systems.
+        type: class-toggle
+    -
         id: compact-actions-off
         title: Disable compact panel actions
         type: class-toggle
     -
         id: hide-status-off
         title: Disable compact status bar
-        type: class-toggle
-    -
-        id: hover-sidedock-off
-        title: Disable hover sidebar
         type: class-toggle
     -
         id: image-zoom-off
@@ -121,7 +130,6 @@ body {
   --callout-border-width: var(--border-width);
   --callout-padding: 16px;
   --callout-radius: var(--radius-s);
-  --checkbox-radius: calc(var(--radius-s) / 2);
   --checkbox-border-color: var(--color-base-35);
   --code-border-width: var(--border-width);
   --code-white-space: pre-wrap;
@@ -415,22 +423,34 @@ svg.svg-icon {
 }
 
 @keyframes fadeInUp {
-  0% {
+  from {
     transform: translateY(16px);
     opacity: 0;
-  }
-}
-@keyframes fadeInUpDelay {
-  0% {
-    transform: translateY(80px);
-  }
-  50% {
-    transform: translateY(80px);
   }
 }
 @keyframes fadeInDown {
   from {
     transform: translateY(-16px);
+    opacity: 0;
+  }
+}
+@keyframes fadeInUpLarge {
+  0% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+}
+@keyframes fadeInDownLarge {
+  0% {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-80px);
     opacity: 0;
   }
 }
@@ -502,6 +522,7 @@ body.is-mobile .suggestion-item[style*=transform]:not([style*="transition: trans
 body.is-phone {
   /* Prompt In*/
   /* Prompt Out */
+  /* Keyboard Out */
 }
 body.is-phone .prompt {
   transition: var(--anim-duration-moderate) !important;
@@ -537,18 +558,21 @@ body.is-phone .prompt[style*="transform: translateY"] {
 }
 @starting-style {
   body.is-phone .mobile-navbar,
-  body.is-phone .mod-root .view-content::before,
-  body.is-phone .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2) {
+  body.is-phone .mobile-toolbar {
     opacity: 0;
   }
 }
-body.is-phone.hide-cursor .mobile-navbar, body.is-phone.hide-cursor .mod-root .view-content::before, body.is-phone.hide-cursor .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2) {
+body.is-phone.hide-cursor .mobile-navbar, body.is-phone.hide-cursor .mobile-toolbar, body.is-phone.hide-cursor .mod-root .view-content::before, body.is-phone.hide-cursor .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2) {
   opacity: 0;
 }
-body.is-phone:not(.hide-cursor) .mobile-navbar,
-body.is-phone:not(.hide-cursor) .mod-root .view-content::before,
-body.is-phone:not(.hide-cursor) .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2) {
-  animation: fadeInUpDelay var(--anim-duration-slow);
+body.is-phone:not(.hide-cursor) .mobile-navbar {
+  animation: fadeInDownLarge var(--anim-duration-moderate) var(--anim-motion-cupertino);
+}
+body.is-phone:not(.hide-cursor) .mobile-toolbar {
+  animation: fadeInUpLarge var(--anim-duration-slow) var(--anim-motion-cupertino);
+}
+body.is-phone.keyboard-animating .mobile-toolbar-options-list {
+  background-color: var(--background-primary);
 }
 
 .sidebar-toggle-button {
@@ -928,15 +952,6 @@ body.is-tablet .workspace-tab-header-container-inner {
     max-height: 480px;
     object-fit: contain;
     text-align: center;
-  }
-  .image-embed:not(.canvas-node-content)[alt]:after {
-    display: block;
-    margin-top: 4px;
-    margin-inline-start: calc(var(--radius-s) / 2);
-    content: attr(alt);
-    color: var(--text-faint);
-    font-size: var(--font-smallest);
-    line-height: var(--line-height-normal);
   }
   /*Image grid*/
   .img-grid .markdown-preview-section .el-p > p:has(> .image-embed),
@@ -1437,7 +1452,7 @@ body.is-tablet .workspace-tab-header-container-inner {
     content: "";
     inset: 0;
     background-color: var(--background-primary);
-    mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 14%, hsla(0, 0%, 0%, 0.951) 26.2%, hsla(0, 0%, 0%, 0.896) 36.8%, hsla(0, 0%, 0%, 0.825) 45.9%, hsla(0, 0%, 0%, 0.741) 53.7%, hsla(0, 0%, 0%, 0.648) 60.4%, hsla(0, 0%, 0%, 0.55) 66.2%, hsla(0, 0%, 0%, 0.45) 71.2%, hsla(0, 0%, 0%, 0.352) 75.6%, hsla(0, 0%, 0%, 0.259) 79.6%, hsla(0, 0%, 0%, 0.175) 83.4%, hsla(0, 0%, 0%, 0.104) 87.2%, hsla(0, 0%, 0%, 0.049) 91.1%, hsla(0, 0%, 0%, 0.013) 95.3%, hsla(0, 0%, 0%, 0) 100%);
+    mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.99) 18.4%, hsla(0, 0%, 0%, 0.963) 33.7%, hsla(0, 0%, 0%, 0.92) 46.4%, hsla(0, 0%, 0%, 0.864) 56.7%, hsla(0, 0%, 0%, 0.796) 64.8%, hsla(0, 0%, 0%, 0.72) 71.2%, hsla(0, 0%, 0%, 0.637) 76.1%, hsla(0, 0%, 0%, 0.55) 79.9%, hsla(0, 0%, 0%, 0.46) 82.8%, hsla(0, 0%, 0%, 0.37) 85.2%, hsla(0, 0%, 0%, 0.283) 87.3%, hsla(0, 0%, 0%, 0.2) 89.6%, hsla(0, 0%, 0%, 0.124) 92.3%, hsla(0, 0%, 0%, 0.056) 95.6%, hsla(0, 0%, 0%, 0) 100%);
     border-radius: var(--radius-m) var(--radius-m) 0 0;
   }
   body:not(.is-mobile) .mod-root .workspace-leaf-content[data-type=markdown] .document-search-container {
@@ -2380,101 +2395,111 @@ body.is-tablet .side-dock-actions {
   padding: 0;
 }
 
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager {
   --nav-item-color: rgb(var(--mono-rgb-100));
   --nav-item-color-active: var(--text-accent);
   --nav-collapse-icon-color: rgb(var(--mono-rgb-100));
 }
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt.theme-dark {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager.theme-dark {
   --nav-item-background-active: rgba(0, 0, 0, 0.5);
 }
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt.is-translucent .mod-root {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager.is-translucent .mod-root {
   background-color: var(--background-primary) !important;
 }
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt:not(.is-translucent) .app-container {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager:not(.is-translucent) .app-container {
   background-color: var(--background-primary);
 }
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt.is-popout-window .workspace .mod-root {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager:not(.is-focused) .mod-sidedock {
+  background-color: var(--color-base-20) !important;
+  box-shadow: none !important;
+}
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-sidedock {
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino) !important;
+}
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager.theme-light .mod-sidedock.mod-left-split {
+  outline: var(--border-width) solid white;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05), -32px 0px 0 32px var(--background-primary);
+}
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager.theme-dark .mod-sidedock.mod-left-split {
+  outline: var(--border-width) solid var(--background-modifier-border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), -32px 0px 0 32px var(--background-primary);
+}
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager.show-ribbon .workspace-ribbon.mod-left {
+  padding-left: 16px;
+  padding-right: 0px;
+  overflow: visible;
+}
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager.show-ribbon .mod-sidedock.mod-left-split {
+  margin-left: calc(-1 * var(--ribbon-width) + 8px);
+  padding-left: var(--ribbon-width);
+}
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager.show-ribbon .mod-sidedock.mod-left-split.is-sidedock-collapsed {
+  opacity: 0;
+}
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-sidedock.mod-left-split {
+  z-index: var(--layer-sidedock);
+  border-radius: var(--radius-window);
+  display: flex;
+  margin: 8px 0 8px 8px;
+  height: -webkit-fill-available;
+}
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-sidedock.mod-left-split .workspace-tabs.mod-top {
+  --header-height: 40px;
+}
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container {
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container-inner {
+  margin: 4px 0;
+}
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+  padding-left: max(var(--frame-left-space), 4px) !important;
+}
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
+  border-inline-start: var(--divider-width) solid var(--divider-color);
+}
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager.is-popout-window .workspace .mod-root {
   margin-left: 0;
   margin-right: 0;
 }
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
   margin-left: 0;
 }
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
   margin-left: 0;
 }
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root .workspace-tabs.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root .workspace-tabs.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
   padding-left: 0;
 }
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root {
   margin-right: 0;
 }
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
   margin-right: 0;
 }
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tabs:not(.mod-top-left-space).mod-top-right-space .workspace-tab-header-container-inner {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tabs:not(.mod-top-left-space).mod-top-right-space .workspace-tab-header-container-inner {
   padding-right: 0;
 }
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt .mod-root {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-root {
   padding-bottom: 0;
 }
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt .mod-root .workspace-tab-container {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-root .workspace-tab-container {
   box-shadow: none;
   outline: none;
   border-radius: 0;
   background-color: transparent;
 }
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt:not(.is-focused) .mod-sidedock {
-  background-color: var(--color-base-20) !important;
-  box-shadow: none !important;
-}
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt .mod-sidedock {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager:not(.sidedock-glass-tint-off) .mod-sidedock {
   background-color: color-mix(in srgb, var(--background-primary) 98%, var(--color-accent)) !important;
-}
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt.is-fullscreen .mod-sidedock.mod-left-split {
-  border-radius: var(--radius-m);
-}
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt.theme-light .mod-sidedock.mod-left-split {
-  outline: var(--border-width) solid white;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05), -32px 0px 0 32px var(--background-primary);
-}
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt.theme-dark .mod-sidedock.mod-left-split {
-  outline: var(--border-width) solid var(--background-modifier-border);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), -32px 0px 0 32px var(--background-primary);
-}
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt .mod-sidedock.mod-left-split {
-  z-index: var(--layer-sidedock);
-  border-radius: var(--radius-window);
-  display: flex !important;
-  margin: 8px 0 8px 8px;
-  height: -webkit-fill-available;
-}
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt .mod-sidedock.mod-left-split .workspace-tabs.mod-top {
-  --header-height: 40px;
-}
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container {
-  padding-left: 4px !important;
-  padding-right: 4px !important;
-}
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container-inner {
-  margin: 4px 0;
-}
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
-  padding-left: max(var(--frame-left-space), 4px) !important;
-}
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
-  border-inline-start: var(--divider-width) solid var(--divider-color);
 }
 
 body.is-mobile {
   --background-modifier-form-field: var(--interactive-normal) !important;
   --border-width: 0.3px;
-  --blur-s: blur(2px) saturate(1.5) brightness(1.025);
   --divider-color: rgba(var(--mono-rgb-100), 0.1) !important;
   --divider-width: var(--border-width);
   --canvas-dot-pattern: var(--color-base-20);
-  --checkbox-radius: var(--clickable-icon-radius);
   --checkbox-size: var(--icon-m);
   --icon-xs-stroke-width: 2px;
   --icon-s-stroke-width: 1.5px;
@@ -2537,6 +2562,18 @@ body.is-phone {
 body.is-phone .workspace > .mod-root {
   padding-top: 0;
 }
+body.is-phone .app-container {
+  max-height: calc(100vh - var(--keyboard-height)) !important;
+  transition: var(--anim-duration-moderate);
+}
+
+html[style*="--keyboard-height"]:not([style*="--keyboard-height: 0px"]) body.is-phone:not(.mod-toolbar-open) .mod-root .workspace-leaf-content[data-type=markdown] .view-actions button:nth-last-child(2) {
+  opacity: 0;
+  margin-bottom: var(--side-padding);
+}
+html[style*="--keyboard-height"]:not([style*="--keyboard-height: 0px"]) body.is-phone .mod-root .workspace-leaf-content:is([data-type=markdown], [data-type=graph], [data-type=canvas]) .view-content::before {
+  height: calc(var(--input-height) + 16px);
+}
 
 body.is-tablet {
   --prompt-input-height: 56px;
@@ -2560,18 +2597,15 @@ body.is-phone .mod-root .workspace-leaf-content[data-type=markdown] .view-action
   width: auto;
   height: auto;
   box-shadow: var(--shadow-xs) !important;
-  transition: var(--anim-duration-moderate);
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino), opacity var(--anim-duration-moderate) !important;
 }
 body.is-phone.mod-toolbar-open .mod-root .workspace-leaf-content[data-type=markdown] .view-actions button:nth-last-child(2) {
+  right: var(--side-padding);
   margin-bottom: var(--side-padding);
 }
 body.is-phone .mod-root .workspace-leaf-content[data-mode=source] .view-actions button:nth-last-child(2) {
   background-color: var(--interactive-accent) !important;
   box-shadow: var(--shadow-xs) !important;
-}
-body.is-phone.mod-toolbar-open .mod-root .workspace-leaf-content[data-mode=source] .view-actions button:nth-last-child(2) {
-  right: var(--side-padding);
-  margin-bottom: var(--side-padding);
 }
 
 /********** Top Bar **********/
@@ -2627,14 +2661,15 @@ body.is-phone .mod-root .workspace-leaf-content[data-type=markdown] .view-header
 body.is-phone .mod-root .workspace-leaf-content[data-type=graph] .view-header::before,
 body.is-phone .mod-root .workspace-leaf-content[data-type=canvas] .view-header::before,
 body.is-phone .modal.mod-sidebar-layout .modal-header::before {
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
   position: absolute;
   z-index: -1;
   content: "";
   inset: 0;
   background-color: var(--background-primary);
   pointer-events: none;
-  height: calc(100% + 48px);
-  mask: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.8) 0%, hsla(0, 0%, 0%, 0.79) 13.1%, hsla(0, 0%, 0%, 0.761) 24.5%, hsla(0, 0%, 0%, 0.717) 34.4%, hsla(0, 0%, 0%, 0.66) 43%, hsla(0, 0%, 0%, 0.593) 50.4%, hsla(0, 0%, 0%, 0.518) 56.8%, hsla(0, 0%, 0%, 0.44) 62.4%, hsla(0, 0%, 0%, 0.36) 67.4%, hsla(0, 0%, 0%, 0.282) 72%, hsla(0, 0%, 0%, 0.207) 76.3%, hsla(0, 0%, 0%, 0.14) 80.5%, hsla(0, 0%, 0%, 0.083) 84.8%, hsla(0, 0%, 0%, 0.039) 89.4%, hsla(0, 0%, 0%, 0.01) 94.4%, hsla(0, 0%, 0%, 0) 100%);
+  height: calc(100% + 16px);
+  mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.99) 18.4%, hsla(0, 0%, 0%, 0.963) 33.7%, hsla(0, 0%, 0%, 0.92) 46.4%, hsla(0, 0%, 0%, 0.864) 56.7%, hsla(0, 0%, 0%, 0.796) 64.8%, hsla(0, 0%, 0%, 0.72) 71.2%, hsla(0, 0%, 0%, 0.637) 76.1%, hsla(0, 0%, 0%, 0.55) 79.9%, hsla(0, 0%, 0%, 0.46) 82.8%, hsla(0, 0%, 0%, 0.37) 85.2%, hsla(0, 0%, 0%, 0.283) 87.3%, hsla(0, 0%, 0%, 0.2) 89.6%, hsla(0, 0%, 0%, 0.124) 92.3%, hsla(0, 0%, 0%, 0.056) 95.6%, hsla(0, 0%, 0%, 0) 100%);
 }
 body.is-phone .mod-root .workspace-leaf-content:is([data-type=markdown], [data-type=graph], [data-type=canvas]) .view-content::before {
   position: absolute;
@@ -2644,10 +2679,7 @@ body.is-phone .mod-root .workspace-leaf-content:is([data-type=markdown], [data-t
   background-color: var(--background-primary);
   pointer-events: none;
   height: calc(var(--safe-area-inset-bottom) + var(--input-height) + 16px);
-  mask: linear-gradient(to top, hsla(0, 0%, 0%, 0.8) 0%, hsla(0, 0%, 0%, 0.79) 13.1%, hsla(0, 0%, 0%, 0.761) 24.5%, hsla(0, 0%, 0%, 0.717) 34.4%, hsla(0, 0%, 0%, 0.66) 43%, hsla(0, 0%, 0%, 0.593) 50.4%, hsla(0, 0%, 0%, 0.518) 56.8%, hsla(0, 0%, 0%, 0.44) 62.4%, hsla(0, 0%, 0%, 0.36) 67.4%, hsla(0, 0%, 0%, 0.282) 72%, hsla(0, 0%, 0%, 0.207) 76.3%, hsla(0, 0%, 0%, 0.14) 80.5%, hsla(0, 0%, 0%, 0.083) 84.8%, hsla(0, 0%, 0%, 0.039) 89.4%, hsla(0, 0%, 0%, 0.01) 94.4%, hsla(0, 0%, 0%, 0) 100%);
-}
-body.is-phone.mod-toolbar-open .mod-root .workspace-leaf-content:is([data-type=markdown], [data-type=graph], [data-type=canvas]) .view-content::before {
-  height: calc(var(--input-height) + 16px);
+  mask: linear-gradient(to top, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 14%, hsla(0, 0%, 0%, 0.951) 26.2%, hsla(0, 0%, 0%, 0.896) 36.8%, hsla(0, 0%, 0%, 0.825) 45.9%, hsla(0, 0%, 0%, 0.741) 53.7%, hsla(0, 0%, 0%, 0.648) 60.4%, hsla(0, 0%, 0%, 0.55) 66.2%, hsla(0, 0%, 0%, 0.45) 71.2%, hsla(0, 0%, 0%, 0.352) 75.6%, hsla(0, 0%, 0%, 0.259) 79.6%, hsla(0, 0%, 0%, 0.175) 83.4%, hsla(0, 0%, 0%, 0.104) 87.2%, hsla(0, 0%, 0%, 0.049) 91.1%, hsla(0, 0%, 0%, 0.013) 95.3%, hsla(0, 0%, 0%, 0) 100%);
 }
 body.is-phone .view-content > .markdown-reading-view > div:first-child,
 body.is-phone .view-content > .markdown-source-view > .cm-editor > .cm-scroller,
@@ -2663,7 +2695,6 @@ body.is-phone .mod-root .view-header {
 body.is-phone .mod-root .view-header-left,
 body.is-phone .mod-root .view-actions {
   flex-grow: 0;
-  animation: fadeIn var(--anim-duration-fast);
 }
 body.is-phone .mod-root .view-header-title-parent .view-header-breadcrumb {
   padding: 0;
@@ -2717,7 +2748,6 @@ body.is-phone .modal-setting-back-button-icon::before {
   padding: 12px 24px;
   width: fit-content;
   font-weight: var(--font-bold);
-  min-height: var(--input-height);
 }
 
 /********** Bottom Bar **********/
@@ -2741,6 +2771,7 @@ body.is-mobile .mobile-toolbar-options-list {
   padding: 0 8px;
   pointer-events: auto;
   overflow: hidden;
+  transition: var(--anim-duration-moderate);
 }
 body.is-mobile .mobile-navbar-actions .clickable-icon,
 body.is-mobile .workspace-drawer .nav-buttons-container .clickable-icon,
@@ -2765,6 +2796,7 @@ body.is-mobile .mobile-toolbar-options-container {
   gap: 8px;
 }
 body.is-mobile .mobile-toolbar {
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
   background-color: transparent;
   overflow: visible;
   padding: 0 var(--side-padding) var(--side-padding) !important;
@@ -3049,13 +3081,15 @@ body.is-tablet .empty-state-action:first-child {
   transition: all 0.1s ease-in-out !important;
 }
 
-.clickable-icon {
-  padding: 4px 12px;
-  min-height: 32px;
-}
-.clickable-icon:not([aria-disabled=true]):hover, .clickable-icon.has-active-menu {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) .workspace .clickable-icon:not([aria-disabled=true]):hover, body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)) .workspace .clickable-icon.has-active-menu {
   box-shadow: var(--shadow-xs);
   background-color: var(--background-primary);
+}
+
+.clickable-icon {
+  padding: 4px 12px;
+  min-width: 32px;
+  min-height: 32px;
 }
 
 button:not(.clickable-icon) {
@@ -3918,8 +3952,7 @@ body.is-phone .prompt {
   --prompt-top: 0;
   --prompt-bottom: 0;
   border-radius: 0;
-  background: linear-gradient(var(--modal-background), var(--background-secondary)) !important;
-  backdrop-filter: var(--blur-m);
+  background: var(--background-secondary) !important;
   height: 100%;
   justify-content: space-between;
 }
@@ -4437,6 +4470,10 @@ body:is(.is-mobile, .mod-windows:not(.windows-mode-off)) .style-settings-heading
   display: none;
 }
 
+body.sidedock-glass-off .style-settings-heading[data-id=cupertino] + .style-settings-container .setting-item[data-id=sidedock-glass-tint-off] {
+  display: none;
+}
+
 body:not(.mod-windows) .style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading[data-id=windows-header],
 body:not(.mod-windows) .style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading[data-id=windows-header] + .style-settings-container {
   display: none;
@@ -4463,13 +4500,20 @@ body.is-phone .style-settings-heading[data-id=cupertino] + .style-settings-conta
   display: none;
 }
 
+.rapid-notes-modal .prompt-input {
+  margin-left: 0;
+}
+
 body {
-  --nn-theme-list-header-bg: var(--background-secondary);
-  --nn-theme-list-bg: var(--background-secondary);
+  --nn-theme-nav-header-bg: transparent;
+  --nn-theme-nav-bg: transparent;
+  --nn-theme-list-header-bg: transparent;
+  --nn-theme-list-bg: transparent;
 }
 
 .notebook-navigator {
   padding: 0 !important;
+  background-color: transparent;
 }
 
 .nn-search-input {
@@ -4481,11 +4525,8 @@ body {
   border-right: none !important;
 }
 
-body.is-mobile.theme-light {
-  --nn-theme-mobile-nav-bg: var(--background-secondary);
-}
-
 body.is-mobile .nn-mobile {
+  --nn-theme-mobile-nav-bg: transparent;
   --nn-theme-mobile-toolbar-button-icon-color: var(--text-normal);
   padding: 0 !important;
   border-radius: 0 !important;
@@ -5634,9 +5675,11 @@ body.is-mobile.is-android:not(.material-off) .workspace-drawer .nav-header {
   padding: 8px var(--side-padding) max(var(--safe-area-inset-bottom), 16px);
 }
 body.is-mobile.is-android:not(.material-off) .mobile-navbar-actions,
-body.is-mobile.is-android:not(.material-off) .workspace-drawer .nav-buttons-container,
 body.is-mobile.is-android:not(.material-off) .mobile-toolbar-options-list {
   background-color: var(--modal-background);
+}
+body.is-mobile.is-android:not(.material-off) .workspace-drawer .nav-buttons-container {
+  background-color: var(--background-primary);
 }
 body.is-mobile.is-android:not(.material-off).is-phone .menu {
   border-radius: var(--modal-radius) var(--modal-radius) 0 0;
@@ -5701,6 +5744,11 @@ body.is-mobile.is-android:not(.material-off).is-tablet .menu .menu-scroll {
 }
 body.is-mobile.is-android:not(.material-off).is-tablet .menu .menu-separator {
   margin: 4px 0;
+}
+body.is-mobile.is-android:not(.material-off) .workspace-drawer-header-icon,
+body.is-mobile.is-android:not(.material-off) .modal-setting-back-button,
+body.is-mobile.is-android:not(.material-off) .modal-close-button {
+  background-color: var(--background-primary) !important;
 }
 body.is-mobile.is-android:not(.material-off) .nav-files-container {
   padding: 0 var(--side-padding) 8px !important;
@@ -5784,9 +5832,6 @@ body.is-mobile.is-android:not(.material-off) .modal.mod-sidebar-layout .setting-
 body.is-mobile.is-android:not(.material-off) .modal.mod-sidebar-layout .modal-header {
   padding: var(--safe-area-inset-top) 16px 0 !important;
 }
-body.is-mobile.is-android:not(.material-off) .modal.mod-sidebar-layout .modal-setting-back-button {
-  background-color: var(--interactive-normal);
-}
 body.is-mobile.is-android:not(.material-off) .modal.mod-sidebar-layout .setting-item {
   border: none;
 }
@@ -5862,12 +5907,12 @@ body.is-mobile.is-android:not(.material-off) .modal:not(.mod-sidebar-layout) .mo
   flex-grow: 0;
   flex: 0;
 }
-body.is-mobile.is-android:not(.material-off).is-phone .prompt-results {
-  padding: 0 var(--side-padding) var(--side-padding);
-}
-body.is-mobile.is-android:not(.material-off) .prompt .prompt-input {
+body.is-mobile.is-android:not(.material-off) .prompt .prompt-input,
+body.is-mobile.is-android:not(.material-off) .prompt .prompt-input-container .search-input-clear-button {
   box-shadow: none !important;
   border: none !important;
+  background-color: var(--background-primary) !important;
+  border-radius: var(--clickable-icon-radius) !important;
 }
 body.is-mobile.is-android:not(.material-off) .prompt .suggestion-item {
   border-radius: 100vh;
@@ -5878,18 +5923,18 @@ body.is-mobile.is-android:not(.material-off) .mobile-tab-switcher-menubar {
   padding: 8px var(--side-padding) calc(var(--safe-area-inset-bottom) + 8px);
 }
 
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock {
+body:not(.is-mobile).hover-sidedock .mod-sidedock {
   transition: var(--anim-duration-fast) var(--anim-motion-cupertino);
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock .workspace-tab-header-container {
+body:not(.is-mobile).hover-sidedock .mod-sidedock .workspace-tab-header-container {
   -webkit-app-region: no-drag !important;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed {
   z-index: var(--layer-sidedock);
   transition: var(--anim-duration-fast), margin 0s;
   border-radius: var(--radius-window);
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
   display: flex !important;
   position: absolute;
   transition-delay: var(--anim-duration-moderate);
@@ -5900,65 +5945,70 @@ body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapse
   background: var(--modal-background) !important;
   width: 8px !important;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs {
   --header-height: 40px;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs .workspace-tab-header-container {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs .workspace-tab-header-container {
   padding-left: 4px !important;
   padding-right: 4px !important;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs .workspace-tab-header-container-inner {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs .workspace-tab-header-container-inner {
   margin: 4px 0;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
   margin-left: 40px;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover {
   width: 320px !important;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover::before {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover::before {
   width: 8px;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover ~ .mod-root .workspace-tab-header-container,
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover ~ .mod-root .workspace-tab-header-container-inner, body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover:has(~ .mod-root .workspace-tab-header-container), body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover:has(~ .mod-root .workspace-tab-header-container-inner) {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover ~ .mod-root .workspace-tab-header-container,
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover ~ .mod-root .workspace-tab-header-container-inner, body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover:has(~ .mod-root .workspace-tab-header-container), body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover:has(~ .mod-root .workspace-tab-header-container-inner) {
   -webkit-app-region: no-drag;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]).mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]).mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
   padding-left: max(var(--frame-left-space), 4px) !important;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]).mod-right-split .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]).mod-right-split .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
   padding-right: max(32px + var(--frame-right-space), 48px) !important;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) div {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) div {
   visibility: visible !important;
   -webkit-app-region: no-drag !important;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) > .workspace-leaf-resize-handle {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) > .workspace-leaf-resize-handle {
   display: none;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed::before {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed::before {
   position: absolute;
   inset: -8px 0 -8px -8px;
   min-width: 8px;
   content: "";
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed.mod-right-split {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed.mod-right-split {
   right: 0;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed.mod-right-split::before {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed.mod-right-split::before {
   inset: -8px -8px -8px auto;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not(:hover) {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not(:hover) {
   opacity: 0;
 }
-body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not(:hover) div {
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not(:hover) div {
   pointer-events: none;
 }
 
 body:not(.is-mobile).compact-actions-off .nav-buttons-container {
-  background-color: transparent;
+  background-color: transparent !important;
   padding: 0;
   box-shadow: none;
+}
+
+body.mod-windows:not(.windows-mode-off):not(.is-mobile).compact-actions-off .nav-action-button {
+  padding: 8px;
+  flex: 0 !important;
 }
 
 body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .nav-header,
@@ -5988,6 +6038,7 @@ body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-con
   width: 0;
   height: 0;
   opacity: 1;
+  min-width: 0;
   min-height: 0;
 }
 body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .nav-header:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container .nav-action-button.clickable-icon::after,
@@ -6000,226 +6051,316 @@ body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-con
   --icon-size: 0px;
 }
 
-body {
+body:not(.block-width-off) {
   --file-line-width: var(--line-width);
-  --line-width: 700px;
+  --line-width: 40rem;
   --line-width-wide: 50rem;
-  --max-width: 90%;
 }
-
-.markdown-source-view {
-  --file-line-width: var(--line-width) !important;
+body:not(.block-width-off).wide,
+body:not(.block-width-off) .wide {
+  --active-line-width: var(--line-width-wide);
 }
-
-.wide,
-.table-wide,
-.img-wide,
-.iframe-wide,
-.map-wide,
-.chart-wide {
+body:not(.block-width-off).max,
+body:not(.block-width-off) .max {
+  --active-line-width: 100%;
+}
+body:not(.block-width-off).max .cm-content,
+body:not(.block-width-off) .max .cm-content {
+  max-width: 100% !important;
+}
+body:not(.block-width-off):is(.wide, .table-wide, .img-wide, .iframe-wide, .map-wide, .chart-wide, .bases-wide),
+body:not(.block-width-off) div:is(.wide, .table-wide, .img-wide, .iframe-wide, .map-wide, .chart-wide, .bases-wide) {
   --file-line-width: var(--line-width-wide);
 }
-
-.max,
-.table-max,
-.img-max,
-.iframe-max,
-.map-max,
-.chart-max {
-  --file-line-width: var(--max-width);
+body:not(.block-width-off):is(.wide, .table-wide, .img-wide, .iframe-wide, .map-wide, .chart-wide, .bases-wide) .cm-content,
+body:not(.block-width-off) div:is(.wide, .table-wide, .img-wide, .iframe-wide, .map-wide, .chart-wide, .bases-wide) .cm-content {
+  max-width: 100% !important;
 }
-.max.markdown-preview-view,
-.max .markdown-preview-view,
-.table-max.markdown-preview-view,
-.table-max .markdown-preview-view,
-.img-max.markdown-preview-view,
-.img-max .markdown-preview-view,
-.iframe-max.markdown-preview-view,
-.iframe-max .markdown-preview-view,
-.map-max.markdown-preview-view,
-.map-max .markdown-preview-view,
-.chart-max.markdown-preview-view,
-.chart-max .markdown-preview-view {
-  padding: var(--file-margins) 0;
-}
-
-.table-100,
-.img-100,
-.iframe-100,
-.map-100,
-.chart-100 {
+body:not(.block-width-off):is(.max, .table-max, .img-max, .iframe-max, .map-max, .chart-max, .bases-max, .table-100, .img-100, .iframe-100, .map-100, .chart-100, .bases-100),
+body:not(.block-width-off) div:is(.max, .table-max, .img-max, .iframe-max, .map-max, .chart-max, .bases-max, .table-100, .img-100, .iframe-100, .map-100, .chart-100, .bases-100) {
   --file-line-width: 100%;
 }
-.table-100.markdown-preview-view,
-.table-100 .markdown-preview-view,
-.img-100.markdown-preview-view,
-.img-100 .markdown-preview-view,
-.iframe-100.markdown-preview-view,
-.iframe-100 .markdown-preview-view,
-.map-100.markdown-preview-view,
-.map-100 .markdown-preview-view,
-.chart-100.markdown-preview-view,
-.chart-100 .markdown-preview-view {
-  padding: var(--file-margins) 0;
+body:not(.block-width-off):is(.max, .table-max, .img-max, .iframe-max, .map-max, .chart-max, .bases-max, .table-100, .img-100, .iframe-100, .map-100, .chart-100, .bases-100) .cm-content,
+body:not(.block-width-off) div:is(.max, .table-max, .img-max, .iframe-max, .map-max, .chart-max, .bases-max, .table-100, .img-100, .iframe-100, .map-100, .chart-100, .bases-100) .cm-content {
+  width: 100% !important;
+}
+body:not(.block-width-off).is-mobile:is(.table-100, .img-100, .iframe-100, .map-100, .chart-100, .bases-100), body:not(.block-width-off).is-mobile div:is(.table-100, .img-100, .iframe-100, .map-100, .chart-100, .bases-100) {
+  --file-margins: 24px;
+}
+body:not(.block-width-off).is-mobile:is(.table-100, .img-100, .iframe-100, .map-100, .chart-100, .bases-100).markdown-preview-view,
+body:not(.block-width-off).is-mobile:is(.table-100, .img-100, .iframe-100, .map-100, .chart-100, .bases-100) .markdown-preview-view,
+body:not(.block-width-off).is-mobile:is(.table-100, .img-100, .iframe-100, .map-100, .chart-100, .bases-100) .cm-scroller, body:not(.block-width-off).is-mobile div:is(.table-100, .img-100, .iframe-100, .map-100, .chart-100, .bases-100).markdown-preview-view,
+body:not(.block-width-off).is-mobile div:is(.table-100, .img-100, .iframe-100, .map-100, .chart-100, .bases-100) .markdown-preview-view,
+body:not(.block-width-off).is-mobile div:is(.table-100, .img-100, .iframe-100, .map-100, .chart-100, .bases-100) .cm-scroller {
+  padding: 8px var(--file-margins) !important;
+}
+body:not(.block-width-off) .markdown-preview-sizer > div {
+  margin: 0 auto;
 }
 
 .table-wide {
   --table-line-width: var(--line-width-wide);
 }
 
-.table-max {
-  --table-line-width: var(--max-width);
-}
-
+.table-max,
 .table-100 {
   --table-line-width: 100%;
 }
-.table-100 tbody > tr > td {
+
+body:not(.block-width-off).table-100 .markdown-preview-sizer tbody > tr > td,
+body:not(.block-width-off) .table-100 .markdown-preview-sizer tbody > tr > td {
   border-radius: 0 !important;
 }
-.table-100 tbody tr:first-child > td {
-  border-top-width: 0;
+body:not(.block-width-off).table-100 .markdown-preview-sizer tbody tr:first-child > td,
+body:not(.block-width-off) .table-100 .markdown-preview-sizer tbody tr:first-child > td {
+  border-block-start-width: 0;
 }
-.table-100 tbody tr > td:last-child {
-  border-right-width: 0;
+body:not(.block-width-off).table-100 .markdown-preview-sizer tbody tr > td:last-child,
+body:not(.block-width-off) .table-100 .markdown-preview-sizer tbody tr > td:last-child {
+  border-inline-end-width: 0;
 }
-.table-100 tbody tr > td:first-child {
-  border-left-width: 0;
+body:not(.block-width-off).table-100 .markdown-preview-sizer tbody tr > td:first-child,
+body:not(.block-width-off) .table-100 .markdown-preview-sizer tbody tr > td:first-child {
+  border-inline-start-width: 0;
 }
-.table-100 tbody tr:last-child > td {
-  border-bottom-width: 0;
-}
-.table-100 [dir=rtl] tbody > tr > td:first-child {
-  border-right: none !important;
-  border-left: var(--table-border-width) solid var(--table-border-color) !important;
-}
-.table-100 [dir=rtl] tbody > tr > td:last-child {
-  border-left: none !important;
+body:not(.block-width-off).table-100 .markdown-preview-sizer tbody tr:last-child > td,
+body:not(.block-width-off) .table-100 .markdown-preview-sizer tbody tr:last-child > td {
+  border-block-end-width: 0;
 }
 
-.table-wide .markdown-preview-sizer > div.el-table:is(.el-table)[dir],
-.table-max .markdown-preview-sizer > div.el-table:is(.el-table)[dir],
-.table-100 .markdown-preview-sizer > div.el-table:is(.el-table)[dir] {
-  max-width: var(--table-line-width) !important;
-}
-.table-wide .markdown-preview-sizer > div:not(.el-table),
-.table-max .markdown-preview-sizer > div:not(.el-table),
-.table-100 .markdown-preview-sizer > div:not(.el-table) {
-  max-width: var(--line-width) !important;
+body:not(.block-width-off):is(.table-wide, .table-max, .table-100) .markdown-preview-sizer > div:not(.el-table),
+body:not(.block-width-off):is(.table-wide, .table-max, .table-100) .cm-sizer > div:not(.cm-contentContainer),
+body:not(.block-width-off):is(.table-wide, .table-max, .table-100) .cm-content > *:not(.cm-table-widget),
+body:not(.block-width-off) div:is(.table-wide, .table-max, .table-100) .markdown-preview-sizer > div:not(.el-table),
+body:not(.block-width-off) div:is(.table-wide, .table-max, .table-100) .cm-sizer > div:not(.cm-contentContainer),
+body:not(.block-width-off) div:is(.table-wide, .table-max, .table-100) .cm-content > *:not(.cm-table-widget) {
+  max-width: var(--active-line-width, var(--line-width)) !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  width: calc(100% - var(--file-margins) * 2);
+  width: max(100% - var(--file-margins) * 2, 100%);
+}
+
+body:not(.block-width-off):is(.table-wide, .table-max) .markdown-preview-sizer > div.el-table:is(.el-table)[dir],
+body:not(.block-width-off):is(.table-wide, .table-max) .cm-content > .cm-table-widget,
+body:not(.block-width-off) div:is(.table-wide, .table-max) .markdown-preview-sizer > div.el-table:is(.el-table)[dir],
+body:not(.block-width-off) div:is(.table-wide, .table-max) .cm-content > .cm-table-widget {
+  max-width: 100% !important;
+  width: var(--img-line-width) !important;
+}
+
+body:not(.block-width-off).table-100 .markdown-preview-sizer > div.el-table:is(.el-table)[dir],
+body:not(.block-width-off).table-100 .cm-content > .cm-table-widget,
+body:not(.block-width-off) div.table-100 .markdown-preview-sizer > div.el-table:is(.el-table)[dir],
+body:not(.block-width-off) div.table-100 .cm-content > .cm-table-widget {
+  max-width: calc(100% + var(--file-margins) * 2) !important;
+  width: calc(var(--table-line-width) + var(--file-margins) * 2) !important;
+  margin-left: calc(-1 * var(--file-margins)) !important;
+  margin-right: calc(-1 * var(--file-margins)) !important;
 }
 
 .img-wide {
   --img-line-width: var(--line-width-wide);
 }
 
-.img-max {
-  --img-line-width: var(--max-width);
-}
-
+.img-max,
 .img-100 {
   --img-line-width: 100%;
 }
 
-.img-wide .markdown-preview-sizer > div.el-p:has(img[src]):is(.el-p:has(img[src])),
-.img-max .markdown-preview-sizer > div.el-p:has(img[src]):is(.el-p:has(img[src])),
-.img-100 .markdown-preview-sizer > div.el-p:has(img[src]):is(.el-p:has(img[src])) {
-  max-width: var(--img-line-width) !important;
+.img-100 .markdown-preview-sizer img,
+.img-100 .cm-content img {
+  border-radius: 0 !important;
 }
-.img-wide .markdown-preview-sizer > div:not(.el-p:has(img)),
-.img-max .markdown-preview-sizer > div:not(.el-p:has(img)),
-.img-100 .markdown-preview-sizer > div:not(.el-p:has(img)) {
-  max-width: var(--line-width) !important;
+
+body:not(.block-width-off):is(.img-wide, .img-max, .img-100) .markdown-preview-sizer > div:not(.el-p:has(img)),
+body:not(.block-width-off):is(.img-wide, .img-max, .img-100) .cm-sizer > div:not(.cm-contentContainer),
+body:not(.block-width-off):is(.img-wide, .img-max, .img-100) .cm-content > *:not(img),
+body:not(.block-width-off) div:is(.img-wide, .img-max, .img-100) .markdown-preview-sizer > div:not(.el-p:has(img)),
+body:not(.block-width-off) div:is(.img-wide, .img-max, .img-100) .cm-sizer > div:not(.cm-contentContainer),
+body:not(.block-width-off) div:is(.img-wide, .img-max, .img-100) .cm-content > *:not(img) {
+  max-width: var(--active-line-width, var(--line-width)) !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  width: calc(100% - var(--file-margins) * 2);
+  width: max(100% - var(--file-margins) * 2, 100%);
+}
+
+body:not(.block-width-off):is(.img-wide, .img-max) .markdown-preview-sizer > div.el-p:has(img[src]):is(.el-p:has(img[src])),
+body:not(.block-width-off):is(.img-wide, .img-max) .cm-content > img,
+body:not(.block-width-off) div:is(.img-wide, .img-max) .markdown-preview-sizer > div.el-p:has(img[src]):is(.el-p:has(img[src])),
+body:not(.block-width-off) div:is(.img-wide, .img-max) .cm-content > img {
+  max-width: 100% !important;
+  width: var(--img-line-width) !important;
+}
+
+body:not(.block-width-off).img-100 .markdown-preview-sizer > div.el-p:has(img[src]):is(.el-p:has(img[src])),
+body:not(.block-width-off).img-100 .cm-content > img,
+body:not(.block-width-off) div.img-100 .markdown-preview-sizer > div.el-p:has(img[src]):is(.el-p:has(img[src])),
+body:not(.block-width-off) div.img-100 .cm-content > img {
+  max-width: calc(100% + var(--file-margins) * 2) !important;
+  width: calc(var(--img-line-width) + var(--file-margins) * 2) !important;
+  margin-left: calc(-1 * var(--file-margins)) !important;
+  margin-right: calc(-1 * var(--file-margins)) !important;
+  height: auto;
 }
 
 .iframe-wide {
   --iframe-line-width: var(--line-width-wide);
 }
 
-.iframe-max {
-  --iframe-line-width: var(--max-width);
-}
-
+.iframe-max,
 .iframe-100 {
   --iframe-line-width: 100%;
 }
 
-.iframe-wide .markdown-preview-sizer > div.el-p:has(iframe[src]):is(.el-p:has(iframe[src])),
-.iframe-max .markdown-preview-sizer > div.el-p:has(iframe[src]):is(.el-p:has(iframe[src])),
-.iframe-100 .markdown-preview-sizer > div.el-p:has(iframe[src]):is(.el-p:has(iframe[src])) {
-  max-width: var(--iframe-line-width) !important;
-}
-.iframe-wide .markdown-preview-sizer > div:not(.el-p:has(iframe)),
-.iframe-max .markdown-preview-sizer > div:not(.el-p:has(iframe)),
-.iframe-100 .markdown-preview-sizer > div:not(.el-p:has(iframe)) {
-  max-width: var(--line-width) !important;
+body:not(.block-width-off):is(.iframe-wide, .iframe-max, .iframe-100) .markdown-preview-sizer > div:not(.el-p:has(iframe)),
+body:not(.block-width-off):is(.iframe-wide, .iframe-max, .iframe-100) .cm-sizer > div:not(.cm-contentContainer),
+body:not(.block-width-off):is(.iframe-wide, .iframe-max, .iframe-100) .cm-content > *:not(iframe),
+body:not(.block-width-off) div:is(.iframe-wide, .iframe-max, .iframe-100) .markdown-preview-sizer > div:not(.el-p:has(iframe)),
+body:not(.block-width-off) div:is(.iframe-wide, .iframe-max, .iframe-100) .cm-sizer > div:not(.cm-contentContainer),
+body:not(.block-width-off) div:is(.iframe-wide, .iframe-max, .iframe-100) .cm-content > *:not(iframe) {
+  max-width: var(--active-line-width, var(--line-width)) !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  width: calc(100% - var(--file-margins) * 2);
+  width: max(100% - var(--file-margins) * 2, 100%);
+}
+
+body:not(.block-width-off):is(.iframe-wide, .iframe-max, .iframe-100) .markdown-preview-sizer > div.el-p:has(iframe[src]):is(.el-p:has(iframe[src])),
+body:not(.block-width-off):is(.iframe-wide, .iframe-max, .iframe-100) .cm-content > iframe,
+body:not(.block-width-off) div:is(.iframe-wide, .iframe-max, .iframe-100) .markdown-preview-sizer > div.el-p:has(iframe[src]):is(.el-p:has(iframe[src])),
+body:not(.block-width-off) div:is(.iframe-wide, .iframe-max, .iframe-100) .cm-content > iframe {
+  max-width: 100% !important;
+  width: var(--iframe-line-width) !important;
+}
+
+body:not(.block-width-off).iframe-100 .markdown-preview-sizer > div.el-p:has(iframe[src]):is(.el-p:has(iframe[src])),
+body:not(.block-width-off).iframe-100 .cm-content > iframe,
+body:not(.block-width-off) div.iframe-100 .markdown-preview-sizer > div.el-p:has(iframe[src]):is(.el-p:has(iframe[src])),
+body:not(.block-width-off) div.iframe-100 .cm-content > iframe {
+  max-width: calc(100% + var(--file-margins) * 2) !important;
+  width: calc(var(--img-line-width) + var(--file-margins) * 2) !important;
+  margin-left: calc(-1 * var(--file-margins)) !important;
+  margin-right: calc(-1 * var(--file-margins)) !important;
 }
 
 .map-wide {
   --map-line-width: var(--line-width-wide);
 }
 
-.map-max {
-  --map-line-width: var(--max-width);
-}
-
+.map-max,
 .map-100 {
   --map-line-width: 100%;
 }
 
-.map-wide .markdown-preview-sizer > div.el-pre:has(.block-language-leaflet[style]):is(.el-pre:has(.block-language-leaflet[style])),
-.map-max .markdown-preview-sizer > div.el-pre:has(.block-language-leaflet[style]):is(.el-pre:has(.block-language-leaflet[style])),
-.map-100 .markdown-preview-sizer > div.el-pre:has(.block-language-leaflet[style]):is(.el-pre:has(.block-language-leaflet[style])) {
-  max-width: var(--map-line-width) !important;
-}
-.map-wide .markdown-preview-sizer > div:not(.el-pre:has(.block-language-leaflet)),
-.map-max .markdown-preview-sizer > div:not(.el-pre:has(.block-language-leaflet)),
-.map-100 .markdown-preview-sizer > div:not(.el-pre:has(.block-language-leaflet)) {
-  max-width: var(--line-width) !important;
+body:not(.block-width-off):is(.map-wide, .map-max, .map-100) .markdown-preview-sizer > div:not(.el-pre:has(.block-language-leaflet)),
+body:not(.block-width-off):is(.map-wide, .map-max, .map-100) .cm-sizer > div:not(.cm-contentContainer),
+body:not(.block-width-off):is(.map-wide, .map-max, .map-100) .cm-content > *:not(.cm-lang-leaflet),
+body:not(.block-width-off) div:is(.map-wide, .map-max, .map-100) .markdown-preview-sizer > div:not(.el-pre:has(.block-language-leaflet)),
+body:not(.block-width-off) div:is(.map-wide, .map-max, .map-100) .cm-sizer > div:not(.cm-contentContainer),
+body:not(.block-width-off) div:is(.map-wide, .map-max, .map-100) .cm-content > *:not(.cm-lang-leaflet) {
+  max-width: var(--active-line-width, var(--line-width)) !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  width: calc(100% - var(--file-margins) * 2);
+  width: max(100% - var(--file-margins) * 2, 100%);
+}
+
+body:not(.block-width-off):is(.map-wide, .map-max) .markdown-preview-sizer > div.el-pre:has(.block-language-leaflet[style]):is(.el-pre:has(.block-language-leaflet[style])),
+body:not(.block-width-off):is(.map-wide, .map-max) .cm-content > .cm-lang-leaflet,
+body:not(.block-width-off) div:is(.map-wide, .map-max) .markdown-preview-sizer > div.el-pre:has(.block-language-leaflet[style]):is(.el-pre:has(.block-language-leaflet[style])),
+body:not(.block-width-off) div:is(.map-wide, .map-max) .cm-content > .cm-lang-leaflet {
+  max-width: 100% !important;
+  width: var(--map-line-width) !important;
+}
+
+body:not(.block-width-off).map-100 .markdown-preview-sizer > div.el-pre:has(.block-language-leaflet[style]):is(.el-pre:has(.block-language-leaflet[style])),
+body:not(.block-width-off).map-100 .cm-content > .cm-lang-leaflet,
+body:not(.block-width-off) div.map-100 .markdown-preview-sizer > div.el-pre:has(.block-language-leaflet[style]):is(.el-pre:has(.block-language-leaflet[style])),
+body:not(.block-width-off) div.map-100 .cm-content > .cm-lang-leaflet {
+  max-width: calc(100% + var(--file-margins) * 2) !important;
+  width: calc(var(--img-line-width) + var(--file-margins) * 2) !important;
+  margin-left: calc(-1 * var(--file-margins)) !important;
+  margin-right: calc(-1 * var(--file-margins)) !important;
 }
 
 .chart-wide {
   --chart-line-width: var(--line-width-wide);
 }
 
-.chart-max {
-  --chart-line-width: var(--max-width);
-}
-
+.chart-max,
 .chart-100 {
   --chart-line-width: 100%;
 }
 
-.chart-wide .markdown-preview-sizer > div.el-pre:has(.block-language-chart[style]):is(.el-pre:has(.block-language-chart[style])),
-.chart-max .markdown-preview-sizer > div.el-pre:has(.block-language-chart[style]):is(.el-pre:has(.block-language-chart[style])),
-.chart-100 .markdown-preview-sizer > div.el-pre:has(.block-language-chart[style]):is(.el-pre:has(.block-language-chart[style])) {
-  max-width: var(--chart-line-width) !important;
-}
-.chart-wide .markdown-preview-sizer > div:not(.el-pre:has(.block-language-chart)),
-.chart-max .markdown-preview-sizer > div:not(.el-pre:has(.block-language-chart)),
-.chart-100 .markdown-preview-sizer > div:not(.el-pre:has(.block-language-chart)) {
-  max-width: var(--line-width) !important;
+body:not(.block-width-off):is(.chart-wide, .chart-max, .chart-100) .markdown-preview-sizer > div:not(.el-pre:has(.block-language-chart)),
+body:not(.block-width-off):is(.chart-wide, .chart-max, .chart-100) .cm-sizer > div:not(.cm-contentContainer),
+body:not(.block-width-off):is(.chart-wide, .chart-max, .chart-100) .cm-content > *:not(.cm-lang-chart),
+body:not(.block-width-off) div:is(.chart-wide, .chart-max, .chart-100) .markdown-preview-sizer > div:not(.el-pre:has(.block-language-chart)),
+body:not(.block-width-off) div:is(.chart-wide, .chart-max, .chart-100) .cm-sizer > div:not(.cm-contentContainer),
+body:not(.block-width-off) div:is(.chart-wide, .chart-max, .chart-100) .cm-content > *:not(.cm-lang-chart) {
+  max-width: var(--active-line-width, var(--line-width)) !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  width: calc(100% - var(--file-margins) * 2);
+  width: max(100% - var(--file-margins) * 2, 100%);
 }
 
-.markdown-preview-sizer > div,
-.cm-content {
-  margin: 0 auto;
+body:not(.block-width-off):is(.chart-wide, .chart-max) .markdown-preview-sizer > div.el-pre:has(.block-language-chart[style]):is(.el-pre:has(.block-language-chart[style])),
+body:not(.block-width-off):is(.chart-wide, .chart-max) .cm-content > .cm-lang-chart,
+body:not(.block-width-off) div:is(.chart-wide, .chart-max) .markdown-preview-sizer > div.el-pre:has(.block-language-chart[style]):is(.el-pre:has(.block-language-chart[style])),
+body:not(.block-width-off) div:is(.chart-wide, .chart-max) .cm-content > .cm-lang-chart {
+  max-width: 100% !important;
+  width: var(--chart-line-width) !important;
 }
 
-.cm-contentContainer > .cm-content > img {
-  width: revert-layer !important;
+body:not(.block-width-off).chart-100 .markdown-preview-sizer > div.el-pre:has(.block-language-chart[style]):is(.el-pre:has(.block-language-chart[style])),
+body:not(.block-width-off).chart-100 .cm-content > .cm-lang-chart,
+body:not(.block-width-off) div.chart-100 .markdown-preview-sizer > div.el-pre:has(.block-language-chart[style]):is(.el-pre:has(.block-language-chart[style])),
+body:not(.block-width-off) div.chart-100 .cm-content > .cm-lang-chart {
+  max-width: calc(100% + var(--file-margins) * 2) !important;
+  width: calc(var(--img-line-width) + var(--file-margins) * 2) !important;
+  margin-left: calc(-1 * var(--file-margins)) !important;
+  margin-right: calc(-1 * var(--file-margins)) !important;
+}
+
+.bases-wide {
+  --bases-line-width: var(--line-width-wide);
+}
+
+.bases-max,
+.bases-100 {
+  --bases-line-width: 100%;
+}
+
+body:not(.block-width-off).bases-100 .markdown-preview-sizer .bases-embed .bases-view .bases-tbody,
+body:not(.block-width-off) .bases-100 .markdown-preview-sizer .bases-embed .bases-view .bases-tbody {
+  border: none;
+  border-radius: 0;
+}
+
+body:not(.block-width-off):is(.bases-wide, .bases-max, .bases-100) .markdown-preview-sizer > div:not(.el-p:has(.bases-view)),
+body:not(.block-width-off):is(.bases-wide, .bases-max, .bases-100) .cm-sizer > div:not(.cm-contentContainer),
+body:not(.block-width-off):is(.bases-wide, .bases-max, .bases-100) .cm-content > *:not(.bases-embed),
+body:not(.block-width-off) div:is(.bases-wide, .bases-max, .bases-100) .markdown-preview-sizer > div:not(.el-p:has(.bases-view)),
+body:not(.block-width-off) div:is(.bases-wide, .bases-max, .bases-100) .cm-sizer > div:not(.cm-contentContainer),
+body:not(.block-width-off) div:is(.bases-wide, .bases-max, .bases-100) .cm-content > *:not(.bases-embed) {
+  max-width: var(--active-line-width, var(--line-width)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: max(100% - var(--file-margins) * 2, 100%);
+}
+
+body:not(.block-width-off):is(.bases-wide, .bases-max) .markdown-preview-sizer > div.el-p:has(.bases-view):is(.el-p:has(.bases-view)),
+body:not(.block-width-off):is(.bases-wide, .bases-max) .cm-content > .bases-embed,
+body:not(.block-width-off) div:is(.bases-wide, .bases-max) .markdown-preview-sizer > div.el-p:has(.bases-view):is(.el-p:has(.bases-view)),
+body:not(.block-width-off) div:is(.bases-wide, .bases-max) .cm-content > .bases-embed {
+  max-width: 100% !important;
+  width: var(--bases-line-width) !important;
+}
+
+body:not(.block-width-off).bases-100 .markdown-preview-sizer > div.el-p:has(.bases-view):is(.el-p:has(.bases-view)),
+body:not(.block-width-off).bases-100 .cm-content > .bases-embed,
+body:not(.block-width-off) div.bases-100 .markdown-preview-sizer > div.el-p:has(.bases-view):is(.el-p:has(.bases-view)),
+body:not(.block-width-off) div.bases-100 .cm-content > .bases-embed {
+  max-width: calc(100% + var(--file-margins) * 2) !important;
+  width: calc(var(--img-line-width) + var(--file-margins) * 2) !important;
+  margin-left: calc(-1 * var(--file-margins)) !important;
+  margin-right: calc(-1 * var(--file-margins)) !important;
 }
