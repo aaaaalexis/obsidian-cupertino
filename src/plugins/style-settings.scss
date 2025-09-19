@@ -24,12 +24,19 @@ body:is(.is-mobile, .mod-windows:not(.windows-mode-off)) .style-settings-heading
     display: none;
   }
 }
+body.sidedock-glass-off .style-settings-heading[data-id="cupertino"] + .style-settings-container {
+  .setting-item[data-id="sidedock-glass-tint-off"] {
+    display: none;
+  }
+}
+
 body:not(.mod-windows) .style-settings-heading[data-id="cupertino"] + .style-settings-container {
   .style-settings-heading[data-id="windows-header"],
   .style-settings-heading[data-id="windows-header"] + .style-settings-container {
     display: none;
   }
 }
+
 body:not(.is-android) .style-settings-heading[data-id="cupertino"] + .style-settings-container {
   .style-settings-heading[data-id="android-header"],
   .style-settings-heading[data-id="android-header"] + .style-settings-container {
