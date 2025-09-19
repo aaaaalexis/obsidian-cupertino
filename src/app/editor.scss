@@ -82,19 +82,28 @@
     .el-p > p:has(> .image-embed),
     .el-p > p:has(> img) {
       --p-spacing: 4px;
-
-      line-height: 0;
       display: flex;
       gap: 4px;
 
+      line-height: 0;
+
+      br {
+        display: none;
+      }
+
+      > img,
       > .image-embed {
-        flex-grow: 1;
-        flex-shrink: 0;
+        flex: 1;
+        object-fit: cover;
       }
 
       img {
+        height: -webkit-fill-available;
         overflow: auto;
-        height: 100%;
+        object-fit: cover;
+      }
+      img:not(:only-child),
+      span:not(:only-child) img {
         object-fit: cover;
       }
     }
