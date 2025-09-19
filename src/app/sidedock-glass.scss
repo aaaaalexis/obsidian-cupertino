@@ -1,4 +1,4 @@
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)).sidedock-alt {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager {
   --nav-item-color: rgb(var(--mono-rgb-100));
   --nav-item-color-active: var(--text-accent);
   --nav-collapse-icon-color: rgb(var(--mono-rgb-100));
