@@ -496,7 +496,7 @@ body.is-tablet {
 
 /********** HDR element **********/
 
-body.is-ios.theme-light {
+body.is-phone.is-ios.theme-light {
   .mod-left-split-toggle.clickable-icon::after,
   .mod-root .workspace-leaf-content .view-action::after,
   .mobile-navbar-actions::after,
