@@ -108,6 +108,10 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glas
       border-radius: 0;
       background-color: transparent;
     }
+
+    .workspace-leaf-resize-handle {
+      border-color: var(--divider-color);
+    }
   }
 
   // ----------------------------------------------------------------
