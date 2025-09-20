@@ -450,6 +450,10 @@
 
   /* Blockquote */
 
+  .cm-formatting-quote {
+    margin-left: 8px;
+  }
+
   .markdown-rendered blockquote {
     position: relative;
     border-radius: var(--radius-s);
