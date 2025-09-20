@@ -22,6 +22,11 @@ body.is-phone {
 }
 
 @media only screen and (max-width: 600px) {
+  body.is-phone .omnisearch-modal.prompt {
+    margin-top: calc(var(--safe-area-inset-top) + var(--view-header-height));
+    height: calc(100% - var(--safe-area-inset-top) - var(--view-header-height));
+    box-shadow: 0 0 0 128px var(--background-secondary);
+  }
   .omnisearch-input-container__buttons {
     padding: 0 0 0 8px;
     width: fit-content;
