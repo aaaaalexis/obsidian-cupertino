@@ -957,19 +957,31 @@ body.is-tablet .workspace-tab-header-container-inner {
   .img-grid .markdown-preview-section .el-p > p:has(> .image-embed),
   .img-grid .markdown-preview-section .el-p > p:has(> img) {
     --p-spacing: 4px;
-    line-height: 0;
     display: flex;
     gap: 4px;
+    line-height: 0;
   }
+  .img-grid .markdown-preview-section .el-p > p:has(> .image-embed) br,
+  .img-grid .markdown-preview-section .el-p > p:has(> img) br {
+    display: none;
+  }
+  .img-grid .markdown-preview-section .el-p > p:has(> .image-embed) > img,
   .img-grid .markdown-preview-section .el-p > p:has(> .image-embed) > .image-embed,
+  .img-grid .markdown-preview-section .el-p > p:has(> img) > img,
   .img-grid .markdown-preview-section .el-p > p:has(> img) > .image-embed {
-    flex-grow: 1;
-    flex-shrink: 0;
+    flex: 1;
+    object-fit: cover;
   }
   .img-grid .markdown-preview-section .el-p > p:has(> .image-embed) img,
   .img-grid .markdown-preview-section .el-p > p:has(> img) img {
+    height: -webkit-fill-available;
     overflow: auto;
-    height: 100%;
+    object-fit: cover;
+  }
+  .img-grid .markdown-preview-section .el-p > p:has(> .image-embed) img:not(:only-child),
+  .img-grid .markdown-preview-section .el-p > p:has(> .image-embed) span:not(:only-child) img,
+  .img-grid .markdown-preview-section .el-p > p:has(> img) img:not(:only-child),
+  .img-grid .markdown-preview-section .el-p > p:has(> img) span:not(:only-child) img {
     object-fit: cover;
   }
   /* Code */
@@ -1335,6 +1347,9 @@ body.is-tablet .workspace-tab-header-container-inner {
     width: 100%;
   }
   /* Blockquote */
+  .cm-formatting-quote {
+    margin-left: 8px;
+  }
   .markdown-rendered blockquote {
     position: relative;
     border-radius: var(--radius-s);
@@ -2413,7 +2428,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glas
   background-color: var(--color-base-20) !important;
   box-shadow: none !important;
 }
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-sidedock {
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-sidedock:not(:active) {
   transition: var(--anim-duration-moderate) var(--anim-motion-cupertino) !important;
 }
 body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager.theme-light .mod-sidedock.mod-left-split {
@@ -2491,7 +2506,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glas
   background-color: transparent;
 }
 body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager:not(.sidedock-glass-tint-off) .mod-sidedock {
-  background-color: color-mix(in srgb, var(--background-primary) 98%, var(--color-accent)) !important;
+  background-color: color-mix(in srgb, var(--background-primary) 98%, var(--color-accent));
 }
 
 body.is-mobile {
@@ -2928,16 +2943,16 @@ body.is-tablet .document-search-container .document-search-buttons {
 }
 
 /********** HDR element **********/
-body.is-ios.theme-light .mod-left-split-toggle.clickable-icon::after,
-body.is-ios.theme-light .mod-root .workspace-leaf-content .view-action::after,
-body.is-ios.theme-light .mobile-navbar-actions::after,
-body.is-ios.theme-light .mobile-toolbar-options-list::after,
-body.is-ios.theme-light .workspace-drawer .nav-buttons-container::after,
-body.is-ios.theme-light .workspace-drawer-header-icon.clickable-icon::after,
-body.is-ios.theme-light .prompt-input-container::after,
-body.is-ios.theme-light .prompt-input-container .search-input-clear-button::before,
-body.is-ios.theme-light .modal-setting-back-button::after,
-body.is-ios.theme-light .modal-close-button::after {
+body.is-phone.is-ios.theme-light .mod-left-split-toggle.clickable-icon::after,
+body.is-phone.is-ios.theme-light .mod-root .workspace-leaf-content .view-action::after,
+body.is-phone.is-ios.theme-light .mobile-navbar-actions::after,
+body.is-phone.is-ios.theme-light .mobile-toolbar-options-list::after,
+body.is-phone.is-ios.theme-light .workspace-drawer .nav-buttons-container::after,
+body.is-phone.is-ios.theme-light .workspace-drawer-header-icon.clickable-icon::after,
+body.is-phone.is-ios.theme-light .prompt-input-container::after,
+body.is-phone.is-ios.theme-light .prompt-input-container .search-input-clear-button::before,
+body.is-phone.is-ios.theme-light .modal-setting-back-button::after,
+body.is-phone.is-ios.theme-light .modal-close-button::after {
   position: absolute;
   backdrop-filter: brightness(1.5);
   mask: linear-gradient(white, white) padding-box, linear-gradient(white, white) border-box;
@@ -2950,12 +2965,12 @@ body.is-ios.theme-light .modal-close-button::after {
   pointer-events: none;
   content: "";
 }
-body.is-ios.theme-light .prompt-input-container::after {
+body.is-phone.is-ios.theme-light .prompt-input-container::after {
   margin-right: 56px;
   border-radius: var(--clickable-icon-radius);
 }
-body.is-ios.theme-light .prompt-input-container::after,
-body.is-ios.theme-light .search-input-clear-button::before {
+body.is-phone.is-ios.theme-light .prompt-input-container::after,
+body.is-phone.is-ios.theme-light .search-input-clear-button::before {
   backdrop-filter: brightness(1.2);
 }
 
@@ -4504,6 +4519,20 @@ body.is-phone .style-settings-heading[data-id=cupertino] + .style-settings-conta
   margin-left: 0;
 }
 
+body:not(.is-mobile) #editingToolbarModalBar.top,
+body:not(.is-mobile) #editingToolbarPopoverBar {
+  top: var(--view-header-height);
+}
+
+body.is-phone #editingToolbarModalBar.top,
+body.is-phone #editingToolbarPopoverBar {
+  top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
+}
+
+.editingToolbarCommandItem {
+  min-height: unset !important;
+}
+
 body {
   --nn-theme-nav-header-bg: transparent;
   --nn-theme-nav-bg: transparent;
@@ -4591,6 +4620,11 @@ body.is-phone .omnisearch-input-field .prompt-input {
   }
 }
 @media only screen and (max-width: 600px) {
+  body.is-phone .omnisearch-modal.prompt {
+    margin-top: calc(var(--safe-area-inset-top) + var(--view-header-height));
+    height: calc(100% - var(--safe-area-inset-top) - var(--view-header-height));
+    box-shadow: 0 0 0 128px var(--background-secondary);
+  }
   .omnisearch-input-container__buttons {
     padding: 0 0 0 8px;
     width: fit-content;
