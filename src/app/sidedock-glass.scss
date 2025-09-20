@@ -19,7 +19,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glas
     background-color: var(--color-base-20) !important;
     box-shadow: none !important;
   }
-  .mod-sidedock {
+  .mod-sidedock:not(:active) {
     transition: var(--anim-duration-moderate) var(--anim-motion-cupertino) !important;
   }
 
