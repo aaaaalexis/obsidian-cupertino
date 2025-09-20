@@ -1,4 +1,4 @@
-body:not(.is-mobile).hover-sidedock {
+body:not(.is-mobile):not(.hover-sidedock-off) {
   .mod-sidedock {
     transition: var(--anim-duration-fast) var(--anim-motion-cupertino);
 
@@ -34,7 +34,7 @@ body:not(.is-mobile).hover-sidedock {
           margin: 4px 0;
         }
         &.mod-top-left-space .workspace-tab-header-container-inner {
-          margin-left: 40px;
+          margin-left: 40px !important;
         }
       }
 
