@@ -18,6 +18,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glas
   &:not(.is-focused) .mod-sidedock {
     background-color: var(--color-base-20) !important;
     box-shadow: none !important;
+    outline-color: transparent !important;
   }
   .mod-sidedock:not(:active) {
     transition: var(--anim-duration-moderate) var(--anim-motion-cupertino) !important;
