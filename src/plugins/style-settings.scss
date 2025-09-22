@@ -5,6 +5,14 @@
 .style-settings-heading {
   margin: 0 !important;
   border: none !important;
+
+  .setting-item-name {
+    color: var(--text-normal) !important;
+  }
+}
+
+.themed-color-wrapper {
+  display: flex;
 }
 
 .style-settings-heading[data-id="cupertino"] + .style-settings-container {
