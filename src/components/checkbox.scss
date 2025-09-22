@@ -55,7 +55,7 @@ input[type="checkbox"][data-indeterminate="true"]:not(:checked) {
 [data-task="P"],
 [data-task="L"] {
   .markdown-reading-view & > input[type="checkbox"]:checked,
-  .is-live-preview &:checked {
+  .markdown-source-view &:checked {
     --checkbox-color: transparent;
 
     &:hover {
