@@ -306,6 +306,10 @@
 
   .embed-title {
     color: var(--color-base-100);
+
+    &:empty {
+      display: none;
+    }
   }
 
   /* Table */
