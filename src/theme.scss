@@ -7,7 +7,7 @@
 @use "app/prompt.scss";
 @use "app/status-bar.scss";
 @use "app/empty-state.scss";
-@use "app/mobile.scss";
+@use "app/mobile.scss" as app-cupertino;
 @use "app/style-settings.scss";
 
 @use "editor/editor.scss";
@@ -24,6 +24,7 @@
 @use "layouts/frame.scss";
 @use "layouts/cupertino.scss" as layout-cupertino;
 @use "layouts/macos.scss";
+@use "layouts/mobile.scss" as layout-mobile;
 
 @use "elements/baseline.scss";
 @use "elements/cupertino.scss" as element-cupertino;

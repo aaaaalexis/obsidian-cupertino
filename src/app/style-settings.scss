@@ -719,6 +719,22 @@ settings:
 				label: Cupertino
 				value: status-bar-cupertino
 	-
+		id: mobile-style
+		title: Mobile style
+		type: class-select
+		allowEmpty: false
+		default: mobile-obsidian
+		options:
+			-
+				label: Obsidian
+				value: mobile-obsidian
+			-
+				label: Baseline
+				value: mobile-baseline
+			-
+				label: Cupertino
+				value: mobile-cupertino
+	-
 		id: animation
 		title: Animation
 		type: heading
