@@ -230,8 +230,6 @@ body {
   // --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
   --workspace-background-translucent: var(--background-secondary);
 
-  font-feature-settings: "ss01" 1, "ss07" 1, "cv07" 1;
-
   --side-padding: 20px;
   @media (max-width: 402px) {
     --side-padding: 16px;

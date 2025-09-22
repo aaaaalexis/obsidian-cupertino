@@ -23,6 +23,7 @@
 
     transition: var(--anim-duration-fast) ease-in-out;
     letter-spacing: 0.1px;
+    font-feature-settings: "ss01" 1, "ss07" 1, "cv07" 1;
   }
   .markdown-preview-view {
     scrollbar-gutter: auto;
