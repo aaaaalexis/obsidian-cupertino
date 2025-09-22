@@ -25,6 +25,7 @@ body.is-mobile .nn-mobile {
   --nn-theme-mobile-toolbar-button-icon-color: var(--text-normal);
 
   padding: 0 !important;
+  background-color: transparent !important;
   border-radius: 0 !important;
 
   .nn-navigation-pane,
@@ -67,4 +68,8 @@ body.is-mobile .nn-mobile {
       line-height: 1;
     }
   }
+}
+
+body.is-tablet .nn-mobile .nn-mobile-toolbar {
+  margin-bottom: 16px;
 }
