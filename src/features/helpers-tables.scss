@@ -80,6 +80,13 @@
         min-width: 10px;
       }
     }
+    &:not(.table-editor) tr > :first-child,
+    &.table-editor tr > :first-child .table-cell-wrapper {
+      > .node-insert-event,
+      img {
+        max-width: calc(100% - 2.5em);
+      }
+    }
     &:not(.table-editor) > tbody > tr > td:first-child,
     &.table-editor > tbody > tr > td:first-child .table-cell-wrapper {
       white-space: nowrap;
@@ -96,9 +103,6 @@
       .cm-s-obsidian {
         display: inline-block;
         min-width: 10px;
-      }
-      img {
-        max-width: calc(100% - 2.5em);
       }
     }
   }
