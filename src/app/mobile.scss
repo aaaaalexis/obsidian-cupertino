@@ -143,6 +143,7 @@ body.is-mobile {
     width: var(--view-header-height);
     height: var(--view-header-height);
     margin: 0;
+    position: relative;
   }
   .view-header-title-container {
     height: var(--view-header-height);
@@ -374,7 +375,7 @@ body.is-mobile {
 }
 
 body.is-tablet .workspace-drawer .nav-header {
-  padding: 4px 0 max(var(--safe-area-inset-bottom), 16px);
+  padding: 16px;
 }
 
 /********** Image Viewer **********/
@@ -496,17 +497,19 @@ body.is-tablet {
 
 /********** HDR element **********/
 
-body.is-phone.is-ios.theme-light {
-  .mod-left-split-toggle.clickable-icon::after,
-  .mod-root .workspace-leaf-content .view-action::after,
-  .mobile-navbar-actions::after,
-  .mobile-toolbar-options-list::after,
-  .workspace-drawer .nav-buttons-container::after,
-  .workspace-drawer-header-icon.clickable-icon::after,
-  .prompt-input-container::after,
-  .prompt-input-container .search-input-clear-button::before,
-  .modal-setting-back-button::after,
-  .modal-close-button::after {
+body.is-mobile.is-ios.theme-light {
+  &.is-phone .mod-left-split-toggle.clickable-icon::after,
+  &.is-phone .mod-root .workspace-leaf-content .view-action::after,
+  &.is-phone .workspace-drawer-header-icon.clickable-icon::after,
+  &.is-phone .modal-setting-back-button::after,
+  &.is-phone .modal-close-button::after,
+  &.is-phone .prompt-input-container::after,
+  &.is-phone .prompt-input-container .search-input-clear-button::before,
+  &.is-phone .mobile-navbar-actions::after,
+  &.is-phone .mobile-toolbar-options-list::after,
+  &.is-tablet .workspace-drawer::after,
+  &.is-tablet .workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner::before,
+  .workspace-drawer .nav-buttons-container::after {
     position: absolute;
     backdrop-filter: brightness(1.5);
     mask: linear-gradient(white, white) padding-box, linear-gradient(white, white) border-box;
@@ -518,6 +521,7 @@ body.is-phone.is-ios.theme-light {
     background: linear-gradient(to bottom left, white, transparent, white) border-box no-repeat;
     pointer-events: none;
     content: "";
+    z-index: 1;
   }
 
   .prompt-input-container::after {

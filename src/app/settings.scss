@@ -376,18 +376,27 @@ body.is-tablet .modal.mod-sidebar-layout {
   input[type="number"] {
     background-color: var(--background-modifier-hover);
   }
+  .vertical-tab-header-group-title {
+    padding-left: 20px;
+  }
   .vertical-tab-header-group-items {
     gap: 0;
+    border-radius: 0;
+    overflow: visible;
+    background-color: transparent;
   }
   .vertical-tab-nav-item {
     display: flex;
     align-items: center;
-    border-radius: 0;
+    border-radius: 100vh;
     padding-left: var(--side-padding);
-
-    &:not(:last-child) {
-      border-bottom: var(--border-width) solid var(--background-modifier-border);
-    }
+  }
+  .vertical-tab-nav-item:not(:last-child)::after {
+    content: none;
+  }
+  .vertical-tab-nav-item.is-active {
+    background-color: rgba(var(--mono-rgb-100), 0.1);
+    color: var(--text-accent);
   }
 
   button:not(.clickable-icon):not([class*="mod-"]),
