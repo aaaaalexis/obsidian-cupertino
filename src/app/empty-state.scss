@@ -119,7 +119,7 @@ body:not(.empty-state-off) .workspace-leaf-content[data-type="empty"] {
   }
 }
 
-body:not(.empty-state-off) .is-mobile {
+body:not(.empty-state-off).is-mobile {
   .empty-state-container {
     padding-bottom: 96px !important;
     &::before {
@@ -144,7 +144,7 @@ body:not(.empty-state-off) .is-mobile {
   }
 }
 
-body:not(.empty-state-off) .is-tablet {
+body:not(.empty-state-off).is-tablet {
   .empty-state-container::before {
     margin-top: calc(-1 * var(--header-height));
   }
