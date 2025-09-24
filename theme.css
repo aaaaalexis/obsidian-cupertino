@@ -76,6 +76,10 @@ settings:
         title: Disable full width elements
         type: class-toggle
     -
+        id: empty-state-off
+        title: Disable new tab styling
+        type: class-toggle
+    -
         id: desktop-header
         title: Desktop
         type: heading
@@ -90,8 +94,8 @@ settings:
         max: 100
         step: 5
     -
-        id: hover-sidedock
-        title: Hover sidebar
+        id: hover-sidedock-off
+        title: Disable hover sidebar
         description: Might cause crashes on some systems.
         type: class-toggle
     -
@@ -364,6 +368,9 @@ body:not(.is-popout-window) .app-container {
   align-items: center;
 }
 
+body:not(.is-mobile) {
+  background-color: var(--background-secondary);
+}
 body:not(.is-mobile) .workspace,
 body:not(.is-mobile) .workspace-ribbon,
 body:not(.is-mobile) .workspace-split.mod-root,
@@ -381,11 +388,9 @@ body:not(.is-mobile) .app-container::before {
   background-color: hsla(var(--color-accent-hsl), calc(var(--accented-frame-opacity) * 0.005));
   content: "";
 }
-body:not(.is-mobile).is-frameless:not(.is-hidden-frameless) .titlebar {
-  background-color: var(--background-secondary);
-}
 body:not(.is-mobile) .titlebar {
   background-color: transparent;
+  z-index: 1;
 }
 body:not(.is-mobile) .titlebar .titlebar-button-container.mod-right {
   width: var(--frame-right-space);
@@ -532,7 +537,6 @@ body.is-phone .prompt {
 @starting-style {
   body.is-phone .prompt {
     opacity: 0;
-    filter: var(--blur-s);
   }
 }
 body.is-phone .prompt-results {
@@ -906,6 +910,7 @@ body.is-tablet .workspace-tab-header-container-inner {
     --text-normal: var(--color-base-80);
     transition: var(--anim-duration-fast) ease-in-out;
     letter-spacing: 0.1px;
+    font-feature-settings: "ss01" 1, "ss07" 1, "cv07" 1;
   }
   .markdown-preview-view {
     scrollbar-gutter: auto;
@@ -1153,6 +1158,9 @@ body.is-tablet .workspace-tab-header-container-inner {
   }
   .embed-title {
     color: var(--color-base-100);
+  }
+  .embed-title:empty {
+    display: none;
   }
   /* Table */
   :root table {
@@ -2133,17 +2141,27 @@ body.is-tablet .modal.mod-sidebar-layout input[type=search],
 body.is-tablet .modal.mod-sidebar-layout input[type=number] {
   background-color: var(--background-modifier-hover);
 }
+body.is-tablet .modal.mod-sidebar-layout .vertical-tab-header-group-title {
+  padding-left: 20px;
+}
 body.is-tablet .modal.mod-sidebar-layout .vertical-tab-header-group-items {
   gap: 0;
+  border-radius: 0;
+  overflow: visible;
+  background-color: transparent;
 }
 body.is-tablet .modal.mod-sidebar-layout .vertical-tab-nav-item {
   display: flex;
   align-items: center;
-  border-radius: 0;
+  border-radius: 100vh;
   padding-left: var(--side-padding);
 }
-body.is-tablet .modal.mod-sidebar-layout .vertical-tab-nav-item:not(:last-child) {
-  border-bottom: var(--border-width) solid var(--background-modifier-border);
+body.is-tablet .modal.mod-sidebar-layout .vertical-tab-nav-item:not(:last-child)::after {
+  content: none;
+}
+body.is-tablet .modal.mod-sidebar-layout .vertical-tab-nav-item.is-active {
+  background-color: rgba(var(--mono-rgb-100), 0.1);
+  color: var(--text-accent);
 }
 body.is-tablet .modal.mod-sidebar-layout button:not(.clickable-icon):not([class*=mod-]),
 body.is-tablet .modal.mod-sidebar-layout select,
@@ -2336,9 +2354,6 @@ body.is-mobile .workspace-drawer .search-result-file-matches {
 body.is-mobile .workspace-drawer .search-result-file-match {
   padding: var(--nav-item-padding);
 }
-body.is-mobile .workspace-drawer.is-pinned .nav-files-container > div {
-  background-color: var(--background-secondary);
-}
 body.is-mobile .nav-files-container {
   padding: 0 var(--side-padding) 8px !important;
 }
@@ -2396,12 +2411,32 @@ body.is-phone .workspace-drawer-header-left {
   margin-top: 16px;
 }
 
+body.is-tablet.theme-light .workspace-drawer {
+  outline: var(--border-width) solid white;
+}
 body.is-tablet.theme-dark .workspace-drawer {
+  outline: var(--border-width) solid var(--background-modifier-border);
   background-color: var(--background-primary-alt);
+}
+body.is-tablet .workspace-drawer {
+  padding-top: 16px;
+  margin: calc(var(--safe-area-inset-top) + 8px) 0 var(--safe-area-inset-bottom);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xs);
+  height: -webkit-fill-available;
 }
 body.is-tablet .workspace-drawer.is-pinned {
   background-color: var(--background-primary);
-  padding-top: calc(var(--safe-area-inset-top) + 16px);
+}
+body.is-tablet .workspace-drawer.is-pinned .workspace-drawer-active-tab-header,
+body.is-tablet .workspace-drawer.is-pinned .nav-files-container > div {
+  background-color: var(--background-secondary);
+}
+body.is-tablet .workspace-drawer.mod-left {
+  margin-left: 8px;
+}
+body.is-tablet .workspace-drawer.mod-right {
+  margin-left: 8px;
 }
 body.is-tablet .workspace-drawer-ribbon {
   left: 8px;
@@ -2427,6 +2462,7 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glas
 body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager:not(.is-focused) .mod-sidedock {
   background-color: var(--color-base-20) !important;
   box-shadow: none !important;
+  outline-color: transparent !important;
 }
 body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-sidedock:not(:active) {
   transition: var(--anim-duration-moderate) var(--anim-motion-cupertino) !important;
@@ -2439,6 +2475,10 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glas
   outline: var(--border-width) solid var(--background-modifier-border);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), -32px 0px 0 32px var(--background-primary);
 }
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager.show-ribbon:not(.is-hidden-frameless) .workspace-ribbon .sidebar-toggle-button {
+  margin-top: 12px;
+  margin-left: 8px;
+}
 body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager.show-ribbon .workspace-ribbon.mod-left {
   padding-left: 16px;
   padding-right: 0px;
@@ -2450,6 +2490,9 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glas
 }
 body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager.show-ribbon .mod-sidedock.mod-left-split.is-sidedock-collapsed {
   opacity: 0;
+}
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager.is-hidden-frameless .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+  padding-left: max(var(--frame-left-space), 4px) !important;
 }
 body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-sidedock.mod-left-split {
   z-index: var(--layer-sidedock);
@@ -2467,9 +2510,6 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glas
 }
 body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container-inner {
   margin: 4px 0;
-}
-body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
-  padding-left: max(var(--frame-left-space), 4px) !important;
 }
 body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
   border-inline-start: var(--divider-width) solid var(--divider-color);
@@ -2504,6 +2544,9 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glas
   outline: none;
   border-radius: 0;
   background-color: transparent;
+}
+body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager .mod-root .workspace-leaf-resize-handle {
+  border-color: var(--divider-color);
 }
 body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glass-off).css-settings-manager:not(.sidedock-glass-tint-off) .mod-sidedock {
   background-color: color-mix(in srgb, var(--background-primary) 98%, var(--color-accent));
@@ -2639,6 +2682,7 @@ body.is-mobile .workspace-drawer-header-icon {
   width: var(--view-header-height);
   height: var(--view-header-height);
   margin: 0;
+  position: relative;
 }
 body.is-mobile .view-header-title-container {
   height: var(--view-header-height);
@@ -2841,7 +2885,7 @@ body.is-mobile .nav-action-button.is-active {
 }
 
 body.is-tablet .workspace-drawer .nav-header {
-  padding: 4px 0 max(var(--safe-area-inset-bottom), 16px);
+  padding: 16px;
 }
 
 /********** Image Viewer **********/
@@ -2943,16 +2987,8 @@ body.is-tablet .document-search-container .document-search-buttons {
 }
 
 /********** HDR element **********/
-body.is-phone.is-ios.theme-light .mod-left-split-toggle.clickable-icon::after,
-body.is-phone.is-ios.theme-light .mod-root .workspace-leaf-content .view-action::after,
-body.is-phone.is-ios.theme-light .mobile-navbar-actions::after,
-body.is-phone.is-ios.theme-light .mobile-toolbar-options-list::after,
-body.is-phone.is-ios.theme-light .workspace-drawer .nav-buttons-container::after,
-body.is-phone.is-ios.theme-light .workspace-drawer-header-icon.clickable-icon::after,
-body.is-phone.is-ios.theme-light .prompt-input-container::after,
-body.is-phone.is-ios.theme-light .prompt-input-container .search-input-clear-button::before,
-body.is-phone.is-ios.theme-light .modal-setting-back-button::after,
-body.is-phone.is-ios.theme-light .modal-close-button::after {
+body.is-mobile.is-ios.theme-light.is-phone .mod-left-split-toggle.clickable-icon::after, body.is-mobile.is-ios.theme-light.is-phone .mod-root .workspace-leaf-content .view-action::after, body.is-mobile.is-ios.theme-light.is-phone .workspace-drawer-header-icon.clickable-icon::after, body.is-mobile.is-ios.theme-light.is-phone .modal-setting-back-button::after, body.is-mobile.is-ios.theme-light.is-phone .modal-close-button::after, body.is-mobile.is-ios.theme-light.is-phone .prompt-input-container::after, body.is-mobile.is-ios.theme-light.is-phone .prompt-input-container .search-input-clear-button::before, body.is-mobile.is-ios.theme-light.is-phone .mobile-navbar-actions::after, body.is-mobile.is-ios.theme-light.is-phone .mobile-toolbar-options-list::after, body.is-mobile.is-ios.theme-light.is-tablet .workspace-drawer::after, body.is-mobile.is-ios.theme-light.is-tablet .workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner::before,
+body.is-mobile.is-ios.theme-light .workspace-drawer .nav-buttons-container::after {
   position: absolute;
   backdrop-filter: brightness(1.5);
   mask: linear-gradient(white, white) padding-box, linear-gradient(white, white) border-box;
@@ -2964,17 +3000,38 @@ body.is-phone.is-ios.theme-light .modal-close-button::after {
   background: linear-gradient(to bottom left, white, transparent, white) border-box no-repeat;
   pointer-events: none;
   content: "";
+  z-index: 1;
 }
-body.is-phone.is-ios.theme-light .prompt-input-container::after {
+body.is-mobile.is-ios.theme-light .prompt-input-container::after {
   margin-right: 56px;
   border-radius: var(--clickable-icon-radius);
 }
-body.is-phone.is-ios.theme-light .prompt-input-container::after,
-body.is-phone.is-ios.theme-light .search-input-clear-button::before {
+body.is-mobile.is-ios.theme-light .prompt-input-container::after,
+body.is-mobile.is-ios.theme-light .search-input-clear-button::before {
   backdrop-filter: brightness(1.2);
 }
 
-.workspace-leaf-content[data-type=empty] .empty-state .empty-state-container {
+body.empty-state-off .empty-state-action-list::before {
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="140" height="180" viewBox="0 0 140 180" fill="none"><path d="M49.775 105.089C54.3828 103.715 61.8069 101.605 70.3434 101.082C65.2222 88.1449 63.986 76.8242 64.9803 66.7442C66.1285 55.1033 70.23 45.3874 74.228 37.1201C75.0811 35.3561 75.9012 33.7135 76.6879 32.1378C77.8017 29.9069 78.8486 27.81 79.8278 25.6916C81.4579 22.1652 82.6674 19.051 83.2791 16.1576C83.8806 13.3125 83.8838 10.7715 83.1727 8.3342C82.4607 5.89352 80.9475 3.26635 78.0704 0.386692C74.3134 -0.587559 70.1448 0.267767 67.0197 3.08162L29.9298 36.4772C27.861 38.34 26.503 40.8642 26.0879 43.6182L22.8899 64.8384C27.9185 69.2873 40.33 82.2201 47.8789 100.165C48.5525 101.766 49.1875 103.408 49.775 105.089Z" fill="white"/><path d="M21.3902 74.5293C21.2153 75.2761 20.9692 76.0051 20.6549 76.7063L1.05225 120.436C-0.961131 124.928 -0.0336421 130.194 3.39276 133.726L34.2418 165.523C49.9952 142.262 47.6984 120.379 40.5026 103.274C35.0465 90.3037 26.777 80.1526 21.3902 74.5293Z" fill="white"/><path d="M41.3687 169.269C41.9093 169.355 42.4575 169.407 43.0096 169.424C48.864 169.6 58.7098 170.109 66.6947 171.582C73.2088 172.783 86.1213 176.397 96.747 179.505C104.855 181.877 113.211 175.396 114.387 167.024C115.245 160.917 116.855 154.009 119.821 147.677L119.753 147.702C114.73 133.682 108.34 124.629 101.641 118.849C94.9619 113.086 87.7708 110.397 80.8276 109.42C69.2835 107.795 58.7071 110.832 52.0453 112.791C56.0353 129.428 54.8074 149.004 41.3687 169.269Z" fill="white"/><path d="M124.96 139.034C131.626 128.965 136.375 121.134 138.881 116.888C140.135 114.764 139.907 112.102 138.423 110.133C134.554 105.002 127.152 94.5755 123.12 84.9218C118.973 74.9962 118.355 59.5866 118.319 52.081C118.306 49.2279 117.402 46.4413 115.639 44.1994L91.6762 13.73C91.5918 15.1034 91.3946 16.4659 91.1093 17.8158C90.3118 21.5882 88.8073 25.3437 87.0916 29.0552C86.086 31.2306 84.9238 33.5612 83.7497 35.9157C82.9682 37.4827 82.1814 39.0607 81.432 40.6102C77.5579 48.6212 73.9528 57.3151 72.9451 67.5313C72.011 77.0006 73.2894 88.014 79.0482 101.162C80.0074 101.243 80.9727 101.351 81.9422 101.487C90.2067 102.651 98.8807 105.891 106.866 112.781C113.73 118.704 119.932 127.19 124.96 139.034Z" fill="white"/></svg>');
+  background-color: var(--background-modifier-hover);
+  height: 80px;
+  content: "";
+  display: flex;
+  margin-bottom: 20px;
+}
+
+body:not(.is-phone) .workspace-leaf-content[data-type=empty] .view-header {
+  justify-content: flex-end;
+}
+body:not(.is-phone) .workspace-leaf-content[data-type=empty] .view-header .view-header-left,
+body:not(.is-phone) .workspace-leaf-content[data-type=empty] .view-header .view-header-title-container {
+  display: none;
+}
+
+body:not(.empty-state-off) .workspace-leaf-content[data-type=empty] .empty-state-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2986,7 +3043,7 @@ body.is-phone.is-ios.theme-light .search-input-clear-button::before {
   height: 100%;
   max-height: 100%;
 }
-.workspace-leaf-content[data-type=empty] .empty-state .empty-state-container::before {
+body:not(.empty-state-off) .workspace-leaf-content[data-type=empty] .empty-state-container::before {
   -webkit-mask-size: contain;
   -webkit-mask-position: center;
   -webkit-mask-repeat: no-repeat;
@@ -3000,10 +3057,10 @@ body.is-phone.is-ios.theme-light .search-input-clear-button::before {
   pointer-events: none;
   content: "";
 }
-.workspace-leaf-content[data-type=empty] .empty-state .empty-state-title {
+body:not(.empty-state-off) .workspace-leaf-content[data-type=empty] .empty-state-title {
   display: none;
 }
-.workspace-leaf-content[data-type=empty] .empty-state .empty-state-action-list {
+body:not(.empty-state-off) .workspace-leaf-content[data-type=empty] .empty-state-action-list {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -3014,16 +3071,16 @@ body.is-phone.is-ios.theme-light .search-input-clear-button::before {
   max-width: var(--file-line-width);
   height: 100%;
 }
-.workspace-leaf-content[data-type=empty] .empty-state .empty-state-action {
+body:not(.empty-state-off) .workspace-leaf-content[data-type=empty] .empty-state-action {
   cursor: pointer;
 }
-.workspace-leaf-content[data-type=empty] .empty-state .empty-state-action.tappable {
+body:not(.empty-state-off) .workspace-leaf-content[data-type=empty] .empty-state-action.tappable {
   color: var(--text-accent);
 }
-.workspace-leaf-content[data-type=empty] .empty-state .empty-state-action.mod-close {
+body:not(.empty-state-off) .workspace-leaf-content[data-type=empty] .empty-state-action.mod-close {
   display: none;
 }
-.workspace-leaf-content[data-type=empty] .empty-state .empty-state-action:first-child {
+body:not(.empty-state-off) .workspace-leaf-content[data-type=empty] .empty-state-action:first-child {
   width: 100%;
   height: 100%;
   font-weight: var(--inline-title-weight);
@@ -3032,10 +3089,10 @@ body.is-phone.is-ios.theme-light .search-input-clear-button::before {
   letter-spacing: -0.015em;
   text-align: left;
 }
-.workspace-leaf-content[data-type=empty] .empty-state .empty-state-action:first-child::after {
+body:not(.empty-state-off) .workspace-leaf-content[data-type=empty] .empty-state-action:first-child::after {
   content: "...";
 }
-.workspace-leaf-content[data-type=empty] .empty-state .empty-state-action:nth-child(2) {
+body:not(.empty-state-off) .workspace-leaf-content[data-type=empty] .empty-state-action:nth-child(2) {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -3061,33 +3118,33 @@ body.is-phone.is-ios.theme-light .search-input-clear-button::before {
   display: none;
 }
 
-body.is-mobile .empty-state-container {
+body:not(.empty-state-off).is-mobile .empty-state-container {
   padding-bottom: 96px !important;
 }
-body.is-mobile .empty-state-container::before {
+body:not(.empty-state-off).is-mobile .empty-state-container::before {
   margin-top: 44px !important;
 }
-body.is-mobile .empty-state-action {
+body:not(.empty-state-off).is-mobile .empty-state-action {
   margin: unset;
   background-color: transparent;
   padding: unset;
 }
-body.is-mobile .empty-state-action:first-child {
+body:not(.empty-state-off).is-mobile .empty-state-action:first-child {
   margin-top: 0;
   padding-top: calc(var(--safe-area-inset-top) + 8px);
 }
-body.is-mobile .empty-state-action:nth-child(2) {
+body:not(.empty-state-off).is-mobile .empty-state-action:nth-child(2) {
   background-color: var(--background-secondary) !important;
   padding: 4px var(--side-padding);
 }
-body.is-mobile .empty-state-action:nth-child(n+3) {
+body:not(.empty-state-off).is-mobile .empty-state-action:nth-child(n+3) {
   margin: 4px 0;
 }
 
-body.is-tablet .empty-state-container::before {
+body:not(.empty-state-off).is-tablet .empty-state-container::before {
   margin-top: calc(-1 * var(--header-height));
 }
-body.is-tablet .empty-state-action:first-child {
+body:not(.empty-state-off).is-tablet .empty-state-action:first-child {
   margin-top: 0;
   padding-top: 8px;
 }
@@ -3184,220 +3241,145 @@ input[type=checkbox][data-indeterminate=true]:not(:checked):after {
   height: var(--checkbox-size);
 }
 
-li[data-task][data-task=">"],
-li[data-task][data-task=">"] input[type=checkbox]:checked, li[data-task][data-task="<"],
-li[data-task][data-task="<"] input[type=checkbox]:checked, li[data-task][data-task="*"],
-li[data-task][data-task="*"] input[type=checkbox]:checked, li[data-task][data-task='"'],
-li[data-task][data-task='"'] input[type=checkbox]:checked, li[data-task][data-task=“],
-li[data-task][data-task=“] input[type=checkbox]:checked, li[data-task][data-task=l],
-li[data-task][data-task=l] input[type=checkbox]:checked, li[data-task][data-task=b],
-li[data-task][data-task=b] input[type=checkbox]:checked, li[data-task][data-task=S],
-li[data-task][data-task=S] input[type=checkbox]:checked, li[data-task][data-task=I],
-li[data-task][data-task=I] input[type=checkbox]:checked, li[data-task][data-task=p],
-li[data-task][data-task=p] input[type=checkbox]:checked, li[data-task][data-task=c],
-li[data-task][data-task=c] input[type=checkbox]:checked, li[data-task][data-task=f],
-li[data-task][data-task=f] input[type=checkbox]:checked, li[data-task][data-task=k],
-li[data-task][data-task=k] input[type=checkbox]:checked, li[data-task][data-task=w],
-li[data-task][data-task=w] input[type=checkbox]:checked, li[data-task][data-task=u],
-li[data-task][data-task=u] input[type=checkbox]:checked, li[data-task][data-task=d],
-li[data-task][data-task=d] input[type=checkbox]:checked, li[data-task][data-task=B],
-li[data-task][data-task=B] input[type=checkbox]:checked, li[data-task][data-task=a],
-li[data-task][data-task=a] input[type=checkbox]:checked, li[data-task][data-task=n],
-li[data-task][data-task=n] input[type=checkbox]:checked, li[data-task][data-task=R],
-li[data-task][data-task=R] input[type=checkbox]:checked, li[data-task][data-task=t],
-li[data-task][data-task=t] input[type=checkbox]:checked, li[data-task][data-task=P],
-li[data-task][data-task=P] input[type=checkbox]:checked, li[data-task][data-task=L],
-li[data-task][data-task=L] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=">"],
-input[type=checkbox][data-task]:checked[data-task=">"] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task="<"],
-input[type=checkbox][data-task]:checked[data-task="<"] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task="*"],
-input[type=checkbox][data-task]:checked[data-task="*"] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task='"'],
-input[type=checkbox][data-task]:checked[data-task='"'] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=“],
-input[type=checkbox][data-task]:checked[data-task=“] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=l],
-input[type=checkbox][data-task]:checked[data-task=l] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=b],
-input[type=checkbox][data-task]:checked[data-task=b] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=S],
-input[type=checkbox][data-task]:checked[data-task=S] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=I],
-input[type=checkbox][data-task]:checked[data-task=I] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=p],
-input[type=checkbox][data-task]:checked[data-task=p] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=c],
-input[type=checkbox][data-task]:checked[data-task=c] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=f],
-input[type=checkbox][data-task]:checked[data-task=f] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=k],
-input[type=checkbox][data-task]:checked[data-task=k] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=w],
-input[type=checkbox][data-task]:checked[data-task=w] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=u],
-input[type=checkbox][data-task]:checked[data-task=u] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=d],
-input[type=checkbox][data-task]:checked[data-task=d] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=B],
-input[type=checkbox][data-task]:checked[data-task=B] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=a],
-input[type=checkbox][data-task]:checked[data-task=a] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=n],
-input[type=checkbox][data-task]:checked[data-task=n] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=R],
-input[type=checkbox][data-task]:checked[data-task=R] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=t],
-input[type=checkbox][data-task]:checked[data-task=t] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=P],
-input[type=checkbox][data-task]:checked[data-task=P] input[type=checkbox]:checked,
-input[type=checkbox][data-task]:checked[data-task=L],
-input[type=checkbox][data-task]:checked[data-task=L] input[type=checkbox]:checked {
+.markdown-reading-view [data-task=">"] > input[type=checkbox]:checked, .markdown-source-view [data-task=">"]:checked,
+.markdown-reading-view [data-task="<"] > input[type=checkbox]:checked,
+.markdown-source-view [data-task="<"]:checked,
+.markdown-reading-view [data-task="*"] > input[type=checkbox]:checked,
+.markdown-source-view [data-task="*"]:checked,
+.markdown-reading-view [data-task='"'] > input[type=checkbox]:checked,
+.markdown-source-view [data-task='"']:checked,
+.markdown-reading-view [data-task=“] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=“]:checked,
+.markdown-reading-view [data-task=l] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=l]:checked,
+.markdown-reading-view [data-task=b] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=b]:checked,
+.markdown-reading-view [data-task=S] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=S]:checked,
+.markdown-reading-view [data-task=I] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=I]:checked,
+.markdown-reading-view [data-task=p] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=p]:checked,
+.markdown-reading-view [data-task=c] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=c]:checked,
+.markdown-reading-view [data-task=f] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=f]:checked,
+.markdown-reading-view [data-task=k] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=k]:checked,
+.markdown-reading-view [data-task=w] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=w]:checked,
+.markdown-reading-view [data-task=u] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=u]:checked,
+.markdown-reading-view [data-task=d] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=d]:checked,
+.markdown-reading-view [data-task=B] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=B]:checked,
+.markdown-reading-view [data-task=a] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=a]:checked,
+.markdown-reading-view [data-task=n] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=n]:checked,
+.markdown-reading-view [data-task=R] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=R]:checked,
+.markdown-reading-view [data-task=t] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=t]:checked,
+.markdown-reading-view [data-task=P] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=P]:checked,
+.markdown-reading-view [data-task=L] > input[type=checkbox]:checked,
+.markdown-source-view [data-task=L]:checked {
   --checkbox-color: transparent;
 }
-li[data-task][data-task=">"]:hover,
-li[data-task][data-task=">"] input[type=checkbox]:checked:hover, li[data-task][data-task="<"]:hover,
-li[data-task][data-task="<"] input[type=checkbox]:checked:hover, li[data-task][data-task="*"]:hover,
-li[data-task][data-task="*"] input[type=checkbox]:checked:hover, li[data-task][data-task='"']:hover,
-li[data-task][data-task='"'] input[type=checkbox]:checked:hover, li[data-task][data-task=“]:hover,
-li[data-task][data-task=“] input[type=checkbox]:checked:hover, li[data-task][data-task=l]:hover,
-li[data-task][data-task=l] input[type=checkbox]:checked:hover, li[data-task][data-task=b]:hover,
-li[data-task][data-task=b] input[type=checkbox]:checked:hover, li[data-task][data-task=S]:hover,
-li[data-task][data-task=S] input[type=checkbox]:checked:hover, li[data-task][data-task=I]:hover,
-li[data-task][data-task=I] input[type=checkbox]:checked:hover, li[data-task][data-task=p]:hover,
-li[data-task][data-task=p] input[type=checkbox]:checked:hover, li[data-task][data-task=c]:hover,
-li[data-task][data-task=c] input[type=checkbox]:checked:hover, li[data-task][data-task=f]:hover,
-li[data-task][data-task=f] input[type=checkbox]:checked:hover, li[data-task][data-task=k]:hover,
-li[data-task][data-task=k] input[type=checkbox]:checked:hover, li[data-task][data-task=w]:hover,
-li[data-task][data-task=w] input[type=checkbox]:checked:hover, li[data-task][data-task=u]:hover,
-li[data-task][data-task=u] input[type=checkbox]:checked:hover, li[data-task][data-task=d]:hover,
-li[data-task][data-task=d] input[type=checkbox]:checked:hover, li[data-task][data-task=B]:hover,
-li[data-task][data-task=B] input[type=checkbox]:checked:hover, li[data-task][data-task=a]:hover,
-li[data-task][data-task=a] input[type=checkbox]:checked:hover, li[data-task][data-task=n]:hover,
-li[data-task][data-task=n] input[type=checkbox]:checked:hover, li[data-task][data-task=R]:hover,
-li[data-task][data-task=R] input[type=checkbox]:checked:hover, li[data-task][data-task=t]:hover,
-li[data-task][data-task=t] input[type=checkbox]:checked:hover, li[data-task][data-task=P]:hover,
-li[data-task][data-task=P] input[type=checkbox]:checked:hover, li[data-task][data-task=L]:hover,
-li[data-task][data-task=L] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=">"]:hover,
-input[type=checkbox][data-task]:checked[data-task=">"] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task="<"]:hover,
-input[type=checkbox][data-task]:checked[data-task="<"] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task="*"]:hover,
-input[type=checkbox][data-task]:checked[data-task="*"] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task='"']:hover,
-input[type=checkbox][data-task]:checked[data-task='"'] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=“]:hover,
-input[type=checkbox][data-task]:checked[data-task=“] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=l]:hover,
-input[type=checkbox][data-task]:checked[data-task=l] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=b]:hover,
-input[type=checkbox][data-task]:checked[data-task=b] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=S]:hover,
-input[type=checkbox][data-task]:checked[data-task=S] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=I]:hover,
-input[type=checkbox][data-task]:checked[data-task=I] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=p]:hover,
-input[type=checkbox][data-task]:checked[data-task=p] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=c]:hover,
-input[type=checkbox][data-task]:checked[data-task=c] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=f]:hover,
-input[type=checkbox][data-task]:checked[data-task=f] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=k]:hover,
-input[type=checkbox][data-task]:checked[data-task=k] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=w]:hover,
-input[type=checkbox][data-task]:checked[data-task=w] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=u]:hover,
-input[type=checkbox][data-task]:checked[data-task=u] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=d]:hover,
-input[type=checkbox][data-task]:checked[data-task=d] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=B]:hover,
-input[type=checkbox][data-task]:checked[data-task=B] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=a]:hover,
-input[type=checkbox][data-task]:checked[data-task=a] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=n]:hover,
-input[type=checkbox][data-task]:checked[data-task=n] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=R]:hover,
-input[type=checkbox][data-task]:checked[data-task=R] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=t]:hover,
-input[type=checkbox][data-task]:checked[data-task=t] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=P]:hover,
-input[type=checkbox][data-task]:checked[data-task=P] input[type=checkbox]:checked:hover,
-input[type=checkbox][data-task]:checked[data-task=L]:hover,
-input[type=checkbox][data-task]:checked[data-task=L] input[type=checkbox]:checked:hover {
+.markdown-reading-view [data-task=">"] > input[type=checkbox]:checked:hover, .markdown-source-view [data-task=">"]:checked:hover,
+.markdown-reading-view [data-task="<"] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task="<"]:checked:hover,
+.markdown-reading-view [data-task="*"] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task="*"]:checked:hover,
+.markdown-reading-view [data-task='"'] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task='"']:checked:hover,
+.markdown-reading-view [data-task=“] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=“]:checked:hover,
+.markdown-reading-view [data-task=l] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=l]:checked:hover,
+.markdown-reading-view [data-task=b] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=b]:checked:hover,
+.markdown-reading-view [data-task=S] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=S]:checked:hover,
+.markdown-reading-view [data-task=I] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=I]:checked:hover,
+.markdown-reading-view [data-task=p] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=p]:checked:hover,
+.markdown-reading-view [data-task=c] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=c]:checked:hover,
+.markdown-reading-view [data-task=f] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=f]:checked:hover,
+.markdown-reading-view [data-task=k] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=k]:checked:hover,
+.markdown-reading-view [data-task=w] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=w]:checked:hover,
+.markdown-reading-view [data-task=u] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=u]:checked:hover,
+.markdown-reading-view [data-task=d] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=d]:checked:hover,
+.markdown-reading-view [data-task=B] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=B]:checked:hover,
+.markdown-reading-view [data-task=a] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=a]:checked:hover,
+.markdown-reading-view [data-task=n] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=n]:checked:hover,
+.markdown-reading-view [data-task=R] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=R]:checked:hover,
+.markdown-reading-view [data-task=t] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=t]:checked:hover,
+.markdown-reading-view [data-task=P] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=P]:checked:hover,
+.markdown-reading-view [data-task=L] > input[type=checkbox]:checked:hover,
+.markdown-source-view [data-task=L]:checked:hover {
   background-color: transparent;
 }
-li[data-task][data-task=">"]:hover::after,
-li[data-task][data-task=">"] input[type=checkbox]:checked:hover::after, li[data-task][data-task="<"]:hover::after,
-li[data-task][data-task="<"] input[type=checkbox]:checked:hover::after, li[data-task][data-task="*"]:hover::after,
-li[data-task][data-task="*"] input[type=checkbox]:checked:hover::after, li[data-task][data-task='"']:hover::after,
-li[data-task][data-task='"'] input[type=checkbox]:checked:hover::after, li[data-task][data-task=“]:hover::after,
-li[data-task][data-task=“] input[type=checkbox]:checked:hover::after, li[data-task][data-task=l]:hover::after,
-li[data-task][data-task=l] input[type=checkbox]:checked:hover::after, li[data-task][data-task=b]:hover::after,
-li[data-task][data-task=b] input[type=checkbox]:checked:hover::after, li[data-task][data-task=S]:hover::after,
-li[data-task][data-task=S] input[type=checkbox]:checked:hover::after, li[data-task][data-task=I]:hover::after,
-li[data-task][data-task=I] input[type=checkbox]:checked:hover::after, li[data-task][data-task=p]:hover::after,
-li[data-task][data-task=p] input[type=checkbox]:checked:hover::after, li[data-task][data-task=c]:hover::after,
-li[data-task][data-task=c] input[type=checkbox]:checked:hover::after, li[data-task][data-task=f]:hover::after,
-li[data-task][data-task=f] input[type=checkbox]:checked:hover::after, li[data-task][data-task=k]:hover::after,
-li[data-task][data-task=k] input[type=checkbox]:checked:hover::after, li[data-task][data-task=w]:hover::after,
-li[data-task][data-task=w] input[type=checkbox]:checked:hover::after, li[data-task][data-task=u]:hover::after,
-li[data-task][data-task=u] input[type=checkbox]:checked:hover::after, li[data-task][data-task=d]:hover::after,
-li[data-task][data-task=d] input[type=checkbox]:checked:hover::after, li[data-task][data-task=B]:hover::after,
-li[data-task][data-task=B] input[type=checkbox]:checked:hover::after, li[data-task][data-task=a]:hover::after,
-li[data-task][data-task=a] input[type=checkbox]:checked:hover::after, li[data-task][data-task=n]:hover::after,
-li[data-task][data-task=n] input[type=checkbox]:checked:hover::after, li[data-task][data-task=R]:hover::after,
-li[data-task][data-task=R] input[type=checkbox]:checked:hover::after, li[data-task][data-task=t]:hover::after,
-li[data-task][data-task=t] input[type=checkbox]:checked:hover::after, li[data-task][data-task=P]:hover::after,
-li[data-task][data-task=P] input[type=checkbox]:checked:hover::after, li[data-task][data-task=L]:hover::after,
-li[data-task][data-task=L] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=">"]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=">"] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task="<"]:hover::after,
-input[type=checkbox][data-task]:checked[data-task="<"] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task="*"]:hover::after,
-input[type=checkbox][data-task]:checked[data-task="*"] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task='"']:hover::after,
-input[type=checkbox][data-task]:checked[data-task='"'] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=“]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=“] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=l]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=l] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=b]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=b] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=S]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=S] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=I]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=I] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=p]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=p] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=c]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=c] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=f]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=f] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=k]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=k] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=w]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=w] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=u]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=u] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=d]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=d] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=B]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=B] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=a]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=a] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=n]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=n] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=R]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=R] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=t]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=t] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=P]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=P] input[type=checkbox]:checked:hover::after,
-input[type=checkbox][data-task]:checked[data-task=L]:hover::after,
-input[type=checkbox][data-task]:checked[data-task=L] input[type=checkbox]:checked:hover::after {
+.markdown-reading-view [data-task=">"] > input[type=checkbox]:checked:hover::after, .markdown-source-view [data-task=">"]:checked:hover::after,
+.markdown-reading-view [data-task="<"] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task="<"]:checked:hover::after,
+.markdown-reading-view [data-task="*"] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task="*"]:checked:hover::after,
+.markdown-reading-view [data-task='"'] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task='"']:checked:hover::after,
+.markdown-reading-view [data-task=“] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=“]:checked:hover::after,
+.markdown-reading-view [data-task=l] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=l]:checked:hover::after,
+.markdown-reading-view [data-task=b] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=b]:checked:hover::after,
+.markdown-reading-view [data-task=S] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=S]:checked:hover::after,
+.markdown-reading-view [data-task=I] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=I]:checked:hover::after,
+.markdown-reading-view [data-task=p] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=p]:checked:hover::after,
+.markdown-reading-view [data-task=c] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=c]:checked:hover::after,
+.markdown-reading-view [data-task=f] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=f]:checked:hover::after,
+.markdown-reading-view [data-task=k] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=k]:checked:hover::after,
+.markdown-reading-view [data-task=w] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=w]:checked:hover::after,
+.markdown-reading-view [data-task=u] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=u]:checked:hover::after,
+.markdown-reading-view [data-task=d] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=d]:checked:hover::after,
+.markdown-reading-view [data-task=B] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=B]:checked:hover::after,
+.markdown-reading-view [data-task=a] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=a]:checked:hover::after,
+.markdown-reading-view [data-task=n] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=n]:checked:hover::after,
+.markdown-reading-view [data-task=R] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=R]:checked:hover::after,
+.markdown-reading-view [data-task=t] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=t]:checked:hover::after,
+.markdown-reading-view [data-task=P] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=P]:checked:hover::after,
+.markdown-reading-view [data-task=L] > input[type=checkbox]:checked:hover::after,
+.markdown-source-view [data-task=L]:checked:hover::after {
   background-color: var(--checkbox-color-hover);
 }
 
@@ -4471,6 +4453,13 @@ body.is-mobile .workspace-drawer .workspace-leaf-content[data-type=outline] .vie
   margin: 0 !important;
   border: none !important;
 }
+.style-settings-heading .setting-item-name {
+  color: var(--text-normal) !important;
+}
+
+.themed-color-wrapper {
+  display: flex;
+}
 
 .style-settings-heading[data-id=cupertino] + .style-settings-container .style-settings-heading {
   pointer-events: none;
@@ -4558,6 +4547,7 @@ body.is-mobile .nn-mobile {
   --nn-theme-mobile-nav-bg: transparent;
   --nn-theme-mobile-toolbar-button-icon-color: var(--text-normal);
   padding: 0 !important;
+  background-color: transparent !important;
   border-radius: 0 !important;
 }
 body.is-mobile .nn-mobile .nn-navigation-pane,
@@ -4597,6 +4587,10 @@ body.is-mobile .nn-mobile .nn-mobile-toolbar-button {
 }
 body.is-mobile .nn-mobile .nn-mobile-toolbar-button span {
   line-height: 1;
+}
+
+body.is-tablet .nn-mobile .nn-mobile-toolbar {
+  margin-bottom: 16px;
 }
 
 body:not(.is-phone) .omnisearch-input-field .prompt-input {
@@ -5957,18 +5951,18 @@ body.is-mobile.is-android:not(.material-off) .mobile-tab-switcher-menubar {
   padding: 8px var(--side-padding) calc(var(--safe-area-inset-bottom) + 8px);
 }
 
-body:not(.is-mobile).hover-sidedock .mod-sidedock {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock {
   transition: var(--anim-duration-fast) var(--anim-motion-cupertino);
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock .workspace-tab-header-container {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock .workspace-tab-header-container {
   -webkit-app-region: no-drag !important;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed {
   z-index: var(--layer-sidedock);
   transition: var(--anim-duration-fast), margin 0s;
   border-radius: var(--radius-window);
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
   display: flex !important;
   position: absolute;
   transition-delay: var(--anim-duration-moderate);
@@ -5979,58 +5973,58 @@ body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([sty
   background: var(--modal-background) !important;
   width: 8px !important;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs {
   --header-height: 40px;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs .workspace-tab-header-container {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs .workspace-tab-header-container {
   padding-left: 4px !important;
   padding-right: 4px !important;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs .workspace-tab-header-container-inner {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs .workspace-tab-header-container-inner {
   margin: 4px 0;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
-  margin-left: 40px;
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
+  margin-left: 40px !important;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover {
   width: 320px !important;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover::before {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover::before {
   width: 8px;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover ~ .mod-root .workspace-tab-header-container,
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover ~ .mod-root .workspace-tab-header-container-inner, body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover:has(~ .mod-root .workspace-tab-header-container), body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover:has(~ .mod-root .workspace-tab-header-container-inner) {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover ~ .mod-root .workspace-tab-header-container,
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover ~ .mod-root .workspace-tab-header-container-inner, body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover:has(~ .mod-root .workspace-tab-header-container), body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]):hover:has(~ .mod-root .workspace-tab-header-container-inner) {
   -webkit-app-region: no-drag;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]).mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]).mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
   padding-left: max(var(--frame-left-space), 4px) !important;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]).mod-right-split .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]).mod-right-split .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
   padding-right: max(32px + var(--frame-right-space), 48px) !important;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) div {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) div {
   visibility: visible !important;
   -webkit-app-region: no-drag !important;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) > .workspace-leaf-resize-handle {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) > .workspace-leaf-resize-handle {
   display: none;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed::before {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed::before {
   position: absolute;
   inset: -8px 0 -8px -8px;
   min-width: 8px;
   content: "";
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed.mod-right-split {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed.mod-right-split {
   right: 0;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed.mod-right-split::before {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed.mod-right-split::before {
   inset: -8px -8px -8px auto;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not(:hover) {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not(:hover) {
   opacity: 0;
 }
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed:not(:hover) div {
+body:not(.is-mobile):not(.hover-sidedock-off) .mod-sidedock.is-sidedock-collapsed:not(:hover) div {
   pointer-events: none;
 }
 
