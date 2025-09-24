@@ -26,11 +26,13 @@ body:not(.stacked-nav-off) .mod-left-split .workspace-tabs.mod-top-left-space .s
 .sidebar-toggle-button .clickable-icon {
   width: fit-content;
 }
-.workspace-ribbon svg.svg-icon,
-.workspace-tab-header-container svg.svg-icon,
-.mod-root .view-header svg.svg-icon,
-.mod-sidedock .nav-action-button svg.svg-icon {
-  margin: -1px;
+body:not(.is-mobile) {
+  .workspace-ribbon svg.svg-icon,
+  .workspace-tab-header-container svg.svg-icon,
+  .mod-root .view-header svg.svg-icon,
+  .mod-sidedock .nav-action-button svg.svg-icon {
+    margin: -1px;
+  }
 }
 
 // Editor panel
