@@ -15,6 +15,8 @@ body.input-cupertino {
     --interactive-normal: var(--color-base-40);
   }
 
+  --side-padding: 20px;
+
   --input-radius: var(--radius-s);
   --button-radius: var(--input-radius);
 
@@ -47,11 +49,21 @@ body.input-cupertino {
     --toggle-thumb-height: 25px;
     --toggle-thumb-width: 38px;
     --toggle-width: 68px;
+
+    --dropdown-padding: 0 32px 0 var(--side-padding);
+
+    --input-radius: var(--radius-l);
   }
 
   // Button
   button:not(.clickable-icon, .ant-switch) {
     padding: 4px 12px;
+  }
+  &.is-phone button:not(.clickable-icon, .ant-switch) {
+    padding: 0 var(--side-padding);
+  }
+  &.is-tablet button:not(.clickable-icon, .ant-switch) {
+    padding: 4px var(--side-padding);
   }
 
   // Slider

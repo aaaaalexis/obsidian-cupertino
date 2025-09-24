@@ -4,6 +4,7 @@ body.is-mobile {
   --radius-l: calc(24px * var(--radius-modifier));
   --radius-xl: calc(32px * var(--radius-modifier));
   --mobile-sidebar-width: 100%;
+  --view-header-height: 48px;
 
   --tab-switcher-menubar-background: var(--background-secondary);
   --tab-switcher-preview-radius: var(--radius-m);
@@ -27,6 +28,14 @@ body.is-tablet.theme-dark {
 body.is-phone {
   --mobile-sidebar-radius: 0;
 
+  // Side panels
+  .workspace-drawer-inner {
+    overflow: visible;
+  }
+  .workspace-drawer-header {
+    z-index: 1;
+  }
+
   // Editor panel
   .mod-root {
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
@@ -43,19 +52,14 @@ body.is-phone {
   &:not(.mode-switcher-off) .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2) {
     position: fixed;
     right: 16px;
-    bottom: 0;
-    margin-bottom: 16px;
+    bottom: 16px;
+    margin-bottom: 0;
     border-radius: 100%;
     padding: 16px;
     width: auto;
     height: auto;
     background-color: var(--background-secondary);
     border: 1px solid var(--background-modifier-border);
-  }
-
-  &.mod-toolbar-open:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
-    right: var(--side-padding);
-    margin-bottom: var(--side-padding);
   }
 
   // Navbar

@@ -8,7 +8,7 @@ body.is-phone {
 }
 
 .prompt {
-  background-color: var(--modal-background);
+  background-color: var(--background-secondary);
   transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
 
   @starting-style {
@@ -68,6 +68,107 @@ body.prompt-padded .prompt {
     padding: 12px 16px;
   }
 }
-body.is-phone .prompt .prompt-input {
+body.is-phone.prompt-padded .prompt .prompt-input {
   border-radius: var(--radius-l);
+}
+
+// Style Settings: Cupertino
+body.prompt-cupertino {
+  --side-padding: 16px;
+  --prompt-input-height: 56px;
+
+  .prompt {
+    backdrop-filter: var(--blur-s);
+    background-color: var(--modal-background) !important;
+    border-radius: var(--radius-xl);
+  }
+
+  .prompt-input-container {
+    align-items: center;
+  }
+  .prompt-input-container::before {
+    position: absolute;
+    left: var(--side-padding);
+    -webkit-mask-position: 50% 50%;
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    background-color: var(--search-icon-color);
+    width: var(--search-icon-size);
+    height: var(--search-icon-size);
+    content: "";
+    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' viewBox='0 0 20 20'%3e%3cg clip-path='url(%23a)'%3e%3cpath fill='white' d='M0 7.793c0 4.297 3.496 7.793 7.793 7.793 1.7 0 3.252-.547 4.531-1.465l4.805 4.815c.224.224.517.332.83.332.664 0 1.123-.498 1.123-1.153a1.118 1.118 0 0 0-.322-.8l-4.776-4.805a7.703 7.703 0 0 0 1.602-4.717C15.586 3.496 12.09 0 7.793 0 3.496 0 0 3.496 0 7.793Zm1.67 0A6.127 6.127 0 0 1 7.793 1.67a6.127 6.127 0 0 1 6.123 6.123 6.127 6.127 0 0 1-6.123 6.123A6.127 6.127 0 0 1 1.67 7.793Z'/%3e%3c/g%3e%3cdefs%3e%3cclipPath id='a'%3e%3cpath fill='white' d='M0 0h20v20H0z'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e");
+    z-index: 1;
+  }
+  .prompt-input-container::after {
+    content: "";
+    position: absolute;
+    inset: auto var(--side-padding) 0;
+    height: var(--border-width);
+    background-color: var(--background-modifier-border);
+    pointer-events: none;
+  }
+  .prompt-input {
+    background-color: transparent !important;
+    border-bottom: none;
+
+    padding-inline-start: calc(var(--search-icon-size) + var(--side-padding) + 12px) !important;
+  }
+
+  .prompt .suggestion-item {
+    border-radius: var(--radius-m);
+    padding: calc(12px * var(--density-modifier)) var(--side-padding);
+  }
+
+  .prompt-instructions {
+    border-top: none;
+  }
+}
+body.is-phone.prompt-cupertino {
+  --prompt-input-height: 48px;
+
+  .prompt {
+    --prompt-top: 0;
+
+    border-radius: 0;
+    height: 100vh;
+    padding-bottom: 0;
+  }
+  .prompt-input-container {
+    border: none;
+    gap: 8px;
+    position: absolute;
+    inset: auto var(--side-padding) calc(var(--side-padding) + var(--safe-area-inset-bottom));
+    z-index: 1;
+
+    &::after {
+      content: none;
+    }
+  }
+  .prompt-input {
+    width: calc(100% - 48px - 8px);
+  }
+  .prompt-input,
+  .prompt-input-container .search-input-clear-button {
+    backdrop-filter: var(--blur-s);
+    box-shadow: var(--shadow-xs);
+    border-radius: 100vh;
+  }
+  .prompt-input-container .search-input-clear-button {
+    inset-inline-end: 0;
+    width: 48px;
+    height: 48px;
+  }
+  .prompt-input-container .search-input-clear-button:after {
+    -webkit-mask-position: 50% 50%;
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3e%3cpath fill='black' d='M13.993.26.253 14a.875.875 0 0 0 0 1.23.896.896 0 0 0 1.24 0l13.74-13.74a.875.875 0 0 0 0-1.23.87.87 0 0 0-1.24 0ZM15.233 14 1.493.26a.87.87 0 0 0-1.24 0 .884.884 0 0 0 0 1.23l13.74 13.74c.332.333.908.342 1.24 0a.884.884 0 0 0 0-1.23Z'/%3e%3c/svg%3e");
+  }
+
+  .prompt-results {
+    mask: linear-gradient(to bottom, transparent, black calc(var(--safe-area-inset-top) + 16px), black calc(100vh - var(--side-padding) - var(--safe-area-inset-bottom) - 96px), transparent calc(100vh - var(--side-padding) - var(--safe-area-inset-bottom)));
+    padding: calc(var(--safe-area-inset-top) + 16px) var(--side-padding) 128px;
+  }
+  .prompt .suggestion-item {
+    padding: var(--nav-item-padding);
+  }
 }
