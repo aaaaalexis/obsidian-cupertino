@@ -31,41 +31,38 @@ input[type="checkbox"][data-indeterminate="true"]:not(:checked) {
   }
 }
 
-li[data-task],
-input[type="checkbox"][data-task]:checked {
-  &[data-task=">"],
-  &[data-task="<"],
-  &[data-task="*"],
-  &[data-task='"'],
-  &[data-task="“"],
-  &[data-task="l"],
-  &[data-task="b"],
-  &[data-task="S"],
-  &[data-task="I"],
-  &[data-task="p"],
-  &[data-task="c"],
-  &[data-task="f"],
-  &[data-task="k"],
-  &[data-task="w"],
-  &[data-task="u"],
-  &[data-task="d"],
-  &[data-task="B"],
-  &[data-task="a"],
-  &[data-task="n"],
-  &[data-task="R"],
-  &[data-task="t"],
-  &[data-task="P"],
-  &[data-task="L"] {
-    &,
-    input[type="checkbox"]:checked {
-      --checkbox-color: transparent;
+[data-task=">"],
+[data-task="<"],
+[data-task="*"],
+[data-task='"'],
+[data-task="“"],
+[data-task="l"],
+[data-task="b"],
+[data-task="S"],
+[data-task="I"],
+[data-task="p"],
+[data-task="c"],
+[data-task="f"],
+[data-task="k"],
+[data-task="w"],
+[data-task="u"],
+[data-task="d"],
+[data-task="B"],
+[data-task="a"],
+[data-task="n"],
+[data-task="R"],
+[data-task="t"],
+[data-task="P"],
+[data-task="L"] {
+  .markdown-reading-view & > input[type="checkbox"]:checked,
+  .markdown-source-view &:checked {
+    --checkbox-color: transparent;
 
-      &:hover {
-        background-color: transparent;
+    &:hover {
+      background-color: transparent;
 
-        &::after {
-          background-color: var(--checkbox-color-hover);
-        }
+      &::after {
+        background-color: var(--checkbox-color-hover);
       }
     }
   }
