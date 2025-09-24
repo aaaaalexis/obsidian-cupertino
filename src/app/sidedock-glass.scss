@@ -35,6 +35,10 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glas
   }
 
   &.show-ribbon {
+    &:not(.is-hidden-frameless) .workspace-ribbon .sidebar-toggle-button {
+      margin-top: 12px;
+      margin-left: 8px;
+    }
     .workspace-ribbon.mod-left {
       padding-left: 16px;
       padding-right: 0px;
@@ -48,6 +52,10 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glas
       opacity: 0;
     }
   }
+  &.is-hidden-frameless .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+    padding-left: max(var(--frame-left-space), 4px) !important;
+  }
+
   .mod-sidedock.mod-left-split {
     z-index: var(--layer-sidedock);
     border-radius: var(--radius-window);
@@ -65,10 +73,6 @@ body:not(.is-mobile):not(.mod-windows:not(.windows-mode-off)):not(.sidedock-glas
       .workspace-tab-header-container-inner {
         margin: 4px 0;
       }
-    }
-
-    .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
-      padding-left: max(var(--frame-left-space), 4px) !important;
     }
   }
 

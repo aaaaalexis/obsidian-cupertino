@@ -386,6 +386,8 @@ body:not(.is-popout-window) .app-container {
 }
 
 body:not(.is-mobile) {
+  background-color: var(--background-secondary);
+
   .workspace,
   .workspace-ribbon,
   .workspace-split.mod-root,
@@ -406,12 +408,9 @@ body:not(.is-mobile) {
     content: "";
   }
 
-  &.is-frameless:not(.is-hidden-frameless) .titlebar {
-    background-color: var(--background-secondary);
-  }
-
   .titlebar {
     background-color: transparent;
+    z-index: 1;
   }
 
   .titlebar .titlebar-button-container.mod-right {
