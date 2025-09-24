@@ -1,3 +1,7 @@
+.empty-state-container {
+  max-height: unset;
+}
+
 .empty-state {
   transition: var(--anim-duration-slow) var(--anim-motion-baseline);
 
