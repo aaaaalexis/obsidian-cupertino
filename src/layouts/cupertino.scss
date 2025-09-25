@@ -18,7 +18,6 @@ body.mobile-cupertino.is-mobile {
   }
 
   &.theme-light {
-    --system-status-background: var(--background-primary);
     --mobile-sidebar-background: var(--background-secondary);
 
     --shadow-base: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025);
@@ -27,14 +26,9 @@ body.mobile-cupertino.is-mobile {
     --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 1px 8px rgba(0, 0, 0, 0.025), 0 4px 48px rgba(0, 0, 0, 0.095);
     --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
     --shadow-l: var(--shadow-border), inset 0 0 1px 1px white, 0 18px 60px 0 rgba(0, 0, 0, 0.3);
-
-    &:not(.is-mobile) .mod-root .workspace-tab-container {
-      box-shadow: rgba(0, 0, 0, 0.04) 0px 24px 48px, rgba(0, 0, 0, 0.02) 0px 4px 16px;
-    }
   }
 
   &.theme-dark {
-    --system-status-background: black;
     --mobile-sidebar-background: black;
 
     --shadow-base: inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
@@ -43,15 +37,21 @@ body.mobile-cupertino.is-mobile {
     --shadow-xs: inset 0 8px 64px rgba(255, 255, 255, 0.125), var(--shadow-base);
     --shadow-s: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
     --shadow-l: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 0 rgba(0, 0, 0, 0.7), 0 18px 60px 0 rgba(0, 0, 0, 0.3);
+  }
 
-    &:not(.is-mobile) .mod-root .workspace-tab-container {
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 24px 48px, rgba(0, 0, 0, 0.12) 0px 4px 16px;
-    }
+  // Settings
+  .modal.mod-sidebar-layout {
+    background-color: var(--background-secondary);
+    backdrop-filter: none;
   }
 
   // Style Settings: Tabs style fix
   &.tabs-floating {
     --tab-background-active: var(--background-modifier-hover);
+
+    .mod-root .workspace-tab-header-container {
+      gap: 0;
+    }
   }
 }
 
@@ -67,6 +67,13 @@ body.layout-cupertino:not(.is-mobile) {
   }
 
   // Side panels
+  .mod-sidedock .workspace-tab-container,
+  .mod-sidedock .workspace-leaf,
+  .mod-sidedock .workspace-leaf-content {
+    contain: size !important;
+    overflow: visible;
+  }
+
   .mod-sidedock .workspace-tab-header-container:not(body:not(.stacked-nav-off) .mod-top-left-space .workspace-tab-header-container) {
     .workspace-tab-header-container-inner {
       -webkit-app-region: no-drag;
@@ -122,6 +129,13 @@ body.layout-cupertino:not(.is-mobile) {
   }
 
   // Editor panel
+  &.theme-light .mod-root .workspace-tab-container {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 24px 48px, rgba(0, 0, 0, 0.02) 0px 4px 16px;
+  }
+  &.theme-dark .mod-root .workspace-tab-container {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 24px 48px, rgba(0, 0, 0, 0.12) 0px 4px 16px;
+  }
+
   .mod-root {
     z-index: 1;
 
@@ -138,9 +152,21 @@ body.layout-cupertino:not(.is-mobile) {
     }
   }
 
-  // Settings
-  .modal.mod-sidebar-layout {
-    background-color: var(--background-primary);
+  .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
+    .mod-root {
+      background-color: var(--background-primary);
+    }
+    .mod-root .workspace-tab-container {
+      box-shadow: none;
+      margin-bottom: 0;
+      outline-color: transparent;
+    }
+  }
+  .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
+    margin-right: 8px;
+  }
+  .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root .workspace-tab-container {
+    margin-left: 8px;
   }
 
   // ----------------------------------------------------------------
@@ -164,6 +190,24 @@ body.mobile-cupertino.is-mobile {
   --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
 
   --modal-header-height: var(--view-header-height);
+
+  --background-modifier-form-field: var(--interactive-normal) !important;
+
+  &.theme-light {
+    --interactive-normal: var(--background-primary);
+  }
+  &.theme-dark {
+    --interactive-normal: var(--background-secondary);
+  }
+
+  .mod-root .view-header::before,
+  .mod-root .view-content::before,
+  .mod-root .view-content,
+  &.theme-dark .modal.mod-sidebar-layout .modal-header::before,
+  &.theme-dark .modal.mod-sidebar-layout .vertical-tab-header,
+  &.theme-dark .modal.mod-sidebar-layout .vertical-tab-content {
+    background-color: rgb(var(--mono-rgb-0)) !important;
+  }
 
   &.is-phone .mod-root .view-header > div > .view-action,
   &.is-phone .workspace-drawer-header-icon,
@@ -232,11 +276,22 @@ body.mobile-cupertino.is-mobile {
     border-radius: var(--radius-l);
     background-color: var(--background-primary);
 
+    > .tree-item:nth-child(2) > .tree-item-self {
+      border-top-left-radius: var(--radius-l);
+      border-top-right-radius: var(--radius-l);
+    }
+    > .tree-item:last-child > .tree-item-self {
+      border-bottom-left-radius: var(--radius-l);
+      border-bottom-right-radius: var(--radius-l);
+    }
+
     .tree-item {
       position: relative;
     }
     .tree-item .tree-item-self {
       padding-inline-end: var(--side-padding);
+      margin-bottom: 0;
+      border-radius: 0;
     }
     .tree-item .tree-item-self .tree-item-icon {
       position: relative;
@@ -249,7 +304,7 @@ body.mobile-cupertino.is-mobile {
 
     .tree-item:not(.nav-files-container > div > div:nth-child(2)):not(:last-child:only-child):before {
       position: absolute;
-      inset: 0 var(--side-padding) auto;
+      inset: calc(-1 * (var(--border-width) / 2)) var(--side-padding) auto;
       background: var(--background-modifier-border);
       height: var(--border-width);
       content: "";
@@ -284,8 +339,12 @@ body.mobile-cupertino.is-mobile {
   .modal {
     backdrop-filter: var(--blur-s);
   }
+
   .modal-close-button {
-    display: flex;
+    &:not(.mod-confirmation .modal-close-button) {
+      display: flex;
+    }
+
     justify-content: center;
     align-items: center;
     border-radius: 100vh;
@@ -307,9 +366,6 @@ body.mobile-cupertino.is-mobile {
 
   // Settings
   .modal.mod-sidebar-layout {
-    background-color: var(--background-secondary);
-    backdrop-filter: none;
-
     .modal-header {
       position: absolute;
       z-index: 1;
@@ -327,32 +383,8 @@ body.mobile-cupertino.is-mobile {
       pointer-events: none;
       content: "";
     }
-    .modal-title {
-      transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
-      margin-left: 24px;
-      max-width: 100%;
-      overflow: visible;
-      font-weight: var(--font-bold);
-
-      font-size: var(--inline-title-size);
-      line-height: var(--icon-l);
-      text-align: left;
-    }
-    .modal-title:has(.modal-setting-back-button) {
-      margin-right: calc(24px + 48px);
-      margin-left: calc(24px + 48px);
-      font-size: var(--font-ui-large);
-      text-align: center;
-    }
-
     .modal-setting-back-button {
       inset-inline-start: var(--side-padding);
-      border-radius: 100vh;
-      padding: 12px;
-
-      .modal-setting-back-button-icon {
-        margin-inline-end: 0;
-      }
     }
 
     .modal-content {
@@ -404,16 +436,7 @@ body.mobile-cupertino.is-mobile {
 }
 
 body.mobile-cupertino.is-mobile.is-phone {
-  &.theme-dark {
-    .mod-root .view-header::before,
-    .mod-root .view-content::before,
-    .mod-root .view-content,
-    .modal.mod-sidebar-layout .modal-header::before,
-    .modal.mod-sidebar-layout .vertical-tab-header,
-    .modal.mod-sidebar-layout .vertical-tab-content {
-      background-color: black !important;
-    }
-  }
+  --system-status-background: rgb(var(--mono-rgb-0));
 
   // Editor panel
   .view-header-left,
@@ -445,7 +468,7 @@ body.mobile-cupertino.is-mobile.is-phone {
   }
 
   &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
-    color: rgb(var(--mono-rgb-100));
+    color: var(--text-on-accent);
     background-color: var(--color-accent);
   }
 
@@ -493,6 +516,7 @@ body.mobile-cupertino.is-mobile.is-phone {
 
     .modal-close-button {
       inset-inline-end: var(--side-padding) !important;
+      padding: 12px;
     }
   }
 }
@@ -501,11 +525,34 @@ body.mobile-cupertino.is-mobile.is-tablet {
   --border-width: 0.5pt;
 
   --menu-radius: var(--radius-l);
-  --tab-radius: var(--radius-l);
+  --modal-radius: var(--radius-l);
+
+  --nav-item-weight-active: normal;
+
+  .workspace {
+    background-color: var(--system-status-background);
+  }
+
+  // Editor panel
+  .mod-root .view-header {
+    border-radius: var(--radius-s);
+  }
 
   // Side panels
-  .workspace-drawer:not(.is-pinned) {
+  .workspace-drawer {
+    box-shadow: var(--shadow-xs), var(--shadow-l);
+    margin: var(--safe-area-inset-top) 16px var(--safe-area-inset-bottom);
+    border-radius: var(--radius-xl);
     padding-top: var(--side-padding);
+    height: -webkit-fill-available;
+    border: none;
+
+    &.mod-left {
+      margin-right: 8px;
+    }
+    &.mod-right {
+      margin-left: 8px;
+    }
   }
 
   // Menu
@@ -537,11 +584,16 @@ body.mobile-cupertino.is-mobile.is-tablet {
     .vertical-tab-nav-item {
       border-radius: 100vh;
       padding: calc(12px * var(--density-modifier)) var(--side-padding);
+    }
+  }
 
-      &.is-active {
-        background-color: var(--background-modifier-box-shadow);
-        color: var(--text-accent);
-      }
+  // Style Settings: Tabs style fix
+  &.tabs-floating {
+    --system-status-background: rgb(var(--mono-rgb-0));
+    --tab-radius: var(--radius-l);
+
+    &.theme-dark .mod-root .view-header {
+      background-color: black;
     }
   }
 }

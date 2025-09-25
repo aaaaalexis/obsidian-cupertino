@@ -4,15 +4,19 @@ body.input-cupertino {
     --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 1px 8px rgba(0, 0, 0, 0.025), 0 4px 48px rgba(0, 0, 0, 0.095);
     --input-shadow: none;
 
-    --interactive-normal: var(--color-base-25);
-    --background-modifier-form-field: var(--color-base-00);
+    &:not(.is-mobile) {
+      --interactive-normal: var(--color-base-25);
+      --background-modifier-form-field: var(--color-base-00);
+    }
   }
   &.theme-dark {
     --shadow-base: inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-xs: inset 0 8px 64px rgba(255, 255, 255, 0.125), var(--shadow-base);
     --input-shadow: none;
 
-    --interactive-normal: var(--color-base-40);
+    &:not(.is-mobile) {
+      --interactive-normal: var(--color-base-40);
+    }
   }
 
   --side-padding: 20px;

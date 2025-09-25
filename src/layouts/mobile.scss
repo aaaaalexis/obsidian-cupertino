@@ -14,7 +14,7 @@ body.mobile-cupertino.is-mobile {
   .workspace-drawer .nav-header {
     display: flex;
     position: absolute;
-    bottom: 0;
+    inset: auto 0 0;
     flex-wrap: wrap;
     justify-content: center;
     z-index: 1;
@@ -56,6 +56,15 @@ body.mobile-cupertino.is-mobile {
     --mobile-toolbar-height: 48px;
     --toolbar-option-width: 48px;
     // Navbar
+    &.mode-switcher-off {
+      .mobile-navbar,
+      .mobile-toolbar {
+        padding-top: var(--safe-area-inset-override);
+        padding-right: var(--safe-area-inset-override);
+        max-width: 100%;
+      }
+    }
+
     .mobile-navbar,
     .mobile-toolbar {
       position: absolute;
