@@ -41,10 +41,6 @@ body:not(.nav-item-subtle, .nav-item-strong) {
     --nav-item-weight-hover: var(--font-medium);
   }
 
-  &.accented-interface {
-    --nav-item-color-active: var(--text-accent);
-  }
-
   .tree-item-self:not(:hover) .tree-item-inner {
     transition: var(--anim-duration-moderate), font-weight 0s;
   }
