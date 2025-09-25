@@ -23,9 +23,20 @@ body:not(.is-phone) .modal-bg {
 
 // Modal
 .modal {
+  &:not(.mod-sidebar-layout) {
+    border-radius: var(--modal-radius);
+  }
+
   .modal-title {
-    font-size: var(--h1-size);
     font-family: var(--h1-font);
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    max-width: 100%;
+
+    &:not(:has(.modal-setting-back-button)):not(.modal-container.mod-confirmation .modal-title) {
+      font-size: var(--h1-size);
+      text-align: left;
+      margin-left: 24px;
+    }
   }
 
   .modal-content .setting-item {
@@ -210,16 +221,18 @@ body.is-phone .modal.mod-sidebar-layout {
   }
   .modal-setting-back-button {
     inset-inline-start: 8px;
+    border-radius: 100vh;
   }
-  .modal-title {
-    font-size: var(--font-ui-large);
+  .modal-setting-back-button-icon {
+    margin-inline-end: 0;
   }
   .modal-close-button {
-    width: 44px;
-    height: 44px;
-    line-height: 1;
+    line-height: 12px;
     color: var(--text-normal);
     top: var(--safe-area-inset-top);
+    padding: 16px;
+    width: unset;
+    height: unset;
   }
 
   .vertical-tab-header,
