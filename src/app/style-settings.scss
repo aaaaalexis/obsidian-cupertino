@@ -1494,7 +1494,7 @@ settings:
 	-
 		id: colorful-headings
 		title: Colorful headings
-		description: Headings use a different color for each size
+		description: Color follows the setting of each heading level below.
 		type: class-select
 		default: colorful-headings-off
 		options:
@@ -1508,8 +1508,11 @@ settings:
 				label: Indicator & Text
 				value: colorful-headings-full
 			-
-				label: Background & Text
-				value: colorful-headings-block
+				label: Subtle
+				value: colorful-headings-subtle
+			-
+				label: Strong
+				value: colorful-headings-strong
 	-
 		id: level-1-headings
 		title: Level 1 Headings
