@@ -2073,6 +2073,12 @@ settings:
 		type: class-toggle
 		default: false
 	-
+		id: metadata-link-nowrap
+		title: Disable link line wrap
+		description: Turns off line wrapping for links in properties
+		type: class-toggle
+		default: false
+	-
 		id: metadata-label-width-modifier
 		title: Property name width
 		description: Width for the name of the property

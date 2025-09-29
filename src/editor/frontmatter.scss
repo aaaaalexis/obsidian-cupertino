@@ -17,6 +17,9 @@
     border-bottom: none !important;
     box-shadow: none !important;
   }
+  .metadata-link {
+    width: 100%;
+  }
 
   // Side panels
   .workspace > .workspace-split:not(.mod-root) .metadata-container .metadata-properties {
@@ -46,6 +49,10 @@
   }
   body.metadata-icons-off .metadata-property-icon {
     display: none;
+  }
+
+  body.metadata-link-nowrap .metadata-link .metadata-link-inner {
+    white-space: normal;
   }
 
   .markdown-source-view .metadata-container,
