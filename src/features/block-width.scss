@@ -91,7 +91,7 @@ body:not(.block-width-off) div:is(.table-wide, .table-max) {
   .markdown-preview-sizer > div.el-table:is(.el-table)[dir],
   .cm-content > .cm-table-widget {
     max-width: 100% !important;
-    width: var(--img-line-width) !important;
+    width: var(--table-line-width) !important;
   }
 }
 body:not(.block-width-off).table-100,
