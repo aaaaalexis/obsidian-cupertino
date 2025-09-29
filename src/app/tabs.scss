@@ -6,6 +6,8 @@ body {
   --tab-radius-active: var(--tab-radius) var(--tab-radius) 0 0;
 
   --tab-text-color-focused: var(--tab-text-color);
+
+  --header-spacing: 8px;
 }
 
 body.is-mobile {
@@ -14,7 +16,7 @@ body.is-mobile {
 
 // All panels
 .workspace-tab-header-container {
-  padding-top: 8px;
+  padding-top: var(--header-spacing);
   background-color: transparent;
 }
 body:not(.stacked-nav-off) .mod-left-split .workspace-tabs.mod-top-left-space .sidebar-toggle-button {
@@ -47,10 +49,10 @@ body:not(.is-phone) .workspace .mod-root {
     gap: 8px;
   }
   .mod-top-left-space .workspace-tab-header-container-inner {
-    padding-left: 8px;
+    padding-left: var(--header-spacing);
   }
   .workspace-tab-header {
-    padding: 0 0 8px;
+    padding: 0 0 var(--header-spacing);
   }
   .workspace-tab-header-inner {
     padding-inline-start: 8px;
@@ -64,7 +66,7 @@ body:not(.is-phone) .workspace .mod-root {
   }
 
   .sidebar-toggle-button {
-    padding: 0 0 8px;
+    padding: 0 0 var(--header-spacing);
   }
   .sidebar-toggle-button .clickable-icon {
     height: 100%;
@@ -80,7 +82,7 @@ body:not(.is-phone) .workspace .mod-root {
   .workspace-tab-header-new-tab,
   .workspace-tab-header-tab-list {
     display: block;
-    padding: 0 0 8px;
+    padding: 0 0 var(--header-spacing);
   }
   .workspace-tab-header-new-tab .clickable-icon,
   .workspace-tab-header-tab-list .clickable-icon {
@@ -98,7 +100,7 @@ body:not(.is-phone).tabs-floating .workspace .mod-root {
     gap: 8px;
   }
   .workspace-tab-header-container-inner {
-    padding: 0 0 8px 8px;
+    padding: 0 0 var(--header-spacing) 8px;
     gap: 4px;
   }
   .workspace-tab-header {
@@ -154,7 +156,7 @@ body:not(.is-phone).tabs-underline .workspace .mod-root {
 .workspace .mod-sidedock {
   .workspace-tab-header-container {
     padding-left: 0;
-    padding-bottom: 8px;
+    padding-bottom: var(--header-spacing);
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
     align-items: center;
   }
@@ -228,7 +230,7 @@ body:not(.mod-macos).is-hidden-frameless .mod-sidedock .workspace-tabs.mod-top-r
 
 body.mod-macos.is-frameless:not(.is-popout-window) .workspace {
   .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
-    padding-right: 8px;
+    padding-right: var(--header-spacing);
   }
 
   .sidebar-toggle-button.mod-right {

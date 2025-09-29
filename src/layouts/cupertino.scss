@@ -2,6 +2,8 @@ body.layout-cupertino:not(.is-mobile),
 body.mobile-cupertino.is-mobile {
   --side-padding: 20px;
 
+  --inline-title-margin-bottom: 0;
+
   --blur-s: blur(4px) saturate(1.5) brightness(1.025);
   --blur-m: blur(8px) saturate(1.5) brightness(1.025);
   --blur-l: blur(16px) saturate(1.5) brightness(1.025);
@@ -10,6 +12,8 @@ body.mobile-cupertino.is-mobile {
   --menu-background: var(--modal-background);
 
   --icon-opacity: 1;
+  --icon-color: var(--color-base-100);
+  --nav-item-color: var(--color-base-100);
 
   .modal,
   .prompt,
@@ -45,7 +49,7 @@ body.mobile-cupertino.is-mobile {
     backdrop-filter: none;
   }
 
-  // Style Settings: Tabs style fix
+  // Tabs style fix
   &.tabs-floating {
     --tab-background-active: var(--background-modifier-hover);
 
@@ -74,6 +78,16 @@ body.layout-cupertino:not(.is-mobile) {
     overflow: visible;
   }
 
+  .nav-file-title,
+  .nav-folder-title {
+    margin-bottom: 0;
+  }
+  .nav-files-container > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
   .mod-sidedock .workspace-tab-header-container:not(body:not(.stacked-nav-off) .mod-top-left-space .workspace-tab-header-container) {
     .workspace-tab-header-container-inner {
       -webkit-app-region: no-drag;
@@ -81,7 +95,7 @@ body.layout-cupertino:not(.is-mobile) {
       transition: var(--anim-duration-moderate);
       border-radius: 100vh;
       padding: 0;
-      margin-left: 8px;
+      margin-left: var(--header-spacing);
       outline: 2px solid transparent;
     }
 
@@ -178,6 +192,22 @@ body.layout-cupertino:not(.is-mobile) {
 
       padding-top: 1px;
       margin-bottom: -1px;
+    }
+  }
+  // Tab style fix
+  &.tabs-floating {
+    --header-spacing: 12px;
+
+    .mod-root {
+      .workspace-tab-header-new-tab {
+        margin-left: auto;
+      }
+      .workspace-tab-header-spacer {
+        display: none;
+      }
+      .workspace-tab-header-container-inner {
+        flex: 1;
+      }
     }
   }
   // Status bar fix
