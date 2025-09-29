@@ -2549,7 +2549,7 @@ settings:
 	-
 		id: full-width-media-off
 		title: Disable maximized media
-		description: Turns off images and videos fill the width of the line
+		description: Turns off images and videos taking full space
 		type: class-toggle
 	-
 		id: zoom-off
@@ -2643,6 +2643,12 @@ settings:
 		id: table-numbers
 		title: Row numbers
 		description: Display row numbers in tables globally
+		type: class-toggle
+		default: false
+	-
+		id: table-fit-content
+		title: Fit content width
+		description: Fit table width to content
 		type: class-toggle
 		default: false
 	-

@@ -57,8 +57,8 @@ body:not(.block-width-off) {
 .table-100 {
   --table-line-width: 100%;
 }
-body:not(.block-width-off).table-100 .markdown-preview-sizer,
-body:not(.block-width-off) .table-100 .markdown-preview-sizer {
+body:not(.block-width-off):not(.table-fit-content).table-100 .markdown-preview-sizer,
+body:not(.block-width-off):not(.table-fit-content) .table-100 .markdown-preview-sizer {
   tbody > tr > td {
     border-radius: 0 !important;
   }
