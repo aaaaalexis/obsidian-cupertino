@@ -333,11 +333,19 @@
     }
   }
 
-  body.theme-dark .workspace-leaf-content[data-type="markdown"] {
-    video,
-    img:not(.emoji),
-    .image-embed:not(.canvas-node-content),
-    iframe.external-embed {
+  body.theme-dark {
+    .workspace-leaf-content[data-type="markdown"] {
+      video,
+      img:not(.emoji),
+      .image-embed:not(.canvas-node-content),
+      iframe.external-embed {
+        transition: var(--anim-duration-moderate);
+        &:not(:hover) {
+          opacity: var(--media-muted, 1);
+        }
+      }
+    }
+    .workspace-leaf-content[data-type="bases"] .bases-cards-cover {
       transition: var(--anim-duration-moderate);
       &:not(:hover) {
         opacity: var(--media-muted, 1);
