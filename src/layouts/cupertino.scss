@@ -56,7 +56,7 @@ body.mobile-cupertino.is-mobile {
 }
 
 body.layout-cupertino:not(.is-mobile) {
-  .workspace .clickable-icon {
+  .workspace .clickable-icon:not(.nav-action-button) {
     width: 40px;
   }
   .clickable-icon:not([aria-disabled="true"]):hover,

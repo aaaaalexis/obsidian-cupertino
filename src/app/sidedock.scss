@@ -111,6 +111,7 @@ body:not(.is-mobile) .mod-sidedock {
   // Panel actions style
   .nav-header {
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
   }

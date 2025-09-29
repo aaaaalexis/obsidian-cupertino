@@ -1,9 +1,10 @@
 body:not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .nav-header,
 body:not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-content > .nav-header {
   &,
+  .nav-buttons-container,
   .nav-action-button,
   .nav-action-button::after,
-  svg.svg-icon {
+  svg {
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
   }
 
@@ -30,8 +31,9 @@ body:not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-con
       margin-left: 0px !important;
     }
 
-    svg.svg-icon {
-      --icon-size: 0px;
+    svg {
+      width: 0px;
+      height: 0px;
     }
   }
 }
