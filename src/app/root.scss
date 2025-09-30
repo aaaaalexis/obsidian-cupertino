@@ -95,9 +95,16 @@ body.is-translucent {
   --divider-color: var(--background-modifier-border) !important;
 }
 
-body:not(.is-mobile) .app-container {
-  align-items: center;
-  background: var(--background-secondary);
+body:not(.is-mobile) {
+  .workspace,
+  .app-container {
+    transition: var(--anim-duration-moderate);
+  }
+
+  .app-container {
+    align-items: center;
+    background: var(--background-secondary);
+  }
 }
 
 body:not(.accented-interface) {

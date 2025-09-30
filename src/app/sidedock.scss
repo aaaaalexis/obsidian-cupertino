@@ -91,7 +91,8 @@ body:not(.is-mobile, .theme-light:is(.contrast-light-tonal, .contrast-light-whit
 }
 body:not(.is-mobile) .mod-sidedock {
   .workspace-leaf {
-    background-color: var(--background-secondary);
+    background-color: var(--tab-container-background);
+    transition: var(--anim-duration-moderate);
   }
 
   // Sidedock padding

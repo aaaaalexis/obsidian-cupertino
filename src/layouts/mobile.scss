@@ -6,7 +6,6 @@ body.mobile-cupertino.is-mobile {
     --safe-area-inset-override: 16px;
 
     .app-container {
-      transition: var(--anim-duration-moderate);
       max-height: calc(100vh - var(--keyboard-height)) !important;
     }
   }
