@@ -31,7 +31,7 @@ body.layout-frame:not(.is-mobile) {
   // ----------------------------------------------------------------
 
   // Ribbon fix
-  &.show-ribbon.mod-macos {
+  &.show-ribbon.mod-macos:not(.is-popout-window) {
     .workspace-ribbon {
       --ribbon-width: calc(var(--header-height) + 28px);
     }

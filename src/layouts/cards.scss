@@ -48,7 +48,7 @@ body.layout-cards:not(.is-mobile) {
       margin-left: 0;
     }
   }
-  &.show-ribbon:not(.stacked-nav-off) {
+  &.show-ribbon:not(.stacked-nav-off):not(.is-popout-window) {
     .mod-top-left-space .workspace-tab-header-container {
       padding-left: 0;
     }

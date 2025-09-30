@@ -118,7 +118,7 @@ body.layout-border:not(.is-mobile) {
   &.show-ribbon:not(.mod-macos, .stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
     margin-top: calc(var(--header-height) - 8px);
   }
-  &.show-ribbon .workspace:not(.is-left-sidedock-open) .mod-root {
+  &.show-ribbon:not(.is-popout-window) .workspace:not(.is-left-sidedock-open) .mod-root {
     padding-left: 0;
   }
 
