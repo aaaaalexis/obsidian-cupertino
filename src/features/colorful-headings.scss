@@ -131,37 +131,47 @@
       border-radius: var(--radius-s);
       width: fit-content;
 
-      &.cm-line .cm-header {
-        padding-inline: 0.2em;
-        border-radius: var(--radius-s);
-      }
-      &.cm-line.cm-active .cm-header {
+      &.cm-line {
         padding-inline: 0.2em;
       }
     }
 
+    .HyperMD-header-1,
+    .HyperMD-header-2,
+    .HyperMD-header-3,
+    .HyperMD-header-4,
+    .HyperMD-header-5,
+    .HyperMD-header-6 {
+      &::after {
+        content: "";
+        position: absolute;
+        inset: var(--p-spacing) 0 0;
+        border-radius: var(--radius-s);
+      }
+    }
+
     .markdown-rendered h1,
-    .HyperMD-header-1 .cm-header-1 {
+    .HyperMD-header-1::after {
       background-color: color-mix(in srgb, var(--h1-color, var(--color-red)) 10%, transparent);
     }
     .markdown-rendered h2,
-    .HyperMD-header-2 .cm-header-2 {
+    .HyperMD-header-2::after {
       background-color: color-mix(in srgb, var(--h2-color, var(--color-orange)) 10%, transparent);
     }
     .markdown-rendered h3,
-    .HyperMD-header-3 .cm-header-3 {
+    .HyperMD-header-3::after {
       background-color: color-mix(in srgb, var(--h3-color, var(--color-yellow)) 10%, transparent);
     }
     .markdown-rendered h4,
-    .HyperMD-header-4 .cm-header-4 {
+    .HyperMD-header-4::after {
       background-color: color-mix(in srgb, var(--h4-color, var(--color-green)) 10%, transparent);
     }
     .markdown-rendered h5,
-    .HyperMD-header-5 .cm-header-5 {
+    .HyperMD-header-5::after {
       background-color: color-mix(in srgb, var(--h5-color, var(--color-blue)) 10%, transparent);
     }
     .markdown-rendered h6,
-    .HyperMD-header-6 .cm-header-6 {
+    .HyperMD-header-6::after {
       background-color: color-mix(in srgb, var(--h6-color, var(--color-purple)) 10%, transparent);
     }
   }
