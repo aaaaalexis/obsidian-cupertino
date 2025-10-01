@@ -4,6 +4,8 @@ body.layout-border:not(.is-mobile) {
   &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
     padding: 12px 16px;
     background-color: var(--background-primary);
+    margin-right: 8px;
+    margin-bottom: 8px;
   }
 
   .mod-sidedock {
@@ -25,7 +27,7 @@ body.layout-border:not(.is-mobile) {
   }
 
   // Editor panel
-  .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
+  &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
     margin-left: 8px;
   }
   .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
@@ -38,11 +40,6 @@ body.layout-border:not(.is-mobile) {
   &.show-ribbon .mod-sidedock.mod-left-split {
     .workspace-tabs .workspace-tab-container {
       margin-left: 0;
-    }
-  }
-  &.show-ribbon:not(.stacked-nav-off):not(.is-popout-window) {
-    .mod-top-left-space .workspace-tab-header-container {
-      padding-left: 0;
     }
   }
 

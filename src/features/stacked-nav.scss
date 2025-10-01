@@ -4,14 +4,14 @@ body:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space {
   .workspace-tab-header-container {
     height: fit-content;
     flex-direction: column;
-    padding-left: 8px;
-    gap: 8px;
+    padding: 0;
   }
   .workspace-tab-header-container-inner {
     flex-direction: column;
     width: -webkit-fill-available;
     gap: calc(4px * var(--density-modifier));
     animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+    padding: 8px 16px;
   }
   .workspace-tab-header {
     padding: 8px;
@@ -31,9 +31,11 @@ body:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space {
   .sidebar-toggle-button {
     order: -1;
     margin-left: auto;
+    min-height: var(--header-height);
+    max-height: var(--header-height);
   }
   .sidebar-toggle-button .clickable-icon {
-    height: calc(var(--header-height) - 16px);
+    margin: 8px;
   }
 }
 

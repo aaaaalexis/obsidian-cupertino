@@ -7,7 +7,7 @@ body.layout-minimal:not(.is-mobile) {
       background-color: var(--tab-outline-color);
       content: "";
       position: absolute;
-      inset: auto -100vw -8px;
+      inset: auto -100vw 0;
     }
     .mod-top-left-space {
       .workspace-tab-header-container {
