@@ -74,13 +74,19 @@ body.is-phone.prompt-padded .prompt .prompt-input {
 
 // Style Settings: Cupertino
 body.prompt-cupertino {
-  --side-padding: 16px;
+  --side-padding: 20px;
   --prompt-input-height: 56px;
 
   .prompt {
-    backdrop-filter: var(--blur-s);
+    backdrop-filter: var(--blur-m);
     background-color: var(--modal-background) !important;
     border-radius: var(--radius-xl);
+
+    @starting-style {
+      opacity: unset;
+      filter: unset;
+      transform: unset;
+    }
   }
 
   .prompt-input-container {
