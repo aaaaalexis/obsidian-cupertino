@@ -25,7 +25,7 @@ body.is-mobile {
 }
 body:not(.is-mobile) {
   .workspace-ribbon svg.svg-icon,
-  .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner) svg.svg-icon,
+  .workspace-tab-header-container svg.svg-icon,
   .mod-root .view-header svg.svg-icon,
   .mod-sidedock .nav-action-button svg.svg-icon {
     margin: -1px;

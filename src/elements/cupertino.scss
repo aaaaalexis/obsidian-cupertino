@@ -3,6 +3,9 @@ body.input-cupertino {
     --shadow-base: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 1px 8px rgba(0, 0, 0, 0.025), 0 4px 48px rgba(0, 0, 0, 0.095);
     --input-shadow: none;
+    --input-shadow-hover: none;
+
+    --interactive-hover: var(--interactive-normal);
 
     &:not(.is-mobile) {
       --interactive-normal: var(--color-base-25);
