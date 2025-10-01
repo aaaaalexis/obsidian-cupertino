@@ -41,15 +41,9 @@ body.layout-macos:not(.is-mobile) {
   // ----------------------------------------------------------------
 
   // Ribbon fix
-  &.show-ribbon {
-    .workspace-ribbon.mod-left {
-      padding-left: 16px;
-      padding-right: 0px;
-    }
-    .mod-sidedock.mod-left-split {
-      margin-left: calc(-1 * var(--ribbon-width) + 8px);
-      padding-left: var(--ribbon-width);
-    }
+  &.show-ribbon .mod-sidedock.mod-left-split {
+    margin-left: calc(-1 * var(--ribbon-width) + 8px);
+    padding-left: var(--ribbon-width);
   }
 
   // Side panels
@@ -74,39 +68,21 @@ body.layout-macos:not(.is-mobile) {
     margin: 8px 0 8px 8px;
     height: -webkit-fill-available;
     overflow: hidden;
+  }
+  .mod-sidedock .workspace-tab-header-container:not(body:not(.stacked-nav-off) .mod-top-left-space .workspace-tab-header-container) {
+    .sidebar-toggle-button,
+    .workspace-tab-header-inner {
+      height: 24px;
+    }
+  }
 
-    .workspace-tab-header-container {
-      gap: 16px;
-    }
-    .mod-sidedock .workspace-leaf-content > .nav-header {
-      padding: 0 8px 8px;
-    }
-    .workspace-leaf-content > .node-insert-event,
-    .workspace-leaf-content > .view-content {
-      padding: 2px 8px 0;
-    }
-  }
-  &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space {
-    .sidebar-toggle-button {
-      height: 16px;
-      align-items: center;
-      margin-right: -4px;
-    }
-    .sidebar-toggle-button .clickable-icon {
-      height: calc(var(--header-height) - 24px);
-    }
-    .workspace-tab-header-container {
-      padding-left: 0;
-    }
-  }
   .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
     border-inline-start: var(--divider-width) solid var(--divider-color);
   }
-  // ----------------------------------------------------------------
 
-  // Style Settings: Tabs style fix
-  &.tabs-floating {
-    --tab-background-active: var(--background-modifier-hover);
+  // Tab outline fix
+  &:not(.tabs-floating):not(.tabs-underline):not(.theme-light.contrast-light-vivid) .mod-root {
+    --tab-outline-width: var(--border-width);
   }
 
   // Style Settings: Stacked nav off fix

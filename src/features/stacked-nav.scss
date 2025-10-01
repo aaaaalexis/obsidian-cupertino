@@ -39,10 +39,6 @@ body:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space {
   }
 }
 
-body.stacked-nav-off .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
-  padding-left: max(var(--frame-left-space), 8px);
-}
-
 // Side panels: Tab names
 body.tab-names-all {
   --sidebar-tab-text-display: flex;

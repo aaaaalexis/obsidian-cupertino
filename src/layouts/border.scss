@@ -1,0 +1,67 @@
+body.layout-border:not(.is-mobile) {
+  .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+  .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+    height: -webkit-fill-available;
+    top: var(--header-height);
+    bottom: 8px;
+  }
+  .mod-sidedock .workspace-tabs > .workspace-leaf-resize-handle {
+    width: -webkit-fill-available;
+
+    &:is(.mod-sidedock.mod-left-split .workspace-leaf-resize-handle) {
+      left: 8px;
+    }
+    &:is(.mod-sidedock.mod-right-split .workspace-leaf-resize-handle) {
+      right: 8px;
+    }
+  }
+
+  // Side panels
+  &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space {
+    .workspace-tab-header-container-inner {
+      margin-right: -8px;
+      margin-bottom: -8px;
+      padding-bottom: 0;
+      border-top-left-radius: var(--radius-l);
+    }
+    &.workspace-tabs.mod-top .workspace-tab-container {
+      border-top-left-radius: 0;
+    }
+  }
+
+  .mod-sidedock .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
+    background-color: var(--background-primary);
+  }
+  .mod-sidedock.mod-left-split .workspace-tab-container,
+  .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
+    margin-left: 8px;
+
+    &:is(.workspace-tabs.mod-top .workspace-tab-container) {
+      border-top-left-radius: var(--radius-l);
+    }
+    &:is(.workspace-tabs:last-child .workspace-tab-container) {
+      border-bottom-left-radius: var(--radius-l);
+    }
+  }
+  .mod-sidedock.mod-right-split .workspace-tab-container,
+  .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
+    margin-right: 8px;
+
+    &:is(.workspace-tabs.mod-top .workspace-tab-container) {
+      border-top-right-radius: var(--radius-l);
+    }
+    &:is(.workspace-tabs:last-child .workspace-tab-container) {
+      border-bottom-right-radius: var(--radius-l);
+    }
+  }
+
+  // Editor panel
+  .workspace.is-left-sidedock-open .mod-root .workspace-tab-container {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .workspace.is-right-sidedock-open .mod-root .workspace-tab-container {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
