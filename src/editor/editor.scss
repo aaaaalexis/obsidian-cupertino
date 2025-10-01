@@ -47,6 +47,11 @@
     --file-header-border: none;
   }
 
+  i,
+  em:not(strong em) {
+    font-weight: var(--font-medium);
+  }
+
   .workspace-split.mod-root {
     background-color: var(--background-secondary);
     transition: var(--anim-duration-moderate);
