@@ -791,6 +791,22 @@ settings:
 				label: Underline
 				value: tabs-underline
 	-
+		id: tabs-align
+		title: Tab alignment
+		type: class-select
+		allowEmpty: false
+		default: tabs-left
+		options:
+			-
+				label: Left
+				value: tabs-left
+			-
+				label: Center
+				value: tabs-center
+			-
+				label: Center (Dynamic)
+				value: tabs-center-autosize
+	-
 		id: labeled-tabs
 		title: Tab labels
 		type: class-select

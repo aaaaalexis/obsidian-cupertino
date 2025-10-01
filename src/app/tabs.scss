@@ -30,7 +30,7 @@ body:not(.stacked-nav-off) .mod-left-split .workspace-tabs.mod-top-left-space .s
 }
 body:not(.is-mobile) {
   .workspace-ribbon svg.svg-icon,
-  .workspace-tab-header-container svg.svg-icon,
+  .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner) svg.svg-icon,
   .mod-root .view-header svg.svg-icon,
   .mod-sidedock .nav-action-button svg.svg-icon {
     margin: -1px;
@@ -39,9 +39,18 @@ body:not(.is-mobile) {
 
 // Editor panel
 body:not(.is-phone) .workspace .mod-root {
+  .workspace-tab-header:not(.is-active)::before,
+  .workspace-tab-header:not(.is-active)::after {
+    opacity: 0;
+  }
+  .workspace-tab-header::before,
+  .workspace-tab-header::after,
+  .workspace-tab-header div {
+    transition: var(--anim-duration-fast), box-shadow 0s;
+  }
+
   .workspace-tab-header-container {
     padding-left: 0;
-    transition: var(--anim-duration-fast);
   }
   .workspace-tab-header-container-inner {
     padding: 0 var(--radius-s) 0 calc(var(--radius-s) + 8px);
@@ -130,6 +139,47 @@ body:not(.is-phone).tabs-underline .workspace .mod-root {
   }
 }
 
+// Editor panel: Center align
+body:not(.is-phone).tabs-center .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
+  --tab-max-width: var(--tab-width);
+
+  .workspace-tab-header-container-inner {
+    flex: 1;
+    justify-content: safe center;
+  }
+
+  .workspace-tab-header-spacer {
+    display: none;
+  }
+}
+
+// Editor panel: Center align auto size
+body:not(.is-phone).tabs-center-autosize .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
+  .workspace-tab-header {
+    min-width: 100px;
+    width: calc-size(auto, size);
+    flex: unset;
+  }
+  .workspace-tab-header.is-active {
+    min-width: var(--tab-width);
+  }
+
+  .workspace-tab-header-container-inner {
+    flex: 1;
+    justify-content: safe center;
+  }
+
+  .workspace-tab-header:not(.is-active):not(:hover) .workspace-tab-header-inner-close-button {
+    opacity: 0;
+  }
+  .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-close-button {
+    display: flex;
+  }
+  .workspace-tab-header-spacer {
+    display: none;
+  }
+}
+
 // Editor panel: Stacks
 .tab-stack-top-flipped {
   --tab-stacked-text-transform: rotate(180deg);
@@ -154,6 +204,12 @@ body:not(.is-phone).tabs-underline .workspace .mod-root {
 
 // Side panels
 .workspace .mod-sidedock {
+  .workspace-tab-header-container,
+  .workspace-tab-header,
+  .workspace-tab-header div {
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+  }
+
   .workspace-tab-header-container {
     padding-left: 0;
     padding-bottom: var(--header-spacing);
@@ -175,7 +231,6 @@ body:not(.is-phone).tabs-underline .workspace .mod-root {
 
   .workspace-tab-header {
     --icon-color: var(--text-faint);
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
     height: calc-size(auto, size);
     line-height: normal;
   }
@@ -187,10 +242,6 @@ body:not(.is-phone).tabs-underline .workspace .mod-root {
   }
   .workspace-tab-header-inner {
     gap: 8px;
-  }
-  .workspace-tab-header-inner-icon,
-  .workspace-tab-header-inner-title {
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
   }
 
   .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
