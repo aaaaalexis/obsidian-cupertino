@@ -86,7 +86,7 @@ body.bold-folders .nav-folder-title {
 }
 
 // Desktop sidedock
-body:not(.is-mobile, .theme-light:is(.contrast-light-tonal, .contrast-light-white), .theme-dark:is(.contrast-dark-tonal, .contrast-dark-black), .layout-classic, .layout-minimal) .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
+body:not(.is-mobile, .theme-light:is(.contrast-light-tonal, .contrast-light-white), .theme-dark:is(.contrast-dark-tonal, .contrast-dark-black), .layout-classic, .layout-minimal, .layout-border) .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
   border-color: transparent;
 }
 body:not(.is-mobile) .mod-sidedock {

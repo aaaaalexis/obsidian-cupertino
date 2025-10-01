@@ -9,7 +9,7 @@ body:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space {
   }
   .workspace-tab-header-container-inner {
     flex-direction: column;
-    width: 100%;
+    width: -webkit-fill-available;
     gap: calc(4px * var(--density-modifier));
     animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
   }
