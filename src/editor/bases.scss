@@ -9,8 +9,9 @@ body {
 }
 
 // Menu
-.query-toolbar-menu {
-  transition: none;
+.query-toolbar-menu,
+.cm-tooltip {
+  animation: none;
 }
 
 .text-icon-button {
