@@ -12,6 +12,7 @@ https://github.com/savq/melange-nvim
 }
 .theme-light.melange-light {
   --interactive-normal: #f0ecea;
+  --interactive-hover: #e9e1db;
   --background-primary: #f0ecea;
   --background-primary-alt: #e9e1db;
   --background-secondary: #e9e1db;
@@ -58,6 +59,7 @@ https://github.com/savq/melange-nvim
 .theme-light:not(.layout-minimal).melange-light.contrast-light-vivid .mod-root .workspace-tab-header-container,
 .theme-light:not(.layout-minimal).melange-light.contrast-light-vivid .mod-root .workspace-tab-header-container::before {
   --interactive-normal: #292522;
+  --interactive-hover: #34302c;
   --background-primary: #292522;
   --background-primary-alt: #34302c;
   --background-secondary: #34302c;

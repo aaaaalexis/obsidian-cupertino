@@ -19,6 +19,7 @@ body.input-cupertino {
 
     &:not(.is-mobile) {
       --interactive-normal: var(--color-base-40);
+      --background-modifier-form-field: var(--color-base-25);
     }
   }
 

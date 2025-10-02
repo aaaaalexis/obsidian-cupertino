@@ -1,8 +1,11 @@
 /* Notion */
-.theme-light.notion-light.color-scheme-accent {
+.theme-light.notion-light.color-scheme-accent,
+.theme-dark.notion-dark.color-scheme-accent {
   --accent-h: 217;
   --accent-s: 67%;
   --accent-l: 57%;
+
+  --background-modifier-border-focus: var(--color-accent);
 
   --interactive-accent: var(--color-accent);
 }
@@ -13,21 +16,12 @@
   --background-modifier-hover: rgba(0, 0, 0, 0.03);
   --background-modifier-border: #e9e8e5;
   --background-modifier-border-hover: #e6e6e4;
-  --background-modifier-border-focus: var(--color-accent);
 
   --text-normal: #2c2c2b;
   --text-muted: #5f5e5b;
   --text-faint: #a8a49c;
 
   --text-selection: rgba(131, 201, 229, 0.3);
-}
-
-.theme-dark.notion-dark.color-scheme-accent {
-  --accent-h: 217;
-  --accent-s: 67%;
-  --accent-l: 57%;
-
-  --interactive-accent: var(--color-accent);
 }
 .theme-dark.notion-dark,
 .theme-light.notion-light.contrast-light-vivid .titlebar,
@@ -45,7 +39,6 @@
   --background-modifier-hover: rgba(255, 255, 255, 0.055);
   --background-modifier-border: #313131;
   --background-modifier-border-hover: #30302e;
-  --background-modifier-border-focus: var(--color-accent);
 
   --text-normal: #f0efed;
   --text-muted: #9b9b9b;
