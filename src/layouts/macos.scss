@@ -69,12 +69,6 @@ body.layout-macos:not(.is-mobile) {
     height: -webkit-fill-available;
     overflow: hidden;
   }
-  .mod-sidedock .workspace-tab-header-container:not(body:not(.stacked-nav-off) .mod-top-left-space .workspace-tab-header-container) {
-    .sidebar-toggle-button,
-    .workspace-tab-header-inner {
-      height: 24px;
-    }
-  }
 
   .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
     border-inline-start: var(--divider-width) solid var(--divider-color);

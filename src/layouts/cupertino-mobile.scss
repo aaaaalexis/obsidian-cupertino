@@ -1,4 +1,9 @@
 body.mobile-cupertino.is-mobile {
+  --radius-s: calc(16px * var(--radius-modifier));
+  --radius-m: calc(24px * var(--radius-modifier));
+  --radius-l: calc(32px * var(--radius-modifier));
+  --radius-xl: calc(40px * var(--radius-modifier));
+
   --view-header-height: 44px;
   --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
   --background-modifier-form-field: var(--interactive-normal) !important;
@@ -46,7 +51,7 @@ body.mobile-cupertino.is-mobile {
   .view-header .clickable-icon,
   .workspace-drawer-header-icon {
     border-radius: 100vh;
-    padding: 10px !important;
+    padding: 10px;
     aspect-ratio: 1 / 1;
     position: relative;
     margin: 0;
@@ -187,6 +192,15 @@ body.mobile-cupertino.is-mobile.is-phone {
     &:last-child {
       display: none;
     }
+  }
+
+  // Pull action
+  .pull-action {
+    backdrop-filter: var(--blur-s);
+    box-shadow: var(--shadow-xs);
+    background-color: var(--modal-background);
+    width: fit-content;
+    font-weight: var(--font-bold);
   }
 }
 

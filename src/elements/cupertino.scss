@@ -1,29 +1,13 @@
 body.input-cupertino {
-  &.theme-light {
-    --shadow-base: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025);
-    --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 1px 8px rgba(0, 0, 0, 0.025), 0 4px 48px rgba(0, 0, 0, 0.095);
-    --input-shadow: none;
-    --input-shadow-hover: none;
+  --input-shadow: none;
+  --input-shadow-hover: none;
 
-    --interactive-hover: var(--interactive-normal);
+  --interactive-hover: var(--interactive-normal);
 
-    &:not(.is-mobile) {
-      --interactive-normal: var(--color-base-25);
-      --background-modifier-form-field: var(--color-base-00);
-    }
+  &.theme-light:not(.is-mobile) {
+    --interactive-normal: var(--color-base-25);
+    --background-modifier-form-field: var(--color-base-00);
   }
-  &.theme-dark {
-    --shadow-base: inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
-    --shadow-xs: inset 0 8px 64px rgba(255, 255, 255, 0.125), var(--shadow-base);
-    --input-shadow: none;
-
-    &:not(.is-mobile) {
-      --interactive-normal: var(--color-base-40);
-      --background-modifier-form-field: var(--color-base-25);
-    }
-  }
-
-  --side-padding: 20px;
 
   --input-radius: var(--radius-s);
   --button-radius: var(--input-radius);
@@ -105,6 +89,13 @@ body.input-cupertino {
     &.is-enabled:active:after {
       transform-origin: center right;
     }
+  }
+
+  // Dropdown
+  select:focus,
+  .combobox-button:focus,
+  .dropdown:focus {
+    box-shadow: none;
   }
 
   // Search bar fix

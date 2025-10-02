@@ -81,6 +81,7 @@ body.prompt-cupertino {
     backdrop-filter: var(--blur-m);
     background-color: var(--modal-background) !important;
     border-radius: var(--radius-xl);
+    border: none;
 
     @starting-style {
       opacity: unset;

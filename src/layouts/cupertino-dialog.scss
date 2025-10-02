@@ -99,11 +99,23 @@ body.mobile-cupertino.is-mobile.is-tablet {
 }
 
 // Modal
+body.layout-cupertino:not(.is-mobile),
+body.layout-macos:not(.is-mobile),
 body.mobile-cupertino.is-mobile {
+  --modal-background: rgb(from var(--background-secondary) r g b / 75%);
+
+  .modal,
+  .prompt,
+  .menu {
+    border: none;
+  }
+
   .modal {
     backdrop-filter: var(--blur-s);
   }
+}
 
+body.mobile-cupertino.is-mobile {
   .modal-close-button {
     &:not(.mod-confirmation .modal-close-button) {
       display: flex;

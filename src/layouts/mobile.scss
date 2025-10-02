@@ -144,6 +144,7 @@ body.mobile-cupertino.is-mobile {
         inset: 0 0 auto;
       }
 
+      // Editor panel: Tab title bar
       .workspace-leaf-content[data-type="markdown"] .view-header::before {
         position: absolute;
         top: 0;
