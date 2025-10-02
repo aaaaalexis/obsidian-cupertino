@@ -136,11 +136,9 @@ body:not(.is-phone).tabs-underline .workspace .mod-root {
 body:not(.is-phone).tabs-center .mod-root .workspace-tabs:not(.mod-stacked) {
   --tab-max-width: var(--tab-width);
 
-  .sidebar-toggle-button.mod-left {
-    margin-inline-end: auto;
-  }
-  .workspace-tab-header-new-tab {
+  .workspace-tab-header-container-inner {
     margin-inline-start: auto;
+    margin-inline-end: auto;
   }
   .workspace-tab-header-spacer {
     display: none;
