@@ -1,4 +1,5 @@
 @use "app/root.scss";
+@use "app/cupertino.scss";
 @use "app/fonts.scss";
 @use "app/icons.scss";
 @use "app/tabs.scss";
@@ -17,12 +18,13 @@
 @use "editor/table.scss";
 @use "editor/bases.scss";
 
-@use "layouts/layout-styles.scss";
 @use "layouts/classic.scss";
 @use "layouts/cards.scss";
 @use "layouts/border.scss";
 @use "layouts/frame.scss";
 @use "layouts/cupertino.scss" as layout-cupertino;
+@use "layouts/cupertino-dialog.scss";
+@use "layouts/cupertino-mobile.scss";
 @use "layouts/macos.scss";
 @use "layouts/mobile.scss" as layout-mobile;
 

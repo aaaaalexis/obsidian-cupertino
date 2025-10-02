@@ -8,8 +8,11 @@ body {
   --tab-text-color-focused: var(--tab-text-color);
 }
 
-body.is-mobile {
-  --header-height: 56px;
+body.is-phone {
+  --header-height: 56px !important;
+}
+body.is-tablet {
+  --header-height: 44px !important;
 }
 
 // All panels
@@ -90,9 +93,6 @@ body:not(.is-phone).tabs-floating .workspace .mod-root {
   --tab-radius-active: var(--tab-radius);
   --tab-curve: 0;
 
-  .workspace-tab-header-container {
-    gap: 8px;
-  }
   .workspace-tab-header-container-inner {
     padding: 0 0 8px 8px;
     gap: 4px;

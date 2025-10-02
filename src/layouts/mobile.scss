@@ -1,6 +1,6 @@
 body.mobile-baseline.is-mobile,
 body.mobile-cupertino.is-mobile {
-  --safe-area-inset-override: 40px;
+  --safe-area-inset-override: 28px;
 
   &.mod-toolbar-open {
     --safe-area-inset-override: 16px;
@@ -131,15 +131,20 @@ body.mobile-cupertino.is-mobile {
     .mod-root {
       padding-top: 0;
 
-      .workspace-leaf-content .view-header {
-        position: absolute;
-        inset: 0 0 auto;
+      .view-header-title-container {
+        height: auto;
+      }
+      .view-header {
         background-color: transparent;
         padding-top: var(--safe-area-inset-top);
-        height: calc(var(--view-header-height) + var(--safe-area-inset-top));
+        height: auto;
+      }
+      .workspace-leaf-content[data-type="markdown"] .view-header {
+        position: absolute;
+        inset: 0 0 auto;
       }
 
-      .workspace-leaf-content .view-header::before {
+      .workspace-leaf-content[data-type="markdown"] .view-header::before {
         position: absolute;
         top: 0;
         right: 0;
@@ -151,7 +156,7 @@ body.mobile-cupertino.is-mobile {
         pointer-events: none;
         content: "";
       }
-      .workspace-leaf-content .view-content::before {
+      .workspace-leaf-content[data-type="markdown"] .view-content::before {
         position: absolute;
         right: 0;
         bottom: 0;
