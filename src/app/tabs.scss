@@ -144,40 +144,14 @@ body:not(.is-phone).tabs-underline .workspace .mod-root {
 }
 
 // Editor panel: Center align
-body:not(.is-phone).tabs-center .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
+body:not(.is-phone).tabs-center .mod-root .workspace-tabs:not(.mod-stacked) {
   --tab-max-width: var(--tab-width);
 
-  .workspace-tab-header-container-inner {
-    flex: 1;
-    justify-content: safe center;
+  .sidebar-toggle-button.mod-left {
+    margin-inline-end: auto;
   }
-
-  .workspace-tab-header-spacer {
-    display: none;
-  }
-}
-
-// Editor panel: Center align auto size
-body:not(.is-phone).tabs-center-autosize .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
-  .workspace-tab-header {
-    min-width: 100px;
-    width: calc-size(auto, size);
-    flex: unset;
-  }
-  .workspace-tab-header.is-active {
-    min-width: var(--tab-width);
-  }
-
-  .workspace-tab-header-container-inner {
-    flex: 1;
-    justify-content: safe center;
-  }
-
-  .workspace-tab-header:not(.is-active):not(:hover) .workspace-tab-header-inner-close-button {
-    opacity: 0;
-  }
-  .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-close-button {
-    display: flex;
+  .workspace-tab-header-new-tab {
+    margin-inline-start: auto;
   }
   .workspace-tab-header-spacer {
     display: none;
