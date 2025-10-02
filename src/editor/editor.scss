@@ -295,6 +295,7 @@
     box-decoration-break: clone;
     border-radius: var(--radius-s);
     padding: 2px 4px;
+    color: var(--text-highlight, var(--text-normal));
   }
 
   .cm-s-obsidian span.cm-highlight {

@@ -492,8 +492,8 @@ settings:
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: text-selection
-		title: Selected text background
+		id: text-highlight
+		title: Highlighted text color
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -502,6 +502,14 @@ settings:
 	-
 		id: text-highlight-bg
 		title: Highlighted text background
+		type: variable-themed-color
+		opacity: true
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: text-selection
+		title: Selected text background
 		type: variable-themed-color
 		opacity: true
 		format: hex
