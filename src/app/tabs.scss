@@ -34,17 +34,6 @@ body:not(.is-mobile) {
 
 // Editor panel
 body:not(.is-phone) .workspace .mod-root {
-  .workspace-tab-header:not(.is-active)::before,
-  .workspace-tab-header:not(.is-active)::after {
-    opacity: 0;
-  }
-  .workspace-tab-header::before,
-  .workspace-tab-header::after,
-  .workspace-tab-header,
-  .workspace-tab-header div {
-    transition: var(--anim-duration-fast), box-shadow 0s;
-  }
-
   .workspace-tab-header-container {
     padding-left: 0;
   }
