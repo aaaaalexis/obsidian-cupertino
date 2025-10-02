@@ -48,11 +48,6 @@ body.layout-minimal:not(.is-mobile) {
 
   // ----------------------------------------------------------------
 
-  // Ribbon fix
-  &.show-ribbon .workspace-ribbon.mod-left {
-    padding-top: calc(var(--header-height) + 8px);
-  }
-
   // Tab outline fix
   &:not(.colorful-frame):not(.theme-light.contrast-light-vivid) {
     --tab-outline-width: var(--border-width);

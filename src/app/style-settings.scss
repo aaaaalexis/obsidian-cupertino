@@ -979,10 +979,16 @@ settings:
 		default: false
 	-
 		id: hover-sidebars
-		title: Hover sidebars
+		title: Hover reveal
 		type: heading
 		level: 2
 		collapsed: true
+	-
+		id: hover-ribbon
+		title: Hover ribbon
+		description: Hover over window left edge to reveal
+		type: class-toggle
+		default: false
 	-
 		id: hover-sidedock
 		title: Hover sidebars

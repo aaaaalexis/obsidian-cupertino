@@ -130,7 +130,7 @@ body.layout-cupertino:not(.is-mobile) {
 
 body.layout-cupertino:not(.is-mobile),
 body.layout-macos:not(.is-mobile) {
-  .workspace .clickable-icon {
+  .workspace-split .clickable-icon {
     width: 40px;
   }
   .clickable-icon {
@@ -229,12 +229,6 @@ body.layout-macos:not(.is-mobile) {
     display: flex;
     flex-direction: column;
     gap: 4px;
-  }
-
-  // Ribbon fix
-  &.show-ribbon .workspace-ribbon.mod-left {
-    padding-left: 16px;
-    padding-right: 0px;
   }
 
   // Tab outline fix
