@@ -1,3 +1,30 @@
+body.layout-cupertino:not(.is-mobile),
+body.layout-macos:not(.is-mobile),
+body.mobile-cupertino.is-mobile {
+  --modal-background: rgb(from var(--background-secondary) r g b / 75%);
+  --background-modifier-message: var(--modal-background);
+
+  .menu:not(:nth-last-child(2)),
+  .popover,
+  .cm-tooltip,
+  .suggestion-container,
+  .prompt,
+  .modal,
+  .notice {
+    backdrop-filter: var(--blur-s);
+  }
+
+  .menu,
+  .popover,
+  .cm-tooltip,
+  .suggestion-container,
+  .prompt,
+  .modal,
+  .notice {
+    border: none !important;
+  }
+}
+
 // Menu
 body.layout-cupertino:not(.is-mobile),
 body.layout-macos:not(.is-mobile) {
@@ -5,10 +32,18 @@ body.layout-macos:not(.is-mobile) {
   .menu svg.svg-icon {
     transition: none;
   }
-  .menu:hover {
-    backdrop-filter: var(--blur-s);
-    background-color: var(--modal-background);
 
+  .menu:not(:nth-last-child(2)),
+  .popover,
+  .cm-tooltip,
+  .suggestion-container {
+    background-color: var(--modal-background);
+  }
+
+  .menu:hover,
+  .popover,
+  .cm-tooltip,
+  .suggestion-container {
     .menu-item.selected:not(.is-label):not(.is-disabled) {
       background-color: var(--color-accent);
       color: var(--text-on-accent);
@@ -18,11 +53,17 @@ body.layout-macos:not(.is-mobile) {
       }
     }
   }
+
   .menu .menu-item,
   .menu .suggestion-item,
   .suggestion-container .menu-item,
   .suggestion-container .suggestion-item {
     padding: calc(4px * var(--density-modifier)) 12px;
+    align-items: center;
+  }
+  .menu .suggestion-item,
+  .suggestion-container .suggestion-item {
+    min-height: 32px;
   }
   .menu .menu-separator,
   .suggestion-container .menu-separator {
@@ -36,7 +77,6 @@ body.mobile-cupertino.is-mobile {
 
   .menu,
   .suggestion-container {
-    backdrop-filter: var(--blur-s);
     box-shadow: none;
     background-color: var(--menu-background);
   }
@@ -99,22 +139,6 @@ body.mobile-cupertino.is-mobile.is-tablet {
 }
 
 // Modal
-body.layout-cupertino:not(.is-mobile),
-body.layout-macos:not(.is-mobile),
-body.mobile-cupertino.is-mobile {
-  --modal-background: rgb(from var(--background-secondary) r g b / 75%);
-
-  .modal,
-  .prompt,
-  .menu {
-    border: none;
-  }
-
-  .modal {
-    backdrop-filter: var(--blur-s);
-  }
-}
-
 body.mobile-cupertino.is-mobile {
   .modal-close-button {
     &:not(.mod-confirmation .modal-close-button) {
@@ -233,5 +257,46 @@ body.mobile-cupertino.is-mobile.is-tablet {
       border-radius: 100vh;
       padding: calc(12px * var(--density-modifier)) var(--side-padding);
     }
+  }
+}
+
+// Notice & Tooltip
+body.layout-cupertino:not(.is-mobile),
+body.layout-macos:not(.is-mobile),
+body.mobile-cupertino.is-mobile {
+  .notice-container {
+    display: flex;
+    top: unset;
+    bottom: var(--safe-area-inset-bottom);
+    flex-direction: column;
+    gap: 8px;
+    overflow: visible;
+  }
+  .notice {
+    margin-bottom: 0;
+    box-shadow: var(--shadow-l);
+    border-radius: var(--radius-m);
+    padding: calc(16px * var(--density-modifier)) var(--side-padding);
+    color: var(--text-muted);
+    background-color: var(--modal-background);
+  }
+
+  .tooltip {
+    --background-modifier-message: var(--background-primary);
+    color: var(--text-muted);
+    border-radius: var(--radius-m);
+  }
+}
+
+// Drag ghost
+body.layout-cupertino:not(.is-mobile),
+body.layout-macos:not(.is-mobile) {
+  --drag-ghost-background: var(--background-primary);
+  --drag-ghost-text-color: var(--text-normal);
+
+  .drag-ghost {
+    box-shadow: var(--shadow-l);
+    padding: 8px 12px;
+    border-radius: var(--radius-m);
   }
 }

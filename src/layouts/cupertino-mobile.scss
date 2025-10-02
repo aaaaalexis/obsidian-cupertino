@@ -145,7 +145,8 @@ body.mobile-cupertino.is-mobile {
     .mobile-navbar-actions::after,
     .mobile-toolbar-options-list::after,
     .modal-setting-back-button::after,
-    .modal-close-button::after {
+    .modal-close-button::after,
+    .notice::after {
       position: absolute;
       z-index: 1;
       backdrop-filter: brightness(1.5);

@@ -78,8 +78,7 @@ body.prompt-cupertino {
   --prompt-input-height: 56px;
 
   .prompt {
-    backdrop-filter: var(--blur-m);
-    background-color: var(--modal-background) !important;
+    background-color: var(--modal-background);
     border-radius: var(--radius-xl);
     border: none;
 
