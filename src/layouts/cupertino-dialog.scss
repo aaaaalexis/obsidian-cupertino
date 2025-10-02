@@ -5,6 +5,7 @@ body.mobile-cupertino.is-mobile {
   --background-modifier-message: var(--modal-background);
 
   .menu:not(:nth-last-child(2)),
+  &.is-mobile .menu,
   .popover,
   .cm-tooltip,
   .suggestion-container,

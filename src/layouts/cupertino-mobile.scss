@@ -4,7 +4,6 @@ body.mobile-cupertino.is-mobile {
   --radius-l: calc(32px * var(--radius-modifier));
   --radius-xl: calc(40px * var(--radius-modifier));
 
-  --view-header-height: 44px;
   --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
   --background-modifier-form-field: var(--interactive-normal) !important;
 
@@ -18,7 +17,8 @@ body.mobile-cupertino.is-mobile {
   }
 
   // Background fix
-  .app-container,
+  &.is-phone .app-container,
+  &.is-tablet.tab-floating .app-container,
   .mod-root .view-header::before,
   .mod-root .view-content::before,
   .mod-root .view-content,
@@ -208,6 +208,7 @@ body.mobile-cupertino.is-mobile.is-phone {
 body.mobile-cupertino.is-mobile.is-tablet {
   --border-width: 0.5pt;
   --nav-item-weight-active: normal;
+  --tab-curve: var(--radius-s);
 
   .workspace {
     background-color: var(--system-status-background);
@@ -220,12 +221,11 @@ body.mobile-cupertino.is-mobile.is-tablet {
   }
 
   .mod-root {
-    .view-header {
-      border-radius: var(--radius-s);
-      height: fit-content;
-    }
     .workspace-tab-header-container {
       padding-top: 0;
+    }
+    .workspace-tab-header {
+      padding-bottom: 0;
     }
     .workspace-tab-header-new-tab,
     .workspace-tab-header-tab-list,

@@ -4,7 +4,7 @@ body.is-mobile {
   --radius-l: calc(24px * var(--radius-modifier));
   --radius-xl: calc(32px * var(--radius-modifier));
   --mobile-sidebar-width: 100%;
-  --view-header-height: 48px;
+  --view-header-height: var(--header-height);
 
   --tab-switcher-menubar-background: var(--background-secondary);
   --tab-switcher-preview-radius: var(--radius-m);

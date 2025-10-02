@@ -91,19 +91,34 @@
   body.metadata-cupertino {
     --metadata-gap: 0;
     --metadata-padding: 0;
+    --metadata-property-radius: var(--radius-m);
+    --metadata-property-radius-hover: var(--radius-m);
+    --metadata-property-radius-focus: var(--radius-m);
 
     .metadata-properties-heading {
       display: none;
     }
 
     .metadata-properties {
-      border-radius: var(--radius-s);
-      background-color: var(--background-primary-alt);
+      border-radius: var(--radius-m);
+      background-color: var(--background-secondary);
+
+      .multi-select-pill {
+        font-weight: var(--font-medium);
+        font-size: var(--font-ui-small);
+      }
     }
 
+    .metadata-property {
+      min-height: 44px;
+    }
+    .metadata-property-icon {
+      --icon-size: var(--icon-s);
+    }
     .metadata-property-key,
     .metadata-property-value {
-      padding: 4px 8px;
+      padding: 4px 8px 4px 12px;
+      align-items: center;
     }
 
     .workspace-split:not(.mod-root) .metadata-container {

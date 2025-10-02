@@ -97,6 +97,10 @@
   .view-header-nav-buttons,
   .view-actions {
     --icon-size: var(--icon-m);
+    gap: 0;
+  }
+  .view-header-title-container {
+    height: auto !important;
   }
   .view-header-title-container > div {
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline);

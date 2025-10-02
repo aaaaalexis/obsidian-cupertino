@@ -16,16 +16,6 @@ body.is-tablet {
 }
 
 // All panels
-.workspace-tab-header-container {
-  padding-top: 8px;
-  background-color: transparent;
-}
-.sidebar-toggle-button {
-  height: 100%;
-}
-.sidebar-toggle-button .clickable-icon {
-  width: fit-content;
-}
 body:not(.is-mobile) {
   .workspace-ribbon svg.svg-icon,
   .workspace-tab-header-container svg.svg-icon,
@@ -33,7 +23,19 @@ body:not(.is-mobile) {
   .mod-sidedock .nav-action-button svg.svg-icon {
     margin: -1px;
   }
+
+  .workspace-tab-header-container {
+    padding-top: 8px;
+    background-color: transparent;
+  }
 }
+.sidebar-toggle-button {
+  height: 100%;
+}
+.sidebar-toggle-button .clickable-icon {
+  width: fit-content;
+}
+
 
 // Editor panel
 body:not(.is-phone) .workspace .mod-root {
@@ -137,8 +139,34 @@ body:not(.is-phone).tabs-center .mod-root .workspace-tabs:not(.mod-stacked) {
   --tab-max-width: var(--tab-width);
 
   .workspace-tab-header-container-inner {
+    flex: 1;
+    justify-content: safe center;
+  }
+  .workspace-tab-header-spacer {
+    display: none;
+  }
+}
+
+// Editor panel: Absolute center align
+body:not(.is-phone).tabs-center-absolute .mod-root .workspace-tabs:not(.mod-stacked) {
+  --tab-max-width: var(--tab-width);
+
+  .workspace-tab-header-container {
+    container-type: inline-size;
+  }
+  @container (min-width: 480px) {
+    .workspace-tab-header-container-inner {
+      justify-content: safe center;
+      position: absolute;
+      flex: 1;
+      margin: 0 144px;
+      inset: auto 0;
+      height: -webkit-fill-available;
+      padding: 0;
+    }
+  }
+  .workspace-tab-header-new-tab {
     margin-inline-start: auto;
-    margin-inline-end: auto;
   }
   .workspace-tab-header-spacer {
     display: none;
