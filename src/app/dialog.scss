@@ -29,13 +29,16 @@ body:not(.is-phone) .modal-bg {
 
   .modal-title {
     font-family: var(--h1-font);
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    transition: var(--anim-duration-moderate);
     max-width: 100%;
+    width: calc-size(fit-content, size);
+    overflow: visible;
+    text-align: left;
 
     &:not(:has(.modal-setting-back-button)):not(.modal-container.mod-confirmation .modal-title) {
       font-size: var(--h1-size);
-      text-align: left;
-      margin-left: 24px;
+      width: 100%;
+      padding-left: 24px;
     }
   }
 
