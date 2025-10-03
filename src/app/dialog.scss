@@ -83,7 +83,7 @@ body:not(.is-phone) .modal-bg {
   }
 
   .menu-item-icon {
-    order: unset;
+    order: unset !important;
   }
 
   .menu-item-icon .svg-icon {
