@@ -71,9 +71,30 @@ body.bold-folders .nav-folder-title {
   --nav-item-weight-hover: calc(var(--font-weight) + var(--bold-modifier));
 }
 
+// File explorer
 .tree-item-self,
 .tree-item-inner {
   align-items: center;
+}
+
+// Panel actions style
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.nav-header .nav-buttons-container {
+  flex-wrap: nowrap;
+}
+.nav-header .search-input-container {
+  margin: 8px 0;
+  width: 100%;
+}
+.nav-action-button,
+.nav-action-button[aria-disabled="true"] {
+  position: relative;
+  height: 100%;
 }
 
 // Ribbon
@@ -115,26 +136,6 @@ body:not(.is-mobile) .mod-sidedock {
 
   .workspace-leaf-content > .nav-header {
     padding: 0 16px 8px;
-  }
-
-  // Panel actions style
-  .nav-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .nav-header .nav-buttons-container {
-    flex-wrap: nowrap;
-  }
-  .nav-header .search-input-container {
-    margin: 8px 0;
-    width: 100%;
-  }
-  .nav-action-button,
-  .nav-action-button[aria-disabled="true"] {
-    position: relative;
-    height: 100%;
   }
 }
 
