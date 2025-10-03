@@ -56,11 +56,7 @@ body.layout-macos:not(.is-mobile) {
     margin: auto 0;
   }
 
-  // Editor panel: Tab title bar
-  .view-header-title-parent {
-    color: var(--text-faint);
-  }
-
+  // Editor panel: Edge fade
   .workspace-leaf-content[data-type="markdown"] .view-header {
     position: absolute;
     inset: 0 0 auto;

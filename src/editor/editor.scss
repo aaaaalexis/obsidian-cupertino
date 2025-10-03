@@ -105,6 +105,9 @@
   .view-header-title-container > div {
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
   }
+  .view-header-title-parent {
+    color: var(--text-faint);
+  }
   body:not(.is-mobile, .view-header-title-always) .view-header:not(.view-header-always-show):not(:hover) .view-header-title-container > div:not(:focus-within) {
     opacity: 0 !important;
   }
