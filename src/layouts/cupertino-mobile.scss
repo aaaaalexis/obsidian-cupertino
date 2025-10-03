@@ -33,13 +33,11 @@ body.mobile-cupertino.is-mobile {
   // Liquid Glass
   &.is-phone .mod-root .view-header > div > .view-action,
   &.is-phone .workspace-drawer-header-icon,
-  &.is-phone .mobile-navbar .mobile-navbar-actions,
-  &.is-phone .mobile-toolbar-options-list,
   .workspace-drawer .nav-header .nav-buttons-container,
+  .mobile-navbar .mobile-navbar-actions,
+  .mobile-toolbar-options-list,
   .modal-setting-back-button,
   .modal-close-button {
-    --icon-color: var(--text-normal);
-    --icon-color-hover: var(--icon-color);
     backdrop-filter: var(--blur-s);
     box-shadow: var(--shadow-xs);
     border: none;
