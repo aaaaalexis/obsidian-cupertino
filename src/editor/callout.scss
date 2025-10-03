@@ -62,6 +62,9 @@
     box-shadow: var(--shadow-tactile);
     background: linear-gradient(rgba(var(--callout-color), 0.1), rgba(var(--callout-color), 0.2));
   }
+  body.callouts-tactile.theme-dark .callout:not([data-callout="note-toolbar"]) {
+    background: linear-gradient(rgba(var(--callout-color), 0.35), rgba(var(--callout-color), 0.15));
+  }
 
   // Callout: Padded
   body.callouts-padded.theme-light .callout:not([data-callout="note-toolbar"]) {
