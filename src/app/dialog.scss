@@ -96,17 +96,17 @@ body:not(.is-phone) .modal-bg {
   .menu-separator {
     margin: 4px 0;
   }
-
-  .suggestion-item,
-  .suggestion-empty {
-    font-size: var(--font-ui-small);
-  }
 }
 
 body:not(.is-mobile) {
   .menu,
   .suggestion-container {
     animation: menuIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+
+    .suggestion-item,
+    .suggestion-empty {
+      font-size: var(--font-ui-small);
+    }
   }
 }
 

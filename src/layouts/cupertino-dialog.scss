@@ -74,20 +74,17 @@ body.layout-macos:not(.is-mobile) {
 body.mobile-cupertino.is-mobile {
   --modal-header-height: var(--view-header-height);
 
-  .menu,
-  .suggestion-container {
-    box-shadow: none;
-    background-color: var(--menu-background);
-  }
   .menu-scroll {
     background-color: transparent;
   }
 
   .menu .menu-item,
-  .suggestion-container .menu-item {
+  .menu .suggestion-item,
+  .suggestion-container .menu-item,
+  .suggestion-container .suggestion-item {
     padding: calc(12px * var(--density-modifier)) var(--side-padding);
 
-    &[class="menu-item tappable"] .menu-item-icon {
+    &:not([class*="is-"]) .menu-item-icon {
       color: var(--text-normal);
     }
     .menu-item-icon .svg-icon {
@@ -97,13 +94,17 @@ body.mobile-cupertino.is-mobile {
   }
 }
 body.mobile-cupertino.is-mobile.is-phone {
+  --menu-shadow: none;
+
   .menu .menu-scroll,
   .suggestion-container .menu-scroll {
     padding: 32px var(--side-padding);
   }
+  .suggestion-container {
+    background-color: var(--modal-background);
+  }
 
-  .menu .menu-item,
-  .suggestion-container .menu-item {
+  .menu .menu-item {
     min-height: 48px;
   }
   .menu .menu-item:not(:last-child) {
@@ -119,6 +120,9 @@ body.mobile-cupertino.is-mobile.is-phone {
       height: var(--border-width);
       content: "";
     }
+  }
+  .suggestion-container .suggestion-item {
+    padding: calc(12px * var(--density-modifier)) var(--side-padding);
   }
 
   .menu-group {
@@ -137,8 +141,11 @@ body.mobile-cupertino.is-mobile.is-phone {
   }
 }
 body.mobile-cupertino.is-mobile.is-tablet {
+  --menu-background: var(--modal-background);
+  --menu-shadow: var(--shadow-l);
+
   .menu {
-    box-shadow: var(--shadow-l);
+    backdrop-filter: var(--blur-s);
     line-height: normal;
   }
   .menu .menu-separator,
@@ -152,7 +159,9 @@ body.mobile-cupertino.is-mobile.is-tablet {
     padding: 8px;
   }
   .menu .menu-item,
-  .suggestion-container .menu-item {
+  .menu .suggestion-item,
+  .suggestion-container .menu-item,
+  .suggestion-container .suggestion-item {
     gap: 16px;
   }
 }
