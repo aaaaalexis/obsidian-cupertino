@@ -97,6 +97,11 @@ body.mobile-cupertino.is-mobile {
   }
 }
 body.mobile-cupertino.is-mobile.is-phone {
+  .menu .menu-scroll,
+  .suggestion-container .menu-scroll {
+    padding: 32px var(--side-padding);
+  }
+
   .menu .menu-item,
   .suggestion-container .menu-item {
     min-height: 48px;
@@ -110,7 +115,7 @@ body.mobile-cupertino.is-mobile.is-phone {
     .menu-item-title::after {
       position: absolute;
       inset: auto 0 -14px;
-      background: var(--background-modifier-border);
+      background: rgba(var(--mono-rgb-100), 0.1);
       height: var(--border-width);
       content: "";
     }
@@ -239,7 +244,7 @@ body.mobile-cupertino.is-mobile.is-phone .modal.mod-sidebar-layout {
     padding-left: var(--side-padding);
   }
   .vertical-tab-header-group-items {
-    border-radius: var(--radius-l);
+    border-radius: var(--radius-m);
     background-color: var(--background-primary);
     overflow: hidden;
   }
