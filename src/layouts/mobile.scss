@@ -139,12 +139,12 @@ body.mobile-cupertino.is-mobile {
         padding-top: var(--safe-area-inset-top);
         height: auto;
       }
+
+      // Editor panel: Edge fade
       .workspace-leaf-content[data-type="markdown"] .view-header {
         position: absolute;
         inset: 0 0 auto;
       }
-
-      // Editor panel: Tab title bar
       .workspace-leaf-content[data-type="markdown"] .view-header::before {
         position: absolute;
         top: 0;
@@ -163,9 +163,9 @@ body.mobile-cupertino.is-mobile {
         bottom: 0;
         left: 0;
         z-index: 1;
-        mask: linear-gradient(to top, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.99) 18.4%, hsla(0, 0%, 0%, 0.963) 33.7%, hsla(0, 0%, 0%, 0.92) 46.4%, hsla(0, 0%, 0%, 0.864) 56.7%, hsla(0, 0%, 0%, 0.796) 64.8%, hsla(0, 0%, 0%, 0.72) 71.2%, hsla(0, 0%, 0%, 0.637) 76.1%, hsla(0, 0%, 0%, 0.55) 79.9%, hsla(0, 0%, 0%, 0.46) 82.8%, hsla(0, 0%, 0%, 0.37) 85.2%, hsla(0, 0%, 0%, 0.283) 87.3%, hsla(0, 0%, 0%, 0.2) 89.6%, hsla(0, 0%, 0%, 0.124) 92.3%, hsla(0, 0%, 0%, 0.056) 95.6%, hsla(0, 0%, 0%, 0) 100%);
+        mask: linear-gradient(to top, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 14%, hsla(0, 0%, 0%, 0.951) 26.2%, hsla(0, 0%, 0%, 0.896) 36.8%, hsla(0, 0%, 0%, 0.825) 45.9%, hsla(0, 0%, 0%, 0.741) 53.7%, hsla(0, 0%, 0%, 0.648) 60.4%, hsla(0, 0%, 0%, 0.55) 66.2%, hsla(0, 0%, 0%, 0.45) 71.2%, hsla(0, 0%, 0%, 0.352) 75.6%, hsla(0, 0%, 0%, 0.259) 79.6%, hsla(0, 0%, 0%, 0.175) 83.4%, hsla(0, 0%, 0%, 0.104) 87.2%, hsla(0, 0%, 0%, 0.049) 91.1%, hsla(0, 0%, 0%, 0.013) 95.3%, hsla(0, 0%, 0%, 0) 100%);
         background-color: var(--background-primary);
-        height: calc(var(--safe-area-inset-override) + 48px);
+        height: calc(var(--safe-area-inset-override) + 64px);
         pointer-events: none;
         content: "";
       }
