@@ -1,8 +1,7 @@
 body.layout-cupertino:not(.is-mobile),
 body.layout-macos:not(.is-mobile),
 body.mobile-cupertino.is-mobile,
-body.input-cupertino input,
-body.input-cupertino .checkbox-container,
+body.input-cupertino,
 body.prompt-cupertino .prompt {
   --side-padding: 20px;
 
