@@ -239,6 +239,10 @@ body.mobile-cupertino.is-mobile.is-phone {
     width: fit-content;
     font-weight: var(--font-bold);
   }
+
+  &:not(.accented-interface) .pull-action.mod-activated {
+    background-color: var(--text-normal);
+  }
 }
 
 body.mobile-cupertino.is-mobile.is-tablet {
