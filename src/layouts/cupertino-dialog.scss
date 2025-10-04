@@ -1,18 +1,7 @@
 body.layout-cupertino:not(.is-mobile),
 body.layout-macos:not(.is-mobile),
 body.mobile-cupertino.is-mobile {
-  --modal-background: rgb(from var(--background-secondary) r g b / 75%);
   --background-modifier-message: var(--modal-background);
-
-  .menu:not(:nth-last-child(2)),
-  .popover,
-  .cm-tooltip,
-  .suggestion-container,
-  .prompt,
-  .modal,
-  .notice {
-    backdrop-filter: var(--blur-s);
-  }
 
   .menu,
   .popover,
@@ -21,6 +10,7 @@ body.mobile-cupertino.is-mobile {
   .prompt,
   .modal,
   .notice {
+    backdrop-filter: var(--blur-s);
     border: none !important;
   }
 }
@@ -33,7 +23,7 @@ body.layout-macos:not(.is-mobile) {
     transition: none;
   }
 
-  .menu:not(:nth-last-child(2)),
+  .menu,
   .popover,
   .cm-tooltip,
   .suggestion-container {
@@ -168,6 +158,8 @@ body.mobile-cupertino.is-mobile.is-tablet {
 // Modal
 body.layout-cupertino:not(.is-mobile),
 body.layout-macos:not(.is-mobile) {
+  --modal-background: rgb(from var(--background-primary) r g b / 75%);
+
   --modal-radius: var(--radius-xl);
 
   .modal {
@@ -196,6 +188,8 @@ body.layout-macos:not(.is-mobile) {
 }
 
 body.mobile-cupertino.is-mobile {
+  --modal-background: rgb(from var(--background-secondary) r g b / 75%);
+
   --modal-header-height: var(--view-header-height);
 
   .modal-close-button {
