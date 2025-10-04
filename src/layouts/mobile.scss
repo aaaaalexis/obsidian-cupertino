@@ -10,11 +10,12 @@ body.mobile-cupertino.is-mobile {
     }
   }
 
-  .mod-root .view-header .view-action,
-  .workspace-drawer-header-icon,
-  .workspace-drawer .nav-header .nav-buttons-container,
+  &.is-phone .mod-root .view-header > div > .view-action,
+  &.is-tablet .mod-root .view-header .view-action,
   .mobile-navbar .mobile-navbar-actions,
   .mobile-toolbar-options-list,
+  .workspace-drawer-header-icon,
+  .workspace-drawer .nav-header .nav-buttons-container,
   .modal-setting-back-button,
   .modal-close-button,
   .sidebar-toggle-button {

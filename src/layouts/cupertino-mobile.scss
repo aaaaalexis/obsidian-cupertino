@@ -31,17 +31,17 @@ body.mobile-cupertino.is-mobile {
   }
 
   // Liquid Glass
-  &.is-phone .mod-root .view-header .view-action,
+  &.is-phone .mod-root .view-header > div > .view-action,
+  &.is-phone .mobile-navbar .mobile-navbar-actions,
+  &.is-phone .mobile-toolbar-options-list,
   &.is-phone .workspace-drawer-header-icon,
   .workspace-drawer .nav-header .nav-buttons-container,
-  .mobile-navbar .mobile-navbar-actions,
-  .mobile-toolbar-options-list,
   .modal-setting-back-button,
   .modal-close-button {
     backdrop-filter: var(--blur-s);
     box-shadow: var(--shadow-xs);
-    border: none !important;
-    background-color: transparent !important;
+    border: none;
+    background-color: transparent;
     color: var(--text-normal);
     height: fit-content;
     transition: var(--anim-duration-moderate);
