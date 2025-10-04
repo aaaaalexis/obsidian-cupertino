@@ -63,6 +63,18 @@ body.mobile-cupertino.is-mobile {
     margin: 0;
   }
 
+  // Editor panel
+  .markdown-reading-view,
+  .markdown-source-view {
+    transition: transform var(--anim-duration-slow) var(--anim-motion-baseline);
+  }
+  .workspace-leaf-content[data-mode="source"] .markdown-reading-view {
+    transform: scale(0.99);
+  }
+  .workspace-leaf-content[data-mode="preview"] .markdown-source-view {
+    transform: scale(0.99);
+  }
+
   // Side panels
   .workspace-drawer-inner {
     background-color: transparent;
