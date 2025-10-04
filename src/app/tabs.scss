@@ -36,7 +36,6 @@ body:not(.is-mobile) {
   width: fit-content;
 }
 
-
 // Editor panel
 body:not(.is-phone) .workspace .mod-root {
   .workspace-tab-header-container {
@@ -68,7 +67,7 @@ body:not(.is-phone) .workspace .mod-root {
     padding: 0 0 8px;
   }
   .sidebar-toggle-button .clickable-icon {
-    height: 100%;
+    height: auto;
   }
 
   .workspace-tab-header-new-tab {
@@ -82,11 +81,12 @@ body:not(.is-phone) .workspace .mod-root {
   .workspace-tab-header-tab-list {
     display: block;
     padding: 0 0 8px;
+    align-content: center;
   }
   .workspace-tab-header-new-tab .clickable-icon,
   .workspace-tab-header-tab-list .clickable-icon {
     padding: 8px;
-    height: 100%;
+    height: auto;
   }
 }
 
