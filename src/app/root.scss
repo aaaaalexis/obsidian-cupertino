@@ -120,7 +120,3 @@ body.is-frameless:not(.is-hidden-frameless, .is-fullscreen) .titlebar {
 body.window-title-off .titlebar-text {
   display: none;
 }
-
-* {
-  -electron-corner-smoothing: 60%;
-}

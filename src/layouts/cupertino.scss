@@ -34,6 +34,10 @@ body.layout-macos:not(.is-mobile) {
   --radius-l: calc(20px * var(--radius-modifier));
   --radius-xl: calc(28px * var(--radius-modifier));
 
+  * {
+    -electron-corner-smoothing: 60%;
+  }
+
   .workspace-split .clickable-icon {
     width: 40px;
   }
