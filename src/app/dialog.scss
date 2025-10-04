@@ -286,19 +286,10 @@ body.is-phone .modal.mod-sidebar-layout {
       display: none;
     }
   }
-  .community-item-name {
-    display: flex;
-  }
   .community-item .flair {
-    margin-left: auto;
     top: 0;
-    line-height: normal;
     border-radius: var(--button-radius);
     padding: 4px 8px;
-    height: fit-content;
-  }
-  .community-item-downloads {
-    display: flex;
   }
 }
 body.is-phone .modal.mod-sidebar-layout.mod-community-modal {
@@ -312,8 +303,5 @@ body.is-phone .modal.mod-sidebar-layout.mod-community-modal {
   }
   .community-modal-controls .setting-item .setting-item-control {
     margin-top: 0;
-  }
-  .community-item .flair {
-    margin-left: 4px;
   }
 }
