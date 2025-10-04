@@ -14,13 +14,36 @@ body:not(.is-mobile).hover-sidedock {
     }
   }
 
+  &.layout-cupertino,
+  &.layout-macos {
+    .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
+      backdrop-filter: var(--blur-m);
+      box-shadow: var(--shadow-xs);
+      border-radius: var(--radius-m);
+      background-color: var(--modal-background);
+
+      &.mod-left-split {
+        margin: 8px 0 8px 8px;
+      }
+      &.mod-right-split {
+        margin: 8px 8px 8px 0;
+      }
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
   .mod-sidedock .workspace-tab-header-container {
     -webkit-app-region: no-drag !important;
   }
 
+  .mod-sidedock {
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline), transform var(--anim-duration-moderate) cubic-bezier(0.32, 0.72, 0, 1), background-color var(--anim-duration-moderate) cubic-bezier(0.32, 0.72, 0, 1) !important;
+  }
   .mod-sidedock.is-sidedock-collapsed {
     z-index: var(--layer-sidedock);
-    transition: var(--anim-duration-moderate);
 
     &:not([style*="overflow: hidden;"]) {
       display: flex !important;
@@ -30,7 +53,6 @@ body:not(.is-mobile).hover-sidedock {
       width: var(--hover-sidedock-width, 320px) !important;
       opacity: 0;
       background-color: transparent;
-      filter: blur(4px);
 
       &:hover {
         opacity: 1;
@@ -54,7 +76,8 @@ body:not(.is-mobile).hover-sidedock {
         pointer-events: none;
         -webkit-app-region: no-drag !important;
       }
-      .workspace-leaf {
+      .workspace-leaf,
+      .workspace-tab-header-container {
         background-color: transparent;
       }
       > .workspace-leaf-resize-handle {
@@ -64,10 +87,10 @@ body:not(.is-mobile).hover-sidedock {
 
     &::before {
       inset: -100% 0;
-      width: 200%;
+      width: 150%;
       content: "";
       position: absolute;
-      background: linear-gradient(to right, var(--background-primary), transparent);
+      background: linear-gradient(to right, rgba(var(--mono-rgb-0)) 0%, rgba(var(--mono-rgb-0), 0.99) 18.4%, rgba(var(--mono-rgb-0), 0.963) 33.7%, rgba(var(--mono-rgb-0), 0.92) 46.4%, rgba(var(--mono-rgb-0), 0.864) 56.7%, rgba(var(--mono-rgb-0), 0.796) 64.8%, rgba(var(--mono-rgb-0), 0.72) 71.2%, rgba(var(--mono-rgb-0), 0.637) 76.1%, rgba(var(--mono-rgb-0), 0.55) 79.9%, rgba(var(--mono-rgb-0), 0.46) 82.8%, rgba(var(--mono-rgb-0), 0.37) 85.2%, rgba(var(--mono-rgb-0), 0.283) 87.3%, rgba(var(--mono-rgb-0), 0.2) 89.6%, rgba(var(--mono-rgb-0), 0.124) 92.3%, rgba(var(--mono-rgb-0), 0.056) 95.6%, rgba(var(--mono-rgb-0), 0) 100%);
       pointer-events: none;
     }
 
@@ -83,7 +106,7 @@ body:not(.is-mobile).hover-sidedock {
     }
     &.mod-right-split::before {
       left: unset;
-      background: linear-gradient(to left, var(--background-primary), transparent);
+      background: linear-gradient(to left, rgba(var(--mono-rgb-0)) 0%, rgba(var(--mono-rgb-0), 0.99) 18.4%, rgba(var(--mono-rgb-0), 0.963) 33.7%, rgba(var(--mono-rgb-0), 0.92) 46.4%, rgba(var(--mono-rgb-0), 0.864) 56.7%, rgba(var(--mono-rgb-0), 0.796) 64.8%, rgba(var(--mono-rgb-0), 0.72) 71.2%, rgba(var(--mono-rgb-0), 0.637) 76.1%, rgba(var(--mono-rgb-0), 0.55) 79.9%, rgba(var(--mono-rgb-0), 0.46) 82.8%, rgba(var(--mono-rgb-0), 0.37) 85.2%, rgba(var(--mono-rgb-0), 0.283) 87.3%, rgba(var(--mono-rgb-0), 0.2) 89.6%, rgba(var(--mono-rgb-0), 0.124) 92.3%, rgba(var(--mono-rgb-0), 0.056) 95.6%, rgba(var(--mono-rgb-0), 0) 100%);
     }
   }
 }
