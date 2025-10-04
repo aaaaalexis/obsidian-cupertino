@@ -83,7 +83,8 @@
     text-align: var(--table-text-align-body);
   }
 
-  .dataview {
+  .dataview,
+  .block-language-datacorejsx {
     &.table-view-table {
       &::before {
         border: none;
@@ -94,7 +95,8 @@
       }
     }
 
-    &.table-view-table > thead > tr > th {
+    &.table-view-table > thead > tr > th,
+    .datacore-table-header-cell {
       border-bottom: none;
       font-weight: var(--table-header-weight);
       font-size: var(--table-header-size);
@@ -109,6 +111,10 @@
       border-radius: var(--radius-s);
       background-color: var(--background-secondary);
       min-height: 80px;
+    }
+
+    .dc-paging-control-page {
+      padding: 0;
     }
   }
 }
