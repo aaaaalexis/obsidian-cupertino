@@ -72,8 +72,6 @@ body.layout-macos:not(.is-mobile) {
 }
 
 body.mobile-cupertino.is-mobile {
-  --modal-header-height: var(--view-header-height);
-
   .menu-scroll {
     background-color: transparent;
   }
@@ -143,6 +141,7 @@ body.mobile-cupertino.is-mobile.is-phone {
 body.mobile-cupertino.is-mobile.is-tablet {
   --menu-background: var(--modal-background);
   --menu-shadow: var(--shadow-l);
+  --menu-radius: var(--radius-l);
 
   .menu {
     backdrop-filter: var(--blur-s);
@@ -169,6 +168,8 @@ body.mobile-cupertino.is-mobile.is-tablet {
 // Modal
 body.layout-cupertino:not(.is-mobile),
 body.layout-macos:not(.is-mobile) {
+  --modal-radius: var(--radius-xl);
+
   .modal {
     @starting-style {
       opacity: 1;
@@ -176,9 +177,27 @@ body.layout-macos:not(.is-mobile) {
       transform: scale(0.99);
     }
   }
+
+  .modal:not(.mod-sidebar-layout) {
+    .modal-title {
+      width: 100%;
+    }
+    .modal-button-container button {
+      flex: 1;
+      margin: 0;
+      border-radius: 100vh;
+      min-height: 32px;
+    }
+
+    .modal-close-button {
+      border-radius: 100vh;
+    }
+  }
 }
 
 body.mobile-cupertino.is-mobile {
+  --modal-header-height: var(--view-header-height);
+
   .modal-close-button {
     &:not(.mod-confirmation .modal-close-button) {
       display: flex;
@@ -198,6 +217,15 @@ body.mobile-cupertino.is-mobile {
       text-align: center;
     }
   }
+}
+body.mobile-cupertino.is-mobile.is-phone {
+  .modal .modal-nav-action {
+    height: var(--modal-header-height);
+    margin-top: 0;
+  }
+}
+body.mobile-cupertino.is-mobile.is-tablet {
+  --modal-radius: var(--radius-l);
 }
 
 // Settings
@@ -280,19 +308,14 @@ body.mobile-cupertino.is-mobile.is-phone .modal.mod-sidebar-layout {
   }
 }
 
-body.mobile-cupertino.is-mobile.is-tablet {
-  --menu-radius: var(--radius-l);
-  --modal-radius: var(--radius-l);
-
-  .modal.mod-sidebar-layout {
-    .vertical-tab-header-group-title {
-      padding-top: var(--side-padding);
-      padding-left: var(--side-padding);
-    }
-    .vertical-tab-nav-item {
-      border-radius: 100vh;
-      padding: calc(12px * var(--density-modifier)) var(--side-padding);
-    }
+body.mobile-cupertino.is-mobile.is-tablet .modal.mod-sidebar-layout {
+  .vertical-tab-header-group-title {
+    padding-top: var(--side-padding);
+    padding-left: var(--side-padding);
+  }
+  .vertical-tab-nav-item {
+    border-radius: 100vh;
+    padding: calc(12px * var(--density-modifier)) var(--side-padding);
   }
 }
 

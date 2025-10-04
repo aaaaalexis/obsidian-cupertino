@@ -224,11 +224,11 @@ body.layout-cupertino:not(.is-mobile) {
       overflow: visible;
     }
     .workspace-tab-container {
-      overflow: visible;
       outline: var(--border-width) solid var(--background-modifier-border);
     }
+    .workspace-tab-container,
     .workspace-leaf {
-      border-radius: var(--radius-s);
+      border-radius: var(--radius-m);
     }
   }
 
