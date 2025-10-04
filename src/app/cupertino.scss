@@ -2,7 +2,7 @@ body.layout-cupertino:not(.is-mobile),
 body.layout-macos:not(.is-mobile),
 body.mobile-cupertino.is-mobile,
 body.input-cupertino,
-body.prompt-cupertino .prompt {
+body.prompt-cupertino:is(.layout-cupertino:not(.is-mobile), .layout-macos:not(.is-mobile), .mobile-cupertino.is-mobile) {
   --side-padding: 20px;
 
   --blur-s: blur(4px) saturate(1.5) brightness(1.025);

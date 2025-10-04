@@ -31,6 +31,8 @@ body.mobile-cupertino.is-mobile {
   }
 
   // Liquid Glass
+  &.is-phone.prompt-cupertino .prompt-input,
+  &.is-phone.prompt-cupertino .prompt-input-container .search-input-clear-button,
   &.is-phone .mod-root .view-header > div > .view-action,
   &.is-phone .mobile-navbar .mobile-navbar-actions,
   &.is-phone .mobile-toolbar-options-list,
@@ -43,7 +45,6 @@ body.mobile-cupertino.is-mobile {
     border: none;
     background-color: transparent;
     color: var(--text-normal);
-    height: fit-content;
     transition: var(--anim-duration-moderate);
 
     @starting-style {

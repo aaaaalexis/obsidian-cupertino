@@ -78,15 +78,9 @@ body.prompt-cupertino {
   --prompt-input-height: 56px;
 
   .prompt {
-    background-color: var(--modal-background);
+    background-color: var(--modal-background) !important;
     border-radius: var(--radius-l);
     border: none;
-
-    @starting-style {
-      opacity: unset;
-      filter: unset;
-      transform: unset;
-    }
   }
 
   .prompt-input-container {
@@ -114,7 +108,6 @@ body.prompt-cupertino {
     pointer-events: none;
   }
   .prompt-input {
-    background-color: transparent !important;
     border-bottom: none;
 
     padding-inline-start: calc(var(--search-icon-size) + var(--side-padding) + 12px) !important;
@@ -129,6 +122,20 @@ body.prompt-cupertino {
     border-top: none;
   }
 }
+body:not(.is-phone).prompt-cupertino .prompt {
+  @keyframes bounceInScale {
+    from {
+      transform: scale(1.15);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(0.99);
+    }
+  }
+
+  animation: var(--anim-duration-moderate) bounceInScale var(--anim-motion-baseline) forwards;
+}
+
 body.is-phone.prompt-cupertino {
   --prompt-input-height: 48px;
 
@@ -155,9 +162,9 @@ body.is-phone.prompt-cupertino {
   }
   .prompt-input,
   .prompt-input-container .search-input-clear-button {
-    backdrop-filter: var(--blur-s);
-    box-shadow: var(--shadow-xs);
     border-radius: 100vh;
+    border: 1px solid var(--background-modifier-border);
+    background-color: var(--background-secondary);
   }
   .prompt-input-container .search-input-clear-button {
     inset-inline-end: 0;

@@ -167,6 +167,17 @@ body.mobile-cupertino.is-mobile.is-tablet {
 }
 
 // Modal
+body.layout-cupertino:not(.is-mobile),
+body.layout-macos:not(.is-mobile) {
+  .modal {
+    @starting-style {
+      opacity: 1;
+      filter: none;
+      transform: scale(0.99);
+    }
+  }
+}
+
 body.mobile-cupertino.is-mobile {
   .modal-close-button {
     &:not(.mod-confirmation .modal-close-button) {
@@ -211,6 +222,7 @@ body.mobile-cupertino.is-mobile .modal.mod-sidebar-layout {
   .modal-setting-back-button {
     padding: 10px;
     inset-inline-start: var(--side-padding);
+    height: fit-content;
   }
 
   .modal-content {
