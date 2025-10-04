@@ -155,6 +155,10 @@ body .mod-sidedock {
 // Vault switcher
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
   background-color: transparent;
+
+  .workspace-drawer-vault-actions .clickable-icon:first-child {
+    display: none;
+  }
 }
 body:not(.is-mobile, .hide-vault-switcher-off) .mod-sidedock.mod-left-split {
   .workspace-sidedock-vault-profile {
@@ -203,9 +207,6 @@ body:not(.is-mobile, .hide-vault-switcher-off) .mod-sidedock.mod-left-split {
 }
 
 // Desktop sidedock: Style Settings
-body.hide-help .workspace-drawer-vault-actions .clickable-icon:first-child {
-  display: none;
-}
 body.large-new-note .mod-sidedock .workspace-leaf-content[data-type="file-explorer"] {
   .nav-header .nav-action-button:first-child {
     flex: 1;
