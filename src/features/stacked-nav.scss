@@ -11,7 +11,7 @@ body:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space {
     width: -webkit-fill-available;
     gap: calc(4px * var(--density-modifier));
     animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
-    padding: 8px 16px;
+    padding: 0 16px 8px;
   }
   .workspace-tab-header {
     padding: 8px;
@@ -31,7 +31,6 @@ body:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space {
   .sidebar-toggle-button {
     order: -1;
     margin-left: auto;
-    min-height: var(--header-height);
     max-height: var(--header-height);
   }
   .sidebar-toggle-button .clickable-icon {

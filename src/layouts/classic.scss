@@ -64,7 +64,8 @@ body.layout-minimal:not(.is-mobile) {
   &.tabs-underline .mod-root .workspace-tab-header-container-inner {
     --tab-outline-width: 0;
   }
-  &.tabs-floating .mod-root .workspace-tab-header-container-inner {
+  &.tabs-floating .mod-root .workspace-tab-header-container-inner,
+  &.tabs-floating-center .mod-root .workspace-tab-header-container-inner {
     padding-right: 1px;
   }
 
@@ -75,7 +76,8 @@ body.layout-minimal:not(.is-mobile) {
 }
 
 body.layout-minimal:not(.is-mobile) {
-  &.tabs-floating {
+  &.tabs-floating,
+  &.tabs-floating-center {
     --tab-background-active: var(--background-modifier-hover);
     --tab-outline-width: 0;
 

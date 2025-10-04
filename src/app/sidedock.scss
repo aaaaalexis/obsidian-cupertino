@@ -8,7 +8,7 @@ body {
 }
 
 body:not(.is-mobile) {
-  --ribbon-padding: calc(var(--header-height) + 8px) 0 0 16px;
+  --ribbon-padding: var(--header-height) 0 0 16px;
 }
 
 body.is-mobile {

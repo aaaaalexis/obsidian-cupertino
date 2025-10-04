@@ -69,20 +69,25 @@ body.layout-macos:not(.is-mobile) {
     height: -webkit-fill-available;
     overflow: hidden;
   }
+  .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container .sidebar-toggle-button {
+    height: calc(var(--header-height) - 16px);
+  }
 
   .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
     border-inline-start: var(--divider-width) solid var(--divider-color);
   }
 
   // Tab outline fix
-  &:not(.tabs-floating):not(.tabs-underline):not(.theme-light.contrast-light-vivid) .mod-root {
+  &:not(.tabs-floating, .tabs-floating-center, .theme-light.contrast-light-vivid, .colorful-frame) .mod-root {
     --tab-outline-width: var(--border-width);
+  }
+  &.tabs-underline .mod-root .workspace-tab-header-container-inner {
+    --tab-outline-width: 0;
   }
 
   // Style Settings: Stacked nav off fix
   &.stacked-nav-off .mod-sidedock.mod-left-split {
     .mod-top-left-space .workspace-tab-header-container {
-      height: calc(var(--header-height) - 16px);
       padding: 4px 4px 4px max(4px, calc(var(--frame-left-space) - 8px));
     }
     .workspace-leaf-content > .nav-header {

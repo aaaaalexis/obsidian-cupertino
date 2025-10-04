@@ -60,7 +60,8 @@ body.layout-border:not(.is-mobile) {
   &.tabs-underline .workspace.is-left-sidedock-open .mod-root .workspace-tab-header-container-inner {
     padding-left: var(--radius-l);
   }
-  &.tabs-floating .workspace.is-left-sidedock-open .mod-root .workspace-tab-header-container-inner {
+  &.tabs-floating .workspace.is-left-sidedock-open .mod-root .workspace-tab-header-container-inner,
+  &.tabs-floating-center .workspace.is-left-sidedock-open .mod-root .workspace-tab-header-container-inner {
     padding-left: calc(var(--radius-l) / 2);
   }
 

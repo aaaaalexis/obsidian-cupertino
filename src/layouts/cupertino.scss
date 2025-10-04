@@ -20,8 +20,10 @@ body.mobile-cupertino.is-mobile {
   }
 
   // Tabs style fix
-  &.tabs-floating {
+  &.tabs-floating,
+  &.tabs-floating-center {
     --tab-background-active: var(--background-modifier-hover);
+    --tab-action-width: 40px;
   }
 }
 
@@ -51,7 +53,8 @@ body.layout-macos:not(.is-mobile) {
   }
 
   // Editor panel
-  &.tabs-floating .mod-root .workspace-tab-header {
+  &.tabs-floating .mod-root .workspace-tab-header,
+  &.tabs-floating-center .mod-root .workspace-tab-header {
     height: 32px;
     margin: auto 0;
   }
@@ -179,7 +182,7 @@ body.layout-macos:not(.is-mobile) {
   }
 
   // Tab outline fix
-  &:not(.tabs-floating):not(.tabs-underline):not(.theme-light.contrast-light-vivid) {
+  &:not(.tabs-floating, .tabs-floating-center, .tabs-underline, .theme-light.contrast-light-vivid, .colorful-frame) {
     .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
       --tab-outline-width: var(--border-width);
 

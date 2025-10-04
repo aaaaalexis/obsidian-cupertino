@@ -58,9 +58,8 @@ body.mobile-cupertino.is-mobile {
   .workspace-drawer-header-icon {
     border-radius: 100vh;
     padding: 10px;
-    aspect-ratio: 1 / 1;
     position: relative;
-    margin: 0;
+    margin: auto 0;
   }
 
   // Editor panel
@@ -73,6 +72,11 @@ body.mobile-cupertino.is-mobile {
   }
   .workspace-leaf-content[data-mode="preview"] .markdown-source-view {
     transform: scale(0.99);
+  }
+
+  .view-header-left,
+  .view-actions {
+    padding: 0;
   }
 
   // Side panels
@@ -246,18 +250,8 @@ body.mobile-cupertino.is-mobile.is-tablet {
   }
 
   // Editor panel
-  &.tabs-floating .mod-root .workspace-tab-header {
-    height: 44px;
-    margin: auto 0;
-  }
-
   .mod-root {
-    .workspace-tab-header-container {
-      padding-top: 0;
-    }
-    .workspace-tab-header {
-      padding-bottom: 0;
-    }
+    .workspace-tab-header,
     .workspace-tab-header-new-tab,
     .workspace-tab-header-tab-list,
     .sidebar-toggle-button {
@@ -283,14 +277,25 @@ body.mobile-cupertino.is-mobile.is-tablet {
   }
 
   // Style Settings: Tabs style fix
-  &.tabs-floating {
+  &.tabs-floating,
+  &.tabs-floating-center {
     --system-status-background: rgb(var(--mono-rgb-0));
     --titlebar-background: transparent;
     --titlebar-background-focused: transparent;
+    --tab-container-background: transparent;
     --tab-radius: var(--radius-l);
 
-    &.theme-dark .mod-root .view-header {
-      background-color: black;
+    .mod-root {
+      .view-header {
+        background-color: transparent;
+      }
+      .workspace-tab-header-container-inner {
+        padding-bottom: 0;
+      }
+      .workspace-tab-header {
+        height: 40px;
+        margin: auto 0;
+      }
     }
   }
 }

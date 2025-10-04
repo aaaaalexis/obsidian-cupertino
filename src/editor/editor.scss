@@ -114,9 +114,6 @@
   body:not(.is-mobile).view-header-title-hidden .view-header-title-container > div {
     visibility: hidden;
   }
-  body.is-mobile .view-actions {
-    padding: 0;
-  }
 
   // Active line
   body.active-line-side .markdown-source-view .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::after {
