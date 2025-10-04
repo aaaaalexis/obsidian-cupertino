@@ -31,7 +31,7 @@ body.mobile-cupertino.is-mobile {
   }
 
   // Liquid Glass
-  &.is-phone .mod-root .view-header > div > .view-action,
+  &.is-phone .mod-root .view-header .view-action,
   &.is-phone .workspace-drawer-header-icon,
   .workspace-drawer .nav-header .nav-buttons-container,
   .mobile-navbar .mobile-navbar-actions,
@@ -40,8 +40,8 @@ body.mobile-cupertino.is-mobile {
   .modal-close-button {
     backdrop-filter: var(--blur-s);
     box-shadow: var(--shadow-xs);
-    border: none;
-    background-color: transparent;
+    border: none !important;
+    background-color: transparent !important;
     color: var(--text-normal);
     height: fit-content;
     transition: var(--anim-duration-moderate);
@@ -264,6 +264,8 @@ body.mobile-cupertino.is-mobile.is-tablet {
   // Style Settings: Tabs style fix
   &.tabs-floating {
     --system-status-background: rgb(var(--mono-rgb-0));
+    --titlebar-background: transparent;
+    --titlebar-background-focused: transparent;
     --tab-radius: var(--radius-l);
 
     &.theme-dark .mod-root .view-header {
