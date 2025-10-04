@@ -179,6 +179,15 @@ body.mobile-cupertino.is-mobile {
       content: "";
     }
   }
+
+  // Bases: Cards padding fix
+  .bases-cards-item {
+    padding: var(--side-padding);
+  }
+  .bases-cards-line,
+  .bases-cards-label {
+    padding: 0;
+  }
 }
 
 body.mobile-cupertino.is-mobile.is-phone {
