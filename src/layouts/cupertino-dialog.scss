@@ -118,6 +118,7 @@ body.mobile-cupertino.is-mobile.is-phone {
       background-color: var(--background-modifier-hover);
     }
 
+    .menu-item.is-label + .menu-item:not(.is-label),
     .menu-item:first-child {
       border-top-left-radius: var(--radius-m);
       border-top-right-radius: var(--radius-m);
