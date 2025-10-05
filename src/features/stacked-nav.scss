@@ -1,3 +1,6 @@
+body:not(.mod-macos):not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+  padding-top: 8px;
+}
 body:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space {
   --sidebar-tab-text-display: flex;
 

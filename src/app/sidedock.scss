@@ -8,7 +8,7 @@ body {
 }
 
 body:not(.is-mobile) {
-  --ribbon-padding: var(--header-height) 0 0 16px;
+  --ribbon-padding: 0 0 0 16px;
 }
 
 body.is-mobile {
@@ -104,6 +104,12 @@ body.bold-folders .nav-folder-title {
   z-index: 11;
   transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
 }
+.workspace-ribbon.mod-left:before {
+  content: none;
+}
+.workspace-ribbon.mod-left .sidebar-toggle-button {
+  position: relative;
+}
 body.hover-ribbon .workspace-ribbon.mod-left:not(:hover) {
   --ribbon-width: 0;
 }
@@ -111,6 +117,8 @@ body.hover-ribbon .workspace-ribbon.mod-left:not(:hover) {
 .workspace-ribbon .sidebar-toggle-button {
   display: flex;
   height: var(--header-height);
+  padding: 8px;
+  width: unset;
 }
 
 // Desktop sidedock

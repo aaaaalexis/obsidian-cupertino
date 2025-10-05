@@ -121,8 +121,7 @@ body.window-title-off .titlebar-text {
   display: none;
 }
 
-body.mod-windows:not(.is-mobile),
-body.mod-linux:not(.is-mobile) {
+body:not(.mod-macos):not(.is-mobile) {
   --frame-right-space: calc(var(--header-height) * 3);
 
   .titlebar {
