@@ -231,16 +231,17 @@ body.mobile-cupertino.is-mobile.is-phone {
   }
 
   // Pull action
+  &:not(.accented-interface) .pull-action.mod-activated {
+    background-color: var(--text-normal);
+  }
+  .pull-action:not(.mod-activated) {
+    background-color: var(--modal-background);
+  }
   .pull-action {
     backdrop-filter: var(--blur-s);
     box-shadow: var(--shadow-xs);
-    background-color: var(--modal-background);
     width: fit-content;
     font-weight: var(--font-bold);
-  }
-
-  &:not(.accented-interface) .pull-action.mod-activated {
-    background-color: var(--text-normal);
   }
 }
 
