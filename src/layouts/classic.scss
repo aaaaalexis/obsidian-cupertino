@@ -36,6 +36,24 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
     }
   }
 
+  // Ribbon fix
+  &.show-ribbon.mod-macos {
+    --ribbon-padding: calc(var(--header-height) + 8px) 0 0 16px;
+  }
+  &.show-ribbon.mod-macos,
+  &.show-ribbon:not(.mod-macos).stacked-nav-off {
+    .workspace-ribbon {
+      position: relative;
+    }
+    .workspace-ribbon::before {
+      height: var(--tab-outline-width);
+      background-color: var(--tab-outline-color);
+      content: "";
+      position: absolute;
+      inset: calc(var(--header-height) - 1px) 0;
+    }
+  }
+
   // Style Settings: Tabs fix
   &.tabs-floating .mod-root .workspace-tab-header-container-inner,
   &.tabs-floating-center .mod-root .workspace-tab-header-container-inner {

@@ -8,6 +8,9 @@ body {
 }
 
 body:not(.is-mobile) {
+  --ribbon-padding: var(--header-height) 0 0 16px;
+}
+body:not(.is-mobile):not(.mod-macos) {
   --ribbon-padding: 0 0 0 16px;
 }
 

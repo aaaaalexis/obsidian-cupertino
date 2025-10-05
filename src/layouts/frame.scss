@@ -27,6 +27,9 @@ body.layout-frame:not(.is-mobile) {
   // ----------------------------------------------------------------
 
   // Ribbon fix
+  &.show-ribbon.mod-macos {
+    --ribbon-padding: var(--header-height) 0 0;
+  }
   &.show-ribbon:not(.mod-macos) {
     --ribbon-padding: 0;
   }
