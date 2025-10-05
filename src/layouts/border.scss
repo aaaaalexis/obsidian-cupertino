@@ -65,3 +65,21 @@ body.layout-border:not(.is-mobile) {
     border-bottom-right-radius: 0;
   }
 }
+
+// Mobile
+body.layout-border.is-mobile.is-tablet {
+  .mod-root .workspace-tab-container {
+    border-radius: 0;
+  }
+
+  .workspace-drawer.is-pinned.mod-left {
+    margin-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .workspace-drawer.is-pinned.mod-right {
+    margin-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

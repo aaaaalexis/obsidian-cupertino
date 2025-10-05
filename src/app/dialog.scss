@@ -105,7 +105,7 @@ body:not(.is-mobile) .modal-title {
   }
 }
 
-body:not(.is-mobile) {
+body:not(.is-phone) {
   .menu,
   .suggestion-container {
     animation: menuIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;

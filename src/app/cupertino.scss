@@ -1,8 +1,7 @@
-body.layout-cupertino:not(.is-mobile),
-body.layout-macos:not(.is-mobile),
-body.mobile-cupertino.is-mobile,
+body:is(.layout-cupertino, .layout-macos):not(.is-mobile),
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile,
 body.input-cupertino,
-body.prompt-cupertino:is(.layout-cupertino:not(.is-mobile), .layout-macos:not(.is-mobile), .mobile-cupertino.is-mobile) {
+body.prompt-cupertino:is(:is(.layout-cupertino, .layout-macos):not(.is-mobile), :is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile) {
   --side-padding: 20px;
 
   --blur-s: blur(4px) saturate(1.5) brightness(1.025);

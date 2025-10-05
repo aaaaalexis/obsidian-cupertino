@@ -736,16 +736,13 @@ settings:
 		title: Mobile style
 		type: class-select
 		allowEmpty: false
-		default: mobile-baseline
+		default: mobile-immersive
 		options:
 			-
-				label: Baseline
-				value: mobile-baseline
+				label: Immersive
+				value: mobile-immersive
 			-
-				label: Cupertino
-				value: mobile-cupertino
-			-
-				label: Obsidian
+				label: Stable
 				value: mobile-default
 	-
 		id: animation

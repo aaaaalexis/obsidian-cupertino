@@ -1,6 +1,5 @@
-body.layout-cupertino:not(.is-mobile),
-body.layout-macos:not(.is-mobile),
-body.mobile-cupertino.is-mobile {
+body:is(.layout-cupertino, .layout-macos):not(.is-mobile),
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
   --inline-title-margin-bottom: 0.5em;
   --p-spacing: 1rem;
   --line-height-normal: 1.6;
@@ -27,8 +26,7 @@ body.mobile-cupertino.is-mobile {
   }
 }
 
-body.layout-cupertino:not(.is-mobile),
-body.layout-macos:not(.is-mobile) {
+body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   --radius-s: calc(8px * var(--radius-modifier));
   --radius-m: calc(12px * var(--radius-modifier));
   --radius-l: calc(20px * var(--radius-modifier));

@@ -1,6 +1,5 @@
-body.layout-cupertino:not(.is-mobile),
-body.layout-macos:not(.is-mobile),
-body.mobile-cupertino.is-mobile {
+body:is(.layout-cupertino, .layout-macos):not(.is-mobile),
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
   --background-modifier-message: var(--modal-background);
 
   .menu,
@@ -16,8 +15,7 @@ body.mobile-cupertino.is-mobile {
 }
 
 // Menu
-body.layout-cupertino:not(.is-mobile),
-body.layout-macos:not(.is-mobile) {
+body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   .menu,
   .menu svg.svg-icon {
     transition: none;
@@ -59,7 +57,7 @@ body.layout-macos:not(.is-mobile) {
   }
 }
 
-body.mobile-cupertino.is-mobile {
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
   .menu-scroll {
     background-color: transparent;
   }
@@ -79,7 +77,7 @@ body.mobile-cupertino.is-mobile {
     }
   }
 }
-body.mobile-cupertino.is-mobile.is-phone {
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-phone {
   --menu-shadow: none;
 
   .menu .menu-scroll,
@@ -127,7 +125,7 @@ body.mobile-cupertino.is-mobile.is-phone {
     }
   }
 }
-body.mobile-cupertino.is-mobile.is-tablet {
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-tablet {
   --menu-background: var(--modal-background);
   --menu-shadow: var(--shadow-xs);
   --menu-radius: var(--radius-l);
@@ -153,8 +151,7 @@ body.mobile-cupertino.is-mobile.is-tablet {
 }
 
 // Modal
-body.layout-cupertino:not(.is-mobile),
-body.layout-macos:not(.is-mobile) {
+body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   --modal-background: rgb(from var(--background-primary) r g b / 75%);
 
   --modal-radius: var(--radius-xl);
@@ -180,7 +177,7 @@ body.layout-macos:not(.is-mobile) {
   }
 }
 
-body.mobile-cupertino.is-mobile {
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
   --modal-background: rgb(from var(--background-secondary) r g b / 75%);
 
   --modal-header-height: var(--view-header-height);
@@ -205,19 +202,18 @@ body.mobile-cupertino.is-mobile {
     }
   }
 }
-body.mobile-cupertino.is-mobile.is-phone {
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-phone {
   .modal .modal-nav-action {
     height: var(--modal-header-height);
     margin-top: 0;
   }
 }
-body.mobile-cupertino.is-mobile.is-tablet {
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-tablet {
   --modal-radius: var(--radius-l);
 }
 
 // Settings
-body.layout-cupertino:not(.is-mobile) .modal.mod-sidebar-layout,
-body.layout-macos:not(.is-mobile) .modal.mod-sidebar-layout {
+body:is(.layout-cupertino, .layout-macos):not(.is-mobile) .modal.mod-sidebar-layout {
   background-color: var(--background-primary);
 
   .setting-item {
@@ -264,7 +260,7 @@ body.layout-macos:not(.is-mobile) .modal.mod-sidebar-layout .vertical-tab-header
   border-radius: var(--radius-l);
   box-shadow: var(--shadow-l);
 }
-body.mobile-cupertino.is-mobile.is-phone .modal.mod-sidebar-layout {
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-phone .modal.mod-sidebar-layout {
   .modal-header {
     position: absolute;
     z-index: 1;
@@ -341,9 +337,8 @@ body.mobile-cupertino.is-mobile.is-phone .modal.mod-sidebar-layout {
 }
 
 // Notice & Tooltip
-body.layout-cupertino:not(.is-mobile),
-body.layout-macos:not(.is-mobile),
-body.mobile-cupertino.is-mobile {
+body:is(.layout-cupertino, .layout-macos):not(.is-mobile),
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
   .notice-container {
     display: flex;
     top: unset;
@@ -367,7 +362,7 @@ body.mobile-cupertino.is-mobile {
     border-radius: var(--radius-m);
   }
 }
-body.mobile-cupertino.is-mobile {
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
   .notice {
     margin-bottom: 0;
     box-shadow: var(--shadow-xs);
@@ -379,8 +374,7 @@ body.mobile-cupertino.is-mobile {
 }
 
 // Drag ghost
-body.layout-cupertino:not(.is-mobile),
-body.layout-macos:not(.is-mobile) {
+body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   --drag-ghost-background: var(--background-primary);
   --drag-ghost-text-color: var(--text-normal);
 

@@ -1,4 +1,4 @@
-body.mobile-cupertino.is-mobile {
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
   --radius-s: calc(16px * var(--radius-modifier));
   --radius-m: calc(24px * var(--radius-modifier));
   --radius-l: calc(32px * var(--radius-modifier));
@@ -66,10 +66,6 @@ body.mobile-cupertino.is-mobile {
   }
 
   // Side panels
-  .workspace-drawer-inner {
-    background-color: transparent;
-  }
-
   .workspace-drawer .workspace-drawer-header,
   .workspace-drawer .workspace-leaf-content > .view-content,
   .workspace-drawer .workspace-leaf-content > .node-insert-event {
@@ -189,7 +185,7 @@ body.mobile-cupertino.is-mobile {
   }
 }
 
-body.mobile-cupertino.is-mobile.is-phone {
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-phone {
   --system-status-background: rgb(var(--mono-rgb-0));
 
   // Editor panel
@@ -240,7 +236,7 @@ body.mobile-cupertino.is-mobile.is-phone {
   }
 }
 
-body.mobile-cupertino.is-mobile.is-tablet {
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-tablet {
   --border-width: 0.5pt;
   --nav-item-weight-active: normal;
   --tab-curve: var(--radius-s);
@@ -271,25 +267,11 @@ body.mobile-cupertino.is-mobile.is-tablet {
     margin: 0 -12px;
   }
 
-  &.tabs-floating,
-  &.tabs-floating-center {
+  &:is(.tabs-floating, .tabs-floating-center) {
     --system-status-background: rgb(var(--mono-rgb-0));
     --titlebar-background: transparent;
     --titlebar-background-focused: transparent;
     --tab-container-background: transparent;
     --tab-radius: var(--radius-l);
-
-    .mod-root {
-      .view-header {
-        background-color: transparent;
-      }
-      .workspace-tab-header-container-inner {
-        padding-bottom: 0;
-      }
-      .workspace-tab-header {
-        height: 40px;
-        margin: auto 0;
-      }
-    }
   }
 }

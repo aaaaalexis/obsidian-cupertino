@@ -1,12 +1,8 @@
 body.layout-frame:not(.is-mobile) {
+  --tab-container-background: transparent;
+
   .workspace {
     padding: 4px;
-    background-color: var(--background-secondary);
-  }
-  .workspace::before {
-    content: "";
-    position: absolute;
-    inset: 0;
     background-color: var(--background-secondary);
   }
   .workspace-ribbon,
@@ -63,16 +59,6 @@ body.layout-frame:not(.is-mobile) {
     }
   }
 
-  // Tab outline fix
-  &:not(.tabs-floating, .tabs-floating-center, .tabs-underline, .theme-light.contrast-light-vivid, .colorful-frame) .mod-root {
-    --tab-outline-width: var(--border-width);
-
-    .workspace-tab-header-container-inner {
-      padding-top: 1px;
-      margin-bottom: -1px;
-    }
-  }
-
   // Status bar
   &:not(.status-bar-full, .status-bar-cupertino) .status-bar {
     right: 8px;
@@ -114,5 +100,44 @@ body.layout-frame:not(.is-mobile) {
     .workspace-split {
       margin-bottom: 0;
     }
+  }
+}
+// Tab outline fix
+body.layout-frame {
+  &:not(.tabs-floating, .tabs-floating-center, .tabs-underline, :not(.is-mobile):is(.colorful-frame, .theme-light.contrast-light-vivid)) .mod-root {
+    --tab-outline-width: var(--border-width);
+
+    .workspace-tab-header-container-inner {
+      padding-top: 1px;
+      margin-bottom: -1px;
+    }
+  }
+}
+
+// Mobile
+body.layout-frame.is-mobile.is-tablet {
+  --mobile-sidebar-background: var(--background-primary);
+
+  .workspace {
+    padding: 0 4px;
+  }
+  .workspace-drawer {
+    margin: 0 4px;
+    padding-top: 16px;
+  }
+  .workspace-drawer,
+  .mod-root {
+    background-color: var(--background-primary);
+    border-radius: var(--radius-m);
+    border: var(--border-width) solid var(--background-modifier-border);
+    overflow: hidden;
+  }
+
+  // Tab style fix
+  .mod-root {
+    padding-top: 0;
+  }
+  &:not(.tabs-floating, .tabs-floating-center, .tabs-underline) .mod-root .workspace-tab-header-container-inner {
+    padding-top: 8px;
   }
 }

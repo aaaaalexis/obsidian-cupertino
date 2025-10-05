@@ -89,13 +89,11 @@ body:not(.is-phone) .workspace .mod-root {
   .workspace-tab-header-new-tab .clickable-icon,
   .workspace-tab-header-tab-list .clickable-icon {
     height: auto;
-    max-height: 100%;
   }
 }
 
 // Editor panel: Floating
-body:not(.is-phone).tabs-floating .workspace .mod-root,
-body:not(.is-phone).tabs-floating-center .workspace .mod-root {
+body:is(.tabs-floating, .tabs-floating-center):not(.is-phone) .workspace .mod-root {
   --tab-radius-active: var(--tab-radius);
   --tab-curve: 0;
 
@@ -113,6 +111,15 @@ body:not(.is-phone).tabs-floating-center .workspace .mod-root {
   .workspace-tab-header-inner {
     padding-inline-start: 12px;
     padding-inline-end: 6px;
+  }
+}
+body:is(.tabs-floating, .tabs-floating-center).is-mobile.is-tablet .mod-root {
+  .workspace-tab-header-container-inner {
+    padding: 0;
+  }
+  .workspace-tab-header {
+    height: 36px;
+    margin: auto 0;
   }
 }
 
