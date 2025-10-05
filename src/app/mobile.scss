@@ -10,14 +10,6 @@ body.is-mobile {
   --tab-switcher-preview-radius: var(--radius-m);
 
   // Editor panels
-  .workspace-tab-header,
-  .workspace-tab-header-new-tab,
-  .workspace-tab-header-tab-list,
-  .sidebar-toggle-button,
-  .view-header-left,
-  .view-actions {
-    padding: 4px 0;
-  }
   .workspace-tab-header-container .clickable-icon,
   .view-header .clickable-icon,
   .workspace-drawer-header-icon {
@@ -56,6 +48,10 @@ body.is-phone {
 
     .view-header-title-container {
       opacity: 1;
+    }
+
+    .view-actions {
+      padding: 0;
     }
   }
 
@@ -97,6 +93,15 @@ body.is-phone {
 
 body.is-tablet {
   background-color: var(--background-secondary);
+
+  .workspace-tab-header,
+  .workspace-tab-header-new-tab,
+  .workspace-tab-header-tab-list,
+  .sidebar-toggle-button,
+  .view-header-left,
+  .view-actions {
+    padding: 4px 0;
+  }
 
   .workspace-drawer.mod-left {
     max-width: var(--mobile-left-sidebar-width, 500px);

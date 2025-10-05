@@ -104,8 +104,20 @@ body.layout-fluent:not(.is-mobile) {
   }
 
   // Settings
-  .modal.mod-sidebar-layout .vertical-tab-content {
-    animation: workspaceLeafInFluent var(--anim-duration-moderate);
+  .modal.mod-sidebar-layout {
+    .vertical-tab-content {
+      animation: workspaceLeafInFluent var(--anim-duration-moderate);
+    }
+
+    .setting-item {
+      padding: calc(16px * var(--density-modifier)) 16px;
+    }
+    .setting-item:not(.setting-item-heading) {
+      background: var(--background-primary);
+      border: var(--border-width) solid var(--background-modifier-hover);
+      border-radius: var(--radius-m);
+      margin-top: 2px;
+    }
   }
   &.nav-item-subtle .modal.mod-sidebar-layout .vertical-tab-nav-item {
     position: relative;

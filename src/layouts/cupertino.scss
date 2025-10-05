@@ -41,11 +41,13 @@ body.layout-macos:not(.is-mobile) {
   .workspace-split .clickable-icon {
     width: 40px;
   }
-  .clickable-icon {
+  .clickable-icon,
+  .modal-close-button {
     border-radius: 100vh;
   }
   .clickable-icon:not([aria-disabled="true"]):hover,
-  .clickable-icon.has-active-menu {
+  .clickable-icon.has-active-menu,
+  .modal-close-button:hover {
     box-shadow: var(--shadow-xs);
     background-color: var(--background-primary);
   }

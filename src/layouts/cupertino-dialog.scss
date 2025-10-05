@@ -102,7 +102,7 @@ body.mobile-cupertino.is-mobile.is-phone {
     .menu-item-title::after {
       position: absolute;
       inset: auto 0 -14px;
-      background: rgba(var(--mono-rgb-100), 0.1);
+      background-color: rgba(var(--mono-rgb-100), 0.1);
       height: var(--border-width);
       content: "";
     }
@@ -177,10 +177,6 @@ body.layout-macos:not(.is-mobile) {
       border-radius: 100vh;
       min-height: 32px;
     }
-
-    .modal-close-button {
-      border-radius: 100vh;
-    }
   }
 }
 
@@ -220,6 +216,54 @@ body.mobile-cupertino.is-mobile.is-tablet {
 }
 
 // Settings
+body.layout-cupertino:not(.is-mobile) .modal.mod-sidebar-layout,
+body.layout-macos:not(.is-mobile) .modal.mod-sidebar-layout {
+  background-color: var(--background-primary);
+
+  .setting-item {
+    padding: calc(12px * var(--density-modifier)) var(--side-padding);
+  }
+  .setting-item:not(.setting-item-heading) {
+    border: none;
+    background-color: var(--color-base-20);
+    position: relative;
+
+    &::after {
+      position: absolute;
+      inset: auto var(--side-padding) 0;
+      background-color: var(--background-modifier-border);
+      height: var(--border-width);
+      pointer-events: none;
+      content: "";
+    }
+  }
+
+  .setting-item.setting-item-heading + .setting-item,
+  *:not(.setting-item) + .setting-item,
+  .setting-item:not(.setting-item-heading):first-child {
+    border-top-left-radius: var(--radius-m);
+    border-top-right-radius: var(--radius-m);
+  }
+  .setting-item:not(.setting-item-heading):has(+ .setting-item.setting-item-heading, + div:not(.setting-item)),
+  .setting-item:not(.setting-item-heading):last-child {
+    border-bottom-left-radius: var(--radius-m);
+    border-bottom-right-radius: var(--radius-m);
+
+    &::after {
+      content: none;
+    }
+  }
+
+  .installed-plugins-container {
+    padding-top: 0;
+    border-top: none;
+  }
+}
+body.layout-macos:not(.is-mobile) .modal.mod-sidebar-layout .vertical-tab-header {
+  margin: 8px 0 8px 8px;
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-l);
+}
 body.mobile-cupertino.is-mobile.is-phone .modal.mod-sidebar-layout {
   .modal-header {
     position: absolute;

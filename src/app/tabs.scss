@@ -8,10 +8,7 @@ body {
   --tab-text-color-focused: var(--tab-text-color);
 }
 
-body.is-phone {
-  --header-height: 56px !important;
-}
-body.is-tablet {
+body.is-mobile {
   --header-height: 44px !important;
 }
 
