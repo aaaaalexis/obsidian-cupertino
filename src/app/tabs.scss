@@ -44,17 +44,23 @@ body:not(.is-mobile) .workspace .mod-root {
     padding: 8px;
   }
 }
+body:not(.is-mobile) .workspace .mod-root {
+  .mod-top-left-space .workspace-tab-header-container-inner {
+    padding-left: 8px;
+  }
+  .workspace-tab-header,
+  .sidebar-toggle-button,
+  .workspace-tab-header-new-tab,
+  .workspace-tab-header-tab-list {
+    padding: 0 0 8px;
+  }
+}
+
 body:not(.is-phone) .workspace .mod-root {
   .workspace-tab-header-container-inner {
     padding: 0 var(--radius-s) 0 calc(var(--radius-s) + 8px);
     margin: 0;
     gap: 8px;
-  }
-  .mod-top-left-space:not(.mod-visible) .workspace-tab-header-container-inner {
-    padding-left: 8px;
-  }
-  .workspace-tab-header {
-    padding: 0 0 8px;
   }
   .workspace-tab-header-inner {
     padding-inline-start: 8px;
@@ -67,9 +73,6 @@ body:not(.is-phone) .workspace .mod-root {
     line-height: normal;
   }
 
-  .sidebar-toggle-button {
-    padding: 0 0 8px;
-  }
   .sidebar-toggle-button .clickable-icon {
     height: auto;
   }
@@ -84,7 +87,6 @@ body:not(.is-phone) .workspace .mod-root {
   .workspace-tab-header-new-tab,
   .workspace-tab-header-tab-list {
     display: block;
-    padding: 0 0 8px;
     align-content: center;
   }
   .workspace-tab-header-new-tab .clickable-icon,
@@ -358,11 +360,12 @@ body.is-mobile {
   .workspace-tab-header-new-tab,
   .workspace-tab-header-tab-list,
   .sidebar-toggle-button {
-    padding-bottom: 0;
+    padding: 0 !important;
   }
   .workspace-tab-header-container .clickable-icon,
   .view-header .clickable-icon,
   .workspace-drawer-header-icon {
+    border-radius: 100vh;
     padding: 10px;
     position: relative;
   }

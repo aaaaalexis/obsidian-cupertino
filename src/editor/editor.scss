@@ -97,7 +97,7 @@
   .view-header-nav-buttons,
   .view-actions {
     --icon-size: var(--icon-m);
-    gap: 0;
+    gap: 0 !important;
   }
   .view-header-title-container {
     height: auto !important;

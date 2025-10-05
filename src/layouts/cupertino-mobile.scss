@@ -53,13 +53,6 @@ body.mobile-cupertino.is-mobile {
     }
   }
 
-  // Button style
-  .workspace-tab-header-container .clickable-icon,
-  .view-header .clickable-icon,
-  .workspace-drawer-header-icon {
-    border-radius: 100vh;
-  }
-
   // Editor panel
   .markdown-reading-view,
   .markdown-source-view {
@@ -258,16 +251,6 @@ body.mobile-cupertino.is-mobile.is-tablet {
 
   .workspace {
     background-color: var(--system-status-background);
-  }
-
-  // Editor panel
-  .mod-root {
-    .workspace-tab-header,
-    .workspace-tab-header-new-tab,
-    .workspace-tab-header-tab-list,
-    .sidebar-toggle-button {
-      padding-bottom: 0;
-    }
   }
 
   // Side panels
