@@ -22,6 +22,10 @@ body {
 }
 
 // Modal
+body:not(.is-mobile) .modal-title {
+  margin-left: 0;
+}
+
 .modal {
   &:not(.mod-sidebar-layout) {
     border-radius: var(--modal-radius);
@@ -54,10 +58,13 @@ body {
   width: 32px;
   padding: 8px;
   color: var(--text-faint);
-  display: flex;
-  justify-content: center;
   line-height: 12px;
   z-index: 1;
+
+  &::before {
+    display: block;
+    height: 100%;
+  }
 }
 
 // Menu & suggestion

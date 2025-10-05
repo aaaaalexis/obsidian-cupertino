@@ -22,6 +22,8 @@
 @use "layouts/cards.scss";
 @use "layouts/border.scss";
 @use "layouts/frame.scss";
+@use "layouts/fluent.scss" as layout-fluent;
+@use "layouts/fluent-dialog.scss";
 @use "layouts/cupertino.scss" as layout-cupertino;
 @use "layouts/cupertino-dialog.scss";
 @use "layouts/cupertino-mobile.scss";
@@ -31,7 +33,7 @@
 @use "elements/baseline.scss";
 @use "elements/cupertino.scss" as element-cupertino;
 @use "elements/elevated.scss";
-@use "elements/fluent.scss";
+@use "elements/fluent.scss" as element-fluent;
 // @use "elements/tactile.scss";
 @use "elements/material.scss";
 @use "elements/obsidian.scss";

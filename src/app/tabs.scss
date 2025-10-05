@@ -58,7 +58,7 @@ body:not(.is-mobile) .workspace .mod-root {
 
 body:not(.is-phone) .workspace .mod-root {
   .workspace-tab-header-container-inner {
-    padding: 0 var(--radius-s) 0 calc(var(--radius-s) + 8px);
+    padding: 0 8px 0 calc(var(--radius-s) + 8px);
     margin: 0;
     gap: 8px;
   }

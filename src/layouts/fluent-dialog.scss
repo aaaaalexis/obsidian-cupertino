@@ -1,0 +1,108 @@
+body.layout-fluent:not(.is-mobile) {
+  &.theme-light {
+    --modal-background: rgb(from var(--color-base-00) r g b / 90%);
+  }
+  &.theme-dark {
+    --modal-background: rgb(from var(--color-base-25) r g b / 75%);
+  }
+
+  .menu,
+  .popover,
+  .cm-tooltip,
+  .suggestion-container,
+  .prompt,
+  .modal,
+  .notice {
+    backdrop-filter: blur(8px);
+  }
+
+  .modal-bg {
+    background-color: black;
+    opacity: 0.3 !important;
+  }
+
+  // Menu
+  @keyframes menuInFluent {
+    from {
+      opacity: 0;
+    }
+  }
+
+  .menu,
+  .popover,
+  .cm-tooltip,
+  .suggestion-container {
+    background-color: var(--modal-background);
+  }
+
+  .menu,
+  .suggestion-container {
+    animation: menuInFluent var(--anim-duration-fast) forwards;
+    border-radius: var(--radius-l);
+
+    .menu-separator {
+      margin: 4px 0;
+    }
+
+    .menu-item,
+    .suggestion-item {
+      justify-content: flex-start;
+      border-radius: var(--radius-m);
+      padding: 8px;
+    }
+
+    .menu-item-icon .svg-icon {
+      --icon-size: var(--icon-s);
+    }
+  }
+
+  // Prompt
+  .prompt {
+    .prompt-results {
+      position: relative;
+    }
+    .prompt-results .suggestion-item {
+      position: relative;
+    }
+    .prompt-results .suggestion-item.is-selected::after {
+      position: absolute;
+      top: 12px;
+      bottom: 12px;
+      left: 0;
+      border-radius: var(--button-radius);
+      background-color: var(--interactive-accent);
+      width: 4px;
+      content: "";
+    }
+  }
+
+  // Modal
+  .modal:not(.mod-sidebar-layout) {
+    padding: 0;
+    min-width: 480px;
+
+    .modal-title {
+      padding: 24px 24px 4px;
+      font-size: var(--font-ui-large);
+    }
+
+    .modal-content {
+      padding: 4px 24px 16px;
+    }
+
+    .modal-button-container {
+      margin: 0;
+      border-top: var(--border-width) solid var(--background-modifier-border);
+      background-color: var(--background-modifier-border);
+      padding: 24px;
+
+      button {
+        border-radius: var(--button-radius);
+      }
+    }
+
+    .modal-content > .modal-button-container {
+      margin: 0 -24px -16px;
+    }
+  }
+}
