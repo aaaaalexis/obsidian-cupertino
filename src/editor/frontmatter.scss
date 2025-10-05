@@ -95,30 +95,32 @@
     --metadata-property-radius-hover: var(--radius-m);
     --metadata-property-radius-focus: var(--radius-m);
 
-    .metadata-properties-heading {
-      display: none;
-    }
-
-    .metadata-properties {
-      border-radius: var(--radius-m);
-      background-color: var(--background-secondary);
-
-      .multi-select-pill {
-        font-weight: var(--font-medium);
-        font-size: var(--font-ui-small);
+    .metadata-container {
+      .metadata-properties-heading {
+        display: none;
       }
-    }
 
-    .metadata-property {
-      min-height: 44px;
-    }
-    .metadata-property-icon {
-      --icon-size: var(--icon-s);
-    }
-    .metadata-property-key,
-    .metadata-property-value {
-      padding: 4px 8px 4px 12px;
-      align-items: center;
+      .metadata-properties {
+        border-radius: var(--radius-m);
+        background-color: var(--background-secondary);
+
+        .multi-select-pill {
+          font-weight: var(--font-medium);
+          font-size: var(--font-ui-small);
+        }
+      }
+
+      .metadata-property {
+        min-height: 44px;
+      }
+      .metadata-property-icon {
+        --icon-size: var(--icon-s);
+      }
+      .metadata-property-key,
+      .metadata-property-value {
+        padding: 4px 8px 4px 12px;
+        align-items: center;
+      }
     }
 
     .workspace-split:not(.mod-root) .metadata-container {
