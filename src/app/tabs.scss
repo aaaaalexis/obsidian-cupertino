@@ -355,24 +355,12 @@ body.mod-macos.is-frameless:not(.is-popout-window) .workspace {
   }
 }
 
-body.is-mobile {
-  .workspace-tab-header,
-  .workspace-tab-header-new-tab,
-  .workspace-tab-header-tab-list,
-  .sidebar-toggle-button {
-    padding: 0 !important;
-  }
-  .workspace-tab-header-container .clickable-icon,
-  .view-header .clickable-icon,
-  .workspace-drawer-header-icon {
-    border-radius: 100vh;
-    padding: 10px;
-    position: relative;
-  }
-}
-body.is-tablet {
-  .workspace .mod-root .workspace-tab-header-container-inner {
+body.is-tablet .workspace .mod-root {
+  .workspace-tab-header-container-inner {
     padding: 0 var(--radius-s);
+  }
+  .sidebar-toggle-button {
+    padding-left: 0;
   }
   .sidebar-toggle-button .clickable-icon {
     margin: auto 0;

@@ -65,11 +65,6 @@ body.mobile-cupertino.is-mobile {
     transform: scale(0.99);
   }
 
-  .view-header-left,
-  .view-actions {
-    padding: 0;
-  }
-
   // Side panels
   .workspace-drawer-inner {
     background-color: transparent;
@@ -272,6 +267,10 @@ body.mobile-cupertino.is-mobile.is-tablet {
   }
 
   // Style Settings: Tabs style fix
+  &:not(.tabs-floating, .tabs-floating-center) .workspace-tab-header-container-inner {
+    margin: 0 -12px;
+  }
+
   &.tabs-floating,
   &.tabs-floating-center {
     --system-status-background: rgb(var(--mono-rgb-0));

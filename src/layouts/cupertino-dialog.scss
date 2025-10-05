@@ -224,7 +224,7 @@ body.mobile-cupertino.is-mobile.is-tablet {
 }
 
 // Settings
-body.mobile-cupertino.is-mobile .modal.mod-sidebar-layout {
+body.mobile-cupertino.is-mobile.is-phone .modal.mod-sidebar-layout {
   .modal-header {
     position: absolute;
     z-index: 1;
@@ -252,7 +252,18 @@ body.mobile-cupertino.is-mobile .modal.mod-sidebar-layout {
     position: absolute;
     inset: 0;
   }
+  .modal-content .community-modal-controls,
+  .modal-content .community-modal-info {
+    background-color: var(--mobile-sidebar-background);
+    padding-top: calc(var(--safe-area-inset-top) + var(--modal-header-height) + 24px);
+  }
 
+  .vertical-tab-header,
+  .vertical-tab-content {
+    padding-top: calc(var(--safe-area-inset-top) + var(--modal-header-height) + 24px);
+    padding-right: var(--side-padding);
+    padding-left: var(--side-padding);
+  }
   .vertical-tab-header-group {
     padding-top: 0;
   }
@@ -263,30 +274,16 @@ body.mobile-cupertino.is-mobile .modal.mod-sidebar-layout {
     color: var(--text-faint);
     font-size: var(--font-ui-medium);
   }
+  .vertical-tab-header-group-items {
+    border-radius: var(--radius-m);
+    background-color: var(--background-primary);
+    overflow: hidden;
+  }
   .vertical-tab-nav-item {
     position: relative;
     border-bottom: none;
     padding: var(--nav-item-padding);
     height: unset;
-  }
-}
-
-body.mobile-cupertino.is-mobile.is-phone .modal.mod-sidebar-layout {
-  .modal-content .community-modal-controls,
-  .modal-content .community-modal-info {
-    background-color: var(--mobile-sidebar-background);
-    padding-top: calc(var(--safe-area-inset-top) + var(--modal-header-height) + 24px);
-  }
-  .vertical-tab-header,
-  .vertical-tab-content {
-    padding-top: calc(var(--safe-area-inset-top) + var(--modal-header-height) + 24px);
-    padding-right: var(--side-padding);
-    padding-left: var(--side-padding);
-  }
-  .vertical-tab-header-group-items {
-    border-radius: var(--radius-m);
-    background-color: var(--background-primary);
-    overflow: hidden;
   }
   .vertical-tab-nav-item:not(:last-child)::after {
     position: absolute;
@@ -300,17 +297,6 @@ body.mobile-cupertino.is-mobile.is-phone .modal.mod-sidebar-layout {
   .modal-close-button {
     inset-inline-end: var(--side-padding) !important;
     padding: 10px;
-  }
-}
-
-body.mobile-cupertino.is-mobile.is-tablet .modal.mod-sidebar-layout {
-  .vertical-tab-header-group-title {
-    padding-top: var(--side-padding);
-    padding-left: var(--side-padding);
-  }
-  .vertical-tab-nav-item {
-    border-radius: 100vh;
-    padding: calc(12px * var(--density-modifier)) var(--side-padding);
   }
 }
 

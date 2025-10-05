@@ -39,7 +39,6 @@ settings:
 		description.zh: 标题字体缺字？请下载**扩展字体 CSS 代码片段**[](https://github.com/aaaaalexis/obsidian-baseline/blob/main/snippets/baseline-extension-font-cn.css)
 		description.jp: 見出しフォントが文字化け？拡張フォントCSSスニペットをダウンロード。[](https://github.com/aaaaalexis/obsidian-baseline/blob/main/snippets/baseline-extension-font-jp.css)
 		description.ru: Проблемы со шрифтом заголовков? Скачайте CSS с расширенным шрифтом.[](https://github.com/aaaaalexis/obsidian-baseline/blob/main/snippets/baseline-extension-font.css)
-
 	-
 		id: colors
 		title: Colors
@@ -693,7 +692,7 @@ settings:
 				value: input-material
 			-
 				label: Obsidian
-				value: input-obsidian
+				value: input-default
 	-
 		id: prompt-style
 		title: Command palette style
@@ -715,36 +714,36 @@ settings:
 		title: Status bar style
 		type: class-select
 		allowEmpty: false
-		default: status-bar-compact
+		default: status-bar-baseline
 		options:
 			-
-				label: Compact
-				value: status-bar-compact
+				label: Baseline
+				value: status-bar-baseline
 			-
-				label: Normal
+				label: Cupertino
+				value: status-bar-cupertino
+			-
+				label: Obsidian
 				value: status-bar-default
 			-
 				label: Full width
 				value: status-bar-full
-			-
-				label: Cupertino
-				value: status-bar-cupertino
 	-
 		id: mobile-style
 		title: Mobile style
 		type: class-select
 		allowEmpty: false
-		default: mobile-obsidian
+		default: mobile-baseline
 		options:
-			-
-				label: Obsidian
-				value: mobile-obsidian
 			-
 				label: Baseline
 				value: mobile-baseline
 			-
 				label: Cupertino
 				value: mobile-cupertino
+			-
+				label: Obsidian
+				value: mobile-default
 	-
 		id: animation
 		title: Animation
@@ -790,7 +789,7 @@ settings:
 		default: tabs-default
 		options:
 			-
-				label: Baseline
+				label: Obsidian
 				value: tabs-default
 			-
 				label: Floating
@@ -2901,7 +2900,6 @@ settings:
 		format: hex
 		default-light: '#'
 		default-dark: '#'
-
 */
 
 .vertical-tab-content > div > .setting-item-heading:not(.is-collapsed) {
