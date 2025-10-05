@@ -30,14 +30,14 @@ body:not(.is-phone) .modal-bg {
   .modal-title {
     font-family: var(--h1-font);
     transition: var(--anim-duration-moderate);
-    max-width: 100%;
-    width: calc-size(fit-content, size);
+    max-width: 0;
+    min-width: fit-content;
     overflow: visible;
     text-align: left;
 
     &:not(:has(.modal-setting-back-button)):not(.modal-container.mod-confirmation .modal-title) {
       font-size: var(--h1-size);
-      width: 100%;
+      max-width: 100%;
       padding-left: 24px;
     }
   }
