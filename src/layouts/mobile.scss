@@ -213,3 +213,15 @@ body:not(.mobile-default).is-mobile.is-phone {
     }
   }
 }
+
+body:not(.mobile-cupertino):not(.tabs-floating, .tabs-floating-center).is-mobile.is-tablet {
+  --mobile-sidebar-background: var(--background-secondary);
+
+  .workspace-drawer.is-pinned {
+    border: none;
+
+    .workspace-drawer-inner {
+      background-color: transparent;
+    }
+  }
+}
