@@ -6,10 +6,44 @@ body.layout-fluent:not(.is-mobile) {
   --tab-radius: var(--radius-l);
 
   &.theme-light {
+    --color-red-rgb: 209, 52, 56;
+    --color-red: #d13438;
+    --color-orange-rgb: 255, 140, 0;
+    --color-orange: #ff8c00;
+    --color-yellow-rgb: 253, 227, 0;
+    --color-yellow: #fde300;
+    --color-green-rgb: 19, 161, 14;
+    --color-green: #13a10e;
+    --color-cyan-rgb: 0, 183, 195;
+    --color-cyan: #00b7c3;
+    --color-blue-rgb: 0, 120, 212;
+    --color-blue: #0078d4;
+    --color-purple-rgb: 113, 96, 232;
+    --color-purple: #7160e8;
+    --color-pink-rgb: 228, 59, 166;
+    --color-pink: #e43ba6;
+
     --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
     --shadow-l: 0px 32px 64px 0px rgba(0, 0, 0, 0.19), 0px 2px 21px 0px rgba(0, 0, 0, 0.15);
   }
   &.theme-dark {
+    --color-red-rgb: 227, 125, 128;
+    --color-red: #e37d80;
+    --color-orange-rgb: 255, 186, 102;
+    --color-orange: #ffba66;
+    --color-yellow-rgb: 254, 238, 102;
+    --color-yellow: #feee66;
+    --color-green-rgb: 94, 199, 90;
+    --color-green: #5ec75a;
+    --color-cyan-rgb: 88, 211, 219;
+    --color-cyan: #58d3db;
+    --color-blue-rgb: 92, 170, 229;
+    --color-blue: #5caae5;
+    --color-purple-rgb: 167, 156, 241;
+    --color-purple: #a79cf1;
+    --color-pink-rgb: 239, 133, 200;
+    --color-pink: #ef85c8;
+
     --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
     --shadow-l: 0px 32px 64px 0px rgba(0, 0, 0, 0.37), 0px 2px 21px 0px rgba(0, 0, 0, 0.37);
   }
