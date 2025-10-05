@@ -2296,6 +2296,19 @@ settings:
 		level: 2
 		collapsed: true
 	-
+		id: code-style
+		title: Code style
+		type: class-select
+		allowEmpty: false
+		default: code-default
+		options:
+			-
+				label: Filled
+				value: code-default
+			-
+				label: Tactile
+				value: code-tactile
+	-
 		id: code-size
 		title: Code font size
 		description: Accepts any CSS font-size value
