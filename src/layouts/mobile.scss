@@ -203,3 +203,10 @@ body.mobile-cupertino.is-mobile.is-phone {
     }
   }
 }
+
+// View content bottom edge fade fix
+html[style*="--keyboard-height"]:not([style*="--keyboard-height: 0px"]) body.is-phone:not(.mod-toolbar-open) {
+  .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::before {
+    content: none;
+  }
+}
