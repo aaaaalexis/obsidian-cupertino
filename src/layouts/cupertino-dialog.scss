@@ -131,7 +131,7 @@ body.mobile-cupertino.is-mobile.is-phone {
 }
 body.mobile-cupertino.is-mobile.is-tablet {
   --menu-background: var(--modal-background);
-  --menu-shadow: var(--shadow-l);
+  --menu-shadow: var(--shadow-xs);
   --menu-radius: var(--radius-l);
 
   .menu {
@@ -339,6 +339,16 @@ body.mobile-cupertino.is-mobile {
     --background-modifier-message: var(--background-primary);
     color: var(--text-muted);
     border-radius: var(--radius-m);
+  }
+}
+body.mobile-cupertino.is-mobile {
+  .notice {
+    margin-bottom: 0;
+    box-shadow: var(--shadow-xs);
+    border-radius: var(--radius-m);
+    padding: calc(16px * var(--density-modifier)) var(--side-padding);
+    color: var(--text-muted);
+    background-color: var(--modal-background);
   }
 }
 

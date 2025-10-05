@@ -11,6 +11,9 @@ body {
 body.is-phone {
   --header-height: 56px !important;
 }
+body.is-tablet {
+  --header-height: 44px !important;
+}
 
 // All panels
 body:not(.is-mobile) {
@@ -47,7 +50,7 @@ body:not(.is-phone) .workspace .mod-root {
     margin: 0;
     gap: 8px;
   }
-  .mod-top-left-space .workspace-tab-header-container-inner {
+  .mod-top-left-space:not(.mod-visible) .workspace-tab-header-container-inner {
     padding-left: 8px;
   }
   .workspace-tab-header {
@@ -350,7 +353,27 @@ body.mod-macos.is-frameless:not(.is-popout-window) .workspace {
   }
 }
 
+body.is-mobile {
+  .workspace-tab-header,
+  .workspace-tab-header-new-tab,
+  .workspace-tab-header-tab-list,
+  .sidebar-toggle-button {
+    padding-bottom: 0;
+  }
+  .workspace-tab-header-container .clickable-icon,
+  .view-header .clickable-icon,
+  .workspace-drawer-header-icon {
+    padding: 10px;
+    position: relative;
+  }
+}
 body.is-tablet {
+  .workspace .mod-root .workspace-tab-header-container-inner {
+    padding: 0 var(--radius-s);
+  }
+  .sidebar-toggle-button .clickable-icon {
+    margin: auto 0;
+  }
   .workspace-tab-header-tab-list .clickable-icon,
   .workspace-tab-header-new-tab .clickable-icon {
     --icon-size: var(--icon-l);

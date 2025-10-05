@@ -58,9 +58,6 @@ body.mobile-cupertino.is-mobile {
   .view-header .clickable-icon,
   .workspace-drawer-header-icon {
     border-radius: 100vh;
-    padding: 10px;
-    position: relative;
-    margin: auto 0;
   }
 
   // Editor panel
@@ -162,6 +159,9 @@ body.mobile-cupertino.is-mobile {
 
   // HDR element
   &.is-ios.theme-light {
+    &.is-phone.prompt-cupertino .prompt-input-container::after,
+    &.is-phone.prompt-cupertino .prompt-input-container .search-input-clear-button::before,
+    &.is-tablet .menu::after,
     .mod-root .view-header > div > .view-action::after,
     .workspace-drawer-header-icon::after,
     .workspace-drawer .nav-buttons-container::after,
@@ -182,6 +182,12 @@ body.mobile-cupertino.is-mobile {
       background: linear-gradient(to bottom left, white, transparent, white) border-box no-repeat;
       pointer-events: none;
       content: "";
+    }
+
+    &.is-phone.prompt-cupertino .prompt-input-container::after {
+      height: auto;
+      border-radius: 100vh;
+      margin-right: 56px;
     }
   }
 

@@ -152,10 +152,6 @@ body.is-phone.prompt-cupertino {
     position: absolute;
     inset: auto var(--side-padding) calc(var(--side-padding) + var(--safe-area-inset-bottom));
     z-index: 1;
-
-    &::after {
-      content: none;
-    }
   }
   .prompt-input {
     width: calc(100% - 48px - 8px);
@@ -183,5 +179,29 @@ body.is-phone.prompt-cupertino {
   }
   .prompt .suggestion-item {
     padding: var(--nav-item-padding);
+  }
+
+  // Animation override: Prompt In
+  .prompt {
+    transition: var(--anim-duration-moderate) !important;
+    transform: none !important;
+    overflow: visible;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+
+  .prompt-results {
+    transition: var(--anim-duration-slow) var(--anim-motion-baseline);
+
+    @starting-style {
+      transform: translateY(var(--safe-area-inset-top));
+    }
+  }
+
+  // Animation override: Prompt Out
+  .prompt[style*="transform: translateY"] {
+    opacity: 0;
   }
 }

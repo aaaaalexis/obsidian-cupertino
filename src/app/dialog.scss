@@ -3,7 +3,7 @@ body {
   --modal-border-color: var(--background-modifier-border-hover);
 }
 
-body:not(.is-phone) .modal-bg {
+.modal-bg {
   opacity: 0 !important;
 }
 

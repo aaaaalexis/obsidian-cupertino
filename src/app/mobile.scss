@@ -79,6 +79,8 @@ body.is-phone {
 }
 
 body.is-tablet {
+  background-color: var(--background-secondary);
+
   .workspace-drawer.mod-left {
     max-width: var(--mobile-left-sidebar-width, 500px);
   }
