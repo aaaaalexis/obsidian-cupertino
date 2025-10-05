@@ -22,12 +22,6 @@ body.layout-fluent:not(.is-mobile) {
   }
 
   // Menu
-  @keyframes menuInFluent {
-    from {
-      opacity: 0;
-    }
-  }
-
   .menu,
   .popover,
   .cm-tooltip,
@@ -37,7 +31,7 @@ body.layout-fluent:not(.is-mobile) {
 
   .menu,
   .suggestion-container {
-    animation: menuInFluent var(--anim-duration-fast) forwards;
+    animation: none;
     border-radius: var(--radius-l);
 
     .menu-separator {
@@ -46,7 +40,6 @@ body.layout-fluent:not(.is-mobile) {
 
     .menu-item,
     .suggestion-item {
-      justify-content: flex-start;
       border-radius: var(--radius-m);
       padding: 8px;
     }
@@ -77,6 +70,10 @@ body.layout-fluent:not(.is-mobile) {
   }
 
   // Modal
+  .modal {
+    transition: none;
+  }
+
   .modal:not(.mod-sidebar-layout) {
     padding: 0;
     min-width: 480px;
@@ -103,6 +100,25 @@ body.layout-fluent:not(.is-mobile) {
 
     .modal-content > .modal-button-container {
       margin: 0 -24px -16px;
+    }
+  }
+
+  // Settings
+  .modal.mod-sidebar-layout .vertical-tab-content {
+    animation: workspaceLeafInFluent var(--anim-duration-moderate);
+  }
+  &.nav-item-subtle .modal.mod-sidebar-layout .vertical-tab-nav-item {
+    position: relative;
+
+    &.is-active::before {
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 0;
+      border-radius: var(--button-radius);
+      background-color: var(--interactive-accent);
+      width: 4px;
+      content: "";
     }
   }
 }

@@ -55,15 +55,6 @@ body.layout-fluent:not(.is-mobile) {
 
   // Editor panel
   .mod-root {
-    z-index: 1;
-
-    .workspace-tabs,
-    .workspace-tab-container {
-      overflow: visible;
-    }
-    .workspace-tab-container {
-      outline: var(--border-width) solid var(--background-modifier-border);
-    }
     .workspace-tab-container,
     .workspace-leaf {
       border-radius: var(--radius-l);
@@ -120,7 +111,7 @@ body.layout-fluent:not(.is-mobile) {
             position: absolute;
             bottom: 0;
             border-radius: var(--button-radius);
-            background-color: var(--color-accent);
+            background-color: var(--interactive-accent);
             width: 24px;
             height: 3px;
             content: "";
@@ -137,7 +128,7 @@ body.layout-fluent:not(.is-mobile) {
     bottom: 8px;
     left: 0;
     border-radius: var(--button-radius);
-    background-color: var(--nav-item-color-active);
+    background-color: var(--interactive-accent);
     width: 4px;
     content: "";
   }
@@ -145,21 +136,5 @@ body.layout-fluent:not(.is-mobile) {
   // Status bar fix
   &:not(.status-bar-full) .mod-root {
     padding-bottom: 8px;
-  }
-
-  // Tab outline fix
-  &:not(.tabs-floating, .tabs-floating-center, .tabs-underline, .theme-light.contrast-light-vivid, .colorful-frame) {
-    .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
-      --tab-outline-width: var(--border-width);
-
-      padding-top: 1px;
-      margin-bottom: -1px;
-    }
-    .mod-root .workspace-tab-header-container-inner {
-      --tab-outline-width: var(--border-width);
-
-      padding-top: 1px;
-      margin-bottom: -1px;
-    }
   }
 }
