@@ -5,61 +5,20 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
   }
 
   // Side panels
-  &:not(.stacked-nav-off) .mod-sidedock.mod-left-split {
-    .sidebar-toggle-button::after {
-      height: var(--tab-outline-width);
-      background-color: var(--tab-outline-color);
-      content: "";
-      position: absolute;
-      inset: auto -100vw 0;
-    }
-    .mod-top-left-space {
-      .workspace-tab-header-container {
-        border-bottom: none;
-      }
-      .workspace-tab-header-container-inner {
-        overflow: visible;
-        position: relative;
-        padding-top: 8px;
-      }
-      .workspace-leaf-content > .nav-header,
-      .workspace-leaf-content > .view-content > div:not(.nav-buttons-container):not(.graph-controls) {
-        padding-top: 0;
-        padding-bottom: 8px;
-      }
-    }
-  }
   .mod-sidedock {
     & > .workspace-leaf-resize-handle {
       border-color: var(--background-modifier-border);
     }
-
-    .workspace-leaf-content > .nav-header,
-    .workspace-leaf-content > .view-content > div:not(.nav-buttons-container):not(.graph-controls) {
-      padding-top: 8px;
-      padding-bottom: 0;
-    }
   }
 
-  // Ribbon fix
-  &.show-ribbon.mod-macos {
-    --ribbon-padding: calc(var(--header-height) + 8px) 0 0 16px;
-  }
-  &.show-ribbon.mod-macos,
-  &.show-ribbon:not(.mod-macos).stacked-nav-off {
-    .workspace-ribbon {
-      position: relative;
-    }
-    .workspace-ribbon::before {
-      height: var(--tab-outline-width);
-      background-color: var(--tab-outline-color);
-      content: "";
-      position: absolute;
-      inset: calc(var(--header-height) - 1px) 0;
-    }
+  // Ribbon
+  &.mod-macos.stacked-nav-off .workspace-ribbon {
+    padding-top: 8px;
+    margin-top: var(--header-height);
+    border-top: var(--tab-outline-width) solid var(--tab-outline-color);
   }
 
-  // Style Settings: Status bar fix
+  // Status bar
   &.status-bar-full {
     --status-bar-border-width: 1px 0 0 0;
   }

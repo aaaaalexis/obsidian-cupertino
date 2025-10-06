@@ -85,11 +85,6 @@ body.layout-frame:not(.is-mobile) {
     }
   }
 
-  // Style Settings: Stacked nav off fix
-  &.show-ribbon.stacked-nav-off .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
-    padding-left: 0;
-  }
-
   // Style Settings: Status bar fix
   &.status-bar-full .workspace {
     padding-bottom: 0;

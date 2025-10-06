@@ -54,7 +54,7 @@ body.layout-macos:not(.is-mobile) {
 
   &.show-ribbon .mod-sidedock.mod-left-split {
     margin-left: calc(-1 * var(--ribbon-width) + 8px);
-    padding-left: var(--ribbon-width);
+    padding-left: calc(var(--ribbon-width) - 8px);
   }
 
   // Side panels
@@ -79,24 +79,14 @@ body.layout-macos:not(.is-mobile) {
     height: -webkit-fill-available;
     overflow: hidden;
   }
+  &.stacked-nav-off .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container .sidebar-toggle-button {
-    height: calc(var(--header-height) - 16px);
+    height: calc(var(--header-height) - 8px);
   }
 
   .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
     border-inline-start: var(--divider-width) solid var(--divider-color);
   }
-
-  // Style Settings: Stacked nav off fix
-  &.stacked-nav-off .mod-sidedock.mod-left-split {
-    .mod-top-left-space .workspace-tab-header-container {
-      padding: 4px 4px 4px max(4px, calc(var(--frame-left-space) - 8px));
-    }
-    .workspace-leaf-content > .nav-header {
-      padding-top: 8px;
-    }
-  }
-
   // Style Settings: Active file fix
   &.nav-item-subtle {
     --nav-item-color: rgb(var(--mono-rgb-100));

@@ -95,14 +95,14 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
       border-radius: 100vh;
       padding: 0;
       margin-left: 8px;
-      border: 2px solid transparent;
+      outline: 2px solid transparent;
       background-clip: content-box;
       height: auto;
     }
 
     .workspace-tab-header-container-inner:hover {
       background-color: var(--background-modifier-hover);
-      border-color: var(--background-modifier-hover);
+      outline-color: var(--background-modifier-hover);
     }
     .workspace-tab-header-container-inner:hover .workspace-tab-header.is-active {
       background-color: var(--background-primary);

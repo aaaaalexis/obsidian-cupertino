@@ -2,24 +2,13 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   --ribbon-padding: calc(var(--header-height) + 4px) 4px 0 12px;
 
   // Side panels
-  &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
-    padding: 12px 16px;
-    background-color: var(--background-primary);
-    margin-right: 8px;
-    margin-bottom: 8px;
-  }
-
   .mod-sidedock {
     .workspace-tabs {
       overflow: visible;
     }
-    .workspace-tabs .workspace-leaf {
+    .workspace-tabs .workspace-leaf,
+    .workspace-tabs .workspace-tab-container {
       background-color: var(--background-primary);
-    }
-    .workspace-leaf-content > .nav-header,
-    .workspace-leaf-content > .view-content > div:not(.nav-buttons-container):not(.graph-controls) {
-      padding-top: 8px;
-      padding-bottom: 0;
     }
 
     .workspace-sidedock-vault-profile {
@@ -37,12 +26,15 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
 
   // ----------------------------------------------------------------
 
-  // Ribbon fix
-  &:not(.stacked-nav-off):not(.mod-macos) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
-    margin-top: var(--header-height);
-  }
-  &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
-    margin-left: 8px;
+  // Stacked nav
+  &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space {
+    .workspace-tab-header-container-inner {
+      background-color: var(--background-primary);
+      border-radius: var(--radius-l);
+      padding-top: 8px;
+      padding-bottom: 8px;
+      margin: 0 8px 8px;
+    }
   }
 
   // Status bar
@@ -55,19 +47,12 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
       right: 8px;
     }
   }
-
-  // Style Settings: Status bar fix
   &.status-bar-default .status-bar {
     border: none;
   }
 }
 
 body.layout-cards:not(.is-mobile) {
-  &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner,
-  .workspace-tabs .workspace-tab-container {
-    border-radius: var(--radius-l);
-  }
-
   // Side panels
   .mod-sidedock {
     .workspace-leaf-resize-handle:not(:hover) {
@@ -76,10 +61,14 @@ body.layout-cards:not(.is-mobile) {
 
     .workspace-tabs .workspace-tab-container {
       margin: 0 8px;
+      border-radius: var(--radius-l);
     }
   }
 
   // Editor panel
+  .workspace-split.mod-root .workspace-tabs .workspace-tab-container {
+    border-radius: var(--radius-l);
+  }
   .workspace.is-left-sidedock-open .mod-root .workspace-tab-header-container-inner {
     padding-left: calc(var(--radius-l) + 8px);
   }

@@ -1,6 +1,3 @@
-body:not(.mod-macos):not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
-  padding-top: 8px;
-}
 body:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space {
   --sidebar-tab-text-display: flex;
 
@@ -14,7 +11,7 @@ body:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space {
     width: -webkit-fill-available;
     gap: calc(4px * var(--density-modifier));
     animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
-    padding: 0 16px 8px;
+    padding: 0 16px;
   }
   .workspace-tab-header {
     padding: 8px;

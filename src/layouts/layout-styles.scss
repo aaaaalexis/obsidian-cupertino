@@ -1,3 +1,16 @@
+.workspace-split .workspace-tabs .workspace-leaf {
+  background-color: transparent;
+}
+
+// Stacked nav
+body:is(.layout-classic, .layout-minimal, .layout-frame):not(.is-mobile) .stacked-nav-off .workspace-tabs.mod-top {
+  .workspace-leaf-content > .nav-header,
+  .workspace-leaf-content > .view-content > div:not(.nav-buttons-container):not(.graph-controls) {
+    padding-bottom: 0;
+  }
+}
+
+// Tab stykes
 body:not(.tabs-floating, .tabs-floating-center, .tabs-underline) {
   &:is(.layout-classic, .layout-minimal, .layout-cupertino, .layout-macos:not(.is-mobile), .layout-frame) {
     .workspace-tab-header {
@@ -20,9 +33,15 @@ body:is(.tabs-floating, .tabs-floating-center) {
 
 body:is(.layout-classic, .layout-minimal, .layout-frame),
 body.layout-macos:not(.is-mobile) .mod-root {
-  .workspace-tab-header-container {
-    border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
+  &.stacked-nav-off .mod-sidedock.mod-left-split,
+  &:is(.mod-root),
+  .mod-root,
+  .mod-sidedock.mod-right-split {
+    .workspace-tabs.mod-top .workspace-tab-header-container {
+      border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
+    }
   }
+
   .workspace-tab-header-container-inner {
     margin-bottom: -1px !important;
   }
