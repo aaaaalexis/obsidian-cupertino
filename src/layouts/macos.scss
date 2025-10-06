@@ -1,6 +1,13 @@
 body.layout-macos:not(.is-mobile) {
   --nav-collapse-icon-color: rgb(var(--mono-rgb-100));
 
+  &.theme-light {
+    --shadow-sidedock: 0 0 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05), -32px 0px 0 32px var(--background-primary);
+  }
+  &.theme-dark {
+    --shadow-sidedock: 0 4px 24px rgba(0, 0, 0, 0.25), -32px 0px 0 32px var(--background-primary);
+  }
+
   &.is-translucent .mod-root {
     background-color: var(--background-primary) !important;
   }
@@ -56,14 +63,13 @@ body.layout-macos:not(.is-mobile) {
   }
   &:not(.is-translucent) .mod-sidedock {
     background-color: color-mix(in srgb, var(--background-primary) 98%, var(--color-accent));
+    box-shadow: var(--shadow-sidedock);
   }
   &.theme-light .mod-sidedock.mod-left-split {
     outline: var(--border-width) solid white;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05), -64px 0px 0 64px var(--background-primary);
   }
   &.theme-dark .mod-sidedock.mod-left-split {
     outline: var(--border-width) solid var(--background-modifier-border);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), -32px 0px 0 32px var(--background-primary);
   }
   .mod-sidedock.mod-left-split {
     z-index: var(--layer-sidedock);
@@ -107,5 +113,13 @@ body.layout-macos:not(.is-mobile) {
     &.theme-dark {
       --nav-item-background-active: rgba(0, 0, 0, 0.5);
     }
+  }
+
+  // Settings
+  .modal.mod-sidebar-layout .vertical-tab-header {
+    margin: 8px 0 8px 8px;
+    border-radius: var(--radius-l);
+    background-color: color-mix(in srgb, var(--background-primary) 98%, var(--color-accent));
+    box-shadow: var(--shadow-sidedock);
   }
 }

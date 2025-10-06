@@ -261,11 +261,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) .modal.mod-sidebar-lay
     border-top: none;
   }
 }
-body.layout-macos:not(.is-mobile) .modal.mod-sidebar-layout .vertical-tab-header {
-  margin: 8px 0 8px 8px;
-  border-radius: var(--radius-l);
-  box-shadow: var(--shadow-l);
-}
+
 body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-phone .modal.mod-sidebar-layout {
   .modal-header {
     position: absolute;
