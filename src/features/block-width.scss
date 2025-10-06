@@ -274,16 +274,16 @@ body:not(.block-width-off) div.chart-100 {
 }
 body:not(.block-width-off).bases-100,
 body:not(.block-width-off) .bases-100 {
-  .markdown-preview-sizer .bases-embed .bases-view .bases-tbody {
+  .bases-embed .bases-view .bases-tbody {
     border: none;
     border-radius: 0;
   }
 }
 body:not(.block-width-off):is(.bases-wide, .bases-max, .bases-100),
 body:not(.block-width-off) div:is(.bases-wide, .bases-max, .bases-100) {
-  .markdown-preview-sizer > div:not(.el-p:has(.bases-view)),
+  .markdown-preview-sizer > div:not(:is(.el-p, .el-pre):has(.bases-view)),
   .cm-sizer > div:not(.cm-contentContainer),
-  .cm-content > *:not(.bases-embed) {
+  .cm-content > *:not(div:is(.bases-embed, .cm-lang-base)) {
     max-width: var(--active-line-width, var(--line-width)) !important;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -292,16 +292,16 @@ body:not(.block-width-off) div:is(.bases-wide, .bases-max, .bases-100) {
 }
 body:not(.block-width-off):is(.bases-wide, .bases-max),
 body:not(.block-width-off) div:is(.bases-wide, .bases-max) {
-  .markdown-preview-sizer > div.el-p:has(.bases-view):is(.el-p:has(.bases-view)),
-  .cm-content > .bases-embed {
+  .markdown-preview-sizer > div:is(.el-p, .el-pre):has(.bases-view):is(:is(.el-p, .el-pre):has(.bases-view)),
+  .cm-content > div:is(.bases-embed, .cm-lang-base) {
     max-width: 100% !important;
     width: var(--bases-line-width) !important;
   }
 }
 body:not(.block-width-off).bases-100,
 body:not(.block-width-off) div.bases-100 {
-  .markdown-preview-sizer > div.el-p:has(.bases-view):is(.el-p:has(.bases-view)),
-  .cm-content > .bases-embed {
+  .markdown-preview-sizer > div:is(.el-p, .el-pre):has(.bases-view):is(:is(.el-p, .el-pre):has(.bases-view)),
+  .cm-content > div:is(.bases-embed, .cm-lang-base) {
     max-width: calc(100% + calc(var(--file-margins) * 2)) !important;
     width: calc(var(--img-line-width) + calc(var(--file-margins) * 2)) !important;
     margin-left: calc(-1 * var(--file-margins)) !important;
