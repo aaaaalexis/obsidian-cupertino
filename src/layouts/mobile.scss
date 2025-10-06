@@ -68,7 +68,7 @@ body:not(.mobile-default).is-mobile {
     &.is-active {
       opacity: 1;
       background-color: var(--background-modifier-active-hover);
-      color: var(--color-accent);
+      color: var(--interactive-accent);
     }
   }
 

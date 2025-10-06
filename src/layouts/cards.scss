@@ -30,7 +30,7 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space {
     .workspace-tab-header-container-inner {
       background-color: var(--background-primary);
-      border-radius: var(--radius-l);
+      border-radius: var(--radius-s);
       padding-top: 8px;
       padding-bottom: 8px;
       margin: 0 8px 8px;
@@ -52,25 +52,13 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   }
 }
 
-body.layout-cards:not(.is-mobile) {
-  // Side panels
-  .mod-sidedock {
-    .workspace-leaf-resize-handle:not(:hover) {
-      border-color: transparent;
-    }
-
-    .workspace-tabs .workspace-tab-container {
-      margin: 0 8px;
-      border-radius: var(--radius-l);
-    }
+body.layout-cards:not(.is-mobile) .mod-sidedock {
+  .workspace-leaf-resize-handle:not(:hover) {
+    border-color: transparent;
   }
-
-  // Editor panel
-  .workspace-split.mod-root .workspace-tabs .workspace-tab-container {
-    border-radius: var(--radius-l);
-  }
-  .workspace.is-left-sidedock-open .mod-root .workspace-tab-header-container-inner {
-    padding-left: calc(var(--radius-l) + 8px);
+  .workspace-tabs .workspace-tab-container {
+    margin: 0 8px;
+    border-radius: var(--radius-s);
   }
 }
 
@@ -82,7 +70,7 @@ body:is(.layout-cards, .layout-border).is-mobile.is-tablet {
     margin: 0 8px;
     padding-top: 16px;
     margin-top: calc(var(--safe-area-inset-top) + var(--header-height));
-    border-radius: var(--radius-l);
+    border-radius: var(--radius-s);
     height: auto;
   }
 }

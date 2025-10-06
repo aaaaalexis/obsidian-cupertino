@@ -27,6 +27,7 @@ body:not(.is-phone) .workspace-tab-header-container {
 
 .sidebar-toggle-button {
   height: 100%;
+  padding-bottom: 8px;
 }
 .sidebar-toggle-button .clickable-icon {
   width: fit-content;
@@ -36,8 +37,8 @@ body:not(.is-phone) .workspace-tab-header-container {
 // Editor panel
 body:not(.is-phone) .workspace .mod-root {
   .workspace-tab-header-container-inner {
-    padding: 8px 8px 0 calc(var(--radius-s) + 8px);
-    margin: 0;
+    padding: 8px var(--tab-curve) 0;
+    margin: 0 -4px;
     gap: 8px;
   }
 
@@ -79,6 +80,7 @@ body:is(.tabs-floating, .tabs-floating-center):not(.is-phone) .workspace .mod-ro
   .workspace-tab-header-container-inner {
     padding-bottom: 8px;
     gap: 4px;
+    margin: 0;
   }
   .workspace-tab-header {
     padding: 0;
@@ -124,21 +126,21 @@ body.mod-macos:not(.is-mobile).tabs-floating-center {
 
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 480px) {
-      // Both sidedocks hidden (Left space - Right initial space)
+      // Both sidedocks hidden (Left space - Right space)
       &.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
-        padding-right: calc(calc(var(--frame-left-space) + 8px + var(--tab-action-width) + 8px) - calc(var(--tab-action-width) * 3 + 8px));
+        padding-right: calc(calc(var(--frame-left-space) + var(--tab-action-width)) - calc(var(--tab-action-width) * 3));
       }
-      // Left sidedock hidden (Left space - Right initial space)
+      // Left sidedock hidden (Left space - Right space)
       &.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
-        padding-right: calc(calc(var(--frame-left-space) + 8px + var(--tab-action-width) + 8px) - calc(var(--tab-action-width) * 2 + 8px));
+        padding-right: calc(calc(var(--frame-left-space) + var(--tab-action-width)) - calc(var(--tab-action-width) * 2));
       }
-      // Right sidedock hidden (Right space + Left initial space)
+      // Right sidedock hidden (Right space)
       &:not(.mod-top-left-space).mod-top-right-space .workspace-tab-header-container-inner {
-        padding-left: calc(calc(var(--tab-action-width) * 3 + 8px) + 8px);
+        padding-left: calc(var(--tab-action-width) * 3);
       }
-      // Both sidedocks shown (Right space + Left initial space)
+      // Both sidedocks shown (Right space)
       &:not(.mod-top-left-space):not(.mod-top-right-space) .workspace-tab-header-container-inner {
-        padding-left: calc(calc(var(--tab-action-width) * 2 + 8px) + 8px);
+        padding-left: calc(var(--tab-action-width) * 2);
       }
     }
   }
