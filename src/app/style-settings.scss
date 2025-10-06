@@ -1322,45 +1322,45 @@ settings:
 		default: 50
 		format: rem
 	-
-		id: chart-width
-		title: Chart width
-		description: Default width for chart blocks
+		id: table-width
+		title: Table width
+		description: Default width for table blocks
 		type: class-select
 		allowEmpty: false
-		default: chart-default-width
+		default: table-default-width
 		options:
 			-
 				label: Default
-				value: chart-default-width
+				value: table-default-width
 			-
 				label: Wide line width
-				value: chart-wide
+				value: table-wide
 			-
 				label: Maximum line width
-				value: chart-max
+				value: table-max
 			-
 				label: 100% pane width
-				value: chart-100
+				value: table-100
 	-
-		id: iframe-width
-		title: Iframe width
-		description: Default width for iframe blocks
+		id: bases-width
+		title: Bases width
+		description: Default width for Bases blocks
 		type: class-select
 		allowEmpty: false
-		default: iframe-default-width
+		default: bases-default-width
 		options:
 			-
 				label: Default
-				value: iframe-default-width
+				value: bases-default-width
 			-
 				label: Wide line width
-				value: iframe-wide
+				value: bases-wide
 			-
 				label: Maximum line width
-				value: iframe-max
+				value: bases-max
 			-
 				label: 100% pane width
-				value: iframe-100
+				value: bases-100
 	-
 		id: image-width
 		title: Image width
@@ -1382,6 +1382,26 @@ settings:
 				label: 100% pane width
 				value: img-100
 	-
+		id: iframe-width
+		title: Iframe width
+		description: Default width for iframe blocks
+		type: class-select
+		allowEmpty: false
+		default: iframe-default-width
+		options:
+			-
+				label: Default
+				value: iframe-default-width
+			-
+				label: Wide line width
+				value: iframe-wide
+			-
+				label: Maximum line width
+				value: iframe-max
+			-
+				label: 100% pane width
+				value: iframe-100
+	-
 		id: map-width
 		title: Map width
 		description: Default width for map blocks
@@ -1402,25 +1422,25 @@ settings:
 				label: 100% pane width
 				value: map-100
 	-
-		id: table-width
-		title: Table width
-		description: Default width for table blocks
+		id: chart-width
+		title: Chart width
+		description: Default width for chart blocks
 		type: class-select
 		allowEmpty: false
-		default: table-default-width
+		default: chart-default-width
 		options:
 			-
 				label: Default
-				value: table-default-width
+				value: chart-default-width
 			-
 				label: Wide line width
-				value: table-wide
+				value: chart-wide
 			-
 				label: Maximum line width
-				value: table-max
+				value: chart-max
 			-
 				label: 100% pane width
-				value: table-100
+				value: chart-100
 	-
 		id: active-line
 		title: Active line
