@@ -30,9 +30,9 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   --radius-l: calc(20px * var(--radius-modifier));
   --radius-xl: calc(28px * var(--radius-modifier));
 
-  * {
-    -electron-corner-smoothing: 60%;
-  }
+  // * {
+  //   -electron-corner-smoothing: 60%;
+  // }
 
   .workspace-split .clickable-icon {
     width: 40px;
@@ -232,7 +232,7 @@ body.layout-cupertino:not(.is-mobile) {
     margin-left: 8px;
   }
 
-  // Status bar fix
+  // Status bar
   &:not(.status-bar-full) .mod-root {
     padding-bottom: 8px;
   }

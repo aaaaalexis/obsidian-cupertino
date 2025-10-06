@@ -10,7 +10,7 @@ body:is(.layout-classic, .layout-minimal, .layout-frame):not(.is-mobile) .stacke
   }
 }
 
-// Tab stykes
+// Tab styles
 body:not(.tabs-floating, .tabs-floating-center, .tabs-underline) {
   &:is(.layout-classic, .layout-minimal, .layout-cupertino, .layout-macos:not(.is-mobile), .layout-frame) {
     .workspace-tab-header {
@@ -32,6 +32,7 @@ body:is(.tabs-floating, .tabs-floating-center) {
 }
 
 body:is(.layout-classic, .layout-minimal, .layout-frame),
+body.layout-cupertino:not(.is-mobile) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root,
 body.layout-macos:not(.is-mobile) .mod-root {
   &.stacked-nav-off .mod-sidedock.mod-left-split,
   &:is(.mod-root),

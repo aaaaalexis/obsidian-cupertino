@@ -41,8 +41,9 @@ body.layout-macos:not(.is-mobile) {
     }
   }
 
-  .workspace-tabs .workspace-leaf {
-    background-color: transparent;
+  // Editor panel
+  .workspace-split.mod-root .workspace-tabs .workspace-tab-container {
+    border-radius: 0;
   }
 
   // ----------------------------------------------------------------
