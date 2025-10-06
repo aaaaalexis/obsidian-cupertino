@@ -24,6 +24,11 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
     --tab-background-active: var(--background-modifier-hover);
     --tab-action-width: 40px;
   }
+
+  // Style Settings fix
+  .style-settings-heading {
+    border-bottom: none;
+  }
 }
 
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {

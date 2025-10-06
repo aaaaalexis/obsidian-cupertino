@@ -216,6 +216,12 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-tablet {
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile) .modal.mod-sidebar-layout {
   background-color: var(--background-primary);
 
+  .horizontal-tab-nav-item,
+  .vertical-tab-nav-item,
+  .vertical-tab-header-group-title {
+    padding: 4px 8px;
+  }
+
   .setting-item {
     padding: calc(12px * var(--density-modifier)) var(--side-padding);
   }
