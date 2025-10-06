@@ -61,7 +61,7 @@ body.layout-macos:not(.is-mobile) {
   &.is-fullscreen .mod-sidedock.mod-left-split {
     border-radius: var(--radius-m);
   }
-  &:not(.is-translucent) .mod-sidedock {
+  &:not(.is-translucent) .mod-sidedock.mod-left-split {
     background-color: color-mix(in srgb, var(--background-primary) 98%, var(--color-accent));
     box-shadow: var(--shadow-sidedock);
   }
@@ -85,14 +85,6 @@ body.layout-macos:not(.is-mobile) {
 
   .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
     border-inline-start: var(--divider-width) solid var(--divider-color);
-  }
-
-  // Tab outline fix
-  &:not(.tabs-floating, .tabs-floating-center, .theme-light.contrast-light-vivid, .colorful-frame) .mod-root {
-    --tab-outline-width: var(--border-width);
-  }
-  &.tabs-underline .mod-root .workspace-tab-header-container-inner {
-    --tab-outline-width: 0;
   }
 
   // Style Settings: Stacked nav off fix

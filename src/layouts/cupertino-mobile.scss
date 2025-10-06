@@ -263,10 +263,6 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-tablet {
   }
 
   // Style Settings: Tabs style fix
-  &:not(.tabs-floating, .tabs-floating-center) .workspace-tab-header-container-inner {
-    margin: 0 -12px;
-  }
-
   &:is(.tabs-floating, .tabs-floating-center) {
     --system-status-background: rgb(var(--mono-rgb-0));
     --titlebar-background: transparent;

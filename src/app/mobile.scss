@@ -19,7 +19,7 @@ body.is-mobile {
   }
 
   // Editor panels
-  .workspace-tab-header-container .clickable-icon,
+  .workspace .mod-root .workspace-tab-header-container .clickable-icon,
   .view-header .clickable-icon,
   .workspace-drawer-header-icon {
     border-radius: 100vh;
@@ -100,6 +100,10 @@ body.is-tablet {
   }
 
   background-color: var(--background-secondary);
+
+  .workspace-tab-header {
+    padding-bottom: 0 !important;
+  }
 
   .workspace-tab-header,
   .workspace-tab-header-new-tab,

@@ -18,13 +18,6 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
     color: var(--text-on-accent);
   }
 
-  // Tabs style fix
-  &.tabs-floating,
-  &.tabs-floating-center {
-    --tab-background-active: var(--background-modifier-hover);
-    --tab-action-width: 40px;
-  }
-
   // Style Settings fix
   .style-settings-heading {
     border-bottom: none;
@@ -59,13 +52,6 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  // Editor panel
-  &.tabs-floating .mod-root .workspace-tab-header,
-  &.tabs-floating-center .mod-root .workspace-tab-header {
-    height: 32px;
-    margin: auto 0;
   }
 
   // Editor panel: Edge fade
@@ -190,29 +176,13 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     gap: 4px;
   }
 
-  // Tab outline fix
-  &:not(.tabs-floating, .tabs-floating-center, .tabs-underline, .theme-light.contrast-light-vivid, .colorful-frame) {
-    .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
-      --tab-outline-width: var(--border-width);
-
-      padding-top: 1px;
-      margin-bottom: -1px;
-    }
-    .mod-root .workspace-tab-header-container-inner {
-      --tab-outline-width: var(--border-width);
-
-      padding-top: 1px;
-      margin-bottom: -1px;
-    }
-  }
-
   // Style Settings: Stacked nav off fix
   &.stacked-nav-off .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
     margin-left: 0 !important;
   }
 }
 
-body.layout-cupertino:not(.is-mobile) {
+body.layout-cupertino:not(.is-phone) {
   // Editor panel
   &.theme-light .mod-root .workspace-tab-container {
     box-shadow: rgba(0, 0, 0, 0.04) 0px 24px 48px, rgba(0, 0, 0, 0.02) 0px 4px 16px;
@@ -236,7 +206,9 @@ body.layout-cupertino:not(.is-mobile) {
       border-radius: var(--radius-m);
     }
   }
+}
 
+body.layout-cupertino:not(.is-mobile) {
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
     .mod-root {
       background-color: var(--background-primary);
@@ -258,4 +230,9 @@ body.layout-cupertino:not(.is-mobile) {
   &:not(.status-bar-full) .mod-root {
     padding-bottom: 8px;
   }
+}
+
+body:is(.layout-cupertino, .layout-macos).is-mobile.is-tablet .mod-root .workspace-tab-container {
+  margin-left: 8px;
+  margin-right: 8px;
 }

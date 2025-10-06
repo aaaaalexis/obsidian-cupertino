@@ -90,15 +90,6 @@ body.layout-frame:not(.is-mobile) {
     padding-left: 0;
   }
 
-  // Style Settings: Tabs fix
-  &.tabs-floating,
-  &.tabs-floating-center {
-    --tab-background-active: var(--background-modifier-hover);
-  }
-  &.tabs-underline .mod-root .workspace-tab-header-container {
-    border-bottom-width: var(--border-width);
-  }
-
   // Style Settings: Status bar fix
   &.status-bar-full .workspace {
     padding-bottom: 0;
@@ -106,17 +97,6 @@ body.layout-frame:not(.is-mobile) {
     .workspace-ribbon,
     .workspace-split {
       margin-bottom: 0;
-    }
-  }
-}
-// Tab outline fix
-body.layout-frame {
-  &:not(.tabs-floating, .tabs-floating-center, .tabs-underline, :not(.is-mobile):is(.colorful-frame, .theme-light.contrast-light-vivid)) .mod-root {
-    --tab-outline-width: var(--border-width);
-
-    .workspace-tab-header-container-inner {
-      padding-top: 1px;
-      margin-bottom: -1px;
     }
   }
 }
@@ -138,13 +118,5 @@ body.layout-frame.is-mobile.is-tablet {
     border-radius: var(--radius-m);
     border: var(--border-width) solid var(--background-modifier-border);
     overflow: hidden;
-  }
-
-  // Tab style fix
-  .mod-root {
-    padding-top: 0;
-  }
-  &:not(.tabs-floating, .tabs-floating-center, .tabs-underline) .mod-root .workspace-tab-header-container-inner {
-    padding-top: 8px;
   }
 }

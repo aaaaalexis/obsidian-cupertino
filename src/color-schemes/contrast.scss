@@ -71,8 +71,7 @@ body.theme-light.contrast-light-vivid {
   .mod-sidedock.mod-left-split,
   &:not(.layout-minimal) .mod-sidedock.mod-right-split,
   &:not(.layout-minimal) .mod-root .workspace-tab-header-container::before,
-  &:not(.layout-minimal) .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner),
-  &:not(.layout-minimal).tabs-underline .mod-root .workspace-tab-header-inner {
+  &:not(.layout-minimal) .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner) {
     --collapse-icon-color: var(--text-faint);
     --collapse-icon-color-collapsed: var(--text-accent);
     --divider-color: var(--background-modifier-border);
