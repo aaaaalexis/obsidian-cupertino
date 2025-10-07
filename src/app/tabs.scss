@@ -12,8 +12,8 @@ body.is-mobile {
   --header-height: 44px !important;
   --view-header-height: 60px !important;
 }
-body:is(.tabs-floating, .tabs-floating-center).is-mobile.is-tablet {
-  --header-height: 60px !important;
+body.is-mobile.is-tablet {
+  --header-height: 52px !important;
 }
 
 // All panels
@@ -55,6 +55,8 @@ body:not(.is-phone) .workspace .mod-root {
   .workspace-tab-header-inner {
     padding-inline-start: 8px;
     padding-inline-end: 8px;
+    margin-bottom: 8px;
+    height: auto;
   }
   .workspace-tab-header-inner::after {
     content: none;
@@ -96,13 +98,16 @@ body:is(.tabs-floating, .tabs-floating-center):not(.is-phone) .workspace .mod-ro
   .workspace-tab-header-inner {
     padding-inline-start: 12px;
     padding-inline-end: 6px;
+    margin-bottom: 0;
   }
 }
-body:is(.tabs-floating, .tabs-floating-center).is-mobile.is-tablet .mod-root {
-  .workspace-tab-header-container-inner {
+body:is(.tabs-floating, .tabs-floating-center).is-mobile.is-tablet {
+  --header-height: 60px !important;
+
+  .mod-root .workspace-tab-header-container-inner {
     padding: 0;
   }
-  .workspace-tab-header {
+  .mod-root .workspace-tab-header {
     height: 36px;
     margin: auto 0;
   }
@@ -283,6 +288,26 @@ body:not(.is-phone).tabs-underline .workspace .mod-root {
   flex-direction: var(--tab-stacked-spine-order);
 }
 
+// Editor panel: Tablet fix
+body.is-tablet {
+  .workspace .mod-root {
+    .workspace-tab-header-container-inner {
+      padding: 0 var(--radius-s);
+    }
+    .sidebar-toggle-button {
+      padding-left: 0;
+    }
+    .sidebar-toggle-button .clickable-icon {
+      margin: auto 0;
+    }
+    .workspace-tab-header-tab-list .clickable-icon,
+    .workspace-tab-header-new-tab .clickable-icon {
+      --icon-size: var(--icon-l);
+      --icon-stroke: var(--icon-l-stroke-width);
+    }
+  }
+}
+
 // Side panels
 .workspace .mod-sidedock {
   .workspace-tab-header-container,
@@ -368,22 +393,5 @@ body.mod-macos.is-frameless:not(.is-popout-window) .workspace {
   .sidebar-toggle-button.mod-right {
     position: relative;
     padding-right: 0;
-  }
-}
-
-body.is-tablet .workspace .mod-root {
-  .workspace-tab-header-container-inner {
-    padding: 0 var(--radius-s);
-  }
-  .sidebar-toggle-button {
-    padding-left: 0;
-  }
-  .sidebar-toggle-button .clickable-icon {
-    margin: auto 0;
-  }
-  .workspace-tab-header-tab-list .clickable-icon,
-  .workspace-tab-header-new-tab .clickable-icon {
-    --icon-size: var(--icon-l);
-    --icon-stroke: var(--icon-l-stroke-width);
   }
 }

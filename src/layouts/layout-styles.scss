@@ -23,8 +23,9 @@ body:is(.layout-cupertino, .layout-cards, .layout-border).is-mobile.is-tablet .m
   padding-bottom: var(--safe-area-inset-bottom);
   height: auto;
 }
-body:is(.layout-classic, .layout-frame):is(.tabs-floating, .tabs-floating-center).is-mobile.is-tablet .mod-root .workspace-tab-header {
-  margin: auto 1px;
+body:is(.layout-classic, .layout-frame):is(.tabs-floating, .tabs-floating-center) .mod-root .workspace-tab-header {
+  margin-left: var(--tab-outline-width);
+  margin-right: var(--tab-outline-width);
 }
 
 // Stacked nav
@@ -42,7 +43,7 @@ body:not(.tabs-floating, .tabs-floating-center, .tabs-underline) {
       --tab-outline-width: 1px !important;
     }
     &.is-tablet .workspace-tab-header-container-inner {
-      padding-top: var(--tab-outline-width);
+      padding-top: 8px;
     }
   }
 }
