@@ -81,10 +81,6 @@ body.layout-border:not(.is-mobile) {
 
 // Mobile
 body.layout-border.is-mobile.is-tablet {
-  .mod-root .workspace-tab-container {
-    border-radius: 0;
-  }
-
   .workspace-drawer.is-pinned.mod-left {
     margin-right: 0;
     border-top-right-radius: 0;

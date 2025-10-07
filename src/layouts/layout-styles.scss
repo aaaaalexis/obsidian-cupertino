@@ -2,11 +2,29 @@
   background-color: transparent;
 }
 
-// Editor panel radius
-body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame):not(.is-mobile) {
+// Editor panel
+body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-border.is-mobile.is-tablet) {
   .workspace-split.mod-root .workspace-tab-container,
   .workspace-split.mod-root .workspace-leaf {
     border-radius: 0;
+  }
+}
+
+// Mobile editor panels
+body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame).is-mobile.is-tablet .mod-root {
+  margin-bottom: 0;
+}
+body:is(.layout-cupertino, .layout-cards, .layout-border, .layout-frame).is-mobile.is-tablet .mod-root {
+  margin-bottom: var(--safe-area-inset-bottom);
+  height: auto;
+}
+
+// Mobile side panels
+body:is(.layout-cards, .layout-border, .layout-frame).is-mobile.is-tablet .workspace-drawer.is-pinned {
+  margin-bottom: var(--safe-area-inset-bottom);
+
+  .nav-header {
+    padding-bottom: 32px;
   }
 }
 
@@ -20,7 +38,7 @@ body:is(.layout-classic, .layout-minimal, .layout-frame):not(.is-mobile) .stacke
 
 // Tab styles
 body:not(.tabs-floating, .tabs-floating-center, .tabs-underline) {
-  &:is(.layout-classic, .layout-minimal, .layout-cupertino, .layout-macos:not(.is-mobile), .layout-frame) {
+  &:is(.layout-classic, .layout-minimal, .layout-cupertino, .layout-macos, .layout-frame) {
     .workspace-tab-header {
       --tab-outline-width: 1px !important;
     }
@@ -41,7 +59,7 @@ body:is(.tabs-floating, .tabs-floating-center) {
 
 body:is(.layout-classic, .layout-minimal, .layout-frame),
 body.layout-cupertino:not(.is-mobile) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root,
-body.layout-macos:not(.is-mobile) .mod-root {
+body.layout-macos:not(.tabs-floating, .tabs-floating-center) .mod-root {
   &.stacked-nav-off .mod-sidedock.mod-left-split,
   &:is(.mod-root),
   .mod-root,
@@ -54,4 +72,10 @@ body.layout-macos:not(.is-mobile) .mod-root {
   .workspace-tab-header-container-inner {
     margin-bottom: -1px !important;
   }
+}
+
+// Mobile drawer
+body:not(.layout-classic, .layout-minimal, .layout-border, .layout-frame, .layout-macos).is-mobile.is-tablet .workspace-drawer.is-pinned,
+body.layout-macos.is-mobile.is-tablet .workspace-drawer.is-pinned.mod-left {
+  border: none;
 }

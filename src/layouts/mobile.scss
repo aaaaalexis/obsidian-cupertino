@@ -219,12 +219,7 @@ body:not(.mobile-default).is-mobile.is-phone {
   }
 }
 
-body:not(:is(.layout-cupertino, .layout-macos).mobile-immersive, .layout-classic, .layout-minimal, .layout-border, .layout-frame).is-mobile.is-tablet {
-  .workspace-drawer.is-pinned {
-    border: none;
-
-    .workspace-drawer-inner {
-      background-color: transparent;
-    }
-  }
+body:not(.mobile-default).is-mobile.is-tablet .workspace-drawer.is-pinned {
+  --safe-area-inset-override: calc(var(--safe-area-inset-bottom) + 16px);
+  height: auto;
 }

@@ -4,6 +4,8 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
   --radius-l: calc(32px * var(--radius-modifier));
   --radius-xl: calc(40px * var(--radius-modifier));
 
+  --system-status-background: rgb(var(--mono-rgb-0));
+
   --file-margins-top: 8px;
 
   --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
@@ -188,8 +190,6 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
 }
 
 body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-phone {
-  --system-status-background: rgb(var(--mono-rgb-0));
-
   // Editor panel
   .view-header-left,
   .view-actions {
@@ -244,40 +244,6 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-tablet {
   --tab-radius: var(--radius-s);
   --tab-curve: var(--tab-radius);
 
-  &.theme-light {
-    --shadow-sidedock: 0 0 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05);
-  }
-  &.theme-dark {
-    --shadow-sidedock: 0 4px 24px rgba(0, 0, 0, 0.25);
-  }
-
-  .workspace {
-    background-color: var(--system-status-background);
-  }
-
-  // Editor panel
-  .mod-root {
-    margin-left: 8px;
-    margin-right: 8px;
-  }
-
-  // Side panels
-  .workspace-drawer {
-    box-shadow: var(--shadow-sidedock);
-    margin: var(--safe-area-inset-top) 16px var(--safe-area-inset-bottom);
-    border-radius: var(--radius-xl);
-    padding-top: var(--side-padding);
-    height: -webkit-fill-available;
-    border: none;
-
-    &.mod-left {
-      margin-right: 8px;
-    }
-    &.mod-right {
-      margin-left: 8px;
-    }
-  }
-
   // Style Settings: Tabs style fix
   &:is(.tabs-floating, .tabs-floating-center) {
     --system-status-background: rgb(var(--mono-rgb-0));
@@ -285,5 +251,12 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-tablet {
     --titlebar-background-focused: transparent;
     --tab-container-background: transparent;
     --tab-radius: var(--radius-l);
+  }
+}
+
+body.layout-cupertino.mobile-immersive.is-mobile.is-tablet {
+  .mod-root {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }

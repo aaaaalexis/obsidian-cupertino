@@ -200,14 +200,9 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
     }
   }
 }
-body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-phone {
-  .modal .modal-nav-action {
-    height: var(--modal-header-height);
-    margin-top: 0;
-  }
-}
-body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-tablet {
-  --modal-radius: var(--radius-l);
+body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-phone .modal .modal-nav-action {
+  height: var(--modal-header-height);
+  margin-top: 0;
 }
 
 // Settings
