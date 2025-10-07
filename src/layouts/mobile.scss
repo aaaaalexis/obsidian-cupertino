@@ -204,10 +204,15 @@ body:not(.mobile-default).is-mobile.is-phone {
       left: 0;
       background-color: transparent;
     }
-    .view-header + .view-content .markdown-preview-sizer > div:first-child {
+    .view-header + .view-content .markdown-reading-view > div:first-child:not(.markdown-preview-view),
+    .view-header + .view-content .markdown-reading-view > .markdown-preview-view:first-child .markdown-preview-sizer > div:first-child {
       margin-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
     }
-    .view-header + .view-content .cm-scroller {
+    .view-header + .view-content .markdown-source-view > div:first-child:not(.cm-editor) {
+      padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
+      z-index: 0;
+    }
+    .view-header + .view-content .cm-editor:first-child > .cm-scroller {
       padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
       padding-bottom: calc(var(--safe-area-inset-override) + 64px);
     }

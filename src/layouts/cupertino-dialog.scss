@@ -154,8 +154,6 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-tablet {
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   --modal-background: rgb(from var(--background-primary) r g b / 75%);
 
-  --modal-radius: var(--radius-xl);
-
   .modal {
     @starting-style {
       opacity: 1;
@@ -213,7 +211,7 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-tablet {
 }
 
 // Settings
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile) .modal.mod-sidebar-layout {
+body:is(.layout-cupertino, .layout-macos):not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-community-modal) {
   background-color: var(--background-primary);
 
   .horizontal-tab-nav-item,

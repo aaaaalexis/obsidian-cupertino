@@ -4,6 +4,8 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
   --radius-l: calc(32px * var(--radius-modifier));
   --radius-xl: calc(40px * var(--radius-modifier));
 
+  --file-margins-top: 8px;
+
   --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
   --background-modifier-form-field: var(--interactive-normal) !important;
 
@@ -239,7 +241,8 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-phone {
 body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-tablet {
   --border-width: 0.5pt;
   --nav-item-weight-active: normal;
-  --tab-curve: var(--radius-m);
+  --tab-radius: var(--radius-s);
+  --tab-curve: var(--tab-radius);
 
   &.theme-light {
     --shadow-sidedock: 0 0 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05);
