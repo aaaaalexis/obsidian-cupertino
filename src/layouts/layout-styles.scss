@@ -59,10 +59,10 @@ body:is(.tabs-floating, .tabs-floating-center) {
 body:is(.layout-classic, .layout-minimal, .layout-frame),
 body.layout-cupertino:not(.is-mobile) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root,
 body.layout-macos:not(.tabs-floating, .tabs-floating-center) .mod-root {
-  &.stacked-nav-off .mod-sidedock.mod-left-split,
+  &.stacked-nav-off .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed),
   &:is(.mod-root),
   .mod-root,
-  .mod-sidedock.mod-right-split {
+  .mod-sidedock.mod-right-split:not(.is-sidedock-collapsed) {
     .workspace-tabs.mod-top .workspace-tab-header-container {
       border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
     }

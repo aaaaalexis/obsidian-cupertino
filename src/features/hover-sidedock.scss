@@ -72,6 +72,13 @@ body:not(.is-mobile).hover-sidedock {
       background: linear-gradient(to right, rgba(var(--mono-rgb-0)) 0%, rgba(var(--mono-rgb-0), 0.99) 18.4%, rgba(var(--mono-rgb-0), 0.963) 33.7%, rgba(var(--mono-rgb-0), 0.92) 46.4%, rgba(var(--mono-rgb-0), 0.864) 56.7%, rgba(var(--mono-rgb-0), 0.796) 64.8%, rgba(var(--mono-rgb-0), 0.72) 71.2%, rgba(var(--mono-rgb-0), 0.637) 76.1%, rgba(var(--mono-rgb-0), 0.55) 79.9%, rgba(var(--mono-rgb-0), 0.46) 82.8%, rgba(var(--mono-rgb-0), 0.37) 85.2%, rgba(var(--mono-rgb-0), 0.283) 87.3%, rgba(var(--mono-rgb-0), 0.2) 89.6%, rgba(var(--mono-rgb-0), 0.124) 92.3%, rgba(var(--mono-rgb-0), 0.056) 95.6%, rgba(var(--mono-rgb-0), 0) 100%);
       pointer-events: none;
     }
+    &::after {
+      inset: 0 0 0 -100%;
+      content: "";
+      position: absolute;
+      width: 100%;
+      background: red;
+    }
 
     &.mod-left-split:not(:hover) {
       transform: translateX(calc(-1 * calc(var(--hover-sidedock-width, 320px) - var(--hover-sidedock-trigger-area, 8px))));
@@ -86,6 +93,10 @@ body:not(.is-mobile).hover-sidedock {
     &.mod-right-split::before {
       left: unset;
       background: linear-gradient(to left, rgba(var(--mono-rgb-0)) 0%, rgba(var(--mono-rgb-0), 0.99) 18.4%, rgba(var(--mono-rgb-0), 0.963) 33.7%, rgba(var(--mono-rgb-0), 0.92) 46.4%, rgba(var(--mono-rgb-0), 0.864) 56.7%, rgba(var(--mono-rgb-0), 0.796) 64.8%, rgba(var(--mono-rgb-0), 0.72) 71.2%, rgba(var(--mono-rgb-0), 0.637) 76.1%, rgba(var(--mono-rgb-0), 0.55) 79.9%, rgba(var(--mono-rgb-0), 0.46) 82.8%, rgba(var(--mono-rgb-0), 0.37) 85.2%, rgba(var(--mono-rgb-0), 0.283) 87.3%, rgba(var(--mono-rgb-0), 0.2) 89.6%, rgba(var(--mono-rgb-0), 0.124) 92.3%, rgba(var(--mono-rgb-0), 0.056) 95.6%, rgba(var(--mono-rgb-0), 0) 100%);
+    }
+    &.mod-right-split::after {
+      left: unset;
+      right: -100%;
     }
   }
 }
