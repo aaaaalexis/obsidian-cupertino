@@ -2,6 +2,14 @@
   background-color: transparent;
 }
 
+// Editor panel radius
+body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame):not(.is-mobile) {
+  .workspace-split.mod-root .workspace-tab-container,
+  .workspace-split.mod-root .workspace-leaf {
+    border-radius: 0;
+  }
+}
+
 // Stacked nav
 body:is(.layout-classic, .layout-minimal, .layout-frame):not(.is-mobile) .stacked-nav-off .workspace-tabs.mod-top {
   .workspace-leaf-content > .nav-header,

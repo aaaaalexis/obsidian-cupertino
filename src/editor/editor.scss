@@ -56,8 +56,10 @@
     background-color: var(--background-secondary);
     transition: var(--anim-duration-moderate);
   }
-  .workspace-split.mod-root .workspace-tabs .workspace-tab-container {
-    border-radius: var(--radius-s);
+
+  .workspace-split.mod-root .workspace-tab-container,
+  .workspace-split.mod-root .workspace-leaf {
+    border-radius: var(--tab-radius);
     transition: var(--anim-duration-moderate);
   }
 

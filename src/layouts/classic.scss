@@ -1,9 +1,4 @@
 body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
-  // Editor panel
-  .workspace-split.mod-root .workspace-tabs .workspace-tab-container {
-    border-radius: 0;
-  }
-
   // Side panels
   .mod-sidedock {
     & > .workspace-leaf-resize-handle {

@@ -239,15 +239,28 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-phone {
 body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-tablet {
   --border-width: 0.5pt;
   --nav-item-weight-active: normal;
-  --tab-curve: var(--radius-s);
+  --tab-curve: var(--radius-m);
+
+  &.theme-light {
+    --shadow-sidedock: 0 0 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05);
+  }
+  &.theme-dark {
+    --shadow-sidedock: 0 4px 24px rgba(0, 0, 0, 0.25);
+  }
 
   .workspace {
     background-color: var(--system-status-background);
   }
 
+  // Editor panel
+  .mod-root {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
   // Side panels
   .workspace-drawer {
-    box-shadow: var(--shadow-xs), var(--shadow-l);
+    box-shadow: var(--shadow-sidedock);
     margin: var(--safe-area-inset-top) 16px var(--safe-area-inset-bottom);
     border-radius: var(--radius-xl);
     padding-top: var(--side-padding);

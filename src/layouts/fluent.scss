@@ -54,13 +54,6 @@ body.layout-fluent:not(.is-mobile) {
   }
 
   // Editor panel
-  .mod-root {
-    .workspace-tab-container,
-    .workspace-leaf {
-      border-radius: var(--radius-l);
-    }
-  }
-
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
     .mod-root {
       background-color: var(--background-primary);

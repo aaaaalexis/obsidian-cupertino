@@ -41,13 +41,6 @@ body.layout-macos:not(.is-mobile) {
     }
   }
 
-  // Editor panel
-  .workspace-split.mod-root .workspace-tabs .workspace-tab-container {
-    border-radius: 0;
-  }
-
-  // ----------------------------------------------------------------
-
   // Ribbon fix
   &.show-ribbon:not(.mod-macos) {
     --ribbon-padding: 8px 0 0 16px;

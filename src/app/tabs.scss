@@ -1,8 +1,9 @@
 body {
   --header-height: 48px;
 
-  --tab-curve: calc(var(--radius-s) + 4px);
+  --tab-radius: var(--radius-s);
   --tab-radius-active: var(--tab-radius) var(--tab-radius) 0 0;
+  --tab-curve: calc(var(--tab-radius) + 4px);
 
   --tab-text-color-focused: var(--tab-text-color);
 }
@@ -38,7 +39,7 @@ body:not(.is-phone) .workspace-tab-header-container {
 body:not(.is-phone) .workspace .mod-root {
   .workspace-tab-header-container-inner {
     padding: 8px var(--tab-curve) 0;
-    margin: 0 -4px;
+    margin: 0 -4px 0 0;
     gap: 8px;
   }
 
