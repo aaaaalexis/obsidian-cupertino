@@ -27,6 +27,7 @@
 }
 
 // Animations
+
 body:not(.is-mobile) {
   svg.svg-icon {
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
@@ -38,7 +39,9 @@ body:not(.is-mobile) {
       opacity: 0;
     }
   }
-  .clickable-icon:not([aria-disabled="true"]):active svg.svg-icon {
+
+  .clickable-icon:not([aria-disabled="true"]):active svg.svg-icon,
+  .mod-sidedock .workspace-tab-header.tappable:active svg.svg-icon {
     scale: 0.75;
     opacity: 0.75;
   }
