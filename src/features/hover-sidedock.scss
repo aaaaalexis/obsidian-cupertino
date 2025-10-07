@@ -14,27 +14,6 @@ body:not(.is-mobile).hover-sidedock {
     }
   }
 
-  &.layout-cupertino,
-  &.layout-macos {
-    .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
-      backdrop-filter: var(--blur-m);
-      box-shadow: var(--shadow-xs);
-      border-radius: var(--radius-m);
-      background-color: var(--modal-background);
-
-      &.mod-left-split {
-        margin: 8px 0 8px 8px;
-      }
-      &.mod-right-split {
-        margin: 8px 8px 8px 0;
-      }
-
-      &::before {
-        content: none;
-      }
-    }
-  }
-
   .mod-sidedock .workspace-tab-header-container {
     -webkit-app-region: no-drag !important;
   }

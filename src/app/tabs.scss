@@ -10,6 +10,10 @@ body {
 
 body.is-mobile {
   --header-height: 44px !important;
+  --view-header-height: 60px !important;
+}
+body:is(.tabs-floating, .tabs-floating-center).is-mobile.is-tablet {
+  --header-height: 60px !important;
 }
 
 // All panels

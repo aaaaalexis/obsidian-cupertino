@@ -1,4 +1,4 @@
-body:not(.mobile-default).is-mobile {
+body:not(.mobile-stable).is-mobile {
   --safe-area-inset-override: 28px;
 
   &:is(html[style*="--keyboard-height"]:not([style*="--keyboard-height: 0px"]) body.is-phone:not(.mod-toolbar-open)) {
@@ -77,7 +77,7 @@ body:not(.mobile-default).is-mobile {
   }
 }
 
-body:not(.mobile-default).is-mobile.is-phone {
+body:not(.mobile-stable).is-mobile.is-phone {
   // Bottom navbar & Toolbar
   --mobile-toolbar-height: 48px;
   --toolbar-option-width: 48px;
@@ -219,7 +219,7 @@ body:not(.mobile-default).is-mobile.is-phone {
   }
 }
 
-body:not(.mobile-default).is-mobile.is-tablet .workspace-drawer.is-pinned {
+body:not(.mobile-stable).is-mobile.is-tablet .workspace-drawer.is-pinned {
   --safe-area-inset-override: calc(var(--safe-area-inset-bottom) + 16px);
   height: auto;
 }

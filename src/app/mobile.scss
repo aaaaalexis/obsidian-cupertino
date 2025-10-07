@@ -18,6 +18,14 @@ body.is-mobile {
     --search-result-background: var(--background-primary);
   }
 
+  // Side panels
+  .workspace-drawer-inner {
+    background-color: transparent;
+  }
+  .workspace-drawer .nav-header {
+    border-bottom: none;
+  }
+
   // Editor panels
   .workspace .mod-root .workspace-tab-header-container .clickable-icon,
   .view-header .clickable-icon,
@@ -26,11 +34,6 @@ body.is-mobile {
     padding: 10px;
     position: relative;
     margin-left: 0;
-  }
-
-  // Side panels
-  .workspace-drawer-inner {
-    background-color: transparent;
   }
 }
 

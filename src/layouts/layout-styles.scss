@@ -10,22 +10,21 @@ body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-
   }
 }
 
-// Mobile editor panels
-body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame).is-mobile.is-tablet .mod-root {
-  margin-bottom: 0;
+// Mobile side panels
+body:is(.layout-cards, .layout-border, .layout-frame):not(.mobile-stable).is-mobile.is-tablet {
+  &.layout-macos .workspace-drawer.is-pinned.mod-left .nav-header,
+  .workspace-drawer.is-pinned .nav-header {
+    padding-bottom: calc(var(--safe-area-inset-override) - 16px);
+  }
 }
-body:is(.layout-cupertino, .layout-cards, .layout-border, .layout-frame).is-mobile.is-tablet .mod-root {
-  margin-bottom: var(--safe-area-inset-bottom);
+
+// Mobile editor panels
+body:is(.layout-cupertino, .layout-cards, .layout-border).is-mobile.is-tablet .mod-root {
+  padding-bottom: var(--safe-area-inset-bottom);
   height: auto;
 }
-
-// Mobile side panels
-body:is(.layout-cards, .layout-border, .layout-frame).is-mobile.is-tablet .workspace-drawer.is-pinned {
-  margin-bottom: var(--safe-area-inset-bottom);
-
-  .nav-header {
-    padding-bottom: 32px;
-  }
+body:is(.layout-classic, .layout-frame):is(.tabs-floating, .tabs-floating-center).is-mobile.is-tablet .mod-root .workspace-tab-header {
+  margin: auto 1px;
 }
 
 // Stacked nav

@@ -1,5 +1,5 @@
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile),
-body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
+body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --inline-title-margin-bottom: 0.5em;
   --p-spacing: 1rem;
   --line-height-normal: 1.6;
@@ -44,7 +44,7 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
 
 // Editor panel: Edge fade
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile),
-body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-tablet {
+body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-tablet {
   .workspace-leaf-content[data-type="markdown"] .view-header {
     position: absolute;
     inset: 0 0 auto;
@@ -95,7 +95,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   }
 
   .workspace-split .clickable-icon {
-    width: 40px;
+    min-width: 40px;
   }
   .clickable-icon,
   .modal-close-button {
@@ -206,6 +206,29 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     display: flex;
     flex-direction: column;
     gap: 4px;
+  }
+
+  // Hover sidedock
+  &.hover-sidedock {
+    .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
+      backdrop-filter: var(--blur-m);
+      box-shadow: var(--shadow-xs);
+      border-radius: var(--radius-m);
+      background-color: var(--modal-background);
+      border: var(--border-width) solid var(--background-modifier-border);
+      z-index: var(--layer-popover);
+
+      &.mod-left-split {
+        margin: 8px 0 8px 8px;
+      }
+      &.mod-right-split {
+        margin: 8px 8px 8px 0;
+      }
+
+      &::before {
+        content: none;
+      }
+    }
   }
 }
 

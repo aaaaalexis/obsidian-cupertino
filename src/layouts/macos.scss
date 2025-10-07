@@ -114,12 +114,9 @@ body.layout-macos.is-mobile.is-tablet {
   .workspace-drawer.is-pinned.mod-left {
     --mobile-sidebar-background: transparent !important;
     box-shadow: var(--shadow-sidedock);
-    margin: var(--safe-area-inset-top) 0 var(--safe-area-inset-bottom) 16px;
+    margin: calc(var(--safe-area-inset-top) + 8px) 8px 16px 16px;
     border-radius: var(--radius-l);
     padding-top: 16px;
     background-color: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
-  }
-  &:not(.mobile-default) .workspace-drawer.is-pinned.mod-left .nav-header {
-    padding-bottom: 32px;
   }
 }

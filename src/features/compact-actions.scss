@@ -19,6 +19,7 @@ body:not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-con
       flex: 0;
       background-color: var(--background-modifier-hover);
       box-shadow: none !important;
+      min-width: 0;
     }
     .nav-action-button.is-active {
       background-color: var(--background-modifier-hover) !important;

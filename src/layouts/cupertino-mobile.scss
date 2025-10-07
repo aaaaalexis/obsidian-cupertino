@@ -1,4 +1,4 @@
-body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
+body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --radius-s: calc(16px * var(--radius-modifier));
   --radius-m: calc(24px * var(--radius-modifier));
   --radius-l: calc(32px * var(--radius-modifier));
@@ -189,7 +189,7 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-phone {
+body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone {
   // Editor panel
   .view-header-left,
   .view-actions {
@@ -238,7 +238,7 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-phone {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-tablet {
+body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-tablet {
   --border-width: 0.5pt;
   --nav-item-weight-active: normal;
   --tab-radius: var(--radius-s);
@@ -254,9 +254,9 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive.is-mobile.is-tablet {
   }
 }
 
-body.layout-cupertino.mobile-immersive.is-mobile.is-tablet {
+body.layout-cupertino:not(.mobile-stable).is-mobile.is-tablet {
   .mod-root {
-    margin-left: 8px;
-    margin-right: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
