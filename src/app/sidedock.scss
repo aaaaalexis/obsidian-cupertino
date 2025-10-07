@@ -136,7 +136,7 @@ body:not(.is-mobile) .mod-sidedock {
   .workspace-leaf-content > .view-content {
     padding: 0 16px;
 
-    > div:not(.nav-buttons-container) {
+    > div:not(.nav-header, .nav-buttons-container) {
       padding: 0;
     }
   }
