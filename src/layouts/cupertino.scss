@@ -101,8 +101,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   .workspace-split .clickable-icon {
     min-width: 40px;
   }
-  .clickable-icon,
-  .modal-close-button {
+  .clickable-icon {
     border-radius: 100vh;
   }
   .clickable-icon:not([aria-disabled="true"]):hover,

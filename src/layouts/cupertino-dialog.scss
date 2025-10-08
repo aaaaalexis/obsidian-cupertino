@@ -177,17 +177,15 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
 
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --modal-background: rgb(from var(--background-secondary) r g b / 75%);
-
   --modal-header-height: var(--view-header-height);
 
   .modal-close-button {
-    border-radius: 100vh;
     padding: 10px;
 
     &::before {
-      content: "\2715";
-      line-height: 1;
-      text-align: center;
+      width: var(--icon-l);
+      height: var(--icon-l);
+      font-size: unset;
     }
   }
 }
