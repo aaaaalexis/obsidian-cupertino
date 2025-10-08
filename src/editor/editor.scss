@@ -41,6 +41,7 @@
     --tag-padding-x: 8px;
     --tag-padding-y: 4px;
     --tag-radius: 8px;
+    --tag-weight: var(--font-medium);
 
     --link-decoration: none;
     --link-external-decoration: none;
@@ -309,6 +310,7 @@
     border-radius: var(--radius-s);
     padding: 2px 4px;
     color: var(--text-highlight, var(--text-normal));
+    font-weight: var(--font-medium);
   }
 
   .cm-s-obsidian span.cm-highlight {
