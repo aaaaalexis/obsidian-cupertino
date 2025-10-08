@@ -8,7 +8,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --icon-color: var(--color-base-100);
   --nav-item-color: var(--color-base-100);
 
-  --tab-action-width: 40px;
   --tab-radius: var(--radius-m);
 
   // Editor panel
@@ -92,6 +91,10 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
 
   * {
     -electron-corner-smoothing: 60%;
+  }
+
+  &:is(.tabs-floating, .tabs-floating-center) {
+    --tab-action-width: 40px;
   }
 
   .workspace-split .clickable-icon {

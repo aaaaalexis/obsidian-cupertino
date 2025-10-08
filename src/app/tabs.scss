@@ -136,19 +136,19 @@ body.mod-macos:not(.is-mobile).tabs-floating-center {
 
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
-      // Both sidedocks hidden (Left space - Right space)
+      // Both sidedocks hidden
       &.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
-        padding-right: calc(calc(var(--frame-left-space) + var(--tab-action-width)) - calc(var(--tab-action-width) * 3));
+        padding-right: calc(var(--frame-left-space) + calc(--tab-action-width) * 2);
       }
-      // Left sidedock hidden (Left space - Right space)
+      // Left sidedock hidden
       &.mod-top-left-space:not(.mod-top-right-space) .workspace-tab-header-container-inner {
-        padding-right: calc(calc(var(--frame-left-space) + var(--tab-action-width)) - calc(var(--tab-action-width) * 2));
+        padding-right: calc(var(--frame-left-space) - var(--tab-action-width));
       }
-      // Right sidedock hidden (Right space)
+      // Right sidedock hidden
       &:not(.mod-top-left-space).mod-top-right-space .workspace-tab-header-container-inner {
         padding-left: calc(var(--tab-action-width) * 3);
       }
-      // Both sidedocks shown (Right space)
+      // Both sidedocks shown
       &:not(.mod-top-left-space):not(.mod-top-right-space) .workspace-tab-header-container-inner {
         padding-left: calc(var(--tab-action-width) * 2);
       }
