@@ -1,5 +1,7 @@
 @media screen, print {
   body {
+    --table-text-size: var(--font-small);
+
     --table-add-button-border-width: 0;
     --table-header-border-color: transparent;
 
