@@ -181,19 +181,10 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --modal-header-height: var(--view-header-height);
 
   .modal-close-button {
-    &:not(.mod-confirmation .modal-close-button) {
-      display: flex;
-    }
-
-    justify-content: center;
-    align-items: center;
     border-radius: 100vh;
-    width: var(--modal-header-height);
-    height: var(--modal-header-height);
+    padding: 10px;
 
     &::before {
-      width: var(--icon-l);
-      height: var(--icon-l);
       content: "\2715";
       line-height: 1;
       text-align: center;
@@ -277,7 +268,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone
     content: "";
   }
   .modal-setting-back-button {
-    padding: 10px;
     inset-inline-start: var(--side-padding);
     height: fit-content;
   }
@@ -329,8 +319,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone
   }
 
   .modal-close-button {
-    inset-inline-end: var(--side-padding) !important;
-    padding: 10px;
+    inset-inline-end: var(--side-padding);
   }
 }
 

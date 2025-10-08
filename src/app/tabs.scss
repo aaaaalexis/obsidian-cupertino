@@ -21,7 +21,8 @@ body:not(.is-mobile) {
   .workspace-ribbon svg.svg-icon,
   .workspace-tab-header-container svg.svg-icon,
   .mod-root .view-header svg.svg-icon,
-  .mod-sidedock .nav-action-button svg.svg-icon {
+  .mod-sidedock .nav-action-button svg.svg-icon,
+  .modal .modal-close-button::before {
     margin: -1px;
   }
 }

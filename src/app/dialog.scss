@@ -53,9 +53,9 @@ body:not(.is-mobile) .modal-title {
 .modal-close-button {
   position: absolute;
   top: 8px;
-  inset-inline-end: 8px !important;
-  height: 32px;
-  width: 32px;
+  inset-inline-end: 8px;
+  height: unset;
+  width: unset;
   padding: 8px;
   color: var(--text-faint);
   line-height: 12px;
@@ -63,7 +63,8 @@ body:not(.is-mobile) .modal-title {
 
   &::before {
     display: block;
-    height: 100%;
+    width: var(--icon-l);
+    height: var(--icon-l);
   }
 }
 
