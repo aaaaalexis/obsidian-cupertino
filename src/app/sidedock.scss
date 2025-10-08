@@ -157,56 +157,58 @@ body .mod-sidedock {
 }
 
 // Vault switcher
-body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
-  background-color: transparent;
-
-  .workspace-drawer-vault-actions .clickable-icon:first-child {
-    display: none;
-  }
-}
-body:not(.is-mobile, .hide-vault-switcher-off) .mod-sidedock.mod-left-split {
+body:not(.is-mobile) .workspace-split.mod-left-split {
   .workspace-sidedock-vault-profile {
-    --tab-outline-width: 0px;
+    background-color: transparent;
+    border-top: none;
     position: absolute;
     right: 0;
     bottom: 0;
     z-index: 1;
-    pointer-events: none;
     align-items: unset;
-    gap: 0;
+
+    &::before {
+      transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      mask: linear-gradient(to top, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.99) 18.4%, hsla(0, 0%, 0%, 0.963) 33.7%, hsla(0, 0%, 0%, 0.92) 46.4%, hsla(0, 0%, 0%, 0.864) 56.7%, hsla(0, 0%, 0%, 0.796) 64.8%, hsla(0, 0%, 0%, 0.72) 71.2%, hsla(0, 0%, 0%, 0.637) 76.1%, hsla(0, 0%, 0%, 0.55) 79.9%, hsla(0, 0%, 0%, 0.46) 82.8%, hsla(0, 0%, 0%, 0.37) 85.2%, hsla(0, 0%, 0%, 0.283) 87.3%, hsla(0, 0%, 0%, 0.2) 89.6%, hsla(0, 0%, 0%, 0.124) 92.3%, hsla(0, 0%, 0%, 0.056) 95.6%, hsla(0, 0%, 0%, 0) 100%);
+      background-color: var(--background-primary);
+    }
   }
-  .workspace-sidedock-vault-profile::before {
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 300%;
-    z-index: -1;
+  .workspace-drawer-vault-actions .clickable-icon:first-child {
+    display: none;
+  }
+
+  .workspace-leaf-content > .node-insert-event,
+  .workspace-leaf-content > .view-content {
+    padding-bottom: 48px;
+  }
+}
+body:not(.is-mobile, .hide-vault-switcher-off) .mod-sidedock.mod-left-split {
+  .workspace-sidedock-vault-profile:not(:hover) {
     pointer-events: none;
-    background: linear-gradient(rgb(var(--mono-rgb-0), 0), var(--background-primary));
-  }
-  .workspace-sidedock-vault-profile:not(:hover)::before {
-    opacity: 0;
+
+    .workspace-drawer-vault-switcher:not(.has-active-menu) {
+      opacity: 0;
+      filter: blur(4px);
+      pointer-events: none;
+      transform: scale(0.95);
+    }
+    &:not(:hover)::before {
+      opacity: 0;
+    }
   }
 
   .workspace-drawer-vault-switcher,
   .workspace-drawer-vault-actions .clickable-icon {
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
     pointer-events: visible;
-  }
-  .workspace-sidedock-vault-profile:not(:hover) .workspace-drawer-vault-switcher:not(.has-active-menu),
-  .workspace-sidedock-vault-profile:not(:hover) .workspace-drawer-vault-actions .clickable-icon:first-child {
-    opacity: 0;
-    filter: blur(4px);
-    pointer-events: none;
-    transform: scale(0.95);
-  }
-
-  .workspace-leaf-content > .node-insert-event,
-  .workspace-leaf-content > .view-content {
-    padding-bottom: 48px;
   }
 }
 
