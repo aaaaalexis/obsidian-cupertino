@@ -6,6 +6,8 @@
     --list-spacing: 0.2em;
     --line-height-normal: 1.6;
 
+    --italic-weight: var(--font-medium);
+
     --h1-font: var(--font-text-override), InstrumentSerif;
     --h2-font: var(--font-text-override), InstrumentSerif;
     --h3-font: var(--font-text-override), InstrumentSerif;
@@ -51,11 +53,10 @@
     --file-header-border: none;
   }
 
-  i,
-  em:not(strong em) {
-    font-weight: var(--font-medium);
+  p > em,
+  .cm-line > .cm-em {
+    font-weight: var(--italic-weight);
   }
-
   .workspace-split.mod-root {
     background-color: var(--background-secondary);
     transition: var(--anim-duration-moderate);
