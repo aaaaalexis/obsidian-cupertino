@@ -120,6 +120,11 @@ body:not(.is-phone) {
 body.is-tablet .menu,
 body.is-tablet .suggestion-container {
   border: 1px solid var(--background-modifier-border-hover);
+  overflow: auto;
+
+  .menu-scroll {
+    overflow: visible;
+  }
 
   .menu-item {
     padding: 8px 12px;
