@@ -123,26 +123,6 @@ body:not(.is-phone) {
   }
 }
 
-body.is-tablet .menu,
-body.is-tablet .suggestion-container {
-  border: 1px solid var(--background-modifier-border-hover);
-  overflow: auto;
-
-  .menu-scroll {
-    overflow: visible;
-  }
-
-  .menu-item {
-    padding: 8px 12px;
-  }
-  .menu-item-icon .svg-icon {
-    --icon-size: var(--icon-s);
-  }
-  .menu-item-title {
-    max-width: 240px;
-  }
-}
-
 body.is-phone .menu,
 body.is-phone .suggestion-container {
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
@@ -175,10 +155,30 @@ body.is-phone .suggestion-container {
     border-radius: 0;
   }
   .menu-separator {
-    margin: 12px 16px;
+    margin: calc(12px * var(--density-modifier)) 16px;
   }
   .menu-item-icon .svg-icon {
     --icon-size: var(--icon-s);
+  }
+}
+
+body.is-tablet .menu,
+body.is-tablet .suggestion-container {
+  border: 1px solid var(--background-modifier-border-hover);
+  overflow: auto;
+
+  .menu-scroll {
+    overflow: visible;
+  }
+
+  .menu-item {
+    padding: 8px 12px;
+  }
+  .menu-item-icon .svg-icon {
+    --icon-size: var(--icon-s);
+  }
+  .menu-item-title {
+    max-width: 240px;
   }
 }
 
