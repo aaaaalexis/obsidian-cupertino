@@ -231,8 +231,6 @@ body.large-new-note .mod-sidedock .workspace-leaf-content[data-type="file-explor
 
 // Mobile drawer
 body.is-mobile .workspace-drawer {
-  padding-top: calc(var(--safe-area-inset-top) + 16px);
-
   .workspace-drawer-header-name-text {
     font-family: var(--h1-font);
   }
@@ -251,6 +249,9 @@ body.is-mobile .workspace-drawer {
 }
 
 // Tablet drawer
+body.is-tablet .workspace-drawer {
+  padding-top: calc(var(--safe-area-inset-top) + 16px);
+}
 body.is-tablet .workspace-drawer:not(.is-pinned) {
   margin: var(--safe-area-inset-top) 16px var(--safe-area-inset-bottom);
   padding-top: 16px;

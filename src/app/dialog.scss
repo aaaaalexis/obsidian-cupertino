@@ -42,7 +42,7 @@ body:not(.is-mobile) .modal-title {
     &:not(:has(.modal-setting-back-button)):not(.modal-container.mod-confirmation .modal-title) {
       font-size: var(--h1-size);
       max-width: 100%;
-      padding-left: 20px;
+      padding-left: 24px;
     }
   }
 
@@ -54,7 +54,7 @@ body:not(.is-mobile) .modal-title {
   border-radius: 100vh;
   position: absolute;
   top: 8px;
-  inset-inline-end: 8px;
+  inset-inline-end: 8px !important;
   height: unset;
   width: unset;
   padding: 8px;
@@ -169,7 +169,7 @@ body.is-phone .suggestion-container {
     padding: 32px 16px;
   }
   .menu-item {
-    padding: 16px;
+    padding: calc(16px * var(--density-modifier)) 20px;
     font-size: var(--nav-item-size);
     gap: 16px;
     border-radius: 0;
