@@ -2976,6 +2976,10 @@ settings:
   }
 }
 
+.view-content .style-settings-container .setting-item:not(.setting-item-heading) {
+  flex-direction: row;
+}
+
 // Credits
 body .style-settings-container .setting-item[data-id] .setting-item-control::before {
   font-size: var(--font-ui-smaller);

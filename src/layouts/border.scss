@@ -22,6 +22,10 @@ body.layout-border:not(.is-mobile) {
       background-color: var(--background-primary);
     }
 
+    > .workspace-leaf-resize-handle:not(:hover) {
+      border-color: var(--divider-color);
+    }
+
     &.mod-left-split {
       .workspace-tab-container {
         margin-left: 8px;

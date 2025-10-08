@@ -126,7 +126,6 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
       transition: var(--anim-duration-moderate);
       border-radius: 100vh;
       padding: 0;
-      margin-left: 8px;
       outline: 2px solid transparent;
       background-clip: content-box;
       height: auto;
@@ -195,17 +194,6 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   .mod-sidedock .workspace-leaf-content {
     contain: size !important;
     overflow: visible;
-  }
-
-  // File explorer
-  .nav-file-title,
-  .nav-folder-title {
-    margin-bottom: 0;
-  }
-  .nav-files-container > div {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
   }
 
   // Hover sidedock
