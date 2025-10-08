@@ -14,6 +14,8 @@ body.is-mobile {
   --tab-switcher-menubar-background: var(--background-secondary);
   --tab-switcher-preview-radius: var(--radius-m);
 
+  --icon-opacity-hover: var(--icon-opacity);
+
   &.theme-dark {
     --color-base-00: #1e1e1e;
     --color-base-10: #242424;
