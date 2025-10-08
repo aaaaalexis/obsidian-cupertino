@@ -39,7 +39,7 @@ body:not(.is-mobile) .modal-title {
     overflow: visible;
     text-align: left;
 
-    &:not(:has(.modal-setting-back-button)):not(.modal-container.mod-confirmation .modal-title) {
+    &:not(:has(.modal-setting-back-button)) {
       font-size: var(--h1-size);
       max-width: 100%;
       padding-left: 24px;

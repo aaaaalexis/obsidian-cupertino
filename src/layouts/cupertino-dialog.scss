@@ -189,11 +189,36 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     }
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone .modal .modal-nav-action {
-  height: var(--modal-header-height);
-  margin-top: 0;
-}
+body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone .modal:not(.mod-sidebar-layout) {
+  border-radius: var(--modal-radius) var(--modal-radius) calc(var(--safe-area-inset-top) - 8px) calc(var(--safe-area-inset-top) - 8px) !important;
+  margin: 0 8px 8px;
 
+  .modal-header {
+    border-bottom: none;
+  }
+  .modal-content {
+    padding: 0 var(--side-padding);
+  }
+
+  .modal-button-container {
+    gap: 8px;
+    margin-bottom: 0;
+    padding: var(--side-padding);
+  }
+  .modal-button-container button {
+    margin-top: 0;
+  }
+
+  .modal-nav-action {
+    position: relative;
+    background-color: var(--interactive-normal);
+    margin: 0 var(--side-padding) 8px;
+
+    &:last-child {
+      margin-bottom: var(--side-padding);
+    }
+  }
+}
 // Settings
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-community-modal) {
   .horizontal-tab-nav-item,
