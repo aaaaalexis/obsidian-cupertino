@@ -13,6 +13,9 @@
     --h5-font: var(--font-text-override), InstrumentSerif;
     --h6-font: var(--font-text-override), InstrumentSerif;
 
+    --h5-color: var(--text-faint);
+    --h6-color: var(--text-faint);
+
     --code-border-width: 1px;
     --code-size: var(--font-smallest);
     --code-normal: var(--text-muted);
@@ -284,7 +287,7 @@
   .markdown-rendered h6,
   .HyperMD-header-6,
   .HyperMD-list-line .cm-header-6 {
-    text-transform: var(--h6-transform);
+    text-transform: var(--h6-transform, uppercase);
   }
 
   .inline-title:not([data-level]),
