@@ -8,8 +8,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --icon-color: var(--color-base-100);
   --nav-item-color: var(--color-base-100);
 
-  --tab-radius: var(--radius-m);
-
   // Editor panel
   .markdown-reading-view,
   .markdown-source-view {
