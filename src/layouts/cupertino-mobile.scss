@@ -1,6 +1,4 @@
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
-  --file-margins-top: 8px;
-
   --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
 
   --system-status-background: rgb(var(--mono-rgb-0));

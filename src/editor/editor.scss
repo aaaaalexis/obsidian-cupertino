@@ -6,6 +6,10 @@
     --list-spacing: 0.2em;
     --line-height-normal: 1.6;
 
+    --file-margins-block: 32px;
+    --file-margins-inline: 32px;
+    --file-margins: var(--file-margins-block) var(--file-margins-inline);
+
     --italic-weight: var(--font-medium);
 
     --h1-font: var(--font-text-override), InstrumentSerif;

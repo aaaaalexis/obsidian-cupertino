@@ -6,6 +6,9 @@ body.is-mobile {
   --mobile-sidebar-width: 100%;
   --view-header-height: var(--header-height);
 
+  --file-margins-block: 8px;
+  --file-margins-inline: 24px;
+
   --mobile-sidebar-background: var(--background-secondary);
 
   --tab-switcher-menubar-background: var(--background-secondary);
@@ -75,7 +78,7 @@ body.is-phone {
     width: auto;
     height: auto;
     background-color: var(--background-secondary);
-    border: 1px solid var(--background-modifier-border);
+    border: var(--border-width) solid var(--background-modifier-border);
   }
 
   // Navbar
