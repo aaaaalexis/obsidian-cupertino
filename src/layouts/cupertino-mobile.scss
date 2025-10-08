@@ -1,14 +1,12 @@
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
-  --radius-s: calc(16px * var(--radius-modifier));
-  --radius-m: calc(24px * var(--radius-modifier));
-  --radius-l: calc(32px * var(--radius-modifier));
-  --radius-xl: calc(40px * var(--radius-modifier));
-
-  --system-status-background: rgb(var(--mono-rgb-0));
-
   --file-margins-top: 8px;
 
   --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
+
+  --system-status-background: rgb(var(--mono-rgb-0));
+  --mobile-sidebar-background: rgb(var(--mono-rgb-0));
+  --titlebar-background: transparent;
+  --titlebar-background-focused: transparent;
   --background-modifier-form-field: var(--interactive-normal) !important;
 
   &.theme-light {
@@ -21,17 +19,8 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     --interactive-normal: var(--background-secondary);
   }
 
-  // Background fix
-  &.is-phone .app-container,
-  &.is-tablet.tabs-floating .app-container,
-  .mod-root .view-header::before,
-  .mod-root .view-content::before,
-  .mod-root .view-content,
-  .mod-root .canvas-wrapper,
-  &.theme-dark .modal.mod-sidebar-layout .modal-header::before,
-  &.theme-dark .modal.mod-sidebar-layout .vertical-tab-header,
-  &.theme-dark .modal.mod-sidebar-layout .vertical-tab-content {
-    background-color: rgb(var(--mono-rgb-0)) !important;
+  .app-container {
+    background-color: var(--system-status-background);
   }
 
   // Liquid Glass
@@ -150,6 +139,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     &.is-phone.prompt-cupertino .prompt-input-container::after,
     &.is-phone.prompt-cupertino .prompt-input-container .search-input-clear-button::before,
     &.is-tablet .menu::after,
+    &.is-tablet .workspace-drawer:not(.is-pinned)::after,
     .mod-root .view-header > div > .view-action::after,
     .workspace-drawer-header-icon::after,
     .workspace-drawer .nav-buttons-container::after,
@@ -190,6 +180,8 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 }
 
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone {
+  --system-status-background: rgb(var(--mono-rgb-0));
+
   // Editor panel
   .view-header-left,
   .view-actions {
@@ -241,22 +233,8 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-tablet {
   --border-width: 0.5pt;
   --nav-item-weight-active: normal;
-  --tab-radius: var(--radius-s);
-  --tab-curve: var(--tab-radius);
 
-  // Style Settings: Tabs style fix
-  &:is(.tabs-floating, .tabs-floating-center) {
-    --system-status-background: rgb(var(--mono-rgb-0));
-    --titlebar-background: transparent;
-    --titlebar-background-focused: transparent;
-    --tab-container-background: transparent;
-    --tab-radius: var(--radius-l);
-  }
-}
-
-body.layout-cupertino:not(.mobile-stable).is-mobile.is-tablet {
-  .mod-root {
-    padding-left: 8px;
-    padding-right: 8px;
+  .workspace-drawer.is-pinned {
+    z-index: 4;
   }
 }

@@ -127,7 +127,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone
 }
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-tablet {
   --menu-background: var(--modal-background);
-  --menu-shadow: var(--shadow-xs);
+  --menu-shadow: var(--menu-shadow);
   --menu-radius: var(--radius-l);
 
   .menu {
@@ -198,8 +198,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone
 
 // Settings
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-community-modal) {
-  background-color: var(--background-primary);
-
   .horizontal-tab-nav-item,
   .vertical-tab-nav-item,
   .vertical-tab-header-group-title {
@@ -247,6 +245,10 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) .modal.mod-sidebar-lay
     padding-top: 0;
     border-top: none;
   }
+}
+
+body:is(.layout-cupertino, .layout-macos).is-mobile .modal.mod-sidebar-layout {
+  background-color: var(--mobile-sidebar-background);
 }
 
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone .modal.mod-sidebar-layout {

@@ -69,9 +69,8 @@ body:is(.layout-cards, .layout-border).is-mobile.is-tablet {
   .workspace-drawer.is-pinned {
     margin: 0 8px;
     padding-top: 16px;
-    padding-bottom: var(--safe-area-inset-bottom);
     margin-top: calc(var(--safe-area-inset-top) + var(--header-height));
-    margin-bottom: var(--safe-area-inset-bottom);
+    margin-bottom: 8px;
     border-radius: var(--radius-s);
   }
 }

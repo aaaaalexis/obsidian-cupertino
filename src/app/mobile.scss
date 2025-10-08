@@ -118,16 +118,19 @@ body.is-tablet {
     padding: 4px 0;
   }
 
+  .workspace-drawer-active-tab-container {
+    background-color: transparent;
+  }
   .workspace-drawer.mod-left {
     max-width: var(--mobile-left-sidebar-width, 500px);
   }
   .workspace-drawer.mod-right {
     max-width: var(--mobile-right-sidebar-width, 500px);
   }
-  .workspace-drawer.mod-left.is-pinned {
+  .workspace-drawer.is-pinned.mod-left {
     width: var(--mobile-left-sidebar-width-pinned, 320px);
   }
-  .workspace-drawer.mod-right.is-pinned {
+  .workspace-drawer.is-pinned.mod-right {
     width: var(--mobile-right-sidebar-width-pinned, 320px);
   }
 }

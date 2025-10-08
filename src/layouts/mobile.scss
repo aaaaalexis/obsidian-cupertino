@@ -1,17 +1,24 @@
 body:not(.mobile-stable).is-mobile {
+  --radius-s: calc(16px * var(--radius-modifier));
+  --radius-m: calc(24px * var(--radius-modifier));
+  --radius-l: calc(32px * var(--radius-modifier));
+  --radius-xl: calc(40px * var(--radius-modifier));
+
+  --tab-radius: var(--radius-s);
+  --tab-curve: var(--tab-radius);
+
   --safe-area-inset-override: 28px;
 
   &:is(html[style*="--keyboard-height"]:not([style*="--keyboard-height: 0px"]) body.is-phone:not(.mod-toolbar-open)) {
-    --safe-area-inset-override: 16px;
+    &,
+    &.mod-toolbar-open {
+      --safe-area-inset-override: var(--side-padding);
+    }
 
     &:not(.mode-switcher-off) .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2),
     .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::before {
       opacity: 0;
     }
-  }
-
-  &.mod-toolbar-open {
-    --safe-area-inset-override: var(--side-padding);
   }
 
   .app-container {
@@ -220,6 +227,5 @@ body:not(.mobile-stable).is-mobile.is-phone {
 }
 
 body:not(.mobile-stable).is-mobile.is-tablet .workspace-drawer.is-pinned {
-  --safe-area-inset-override: calc(var(--safe-area-inset-bottom) + 16px);
   height: auto;
 }

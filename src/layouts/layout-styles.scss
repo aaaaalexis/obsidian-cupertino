@@ -10,22 +10,26 @@ body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-
   }
 }
 
-// Mobile side panels
-body:is(.layout-cards, .layout-border, .layout-frame):not(.mobile-stable).is-mobile.is-tablet {
-  &.layout-macos .workspace-drawer.is-pinned.mod-left .nav-header,
-  .workspace-drawer.is-pinned .nav-header {
-    padding-bottom: calc(var(--safe-area-inset-override) - 16px);
-  }
-}
-
 // Mobile editor panels
+body:is(.layout-classic, .layout-frame):is(.tabs-floating, .tabs-floating-center) .mod-root .workspace-tab-header {
+  margin-left: var(--tab-outline-width) !important;
+  margin-right: var(--tab-outline-width) !important;
+}
 body:is(.layout-cupertino, .layout-cards, .layout-border).is-mobile.is-tablet .mod-root {
-  padding-bottom: var(--safe-area-inset-bottom);
+  padding-bottom: 8px;
   height: auto;
 }
-body:is(.layout-classic, .layout-frame):is(.tabs-floating, .tabs-floating-center) .mod-root .workspace-tab-header {
-  margin-left: var(--tab-outline-width);
-  margin-right: var(--tab-outline-width);
+body:is(.layout-cupertino, .layout-cards, .layout-border, .layout-frame).is-mobile.is-tablet {
+  .workspace-drawer.mod-left:not(.is-pinned) + .mod-root .workspace-tab-container {
+    margin-left: 8px;
+    border-top-left-radius: var(--tab-radius);
+    border-bottom-left-radius: var(--tab-radius);
+  }
+  .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tab-container {
+    margin-right: 8px;
+    border-top-right-radius: var(--tab-radius);
+    border-bottom-right-radius: var(--tab-radius);
+  }
 }
 
 // Stacked nav

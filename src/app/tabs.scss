@@ -10,10 +10,10 @@ body {
 
 body.is-mobile {
   --header-height: 44px !important;
-  --view-header-height: 60px !important;
 }
 body.is-mobile.is-tablet {
   --header-height: 52px !important;
+  --view-header-height: 60px !important;
 }
 
 // All panels
@@ -109,8 +109,7 @@ body:is(.tabs-floating, .tabs-floating-center).is-mobile.is-tablet {
     padding: 0;
   }
   .mod-root .workspace-tab-header {
-    height: 36px;
-    margin: auto 0;
+    margin: 8px 0;
   }
 }
 
@@ -216,7 +215,7 @@ body.is-tablet.tabs-floating-center {
       }
     }
   }
-  .workspace-drawer.mod-left.is-pinned + .mod-root .workspace-tabs:not(.mod-stacked) {
+  .workspace-drawer.is-pinned.mod-left + .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
       // Single pane
       &.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
@@ -228,7 +227,7 @@ body.is-tablet.tabs-floating-center {
       }
     }
   }
-  .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) .workspace-tabs:not(.mod-stacked) {
+  .mod-root:has(+ .workspace-drawer.is-pinned.mod-right) .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
       // Single pane
       &.mod-top-left-space.mod-top-right-space .workspace-tab-header-container-inner {
