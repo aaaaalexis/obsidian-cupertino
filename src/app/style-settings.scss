@@ -697,22 +697,6 @@ settings:
 				label: Obsidian
 				value: input-default
 	-
-		id: prompt-style
-		title: Command palette style
-		type: class-select
-		allowEmpty: false
-		default: prompt-baseline
-		options:
-			-
-				label: Baseline
-				value: prompt-baseline
-			-
-				label: Cupertino
-				value: prompt-cupertino
-			-
-				label: Padded
-				value: prompt-padded
-	-
 		id: status-bar-style
 		title: Status bar style
 		type: class-select

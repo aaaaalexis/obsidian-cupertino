@@ -22,8 +22,8 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   }
 
   // Liquid Glass
-  &.is-phone.prompt-cupertino .prompt-input,
-  &.is-phone.prompt-cupertino .prompt-input-container .search-input-clear-button,
+  &.is-phone .prompt-input,
+  &.is-phone .prompt-input-container .search-input-clear-button,
   &.is-phone .mod-root .view-header > div > .view-action,
   &.is-phone .mobile-navbar .mobile-navbar-actions,
   &.is-phone .mobile-toolbar-options-list,
@@ -132,8 +132,8 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 
   // HDR element
   &.is-ios.theme-light {
-    &.is-phone.prompt-cupertino .prompt-input-container::after,
-    &.is-phone.prompt-cupertino .prompt-input-container .search-input-clear-button::before,
+    &.is-phone .prompt-input-container::after,
+    &.is-phone .prompt-input-container .search-input-clear-button::before,
     &.is-tablet .menu::after,
     &.is-tablet .workspace-drawer:not(.is-pinned)::after,
     .mod-root .view-header > div > .view-action::after,
@@ -158,7 +158,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
       content: "";
     }
 
-    &.is-phone.prompt-cupertino .prompt-input-container::after {
+    &.is-phone .prompt-input-container::after {
       height: auto;
       border-radius: 100vh;
       margin-right: 56px;

@@ -6,6 +6,7 @@
 @use "app/sidedock.scss";
 @use "app/dialog.scss";
 @use "app/prompt.scss";
+@use "app/settings.scss";
 @use "app/status-bar.scss";
 @use "app/empty-state.scss";
 @use "app/mobile.scss";
@@ -27,6 +28,8 @@
 @use "layouts/fluent-dialog.scss";
 @use "layouts/cupertino.scss" as layout-cupertino;
 @use "layouts/cupertino-dialog.scss";
+@use "layouts/cupertino-settings.scss";
+@use "layouts/cupertino-prompt.scss";
 @use "layouts/cupertino-mobile.scss";
 @use "layouts/macos.scss";
 @use "layouts/mobile.scss" as layout-mobile;

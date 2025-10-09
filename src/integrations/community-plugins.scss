@@ -19,7 +19,7 @@
 body:not(.is-mobile) .omnisearch-input-container__buttons {
   display: none;
 }
-body.prompt-padded {
+body:is(.layout-cards, .layout-border) {
   @media only screen and (max-width: 600px) {
     .omnisearch-input-container__buttons {
       padding: 0;

@@ -1,6 +1,14 @@
 body:is(.layout-cards, .layout-border):not(.is-mobile) {
   --ribbon-padding: calc(var(--header-height) + 4px) 4px 0 12px;
 
+  // Editor panel
+  .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
+    margin-left: 8px;
+  }
+  .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
+    margin-right: 8px;
+  }
+
   // Side panels
   .mod-sidedock {
     .workspace-tabs {
@@ -14,16 +22,6 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
       padding: 16px;
     }
   }
-
-  // Editor panel
-  .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
-    margin-left: 8px;
-  }
-  .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
-    margin-right: 8px;
-  }
-
-  // ----------------------------------------------------------------
 
   // Stacked nav
   &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space {
@@ -61,7 +59,30 @@ body.layout-cards:not(.is-mobile) .mod-sidedock {
   }
 }
 
-// Mobile
+// Prompt
+body:is(.layout-cards, .layout-border):not(.is-phone) .prompt {
+  .prompt-input-container {
+    margin: 8px 8px 0;
+    border-bottom-width: 0;
+  }
+  .prompt-input {
+    border-radius: var(--radius-m);
+    border-bottom: none;
+    padding-left: 16px;
+    background: var(--background-primary) !important;
+  }
+  .prompt-results {
+    padding: 8px;
+  }
+  .suggestion-item {
+    padding: 12px 16px;
+  }
+}
+body:is(.layout-cards, .layout-border).is-mobile.is-phone .prompt .prompt-input {
+  border-radius: var(--radius-l);
+}
+
+// Tablet
 body:is(.layout-cards, .layout-border).is-mobile.is-tablet {
   --mobile-sidebar-background: var(--background-primary);
 
