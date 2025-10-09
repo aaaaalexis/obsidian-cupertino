@@ -2,8 +2,7 @@ body {
   --prompt-border-color: var(--background-modifier-border-hover);
   --prompt-input-height: 64px;
 }
-
-body.is-phone {
+body.is-mobile {
   --prompt-input-height: 64px;
 }
 

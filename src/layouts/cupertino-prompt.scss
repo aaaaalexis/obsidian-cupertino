@@ -1,7 +1,8 @@
 body:is(.layout-cupertino, .layout-macos) {
   .prompt {
     background-color: var(--modal-background) !important;
-    border-radius: var(--radius-l);
+    backdrop-filter: var(--blur-l);
+    border-radius: var(--radius-xl);
     border: none;
   }
 
@@ -38,7 +39,6 @@ body:is(.layout-cupertino, .layout-macos) {
 }
 body:is(.layout-cupertino, .layout-macos):not(.is-phone) {
   --prompt-input-height: 56px;
-  animation: var(--anim-duration-moderate) bounceInScale var(--anim-motion-baseline) forwards;
 
   @keyframes bounceInScale {
     from {
@@ -48,6 +48,10 @@ body:is(.layout-cupertino, .layout-macos):not(.is-phone) {
     50% {
       transform: scale(0.99);
     }
+  }
+
+  .prompt {
+    animation: var(--anim-duration-moderate) bounceInScale var(--anim-motion-baseline) forwards;
   }
 
   .prompt-input-container::after {

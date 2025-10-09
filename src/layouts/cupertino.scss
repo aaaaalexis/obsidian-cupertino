@@ -5,8 +5,9 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --line-height-normal: 1.6;
 
   --icon-opacity: 1;
-  --icon-color: var(--color-base-100);
-  --nav-item-color: var(--color-base-100);
+  --icon-color: rgb(var(--mono-rgb-100));
+  --text-normal: rgb(var(--mono-rgb-100));
+  --nav-item-color: rgb(var(--mono-rgb-100));
 
   // Editor panel
   .markdown-reading-view,

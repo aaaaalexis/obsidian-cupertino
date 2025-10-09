@@ -65,25 +65,22 @@ body:not(.mobile-stable).is-mobile {
   }
   .workspace-drawer .nav-buttons-container {
     gap: 0;
-    box-sizing: content-box;
     border: var(--border-width) solid var(--background-modifier-border);
     border-radius: 100vh;
     background: var(--background-secondary);
-    padding-inline-start: 8px;
-    padding-inline-end: 8px;
+    padding: 4px;
     width: fit-content;
     height: 48px;
   }
   .workspace-drawer .nav-buttons-container .nav-action-button {
     border-radius: 100vh;
-    padding: 0;
-    width: 48px;
-    height: 48px;
+    padding: 12px;
+    height: auto;
 
     &.is-active {
       opacity: 1;
-      background-color: var(--background-modifier-active-hover);
-      color: var(--interactive-accent);
+      background-color: var(--interactive-accent);
+      color: var(--text-on-accent);
     }
   }
 

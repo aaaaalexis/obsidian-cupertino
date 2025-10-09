@@ -1,6 +1,4 @@
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile),
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile,
-body.input-cupertino {
+body:is(.layout-cupertino, .layout-macos, .input-cupertino) {
   --side-padding: 20px;
 
   --blur-s: blur(2px) saturate(1.5) brightness(1.025);

@@ -1,12 +1,12 @@
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile),
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --background-modifier-message: var(--modal-background);
+  --modal-background: rgb(from var(--background-primary-alt) r g b / 75%);
 
   .menu,
   .popover,
   .cm-tooltip,
   .suggestion-container,
-  .prompt,
   .modal,
   .notice {
     backdrop-filter: var(--blur-s);
@@ -157,8 +157,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-table
 
 // Modal
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
-  --modal-background: rgb(from var(--background-primary) r g b / 75%);
-
   .modal {
     @starting-style {
       opacity: 1;
@@ -181,7 +179,6 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
 }
 
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
-  --modal-background: rgb(from var(--background-secondary) r g b / 75%);
   --modal-header-height: var(--view-header-height);
 
   .modal-setting-back-button,
