@@ -103,10 +103,8 @@ body.is-phone {
 }
 
 body.is-tablet {
-  &.theme-dark {
-    --titlebar-background: var(--background-secondary);
-    --titlebar-background-focused: var(--background-secondary);
-  }
+  --titlebar-background: var(--background-secondary) !important;
+  --titlebar-background-focused: var(--background-secondary) !important;
 
   .workspace-tab-header {
     padding-bottom: 0 !important;
@@ -119,6 +117,15 @@ body.is-tablet {
   .view-header-left,
   .view-actions {
     padding: 4px 0;
+  }
+
+  .workspace {
+    background-color: var(--mobile-sidebar-background);
+  }
+
+  .workspace-drawer:not(.is-pinned),
+  .workspace-split.mod-root {
+    background-color: transparent;
   }
 
   .workspace-drawer-active-tab-container {

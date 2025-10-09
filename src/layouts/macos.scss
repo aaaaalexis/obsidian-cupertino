@@ -102,9 +102,16 @@ body.layout-macos.is-mobile.is-tablet {
   &.theme-dark {
     --shadow-sidedock: 0 4px 24px rgba(0, 0, 0, 0.25), -32px 0px 0 32px var(--system-status-background);
   }
+  .workspace {
+    background-color: var(--system-status-background);
+  }
 
   // Editor panel
   --tab-background-active: var(--system-status-background);
+
+  .mod-root .view-header {
+    background-color: transparent;
+  }
   .mod-root .view-header::before,
   .mod-root .view-content {
     background-color: var(--system-status-background) !important;
@@ -116,12 +123,16 @@ body.layout-macos.is-mobile.is-tablet {
     background-color: var(--modal-background);
     backdrop-filter: var(--blur-m);
   }
-  .workspace-drawer.is-pinned.mod-left {
-    --mobile-sidebar-background: transparent !important;
-    box-shadow: var(--shadow-sidedock);
-    margin: calc(var(--safe-area-inset-top) + 8px) 0 8px 8px;
-    border-radius: var(--radius-l);
-    padding-top: 16px;
-    background-color: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
+  .workspace-drawer.is-pinned {
+    &.mod-left {
+      box-shadow: var(--shadow-sidedock);
+      margin: calc(var(--safe-area-inset-top) + 8px) 0 8px 8px;
+      border-radius: var(--radius-l);
+      padding-top: 16px;
+      background-color: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
+    }
+    &.mod-root {
+      background-color: transparent;
+    }
   }
 }

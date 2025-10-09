@@ -185,6 +185,7 @@ body.is-tablet .suggestion-container {
 // Settings
 .modal.mod-sidebar-layout {
   backdrop-filter: none !important;
+  background-color: var(--background-secondary);
 
   .vertical-tab-header {
     border-inline-end: none;
@@ -278,7 +279,7 @@ body:not(.is-mobile) .modal.mod-sidebar-layout {
 }
 
 body.is-mobile .modal.mod-sidebar-layout {
-  background-color: var(--system-status-background);
+  background-color: var(--mobile-sidebar-background);
 
   .modal-close-button {
     padding: 12px;
@@ -308,7 +309,7 @@ body.is-mobile.is-phone .modal.mod-sidebar-layout {
 
   .vertical-tab-header,
   .vertical-tab-content {
-    background-color: var(--system-status-background);
+    background-color: var(--mobile-sidebar-background);
     box-shadow: none;
   }
 }

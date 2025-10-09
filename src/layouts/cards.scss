@@ -6,7 +6,6 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
     .workspace-tabs {
       overflow: visible;
     }
-    .workspace-tabs .workspace-leaf,
     .workspace-tabs .workspace-tab-container {
       background-color: var(--background-primary);
     }
@@ -66,11 +65,16 @@ body.layout-cards:not(.is-mobile) .mod-sidedock {
 body:is(.layout-cards, .layout-border).is-mobile.is-tablet {
   --mobile-sidebar-background: var(--background-primary);
 
+  .workspace {
+    background-color: var(--system-status-background);
+  }
+
   .workspace-drawer.is-pinned {
     margin: 0 8px;
     padding-top: 16px;
     margin-top: calc(var(--safe-area-inset-top) + var(--header-height));
     margin-bottom: 8px;
     border-radius: var(--radius-s);
+    background-color: var(--mobile-sidebar-background);
   }
 }

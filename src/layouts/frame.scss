@@ -14,9 +14,6 @@ body.layout-frame:not(.is-mobile) {
     border: var(--border-width) solid var(--background-modifier-border);
     overflow: hidden;
   }
-  .workspace-tabs .workspace-leaf {
-    background-color: transparent;
-  }
   .mod-root {
     overflow: hidden;
   }

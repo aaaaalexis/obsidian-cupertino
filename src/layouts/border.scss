@@ -71,13 +71,11 @@ body.layout-border:not(.is-mobile) {
   }
 
   // Editor panel
-  .workspace.is-left-sidedock-open .mod-root .workspace-tab-container,
-  .workspace.is-left-sidedock-open .mod-root .workspace-leaf {
+  .workspace.is-left-sidedock-open .mod-root .workspace-tab-container {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-  .workspace.is-right-sidedock-open .mod-root .workspace-tab-container,
-  .workspace.is-right-sidedock-open .mod-root .workspace-leaf {
+  .workspace.is-right-sidedock-open .mod-root .workspace-tab-container{
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }

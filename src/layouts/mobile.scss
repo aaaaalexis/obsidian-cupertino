@@ -183,6 +183,7 @@ body:not(.mobile-stable).is-mobile.is-phone {
       height: auto;
     }
     .view-header {
+      background-color: transparent;
       padding-top: var(--safe-area-inset-top);
       height: calc(var(--safe-area-inset-top) + var(--view-header-height));
     }

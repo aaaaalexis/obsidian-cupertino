@@ -4,8 +4,7 @@
 
 // Editor panel
 body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-border.is-mobile.is-tablet) {
-  .workspace-split.mod-root .workspace-tab-container,
-  .workspace-split.mod-root .workspace-leaf {
+  .workspace-split.mod-root .workspace-tab-container {
     border-radius: 0;
   }
 }
@@ -23,12 +22,12 @@ body:is(.layout-cupertino, .layout-cards, .layout-border, .layout-frame).is-mobi
   .workspace-drawer.mod-left:not(.is-pinned) + .mod-root .workspace-tab-container {
     margin-left: 8px;
     border-top-left-radius: var(--tab-radius);
-    border-bottom-left-radius: var(--tab-radius);
+    border-bottom-left-radius: var(--safe-area-inset-bottom);
   }
   .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tab-container {
     margin-right: 8px;
     border-top-right-radius: var(--tab-radius);
-    border-bottom-right-radius: var(--tab-radius);
+    border-bottom-right-radius: var(--safe-area-inset-bottom);
     background-color: var(--background-primary);
   }
 }

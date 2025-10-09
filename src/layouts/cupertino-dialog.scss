@@ -80,6 +80,11 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone {
   --menu-shadow: none;
 
+  .menu {
+    margin: 8px;
+    border-radius: var(--modal-radius) var(--modal-radius) calc(var(--safe-area-inset-top) - 8px) calc(var(--safe-area-inset-top) - 8px);
+  }
+
   .menu .menu-scroll,
   .suggestion-container .menu-scroll {
     padding: 32px var(--side-padding);
@@ -288,7 +293,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone
     left: 0;
     z-index: -1;
     mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.99) 18.4%, hsla(0, 0%, 0%, 0.963) 33.7%, hsla(0, 0%, 0%, 0.92) 46.4%, hsla(0, 0%, 0%, 0.864) 56.7%, hsla(0, 0%, 0%, 0.796) 64.8%, hsla(0, 0%, 0%, 0.72) 71.2%, hsla(0, 0%, 0%, 0.637) 76.1%, hsla(0, 0%, 0%, 0.55) 79.9%, hsla(0, 0%, 0%, 0.46) 82.8%, hsla(0, 0%, 0%, 0.37) 85.2%, hsla(0, 0%, 0%, 0.283) 87.3%, hsla(0, 0%, 0%, 0.2) 89.6%, hsla(0, 0%, 0%, 0.124) 92.3%, hsla(0, 0%, 0%, 0.056) 95.6%, hsla(0, 0%, 0%, 0) 100%);
-    background-color: var(--system-status-background);
+    background-color: var(--mobile-sidebar-background);
     height: calc(var(--safe-area-inset-top) + var(--view-header-height) + 32px);
     pointer-events: none;
     content: "";
