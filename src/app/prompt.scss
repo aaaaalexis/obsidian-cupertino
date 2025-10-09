@@ -150,7 +150,7 @@ body.is-phone.prompt-cupertino {
     border: none;
     gap: 8px;
     position: absolute;
-    inset: auto var(--side-padding) calc(var(--side-padding) + var(--safe-area-inset-bottom));
+    inset: auto var(--safe-area-inset-side) calc(var(--safe-area-inset-side) + var(--safe-area-inset-bottom));
     z-index: 1;
   }
   .prompt-input {

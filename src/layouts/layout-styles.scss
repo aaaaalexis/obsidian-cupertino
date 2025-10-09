@@ -29,6 +29,7 @@ body:is(.layout-cupertino, .layout-cards, .layout-border, .layout-frame).is-mobi
     margin-right: 8px;
     border-top-right-radius: var(--tab-radius);
     border-bottom-right-radius: var(--tab-radius);
+    background-color: var(--background-primary);
   }
 }
 

@@ -42,7 +42,7 @@ body:not(.is-mobile) .modal-title {
     &:not(:has(.modal-setting-back-button)) {
       font-size: var(--h1-size);
       max-width: 100%;
-      padding-left: 24px;
+      padding-left: calc(var(--safe-area-inset-side) + 8px);
     }
   }
 
@@ -184,7 +184,6 @@ body.is-tablet .suggestion-container {
 
 // Settings
 .modal.mod-sidebar-layout {
-  background-color: var(--background-secondary);
   backdrop-filter: none !important;
 
   .vertical-tab-header {
@@ -279,14 +278,15 @@ body:not(.is-mobile) .modal.mod-sidebar-layout {
 }
 
 body.is-mobile .modal.mod-sidebar-layout {
+  background-color: var(--system-status-background);
+
   .modal-close-button {
     padding: 12px;
-
-    &::before {
-      width: var(--icon-m);
-      height: var(--icon-m);
-      font-size: var(--icon-s);
-    }
+  }
+  .modal-close-button::before {
+    width: var(--icon-m);
+    height: var(--icon-m);
+    font-size: var(--icon-s);
   }
 }
 
@@ -308,7 +308,7 @@ body.is-mobile.is-phone .modal.mod-sidebar-layout {
 
   .vertical-tab-header,
   .vertical-tab-content {
-    background-color: var(--background-secondary);
+    background-color: var(--system-status-background);
     box-shadow: none;
   }
 }
@@ -352,7 +352,7 @@ body.is-mobile.is-phone .modal.mod-sidebar-layout {
 body.is-phone .modal.mod-sidebar-layout.mod-community-modal {
   .community-modal-controls {
     padding: 16px;
-    background-color: var(--background-secondary);
+    background-color: var(--system-status-background);
   }
   .community-modal-controls .setting-item {
     margin-right: unset;
