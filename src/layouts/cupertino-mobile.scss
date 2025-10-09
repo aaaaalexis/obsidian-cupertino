@@ -179,40 +179,42 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone
   --system-status-background: rgb(var(--mono-rgb-0));
 
   // Editor panel
-  .view-header-left,
-  .view-actions {
-    flex: 0;
-    gap: 8px;
-  }
-
-  .view-header {
-    padding-left: var(--safe-area-inset-side);
-    padding-right: var(--safe-area-inset-side);
-  }
-  .view-header-title-container {
-    margin-left: 4px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .view-header-title-parent {
-    font-size: var(--font-ui-smaller);
-  }
-  .view-header-title {
-    font-weight: var(--font-medium);
-  }
-  .view-header-breadcrumb {
-    padding: 0;
-  }
-  .view-header-breadcrumb-separator {
-    padding: 0 4px;
-
-    &:last-child {
-      display: none;
+  .mod-root {
+    .view-header-left,
+    .view-actions {
+      flex: 0;
+      gap: 8px;
     }
-  }
 
-  .view-content {
-    background-color: var(--system-status-background);
+    .view-header {
+      padding-left: var(--safe-area-inset-side);
+      padding-right: var(--safe-area-inset-side);
+    }
+    .view-header-title-container {
+      margin-left: 4px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .view-header-title-parent {
+      font-size: var(--font-ui-smaller);
+    }
+    .view-header-title {
+      font-weight: var(--font-medium);
+    }
+    .view-header-breadcrumb {
+      padding: 0;
+    }
+    .view-header-breadcrumb-separator {
+      padding: 0 4px;
+
+      &:last-child {
+        display: none;
+      }
+    }
+
+    .view-content {
+      background-color: var(--system-status-background);
+    }
   }
 
   // Pull action
