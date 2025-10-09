@@ -101,7 +101,9 @@
     }
 
     .callout-title {
-      margin: 12px 12px 16px;
+      padding: 12px 12px 16px;
+      overflow: hidden;
+      position: relative;
     }
 
     .callout-content {
