@@ -9,6 +9,8 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --text-normal: rgb(var(--mono-rgb-100));
   --nav-item-color: rgb(var(--mono-rgb-100));
 
+  --background-modifier-hover: rgba(var(--mono-rgb-100), 0.03);
+
   // Editor panel
   .markdown-reading-view,
   .markdown-source-view {

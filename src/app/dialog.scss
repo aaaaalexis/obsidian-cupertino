@@ -3,10 +3,6 @@ body {
   --modal-border-color: var(--background-modifier-border-hover);
 }
 
-.modal-bg {
-  opacity: 0 !important;
-}
-
 .modal-container {
   perspective: 240px;
 }
@@ -22,8 +18,14 @@ body {
 }
 
 // Modal
-body:not(.is-mobile) .modal-title {
-  margin-left: 0;
+body:not(.is-mobile) {
+  .modal-bg {
+    opacity: 0 !important;
+  }
+
+  .modal-title {
+    margin-left: 0;
+  }
 }
 
 .modal {

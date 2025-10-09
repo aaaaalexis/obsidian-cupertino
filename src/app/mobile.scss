@@ -16,6 +16,8 @@ body.is-mobile {
 
   --icon-opacity-hover: var(--icon-opacity);
 
+  --input-border-width-focus: 0;
+
   &.theme-dark {
     --color-base-00: #1e1e1e;
     --color-base-10: #242424;

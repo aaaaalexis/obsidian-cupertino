@@ -26,6 +26,10 @@
     font-weight: var(--font-medium);
     overflow: visible;
   }
+  .setting-item-description {
+    color: var(--text-faint);
+    word-break: break-word;
+  }
 }
 
 body:not(.nav-item-subtle, .nav-item-strong) .modal.mod-sidebar-layout {

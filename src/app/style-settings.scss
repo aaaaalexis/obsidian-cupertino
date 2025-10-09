@@ -2921,6 +2921,18 @@ settings:
 .vertical-tab-content > div > .setting-item-heading:not(.is-collapsed) {
   border-bottom: 0;
 }
+.style-settings-heading,
+.style-settings-container {
+  padding-left: 32px;
+  margin-top: 0 !important	;
+  margin-bottom: 0 !important;
+}
+.style-settings-heading .setting-item-name {
+  color: var(--text-normal) !important;
+}
+.style-settings-heading[data-level="0"] + .style-settings-container {
+  padding-left: 0;
+}
 
 .style-settings-container .themed-color-wrapper > div {
   background-color: transparent;
@@ -2938,12 +2950,6 @@ settings:
 }
 .themed-color-wrapper > div + div {
   margin-top: 0;
-}
-.style-settings-heading,
-.style-settings-container {
-  padding-left: 32px;
-  margin-top: 0 !important	;
-  margin-bottom: 0 !important;
 }
 
 .style-settings-container .pickr .pcr-button {
