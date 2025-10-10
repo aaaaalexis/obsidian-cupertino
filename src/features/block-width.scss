@@ -1,3 +1,31 @@
+@mixin block-width($prefix, $line-var, $targets...) {
+  &:is(.#{$prefix}-wide, .#{$prefix}-max, .#{$prefix}-100),
+  div:is(.#{$prefix}-wide, .#{$prefix}-max, .#{$prefix}-100) {
+    @each $target in $targets {
+      #{$target} {
+        max-width: var(--#{$line-var});
+        width: var(--#{$line-var}) !important;
+        justify-self: center;
+      }
+    }
+  }
+
+  &.#{$prefix}-wide,
+  .#{$prefix}-wide {
+    --#{$line-var}: var(--line-width-wide);
+  }
+
+  &.#{$prefix}-max,
+  .#{$prefix}-max {
+    --#{$line-var}: 100cqw;
+  }
+
+  &.#{$prefix}-100,
+  .#{$prefix}-100 {
+    --#{$line-var}: calc(100cqw + (var(--file-margins-inline) * 2));
+  }
+}
+
 body:not(.block-width-off) {
   --file-line-width: var(--line-width);
   --line-width: 40rem;
@@ -5,284 +33,180 @@ body:not(.block-width-off) {
 
   &.wide,
   .wide {
-    --active-line-width: var(--line-width-wide);
+    --file-line-width: var(--line-width-wide);
   }
+
   &.max,
   .max {
-    --active-line-width: 100%;
-
-    .cm-content {
-      max-width: 100% !important;
-    }
-  }
-
-  &:is(.wide, .table-wide, .img-wide, .iframe-wide, .map-wide, .chart-wide, .bases-wide),
-  div:is(.wide, .table-wide, .img-wide, .iframe-wide, .map-wide, .chart-wide, .bases-wide) {
-    --file-line-width: var(--line-width-wide);
-
-    .cm-content {
-      max-width: 100% !important;
-    }
-  }
-  &:is(.max, .table-max, .img-max, .iframe-max, .map-max, .chart-max, .bases-max, .table-100, .img-100, .iframe-100, .map-100, .chart-100, .bases-100),
-  div:is(.max, .table-max, .img-max, .iframe-max, .map-max, .chart-max, .bases-max, .table-100, .img-100, .iframe-100, .map-100, .chart-100, .bases-100) {
     --file-line-width: 100%;
+  }
 
-    .cm-content {
-      width: 100% !important;
+  .mod-root .markdown-preview-view,
+  .mod-root .cm-scroller {
+    container-type: inline-size;
+  }
+
+  @include block-width(table, table-line-width, ".markdown-preview-sizer > .el-table", ".markdown-preview-sizer > .el-pre .block-language-dataview", ".markdown-preview-sizer > .el-pre .block-language-datacorejsx", ".cm-content > .cm-table-widget", ".cm-content > .cm-lang-dataview", ".cm-content > .cm-lang-datacorejsx");
+
+  @include block-width(bases, bases-line-width, ".markdown-preview-sizer > .el-pre .bases-embed", ".markdown-preview-sizer > .el-p .bases-embed", ".cm-content > .bases-embed", ".cm-content > .cm-lang-base");
+
+  @include block-width(img, img-line-width, ".markdown-preview-sizer > .el-p p:has(img)", ".markdown-preview-sizer > .el-iframe", ".cm-content .image-embed");
+
+  &.table-100 .markdown-preview-sizer > .el-table,
+  .table-100 .markdown-preview-sizer > .el-table {
+    tbody > tr > td {
+      border-radius: 0;
+    }
+    tbody tr:first-child > td {
+      border-block-start-width: 0;
+    }
+    tbody tr > td:last-child {
+      border-inline-end-width: 0;
+    }
+    tbody tr > td:first-child {
+      border-inline-start-width: 0;
+    }
+    tbody tr:last-child > td {
+      border-block-end-width: 0;
     }
   }
 
-  // Fix content centering
-  .markdown-preview-sizer > div {
-    margin: 0 auto;
+  &.img-100,
+  .img-100 {
+    .markdown-preview-sizer img,
+    .cm-content img {
+      border-radius: 0 !important;
+    }
+  }
+  .cm-content .image-embed {
+    display: block !important;
   }
 }
 
-// Table
-.table-wide {
-  --table-line-width: var(--line-width-wide);
-}
-.table-max,
-.table-100 {
-  --table-line-width: 100%;
-}
-body:not(.block-width-off):not(.table-fit-content).table-100 .markdown-preview-sizer,
-body:not(.block-width-off):not(.table-fit-content) .table-100 .markdown-preview-sizer {
-  tbody > tr > td {
-    border-radius: 0 !important;
-  }
-  tbody tr:first-child > td {
-    border-block-start-width: 0;
-  }
-  tbody tr > td:last-child {
-    border-inline-end-width: 0;
-  }
-  tbody tr > td:first-child {
-    border-inline-start-width: 0;
-  }
-  tbody tr:last-child > td {
-    border-block-end-width: 0;
-  }
-}
-body:not(.block-width-off):is(.table-wide, .table-max, .table-100),
-body:not(.block-width-off) div:is(.table-wide, .table-max, .table-100) {
-  .markdown-preview-sizer > div:not(.el-table),
-  .cm-sizer > div:not(.cm-contentContainer),
-  .cm-content > *:not(.cm-table-widget) {
-    max-width: var(--active-line-width, var(--line-width)) !important;
-    margin-inline: auto !important;
-    width: max(calc(100% - var(--file-margins-inline) * 2), 100%);
-  }
-}
-body:not(.block-width-off):is(.table-wide, .table-max),
-body:not(.block-width-off) div:is(.table-wide, .table-max) {
-  .markdown-preview-sizer > div.el-table:is(.el-table)[dir],
-  .cm-content > .cm-table-widget {
-    max-width: 100% !important;
-    width: var(--table-line-width) !important;
-  }
-}
-body:not(.block-width-off).table-100,
-body:not(.block-width-off) div.table-100 {
-  .markdown-preview-sizer > div.el-table:is(.el-table)[dir],
-  .cm-content > .cm-table-widget {
-    max-width: calc(100% + calc(var(--file-margins-inline) * 2)) !important;
-    width: calc(var(--table-line-width) + calc(var(--file-margins-inline) * 2)) !important;
-    margin-inline: calc(-1 * var(--file-margins-inline)) !important;
-  }
-}
+// In case I forget how it works...
+//
+// body:not(.block-width-off) {
+//   --file-line-width: var(--line-width);
+//   --line-width: 40rem;
+//   --line-width-wide: 50rem;
+//
+//   &.wide,
+//   .wide {
+//     --file-line-width: var(--line-width-wide);
+//   }
+//   &.max,
+//   .max {
+//     --file-line-width: 100%;
+//   }
+//
+//   .mod-root .markdown-preview-view,
+//   .mod-root .cm-scroller {
+//     container-type: inline-size;
+//   }
+//
+//   // Table
+//   &:is(.table-wide, .table-max, .table-100),
+//   div:is(.table-wide, .table-max, .table-100) {
+//     .markdown-preview-sizer > .el-table,
+//     .markdown-preview-sizer > .el-pre .block-language-dataview,
+//     .markdown-preview-sizer > .el-pre .block-language-datacorejsx,
+//     .cm-content > .cm-table-widget,
+//     .cm-content > .cm-lang-dataview,
+//     .cm-content > .cm-lang-datacorejsx {
+//       max-width: var(--table-line-width);
+//       width: var(--table-line-width);
+//       justify-self: center;
+//     }
+//   }
+//   &.table-wide,
+//   .table-wide {
+//     --table-line-width: var(--line-width-wide);
+//   }
+//   &.table-max,
+//   .table-max {
+//     --table-line-width: 100cqw;
+//   }
+//   &.table-100,
+//   .table-100 {
+//     --table-line-width: calc(100cqw + (var(--file-margins-inline) * 2));
+//   }
+//
+//   &.table-100 .markdown-preview-sizer > .el-table,
+//   .table-100 .markdown-preview-sizer > .el-table {
+//     tbody > tr > td {
+//       border-radius: 0;
+//     }
+//     tbody tr:first-child > td {
+//       border-block-start-width: 0;
+//     }
+//     tbody tr > td:last-child {
+//       border-inline-end-width: 0;
+//     }
+//     tbody tr > td:first-child {
+//       border-inline-start-width: 0;
+//     }
+//     tbody tr:last-child > td {
+//       border-block-end-width: 0;
+//     }
+//   }
+//
+//   // Bases
+//   &:is(.bases-wide, .bases-max, .bases-100),
+//   div:is(.bases-wide, .bases-max, .bases-100) {
+//     .markdown-preview-sizer > .el-pre .bases-embed,
+//     .markdown-preview-sizer > .el-p .bases-embed,
+//     .cm-content > .bases-embed,
+//     .cm-content > .cm-lang-base {
+//       max-width: var(--bases-line-width);
+//       width: var(--bases-line-width) !important;
+//       justify-self: center;
+//     }
+//   }
+//   &.bases-wide,
+//   .bases-wide {
+//     --bases-line-width: var(--line-width-wide);
+//   }
+//   &.bases-max,
+//   .bases-max {
+//     --bases-line-width: 100cqw;
+//   }
+//   &.bases-100,
+//   .bases-100 {
+//     --bases-line-width: calc(100cqw + (var(--file-margins-inline) * 2));
+//   }
+//
+//   // Image
+//   &:is(.img-wide, .img-max, .img-100),
+//   div:is(.img-wide, .img-max, .img-100) {
+//     .markdown-preview-sizer > .el-p p:has(img),
+//     .markdown-preview-sizer > .el-iframe,
+//     .cm-content .image-embed {
+//       max-width: var(--img-line-width);
+//       width: var(--img-line-width) !important;
+//       justify-self: center;
+//     }
+//   }
+//   &.img-wide,
+//   .img-wide {
+//     --img-line-width: var(--line-width-wide);
+//   }
+//   &.img-max,
+//   .img-max {
+//     --img-line-width: 100cqw;
+//   }
+//   &.img-100,
+//   .img-100 {
+//     --img-line-width: calc(100cqw + (var(--file-margins-inline) * 2));
+//   }
 
-// Image
-.img-wide {
-  --img-line-width: var(--line-width-wide);
-}
-.img-max,
-.img-100 {
-  --img-line-width: 100%;
-}
-.img-100 {
-  .markdown-preview-sizer img,
-  .cm-content img {
-    border-radius: 0 !important;
-  }
-}
-body:not(.block-width-off):is(.img-wide, .img-max, .img-100),
-body:not(.block-width-off) div:is(.img-wide, .img-max, .img-100) {
-  .markdown-preview-sizer > div:not(.el-p:has(img)),
-  .cm-sizer > div:not(.cm-contentContainer),
-  .cm-content > *:not(img) {
-    max-width: var(--active-line-width, var(--line-width)) !important;
-    margin-inline: auto !important;
-    width: max(calc(100% - var(--file-margins-inline) * 2), 100%);
-  }
-}
-body:not(.block-width-off):is(.img-wide, .img-max),
-body:not(.block-width-off) div:is(.img-wide, .img-max) {
-  .markdown-preview-sizer > div.el-p:has(img[src]):is(.el-p:has(img[src])),
-  .cm-content > img {
-    max-width: 100% !important;
-    width: var(--img-line-width) !important;
-  }
-}
-body:not(.block-width-off).img-100,
-body:not(.block-width-off) div.img-100 {
-  .markdown-preview-sizer > div.el-p:has(img[src]):is(.el-p:has(img[src])),
-  .cm-content > img {
-    max-width: calc(100% + calc(var(--file-margins-inline) * 2)) !important;
-    width: calc(var(--img-line-width) + calc(var(--file-margins-inline) * 2)) !important;
-    margin-inline: calc(-1 * var(--file-margins-inline)) !important;
-    height: auto;
-  }
-}
-
-// iframe
-.iframe-wide {
-  --iframe-line-width: var(--line-width-wide);
-}
-.iframe-max,
-.iframe-100 {
-  --iframe-line-width: 100%;
-}
-body:not(.block-width-off):is(.iframe-wide, .iframe-max, .iframe-100),
-body:not(.block-width-off) div:is(.iframe-wide, .iframe-max, .iframe-100) {
-  .markdown-preview-sizer > div:not(.el-p:has(iframe)),
-  .cm-sizer > div:not(.cm-contentContainer),
-  .cm-content > *:not(iframe) {
-    max-width: var(--active-line-width, var(--line-width)) !important;
-    margin-inline: auto !important;
-    width: max(calc(100% - var(--file-margins-inline) * 2), 100%);
-  }
-}
-body:not(.block-width-off):is(.iframe-wide, .iframe-max, .iframe-100),
-body:not(.block-width-off) div:is(.iframe-wide, .iframe-max, .iframe-100) {
-  .markdown-preview-sizer > div.el-p:has(iframe[src]):is(.el-p:has(iframe[src])),
-  .cm-content > iframe {
-    max-width: 100% !important;
-    width: var(--iframe-line-width) !important;
-  }
-}
-body:not(.block-width-off).iframe-100,
-body:not(.block-width-off) div.iframe-100 {
-  .markdown-preview-sizer > div.el-p:has(iframe[src]):is(.el-p:has(iframe[src])),
-  .cm-content > iframe {
-    max-width: calc(100% + calc(var(--file-margins-inline) * 2)) !important;
-    width: calc(var(--img-line-width) + calc(var(--file-margins-inline) * 2)) !important;
-    margin-inline: calc(-1 * var(--file-margins-inline)) !important;
-  }
-}
-
-// Map
-.map-wide {
-  --map-line-width: var(--line-width-wide);
-}
-.map-max,
-.map-100 {
-  --map-line-width: 100%;
-}
-body:not(.block-width-off):is(.map-wide, .map-max, .map-100),
-body:not(.block-width-off) div:is(.map-wide, .map-max, .map-100) {
-  .markdown-preview-sizer > div:not(.el-pre:has(.block-language-leaflet)),
-  .cm-sizer > div:not(.cm-contentContainer),
-  .cm-content > *:not(.cm-lang-leaflet) {
-    max-width: var(--active-line-width, var(--line-width)) !important;
-    margin-inline: auto !important;
-    width: max(calc(100% - var(--file-margins-inline) * 2), 100%);
-  }
-}
-body:not(.block-width-off):is(.map-wide, .map-max),
-body:not(.block-width-off) div:is(.map-wide, .map-max) {
-  .markdown-preview-sizer > div.el-pre:has(.block-language-leaflet[style]):is(.el-pre:has(.block-language-leaflet[style])),
-  .cm-content > .cm-lang-leaflet {
-    max-width: 100% !important;
-    width: var(--map-line-width) !important;
-  }
-}
-body:not(.block-width-off).map-100,
-body:not(.block-width-off) div.map-100 {
-  .markdown-preview-sizer > div.el-pre:has(.block-language-leaflet[style]):is(.el-pre:has(.block-language-leaflet[style])),
-  .cm-content > .cm-lang-leaflet {
-    max-width: calc(100% + calc(var(--file-margins-inline) * 2)) !important;
-    width: calc(var(--img-line-width) + calc(var(--file-margins-inline) * 2)) !important;
-    margin-inline: calc(-1 * var(--file-margins-inline)) !important;
-  }
-}
-
-// Chart
-.chart-wide {
-  --chart-line-width: var(--line-width-wide);
-}
-.chart-max,
-.chart-100 {
-  --chart-line-width: 100%;
-}
-body:not(.block-width-off):is(.chart-wide, .chart-max, .chart-100),
-body:not(.block-width-off) div:is(.chart-wide, .chart-max, .chart-100) {
-  .markdown-preview-sizer > div:not(.el-pre:has(.block-language-chart)),
-  .cm-sizer > div:not(.cm-contentContainer),
-  .cm-content > *:not(.cm-lang-chart) {
-    max-width: var(--active-line-width, var(--line-width)) !important;
-    margin-inline: auto !important;
-    width: max(calc(100% - var(--file-margins-inline) * 2), 100%);
-  }
-}
-body:not(.block-width-off):is(.chart-wide, .chart-max),
-body:not(.block-width-off) div:is(.chart-wide, .chart-max) {
-  .markdown-preview-sizer > div.el-pre:has(.block-language-chart[style]):is(.el-pre:has(.block-language-chart[style])),
-  .cm-content > .cm-lang-chart {
-    max-width: 100% !important;
-    width: var(--chart-line-width) !important;
-  }
-}
-body:not(.block-width-off).chart-100,
-body:not(.block-width-off) div.chart-100 {
-  .markdown-preview-sizer > div.el-pre:has(.block-language-chart[style]):is(.el-pre:has(.block-language-chart[style])),
-  .cm-content > .cm-lang-chart {
-    max-width: calc(100% + calc(var(--file-margins-inline) * 2)) !important;
-    width: calc(var(--img-line-width) + calc(var(--file-margins-inline) * 2)) !important;
-    margin-inline: calc(-1 * var(--file-margins-inline)) !important;
-  }
-}
-
-// Bases
-.bases-wide {
-  --bases-line-width: var(--line-width-wide);
-}
-.bases-max,
-.bases-100 {
-  --bases-line-width: 100%;
-}
-body:not(.block-width-off).bases-100,
-body:not(.block-width-off) .bases-100 {
-  .bases-embed .bases-view .bases-tbody {
-    border: none;
-    border-radius: 0;
-  }
-}
-body:not(.block-width-off):is(.bases-wide, .bases-max, .bases-100),
-body:not(.block-width-off) div:is(.bases-wide, .bases-max, .bases-100) {
-  .markdown-preview-sizer > div:not(:is(.el-p, .el-pre):has(.bases-view)),
-  .cm-sizer > div:not(.cm-contentContainer),
-  .cm-content > *:not(div:is(.bases-embed, .cm-lang-base)) {
-    max-width: var(--active-line-width, var(--line-width)) !important;
-    margin-inline: auto !important;
-    width: max(calc(100% - var(--file-margins-inline) * 2), 100%);
-  }
-}
-body:not(.block-width-off):is(.bases-wide, .bases-max),
-body:not(.block-width-off) div:is(.bases-wide, .bases-max) {
-  .markdown-preview-sizer > div:is(.el-p, .el-pre):has(.bases-view):is(:is(.el-p, .el-pre):has(.bases-view)),
-  .cm-content > div:is(.bases-embed, .cm-lang-base) {
-    max-width: 100% !important;
-    width: var(--bases-line-width) !important;
-  }
-}
-body:not(.block-width-off).bases-100,
-body:not(.block-width-off) div.bases-100 {
-  .markdown-preview-sizer > div:is(.el-p, .el-pre):has(.bases-view):is(:is(.el-p, .el-pre):has(.bases-view)),
-  .cm-content > div:is(.bases-embed, .cm-lang-base) {
-    max-width: calc(100% + calc(var(--file-margins-inline) * 2)) !important;
-    width: calc(var(--img-line-width) + calc(var(--file-margins-inline) * 2)) !important;
-    margin-inline: calc(-1 * var(--file-margins-inline)) !important;
-  }
-}
+// &.img-100,
+// .img-100 {
+//   .markdown-preview-sizer img,
+//   .cm-content img {
+//     border-radius: 0 !important;
+//   }
+// }
+// .cm-content .image-embed {
+//   display: block !important;
+// }
+// }

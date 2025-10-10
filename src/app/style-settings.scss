@@ -1308,11 +1308,11 @@ settings:
 		description: Default width for table blocks
 		type: class-select
 		allowEmpty: false
-		default: table-default-width
+		default: table-normal
 		options:
 			-
 				label: Default
-				value: table-default-width
+				value: table-normal
 			-
 				label: Wide line width
 				value: table-wide
@@ -1328,11 +1328,11 @@ settings:
 		description: Default width for Bases blocks
 		type: class-select
 		allowEmpty: false
-		default: bases-default-width
+		default: bases-normal
 		options:
 			-
 				label: Default
-				value: bases-default-width
+				value: bases-normal
 			-
 				label: Wide line width
 				value: bases-wide
@@ -1348,11 +1348,11 @@ settings:
 		description: Default width for image blocks
 		type: class-select
 		allowEmpty: false
-		default: img-default-width
+		default: img-normal
 		options:
 			-
 				label: Default
-				value: img-default-width
+				value: img-normal
 			-
 				label: Wide line width
 				value: img-wide
@@ -1363,36 +1363,16 @@ settings:
 				label: 100% pane width
 				value: img-100
 	-
-		id: iframe-width
-		title: Iframe width
-		description: Default width for iframe blocks
-		type: class-select
-		allowEmpty: false
-		default: iframe-default-width
-		options:
-			-
-				label: Default
-				value: iframe-default-width
-			-
-				label: Wide line width
-				value: iframe-wide
-			-
-				label: Maximum line width
-				value: iframe-max
-			-
-				label: 100% pane width
-				value: iframe-100
-	-
 		id: map-width
 		title: Map width
 		description: Default width for map blocks
 		type: class-select
 		allowEmpty: false
-		default: map-default-width
+		default: map-normal
 		options:
 			-
 				label: Default
-				value: map-default-width
+				value: map-normal
 			-
 				label: Wide line width
 				value: map-wide
@@ -1408,11 +1388,11 @@ settings:
 		description: Default width for chart blocks
 		type: class-select
 		allowEmpty: false
-		default: chart-default-width
+		default: chart-normal
 		options:
 			-
 				label: Default
-				value: chart-default-width
+				value: chart-normal
 			-
 				label: Wide line width
 				value: chart-wide
