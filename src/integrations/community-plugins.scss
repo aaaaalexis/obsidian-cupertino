@@ -47,16 +47,10 @@ body {
   --nn-theme-list-header-bg: transparent;
   --nn-theme-list-bg: transparent;
 
-  --nn-theme-navitem-selected-bg: var(--interactive-accent);
-  --nn-theme-navitem-selected-inactive-bg: var(--interactive-accent);
-  --nn-theme-navitem-selected-chevron-color: var(--text-on-accent);
-  --nn-theme-navitem-selected-icon-color: var(--text-on-accent);
-  --nn-theme-navitem-selected-name-color: var(--text-on-accent);
-  --nn-theme-navitem-selected-count-color: var(--text-on-accent);
-  --nn-theme-file-selected-name-color: var(--text-on-accent);
-  --nn-theme-file-selected-date-color: var(--text-on-accent);
-  --nn-theme-file-selected-preview-color: var(--text-faint);
-  --nn-theme-file-parent-color: var(--text-faint);
+  --nn-theme-navitem-selected-bg: var(--background-modifier-hover);
+  --nn-theme-navitem-selected-inactive-bg: var(--background-modifier-hover);
+  --nn-theme-file-tag-bg: var(--tag-background);
+  --nn-theme-file-tag-color: var(--tag-color);
 
   --nn-theme-mobile-list-header-link-color: var(--icon-color);
   --nn-theme-mobile-toolbar-button-active-bg: var(--interactive-accent);
@@ -84,6 +78,16 @@ body:not(.is-mobile) .view-content.notebook-navigator {
   }
   .nn-search-input {
     height: 100% !important;
+  }
+
+  .nn-pane-header {
+    padding: 8px 16px;
+    height: auto;
+  }
+  .nn-header-actions button.nn-icon-button {
+    padding: 8px;
+    min-width: unset;
+    height: auto;
   }
 }
 body.is-mobile .view-content.notebook-navigator-mobile {
