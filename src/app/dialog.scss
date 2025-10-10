@@ -31,6 +31,11 @@ body:not(.is-mobile) {
 .modal {
   &:not(.mod-sidebar-layout) {
     border-radius: var(--modal-radius);
+
+    .modal-title {
+      font-size: var(--h1-size);
+      max-width: 100%;
+    }
   }
 
   .modal-title {
@@ -40,12 +45,6 @@ body:not(.is-mobile) {
     min-width: fit-content;
     overflow: visible;
     text-align: left;
-
-    &:not(:has(.modal-setting-back-button)) {
-      font-size: var(--h1-size);
-      max-width: 100%;
-      padding-left: calc(var(--safe-area-inset-side) + 8px);
-    }
   }
 
   .modal-content .setting-item {
