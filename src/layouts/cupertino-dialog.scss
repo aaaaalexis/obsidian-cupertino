@@ -4,13 +4,15 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --modal-background: rgb(from var(--background-primary-alt) r g b / 75%);
 
   .menu,
+  .suggestion-container,
   .popover,
   .cm-tooltip,
-  .suggestion-container,
+  .prompt,
   .modal,
   .notice {
     backdrop-filter: var(--blur-s);
     border: none !important;
+    background-color: var(--modal-background);
   }
 }
 
@@ -21,17 +23,10 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     transition: none;
   }
 
-  .menu,
-  .popover,
-  .cm-tooltip,
-  .suggestion-container {
-    background-color: var(--modal-background);
-  }
-
   .menu:hover,
+  .suggestion-container,
   .popover,
-  .cm-tooltip,
-  .suggestion-container {
+  .cm-tooltip {
     .menu-item.selected:not(.is-label):not(.is-disabled) {
       background-color: var(--interactive-accent);
       color: var(--text-on-accent);
@@ -89,9 +84,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone
   .suggestion-container .menu-scroll {
     padding: 32px var(--side-padding);
   }
-  .suggestion-container {
-    background-color: var(--modal-background);
-  }
 
   .menu .menu-item {
     min-height: 48px;
@@ -131,8 +123,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone
   }
 }
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-tablet {
-  --menu-background: var(--modal-background);
-  --menu-shadow: var(--menu-shadow);
+  --menu-shadow: var(--shadow-l);
   --menu-radius: var(--radius-l);
 
   .menu {
@@ -244,7 +235,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     border-radius: var(--radius-m);
     padding: calc(16px * var(--density-modifier)) var(--side-padding);
     color: var(--text-muted);
-    background-color: var(--modal-background);
   }
 
   .tooltip {
@@ -260,7 +250,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     border-radius: var(--radius-m);
     padding: calc(16px * var(--density-modifier)) var(--side-padding);
     color: var(--text-muted);
-    background-color: var(--modal-background);
   }
 }
 

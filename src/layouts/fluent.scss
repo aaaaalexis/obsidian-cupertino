@@ -53,24 +53,6 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
     background-color: var(--background-primary);
   }
 
-  // Editor panel
-  .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
-    .mod-root {
-      background-color: var(--background-primary);
-      padding-bottom: 0;
-    }
-    .mod-root .workspace-tab-container {
-      box-shadow: none;
-      outline-color: transparent;
-    }
-  }
-  .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
-    margin-right: 8px;
-  }
-  .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root .workspace-tab-container {
-    margin-left: 8px;
-  }
-
   // Side panels
   @keyframes workspaceLeafInFluent {
     from {
@@ -126,14 +108,10 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
     content: "";
   }
 
-  // Status bar fix
-  &:not(.status-bar-full) .mod-root {
-    padding-bottom: 8px;
-  }
   .menu,
+  .suggestion-container,
   .popover,
   .cm-tooltip,
-  .suggestion-container,
   .prompt,
   .modal,
   .notice {
@@ -146,13 +124,6 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
   }
 
   // Menu
-  .menu,
-  .popover,
-  .cm-tooltip,
-  .suggestion-container {
-    background-color: var(--modal-background);
-  }
-
   .menu,
   .suggestion-container {
     animation: none;

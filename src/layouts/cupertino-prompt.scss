@@ -1,6 +1,5 @@
 body:is(.layout-cupertino, .layout-macos) {
   .prompt {
-    background-color: var(--modal-background) !important;
     backdrop-filter: var(--blur-l);
     border-radius: var(--radius-xl);
     border: none;

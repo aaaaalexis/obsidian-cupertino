@@ -120,8 +120,6 @@ body.layout-macos.is-mobile.is-tablet {
   // Side panels
   .workspace-drawer:not(.is-pinned) {
     box-shadow: var(--shadow-s);
-    background-color: var(--modal-background);
-    backdrop-filter: var(--blur-m);
   }
   .workspace-drawer.is-pinned {
     &.mod-left {
