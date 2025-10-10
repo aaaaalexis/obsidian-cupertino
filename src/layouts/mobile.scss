@@ -91,7 +91,7 @@ body:not(.mobile-stable).is-mobile {
   }
 }
 
-body:not(.mobile-stable).is-mobile.is-phone {
+body:not(.mobile-stable).is-phone {
   // Bottom navbar & Toolbar
   --mobile-toolbar-height: 48px;
   --toolbar-option-width: 48px;
@@ -237,6 +237,6 @@ body:not(.mobile-stable).is-mobile.is-phone {
   }
 }
 
-body:not(.mobile-stable).is-mobile.is-tablet .workspace-drawer.is-pinned {
+body:not(.mobile-stable).is-tablet .workspace-drawer.is-pinned {
   height: auto;
 }

@@ -75,14 +75,14 @@ body.layout-border:not(.is-mobile) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-  .workspace.is-right-sidedock-open .mod-root .workspace-tab-container{
+  .workspace.is-right-sidedock-open .mod-root .workspace-tab-container {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
 }
 
 // Mobile
-body.layout-border.is-mobile.is-tablet {
+body.layout-border.is-tablet {
   .workspace-drawer.is-pinned.mod-left {
     margin-right: 0;
     border-top-right-radius: 0;

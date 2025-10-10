@@ -91,7 +91,7 @@ body.layout-frame:not(.is-mobile) {
 }
 
 // Mobile
-body.layout-frame.is-mobile.is-tablet {
+body.layout-frame.is-tablet {
   --mobile-sidebar-background: var(--background-primary);
 
   .workspace {

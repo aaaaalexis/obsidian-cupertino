@@ -3,7 +3,7 @@
 }
 
 // Editor panel
-body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-border.is-mobile.is-tablet) {
+body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-border.is-tablet) {
   .workspace-split.mod-root .workspace-tab-container {
     border-radius: 0;
   }
@@ -14,11 +14,11 @@ body:is(.layout-classic, .layout-frame):is(.tabs-floating, .tabs-floating-center
   margin-left: var(--tab-outline-width) !important;
   margin-right: var(--tab-outline-width) !important;
 }
-body:is(.layout-cupertino, .layout-cards, .layout-border).is-mobile.is-tablet .mod-root {
+body:is(.layout-cupertino, .layout-cards, .layout-border).is-tablet .mod-root {
   padding-bottom: 8px;
   height: auto;
 }
-body:is(.layout-cupertino, .layout-cards, .layout-border, .layout-frame).is-mobile.is-tablet {
+body:is(.layout-cupertino, .layout-cards, .layout-border, .layout-frame).is-tablet {
   .workspace-drawer.mod-left:not(.is-pinned) + .mod-root .workspace-tab-container {
     margin-left: 8px;
     border-top-left-radius: var(--tab-radius);
@@ -83,7 +83,7 @@ body.layout-macos:not(.tabs-floating, .tabs-floating-center) .mod-root {
 }
 
 // Mobile drawer
-body:not(.layout-classic, .layout-minimal, .layout-border, .layout-frame, .layout-macos).is-mobile.is-tablet .workspace-drawer.is-pinned,
-body.layout-macos.is-mobile.is-tablet .workspace-drawer.is-pinned.mod-left {
+body:not(.layout-classic, .layout-minimal, .layout-border, .layout-frame, .layout-macos).is-tablet .workspace-drawer.is-pinned,
+body.layout-macos.is-tablet .workspace-drawer.is-pinned.mod-left {
   border: none;
 }

@@ -174,7 +174,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone {
+body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
   --system-status-background: rgb(var(--mono-rgb-0));
 
   // Editor panel
@@ -231,7 +231,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone
   }
 }
 
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-tablet {
+body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet {
   --border-width: 0.5pt;
   --nav-item-weight-active: normal;
 

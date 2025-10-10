@@ -11,7 +11,7 @@ body {
 body.is-mobile {
   --header-height: 44px !important;
 }
-body.is-mobile.is-tablet {
+body.is-tablet {
   --header-height: 52px !important;
   --view-header-height: 60px !important;
 }
@@ -102,7 +102,7 @@ body:is(.tabs-floating, .tabs-floating-center):not(.is-phone) .workspace .mod-ro
     margin-bottom: 0;
   }
 }
-body:is(.tabs-floating, .tabs-floating-center).is-mobile.is-tablet {
+body:is(.tabs-floating, .tabs-floating-center).is-tablet {
   --header-height: 60px !important;
 
   .mod-root .workspace-tab-header-container-inner {

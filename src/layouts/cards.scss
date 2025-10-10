@@ -78,12 +78,12 @@ body:is(.layout-cards, .layout-border):not(.is-phone) .prompt {
     padding: 12px 16px;
   }
 }
-body:is(.layout-cards, .layout-border).is-mobile.is-phone .prompt .prompt-input {
+body:is(.layout-cards, .layout-border).is-phone .prompt .prompt-input {
   border-radius: var(--radius-l);
 }
 
 // Tablet
-body:is(.layout-cards, .layout-border).is-mobile.is-tablet {
+body:is(.layout-cards, .layout-border).is-tablet {
   --mobile-sidebar-background: var(--background-primary);
 
   .workspace {
