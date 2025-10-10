@@ -41,14 +41,37 @@ body:is(.layout-cards, .layout-border) {
 
 // Notebook Navigator https://github.com/johansan/notebook-navigator
 body {
+  --nn-theme-mobile-nav-bg: transparent;
   --nn-theme-nav-header-bg: transparent;
   --nn-theme-nav-bg: transparent;
   --nn-theme-list-header-bg: transparent;
   --nn-theme-list-bg: transparent;
+
+  --nn-theme-navitem-selected-bg: var(--interactive-accent);
+  --nn-theme-navitem-selected-inactive-bg: var(--interactive-accent);
+  --nn-theme-navitem-selected-chevron-color: var(--text-on-accent);
+  --nn-theme-navitem-selected-icon-color: var(--text-on-accent);
+  --nn-theme-navitem-selected-name-color: var(--text-on-accent);
+  --nn-theme-navitem-selected-count-color: var(--text-on-accent);
+  --nn-theme-file-selected-name-color: var(--text-on-accent);
+  --nn-theme-file-selected-date-color: var(--text-on-accent);
+  --nn-theme-file-selected-preview-color: var(--text-faint);
+  --nn-theme-file-parent-color: var(--text-faint);
+
+  --nn-theme-mobile-list-header-link-color: var(--icon-color);
+  --nn-theme-mobile-toolbar-button-active-bg: var(--interactive-accent);
+  --nn-theme-mobile-toolbar-button-icon-color: var(--icon-color);
+  --nn-theme-mobile-toolbar-button-active-icon-color: var(--text-on-accent);
+
+  --nn-theme-navitem-border-radius: var(--radius-m);
+  --nn-theme-file-border-radius: var(--radius-m);
+
+  .notebook-navigator {
+    background-color: transparent;
+  }
 }
 body:not(.is-mobile) .view-content.notebook-navigator {
   padding: 0 !important;
-  background-color: transparent;
 
   .nn-split-container.nn-single-pane {
     .nn-navigation-pane .nn-pane-header,
@@ -61,6 +84,53 @@ body:not(.is-mobile) .view-content.notebook-navigator {
   }
   .nn-search-input {
     height: 100% !important;
+  }
+}
+body.is-mobile .view-content.notebook-navigator-mobile {
+  .nn-pane-header,
+  .nn-mobile-title {
+    padding: 0;
+  }
+}
+body:is(.layout-cupertino, .layout-macos).mobile-immersive .view-content.notebook-navigator-mobile {
+  --nn-scroller-padding: 0;
+
+  .nn-back-button,
+  .nn-mobile-toolbar {
+    backdrop-filter: var(--blur-s);
+    box-shadow: var(--shadow-xs);
+    border: none;
+    background-color: transparent;
+    border-radius: 100vh;
+  }
+}
+body.mobile-immersive .view-content.notebook-navigator-mobile {
+  .nn-nav-bottom-spacer,
+  .nn-list-bottom-spacer {
+    height: calc(var(--safe-area-inset-bottom-override) + 64px);
+  }
+  .nn-mobile-toolbar {
+    position: absolute;
+    inset: auto 0 var(--safe-area-inset-bottom-override);
+    margin: 0 auto;
+    border: var(--border-width) solid var(--background-modifier-border);
+    border-radius: 100vh;
+    background: var(--background-secondary);
+    padding: 4px;
+    height: 48px;
+    width: fit-content;
+  }
+  .nn-mobile-toolbar-button {
+    width: unset;
+    height: unset;
+    min-width: unset;
+    min-height: 100%;
+    max-height: 100%;
+    padding: 12px;
+
+    span {
+      display: flex;
+    }
   }
 }
 
