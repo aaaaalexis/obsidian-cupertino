@@ -24,12 +24,12 @@
 @use "layouts/cards.scss";
 @use "layouts/border.scss";
 @use "layouts/frame.scss";
-@use "layouts/fluent.scss" as layout-fluent;
 @use "layouts/cupertino.scss" as layout-cupertino;
 @use "layouts/cupertino-dialog.scss";
 @use "layouts/cupertino-settings.scss";
 @use "layouts/cupertino-prompt.scss";
 @use "layouts/cupertino-mobile.scss";
+@use "layouts/fluent.scss" as layout-fluent;
 @use "layouts/macos.scss";
 @use "layouts/mobile.scss" as layout-mobile;
 

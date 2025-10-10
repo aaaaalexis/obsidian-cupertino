@@ -4,6 +4,8 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --p-spacing: 1rem;
   --line-height-normal: 1.6;
 
+  --clickable-icon-radius: 100vh;
+
   --icon-opacity: 1;
   --icon-color: rgb(var(--mono-rgb-100));
   --text-normal: rgb(var(--mono-rgb-100));
@@ -97,9 +99,6 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   .workspace-split .clickable-icon {
     min-width: 40px;
   }
-  .clickable-icon {
-    border-radius: 100vh;
-  }
   .clickable-icon:not([aria-disabled="true"]):hover,
   .clickable-icon.has-active-menu,
   .modal-close-button:hover {
@@ -123,7 +122,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
       -webkit-app-region: no-drag;
       gap: 0px;
       transition: var(--anim-duration-moderate);
-      border-radius: 100vh;
+      border-radius: var(--clickable-icon-radius);
       padding: 0;
       outline: 2px solid transparent;
       background-clip: content-box;
@@ -140,7 +139,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     }
 
     .workspace-tab-header {
-      border-radius: 100vh;
+      border-radius: var(--clickable-icon-radius);
     }
     .workspace-tab-header-inner {
       padding: 8px;
@@ -150,7 +149,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     }
     .sidebar-toggle-button,
     .workspace-tab-header-inner {
-      border-radius: 100vh;
+      border-radius: var(--clickable-icon-radius);
       width: 40px;
       height: fit-content;
     }
@@ -164,7 +163,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     .mod-sidedock .workspace-leaf-content > .nav-header,
     .mod-sidedock .workspace-leaf-content > .view-content > .nav-header {
       .nav-buttons-container {
-        border-radius: 100vh;
+        border-radius: var(--clickable-icon-radius);
         background-color: var(--background-modifier-hover);
         padding: 2px;
         gap: 0;
@@ -173,9 +172,9 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
         .nav-action-button {
           position: relative;
           padding: 8px;
-          border-radius: 100vh;
+          border-radius: var(--clickable-icon-radius);
         }
-        .nav-action-button:hover {
+        .nav-action-button:hover:not([aria-disabled="true"]) {
           background-color: var(--background-modifier-hover);
           box-shadow: none;
         }
@@ -255,7 +254,7 @@ body.layout-cupertino:not(.is-mobile) {
   .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
     margin-right: 8px;
   }
-  .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root .workspace-tab-container {
+  &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root .workspace-tab-container {
     margin-left: 8px;
   }
 

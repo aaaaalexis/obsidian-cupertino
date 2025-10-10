@@ -82,6 +82,7 @@ body.bold-folders .nav-folder-title {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 .nav-header .nav-buttons-container {
   flex-wrap: nowrap;
@@ -119,6 +120,10 @@ body.hover-ribbon .workspace-ribbon.mod-left:not(:hover) {
   height: var(--header-height);
   padding: 8px;
   width: unset;
+}
+body:not(.mod-macos) .workspace-ribbon .sidebar-toggle-button {
+  height: fit-content;
+  padding: 0;
 }
 
 // Desktop sidedock

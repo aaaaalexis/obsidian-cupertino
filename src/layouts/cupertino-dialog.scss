@@ -9,13 +9,13 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   .prompt,
   .modal:not(.mod-sidebar-layout) {
     backdrop-filter: var(--blur-m);
-    border: none !important;
+    border: none;
     background-color: var(--modal-background);
   }
   .cm-tooltip,
   .notice {
     backdrop-filter: var(--blur-sz);
-    border: none !important;
+    border: none;
     background-color: var(--modal-background);
   }
 }
@@ -27,19 +27,6 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     transition: none;
   }
 
-  .menu:hover,
-  .suggestion-container,
-  .popover,
-  .cm-tooltip {
-    .menu-item.selected:not(.is-label):not(.is-disabled) {
-      background-color: var(--interactive-accent);
-      color: var(--text-on-accent);
-
-      .menu-item-icon {
-        color: var(--text-on-accent);
-      }
-    }
-  }
   .menu,
   .suggestion-container {
     .menu-item,
@@ -149,12 +136,15 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet {
 
 // Modal
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
-  .modal {
-    @starting-style {
+  @keyframes modalInCupertino {
+    from {
       opacity: 1;
       filter: none;
       transform: scale(0.99);
     }
+  }
+  .modal {
+    animation: modalInCupertino var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
   }
 
   .modal:not(.mod-sidebar-layout) {

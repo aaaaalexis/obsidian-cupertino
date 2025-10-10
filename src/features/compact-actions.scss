@@ -5,13 +5,14 @@ body:not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-con
   .nav-action-button,
   .nav-action-button::after,
   svg {
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline), box-shadow 0s;
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color var(--anim-duration-fast), box-shadow 0s;
   }
 
   &:not(:hover) .nav-buttons-container {
     gap: 4px !important;
     padding: 0 !important;
     background-color: transparent !important;
+    width: 0 !important;
 
     .nav-action-button {
       padding: 2px !important;
@@ -26,11 +27,6 @@ body:not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-con
     }
     .nav-action-button.clickable-icon[aria-disabled="true"] {
       opacity: var(--icon-opacity);
-    }
-    .nav-action-button::after {
-      opacity: 0;
-      font-size: 0 !important;
-      margin-left: 0px !important;
     }
 
     svg {

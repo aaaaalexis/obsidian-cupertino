@@ -8,13 +8,7 @@ body.is-mobile {
 
 .prompt {
   background-color: var(--background-secondary);
-  transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
-
-  @starting-style {
-    opacity: 0;
-    filter: blur(4px);
-    transform: scale(0.95) rotateX(-1deg);
-  }
+  animation: modalIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
 
   .prompt-input,
   .prompt-input:hover,

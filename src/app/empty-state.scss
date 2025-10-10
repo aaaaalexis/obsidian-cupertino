@@ -3,13 +3,7 @@
 }
 
 .empty-state {
-  transition: var(--anim-duration-slow) var(--anim-motion-baseline);
-
-  @starting-style {
-    opacity: 0;
-    transform: scale(0.95);
-    filter: blur(4px);
-  }
+  animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
 }
 
 .empty-state-title {

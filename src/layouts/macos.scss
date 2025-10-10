@@ -41,6 +41,19 @@ body.layout-macos:not(.is-mobile) {
     }
   }
 
+  // Menu
+  .menu:hover,
+  .suggestion-container:hover {
+    .menu-item.selected:not(.is-label):not(.is-disabled) {
+      background-color: var(--interactive-accent);
+      color: var(--text-on-accent);
+
+      .menu-item-icon {
+        color: var(--text-on-accent);
+      }
+    }
+  }
+
   // Ribbon fix
   &.show-ribbon:not(.mod-macos) {
     --ribbon-padding: 8px 0 0 16px;
