@@ -61,6 +61,9 @@ body:not(.accented-interface) .checkbox-container {
 .checkbox-container:after {
   box-shadow: none;
 }
+.checkbox-container:focus-within {
+  outline: none;
+}
 
 // Slider
 input[type="range"]::-webkit-slider-thumb {
