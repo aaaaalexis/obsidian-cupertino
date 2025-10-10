@@ -7,6 +7,10 @@ body {
   perspective: 240px;
 }
 
+.modal-bg {
+  opacity: 0 !important;
+}
+
 .modal {
   transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
 
@@ -19,10 +23,6 @@ body {
 
 // Modal
 body:not(.is-mobile) {
-  .modal-bg {
-    opacity: 0 !important;
-  }
-
   .modal-title {
     margin-left: 0;
   }
