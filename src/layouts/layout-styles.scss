@@ -10,9 +10,6 @@ body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-
 }
 
 // Mobile editor panels
-body:is(.layout-classic, .layout-frame):is(.tabs-floating, .tabs-floating-center) .mod-root .workspace-tab-header {
-  margin-inline: var(--tab-outline-width) !important;
-}
 body:is(.layout-cupertino, .layout-cards, .layout-border).is-tablet .mod-root {
   padding-bottom: 8px;
   height: auto;
@@ -42,8 +39,8 @@ body:is(.layout-classic, .layout-minimal, .layout-frame):not(.is-mobile) .stacke
 // Tab styles
 body:not(.tabs-floating, .tabs-floating-center, .tabs-underline) {
   &:is(.layout-classic, .layout-minimal, .layout-cupertino, .layout-macos, .layout-frame) {
-    .workspace-tab-header {
-      --tab-outline-width: 1px !important;
+    .mod-root .workspace-tab-header {
+      --tab-outline-width: 1px;
     }
     &.is-tablet .workspace-tab-header-container-inner {
       padding-top: 8px;
@@ -56,7 +53,8 @@ body:is(.tabs-floating, .tabs-floating-center) {
     background-color: var(--background-modifier-hover);
   }
   &:is(.layout-classic, .layout-frame) .mod-root .workspace-tab-header {
-    --tab-outline-width: 1px !important;
+    --tab-outline-width: 1px;
+    margin-inline: var(--tab-outline-width);
   }
   &:is(.layout-cupertino, .layout-macos):not(.is-mobile) .mod-root .workspace-tab-header {
     height: 32px;
@@ -64,20 +62,17 @@ body:is(.tabs-floating, .tabs-floating-center) {
   }
 }
 
-body:is(.layout-classic, .layout-minimal, .layout-frame),
+body:is(.layout-classic, .layout-minimal, .layout-frame).stacked-nav-off .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed),
+body:is(.layout-classic, .layout-minimal, .layout-frame) .mod-root,
+body:is(.layout-classic, .layout-minimal, .layout-frame) .mod-sidedock.mod-right-split:not(.is-sidedock-collapsed),
 body.layout-cupertino:not(.is-mobile) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root,
 body.layout-macos:not(.tabs-floating, .tabs-floating-center) .mod-root {
-  &.stacked-nav-off .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed),
-  &:is(.mod-root),
-  .mod-root,
-  .mod-sidedock.mod-right-split:not(.is-sidedock-collapsed) {
-    .workspace-tabs.mod-top .workspace-tab-header-container {
-      border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
-    }
+  .workspace-tabs.mod-top .workspace-tab-header-container {
+    border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
   }
 
   .workspace-tab-header-container-inner {
-    margin-bottom: -1px !important;
+    margin-bottom: -1px;
   }
 }
 

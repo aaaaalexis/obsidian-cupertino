@@ -19,7 +19,6 @@
 @use "editor/table.scss";
 @use "editor/bases.scss";
 
-@use "layouts/layout-styles.scss";
 @use "layouts/classic.scss";
 @use "layouts/cards.scss";
 @use "layouts/border.scss";
@@ -32,6 +31,7 @@
 @use "layouts/fluent.scss" as layout-fluent;
 @use "layouts/macos.scss";
 @use "layouts/mobile.scss" as layout-mobile;
+@use "layouts/layout-styles.scss";
 
 @use "elements/baseline.scss";
 @use "elements/cupertino.scss" as element-cupertino;
