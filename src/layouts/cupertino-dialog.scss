@@ -192,33 +192,37 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     font-size: unset;
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone .modal:not(.mod-sidebar-layout) {
-  border-radius: var(--modal-radius) var(--modal-radius) calc(var(--safe-area-inset-top) - 8px) calc(var(--safe-area-inset-top) - 8px) !important;
-  margin: 0 8px 8px;
-
-  .modal-header {
-    border-bottom: none;
+body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone {
+  .modal-container.mod-confirmation .modal {
+    border-radius: var(--modal-radius) var(--modal-radius) calc(var(--safe-area-inset-top) - 8px) calc(var(--safe-area-inset-top) - 8px);
   }
-  .modal-content {
-    padding: 0 var(--side-padding);
-  }
+  .modal:not(.mod-sidebar-layout) {
+    margin: 0 8px 8px;
 
-  .modal-button-container {
-    gap: 8px;
-    margin-bottom: 0;
-    padding: var(--side-padding);
-  }
-  .modal-button-container button {
-    margin-top: 0;
-  }
+    .modal-header {
+      border-bottom: none;
+    }
+    .modal-content {
+      padding: 0 var(--side-padding);
+    }
 
-  .modal-nav-action {
-    position: relative;
-    background-color: var(--interactive-normal);
-    margin: 0 var(--side-padding) 8px;
+    .modal-button-container {
+      gap: 8px;
+      margin-bottom: 0;
+      padding: var(--side-padding);
+    }
+    .modal-button-container button {
+      margin-top: 0;
+    }
 
-    &:last-child {
-      margin-bottom: var(--side-padding);
+    .modal-nav-action {
+      position: relative;
+      background-color: var(--interactive-normal);
+      margin: 0 var(--side-padding) 8px;
+
+      &:last-child {
+        margin-bottom: var(--side-padding);
+      }
     }
   }
 }
