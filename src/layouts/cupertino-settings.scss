@@ -1,5 +1,6 @@
 body:is(.layout-cupertino, .layout-macos) .modal.mod-sidebar-layout {
   --background-modifier-hover: rgba(var(--mono-rgb-100), 0.03);
+  border: none;
 }
 
 body:is(.layout-cupertino, .layout-macos) .modal.mod-sidebar-layout:not(.mod-community-modal) {
