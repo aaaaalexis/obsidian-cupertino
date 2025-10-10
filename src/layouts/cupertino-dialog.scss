@@ -219,10 +219,10 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone
       position: relative;
       background-color: var(--interactive-normal);
       margin: 0 var(--side-padding) 8px;
+    }
 
-      &:last-child {
-        margin-bottom: var(--side-padding);
-      }
+    button:last-child {
+      margin-bottom: var(--side-padding);
     }
   }
 }
