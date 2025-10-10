@@ -109,9 +109,6 @@ body.layout-macos.is-mobile.is-tablet {
   // Editor panel
   --tab-background-active: var(--system-status-background);
 
-  .mod-root .view-header {
-    background-color: transparent;
-  }
   .mod-root .view-header::before,
   .mod-root .view-content {
     background-color: var(--system-status-background) !important;
