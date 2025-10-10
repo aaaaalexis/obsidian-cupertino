@@ -340,6 +340,11 @@
     border-radius: var(--media-radius);
   }
 
+  iframe {
+    aspect-ratio: 16/9;
+    height: auto;
+  }
+
   body:not(.full-width-media-off) .workspace-leaf-content[data-type="markdown"] {
     :is(img:not([width], .cm-widgetBuffer, .link-favicon, .emoji), iframe, video) {
       width: 100%;
