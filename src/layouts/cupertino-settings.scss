@@ -3,7 +3,8 @@ body:is(.layout-cupertino, .layout-macos) .modal.mod-sidebar-layout {
   border: none;
 }
 
-body:is(.layout-cupertino, .layout-macos) .modal.mod-sidebar-layout:not(.mod-community-modal) {
+body:is(.layout-cupertino, .layout-macos):not(.is-phone) .modal.mod-sidebar-layout:not(.mod-community-modal),
+body:is(.layout-cupertino, .layout-macos).is-phone .modal.mod-sidebar-layout {
   .setting-item:not(.setting-item-heading) {
     border: none;
     background-color: var(--background-modifier-hover);
@@ -57,7 +58,8 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) .modal.mod-sidebar-lay
   }
 }
 
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile .modal.mod-sidebar-layout {
+body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone .modal.mod-sidebar-layout,
+body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet .modal.mod-sidebar-layout:not(.mod-community-modal) {
   .vertical-tab-header-group-items {
     border-radius: var(--radius-m);
     background-color: var(--background-primary);
@@ -187,6 +189,24 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-phone
 
   .modal-close-button {
     inset-inline-end: var(--safe-area-inset-side) !important;
+  }
+
+  .community-modal-details {
+    background-color: var(--mobile-sidebar-background);
+
+    > div {
+      transition: var(--anim-duration-moderate);
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+  }
+  .community-modal-controls {
+    gap: 0;
+  }
+  .community-modal-controls .search-input-container + button {
+    flex: 1;
   }
 }
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile.is-tablet .modal.mod-sidebar-layout {

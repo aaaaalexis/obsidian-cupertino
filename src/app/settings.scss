@@ -188,3 +188,11 @@ body.is-phone .modal.mod-sidebar-layout.mod-community-modal {
     margin-top: 0;
   }
 }
+body.is-tablet .modal.mod-sidebar-layout.mod-community-modal {
+  .community-modal-controls {
+    padding: 10px;
+  }
+  .community-modal-controls .setting-item:nth-last-child(2) {
+    margin-right: 52px;
+  }
+}
