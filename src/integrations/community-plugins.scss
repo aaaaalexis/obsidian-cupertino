@@ -75,3 +75,52 @@ body:not(.is-mobile) .view-content.notebook-navigator {
   width: 0;
   opacity: 0;
 }
+
+// Quick Explorer https://github.com/pjeby/quick-explorer
+.obsidian-themepocalypse:not(.qe-hide-breadcrumbs) {
+  --status-bar-radius: 0;
+  --status-bar-border-width: 0;
+  --status-bar-background: transparent;
+
+  #quick-explorer .explorable {
+    color: var(--text-faint);
+    transition: var(--anim-duration-fast);
+  }
+
+  #quick-explorer .explorable.selected,
+  #quick-explorer .explorable:hover {
+    background-color: transparent;
+    color: var(--text-normal);
+  }
+
+  .status-bar {
+    width: 100%;
+    transform: none !important;
+    opacity: 1 !important;
+
+    &::before {
+      content: none !important;
+    }
+  }
+
+  &.status-bar-cupertino .status-bar {
+    margin: 4px 0;
+
+    &:hover {
+      margin: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+      border: none;
+    }
+  }
+
+  &:is(.layout-cupertino, .layout-cards, .layout-border):not(.is-mobile) {
+    .workspace-split {
+      padding-bottom: 0 !important;
+    }
+    .status-bar {
+      bottom: 8px;
+      right: 8px;
+    }
+  }
+}
