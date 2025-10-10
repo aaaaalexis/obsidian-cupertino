@@ -133,8 +133,7 @@
       transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
       margin-top: 4px;
       margin-left: 0;
-      padding-top: 4px;
-      padding-bottom: 4px;
+      padding-block: 4px;
       padding-inline-start: 12px;
       width: fit-content;
     }
@@ -144,8 +143,7 @@
       .metadata-container:not(:hover) .metadata-add-button {
         opacity: 0;
         margin-top: 0;
-        padding-top: 0;
-        padding-bottom: 0;
+        padding-block: 0;
         height: 0;
       }
     }

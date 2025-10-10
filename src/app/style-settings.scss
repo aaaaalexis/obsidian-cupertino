@@ -2921,8 +2921,7 @@ settings:
 .style-settings-heading,
 .style-settings-container {
   padding-left: 32px;
-  margin-top: 0 !important	;
-  margin-bottom: 0 !important;
+  margin-block: 0 !important;
 }
 .style-settings-heading .setting-item-name {
   color: var(--text-normal) !important;

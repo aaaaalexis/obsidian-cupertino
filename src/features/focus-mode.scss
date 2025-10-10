@@ -11,8 +11,7 @@ body:is(.focus-view-tabs, .focus-view-all):not(.is-popout-window) .workspace:not
     .workspace-tab-header-container:not(:hover) {
       height: 1px;
       opacity: 0;
-      padding-top: 0;
-      padding-bottom: 0;
+      padding-block: 0;
     }
     .workspace-tab-container {
       background-color: var(--background-primary);

@@ -89,8 +89,7 @@ body.is-phone {
   .mobile-navbar {
     border-top: var(--border-width) solid var(--background-modifier-border);
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
-    padding-right: max(var(--safe-area-inset-right), 24px);
-    padding-left: max(var(--safe-area-inset-right), 24px);
+    padding-inline: max(var(--safe-area-inset-right), 24px);
   }
 
   // Tab switcher

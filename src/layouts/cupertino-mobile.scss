@@ -59,8 +59,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   .workspace-drawer .workspace-drawer-header,
   .workspace-drawer .workspace-leaf-content > .view-content,
   .workspace-drawer .workspace-leaf-content > .node-insert-event {
-    padding-left: var(--safe-area-inset-side);
-    padding-right: var(--safe-area-inset-side);
+    padding-inline: var(--safe-area-inset-side);
   }
 
   .workspace-drawer .workspace-drawer-header-left {
@@ -186,8 +185,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     }
 
     .view-header {
-      padding-left: var(--safe-area-inset-side);
-      padding-right: var(--safe-area-inset-side);
+      padding-inline: var(--safe-area-inset-side);
     }
     .view-header-title-container {
       margin-left: 4px;

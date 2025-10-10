@@ -11,8 +11,7 @@ body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-
 
 // Mobile editor panels
 body:is(.layout-classic, .layout-frame):is(.tabs-floating, .tabs-floating-center) .mod-root .workspace-tab-header {
-  margin-left: var(--tab-outline-width) !important;
-  margin-right: var(--tab-outline-width) !important;
+  margin-inline: var(--tab-outline-width) !important;
 }
 body:is(.layout-cupertino, .layout-cards, .layout-border).is-tablet .mod-root {
   padding-bottom: 8px;

@@ -85,8 +85,7 @@ body:not(.mobile-stable).is-mobile {
   }
 
   .workspace-drawer .workspace-leaf-content .node-insert-event {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-inline: 20px;
     padding-bottom: calc(var(--safe-area-inset-bottom-override) + 64px);
   }
 }
@@ -127,8 +126,7 @@ body:not(.mobile-stable).is-phone {
     border: var(--border-width) solid var(--background-modifier-border);
     border-radius: 100vh;
     background: var(--background-secondary);
-    padding-right: 8px;
-    padding-left: 8px;
+    padding-inline: 8px;
     height: 48px;
   }
   .mobile-navbar-action {
@@ -193,8 +191,7 @@ body:not(.mobile-stable).is-phone {
     .workspace-leaf-content[data-type="markdown"] .view-header::before {
       position: absolute;
       top: 0;
-      right: 0;
-      left: 0;
+      inset-inline: 0;
       z-index: -1;
       mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.99) 18.4%, hsla(0, 0%, 0%, 0.963) 33.7%, hsla(0, 0%, 0%, 0.92) 46.4%, hsla(0, 0%, 0%, 0.864) 56.7%, hsla(0, 0%, 0%, 0.796) 64.8%, hsla(0, 0%, 0%, 0.72) 71.2%, hsla(0, 0%, 0%, 0.637) 76.1%, hsla(0, 0%, 0%, 0.55) 79.9%, hsla(0, 0%, 0%, 0.46) 82.8%, hsla(0, 0%, 0%, 0.37) 85.2%, hsla(0, 0%, 0%, 0.283) 87.3%, hsla(0, 0%, 0%, 0.2) 89.6%, hsla(0, 0%, 0%, 0.124) 92.3%, hsla(0, 0%, 0%, 0.056) 95.6%, hsla(0, 0%, 0%, 0) 100%);
       background-color: var(--system-status-background);
@@ -218,8 +215,7 @@ body:not(.mobile-stable).is-phone {
 
     .view-header + div:not(.view-content) {
       top: calc(var(--safe-area-inset-top) + var(--view-header-height)) !important;
-      right: 0;
-      left: 0;
+      inset-inline: 0;
       background-color: transparent;
     }
     .view-header + .view-content .markdown-reading-view > div:first-child:not(.markdown-preview-view),

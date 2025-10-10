@@ -28,8 +28,7 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
     .workspace-tab-header-container-inner {
       background-color: var(--background-primary);
       border-radius: var(--radius-s);
-      padding-top: 8px;
-      padding-bottom: 8px;
+      padding-block: 8px;
       margin: 0 8px 8px;
     }
   }
