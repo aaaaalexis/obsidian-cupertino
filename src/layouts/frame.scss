@@ -18,24 +18,6 @@ body.layout-frame:not(.is-mobile) {
     overflow: hidden;
   }
 
-  // Ribbon
-  &.show-ribbon.mod-macos .workspace {
-    --frame-left-space: 4px;
-    --ribbon-width: 74px;
-    --ribbon-padding: var(--header-height) 8px 0;
-  }
-
-  // Obsidian frame fix
-  &.is-frameless:not(.is-hidden-frameless) {
-    .workspace {
-      padding-top: 0;
-    }
-    .workspace-ribbon,
-    .workspace-split {
-      margin-top: 0;
-    }
-  }
-
   // Windows & Linux fix
   &:not(.mod-macos).is-frameless.is-hidden-frameless .titlebar {
     height: var(--header-height);

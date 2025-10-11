@@ -1,6 +1,6 @@
 body:is(.layout-cards, .layout-border):not(.is-mobile) {
   // Editor panel
-  .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
+  &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
     margin-left: 8px;
   }
   .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
@@ -29,9 +29,6 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
       margin-left: 0;
     }
   }
-  &.show-ribbon.mod-macos .workspace.is-left-sidedock-open {
-    --ribbon-padding: 0 8px 0;
-  }
 
   // Stacked nav
   &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space {
@@ -41,6 +38,9 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
       padding-block: 8px;
       margin: 0 8px 8px;
     }
+  }
+  &:not(.stacked-nav-off):not(.mod-macos) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
+    margin-top: var(--header-height);
   }
 
   // Status bar

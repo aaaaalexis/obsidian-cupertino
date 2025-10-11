@@ -2,18 +2,8 @@ body {
   --nav-item-padding: calc(8px * var(--density-modifier)) 8px calc(8px * var(--density-modifier)) 24px;
   --nav-indentation-guide-width: 0px;
 
-  --ribbon-width: var(--header-height);
   --ribbon-background: transparent;
   --ribbon-background-collapsed: var(--ribbon-background);
-}
-
-body:not(.is-mobile).mod-macos {
-  .workspace:not(.is-left-sidedock-open) {
-    --ribbon-padding: 0 8px 0;
-  }
-  .workspace.is-left-sidedock-open {
-    --ribbon-padding: 0 0 0 16px;
-  }
 }
 
 body.is-mobile {
@@ -103,6 +93,9 @@ body.bold-folders .nav-folder-title {
 }
 
 // Ribbon
+body:not(.mod-macod) .workspace-ribbon.mod-left {
+  margin-top: 0;
+}
 .workspace-ribbon.mod-left {
   contain: content;
   border-right: none;
