@@ -36,9 +36,9 @@ body.theme-light.contrast-light-vivid:where(:not(.layout-macos)) {
   --graph-node: var(--color-base-50) !important;
   --graph-node-unresolved: var(--color-base-70) !important;
 
+  .workspace::before,
   .titlebar,
   .status-bar,
-  .workspace::before,
   .workspace-ribbon,
   &.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container,
   &.layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container,

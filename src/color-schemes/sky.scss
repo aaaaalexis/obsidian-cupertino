@@ -28,17 +28,9 @@
   --accent-l: 52%;
 }
 .theme-dark.sky-dark,
-.theme-light.sky-light.contrast-light-vivid .titlebar,
-.theme-light.sky-light.contrast-light-vivid .status-bar,
 .theme-light.sky-light.contrast-light-vivid .workspace::before,
-.theme-light.sky-light.contrast-light-vivid .workspace-ribbon,
-.theme-light.sky-light.contrast-light-vivid.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container,
-.theme-light.sky-light.contrast-light-vivid.layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container,
-.theme-light.sky-light.contrast-light-vivid.layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container,
-.theme-light.sky-light.contrast-light-vivid.layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
-.theme-light.sky-light.contrast-light-vivid:not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split,
-.theme-light.sky-light.contrast-light-vivid:not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split,
-.theme-light.sky-light.contrast-light-vivid:not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner) {
+.theme-light.sky-light.contrast-light-vivid div:is(.titlebar, .status-bar, .workspace-ribbon),
+.theme-light.sky-light.contrast-light-vivid:is(.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container, .layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container, .layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container, .layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container, :not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split, :not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split, :not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)) {
   --background-primary: #2f3437;
   --background-primary-alt: #373c3f;
   --background-secondary: #373c3f;
