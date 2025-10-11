@@ -102,7 +102,6 @@ body.layout-macos:not(.is-mobile) {
   }
   // Style Settings: Active file fix
   &.nav-item-subtle {
-    --nav-item-color: rgb(var(--mono-rgb-100));
     --nav-item-color-active: var(--text-accent);
 
     &.theme-dark {
