@@ -181,9 +181,10 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
   .modal:not(.mod-sidebar-layout) {
     margin: 0 8px 8px;
 
-    .modal-header {
-      border-bottom: none;
+    .modal-title {
+      padding-left: var(--side-padding);
     }
+
     .modal-content {
       padding: 0 var(--side-padding);
     }
@@ -198,13 +199,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     }
 
     .modal-nav-action {
-      position: relative;
-      background-color: var(--interactive-normal);
       margin: 0 var(--side-padding) 8px;
-    }
-
-    button:last-child {
-      margin-bottom: var(--side-padding);
     }
   }
 }

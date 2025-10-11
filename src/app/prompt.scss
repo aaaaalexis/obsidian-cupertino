@@ -30,7 +30,7 @@ body.is-tablet .prompt {
 }
 body.is-phone {
   .prompt {
-    transition: none;
+    animation: none;
     border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   }
   .suggestion-item {
