@@ -1,7 +1,7 @@
 body:not(.block-width-off) {
   --file-line-width: var(--line-width);
   --line-width: 40rem;
-  --line-width-wide: 50rem;
+  --line-width-wide: min(100cqw, 50rem);
 
   &.wide,
   .wide {
