@@ -1,6 +1,4 @@
 body:is(.layout-cards, .layout-border):not(.is-mobile) {
-  --ribbon-padding: calc(var(--header-height) + 4px) 4px 0 12px;
-
   // Editor panel
   .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
     margin-left: 8px;
@@ -21,6 +19,18 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
     .workspace-sidedock-vault-profile {
       padding: 16px;
     }
+  }
+
+  // Ribbon
+  &.show-ribbon .workspace {
+    &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
+    .mod-sidedock.mod-left-split .workspace-tabs .workspace-tab-container,
+    .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
+      margin-left: 0;
+    }
+  }
+  &.show-ribbon.mod-macos .workspace.is-left-sidedock-open {
+    --ribbon-padding: 0 8px 0;
   }
 
   // Stacked nav

@@ -55,10 +55,13 @@ body.layout-macos:not(.is-mobile) {
   }
 
   // Ribbon fix
-  &.show-ribbon:not(.mod-macos) {
-    --ribbon-padding: 8px 0 0 16px;
+  &.show-ribbon.mod-macos:not(.tabs-floating, .tabs-floating-center) {
+    .workspace:not(.is-left-sidedock-open) .workspace-ribbon {
+      padding-top: 8px;
+      margin-top: calc(var(--header-height) - 1px);
+      border-top: var(--tab-outline-width) solid var(--tab-outline-color);
+    }
   }
-
   &.show-ribbon .mod-sidedock.mod-left-split {
     margin-left: calc(-1 * var(--ribbon-width) + 8px);
     padding-left: calc(var(--ribbon-width) - 8px);

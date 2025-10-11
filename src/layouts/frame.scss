@@ -18,23 +18,11 @@ body.layout-frame:not(.is-mobile) {
     overflow: hidden;
   }
 
-  // ----------------------------------------------------------------
-
-  // Ribbon fix
-  &.show-ribbon.mod-macos {
-    --ribbon-padding: var(--header-height) 0 0;
-  }
-  &.show-ribbon:not(.mod-macos) {
-    --ribbon-padding: 0;
-  }
-
-  &.show-ribbon.mod-macos:not(.is-popout-window) {
-    .workspace-ribbon {
-      --ribbon-width: calc(var(--header-height) + 28px);
-    }
-    .workspace:not(.is-left-sidedock-open) .mod-root {
-      --frame-left-space: 0px;
-    }
+  // Ribbon
+  &.show-ribbon.mod-macos .workspace {
+    --frame-left-space: 4px;
+    --ribbon-width: 74px;
+    --ribbon-padding: var(--header-height) 8px 0;
   }
 
   // Obsidian frame fix

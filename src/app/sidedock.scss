@@ -7,8 +7,13 @@ body {
   --ribbon-background-collapsed: var(--ribbon-background);
 }
 
-body:not(.is-mobile) {
-  --ribbon-padding: var(--header-height) 0 0 16px;
+body:not(.is-mobile).mod-macos {
+  .workspace:not(.is-left-sidedock-open) {
+    --ribbon-padding: 0 8px 0;
+  }
+  .workspace.is-left-sidedock-open {
+    --ribbon-padding: 0 0 0 16px;
+  }
 }
 
 body.is-mobile {
@@ -100,10 +105,9 @@ body.bold-folders .nav-folder-title {
 // Ribbon
 .workspace-ribbon.mod-left {
   contain: content;
-  margin-top: 0;
   border-right: none;
   z-index: 11;
-  transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+  transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
 }
 .workspace-ribbon.mod-left:before {
   content: none;

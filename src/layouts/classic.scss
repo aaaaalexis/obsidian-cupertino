@@ -7,10 +7,20 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
   }
 
   // Ribbon
-  &.mod-macos.stacked-nav-off .workspace-ribbon {
-    padding-top: 8px;
-    margin-top: var(--header-height);
-    border-top: var(--tab-outline-width) solid var(--tab-outline-color);
+  &.show-ribbon.mod-macos {
+    .workspace:not(.is-left-sidedock-open) .workspace-ribbon {
+      padding-top: 8px;
+      margin-top: calc(var(--header-height) - 1px);
+      border-top: var(--tab-outline-width) solid var(--tab-outline-color);
+      border-right: var(--border-width) solid var(--background-modifier-border);
+    }
+  }
+  &.show-ribbon.mod-macos.stacked-nav-off {
+    .workspace.is-left-sidedock-open .workspace-ribbon {
+      padding-top: 8px;
+      margin-top: calc(var(--header-height) - 1px);
+      border-top: var(--tab-outline-width) solid var(--tab-outline-color);
+    }
   }
 
   // Status bar
@@ -20,6 +30,11 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
 }
 
 body.layout-minimal {
+  &.show-ribbon .workspace:not(.is-left-sidedock-open) .workspace-ribbon {
+    box-shadow: 0 calc(-1 * var(--header-height)) 0 0 var(--background-primary);
+    background-color: var(--background-primary);
+  }
+
   .mod-sidedock .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
     border-bottom: none;
     background-color: transparent;
