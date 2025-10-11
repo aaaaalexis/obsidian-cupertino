@@ -25,6 +25,9 @@ body {
 
 // Modal
 body:not(.is-mobile) {
+  .modal {
+    box-shadow: var(--shadow-s);
+  }
   .modal-title {
     margin-left: 0;
   }
