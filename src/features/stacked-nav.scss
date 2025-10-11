@@ -39,10 +39,6 @@ body:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space {
   }
 }
 
-// Side panels: Tab names
-body.tab-names-all {
-  --sidebar-tab-text-display: flex;
-}
-body.tab-names-single .workspace-tab-header:only-child {
-  --sidebar-tab-text-display: flex;
+body:not(.stacked-nav-off):not(.mod-macos) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+  margin-top: 8px;
 }
