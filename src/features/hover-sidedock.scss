@@ -68,7 +68,7 @@ body:not(.is-mobile).hover-sidedock {
       width: 150%;
       content: "";
       position: absolute;
-      background: linear-gradient(to right, rgba(var(--mono-rgb-0)) 0%, rgba(var(--mono-rgb-0), 0.99) 18.4%, rgba(var(--mono-rgb-0), 0.963) 33.7%, rgba(var(--mono-rgb-0), 0.92) 46.4%, rgba(var(--mono-rgb-0), 0.864) 56.7%, rgba(var(--mono-rgb-0), 0.796) 64.8%, rgba(var(--mono-rgb-0), 0.72) 71.2%, rgba(var(--mono-rgb-0), 0.637) 76.1%, rgba(var(--mono-rgb-0), 0.55) 79.9%, rgba(var(--mono-rgb-0), 0.46) 82.8%, rgba(var(--mono-rgb-0), 0.37) 85.2%, rgba(var(--mono-rgb-0), 0.283) 87.3%, rgba(var(--mono-rgb-0), 0.2) 89.6%, rgba(var(--mono-rgb-0), 0.124) 92.3%, rgba(var(--mono-rgb-0), 0.056) 95.6%, rgba(var(--mono-rgb-0), 0) 100%);
+      background: linear-gradient(to right, var(--background-primary) 50%, transparent);
       pointer-events: none;
     }
     &::after {
@@ -76,7 +76,6 @@ body:not(.is-mobile).hover-sidedock {
       content: "";
       position: absolute;
       width: 100%;
-      background: red;
     }
 
     &.mod-left-split:not(:hover) {
@@ -91,7 +90,7 @@ body:not(.is-mobile).hover-sidedock {
     }
     &.mod-right-split::before {
       left: unset;
-      background: linear-gradient(to left, rgba(var(--mono-rgb-0)) 0%, rgba(var(--mono-rgb-0), 0.99) 18.4%, rgba(var(--mono-rgb-0), 0.963) 33.7%, rgba(var(--mono-rgb-0), 0.92) 46.4%, rgba(var(--mono-rgb-0), 0.864) 56.7%, rgba(var(--mono-rgb-0), 0.796) 64.8%, rgba(var(--mono-rgb-0), 0.72) 71.2%, rgba(var(--mono-rgb-0), 0.637) 76.1%, rgba(var(--mono-rgb-0), 0.55) 79.9%, rgba(var(--mono-rgb-0), 0.46) 82.8%, rgba(var(--mono-rgb-0), 0.37) 85.2%, rgba(var(--mono-rgb-0), 0.283) 87.3%, rgba(var(--mono-rgb-0), 0.2) 89.6%, rgba(var(--mono-rgb-0), 0.124) 92.3%, rgba(var(--mono-rgb-0), 0.056) 95.6%, rgba(var(--mono-rgb-0), 0) 100%);
+      background: linear-gradient(to left, var(--background-primary) 50%, transparent);
     }
     &.mod-right-split::after {
       left: unset;
