@@ -1,31 +1,3 @@
-@mixin block-width($prefix, $line-var, $targets...) {
-  &:is(.#{$prefix}-wide, .#{$prefix}-max, .#{$prefix}-100),
-  div:is(.#{$prefix}-wide, .#{$prefix}-max, .#{$prefix}-100) {
-    @each $target in $targets {
-      #{$target} {
-        max-width: var(--#{$line-var});
-        width: var(--#{$line-var}) !important;
-        justify-self: center;
-      }
-    }
-  }
-
-  &.#{$prefix}-wide,
-  .#{$prefix}-wide {
-    --#{$line-var}: var(--line-width-wide);
-  }
-
-  &.#{$prefix}-max,
-  .#{$prefix}-max {
-    --#{$line-var}: 100cqw;
-  }
-
-  &.#{$prefix}-100,
-  .#{$prefix}-100 {
-    --#{$line-var}: calc(100cqw + (var(--file-margins-inline) * 2));
-  }
-}
-
 body:not(.block-width-off) {
   --file-line-width: var(--line-width);
   --line-width: 40rem;
@@ -35,7 +7,6 @@ body:not(.block-width-off) {
   .wide {
     --file-line-width: var(--line-width-wide);
   }
-
   &.max,
   .max {
     --file-line-width: 100%;
@@ -46,11 +17,32 @@ body:not(.block-width-off) {
     container-type: inline-size;
   }
 
-  @include block-width(table, table-line-width, ".markdown-preview-sizer > .el-table", ".markdown-preview-sizer > .el-pre .block-language-dataview", ".markdown-preview-sizer > .el-pre .block-language-datacorejsx", ".cm-content > .cm-table-widget", ".cm-content > .cm-lang-dataview", ".cm-content > .cm-lang-datacorejsx");
-
-  @include block-width(bases, bases-line-width, ".markdown-preview-sizer > .el-pre .bases-embed", ".markdown-preview-sizer > .el-p .bases-embed", ".cm-content > .bases-embed", ".cm-content > .cm-lang-base");
-
-  @include block-width(img, img-line-width, ".markdown-preview-sizer > .el-p p:has(img)", ".markdown-preview-sizer > .el-iframe", ".cm-content .image-embed");
+  // Table
+  &:is(.table-wide, .table-max, .table-100),
+  div:is(.table-wide, .table-max, .table-100) {
+    .markdown-preview-sizer > .el-table,
+    .markdown-preview-sizer > .el-pre .block-language-dataview,
+    .markdown-preview-sizer > .el-pre .block-language-datacorejsx,
+    .cm-content > .cm-table-widget,
+    .cm-content > .cm-lang-dataview,
+    .cm-content > .cm-lang-datacorejsx {
+      max-width: var(--table-line-width);
+      width: var(--table-line-width) !important;
+      justify-self: center;
+    }
+  }
+  &.table-wide,
+  .table-wide {
+    --table-line-width: var(--line-width-wide);
+  }
+  &.table-max,
+  .table-max {
+    --table-line-width: 100cqw;
+  }
+  &.table-100,
+  .table-100 {
+    --table-line-width: calc(100cqw + (var(--file-margins-inline) * 2));
+  }
 
   &.table-100 .markdown-preview-sizer > .el-table,
   .table-100 .markdown-preview-sizer > .el-table {
@@ -71,6 +63,55 @@ body:not(.block-width-off) {
     }
   }
 
+  // Bases
+  &:is(.bases-wide, .bases-max, .bases-100),
+  div:is(.bases-wide, .bases-max, .bases-100) {
+    .markdown-preview-sizer > .el-pre .bases-embed,
+    .markdown-preview-sizer > .el-p .bases-embed,
+    .cm-content > .bases-embed,
+    .cm-content > .cm-lang-base {
+      max-width: var(--bases-line-width);
+      width: var(--bases-line-width) !important;
+      justify-self: center;
+    }
+  }
+  &.bases-wide,
+  .bases-wide {
+    --bases-line-width: var(--line-width-wide);
+  }
+  &.bases-max,
+  .bases-max {
+    --bases-line-width: 100cqw;
+  }
+  &.bases-100,
+  .bases-100 {
+    --bases-line-width: calc(100cqw + (var(--file-margins-inline) * 2));
+  }
+
+  // Image
+  &:is(.img-wide, .img-max, .img-100),
+  div:is(.img-wide, .img-max, .img-100) {
+    .markdown-preview-sizer > .el-p p:has(img),
+    .markdown-preview-sizer > .el-iframe,
+    .cm-content .image-embed {
+      max-width: var(--img-line-width);
+      width: var(--img-line-width) !important;
+      justify-self: center;
+    }
+  }
+  &.img-wide,
+  .img-wide {
+    --img-line-width: var(--line-width-wide);
+  }
+  &.img-max,
+  .img-max {
+    --img-line-width: 100cqw;
+  }
+  &.img-100,
+  .img-100 {
+    --img-line-width: calc(100cqw + (var(--file-margins-inline) * 2));
+  }
+
   &.img-100,
   .img-100 {
     .markdown-preview-sizer img,
@@ -82,131 +123,3 @@ body:not(.block-width-off) {
     display: block !important;
   }
 }
-
-// In case I forget how it works...
-//
-// body:not(.block-width-off) {
-//   --file-line-width: var(--line-width);
-//   --line-width: 40rem;
-//   --line-width-wide: 50rem;
-//
-//   &.wide,
-//   .wide {
-//     --file-line-width: var(--line-width-wide);
-//   }
-//   &.max,
-//   .max {
-//     --file-line-width: 100%;
-//   }
-//
-//   .mod-root .markdown-preview-view,
-//   .mod-root .cm-scroller {
-//     container-type: inline-size;
-//   }
-//
-//   // Table
-//   &:is(.table-wide, .table-max, .table-100),
-//   div:is(.table-wide, .table-max, .table-100) {
-//     .markdown-preview-sizer > .el-table,
-//     .markdown-preview-sizer > .el-pre .block-language-dataview,
-//     .markdown-preview-sizer > .el-pre .block-language-datacorejsx,
-//     .cm-content > .cm-table-widget,
-//     .cm-content > .cm-lang-dataview,
-//     .cm-content > .cm-lang-datacorejsx {
-//       max-width: var(--table-line-width);
-//       width: var(--table-line-width);
-//       justify-self: center;
-//     }
-//   }
-//   &.table-wide,
-//   .table-wide {
-//     --table-line-width: var(--line-width-wide);
-//   }
-//   &.table-max,
-//   .table-max {
-//     --table-line-width: 100cqw;
-//   }
-//   &.table-100,
-//   .table-100 {
-//     --table-line-width: calc(100cqw + (var(--file-margins-inline) * 2));
-//   }
-//
-//   &.table-100 .markdown-preview-sizer > .el-table,
-//   .table-100 .markdown-preview-sizer > .el-table {
-//     tbody > tr > td {
-//       border-radius: 0;
-//     }
-//     tbody tr:first-child > td {
-//       border-block-start-width: 0;
-//     }
-//     tbody tr > td:last-child {
-//       border-inline-end-width: 0;
-//     }
-//     tbody tr > td:first-child {
-//       border-inline-start-width: 0;
-//     }
-//     tbody tr:last-child > td {
-//       border-block-end-width: 0;
-//     }
-//   }
-//
-//   // Bases
-//   &:is(.bases-wide, .bases-max, .bases-100),
-//   div:is(.bases-wide, .bases-max, .bases-100) {
-//     .markdown-preview-sizer > .el-pre .bases-embed,
-//     .markdown-preview-sizer > .el-p .bases-embed,
-//     .cm-content > .bases-embed,
-//     .cm-content > .cm-lang-base {
-//       max-width: var(--bases-line-width);
-//       width: var(--bases-line-width) !important;
-//       justify-self: center;
-//     }
-//   }
-//   &.bases-wide,
-//   .bases-wide {
-//     --bases-line-width: var(--line-width-wide);
-//   }
-//   &.bases-max,
-//   .bases-max {
-//     --bases-line-width: 100cqw;
-//   }
-//   &.bases-100,
-//   .bases-100 {
-//     --bases-line-width: calc(100cqw + (var(--file-margins-inline) * 2));
-//   }
-//
-//   // Image
-//   &:is(.img-wide, .img-max, .img-100),
-//   div:is(.img-wide, .img-max, .img-100) {
-//     .markdown-preview-sizer > .el-p p:has(img),
-//     .markdown-preview-sizer > .el-iframe,
-//     .cm-content .image-embed {
-//       max-width: var(--img-line-width);
-//       width: var(--img-line-width) !important;
-//       justify-self: center;
-//     }
-//   }
-//   &.img-wide,
-//   .img-wide {
-//     --img-line-width: var(--line-width-wide);
-//   }
-//   &.img-max,
-//   .img-max {
-//     --img-line-width: 100cqw;
-//   }
-//   &.img-100,
-//   .img-100 {
-//     --img-line-width: calc(100cqw + (var(--file-margins-inline) * 2));
-//   }
-
-// &.img-100,
-// .img-100 {
-//   .markdown-preview-sizer img,
-//   .cm-content img {
-//     border-radius: 0 !important;
-//   }
-// }
-// .cm-content .image-embed {
-//   display: block !important;
-// }
-// }
