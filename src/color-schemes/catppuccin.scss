@@ -67,10 +67,13 @@ https://github.com/catppuccin/catppuccin
 .theme-light.catppuccin-light.contrast-light-vivid .status-bar,
 .theme-light.catppuccin-light.contrast-light-vivid .workspace::before,
 .theme-light.catppuccin-light.contrast-light-vivid .workspace-ribbon,
-.theme-light.catppuccin-light.contrast-light-vivid .mod-sidedock.mod-left-split,
-.theme-light:not(.layout-minimal).catppuccin-light.contrast-light-vivid .mod-sidedock.mod-right-split,
-.theme-light:not(.layout-minimal).catppuccin-light.contrast-light-vivid .mod-root .workspace-tab-header-container,
-.theme-light:not(.layout-minimal).catppuccin-light.contrast-light-vivid .mod-root .workspace-tab-header-container::before {
+.theme-light.catppuccin-light.contrast-light-vivid.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container,
+.theme-light.catppuccin-light.contrast-light-vivid.layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container,
+.theme-light.catppuccin-light.contrast-light-vivid.layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container,
+.theme-light.catppuccin-light.contrast-light-vivid.layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
+.theme-light.catppuccin-light.contrast-light-vivid:not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split,
+.theme-light.catppuccin-light.contrast-light-vivid:not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split,
+.theme-light.catppuccin-light.contrast-light-vivid:not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner) {
   --color-red-rgb: 235, 153, 156;
   --color-orange-rgb: 239, 160, 118;
   --color-yellow-rgb: 229, 200, 144;

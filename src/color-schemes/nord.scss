@@ -51,15 +51,17 @@ https://github.com/nordtheme/nord
 }
 
 .theme-dark.nord-dark,
-.theme-dark.nord-dark,
 .theme-light.nord-light.contrast-light-vivid .titlebar,
 .theme-light.nord-light.contrast-light-vivid .status-bar,
 .theme-light.nord-light.contrast-light-vivid .workspace::before,
 .theme-light.nord-light.contrast-light-vivid .workspace-ribbon,
-.theme-light.nord-light.contrast-light-vivid .mod-sidedock.mod-left-split,
-.theme-light:not(.layout-minimal).nord-light.contrast-light-vivid .mod-sidedock.mod-right-split,
-.theme-light:not(.layout-minimal).nord-light.contrast-light-vivid .mod-root .workspace-tab-header-container,
-.theme-light:not(.layout-minimal).nord-light.contrast-light-vivid .mod-root .workspace-tab-header-container::before {
+.theme-light.nord-light.contrast-light-vivid.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container,
+.theme-light.nord-light.contrast-light-vivid.layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container,
+.theme-light.nord-light.contrast-light-vivid.layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container,
+.theme-light.nord-light.contrast-light-vivid.layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
+.theme-light.nord-light.contrast-light-vivid:not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split,
+.theme-light.nord-light.contrast-light-vivid:not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split,
+.theme-light.nord-light.contrast-light-vivid:not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner) {
   --background-primary: #2e3440;
   --background-primary-alt: #3b4252;
   --background-secondary: #3b4252;

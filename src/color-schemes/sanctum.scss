@@ -70,10 +70,13 @@ https://github.com/jdanielmourao/obsidian-sanctum/
 .theme-light.sanctum-light.contrast-light-vivid .status-bar,
 .theme-light.sanctum-light.contrast-light-vivid .workspace::before,
 .theme-light.sanctum-light.contrast-light-vivid .workspace-ribbon,
-.theme-light.sanctum-light.contrast-light-vivid .mod-sidedock.mod-left-split,
-.theme-light:not(.layout-minimal).sanctum-light.contrast-light-vivid .mod-sidedock.mod-right-split,
-.theme-light:not(.layout-minimal).sanctum-light.contrast-light-vivid .mod-root .workspace-tab-header-container,
-.theme-light:not(.layout-minimal).sanctum-light.contrast-light-vivid .mod-root .workspace-tab-header-container::before {
+.theme-light.sanctum-light.contrast-light-vivid.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container,
+.theme-light.sanctum-light.contrast-light-vivid.layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container,
+.theme-light.sanctum-light.contrast-light-vivid.layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container,
+.theme-light.sanctum-light.contrast-light-vivid.layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
+.theme-light.sanctum-light.contrast-light-vivid:not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split,
+.theme-light.sanctum-light.contrast-light-vivid:not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split,
+.theme-light.sanctum-light.contrast-light-vivid:not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner) {
   --background-primary: rgb(var(--gray-100));
   --background-primary-alt: rgb(var(--gray-90));
   --background-secondary: rgb(var(--gray-90));

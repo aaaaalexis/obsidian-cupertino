@@ -19,44 +19,16 @@ body.theme-dark.contrast-dark-black {
   --system-status-background: var(--background-primary);
 }
 
-body.theme-light.contrast-light-vivid {
-  &:not(.is-focused) .mod-root .workspace-tab-header-container {
-    opacity: 1;
+body.theme-light.contrast-light-vivid:where(:not(.layout-macos)) {
+  .workspace::before {
+    content: "";
+    position: absolute;
+    inset: -100vh 0;
+    background: var(--background-secondary);
+    pointer-events: none;
   }
-
-  &:not(.accented-interface) {
-    .titlebar,
-    .status-bar,
-    .mod-sidedock,
-    .mod-root .workspace-tab-header-container::before,
-    .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner) {
-      --interactive-accent: rgb(var(--mono-rgb-100));
-      --interactive-accent-hover: rgba(var(--mono-rgb-100), 0.8);
-      --text-on-accent: var(--color-base-00);
-    }
-  }
-
-  &.nav-item-strong .mod-sidedock {
-    --nav-item-background-active: var(--interactive-accent);
-    --nav-item-color-active: var(--text-on-accent);
-  }
-  &:not(.nav-item-subtle, .nav-item-strong) .mod-sidedock {
-    --nav-item-background-hover: transparent;
-    --nav-item-background-active: transparent;
-    --nav-item-weight-hover: var(--font-medium);
-  }
-
-  &:not(.layout-minimal) .mod-root {
-    .workspace-tab-header-container {
-      background-color: var(--background-secondary);
-    }
-    .workspace-tab-header-container::before {
-      content: "";
-      position: absolute;
-      inset: -100vh 0;
-      background: var(--background-secondary);
-      pointer-events: none;
-    }
+  &:not(.layout-frame) .workspace-split {
+    background-color: transparent;
   }
 
   --graph-text: var(--color-base-20) !important;
@@ -68,10 +40,13 @@ body.theme-light.contrast-light-vivid {
   .status-bar,
   .workspace::before,
   .workspace-ribbon,
-  .mod-sidedock.mod-left-split,
-  &:not(.layout-minimal) .mod-sidedock.mod-right-split,
-  &:not(.layout-minimal) .mod-root .workspace-tab-header-container::before,
-  &:not(.layout-minimal) .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner) {
+  &.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container,
+  &.layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container,
+  &.layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container,
+  &.layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
+  &:not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split,
+  &:not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split,
+  &:not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner) {
     --collapse-icon-color: var(--text-faint);
     --collapse-icon-color-collapsed: var(--text-accent);
     --divider-color: var(--background-modifier-border);
@@ -114,8 +89,6 @@ body.theme-light.contrast-light-vivid {
     --metadata-input-text-color: var(--text-normal);
     --metadata-input-background-active: var(--background-modifier-hover);
     --modal-background: var(--background-primary);
-    --ribbon-background: var(--background-secondary);
-    --ribbon-background-collapsed: var(--background-primary);
     --search-result-background: var(--background-primary);
     --status-bar-background: var(--background-secondary);
     --status-bar-border-color: var(--divider-color);
@@ -173,5 +146,22 @@ body.theme-light.contrast-light-vivid {
     --interactive-hover: var(--color-base-35);
     --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
     --background-modifier-cover: rgba(10, 10, 10, 0.4);
+  }
+
+  &:not(.accented-interface) {
+    --interactive-accent: rgb(var(--mono-rgb-0));
+    --interactive-accent-hover: rgba(var(--mono-rgb-0), 0.8);
+    --text-on-accent: var(--color-base-100);
+    --text-on-accent-inverted: var(--color-base-100);
+  }
+
+  &.nav-item-strong .mod-sidedock.mod-left-split {
+    --nav-item-background-active: var(--interactive-accent);
+    --nav-item-color-active: var(--text-on-accent);
+  }
+  &:not(.nav-item-subtle, .nav-item-strong) .mod-sidedock {
+    --nav-item-background-hover: transparent;
+    --nav-item-background-active: transparent;
+    --nav-item-weight-hover: var(--font-medium);
   }
 }

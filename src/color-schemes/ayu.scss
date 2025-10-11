@@ -57,10 +57,13 @@ https://github.com/ayu-theme/ayu-colors
 .theme-light.ayu-light.contrast-light-vivid .status-bar,
 .theme-light.ayu-light.contrast-light-vivid .workspace::before,
 .theme-light.ayu-light.contrast-light-vivid .workspace-ribbon,
-.theme-light.ayu-light.contrast-light-vivid .mod-sidedock.mod-left-split,
-.theme-light:not(.layout-minimal).ayu-light.contrast-light-vivid .mod-sidedock.mod-right-split,
-.theme-light:not(.layout-minimal).ayu-light.contrast-light-vivid .mod-root .workspace-tab-header-container,
-.theme-light:not(.layout-minimal).ayu-light.contrast-light-vivid .mod-root .workspace-tab-header-container::before {
+.theme-light.ayu-light.contrast-light-vivid.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container,
+.theme-light.ayu-light.contrast-light-vivid.layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container,
+.theme-light.ayu-light.contrast-light-vivid.layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container,
+.theme-light.ayu-light.contrast-light-vivid.layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
+.theme-light.ayu-light.contrast-light-vivid:not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split,
+.theme-light.ayu-light.contrast-light-vivid:not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split,
+.theme-light.ayu-light.contrast-light-vivid:not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner) {
   --color-red-rgb: 255, 102, 102;
   --color-orange-rgb: 250, 173, 102;
   --color-yellow-rgb: 255, 209, 55;

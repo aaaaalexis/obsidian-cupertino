@@ -27,6 +27,7 @@ body.layout-border:not(.is-mobile) {
     }
 
     &.mod-left-split {
+      .workspace-tabs:not(.mod-top) .workspace-tab-header-container,
       .workspace-tab-container {
         margin-left: 8px;
       }
@@ -38,6 +39,7 @@ body.layout-border:not(.is-mobile) {
       }
     }
     &.mod-right-split {
+      .workspace-tabs:not(.mod-top) .workspace-tab-header-container,
       .workspace-tab-container {
         margin-right: 8px;
       }

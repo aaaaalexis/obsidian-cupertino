@@ -67,10 +67,13 @@ https://github.com/sainnhe/everforest
 .theme-light.everforest-light.contrast-light-vivid .status-bar,
 .theme-light.everforest-light.contrast-light-vivid .workspace::before,
 .theme-light.everforest-light.contrast-light-vivid .workspace-ribbon,
-.theme-light.everforest-light.contrast-light-vivid .mod-sidedock.mod-left-split,
-.theme-light:not(.layout-minimal).everforest-light.contrast-light-vivid .mod-sidedock.mod-right-split,
-.theme-light:not(.layout-minimal).everforest-light.contrast-light-vivid .mod-root .workspace-tab-header-container,
-.theme-light:not(.layout-minimal).everforest-light.contrast-light-vivid .mod-root .workspace-tab-header-container::before {
+.theme-light.everforest-light.contrast-light-vivid.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container,
+.theme-light.everforest-light.contrast-light-vivid.layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container,
+.theme-light.everforest-light.contrast-light-vivid.layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container,
+.theme-light.everforest-light.contrast-light-vivid.layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
+.theme-light.everforest-light.contrast-light-vivid:not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split,
+.theme-light.everforest-light.contrast-light-vivid:not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split,
+.theme-light.everforest-light.contrast-light-vivid:not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner) {
   --color-red-rgb: 230, 126, 128;
   --color-orange-rgb: 230, 152, 117;
   --color-yellow-rgb: 219, 188, 127;

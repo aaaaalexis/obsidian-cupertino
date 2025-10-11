@@ -62,10 +62,13 @@ https://github.com/morhetz/gruvbox
 .theme-light.gruvbox-light.contrast-light-vivid .status-bar,
 .theme-light.gruvbox-light.contrast-light-vivid .workspace::before,
 .theme-light.gruvbox-light.contrast-light-vivid .workspace-ribbon,
-.theme-light.gruvbox-light.contrast-light-vivid .mod-sidedock.mod-left-split,
-.theme-light:not(.layout-minimal).gruvbox-light.contrast-light-vivid .mod-sidedock.mod-right-split,
-.theme-light:not(.layout-minimal).gruvbox-light.contrast-light-vivid .mod-root .workspace-tab-header-container,
-.theme-light:not(.layout-minimal).gruvbox-light.contrast-light-vivid .mod-root .workspace-tab-header-container::before {
+.theme-light.gruvbox-light.contrast-light-vivid.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container,
+.theme-light.gruvbox-light.contrast-light-vivid.layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container,
+.theme-light.gruvbox-light.contrast-light-vivid.layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container,
+.theme-light.gruvbox-light.contrast-light-vivid.layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
+.theme-light.gruvbox-light.contrast-light-vivid:not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split,
+.theme-light.gruvbox-light.contrast-light-vivid:not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split,
+.theme-light.gruvbox-light.contrast-light-vivid:not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner) {
   --background-primary: #282828;
   --background-primary-alt: #1e2021;
   --background-secondary: #1e2021;

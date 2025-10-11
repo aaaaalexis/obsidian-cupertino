@@ -59,10 +59,13 @@ https://github.com/rose-pine/rose-pine-theme
 .theme-light.rose-pine-light.contrast-light-vivid .status-bar,
 .theme-light.rose-pine-light.contrast-light-vivid .workspace::before,
 .theme-light.rose-pine-light.contrast-light-vivid .workspace-ribbon,
-.theme-light.rose-pine-light.contrast-light-vivid .mod-sidedock.mod-left-split,
-.theme-light:not(.layout-minimal).rose-pine-light.contrast-light-vivid .mod-sidedock.mod-right-split,
-.theme-light:not(.layout-minimal).rose-pine-light.contrast-light-vivid .mod-root .workspace-tab-header-container,
-.theme-light:not(.layout-minimal).rose-pine-light.contrast-light-vivid .mod-root .workspace-tab-header-container::before {
+.theme-light.rose-pine-light.contrast-light-vivid.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container,
+.theme-light.rose-pine-light.contrast-light-vivid.layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container,
+.theme-light.rose-pine-light.contrast-light-vivid.layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container,
+.theme-light.rose-pine-light.contrast-light-vivid.layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
+.theme-light.rose-pine-light.contrast-light-vivid:not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split,
+.theme-light.rose-pine-light.contrast-light-vivid:not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split,
+.theme-light.rose-pine-light.contrast-light-vivid:not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner) {
   --color-red-rgb: 234, 111, 146;
   --color-orange-rgb: 233, 155, 151;
   --color-yellow-rgb: 246, 193, 119;
