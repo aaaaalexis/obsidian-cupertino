@@ -54,7 +54,6 @@ body.layout-macos:not(.is-mobile) {
     }
   }
 
-
   // Side panels
   &.is-fullscreen .mod-sidedock.mod-left-split {
     border-radius: var(--radius-m);
@@ -70,6 +69,9 @@ body.layout-macos:not(.is-mobile) {
   }
   &.theme-dark .mod-sidedock.mod-left-split {
     outline: var(--border-width) solid var(--background-modifier-border);
+  }
+  &.show-ribbon .mod-sidedock.mod-left-split {
+    margin-left: 0;
   }
   .mod-sidedock.mod-left-split {
     z-index: var(--layer-sidedock);
