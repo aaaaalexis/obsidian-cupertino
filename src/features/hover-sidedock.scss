@@ -98,3 +98,17 @@ body:not(.is-mobile).hover-sidedock {
     }
   }
 }
+
+body:not(.is-mobile).hover-ribbon {
+  .workspace-ribbon.mod-left:not(:hover) {
+    --ribbon-width: 1px;
+    padding-inline: 0;
+  }
+  &.hover-sidedock .workspace:not(.is-left-sidedock-open) .workspace-ribbon.mod-left {
+    display: none;
+  }
+
+  &.mod-macos .workspace:not(.is-left-sidedock-open) .workspace-ribbon.mod-left:not(:hover) ~ .mod-root .workspace-tab-header-container {
+    padding-left: 88px;
+  }
+}

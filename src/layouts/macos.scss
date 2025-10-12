@@ -70,8 +70,17 @@ body.layout-macos:not(.is-mobile) {
   &.theme-dark .mod-sidedock.mod-left-split {
     outline: var(--border-width) solid var(--background-modifier-border);
   }
-  &.show-ribbon .mod-sidedock.mod-left-split {
-    margin-left: 0;
+  &.show-ribbon {
+    .workspace.is-left-sidedock-open .workspace-ribbon.mod-left {
+      padding-left: 16px;
+    }
+    .mod-sidedock.mod-left-split.is-sidedock-collapsed {
+      margin-left: 0;
+    }
+    .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) {
+      margin-left: calc(-1 * var(--ribbon-width) + 8px);
+      padding-left: var(--ribbon-width);
+    }
   }
   .mod-sidedock.mod-left-split {
     z-index: var(--layer-sidedock);

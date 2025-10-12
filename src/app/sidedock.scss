@@ -93,9 +93,13 @@ body.bold-folders .nav-folder-title {
 }
 
 // Ribbon
-body:not(.mod-macod) .workspace-ribbon.mod-left {
+body.mod-macos .workspace-ribbon.mod-left {
+  padding-top: 0;
+}
+body:not(.mod-macos) .workspace-ribbon.mod-left {
   margin-top: 0;
 }
+
 .workspace-ribbon.mod-left {
   contain: content;
   border-right: none;
@@ -107,9 +111,6 @@ body:not(.mod-macod) .workspace-ribbon.mod-left {
 }
 .workspace-ribbon.mod-left .sidebar-toggle-button {
   position: relative;
-}
-body.hover-ribbon .workspace-ribbon.mod-left:not(:hover) {
-  --ribbon-width: 0;
 }
 
 .workspace-ribbon .sidebar-toggle-button {

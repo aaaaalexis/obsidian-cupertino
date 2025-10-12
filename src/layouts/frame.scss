@@ -18,6 +18,12 @@ body.layout-frame:not(.is-mobile) {
     overflow: hidden;
   }
 
+  // macOs fix
+  &.mod-macos .workspace-ribbon.mod-left {
+    --ribbon-width: 74px;
+    padding-top: var(--header-height);
+  }
+
   // Windows & Linux fix
   &:not(.mod-macos).is-frameless.is-hidden-frameless .titlebar {
     height: var(--header-height);

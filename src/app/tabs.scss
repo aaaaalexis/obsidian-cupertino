@@ -27,6 +27,7 @@ body:not(.is-mobile) {
   }
 }
 body:not(.is-phone) .workspace-tab-header-container {
+  transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
   background-color: transparent;
   border-bottom: 0;
 }
