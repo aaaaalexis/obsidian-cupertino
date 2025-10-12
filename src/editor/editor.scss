@@ -346,14 +346,18 @@
   }
 
   body:not(.full-width-media-off) .workspace-leaf-content[data-type="markdown"] {
-    :is(img:not([width], .cm-widgetBuffer, .link-favicon, .emoji), iframe, video) {
+    img:not([width], .cm-widgetBuffer, .link-favicon, .emoji),
+    iframe,
+    video {
       width: 100%;
       border-radius: var(--media-radius);
     }
   }
 
   body.theme-dark {
-    .workspace-leaf-content[data-type="markdown"] :is(img:not([width], .cm-widgetBuffer, .link-favicon, .emoji), iframe, video),
+    .workspace-leaf-content[data-type="markdown"] img:not([width], .cm-widgetBuffer, .link-favicon, .emoji),
+    .workspace-leaf-content[data-type="markdown"] iframe,
+    .workspace-leaf-content[data-type="markdown"] video,
     .workspace-leaf-content[data-type="bases"] .bases-cards-cover {
       transition: var(--anim-duration-moderate);
 
