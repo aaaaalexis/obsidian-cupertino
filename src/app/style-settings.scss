@@ -2971,7 +2971,9 @@ body.everforest-dark .style-settings-container .setting-item[data-id="color-sche
 body.flexoki-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
 body.flexoki-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before,
 body.sky-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.sky-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
+body.sky-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before,
+body.minimal-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
+body.minimal-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
   content: "Author: Steph Ango (kepano)";
 }
 body.gruvbox-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
@@ -3017,7 +3019,7 @@ body.layout-frame .style-settings-container .setting-item[data-id="layout-style"
 }
 
 // Disabling input
-body:not(.accented-interface) .style-settings-container .setting-item[data-id="color-scheme-accent"],
+body:not(.accented-interface:not(.default-light.default-dark)) .style-settings-container .setting-item[data-id="color-scheme-accent"],
 body:not(.hover-sidedock) .style-settings-container .setting-item[data-id="hover-sidedock"] ~ .setting-item,
 body:not(.readable-spacing) .style-settings-container .setting-item[data-id="readable-spacing"] ~ .setting-item,
 body.view-header-title-hidden .style-settings-container .setting-item[data-id="file-header-visibility"] ~ .setting-item,
@@ -3107,6 +3109,7 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
       transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
       flex-basis: 100%;
       background-color: transparent !important;
+      border-top: none;
 
       .extra-setting-button {
         display: none;
