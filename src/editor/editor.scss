@@ -24,18 +24,8 @@
 
     --code-border-width: 1px;
     --code-size: var(--font-smallest);
-    --code-normal: var(--text-muted);
-    --code-comment: var(--text-faint);
-    --code-function: var(--color-orange);
-    --code-important: var(--color-orange);
-    --code-keyword: var(--color-red);
-    --code-property: var(--color-blue);
-    --code-punctuation: var(--text-muted);
-    --code-string: var(--color-cyan);
-    --code-tag: var(--color-red);
-    --code-value: var(--color-purple);
 
-    --embed-padding: 0 0 0 16px;
+    --embed-padding: 16px;
     --embed-max-height: none;
     --embed-background: var(--background-primary-alt);
     --embed-border-start: var(--embed-border-thickness, 2px) solid var(--embed-border-color, var(--color-base-50));
@@ -235,7 +225,8 @@
     --embed-border-start: none;
     --embed-padding: 16px;
   }
-  .embed-hide-title .embed-title {
+  .embed-hide-title .embed-title,
+  .embed-title:empty {
     display: none;
   }
 
