@@ -107,7 +107,7 @@ body:is(.tabs-floating, .tabs-floating-center).is-tablet {
   --header-height: 60px !important;
 
   .mod-root .workspace-tab-header-container-inner {
-    padding: 0;
+    padding: 0 !important;
   }
   .mod-root .workspace-tab-header {
     margin: 8px 0;
