@@ -2621,8 +2621,8 @@ settings:
 		default: false
 	-
 		id: table-lines
-		title: Cell lines
-		description: Display borders around all table cells globally
+		title: Table frame
+		description: Display border around table content globally
 		type: class-toggle
 		default: false 
 	-

@@ -26,24 +26,10 @@
 }
 
 .table-center {
-  .markdown-preview-view .markdown-preview-sizer table,
-  &.markdown-preview-view .markdown-preview-sizer table,
-  .markdown-source-view.mod-cm6 .table-wrapper,
-  &.markdown-source-view.mod-cm6 .table-wrapper {
+  .markdown-preview-sizer table,
+  .table-wrapper {
     margin: 0 auto;
   }
-}
-
-.table-lines {
-  --table-border-width: var(--border-width);
-  --table-header-border-width: var(--border-width);
-  --table-column-first-border-width: var(--border-width);
-  --table-column-last-border-width: var(--border-width);
-  --table-row-last-border-width: var(--border-width);
-  --table-edge-cell-padding: 8px;
-  --table-edge-cell-padding-first: 8px;
-  --table-edge-cell-padding-last: 8px;
-  --table-add-button-border-width: 1px;
 }
 
 .table-nowrap {
@@ -131,8 +117,16 @@
     border: var(--table-border-width) solid var(--table-border-color);
   }
 
+  > tbody > tr:not(:first-child) > td {
+    border-top: none;
+  }
+
   > tbody > tr:not(:last-child) > td {
     border-bottom: none;
+  }
+
+  > tbody > tr > td:not(:first-child) {
+    border-left: none;
   }
 
   > tbody > tr > td:not(:last-child) {
