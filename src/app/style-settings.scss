@@ -1288,17 +1288,15 @@ settings:
 	-
 		id: line-width
 		title: Normal line width
-		description: Number of characters per line
-		type: variable-number
-		default: 40
-		format: rem
+		description: Accepts valid CSS units
+		type: variable-text
+		default: 700px
 	-
 		id: line-width-wide
 		title: Wide line width
-		description: Number of characters per line for wide elements
-		type: variable-number
-		default: 50
-		format: rem
+		description: Accepts valid CSS units
+		type: variable-text
+		default: 65rem
 	-
 		id: table-width
 		title: Table width
