@@ -9,12 +9,10 @@
   .callout:not([data-callout="note-toolbar"]) {
     font-size: var(--callout-size);
 
-    p:first-child,
     .callout-content > *:first-child {
       margin-top: 8px;
     }
 
-    p:last-child,
     .callout-content > *:last-child {
       margin-bottom: 0 !important;
     }
@@ -112,7 +110,6 @@
       background: var(--callout-content-background);
     }
 
-    p:first-child,
     .callout-content > *:first-child {
       margin-top: 0;
     }
@@ -140,7 +137,6 @@
         overflow: visible;
       }
 
-      p:first-child,
       .callout-content > *:first-child {
         margin-top: -1rem;
       }

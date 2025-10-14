@@ -2239,6 +2239,31 @@ settings:
 				label: Outlined
 				value: callouts-outlined
 	-
+		id: prompts-style
+		title: Prompt style
+		type: class-select
+		allowEmpty: false
+		default: prompts-default
+		options:
+			-
+				label: Baseline
+				value: prompts-baseline
+			-
+				label: OpenAI
+				value: prompts-openai
+			-
+				label: Claude
+				value: prompts-claude
+			-
+				label: Gemini
+				value: prompts-gemini
+			-
+				label: Mistral
+				value: prompts-mistral
+			-
+				label: Copilot
+				value: prompts-copilot
+	-
 		id: callout-size
 		title: Callout font size
 		description: Accepts any CSS font-size value
