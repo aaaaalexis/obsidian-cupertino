@@ -10,7 +10,7 @@
 
   body:not(.table-fit-content) table,
   body:not(.table-fit-content) .markdown-source-view.mod-cm6 .cm-table-widget .table-wrapper {
-    width: 100%;
+    min-width: 100%;
   }
   body.table-fit-content .el-table,
   body.table-fit-content .markdown-source-view.mod-cm6 .cm-table-widget {
