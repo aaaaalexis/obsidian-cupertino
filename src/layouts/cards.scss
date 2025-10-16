@@ -42,7 +42,7 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
       margin: 0 8px 8px;
     }
   }
-  &:not(.stacked-nav-off):not(.mod-macos) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
+  &.show-ribbon:not(.stacked-nav-off):not(.mod-macos) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
     margin-top: var(--header-height);
   }
 
