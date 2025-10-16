@@ -101,7 +101,7 @@ body:not(.mod-macos) .workspace-ribbon.mod-left {
 }
 
 .workspace-ribbon.mod-left {
-  contain: content;
+  overflow: visible;
   border-right: none;
   z-index: 11;
   transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
@@ -118,10 +118,13 @@ body:not(.mod-macos) .workspace-ribbon.mod-left {
   height: var(--header-height);
   padding: 8px;
   width: unset;
+  align-items: center;
+  justify-content: center;
 }
-body:not(.mod-macos) .workspace-ribbon .sidebar-toggle-button {
-  height: fit-content;
+body:not(.mod-macos):not(.is-mobile) .workspace-ribbon .sidebar-toggle-button {
+  height: calc(var(--header-height) - 16px);
   padding: 0;
+  margin: 0 auto;
 }
 
 // Desktop sidedock
@@ -182,7 +185,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split {
       z-index: -1;
       pointer-events: none;
       mask: linear-gradient(to top, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.99) 18.4%, hsla(0, 0%, 0%, 0.963) 33.7%, hsla(0, 0%, 0%, 0.92) 46.4%, hsla(0, 0%, 0%, 0.864) 56.7%, hsla(0, 0%, 0%, 0.796) 64.8%, hsla(0, 0%, 0%, 0.72) 71.2%, hsla(0, 0%, 0%, 0.637) 76.1%, hsla(0, 0%, 0%, 0.55) 79.9%, hsla(0, 0%, 0%, 0.46) 82.8%, hsla(0, 0%, 0%, 0.37) 85.2%, hsla(0, 0%, 0%, 0.283) 87.3%, hsla(0, 0%, 0%, 0.2) 89.6%, hsla(0, 0%, 0%, 0.124) 92.3%, hsla(0, 0%, 0%, 0.056) 95.6%, hsla(0, 0%, 0%, 0) 100%);
-      background-color: var(--background-primary);
+      background-color: var(--background-secondary);
     }
   }
   .workspace-drawer-vault-actions .clickable-icon:first-child {

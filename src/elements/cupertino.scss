@@ -123,4 +123,15 @@ body.input-cupertino {
   &.is-mobile .search-input-container::before {
     inset-inline-start: 12px;
   }
+
+  // Border fix
+  .menu,
+  .suggestion-container,
+  .popover,
+  .prompt,
+  .modal,
+  .cm-tooltip,
+  .notice {
+    border: none;
+  }
 }

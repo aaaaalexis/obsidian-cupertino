@@ -59,7 +59,13 @@ body.layout-macos:not(.is-mobile) {
   // Side panels
   &.is-fullscreen .mod-sidedock.mod-left-split {
     border-radius: var(--radius-m);
+
+    .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
+      height: calc(var(--header-height) - 8px);
+      padding-left: var(--frame-left-space);
+    }
   }
+
   &:not(.is-translucent) .mod-sidedock.mod-left-split {
     box-shadow: var(--shadow-sidedock);
   }
@@ -73,6 +79,12 @@ body.layout-macos:not(.is-mobile) {
     outline: var(--border-width) solid var(--background-modifier-border);
   }
   &.show-ribbon {
+    &:not(.mod-macos) .workspace-ribbon .sidebar-toggle-button {
+      height: calc(var(--header-height) - 8px);
+    }
+    &:not(.mod-macos):not(.stacked-nav-off) .workspace-ribbon.mod-left {
+      padding-top: 12px;
+    }
     .workspace.is-left-sidedock-open .workspace-ribbon.mod-left {
       padding-left: 16px;
     }
@@ -86,7 +98,7 @@ body.layout-macos:not(.is-mobile) {
   }
   .mod-sidedock.mod-left-split {
     z-index: var(--layer-sidedock);
-    border-radius: var(--radius-m);
+    border-radius: var(--radius-window, var(--radius-m));
     display: flex;
     margin: 8px 0 8px 8px;
     height: -webkit-fill-available;
@@ -125,6 +137,7 @@ body.layout-macos.is-tablet {
   // Editor panel
   --tab-background-active: var(--system-status-background);
 
+  .mod-root .view-header,
   .mod-root .view-header::before,
   .mod-root .view-content {
     background-color: var(--system-status-background) !important;

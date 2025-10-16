@@ -11,6 +11,10 @@ body:not(.mobile-stable).is-mobile {
   --safe-area-inset-bottom-override: 28px;
   --safe-area-inset-bottom-keyboard: 12px;
 
+  &.mod-toolbar-open {
+    --safe-area-inset-bottom-override: var(--safe-area-inset-bottom-keyboard);
+  }
+
   &:is(html[style*="--keyboard-height"]:not([style*="--keyboard-height: 0px"]) body.is-phone:not(.mod-toolbar-open)) {
     --safe-area-inset-bottom-override: var(--safe-area-inset-bottom-keyboard);
 
@@ -20,13 +24,22 @@ body:not(.mobile-stable).is-mobile {
     }
   }
 
-  &.mod-toolbar-open {
-    --safe-area-inset-bottom-override: var(--safe-area-inset-bottom-keyboard);
-  }
-
   .app-container {
     max-height: calc(100vh - var(--keyboard-height)) !important;
     transition: var(--anim-duration-moderate);
+  }
+
+  // iOS font size
+  &.is-ios {
+    --font-ui-smaller: calc(var(--font-text-size) * 0.8 + 1px);
+    --font-ui-small: calc(var(--font-text-size) * 0.937 + 1px);
+    --font-ui-medium: calc(var(--font-text-size) + 1px);
+    --font-ui-large: calc(var(--font-text-size) * 1.2 + 1px);
+
+    .markdown-preview-view,
+    .markdown-source-view {
+      font-size: calc(var(--font-text-size) + 1px);
+    }
   }
 
   // Icon color
@@ -191,10 +204,21 @@ body:not(.mobile-stable).is-phone {
       &::before {
         position: absolute;
         top: 0;
-        inset-inline: 0;
         z-index: -1;
-        mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.99) 18.4%, hsla(0, 0%, 0%, 0.963) 33.7%, hsla(0, 0%, 0%, 0.92) 46.4%, hsla(0, 0%, 0%, 0.864) 56.7%, hsla(0, 0%, 0%, 0.796) 64.8%, hsla(0, 0%, 0%, 0.72) 71.2%, hsla(0, 0%, 0%, 0.637) 76.1%, hsla(0, 0%, 0%, 0.55) 79.9%, hsla(0, 0%, 0%, 0.46) 82.8%, hsla(0, 0%, 0%, 0.37) 85.2%, hsla(0, 0%, 0%, 0.283) 87.3%, hsla(0, 0%, 0%, 0.2) 89.6%, hsla(0, 0%, 0%, 0.124) 92.3%, hsla(0, 0%, 0%, 0.056) 95.6%, hsla(0, 0%, 0%, 0) 100%);
+        mask: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.8) 0%, hsla(0, 0%, 0%, 0.79) 9.7%, hsla(0, 0%, 0%, 0.761) 18.7%, hsla(0, 0%, 0%, 0.717) 27.2%, hsla(0, 0%, 0%, 0.66) 35.1%, hsla(0, 0%, 0%, 0.593) 42.6%, hsla(0, 0%, 0%, 0.518) 49.6%, hsla(0, 0%, 0%, 0.44) 56.2%, hsla(0, 0%, 0%, 0.36) 62.5%, hsla(0, 0%, 0%, 0.282) 68.4%, hsla(0, 0%, 0%, 0.207) 74.1%, hsla(0, 0%, 0%, 0.14) 79.5%, hsla(0, 0%, 0%, 0.083) 84.8%, hsla(0, 0%, 0%, 0.039) 89.9%, hsla(0, 0%, 0%, 0.01) 95%, hsla(0, 0%, 0%, 0) 100%);
+        inset-inline: 0;
         background-color: var(--system-status-background);
+        height: calc(var(--safe-area-inset-top) + var(--view-header-height) + 32px);
+        pointer-events: none;
+        content: "";
+      }
+      &::after {
+        position: absolute;
+        top: 0;
+        z-index: -2;
+        backdrop-filter: blur(4px);
+        mask: linear-gradient(to bottom, black var(--safe-area-inset-top), transparent);
+        inset-inline: 0;
         height: calc(var(--safe-area-inset-top) + var(--view-header-height) + 32px);
         pointer-events: none;
         content: "";
@@ -216,6 +240,32 @@ body:not(.mobile-stable).is-phone {
       & + .view-content > .markdown-source-view > .cm-editor:first-child > .cm-scroller {
         padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
         padding-bottom: calc(var(--safe-area-inset-bottom-override) + 64px);
+      }
+    }
+
+    .workspace-leaf-content[data-type="markdown"] .view-content {
+      &::before {
+        position: absolute;
+        inset-inline: 0;
+        bottom: 0;
+        z-index: 2;
+        mask: linear-gradient(to top, hsla(0, 0%, 0%, 0.8) 0%, hsla(0, 0%, 0%, 0.79) 9.7%, hsla(0, 0%, 0%, 0.761) 18.7%, hsla(0, 0%, 0%, 0.717) 27.2%, hsla(0, 0%, 0%, 0.66) 35.1%, hsla(0, 0%, 0%, 0.593) 42.6%, hsla(0, 0%, 0%, 0.518) 49.6%, hsla(0, 0%, 0%, 0.44) 56.2%, hsla(0, 0%, 0%, 0.36) 62.5%, hsla(0, 0%, 0%, 0.282) 68.4%, hsla(0, 0%, 0%, 0.207) 74.1%, hsla(0, 0%, 0%, 0.14) 79.5%, hsla(0, 0%, 0%, 0.083) 84.8%, hsla(0, 0%, 0%, 0.039) 89.9%, hsla(0, 0%, 0%, 0.01) 95%, hsla(0, 0%, 0%, 0) 100%);
+        background-color: var(--system-status-background);
+        height: calc(var(--safe-area-inset-bottom-override) + 64px);
+        pointer-events: none;
+        content: "";
+        transition: var(--anim-duration-moderate);
+      }
+      &::after {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        backdrop-filter: blur(4px);
+        mask: linear-gradient(to top, black var(--safe-area-inset-bottom-override), transparent);
+        inset-inline: 0;
+        height: calc(var(--safe-area-inset-bottom-override) + 64px);
+        pointer-events: none;
+        content: "";
       }
     }
   }

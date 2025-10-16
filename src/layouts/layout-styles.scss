@@ -29,10 +29,26 @@ body:is(.layout-cupertino, .layout-cards, .layout-border, .layout-frame).is-tabl
 }
 
 // Ribbon
-body:is(.layout-classic, .layout-minimal, .layout-macos:not(.tabs-floating, .tabs-floating-center)) .workspace:not(.is-left-sidedock-open) .workspace-ribbon.mod-left {
+body.mod-macos:is(.layout-classic, .layout-minimal, .layout-macos:not(.tabs-floating, .tabs-floating-center)) .workspace-ribbon.mod-left.is-collapsed {
   margin-top: calc(var(--header-height) - 1px);
   padding-top: 8px;
   border-top: var(--tab-outline-width) solid var(--tab-outline-color);
+}
+body:not(.mod-macos):is(.layout-classic, .layout-minimal, .layout-macos:not(.tabs-floating, .tabs-floating-center)).stacked-nav-off .workspace-ribbon.mod-left {
+  &::before {
+    content: "";
+    height: var(--tab-outline-width);
+    background-color: var(--tab-outline-color);
+    position: absolute;
+    inset: calc(var(--header-height) - 1px) 0 auto;
+  }
+
+  .side-dock-actions {
+    margin-top: 12px;
+  }
+}
+body:not(.layout-cards, .layout-border, .layout-frame) .workspace-ribbon.mod-left:not(.is-collapsed) {
+  padding-left: 12px;
 }
 
 // Stacked nav

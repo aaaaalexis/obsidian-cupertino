@@ -131,3 +131,7 @@ body:is(.layout-cupertino, .layout-macos).is-phone {
     opacity: 0;
   }
 }
+
+body:is(.layout-cupertino, .layout-macos).is-tablet .prompt {
+  border-radius: var(--radius-l);
+}

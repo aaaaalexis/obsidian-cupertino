@@ -25,9 +25,6 @@ body.is-mobile {
     padding: 12px;
   }
 }
-body.is-tablet .prompt {
-  border: var(--prompt-border-width) solid var(--prompt-border-color);
-}
 body.is-phone {
   .prompt {
     animation: none;
@@ -40,4 +37,7 @@ body.is-phone {
   .suggestion-container {
     border-radius: var(--radius-m);
   }
+}
+body.is-tablet .prompt {
+  border: var(--prompt-border-width) solid var(--prompt-border-color);
 }

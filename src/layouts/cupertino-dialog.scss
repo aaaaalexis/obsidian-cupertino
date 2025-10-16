@@ -14,7 +14,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   }
   .cm-tooltip,
   .notice {
-    backdrop-filter: var(--blur-sz);
+    backdrop-filter: var(--blur-s);
     border: none;
     background-color: var(--modal-background);
   }
@@ -101,7 +101,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
 
   .menu-group {
     .menu-item:not(.is-label) {
-      background-color: var(--background-modifier-hover);
+      background-color: var(--background-secondary-alt);
     }
 
     .menu-item.is-label + .menu-item:not(.is-label),
@@ -123,14 +123,14 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet {
     .menu-separator {
       margin: 4px 16px;
     }
-    .menu-scroll,
-    .suggestion {
-      padding: 8px;
-    }
     .menu-item,
     .suggestion-item {
       gap: 16px;
     }
+  }
+
+  .suggestion-container {
+    border-radius: var(--radius-m);
   }
 }
 
