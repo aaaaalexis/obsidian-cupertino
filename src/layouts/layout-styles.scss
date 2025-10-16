@@ -34,7 +34,8 @@ body.mod-macos:is(.layout-classic, .layout-minimal, .layout-macos:not(.tabs-floa
   padding-top: 8px;
   border-top: var(--tab-outline-width) solid var(--tab-outline-color);
 }
-body:not(.mod-macos):is(.layout-classic, .layout-minimal, .layout-macos:not(.tabs-floating, .tabs-floating-center)).stacked-nav-off .workspace-ribbon.mod-left {
+body:not(.mod-macos):is(.layout-classic, .layout-minimal).stacked-nav-off .workspace-ribbon.mod-left,
+body:not(.mod-macos).layout-macos:not(.tabs-floating, .tabs-floating-center) .workspace-ribbon.mod-left.is-collapsed {
   &::before {
     content: "";
     height: var(--tab-outline-width);

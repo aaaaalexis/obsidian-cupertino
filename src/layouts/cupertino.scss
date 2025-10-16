@@ -119,6 +119,14 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     justify-content: center;
   }
 
+  // Ribbon
+  --ribbon-background: transparent;
+  --ribbon-background-collapsed: var(--ribbon-background);
+
+  .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
+    --ribbon-background-collapsed: var(--background-primary);
+  }
+
   // Side panels
   &.stacked-nav-off .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
     margin-left: 0;

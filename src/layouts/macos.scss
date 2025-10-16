@@ -79,10 +79,10 @@ body.layout-macos:not(.is-mobile) {
     outline: var(--border-width) solid var(--background-modifier-border);
   }
   &.show-ribbon {
-    &:not(.mod-macos) .workspace-ribbon .sidebar-toggle-button {
+    &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button {
       height: calc(var(--header-height) - 8px);
     }
-    &:not(.mod-macos):not(.stacked-nav-off) .workspace-ribbon.mod-left {
+    &:not(.mod-macos):not(.stacked-nav-off) .workspace-ribbon.mod-left:not(.is-collapsed) {
       padding-top: 12px;
     }
     .workspace.is-left-sidedock-open .workspace-ribbon.mod-left {
