@@ -97,7 +97,7 @@ body.is-phone .modal:not(.mod-sidebar-layout) {
   }
 
   & > button:last-child {
-    margin-bottom: var(--safe-area-inset-bottom);
+    margin-bottom: var(--safe-area-inset-bottom) !important;
   }
 }
 
