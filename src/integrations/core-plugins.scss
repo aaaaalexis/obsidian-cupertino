@@ -1,3 +1,4 @@
+// Backlinks
 body:not(.is-mobile) .backlink-pane {
   .search-result-file-match:not(:hover) .search-result-file-match-replace-button {
     display: none;
@@ -10,4 +11,24 @@ body:not(.is-mobile) .backlink-pane {
 
 .workspace-leaf-content[data-type="markdown"] .backlink-pane > .tree-item-self:first-child {
   padding: 8px var(--side-padding, 8px);
+}
+
+// Footnotes
+.markdown-embed[data-type="footnote"] {
+  background-color: transparent;
+  overflow: visible;
+}
+
+// Web viewer
+.workspace-leaf-content[data-type="webviewer"] {
+  .view-header {
+    gap: 0;
+  }
+  .view-header-left,
+  .view-actions {
+    flex: 0;
+  }
+  .webviewer-content {
+    border-top: none;
+  }
 }
