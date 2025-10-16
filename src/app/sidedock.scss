@@ -93,6 +93,14 @@ body.bold-folders .nav-folder-title {
 }
 
 // Ribbon
+.workspace-ribbon.mod-left .sidebar-toggle-button::before {
+  content: "";
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--ribbon-width);
+  z-index: -1;
+  cursor: pointer;
+}
 body.mod-macos .workspace-ribbon.mod-left {
   padding-top: 0;
 }
