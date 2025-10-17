@@ -19,7 +19,8 @@ body:not(.mobile-stable).is-mobile {
     --safe-area-inset-bottom-override: var(--safe-area-inset-bottom-keyboard);
 
     &:not(.mode-switcher-off) .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2),
-    .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::before {
+    .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::before,
+    .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::after {
       opacity: 0;
     }
   }
@@ -217,7 +218,7 @@ body:not(.mobile-stable).is-phone {
         top: 0;
         z-index: -2;
         backdrop-filter: blur(4px);
-        mask: linear-gradient(to bottom, black var(--safe-area-inset-top), transparent);
+        mask: linear-gradient(to bottom, black calc(var(--safe-area-inset-top) + (var(--view-header-height) / 2)), transparent);
         inset-inline: 0;
         height: calc(var(--safe-area-inset-top) + var(--view-header-height) + 32px);
         pointer-events: none;

@@ -4,10 +4,14 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --modal-background: rgb(from var(--background-primary-alt) r g b / 75%);
 
   .menu,
-  .suggestion-container,
-  .popover,
   .prompt,
   .modal:not(.mod-sidebar-layout) {
+    backdrop-filter: var(--blur-l);
+    border: none;
+    background-color: var(--modal-background);
+  }
+  .suggestion-container,
+  .popover {
     backdrop-filter: var(--blur-m);
     border: none;
     background-color: var(--modal-background);
@@ -66,7 +70,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   }
 }
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
-  --menu-shadow: none;
+  --menu-shadow: var(--shadow-s);
 
   .menu {
     margin: 8px;
@@ -101,7 +105,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
 
   .menu-group {
     .menu-item:not(.is-label) {
-      background-color: var(--background-secondary-alt);
+      background-color: var(--color-base-30);
     }
 
     .menu-item.is-label + .menu-item:not(.is-label),
@@ -166,6 +170,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   .modal-setting-back-button,
   .modal-close-button {
     padding: 10px;
+    background-color: var(--background-modifier-hover);
   }
 
   .modal-close-button::before {
@@ -180,6 +185,11 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
   }
   .modal:not(.mod-sidebar-layout) {
     margin: 0 8px 8px;
+
+    .modal-close-button {
+      top: 16px !important;
+      inset-inline-end: 16px !important;
+    }
 
     .modal-title {
       padding-left: var(--side-padding);
@@ -221,6 +231,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     border-radius: var(--radius-m);
     padding: calc(16px * var(--density-modifier)) var(--side-padding);
     color: var(--text-muted);
+    overflow: hidden;
   }
 
   .tooltip {

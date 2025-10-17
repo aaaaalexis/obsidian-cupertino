@@ -3,12 +3,12 @@ body {
   --modal-border-color: var(--background-modifier-border-hover);
 }
 
-.modal-container {
-  perspective: 240px;
+body.is-mobile .modal-bg:has(+ .prompt) {
+  opacity: 0 !important;
 }
 
-.modal-bg {
-  opacity: 0 !important;
+.modal-container {
+  perspective: 240px;
 }
 
 @keyframes modalIn {
@@ -25,6 +25,9 @@ body {
 
 // Modal
 body:not(.is-mobile) {
+  .modal-bg {
+    opacity: 0 !important;
+  }
   .modal {
     box-shadow: var(--shadow-s);
   }
@@ -38,7 +41,7 @@ body:not(.is-mobile) {
     border-radius: var(--modal-radius);
 
     .modal-title {
-      font-size: var(--h1-size);
+      font-size: var(--font-ui-large);
       max-width: 100%;
     }
   }
@@ -76,11 +79,13 @@ body:not(.is-mobile) {
     width: var(--icon-l);
     height: var(--icon-l);
     font-size: var(--icon-m);
+    font-weight: bold;
   }
 }
 body.is-phone .modal:not(.mod-sidebar-layout) {
   .modal-header {
     border-bottom: none;
+    padding-top: 24px;
   }
   .modal-title {
     padding-left: var(--safe-area-inset-side);

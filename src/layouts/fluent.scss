@@ -83,7 +83,13 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
   }
 
   // File explorer
-  &.nav-item-subtle .tree-item-self.is-active::before {
+  --nav-item-background-hover: var(--background-modifier-hover) !important;
+  --nav-item-background-active: var(--background-modifier-hover) !important;
+  --nav-item-weight: var(--font-normal) !important;
+  --nav-item-weight-hover: var(--nav-item-weight) !important;
+  --nav-item-weight-active: var(--nav-item-weight) !important;
+
+  .tree-item-self.is-active::before {
     position: absolute;
     top: 8px;
     bottom: 8px;
@@ -92,8 +98,11 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
     background-color: var(--interactive-accent);
     width: 4px;
     content: "";
+    margin-left: unset;
+    height: unset;
   }
 
+  // Dialog
   .menu,
   .suggestion-container,
   .popover,
@@ -226,22 +235,24 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
       padding: calc(8px * var(--density-modifier)) var(--side-padding);
       position: relative;
     }
-  }
 
-  &.nav-item-subtle .modal.mod-sidebar-layout .vertical-tab-nav-item.is-active {
-    --background-modifier-hover: revert;
-    background-color: var(--background-modifier-hover);
-    color: var(--text-normal);
+    .vertical-tab-nav-item.is-active {
+      --background-modifier-hover: revert;
+      background-color: var(--background-modifier-hover);
+      color: var(--text-normal);
 
-    &::before {
-      position: absolute;
-      top: 8px;
-      bottom: 8px;
-      left: 0;
-      border-radius: var(--button-radius);
-      background-color: var(--interactive-accent);
-      width: 4px;
-      content: "";
+      &::before {
+        position: absolute;
+        top: 8px;
+        bottom: 8px;
+        left: 0;
+        border-radius: var(--button-radius);
+        background-color: var(--interactive-accent);
+        width: 4px;
+        content: "";
+        margin-left: unset;
+        height: unset;
+      }
     }
   }
 }

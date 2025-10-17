@@ -23,11 +23,11 @@ body.input-baseline.is-mobile {
   --input-border-width: var(--divider-width);
 }
 
-body.theme-light {
+.theme-light {
   --input-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border);
   --input-shadow-hover: 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
 }
-body.theme-dark {
+.theme-dark {
   --input-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
   --input-shadow-hover: 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
 

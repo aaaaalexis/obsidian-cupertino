@@ -102,11 +102,14 @@
 
       .metadata-properties {
         border-radius: var(--radius-m);
-        background-color: var(--background-secondary);
+        background-color: var(--background-primary-alt);
 
+        .multi-select-container {
+          padding-block: 8px;
+        }
         .multi-select-pill {
           font-weight: var(--font-medium);
-          font-size: var(--font-ui-small);
+          font-size: var(--font-ui-smaller);
         }
       }
 
@@ -119,7 +122,6 @@
       .metadata-property-key,
       .metadata-property-value {
         padding: 4px 8px 4px 12px;
-        align-items: center;
       }
     }
 

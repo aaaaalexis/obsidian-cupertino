@@ -1,6 +1,6 @@
 body,
-body.theme-light,
-body.theme-dark {
+.theme-light,
+.theme-dark {
   --font-interface-theme: Inter;
   --font-text-theme: Inter;
   --font-print-theme: Inter;
@@ -9,7 +9,6 @@ body.theme-dark {
   --titlebar-background-focused: transparent;
   --workspace-background-translucent: rgba(var(--mono-rgb-0), 0.5);
 
-  --text-normal: var(--color-base-90);
   --divider-color-hover: var(--color-base-50);
 
   --bold-modifier: 300;
@@ -103,12 +102,12 @@ body.theme-dark {
 }
 
 @media (prefers-color-scheme: light) {
-  body.theme-dark {
+  .theme-dark {
     --workspace-background-translucent: var(--background-secondary);
   }
 }
 @media (prefers-color-scheme: dark) {
-  body.theme-light {
+  .theme-light {
     --workspace-background-translucent: var(--background-secondary);
   }
 }

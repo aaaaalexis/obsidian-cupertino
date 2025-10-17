@@ -27,9 +27,9 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   &.is-phone .mobile-navbar .mobile-navbar-actions,
   &.is-phone .mobile-toolbar-options-list,
   &.is-phone .workspace-drawer-header-icon,
-  .workspace-drawer .nav-header .nav-buttons-container,
-  .modal-setting-back-button,
-  .modal-close-button {
+  &.is-phone .mobile-tab-switcher-menu-button,
+  &.is-phone .mobile-tab-switcher-menu-spacer .clickable-icon,
+  .workspace-drawer .nav-header .nav-buttons-container {
     backdrop-filter: var(--blur-s);
     box-shadow: var(--shadow-xs);
     border: none;
@@ -132,6 +132,8 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   &.is-ios.theme-light {
     &.is-phone .prompt-input-container::after,
     &.is-phone .prompt-input-container .search-input-clear-button::before,
+    &.is-phone .mobile-tab-switcher-menu-button::after,
+    &.is-phone .mobile-tab-switcher-menu-spacer .clickable-icon::before,
     &.is-tablet .menu::after,
     &.is-tablet .workspace-drawer:not(.is-pinned)::after,
     .mod-root .view-header > div > .view-action::after,
@@ -139,8 +141,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     .workspace-drawer .nav-buttons-container::after,
     .mobile-navbar-actions::after,
     .mobile-toolbar-options-list::after,
-    .modal-setting-back-button::after,
-    .modal-close-button::after,
     .notice::after {
       position: absolute;
       z-index: 1;
@@ -191,6 +191,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
       margin-left: 4px;
       flex-direction: column;
       align-items: flex-start;
+      gap: 2px;
     }
     .view-header-title-parent {
       font-size: var(--font-ui-smaller);
@@ -225,7 +226,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     backdrop-filter: var(--blur-s);
     box-shadow: var(--shadow-xs);
     width: fit-content;
-    font-weight: var(--font-bold);
+    font-weight: calc(var(--font-weight) + var(--bold-modifier));
   }
 }
 
@@ -235,5 +236,65 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet {
 
   .workspace-drawer.is-pinned {
     z-index: 4;
+  }
+}
+
+// Tab switcher
+body:not(.is-android:not(.android-off)).is-phone {
+  --tab-switcher-background: transparent;
+  --tab-switcher-menubar-background: var(--tab-switcher-background);
+  --tab-switcher-preview-background-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --tab-switcher-preview-radius: var(--radius-m);
+
+  .mobile-tab-switcher {
+    justify-content: flex-end;
+    width: unset;
+    height: unset;
+  }
+
+  .mobile-tab-switcher-scroll {
+    padding-top: 0;
+    height: unset;
+    background: linear-gradient(transparent, var(--mobile-sidebar-background) 25%) !important;
+  }
+  .mobile-tab-wrapper {
+    z-index: 2;
+  }
+  .mobile-tab-switcher-menubar {
+    background-color: var(--mobile-sidebar-background);
+    padding: 0 var(--safe-area-inset-bottom-override) var(--safe-area-inset-bottom-override);
+    border: none;
+  }
+  .mobile-tab-switcher-menu-button {
+    z-index: 2;
+    flex: 1;
+    height: var(--input-height);
+    border-radius: var(--clickable-icon-radius);
+    justify-content: center;
+  }
+
+  .mobile-tab-switcher-menu-spacer:first-child {
+    z-index: 2;
+  }
+  .mobile-tab-switcher-menu-spacer:first-child .clickable-icon {
+    width: var(--input-height);
+    height: var(--input-height);
+  }
+  .mobile-tab-switcher-menu-spacer:last-child .clickable-icon {
+    padding: var(--input-padding);
+    height: var(--input-height);
+
+    &::before {
+      position: fixed;
+      z-index: 1;
+      inset: 0;
+      content: "";
+    }
+  }
+
+  .mobile-tab .mobile-tab-pin,
+  .mobile-tab .close-button {
+    width: 32px;
+    height: 32px;
   }
 }

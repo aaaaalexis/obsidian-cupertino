@@ -1,6 +1,20 @@
-body.layout-macos:not(.is-mobile) {
+body.layout-macos {
+  // File explorer
   --nav-collapse-icon-color: rgb(var(--mono-rgb-100));
+  --nav-item-background-hover: var(--background-modifier-hover) !important;
+  --nav-item-background-active: var(--background-modifier-hover) !important;
+  --nav-item-color: var(--text-normal) !important;
+  --nav-item-color-active: var(--text-accent) !important;
+  --nav-item-weight: var(--font-normal) !important;
+  --nav-item-weight-hover: var(--nav-item-weight) !important;
+  --nav-item-weight-active: var(--nav-item-weight) !important;
 
+  .tree-item-self.is-active::before {
+    content: none !important;
+  }
+}
+
+body.layout-macos:not(.is-mobile) {
   &.theme-light {
     --shadow-sidedock: 0 0 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05), -32px 0px 0 32px var(--background-primary);
   }
@@ -112,14 +126,6 @@ body.layout-macos:not(.is-mobile) {
 
   .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
     border-color: var(--divider-color);
-  }
-  // Style Settings: Active file fix
-  &.nav-item-subtle {
-    --nav-item-color-active: var(--text-accent);
-
-    &.theme-dark {
-      --nav-item-background-active: rgba(0, 0, 0, 0.5);
-    }
   }
 }
 

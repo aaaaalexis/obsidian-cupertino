@@ -101,9 +101,11 @@ body.is-mobile .modal.mod-sidebar-layout {
   background-color: var(--mobile-sidebar-background);
 
   .modal-title:not(:has(.modal-setting-back-button)) {
-    font-size: var(--h1-size);
+    font-size: 2.125em;
+    font-weight: calc(var(--font-weight) + var(--bold-modifier));
     max-width: 100%;
-    padding-left: calc(var(--safe-area-inset-side) + 8px);
+    padding-left: var(--safe-area-inset-side);
+    padding-top: 28px;
   }
   .modal-close-button {
     padding: 12px;
