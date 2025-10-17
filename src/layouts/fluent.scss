@@ -10,7 +10,7 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
 
   --shadow-xs: none;
 
-  --modal-background: rgb(from var(--color-base-00) r g b / 80%);
+  --nav-item-color-active: var(--nav-item-color);
 
   * {
     -electron-corner-smoothing: 0%;
@@ -19,10 +19,14 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
   &.theme-light {
     --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
     --shadow-l: 0px 32px 64px 0px rgba(0, 0, 0, 0.19), 0px 2px 21px 0px rgba(0, 0, 0, 0.15);
+
+    --modal-background: rgb(from white r g b / 85%);
   }
   &.theme-dark {
     --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
     --shadow-l: 0px 32px 64px 0px rgba(0, 0, 0, 0.37), 0px 2px 21px 0px rgba(0, 0, 0, 0.37);
+
+    --modal-background: rgb(from var(--color-base-20) r g b / 85%);
   }
 
   .clickable-icon.is-active {
@@ -110,7 +114,7 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
   .prompt,
   .modal,
   .notice {
-    backdrop-filter: blur(8px);
+    backdrop-filter: var(--blur-l);
   }
 
   .modal-bg {
@@ -136,7 +140,8 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
     .menu-item,
     .suggestion-item {
       border-radius: var(--radius-m);
-      padding: 8px;
+      padding: 8px 10px;
+      gap: 10px;
     }
 
     .menu-item-icon .svg-icon {
@@ -171,6 +176,26 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
     animation: none;
   }
 
+  .modal-close-button {
+    top: 0;
+    inset-inline-end: 0 !important;
+    padding-inline: 16px;
+    border-radius: 0;
+
+    &::before {
+      margin: 0;
+      width: var(--icon-s);
+      height: var(--icon-s);
+      font-size: var(--icon-xs);
+      font-weight: 100;
+    }
+
+    &:hover {
+      background-color: var(--color-red);
+      color: rgb(var(--mono-rgb-100));
+    }
+  }
+
   .modal:not(.mod-sidebar-layout) {
     padding: 0;
     min-width: 480px;
@@ -187,7 +212,7 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
     .modal-button-container {
       margin: 0;
       border-top: var(--border-width) solid var(--background-modifier-border);
-      background-color: var(--background-modifier-border);
+      background-color: rgba(0, 0, 0, 0.05);
       padding: 24px;
 
       button {
@@ -201,10 +226,10 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
   }
 
   // Settings
-  &.theme-light .modal.mod-sidebar-layout .setting-item:not(.setting-item-heading) {
+  &.theme-light .modal.mod-sidebar-layout:not(.mod-community-modal) .setting-item:not(.setting-item-heading) {
     background-color: var(--background-primary);
   }
-  &.theme-dark .modal.mod-sidebar-layout .setting-item:not(.setting-item-heading) {
+  &.theme-dark .modal.mod-sidebar-layout:not(.mod-community-modal) .setting-item:not(.setting-item-heading) {
     background-color: var(--background-secondary);
   }
   .modal.mod-sidebar-layout:not(.mod-community-modal) {
@@ -237,7 +262,7 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
     }
 
     .vertical-tab-nav-item.is-active {
-      --background-modifier-hover: revert;
+      --background-modifier-hover: var(--nav-item-background-active);
       background-color: var(--background-modifier-hover);
       color: var(--text-normal);
 

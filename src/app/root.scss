@@ -145,7 +145,7 @@ body.window-title-off .titlebar-text {
 body:not(.mod-macos):not(.is-mobile) {
   --frame-right-space: calc(var(--header-height) * 3);
 
-  .titlebar {
+  &.is-hidden-frameless .titlebar {
     height: var(--header-height);
   }
 
@@ -155,6 +155,10 @@ body:not(.mod-macos):not(.is-mobile) {
     .titlebar-button {
       justify-content: center;
       flex: 1;
+
+      &:hover {
+        color: rgb(var(--mono-rgb-100));
+      }
 
       path,
       rect,
