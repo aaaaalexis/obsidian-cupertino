@@ -16,7 +16,7 @@ body.layout-macos {
 
 body.layout-macos:not(.is-mobile) {
   &.theme-light {
-    --shadow-sidedock: 0 0 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05), -32px 0px 0 32px var(--background-primary);
+    --shadow-sidedock: 0 0 16px rgba(0, 0, 0, 0.05), 0 16px 32px rgba(0, 0, 0, 0.075), -32px 0px 0 32px var(--background-primary);
   }
   &.theme-dark {
     --shadow-sidedock: 0 4px 24px rgba(0, 0, 0, 0.25), -32px 0px 0 32px var(--background-primary);
@@ -131,7 +131,7 @@ body.layout-macos:not(.is-mobile) {
 
 body.layout-macos.is-tablet {
   &.theme-light {
-    --shadow-sidedock: 0 0 16px rgba(0, 0, 0, 0.05), 0 4px 32px rgba(0, 0, 0, 0.05), -100vh 0px 0 100vh var(--system-status-background);
+    --shadow-sidedock: 0 0 16px rgba(0, 0, 0, 0.05), 0 16px 32px rgba(0, 0, 0, 0.075), -100vh 0px 0 100vh var(--system-status-background);
   }
   &.theme-dark {
     --shadow-sidedock: 0 4px 24px rgba(0, 0, 0, 0.25), -32px 0px 0 32px var(--system-status-background);
