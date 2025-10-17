@@ -9,7 +9,8 @@ body.layout-macos {
   --nav-item-weight-hover: var(--nav-item-weight) !important;
   --nav-item-weight-active: var(--nav-item-weight) !important;
 
-  .tree-item-self.is-active::before {
+  .tree-item-self.is-active::before,
+  .vertical-tab-nav-item.is-active::before {
     content: none !important;
   }
 }
