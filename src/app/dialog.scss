@@ -33,6 +33,12 @@ body:not(.is-mobile) {
   }
 }
 
+body.theme-light .modal {
+  --interactive-normal: var(--background-primary);
+  --background-modifier-form-field: var(--background-primary);
+  --dropdown-background: var(--background-primary);
+}
+
 .modal {
   &:not(.mod-sidebar-layout) {
     border-radius: var(--modal-radius);
