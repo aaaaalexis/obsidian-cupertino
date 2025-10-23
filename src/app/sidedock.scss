@@ -102,6 +102,7 @@ body.bold-folders .nav-folder-title {
 }
 .workspace-ribbon.mod-left .sidebar-toggle-button {
   position: relative;
+  pointer-events: auto;
 }
 
 body:not(.is-mobile).show-ribbon {
@@ -119,8 +120,9 @@ body:not(.is-mobile).show-ribbon {
   }
   .side-dock-actions {
     gap: 4px;
-    pointer-events: all;
+    pointer-events: auto;
     transition: var(--anim-duration-moderate);
+    z-index: 1;
   }
 }
 
@@ -131,6 +133,10 @@ body:not(.mod-macos) .workspace-ribbon.mod-left {
   margin-top: 0;
 }
 
+.workspace-ribbon .sidebar-toggle-button .clickable-icon {
+  pointer-events: auto;
+  z-index: 1;
+}
 .workspace-ribbon .sidebar-toggle-button {
   display: flex;
   height: var(--header-height);
@@ -146,7 +152,6 @@ body:not(.mod-macos):not(.is-mobile) .workspace-ribbon .sidebar-toggle-button {
 }
 
 // Desktop sidedock
-
 body:not(.is-mobile) .mod-sidedock {
   & > .workspace-leaf-resize-handle:not(:hover) {
     border-color: transparent;
