@@ -6,19 +6,23 @@ body:is(.layout-cupertino, .layout-macos, .input-cupertino) {
   --blur-l: blur(8px) saturate(1.5) brightness(1.025);
 
   &.theme-light {
+    --liquid-glass-background: rgba(255, 255, 255, 0.5);
+
     --shadow-base: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-border: 0 0 1px 0 rgba(0, 0, 0, 0.4);
 
-    --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 1px 8px rgba(0, 0, 0, 0.025), 0 4px 48px rgba(0, 0, 0, 0.095);
+    --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 4px 48px rgba(0, 0, 0, 0.1);
     --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
     --shadow-l: var(--shadow-border), inset 0 0 1px 1px white, 0 18px 60px 0 rgba(0, 0, 0, 0.3);
   }
 
   &.theme-dark {
+    --liquid-glass-background: rgba(255, 255, 255, 0.075);
+
     --shadow-base: inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-border: 0 0 1px 0 rgba(255, 255, 255, 0.3);
 
-    --shadow-xs: inset 0 8px 64px rgba(255, 255, 255, 0.125), var(--shadow-base);
+    --shadow-xs: var(--shadow-base);
     --shadow-s: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
     --shadow-l: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 0 rgba(0, 0, 0, 0.7), 0 18px 60px 0 rgba(0, 0, 0, 0.3);
   }

@@ -40,10 +40,6 @@ body:not(.nav-item-subtle, .nav-item-strong) {
     --nav-item-weight-hover: var(--font-medium);
   }
 
-  .tree-item-self:not(:hover) .tree-item-inner {
-    transition: var(--anim-duration-moderate), font-weight 0s;
-  }
-
   .nav-files-container .tree-item-self.is-active::before {
     content: "";
     position: absolute;
@@ -78,6 +74,7 @@ body.bold-folders .nav-folder-title {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  padding: 0 16px 8px;
 }
 .nav-header .nav-buttons-container {
   flex-wrap: nowrap;
@@ -93,32 +90,45 @@ body.bold-folders .nav-folder-title {
 }
 
 // Ribbon
-.workspace-ribbon.mod-left .sidebar-toggle-button::before {
-  content: "";
-  position: fixed;
-  inset: 0 auto 0 0;
-  width: var(--ribbon-width);
-  z-index: -1;
-  cursor: pointer;
-}
-body.mod-macos .workspace-ribbon.mod-left {
-  padding-top: 0;
-}
-body:not(.mod-macos) .workspace-ribbon.mod-left {
-  margin-top: 0;
-}
-
 .workspace-ribbon.mod-left {
   overflow: visible;
   border-right: none;
   z-index: 11;
   transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
+  pointer-events: none;
 }
 .workspace-ribbon.mod-left:before {
   content: none;
 }
 .workspace-ribbon.mod-left .sidebar-toggle-button {
   position: relative;
+}
+
+body:not(.is-mobile).show-ribbon {
+  .workspace-ribbon.mod-left .sidebar-toggle-button::before,
+  .workspace-ribbon.mod-left ~ .workspace-split .sidebar-toggle-button.mod-left::before {
+    content: "";
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: var(--ribbon-width);
+    cursor: pointer;
+  }
+
+  .workspace-ribbon.mod-left.is-collapsed .side-dock-actions:not(:hover) {
+    opacity: 0.5;
+  }
+  .side-dock-actions {
+    gap: 4px;
+    pointer-events: all;
+    transition: var(--anim-duration-moderate);
+  }
+}
+
+body.mod-macos .workspace-ribbon.mod-left {
+  padding-top: 0;
+}
+body:not(.mod-macos) .workspace-ribbon.mod-left {
+  margin-top: 0;
 }
 
 .workspace-ribbon .sidebar-toggle-button {
@@ -160,7 +170,7 @@ body:not(.is-mobile) .mod-sidedock {
 // Animation
 body .mod-sidedock {
   &:not(:active) {
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color var(--anim-duration-fast) !important;
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
   }
 
   .workspace-tab-container {

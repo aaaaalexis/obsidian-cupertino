@@ -35,10 +35,11 @@ body:not(.is-phone) .workspace-tab-header-container {
 .sidebar-toggle-button {
   height: 100%;
   padding-bottom: 8px;
+  align-items: center;
 }
 .sidebar-toggle-button .clickable-icon {
   width: fit-content;
-  height: auto;
+  height: fit-content;
 }
 
 // Editor panel
@@ -332,8 +333,9 @@ body.is-tablet {
   }
 
   .sidebar-toggle-button {
-    position: relative;
-    padding: 0;
+    position: relative !important;
+    padding: 0 !important;
+    height: fit-content;
   }
 
   .workspace-tab-header {
@@ -391,7 +393,7 @@ body.mod-macos.is-frameless:not(.is-popout-window) .workspace {
     padding-right: 8px;
   }
 
-  .sidebar-toggle-button.mod-right {
+  .mod-root .sidebar-toggle-button.mod-right {
     position: relative;
     padding-right: 0;
   }

@@ -9,10 +9,6 @@ body:not(.is-mobile) .backlink-pane {
   }
 }
 
-.workspace-leaf-content[data-type="markdown"] .backlink-pane > .tree-item-self:first-child {
-  padding: 8px var(--side-padding, 8px);
-}
-
 // Footnotes
 .markdown-embed[data-type="footnote"] {
   background-color: transparent;

@@ -8,9 +8,6 @@ body.input-cupertino {
     --interactive-normal: var(--color-base-25);
     --background-modifier-form-field: var(--color-base-00);
   }
-  &.theme-light.is-mobile {
-    --interactive-normal: var(--background-primary);
-  }
 
   --input-radius: var(--radius-s);
   --button-radius: var(--input-radius);
@@ -49,6 +46,7 @@ body.input-cupertino {
     --dropdown-padding: 0 32px 0 var(--side-padding);
 
     --input-radius: var(--radius-l);
+    --input-height: 48px;
   }
 
   // Button

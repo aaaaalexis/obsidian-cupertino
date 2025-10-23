@@ -96,6 +96,8 @@
     --metadata-property-radius-focus: var(--radius-m);
 
     .metadata-container {
+      --input-padding: 8px;
+
       .metadata-properties-heading {
         display: none;
       }
@@ -103,14 +105,6 @@
       .metadata-properties {
         border-radius: var(--radius-m);
         background-color: var(--background-primary-alt);
-
-        .multi-select-container {
-          padding-block: 8px;
-        }
-        .multi-select-pill {
-          font-weight: var(--font-medium);
-          font-size: var(--font-ui-smaller);
-        }
       }
 
       .metadata-property {
@@ -119,9 +113,13 @@
       .metadata-property-icon {
         --icon-size: var(--icon-s);
       }
-      .metadata-property-key,
-      .metadata-property-value {
-        padding: 4px 8px 4px 12px;
+      .metadata-property-key {
+        padding: var(--input-padding);
+      }
+
+      .metadata-property[data-property-key="tags"] .multi-select-pill {
+        font-weight: var(--font-medium);
+        font-size: var(--font-ui-smaller);
       }
     }
 

@@ -1,19 +1,24 @@
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
-  --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
-
   --system-status-background: rgb(var(--mono-rgb-0));
   --mobile-sidebar-background: rgb(var(--mono-rgb-0));
   --titlebar-background: transparent;
   --titlebar-background-focused: transparent;
   --background-modifier-form-field: var(--interactive-normal) !important;
 
+  --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
+  --nav-item-background-active: var(--interactive-accent) !important;
+  --nav-item-color-active: var(--text-on-accent) !important;
+
   &.theme-light {
     --mobile-sidebar-background: var(--background-secondary);
-    --interactive-normal: var(--background-primary);
+
+    .mod-sidedock,
+    .workspace-drawer {
+      --background-modifier-form-field: var(--background-primary) !important;
+    }
   }
   &.theme-dark {
     --mobile-sidebar-background: black;
-    --interactive-normal: var(--background-secondary);
   }
 
   .app-container {
@@ -29,30 +34,21 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   &.is-phone .workspace-drawer-header-icon,
   &.is-phone .mobile-tab-switcher-menu-button,
   &.is-phone .mobile-tab-switcher-menu-spacer .clickable-icon,
+  .modal-setting-back-button,
+  .modal-close-button,
   .workspace-drawer .nav-header .nav-buttons-container {
     backdrop-filter: var(--blur-s);
     box-shadow: var(--shadow-xs);
     border: none;
-    background-color: transparent;
+    background-color: var(--liquid-glass-background);
     color: var(--text-normal);
     transition: var(--anim-duration-moderate);
 
     @starting-style {
       opacity: 0;
       filter: var(--blur-s);
+      transform: scale(0.75);
     }
-  }
-
-  // Editor panel
-  .markdown-reading-view,
-  .markdown-source-view {
-    transition: transform var(--anim-duration-slow) var(--anim-motion-baseline);
-  }
-  .workspace-leaf-content[data-mode="source"] .markdown-reading-view {
-    transform: scale(0.99);
-  }
-  .workspace-leaf-content[data-mode="preview"] .markdown-source-view {
-    transform: scale(0.99);
   }
 
   // Side panels
@@ -141,10 +137,12 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     .workspace-drawer .nav-buttons-container::after,
     .mobile-navbar-actions::after,
     .mobile-toolbar-options-list::after,
+    .modal-setting-back-button::after,
+    .modal-close-button::after,
     .notice::after {
       position: absolute;
       z-index: 1;
-      backdrop-filter: brightness(1.5);
+      backdrop-filter: brightness(1.1);
       mask: linear-gradient(white, white) padding-box, linear-gradient(white, white) border-box;
       mask-composite: exclude, add;
       filter: blur(1px);
@@ -174,7 +172,40 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 }
 
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
-  --system-status-background: rgb(var(--mono-rgb-0));
+  // View header animation
+  &.show-inline-title .mod-root {
+    @keyframes viewHeaderTitleParentScroll {
+      from {
+        font-size: inherit;
+        color: var(--text-muted);
+      }
+    }
+    @keyframes viewHeaderTitleScroll {
+      from {
+        opacity: 0;
+        height: 0;
+        filter: var(--blur-m);
+      }
+    }
+
+    .workspace-leaf-content {
+      timeline-scope: --inline-title-scroll;
+    }
+    .inline-title {
+      view-timeline-name: --inline-title-scroll;
+    }
+
+    .view-header-title-parent {
+      animation: viewHeaderTitleParentScroll linear both;
+      animation-timeline: --inline-title-scroll;
+      animation-range: exit -128px exit -48px;
+    }
+    .view-header-title {
+      animation: viewHeaderTitleScroll linear both;
+      animation-timeline: --inline-title-scroll;
+      animation-range: exit -128px exit -48px;
+    }
+  }
 
   // Editor panel
   .mod-root {
@@ -195,9 +226,12 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     }
     .view-header-title-parent {
       font-size: var(--font-ui-smaller);
+      opacity: 1;
     }
     .view-header-title {
       font-weight: var(--font-medium);
+      opacity: 1;
+      height: 1lh;
     }
     .view-header-breadcrumb {
       padding: 0;
@@ -220,7 +254,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     background-color: var(--text-normal);
   }
   .pull-action:not(.mod-activated) {
-    background-color: var(--modal-background);
+    background-color: var(--liquid-glass-background);
   }
   .pull-action {
     backdrop-filter: var(--blur-s);
@@ -232,7 +266,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
 
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet {
   --border-width: 0.5pt;
-  --nav-item-weight-active: normal;
 
   .workspace-drawer.is-pinned {
     z-index: 4;

@@ -10,17 +10,27 @@ body {
 
 // Menu
 .query-toolbar-menu,
+.bases-toolbar-menu,
 .cm-tooltip {
-  animation: none;
+  animation: none !important;
 }
 
 .text-icon-button {
   border-radius: var(--clickable-icon-radius);
 }
 
-.menu {
+.menu.bases-toolbar-menu {
   .bases-toolbar-menu-form {
-    padding: 0;
+    padding: var(--menu-padding);
+    overflow: visible;
+  }
+
+  .search-input-container {
+    margin: var(--menu-padding) var(--menu-padding) 0;
+    padding-bottom: 0;
+    background: var(--background-modifier-form-field);
+    border: var(--input-border-width) solid var(--background-modifier-border);
+    border-radius: var(--input-radius);
   }
 }
 

@@ -23,6 +23,10 @@ body:not(.mobile-stable).is-mobile {
     .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::after {
       opacity: 0;
     }
+
+    .workspace-drawer .nav-header {
+      padding-bottom: var(--keyboard-height);
+    }
   }
 
   .app-container {
@@ -78,18 +82,18 @@ body:not(.mobile-stable).is-mobile {
     align-items: center;
   }
   .workspace-drawer .nav-buttons-container {
-    gap: 0;
+    gap: 0px;
     border: var(--border-width) solid var(--background-modifier-border);
     border-radius: 100vh;
     background: var(--background-secondary);
     padding: 4px;
-    width: fit-content;
-    height: 48px;
+    max-width: 100%;
   }
   .workspace-drawer .nav-buttons-container .nav-action-button {
     border-radius: 100vh;
-    padding: 12px;
-    height: auto;
+    height: 48px;
+    width: 48px;
+    padding: 0;
 
     &.is-active {
       opacity: 1;
@@ -100,7 +104,7 @@ body:not(.mobile-stable).is-mobile {
 
   .workspace-drawer .workspace-leaf-content .node-insert-event {
     padding-inline: 20px;
-    padding-bottom: calc(var(--safe-area-inset-bottom-override) + 64px);
+    padding-bottom: calc(var(--safe-area-inset-bottom-override) + 128px);
   }
 }
 

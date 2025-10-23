@@ -6,6 +6,8 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
   --tab-radius: var(--radius-m);
   --clickable-icon-radius: var(--radius-m);
 
+  --menu-padding: 5px;
+
   --prompt-input-height: 64px;
 
   --shadow-xs: none;
@@ -129,12 +131,8 @@ body.layout-cupertino.input-fluent:not(.is-mobile) {
     border-radius: var(--radius-l);
     border: var(--border-width) solid var(--background-modifier-border);
 
-    .menu-scroll {
-      padding: 5px;
-    }
-
     .menu-separator {
-      margin: 5px -5px;
+      margin: var(--menu-padding) calc(-1 * var(--menu-padding));
     }
 
     .menu-item,

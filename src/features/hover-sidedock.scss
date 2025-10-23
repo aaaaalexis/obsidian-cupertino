@@ -104,11 +104,11 @@ body:not(.is-mobile).hover-ribbon {
     --ribbon-width: 1px;
     padding-inline: 0;
   }
-  &.hover-sidedock .workspace:not(.is-left-sidedock-open) .workspace-ribbon.mod-left {
+  &.hover-sidedock .workspace-ribbon.mod-left:not(.is-collapsed) {
     display: none;
   }
 
-  &.mod-macos .workspace:not(.is-left-sidedock-open) .workspace-ribbon.mod-left:not(:hover) ~ .mod-root .workspace-tab-header-container {
+  &.mod-macos .workspace-ribbon.mod-left:not(.is-collapsed):not(:hover) ~ .mod-root .workspace-tab-header-container {
     padding-left: 88px;
   }
 }

@@ -1,26 +1,13 @@
-body.layout-macos {
-  // File explorer
-  --nav-collapse-icon-color: rgb(var(--mono-rgb-100));
-  --nav-item-background-hover: var(--background-modifier-hover) !important;
-  --nav-item-background-active: var(--background-modifier-hover) !important;
-  --nav-item-color: var(--text-normal) !important;
-  --nav-item-color-active: var(--text-accent) !important;
-  --nav-item-weight: var(--font-normal) !important;
-  --nav-item-weight-hover: var(--nav-item-weight) !important;
-  --nav-item-weight-active: var(--nav-item-weight) !important;
-
-  .tree-item-self.is-active::before,
-  .vertical-tab-nav-item.is-active::before {
-    content: none !important;
-  }
-}
-
 body.layout-macos:not(.is-mobile) {
+  --nav-item-color-active: var(--text-accent) !important;
+
   &.theme-light {
     --shadow-sidedock: 0 0 16px rgba(0, 0, 0, 0.05), 0 16px 32px rgba(0, 0, 0, 0.075), -32px 0px 0 32px var(--background-primary);
+    --nav-item-background-active: var(--background-modifier-hover);
   }
   &.theme-dark {
     --shadow-sidedock: 0 4px 24px rgba(0, 0, 0, 0.25), -32px 0px 0 32px var(--background-primary);
+    --nav-item-background-active: rgba(0, 0, 0, 0.5);
   }
 
   &.is-translucent .mod-root {
@@ -58,17 +45,10 @@ body.layout-macos:not(.is-mobile) {
     }
   }
 
-  // Menu
-  .menu:hover,
-  .suggestion-container:hover {
-    .menu-item.selected:not(.is-label):not(.is-disabled) {
-      background-color: var(--interactive-accent);
-      color: var(--text-on-accent);
-
-      .menu-item-icon {
-        color: var(--text-on-accent);
-      }
-    }
+  // Settings
+  .modal.mod-sidebar-layout .vertical-tab-nav-item.is-active {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
   }
 
   // Side panels
@@ -100,7 +80,7 @@ body.layout-macos:not(.is-mobile) {
     &:not(.mod-macos):not(.stacked-nav-off) .workspace-ribbon.mod-left:not(.is-collapsed) {
       padding-top: 12px;
     }
-    .workspace.is-left-sidedock-open .workspace-ribbon.mod-left {
+    .workspace-ribbon.mod-left:not(.is-collapsed) {
       padding-left: 16px;
     }
     .mod-sidedock.mod-left-split.is-sidedock-collapsed {
@@ -131,12 +111,6 @@ body.layout-macos:not(.is-mobile) {
 }
 
 body.layout-macos.is-tablet {
-  &.theme-light {
-    --shadow-sidedock: 0 0 16px rgba(0, 0, 0, 0.05), 0 16px 32px rgba(0, 0, 0, 0.075), -100vh 0px 0 100vh var(--system-status-background);
-  }
-  &.theme-dark {
-    --shadow-sidedock: 0 4px 24px rgba(0, 0, 0, 0.25), -32px 0px 0 32px var(--system-status-background);
-  }
   .workspace {
     background-color: var(--system-status-background);
   }
@@ -156,11 +130,11 @@ body.layout-macos.is-tablet {
   }
   .workspace-drawer.is-pinned {
     &.mod-left {
-      box-shadow: var(--shadow-sidedock);
+      box-shadow: var(--shadow-s);
+      background-color: rgba(255, 255, 255, 0.075);
       margin: calc(var(--safe-area-inset-top) + 8px) 0 8px 8px;
       border-radius: var(--radius-l);
       padding-top: 16px;
-      background-color: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
     }
     &.mod-root {
       background-color: transparent;

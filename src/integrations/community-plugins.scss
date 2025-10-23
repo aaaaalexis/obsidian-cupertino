@@ -104,14 +104,14 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive .view-content.noteboo
     backdrop-filter: var(--blur-s);
     box-shadow: var(--shadow-xs);
     border: none;
-    background-color: transparent;
+    background-color: var(--liquid-glass-background);
     border-radius: 100vh;
   }
 }
 body.mobile-immersive .view-content.notebook-navigator-mobile {
   .nn-nav-bottom-spacer,
   .nn-list-bottom-spacer {
-    height: calc(var(--safe-area-inset-bottom-override) + 64px);
+    height: calc(var(--safe-area-inset-bottom-override) + 128px);
   }
   .nn-mobile-toolbar {
     position: absolute;

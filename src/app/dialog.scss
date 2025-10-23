@@ -19,10 +19,6 @@ body.is-mobile .modal-bg:has(+ .prompt) {
   }
 }
 
-.modal {
-  animation: modalIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
-}
-
 // Modal
 body:not(.is-mobile) {
   .modal-bg {
@@ -30,6 +26,7 @@ body:not(.is-mobile) {
   }
   .modal {
     box-shadow: var(--shadow-s);
+    animation: modalIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
   }
   .modal-title {
     margin-left: 0;
@@ -48,7 +45,7 @@ body:not(.is-mobile) {
 
   .modal-title {
     font-family: var(--h1-font);
-    transition: var(--anim-duration-moderate);
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
     max-width: 0;
     min-width: fit-content;
     overflow: visible;
@@ -119,9 +116,8 @@ body.is-phone .modal:not(.mod-sidebar-layout) {
 .suggestion-container {
   padding: 0;
 
-  .menu-scroll,
   .suggestion {
-    padding: 4px;
+    padding: var(--menu-padding);
   }
 
   .menu-item,
@@ -145,6 +141,8 @@ body.is-phone .modal:not(.mod-sidebar-layout) {
 }
 
 body:not(.is-phone) {
+  --menu-padding: 4px;
+
   .menu,
   .suggestion-container {
     animation: menuIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
@@ -156,42 +154,34 @@ body:not(.is-phone) {
   }
 }
 
-body.is-phone .menu,
-body.is-phone .suggestion-container {
-  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-  overflow: hidden;
-  will-change: transform;
+body.is-phone {
+  --menu-padding: 32px 16px;
 
-  @starting-style {
-    opacity: 0;
-    filter: none;
-    transform: translateY(100%);
-  }
+  .menu,
+  .suggestion-container {
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    overflow: hidden;
 
-  &[style*="transform: translateY"] {
-    transition: none;
-  }
-
-  .menu-grabber {
-    margin: 8px auto;
-    position: absolute;
-    inset: 0;
-  }
-  .menu-scroll {
-    max-height: 80vh;
-    padding: 32px 16px;
-  }
-  .menu-item {
-    padding: calc(16px * var(--density-modifier)) 20px;
-    font-size: var(--nav-item-size);
-    gap: 16px;
-    border-radius: 0;
-  }
-  .menu-separator {
-    margin: calc(12px * var(--density-modifier)) 16px;
-  }
-  .menu-item-icon .svg-icon {
-    --icon-size: var(--icon-s);
+    .menu-grabber {
+      margin: 8px auto;
+      position: absolute;
+      inset: 0;
+    }
+    .menu-scroll {
+      max-height: 80vh;
+    }
+    .menu-item {
+      padding: calc(16px * var(--density-modifier)) 20px;
+      font-size: var(--nav-item-size);
+      gap: 16px;
+      border-radius: 0;
+    }
+    .menu-separator {
+      margin: calc(12px * var(--density-modifier)) 16px;
+    }
+    .menu-item-icon .svg-icon {
+      --icon-size: var(--icon-s);
+    }
   }
 }
 

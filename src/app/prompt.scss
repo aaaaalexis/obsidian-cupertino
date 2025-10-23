@@ -38,6 +38,11 @@ body.is-phone {
     border-radius: var(--radius-m);
   }
 }
-body.is-tablet .prompt {
-  border: var(--prompt-border-width) solid var(--prompt-border-color);
+body.is-tablet {
+  .prompt {
+    border: var(--prompt-border-width) solid var(--prompt-border-color);
+  }
+  .prompt-input {
+    background-color: transparent !important;
+  }
 }

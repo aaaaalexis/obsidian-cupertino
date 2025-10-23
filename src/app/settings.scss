@@ -32,9 +32,6 @@
 }
 
 body:not(.nav-item-subtle, .nav-item-strong) .modal.mod-sidebar-layout {
-  .vertical-tab-nav-item:not(:hover) {
-    transition: var(--anim-duration-moderate), font-weight 0s;
-  }
   .vertical-tab-nav-item:hover:not(.is-active) {
     font-weight: var(--nav-item-weight-hover);
     background-color: var(--nav-item-background-hover);
@@ -100,13 +97,6 @@ body:not(.is-mobile) .modal.mod-sidebar-layout {
 body.is-mobile .modal.mod-sidebar-layout {
   background-color: var(--mobile-sidebar-background);
 
-  .modal-title:not(:has(.modal-setting-back-button)) {
-    font-size: 2.125em;
-    font-weight: calc(var(--font-weight) + var(--bold-modifier));
-    max-width: 100%;
-    padding-left: var(--safe-area-inset-side);
-    padding-top: 28px;
-  }
   .modal-close-button {
     padding: 12px;
   }
@@ -137,6 +127,14 @@ body.is-phone .modal.mod-sidebar-layout {
   .vertical-tab-content {
     background-color: var(--mobile-sidebar-background);
     box-shadow: none;
+  }
+}
+body.is-phone .modal.mod-sidebar-layout:not(.mod-community-modal) {
+  .modal-title:not(:has(.modal-setting-back-button)) {
+    font-size: 1.5em;
+    font-weight: calc(var(--font-weight) + var(--bold-modifier));
+    max-width: 100%;
+    padding-left: var(--side-padding);
   }
 }
 
@@ -178,7 +176,7 @@ body.is-phone .modal.mod-sidebar-layout {
 }
 body.is-phone .modal.mod-sidebar-layout.mod-community-modal {
   .community-modal-controls {
-    padding: 16px;
+    padding: 8px 16px;
     background-color: var(--system-status-background);
   }
   .community-modal-controls .setting-item {

@@ -28,7 +28,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   .menu,
   .menu svg.svg-icon {
-    transition: none;
+    animation: none;
   }
 
   .menu,
@@ -43,6 +43,21 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     }
     .menu-separator {
       margin: 6px 8px;
+    }
+  }
+
+  .menu:hover,
+  .suggestion-container:hover {
+    backdrop-filter: var(--blur-m);
+    background-color: var(--liquid-glass-background);
+
+    .menu-item.selected:not(.is-label):not(.is-disabled) {
+      background-color: var(--interactive-accent);
+      color: var(--text-on-accent);
+
+      .menu-item-icon {
+        color: var(--text-on-accent);
+      }
     }
   }
 }
@@ -71,15 +86,11 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 }
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
   --menu-shadow: var(--shadow-s);
+  --menu-padding: 32px var(--side-padding);
 
   .menu {
     margin: 8px;
     border-radius: var(--modal-radius) var(--modal-radius) calc(var(--safe-area-inset-top) - 8px) calc(var(--safe-area-inset-top) - 8px);
-  }
-
-  .menu .menu-scroll,
-  .suggestion-container .menu-scroll {
-    padding: 32px var(--side-padding);
   }
 
   .menu .menu-item {
@@ -104,10 +115,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
   }
 
   .menu-group {
-    .menu-item:not(.is-label) {
-      background-color: var(--color-base-30);
-    }
-
     .menu-item.is-label + .menu-item:not(.is-label),
     .menu-item:first-child {
       border-top-left-radius: var(--radius-m);
@@ -170,7 +177,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   .modal-setting-back-button,
   .modal-close-button {
     padding: 10px;
-    background-color: var(--background-modifier-hover);
   }
 
   .modal-close-button::before {
@@ -180,6 +186,8 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   }
 }
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
+  --modal-radius: var(--radius-xl);
+
   .modal-container.mod-confirmation .modal {
     border-radius: var(--modal-radius) var(--modal-radius) calc(var(--safe-area-inset-top) - 8px) calc(var(--safe-area-inset-top) - 8px);
   }
