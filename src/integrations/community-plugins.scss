@@ -96,7 +96,7 @@ body.is-mobile .view-content.notebook-navigator-mobile {
     padding: 0;
   }
 }
-body:is(.layout-cupertino, .layout-macos).mobile-immersive .view-content.notebook-navigator-mobile {
+body:is(.layout-cupertino, .layout-macos):not(.mobile-stable) .view-content.notebook-navigator-mobile {
   --nn-scroller-padding: 0;
 
   .nn-back-button,
@@ -108,7 +108,7 @@ body:is(.layout-cupertino, .layout-macos).mobile-immersive .view-content.noteboo
     border-radius: 100vh;
   }
 }
-body.mobile-immersive .view-content.notebook-navigator-mobile {
+body:not(.mobile-stable) .view-content.notebook-navigator-mobile {
   .nn-nav-bottom-spacer,
   .nn-list-bottom-spacer {
     height: calc(var(--safe-area-inset-bottom-override) + 128px);
