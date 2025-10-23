@@ -27,12 +27,13 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 // Menu
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   .menu,
-  .menu svg.svg-icon {
-    animation: none;
-  }
-
-  .menu,
   .suggestion-container {
+    animation: none;
+
+    svg.svg-icon {
+      transition: none;
+    }
+
     .menu-item,
     .suggestion-item {
       padding: calc(4px * var(--density-modifier)) 12px;
