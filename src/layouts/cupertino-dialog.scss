@@ -50,7 +50,6 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   .menu:hover,
   .suggestion-container:hover {
     backdrop-filter: var(--blur-m);
-    background-color: var(--liquid-glass-background);
 
     .menu-item.selected:not(.is-label):not(.is-disabled) {
       background-color: var(--interactive-accent);
