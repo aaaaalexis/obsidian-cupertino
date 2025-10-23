@@ -1,4 +1,4 @@
-body.layout-cupertino.input-fluent:not(.is-mobile) {
+body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
   --radius-s: calc(5px * var(--radius-modifier));
   --radius-m: calc(5px * var(--radius-modifier));
   --radius-l: calc(10px * var(--radius-modifier));
