@@ -125,16 +125,27 @@ body.layout-macos.is-tablet {
   .workspace-drawer:not(.is-pinned) {
     box-shadow: var(--shadow-s);
   }
-  .workspace-drawer.is-pinned {
-    &.mod-left {
-      box-shadow: var(--shadow-s);
-      background-color: rgba(255, 255, 255, 0.075);
-      margin: calc(var(--safe-area-inset-top) + 8px) 0 8px 8px;
-      border-radius: var(--radius-l);
-      padding-top: 16px;
+
+  &.theme-light .workspace-drawer.is-pinned.mod-left {
+    box-shadow: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 16px 0 rgba(0, 0, 0, 0.05);
+    background-color: var(--mobile-sidebar-background);
+  }
+  &.theme-dark .workspace-drawer.is-pinned.mod-left {
+    box-shadow: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.5);
+    background-color: var(--liquid-glass-background);
+  }
+  .workspace-drawer.is-pinned.mod-left {
+    margin: calc(var(--safe-area-inset-top) + 8px) 0 8px 8px;
+    border-radius: var(--radius-l);
+    padding-top: 16px;
+  }
+
+  .workspace-drawer {
+    .workspace-drawer-header-name-text {
+      font-size: var(--font-ui-small);
     }
-    &.mod-root {
-      background-color: transparent;
+    .workspace-drawer-header-info {
+      color: var(--text-faint);
     }
   }
 }
