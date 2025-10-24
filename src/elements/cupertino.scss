@@ -50,13 +50,13 @@ body.input-cupertino {
   }
 
   // Button
-  button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button) {
+  button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button) {
     padding: 4px 12px;
   }
-  &.is-phone button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button) {
+  &.is-phone button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button) {
     padding: 0 var(--side-padding);
   }
-  &.is-tablet button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button) {
+  &.is-tablet button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button) {
     padding: 4px var(--side-padding);
   }
 
