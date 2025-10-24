@@ -3,11 +3,10 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --mobile-sidebar-background: rgb(var(--mono-rgb-0));
   --titlebar-background: transparent;
   --titlebar-background-focused: transparent;
-  --background-modifier-form-field: var(--interactive-normal) !important;
+  --background-modifier-form-field: var(--interactive-normal);
 
   --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
-  --nav-item-background-active: var(--interactive-accent) !important;
-  --nav-item-color-active: var(--text-on-accent) !important;
+  --nav-item-background-active: var(--interactive-accent);
 
   &.theme-light {
     --mobile-sidebar-background: var(--background-secondary);
@@ -86,6 +85,8 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 
   // File explorer
   .nav-files-container > div {
+    --nav-item-color-active: var(--text-on-accent);
+
     border-radius: var(--radius-m);
     background-color: var(--background-primary);
 
