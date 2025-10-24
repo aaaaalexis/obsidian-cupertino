@@ -40,6 +40,11 @@ body:is(.layout-cupertino, .layout-macos).is-phone .modal.mod-sidebar-layout {
     padding-top: 0;
     border-top: none;
   }
+
+  .vertical-tab-nav-item.is-active {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+  }
 }
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-community-modal) {
   --nav-item-background-hover: transparent;
