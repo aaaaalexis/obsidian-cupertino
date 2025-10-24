@@ -89,7 +89,7 @@ body:is(.tabs-floating, .tabs-floating-center) {
 body:is(.layout-classic, .layout-minimal, .layout-frame).stacked-nav-off .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed),
 body:is(.layout-classic, .layout-minimal, .layout-frame) .mod-root,
 body:is(.layout-classic, .layout-minimal, .layout-frame) .mod-sidedock.mod-right-split:not(.is-sidedock-collapsed),
-body.layout-cupertino:not(.tabs-floating, .tabs-floating-center) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root,
+body.layout-cupertino:not(.tabs-floating, .tabs-floating-center):not(.is-mobile) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root,
 body.layout-macos:not(.tabs-floating, .tabs-floating-center) .mod-root {
   .workspace-tabs.mod-top .workspace-tab-header-container {
     border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
