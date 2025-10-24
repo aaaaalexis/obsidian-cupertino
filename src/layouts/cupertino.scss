@@ -230,16 +230,22 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
       background-color: var(--modal-background);
       border: var(--border-width) solid var(--background-modifier-border);
       z-index: var(--layer-popover);
-
-      &.mod-left-split {
-        margin: 8px 0 8px 8px;
-      }
-      &.mod-right-split {
-        margin: 8px 8px 8px 0;
-      }
+      margin: 8px;
+      overflow: visible;
 
       &::before {
         content: none;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+      }
+
+      &.mod-left-split::after {
+        inset: 0 0 0 -32px;
+      }
+      &.mod-right-split::after {
+        inset: 0 -32px 0 0;
       }
     }
   }

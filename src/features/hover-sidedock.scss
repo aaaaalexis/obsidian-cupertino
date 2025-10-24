@@ -71,12 +71,6 @@ body:not(.is-mobile).hover-sidedock {
       background: linear-gradient(to right, var(--background-primary) 50%, transparent);
       pointer-events: none;
     }
-    &::after {
-      inset: 0 0 0 -100%;
-      content: "";
-      position: absolute;
-      width: 100%;
-    }
 
     &.mod-left-split:not(:hover) {
       transform: translateX(calc(-1 * calc(var(--hover-sidedock-width, 320px) - var(--hover-sidedock-trigger-area, 8px))));
@@ -91,10 +85,6 @@ body:not(.is-mobile).hover-sidedock {
     &.mod-right-split::before {
       left: unset;
       background: linear-gradient(to left, var(--background-primary) 50%, transparent);
-    }
-    &.mod-right-split::after {
-      left: unset;
-      right: -100%;
     }
   }
 }
