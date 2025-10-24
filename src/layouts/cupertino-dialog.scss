@@ -244,8 +244,13 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 
   .tooltip {
     --background-modifier-message: var(--background-primary);
+    filter: drop-shadow(0 0 16px var(--background-modifier-box-shadow));
+    animation: none;
+    box-shadow: none;
+    border-radius: var(--radius-l);
+    padding: 8px 16px;
     color: var(--text-muted);
-    border-radius: var(--radius-m);
+    font-weight: var(--font-normal);
   }
 }
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
