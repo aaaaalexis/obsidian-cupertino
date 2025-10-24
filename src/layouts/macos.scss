@@ -1,10 +1,10 @@
 body.layout-macos:not(.is-mobile) {
   &.theme-light {
-    --shadow-sidedock: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 24px 0 rgba(0, 0, 0, 0.075), 0 0 0 16px var(--background-primary);
+    --shadow-sidedock: var(--shadow-base), inset 0 0 1px 1px white, 0 4px 32px 0 rgba(0, 0, 0, 0.075), 0 0 0 16px var(--background-primary);
     --nav-item-background-active: var(--background-modifier-hover);
   }
   &.theme-dark {
-    --shadow-sidedock: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 0 0 16px var(--background-primary);
+    --shadow-sidedock: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.35), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 0 0 16px var(--background-primary);
     --nav-item-background-active: rgba(0, 0, 0, 0.5);
   }
 
@@ -64,12 +64,6 @@ body.layout-macos:not(.is-mobile) {
   &:not(.is-translucent) .mod-sidedock {
     background-color: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
   }
-  &.theme-light .mod-sidedock.mod-left-split {
-    outline: var(--border-width) solid white;
-  }
-  &.theme-dark .mod-sidedock.mod-left-split {
-    outline: var(--border-width) solid var(--background-modifier-border);
-  }
   &.show-ribbon {
     &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button {
       height: calc(var(--header-height) - 8px);
@@ -127,7 +121,7 @@ body.layout-macos.is-tablet {
   }
 
   &.theme-light .workspace-drawer.is-pinned.mod-left {
-    box-shadow: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 16px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-base), 0 8px 16px 0 rgba(0, 0, 0, 0.05);
     background-color: var(--mobile-sidebar-background);
   }
   &.theme-dark .workspace-drawer.is-pinned.mod-left {
