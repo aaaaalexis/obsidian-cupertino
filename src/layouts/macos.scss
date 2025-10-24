@@ -1,10 +1,10 @@
 body.layout-macos:not(.is-mobile) {
   &.theme-light {
-    --shadow-sidedock: 0 0 16px rgba(0, 0, 0, 0.05), 0 16px 32px rgba(0, 0, 0, 0.075), -32px 0px 0 32px var(--background-primary);
+    --shadow-sidedock: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 24px 0 rgba(0, 0, 0, 0.075), 0 0 0 16px var(--background-primary);
     --nav-item-background-active: var(--background-modifier-hover);
   }
   &.theme-dark {
-    --shadow-sidedock: 0 4px 24px rgba(0, 0, 0, 0.25), -32px 0px 0 32px var(--background-primary);
+    --shadow-sidedock: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 0 0 16px var(--background-primary);
     --nav-item-background-active: rgba(0, 0, 0, 0.5);
   }
 
@@ -58,7 +58,7 @@ body.layout-macos:not(.is-mobile) {
     }
   }
 
-  &:not(.is-translucent) .mod-sidedock.mod-left-split {
+  .mod-sidedock.mod-left-split {
     box-shadow: var(--shadow-sidedock);
   }
   &:not(.is-translucent) .mod-sidedock {
@@ -92,7 +92,7 @@ body.layout-macos:not(.is-mobile) {
     z-index: var(--layer-sidedock);
     border-radius: var(--radius-window, var(--radius-m));
     display: flex;
-    margin: 8px 0 8px 8px;
+    margin: 8px;
     height: -webkit-fill-available;
     overflow: hidden;
   }
