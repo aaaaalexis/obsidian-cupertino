@@ -7,6 +7,7 @@ body:is(.layout-cupertino, .layout-macos, .input-cupertino) {
 
   &.theme-light {
     --liquid-glass-background: rgba(255, 255, 255, 0.5);
+    --background-modifier-border: rgba(0, 0, 0, 0.075);
 
     --shadow-base: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-border: 0 0 1px 0 rgba(0, 0, 0, 0.4);
@@ -18,6 +19,7 @@ body:is(.layout-cupertino, .layout-macos, .input-cupertino) {
 
   &.theme-dark {
     --liquid-glass-background: rgba(255, 255, 255, 0.075);
+    --background-modifier-border: rgba(255, 255, 255, 0.15);
 
     --shadow-base: inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-border: 0 0 1px 0 rgba(255, 255, 255, 0.3);
