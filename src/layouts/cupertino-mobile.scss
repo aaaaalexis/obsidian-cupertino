@@ -191,20 +191,19 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     .workspace-leaf-content {
       timeline-scope: --inline-title-scroll;
     }
-    .markdown-preview-view,
-    .cm-scroller {
-      scroll-timeline-name: --inline-title-scroll;
+    .inline-title {
+      view-timeline-name: --inline-title-scroll;
     }
 
     .view-header-title-parent {
       animation: viewHeaderTitleParentScroll linear both;
       animation-timeline: --inline-title-scroll;
-      animation-range-end: 64px;
+      animation-range: exit -128px exit -48px;
     }
     .view-header-title {
       animation: viewHeaderTitleScroll linear both;
       animation-timeline: --inline-title-scroll;
-      animation-range-end: 64px;
+      animation-range: exit -128px exit -48px;
     }
   }
 
