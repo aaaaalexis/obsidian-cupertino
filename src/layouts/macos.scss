@@ -89,7 +89,7 @@ body.layout-macos:not(.is-mobile) {
     overflow: hidden;
   }
   .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) + .mod-root {
-    padding-left: var(--macos-sidedock-spacing);
+    padding-left: 8px;
   }
   &.stacked-nav-off .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container .sidebar-toggle-button {
