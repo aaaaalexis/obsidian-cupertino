@@ -205,12 +205,6 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
           background-color: var(--background-modifier-hover);
           box-shadow: none;
         }
-        .nav-action-button.is-active,
-        .nav-action-button.is-active:hover {
-          background-color: var(--background-modifier-hover);
-          color: var(--icon-color);
-          box-shadow: var(--shadow-xs);
-        }
       }
     }
   }
