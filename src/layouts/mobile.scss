@@ -96,9 +96,7 @@ body:not(.mobile-stable).is-mobile {
     padding: 0;
 
     &.is-active {
-      opacity: 1;
-      background-color: var(--interactive-accent);
-      color: var(--text-on-accent);
+      background-color: transparent;
     }
   }
 
