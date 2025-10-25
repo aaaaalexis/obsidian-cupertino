@@ -8,6 +8,8 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
   --nav-item-background-active: var(--interactive-accent);
 
+  background-color: var(--system-status-background);
+
   &.theme-light {
     --mobile-sidebar-background: var(--background-secondary);
 
@@ -18,10 +20,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   }
   &.theme-dark {
     --mobile-sidebar-background: black;
-  }
-
-  .app-container {
-    background-color: var(--system-status-background);
   }
 
   // Liquid Glass
