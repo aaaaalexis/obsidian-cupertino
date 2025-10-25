@@ -44,11 +44,6 @@ body.status-bar-full {
   }
 }
 
-.workspace,
-.horizontal-main-container {
-  overflow: visible;
-}
-
 // Status bar: Cupertino
 body.status-bar-cupertino .status-bar {
   --status-bar-border-width: var(--border-width);
