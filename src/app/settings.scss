@@ -134,7 +134,7 @@ body.is-phone .modal.mod-sidebar-layout:not(.mod-community-modal) {
     font-size: 1.5em;
     font-weight: calc(var(--font-weight) + var(--bold-modifier));
     max-width: 100%;
-    padding-left: var(--side-padding);
+    padding-left: 20px;
   }
 }
 

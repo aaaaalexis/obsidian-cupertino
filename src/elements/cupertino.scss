@@ -50,24 +50,26 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)) {
   }
 
   // Button
-  button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button) {
+  button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button) {
     padding: 4px 12px;
   }
-  &.is-phone button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button) {
+  &.is-phone button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button) {
     padding: 0 var(--side-padding);
   }
-  &.is-tablet button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button) {
+  &.is-tablet button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button) {
     padding: 4px var(--side-padding);
   }
 
   // Slider
   input[type="range"]::-webkit-slider-thumb {
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.075)) drop-shadow(0 1px 16px rgba(0, 0, 0, 0.1));
     transition: var(--anim-duration-moderate);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
 
     &:active {
       scale: 1.5;
       backdrop-filter: var(--blur-s, brightness(1.025));
+      filter: none;
       box-shadow: inset 1px 1px 2px -2px rgba(var(--mono-rgb-100), 1), inset -1px -1px 2px -2px rgba(var(--mono-rgb-100), 1), var(--shadow-xs);
       background-color: transparent;
     }
@@ -75,15 +77,24 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)) {
 
   // Toggle
   .checkbox-container {
-    &,
+    box-shadow: none;
+    transition: var(--anim-duration-moderate);
+
+    &:not(:active) {
+      overflow: hidden;
+    }
+
     &::after {
+      filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.075)) drop-shadow(0 1px 16px rgba(0, 0, 0, 0.1));
       transition: var(--anim-duration-moderate);
+      box-shadow: none;
     }
 
     &:active:after {
       transform-origin: center;
       scale: 1.5;
       backdrop-filter: var(--blur-s, brightness(1.025));
+      filter: none;
       box-shadow: inset 1px 1px 2px -2px rgba(var(--mono-rgb-100), 1), inset -1px -1px 2px -2px rgba(var(--mono-rgb-100), 1), var(--shadow-xs);
       background-color: transparent;
     }

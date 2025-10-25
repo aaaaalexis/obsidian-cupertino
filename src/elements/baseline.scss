@@ -32,7 +32,7 @@ select,
   transition: var(--anim-duration-moderate) var(--anim-motion-cupertino), background-color var(--anim-duration-fast);
 }
 
-button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button) {
+button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button) {
   padding: 16px;
   display: inline-flex;
 }

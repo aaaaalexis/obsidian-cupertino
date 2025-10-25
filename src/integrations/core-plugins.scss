@@ -9,6 +9,12 @@ body:not(.is-mobile) .backlink-pane {
   }
 }
 
+.embedded-backlinks .nav-header > .search-input-container {
+  width: 100%;
+  margin: 48px 0 16px;
+  align-self: start;
+}
+
 // Footnotes
 .markdown-embed[data-type="footnote"] {
   background-color: transparent;

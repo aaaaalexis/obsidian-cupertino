@@ -86,20 +86,15 @@ body.obsidian-app.is-mobile {
     border: var(--border-width) solid var(--background-modifier-border);
     border-radius: 100vh;
     background: var(--background-secondary);
-    padding: 4px;
+    padding-inline: 8px;
     max-width: 100%;
   }
   .workspace-drawer .nav-buttons-container .nav-action-button {
     border-radius: 100vh;
-    height: 40px;
+    height: 48px;
     width: 48px;
     padding: 0;
-
-    &.is-active {
-      opacity: 1;
-      background-color: var(--interactive-accent);
-      color: var(--text-on-accent);
-    }
+    background-color: transparent;
   }
 
   .workspace-drawer .workspace-leaf-content .node-insert-event {

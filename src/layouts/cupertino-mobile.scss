@@ -3,11 +3,10 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
   --mobile-sidebar-background: rgb(var(--mono-rgb-0));
   --titlebar-background: transparent;
   --titlebar-background-focused: transparent;
-  --background-modifier-form-field: var(--interactive-normal) !important;
+  --background-modifier-form-field: var(--interactive-normal);
 
   --nav-item-padding: 16px var(--side-padding);
-  --nav-item-background-active: var(--interactive-accent) !important;
-  --nav-item-color-active: var(--text-on-accent) !important;
+  --nav-item-background-active: var(--interactive-accent);
 
   &.theme-light {
     --mobile-sidebar-background: var(--background-secondary);
@@ -86,6 +85,8 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
 
   // File explorer
   .nav-files-container > div {
+    --nav-item-color-active: var(--text-on-accent);
+
     border-radius: var(--radius-m);
     background-color: var(--background-primary);
 
@@ -191,20 +192,19 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
     .workspace-leaf-content {
       timeline-scope: --inline-title-scroll;
     }
-    .markdown-preview-view,
-    .cm-scroller {
-      scroll-timeline-name: --inline-title-scroll;
+    .inline-title {
+      view-timeline-name: --inline-title-scroll;
     }
 
     .view-header-title-parent {
       animation: viewHeaderTitleParentScroll linear both;
       animation-timeline: --inline-title-scroll;
-      animation-range-end: 64px;
+      animation-range: exit -128px exit -48px;
     }
     .view-header-title {
       animation: viewHeaderTitleScroll linear both;
       animation-timeline: --inline-title-scroll;
-      animation-range-end: 64px;
+      animation-range: exit -128px exit -48px;
     }
   }
 

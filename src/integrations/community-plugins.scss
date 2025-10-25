@@ -179,3 +179,8 @@ body .view-content.notebook-navigator-mobile {
     }
   }
 }
+
+// Excalidraw https://github.com/zsviczian/obsidian-excalidraw-plugin
+body.is-mobile .excalidraw .FixedSideContainer {
+  padding-top: 0;
+}

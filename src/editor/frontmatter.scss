@@ -68,7 +68,7 @@
         --icon-size: var(--icon-s);
       }
       .metadata-property-key {
-        padding: var(--input-padding);
+        padding: 8px 8px 8px 12px;
       }
 
       .metadata-property[data-property-key="tags"] .multi-select-pill {

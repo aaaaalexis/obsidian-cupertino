@@ -202,12 +202,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
           background-color: var(--background-modifier-hover);
           box-shadow: none;
         }
-        .nav-action-button.is-active,
-        .nav-action-button.is-active:hover {
-          background-color: var(--background-modifier-hover);
-          color: var(--icon-color);
-          box-shadow: var(--shadow-xs);
-        }
       }
     }
   }
@@ -227,16 +221,22 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
       background-color: var(--modal-background);
       border: var(--border-width) solid var(--background-modifier-border);
       z-index: var(--layer-popover);
-
-      &.mod-left-split {
-        margin: 8px 0 8px 8px;
-      }
-      &.mod-right-split {
-        margin: 8px 8px 8px 0;
-      }
+      margin: 8px;
+      overflow: visible;
 
       &::before {
         content: none;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+      }
+
+      &.mod-left-split::after {
+        inset: 0 0 0 -32px;
+      }
+      &.mod-right-split::after {
+        inset: 0 -32px 0 0;
       }
     }
   }
