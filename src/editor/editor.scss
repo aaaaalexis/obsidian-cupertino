@@ -12,13 +12,14 @@
 
     --italic-weight: var(--font-medium);
 
-    --h1-font: var(--font-text-override), InstrumentSerif;
-    --h2-font: var(--font-text-override), InstrumentSerif;
-    --h3-font: var(--font-text-override), InstrumentSerif;
-    --h4-font: var(--font-text-override), InstrumentSerif;
-    --h5-font: var(--font-text-override), InstrumentSerif;
-    --h6-font: var(--font-text-override), InstrumentSerif;
+    --h1-size: 1.5em;
+    --h2-size: 1.25em;
+    --h3-size: 1.125em;
+    --h4-size: 1em;
+    --h5-size: 1em;
+    --h6-size: 0.875em;
 
+    --h4-color: var(--text-muted);
     --h5-color: var(--text-faint);
     --h6-color: var(--text-faint);
 
@@ -32,7 +33,7 @@
 
     --media-radius: var(--radius-s);
 
-    --checkbox-radius: 4px;
+    --checkbox-radius: 100vh;
 
     --metadata-gap: 8px;
 
@@ -47,6 +48,10 @@
     --indentation-guide-width: 0px;
 
     --file-header-border: none;
+  }
+
+  body:not(.font-variant-off) .workspace-leaf-content .view-content {
+    font-feature-settings: "ss01" 1, "ss07" 1, "cv07" 1;
   }
 
   p > em,
@@ -64,31 +69,6 @@
     overflow: hidden !important;
   }
 
-  // Readable spacing
-  .readable-spacing {
-    --heading-spacing: var(--p-spacing);
-    --p-spacing-empty: var(--list-spacing);
-    --h1-line-height: var(--line-height-normal);
-    --h2-line-height: var(--line-height-normal);
-    --h3-line-height: var(--line-height-normal);
-    --h4-line-height: var(--line-height-normal);
-    --readable-spacing-modifier: 0.25;
-
-    .markdown-rendered div:is(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5, .el-h6) > :is(h1, h2, h3, h4, h5, h6),
-    .markdown-rendered div.el-p:has(+ div:is(.el-ul, .el-ol)) > p {
-      margin-block-end: calc(var(--p-spacing) * var(--readable-spacing-modifier));
-    }
-    .markdown-rendered div.el-h1 + div > *:not(hr),
-    .markdown-rendered div.el-h2 + div > *:not(hr, h1),
-    .markdown-rendered div.el-h3 + div > *:not(hr, h1, h2),
-    .markdown-rendered div.el-h4 + div > *:not(hr, h1, h2, h3),
-    .markdown-rendered div.el-h5 + div > *:not(hr, h1, h2, h3, h4),
-    .markdown-rendered div.el-h6 + div > *:not(hr, h1, h2, h3, h4, h5),
-    .markdown-rendered div.el-p + div:is(.el-ul, .el-ol) > * {
-      margin-block-start: calc(var(--p-spacing) * var(--readable-spacing-modifier));
-    }
-  }
-
   // Tab title bar
   .view-header {
     padding: 0 8px;
@@ -103,20 +83,14 @@
     height: auto !important;
   }
   .view-header-title-container > div {
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
   }
   .view-header-title-parent {
     color: var(--text-faint);
   }
-  body:not(.is-mobile, .view-header-title-always) .view-header:not(.view-header-always-show):not(:hover) .view-header-title-container > div:not(:focus-within) {
-    opacity: 0 !important;
-  }
-  body:not(.is-mobile).view-header-title-hidden .view-header-title-container > div {
-    visibility: hidden;
-  }
 
   // Active line
-  body.active-line-side .markdown-source-view .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::after {
+  body:not(.active-line-off) .markdown-source-view .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::after {
     position: absolute;
     top: 4px;
     bottom: 4px;
@@ -124,41 +98,6 @@
     border-left: 4px solid var(--background-modifier-border-hover);
     border-radius: var(--input-radius);
     content: "";
-  }
-  body.active-line-block .markdown-source-view {
-    .cm-line.cm-active:not(.cm-gutterElement, .HyperMD-callout, .HyperMD-codeblock-bg, .HyperMD-quote)::after {
-      position: absolute;
-      inset: -2px -4px;
-      background: var(--background-secondary);
-      content: "";
-      z-index: -2;
-      border-radius: var(--radius-s);
-    }
-    .cm-line.cm-active:is(.HyperMD-callout, .HyperMD-codeblock-bg, .HyperMD-quote) {
-      background-color: var(--background-modifier-hover) !important;
-    }
-  }
-  body.active-line-background .markdown-source-view {
-    .cm-line.cm-active:not(.cm-gutterElement)::after {
-      position: absolute;
-      inset: -2px -100%;
-      background: var(--background-secondary);
-      content: "";
-      z-index: -2;
-    }
-    .cm-line.cm-active:is(.HyperMD-callout, .HyperMD-codeblock-bg, .HyperMD-quote) {
-      background-color: var(--background-modifier-hover) !important;
-
-      &::after {
-        inset: 0 -100%;
-      }
-    }
-  }
-  body.active-line-color-accent.active-line-side .markdown-source-view .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::after {
-    border-color: var(--color-accent);
-  }
-  body.active-line-color-accent:is(.active-line-block, .active-line-background) .markdown-source-view .cm-line.cm-active::after {
-    background-color: var(--background-modifier-active-hover);
   }
 
   // Line numbers
@@ -180,32 +119,9 @@
     white-space: var(--code-white-space);
   }
 
-  body.code-tactile {
-    .markdown-rendered pre {
-      background: linear-gradient(var(--background-primary-alt), var(--background-secondary));
-      box-shadow: var(--shadow-tactile);
-    }
-  }
-
-  body.code-scroll {
-    --code-white-space: pre;
-
-    .HyperMD-codeblock {
-      overflow-y: scroll;
-      white-space: pre;
-    }
-  }
-
-  body.code-line-numbers .HyperMD-codeblock-begin {
-    counter-reset: codeblock-line-numbers;
-  }
-  body.code-line-numbers .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::before {
-    counter-increment: codeblock-line-numbers;
-    content: counter(codeblock-line-numbers);
-    font-size: var(--font-smallest);
-    text-align: right;
-    color: var(--text-muted);
-    padding-right: 1em;
+  .markdown-rendered pre {
+    background: linear-gradient(var(--background-primary-alt), var(--background-secondary));
+    box-shadow: var(--shadow-tactile);
   }
 
   kbd {
@@ -268,37 +184,6 @@
   }
 
   // Headings
-  .markdown-rendered h1,
-  .HyperMD-header-1,
-  .HyperMD-list-line .cm-header-1 {
-    text-transform: var(--h1-transform);
-  }
-  .markdown-rendered h2,
-  .HyperMD-header-2,
-  .HyperMD-list-line .cm-header-2 {
-    text-transform: var(--h2-transform);
-  }
-  .markdown-rendered h3,
-  .HyperMD-header-3,
-  .HyperMD-list-line .cm-header-3 {
-    text-transform: var(--h3-transform);
-  }
-  .markdown-rendered h4,
-  .HyperMD-header-4,
-  .HyperMD-list-line .cm-header-4 {
-    text-transform: var(--h4-transform);
-  }
-  .markdown-rendered h5,
-  .HyperMD-header-5,
-  .HyperMD-list-line .cm-header-5 {
-    text-transform: var(--h5-transform);
-  }
-  .markdown-rendered h6,
-  .HyperMD-header-6,
-  .HyperMD-list-line .cm-header-6 {
-    text-transform: var(--h6-transform, uppercase);
-  }
-
   .inline-title:not([data-level]),
   .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
   .HyperMD-header-1,
@@ -308,6 +193,18 @@
   .HyperMD-header-5,
   .HyperMD-header-6 {
     letter-spacing: normal !important;
+  }
+
+  .markdown-rendered h6,
+  .HyperMD-header-6,
+  .HyperMD-list-line .cm-header-6 {
+    text-transform: uppercase;
+  }
+
+  // Links
+  body:not(.clean-link-off) {
+    --link-decoration: none;
+    --link-external-decoration: none;
   }
 
   // Highlights
@@ -357,7 +254,7 @@
     }
   }
 
-  .theme-dark {
+  body:not(.media-dimming-off).theme-dark {
     .workspace-leaf-content[data-type="markdown"] img:not([width], .cm-widgetBuffer, .link-favicon, .emoji),
     .workspace-leaf-content[data-type="markdown"] iframe,
     .workspace-leaf-content[data-type="markdown"] video,
@@ -398,38 +295,8 @@
     }
   }
 
-  // Tags
-  body.unstyled-tags {
-    --tag-background: transparent;
-    --tag-background-hover: transparent;
-    --tag-border-width: 0px;
-    --tag-padding-x: 0;
-    --tag-padding-y: 0;
-    --tag-size: inherit;
-    --tag-color-hover: var(--text-accent-hover);
-  }
-
-  // Tasks
-  body.strike-lists-off {
-    --checklist-done-decoration: none;
-    --checklist-done-color: var(--text-normal);
-  }
-  .task-list-item {
-    --indentation-guide-reading-indent: -1.05em;
-  }
-
   // PDF Viewer
-  body.pdf-seamless {
-    --pdf-shadow: none;
-  }
-  .theme-dark.pdf-invert-dark .pdf-container .pdfViewer .page {
+  body:not(.media-dimming-off).theme-dark.pdf-invert-dark .pdf-container .pdfViewer .page {
     filter: invert(1) hue-rotate(180deg) contrast(0.75);
-  }
-  .pdf-container .pdfViewer .page {
-    transition-duration: var(--anim-duration-moderate);
-    transition-property: filter, opacity;
-    &:not(:hover) {
-      opacity: var(--pdf-muted, 1);
-    }
   }
 }

@@ -1,4 +1,4 @@
-body.input-fluent {
+body.mod-windows:not(.windows-off):not(.is-mobile) {
   --toggle-thumb-height: 12px;
   --toggle-thumb-width: 12px;
   --toggle-width: 40px;

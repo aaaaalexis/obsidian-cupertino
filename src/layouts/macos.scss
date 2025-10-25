@@ -1,4 +1,4 @@
-body.layout-macos:not(.is-mobile) {
+body:not(.liquid-glass-off):not(.is-mobile) {
   --nav-item-color-active: var(--text-accent) !important;
 
   &.theme-light {
@@ -77,9 +77,6 @@ body.layout-macos:not(.is-mobile) {
     &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button {
       height: calc(var(--header-height) - 8px);
     }
-    &:not(.mod-macos):not(.stacked-nav-off) .workspace-ribbon.mod-left:not(.is-collapsed) {
-      padding-top: 12px;
-    }
     .workspace-ribbon.mod-left:not(.is-collapsed) {
       padding-left: 16px;
     }
@@ -99,7 +96,7 @@ body.layout-macos:not(.is-mobile) {
     height: -webkit-fill-available;
     overflow: hidden;
   }
-  &.stacked-nav-off .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
+  .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container .sidebar-toggle-button {
     min-height: calc(var(--header-height) - 8px);
     max-height: calc(var(--header-height) - 8px);
@@ -110,7 +107,7 @@ body.layout-macos:not(.is-mobile) {
   }
 }
 
-body.layout-macos.is-tablet {
+body:not(.liquid-glass-off).is-tablet {
   .workspace {
     background-color: var(--system-status-background);
   }

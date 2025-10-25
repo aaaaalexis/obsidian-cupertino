@@ -1,5 +1,5 @@
 body {
-  --header-height: 48px;
+  --header-height: 56px;
 
   --tab-radius: var(--radius-s);
   --tab-radius-active: var(--tab-radius) var(--tab-radius) 0 0;
@@ -27,7 +27,7 @@ body:not(.is-mobile) {
   }
 }
 body:not(.is-phone) .workspace-tab-header-container {
-  transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
   background-color: transparent;
   border-bottom: 0;
 }
@@ -83,7 +83,7 @@ body:not(.is-phone) .workspace .mod-root {
 }
 
 // Editor panel: Floating
-body:is(.tabs-floating, .tabs-floating-center):not(.is-phone) .workspace .mod-root {
+body:not(.is-phone) .workspace .mod-root {
   --tab-radius-active: var(--tab-radius);
   --tab-curve: 0;
 
@@ -104,7 +104,7 @@ body:is(.tabs-floating, .tabs-floating-center):not(.is-phone) .workspace .mod-ro
     margin-bottom: 0;
   }
 }
-body:is(.tabs-floating, .tabs-floating-center).is-tablet {
+body.is-tablet {
   --header-height: 60px !important;
 
   .mod-root .workspace-tab-header-container-inner {
@@ -116,7 +116,7 @@ body:is(.tabs-floating, .tabs-floating-center).is-tablet {
 }
 
 // Editor panel: Floating (Center)
-body:not(.is-phone).tabs-floating-center .mod-root .workspace-tabs:not(.mod-stacked) {
+body:not(.is-phone):not(.center-tabs-off) .mod-root .workspace-tabs:not(.mod-stacked) {
   --tab-max-width: var(--tab-width);
   container-type: inline-size;
 
@@ -124,7 +124,7 @@ body:not(.is-phone).tabs-floating-center .mod-root .workspace-tabs:not(.mod-stac
     .workspace-tab-header-container-inner {
       flex: 1;
       justify-content: safe center;
-      transition: padding-left var(--anim-duration-moderate) var(--anim-motion-baseline), padding-right var(--anim-duration-moderate) var(--anim-motion-baseline);
+      transition: padding-left var(--anim-duration-moderate) var(--anim-motion-cupertino), padding-right var(--anim-duration-moderate) var(--anim-motion-cupertino);
     }
 
     .workspace-tab-header-spacer {
@@ -133,7 +133,7 @@ body:not(.is-phone).tabs-floating-center .mod-root .workspace-tabs:not(.mod-stac
   }
 }
 
-body.mod-macos:not(.is-mobile).tabs-floating-center {
+body.mod-macos:not(.is-mobile):not(.center-tabs-off) {
   --tab-action-width: 32px;
 
   .mod-root .workspace-tabs:not(.mod-stacked) {
@@ -158,7 +158,7 @@ body.mod-macos:not(.is-mobile).tabs-floating-center {
   }
 }
 
-body:not(.mod-macos):not(.is-mobile).tabs-floating-center {
+body:not(.mod-macos):not(.is-mobile):not(.center-tabs-off) {
   --tab-action-width: 32px;
 
   .mod-root .workspace-tabs:not(.mod-stacked) {
@@ -193,7 +193,7 @@ body:not(.mod-macos):not(.is-mobile).tabs-floating-center {
   }
 }
 
-body.is-tablet.tabs-floating-center {
+body.is-tablet:not(.center-tabs-off) {
   --tab-action-width: 44px;
 
   // Both drawer hidden
@@ -243,55 +243,6 @@ body.is-tablet.tabs-floating-center {
   }
 }
 
-// Editor panel: Underline
-body:not(.is-phone).tabs-underline .workspace .mod-root {
-  --tab-background-active: transparent;
-
-  .workspace-tab-header-container-inner {
-    padding-top: 0;
-    gap: 0;
-  }
-  .workspace-tab-header {
-    border-bottom: 2px solid transparent;
-    padding-top: 8px;
-  }
-  .workspace-tab-header.is-active {
-    border-color: var(--background-modifier-border-focus);
-  }
-  .workspace-tab-header:not(.is-active):hover {
-    border-color: var(--background-modifier-border);
-
-    .workspace-tab-header-inner {
-      background-color: transparent;
-    }
-  }
-  .workspace-tab-header-inner {
-    margin-bottom: 6px;
-  }
-}
-
-// Editor panel: Stacks
-.tab-stack-top-flipped {
-  --tab-stacked-text-transform: rotate(180deg);
-  --tab-stacked-text-align: right;
-}
-.tab-stack-center {
-  --tab-stacked-text-align: center;
-}
-.tab-stack-center-flipped {
-  --tab-stacked-text-transform: rotate(180deg);
-  --tab-stacked-text-align: center;
-}
-.tab-stack-bottom {
-  --tab-stacked-text-transform: rotate(180deg);
-}
-.tab-stack-bottom-flipped {
-  --tab-stacked-text-align: right;
-}
-.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner {
-  flex-direction: var(--tab-stacked-spine-order);
-}
-
 // Editor panel: Tablet fix
 body.is-tablet {
   .workspace .mod-root {
@@ -317,7 +268,7 @@ body.is-tablet {
   .workspace-tab-header-container,
   .workspace-tab-header,
   .workspace-tab-header div {
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
   }
 
   .workspace-tab-header-container {
@@ -328,7 +279,7 @@ body.is-tablet {
     -webkit-app-region: no-drag;
     padding: 0 8px 0 0;
     margin: 0;
-    gap: calc(8px * var(--density-modifier));
+    gap: 8px;
     height: 100%;
   }
 
@@ -356,31 +307,6 @@ body.is-tablet {
   .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
     color: var(--icon-color-focused);
   }
-}
-
-// Side panels: Compact tabs
-body:not(.compact-tabs-off) .workspace .mod-sidedock {
-  .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
-    height: calc-size(auto, size);
-
-    .workspace-tab-header {
-      background-color: var(--background-modifier-hover);
-      height: 4px;
-    }
-
-    .workspace-tab-header-inner-icon,
-    .workspace-tab-header-inner-title {
-      opacity: 0;
-    }
-  }
-}
-
-// Side panels: Tab names
-body.labeled-tabs-all {
-  --sidebar-tab-text-display: flex;
-}
-body.labeled-tabs-single .workspace-tab-header:only-child {
-  --sidebar-tab-text-display: flex;
 }
 
 // Side panels: Platforms

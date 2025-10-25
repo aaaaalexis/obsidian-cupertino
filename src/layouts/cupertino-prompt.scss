@@ -1,4 +1,4 @@
-body:is(.layout-cupertino, .layout-macos) {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)) {
   .prompt {
     backdrop-filter: var(--blur-l);
     border-radius: var(--radius-xl);
@@ -29,14 +29,14 @@ body:is(.layout-cupertino, .layout-macos) {
 
   .prompt .suggestion-item {
     border-radius: var(--radius-m);
-    padding: calc(12px * var(--density-modifier)) var(--side-padding);
+    padding: 12px var(--side-padding);
   }
 
   .prompt-instructions {
     border-top: none;
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.is-phone) {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-phone) {
   --prompt-input-height: 56px;
 
   @keyframes bounceInScale {
@@ -50,7 +50,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-phone) {
   }
 
   .prompt {
-    animation: var(--anim-duration-moderate) bounceInScale var(--anim-motion-baseline) forwards;
+    animation: var(--anim-duration-moderate) bounceInScale var(--anim-motion-cupertino) forwards;
   }
 
   .prompt-input-container::after {
@@ -62,7 +62,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-phone) {
     pointer-events: none;
   }
 }
-body:is(.layout-cupertino, .layout-macos).is-phone {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-phone {
   --prompt-input-height: 48px;
 
   .prompt {
@@ -119,7 +119,7 @@ body:is(.layout-cupertino, .layout-macos).is-phone {
   }
 
   .prompt-results {
-    transition: var(--anim-duration-slow) var(--anim-motion-baseline);
+    transition: var(--anim-duration-slow) var(--anim-motion-cupertino);
 
     @starting-style {
       transform: translateY(var(--safe-area-inset-top));
@@ -132,6 +132,6 @@ body:is(.layout-cupertino, .layout-macos).is-phone {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos).is-tablet .prompt {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-tablet .prompt {
   border-radius: var(--radius-l);
 }

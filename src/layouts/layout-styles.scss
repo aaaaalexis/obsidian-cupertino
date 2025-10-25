@@ -3,105 +3,24 @@
 }
 
 // Editor panel
-body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-border.is-tablet) {
+body:not(.liquid-glass-off) {
   .workspace-split.mod-root .workspace-tab-container {
     border-radius: 0;
   }
 }
 
-// Mobile editor panels
-body:is(.layout-cupertino, .layout-cards, .layout-border).is-tablet .mod-root {
-  padding-bottom: 8px;
-  height: auto;
-}
-body:is(.layout-cupertino, .layout-cards, .layout-border, .layout-frame).is-tablet {
-  .workspace-drawer.mod-left:not(.is-pinned) + .mod-root .workspace-tab-container {
-    margin-left: 8px;
-    border-top-left-radius: var(--safe-area-inset-top);
-    border-bottom-left-radius: var(--safe-area-inset-top);
-  }
-  .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tab-container {
-    margin-right: 8px;
-    border-top-right-radius: var(--safe-area-inset-top);
-    border-bottom-right-radius: var(--safe-area-inset-top);
-    background-color: var(--background-primary);
-  }
-}
-
-// Ribbon
-body.mod-macos:is(.layout-classic, .layout-minimal, .layout-macos:not(.tabs-floating, .tabs-floating-center)) .workspace-ribbon.mod-left.is-collapsed {
-  margin-top: calc(var(--header-height) - 1px);
-  padding-top: 8px;
-  border-top: var(--tab-outline-width) solid var(--tab-outline-color);
-}
-body:not(.mod-macos):is(.layout-classic, .layout-minimal).stacked-nav-off .workspace-ribbon.mod-left,
-body:not(.mod-macos).layout-macos:not(.tabs-floating, .tabs-floating-center) .workspace-ribbon.mod-left.is-collapsed {
-  &::before {
-    content: "";
-    height: var(--tab-outline-width);
-    background-color: var(--tab-outline-color);
-    position: absolute;
-    inset: calc(var(--header-height) - 1px) 0 auto;
-  }
-
-  .side-dock-actions {
-    margin-top: 12px;
-  }
-}
-body:not(.layout-cards, .layout-border, .layout-frame) .workspace-ribbon.mod-left:not(.is-collapsed) {
-  padding-left: 12px;
-}
-
-// Stacked nav
-body:is(.layout-classic, .layout-minimal, .layout-frame):not(.is-mobile) .stacked-nav-off .workspace-tabs.mod-top {
-  .workspace-leaf-content > .nav-header,
-  .workspace-leaf-content > .view-content > div:not(.nav-buttons-container):not(.graph-controls) {
-    padding-bottom: 0;
-  }
-}
-
 // Tab styles
-body:not(.tabs-floating, .tabs-floating-center, .tabs-underline) {
-  &:is(.layout-classic, .layout-minimal, .layout-cupertino, .layout-macos, .layout-frame) {
-    .mod-root .workspace-tab-header {
-      --tab-outline-width: 1px;
-    }
-    &.is-tablet .workspace-tab-header-container-inner {
-      padding-top: 8px;
-    }
-  }
-}
-
-body:is(.tabs-floating, .tabs-floating-center) {
-  &:not(.layout-classic, .layout-frame) .mod-root .workspace-tab-header {
+body {
+  .mod-root .workspace-tab-header {
     background-color: var(--background-modifier-hover);
   }
-  &:is(.layout-classic, .layout-frame) .mod-root .workspace-tab-header {
-    --tab-outline-width: 1px;
-    margin-inline: var(--tab-outline-width);
-  }
-  &:is(.layout-cupertino, .layout-macos):not(.is-mobile) .mod-root .workspace-tab-header {
+  &:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) .mod-root .workspace-tab-header {
     height: 32px;
     margin: auto 0;
   }
 }
 
-body:is(.layout-classic, .layout-minimal, .layout-frame).stacked-nav-off .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed),
-body:is(.layout-classic, .layout-minimal, .layout-frame) .mod-root,
-body:is(.layout-classic, .layout-minimal, .layout-frame) .mod-sidedock.mod-right-split:not(.is-sidedock-collapsed),
-body.layout-cupertino:not(.tabs-floating, .tabs-floating-center) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root,
-body.layout-macos:not(.tabs-floating, .tabs-floating-center) .mod-root {
-  .workspace-tabs.mod-top .workspace-tab-header-container {
-    border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
-  }
-
-  .workspace-tab-header-container-inner {
-    margin-bottom: -1px !important;
-  }
-}
-
 // Mobile drawer
-body:not(.layout-classic, .layout-minimal, .layout-border, .layout-frame, .layout-macos).is-tablet .workspace-drawer.is-pinned,
-body.layout-macos.is-tablet .workspace-drawer.is-pinned.mod-left {
+body:not(.liquid-glass-off).is-tablet .workspace-drawer.is-pinned.mod-left {
   border: none;
 }

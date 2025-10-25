@@ -1,5 +1,5 @@
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile),
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile),
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
   --inline-title-margin-bottom: 0.5em;
   --p-spacing: 1rem;
   --line-height-normal: 1.6;
@@ -30,7 +30,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   .markdown-source-view,
   .markdown-preview-view {
     --text-normal: var(--color-base-90);
-    transition: transform var(--anim-duration-slow) var(--anim-motion-baseline);
+    transition: transform var(--anim-duration-slow) var(--anim-motion-cupertino);
   }
   .workspace-leaf-content[data-mode="source"] .markdown-preview-view {
     transform: scale(0.995);
@@ -68,8 +68,8 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 }
 
 // Editor panel: Edge fade
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile),
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile),
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-tablet {
   .workspace-leaf-content[data-type="markdown"] .view-header {
     position: absolute;
     inset: 0 0 auto;
@@ -106,20 +106,18 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
-  --radius-s: calc(8px * var(--radius-modifier));
-  --radius-m: calc(12px * var(--radius-modifier));
-  --radius-l: calc(20px * var(--radius-modifier));
-  --radius-xl: calc(28px * var(--radius-modifier));
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 20px;
+  --radius-xl: 28px;
   --radius-window: 6px;
 
   * {
     -electron-corner-smoothing: 60%;
   }
 
-  &:is(.tabs-floating, .tabs-floating-center) {
-    --tab-action-width: 40px;
-  }
+  --tab-action-width: 40px !important;
 
   .workspace-split .clickable-icon {
     min-width: 40px;
@@ -140,11 +138,10 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   }
 
   // Side panels
-  &.stacked-nav-off .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+  .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
     margin-left: 0;
   }
-  &.stacked-nav-off .mod-sidedock .workspace-tab-header-container,
-  &:not(.stacked-nav-off) .mod-sidedock .workspace-tabs:not(.mod-top-left-space) .workspace-tab-header-container {
+  .mod-sidedock .workspace-tab-header-container {
     .workspace-tab-header-container-inner {
       -webkit-app-region: no-drag;
       gap: 0px;
@@ -245,7 +242,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   }
 }
 
-body.layout-cupertino:not(.is-phone) {
+body.liquid-glass-off:not(.is-mobile) {
   // Editor panel
   &.theme-light .mod-root .workspace-tab-container {
     box-shadow: rgba(0, 0, 0, 0.04) 0px 24px 48px, rgba(0, 0, 0, 0.02) 0px 4px 16px;
@@ -267,7 +264,7 @@ body.layout-cupertino:not(.is-phone) {
   }
 }
 
-body.layout-cupertino:not(.is-mobile) {
+body.liquid-glass-off:not(.is-mobile) {
   .workspace-split.mod-sidedock {
     background-color: transparent;
   }

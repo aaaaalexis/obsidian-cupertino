@@ -3,23 +3,14 @@ body {
 
   --radius-modifier: 1;
   --input-radius: var(--radius-s);
-  --radius-s: calc(8px * var(--radius-modifier));
-  --radius-m: calc(12px * var(--radius-modifier));
-  --radius-l: calc(16px * var(--radius-modifier));
-  --radius-xl: calc(24px * var(--radius-modifier));
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 16px;
+  --radius-xl: 24px;
 
   --background-modifier-form-field: var(--interactive-normal);
 
-  /* 0 when <1, 1 when >=1 */
-  --radius-modifier-check: clamp(0, (var(--radius-modifier) - 1) * 10000 + 1, 1);
-
-  --button-radius: calc((8px * var(--radius-modifier)) * (1 - var(--radius-modifier-check)) + 100vw * var(--radius-modifier-check));
-}
-
-body:not([class*="input-"]).is-mobile,
-body.input-baseline.is-mobile {
-  --interactive-normal: var(--background-primary);
-  --input-border-width: var(--divider-width);
+  --button-radius: 8px;
 }
 
 .theme-light {
@@ -38,7 +29,7 @@ button,
 .clickable-icon,
 select,
 .dropdown {
-  transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color var(--anim-duration-fast);
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino), background-color var(--anim-duration-fast);
 }
 
 button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button) {
@@ -52,9 +43,6 @@ button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type=
 }
 
 // Toggle
-body:not(.accented-interface) .checkbox-container {
-  --interactive-accent: var(--color-green);
-}
 .checkbox-container {
   box-shadow: none;
 }

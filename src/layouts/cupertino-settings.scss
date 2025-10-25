@@ -1,10 +1,10 @@
-body:is(.layout-cupertino, .layout-macos) .modal.mod-sidebar-layout {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)) .modal.mod-sidebar-layout {
   --background-modifier-hover: rgba(var(--mono-rgb-100), 0.03);
   border: none;
 }
 
-body:is(.layout-cupertino, .layout-macos):not(.is-phone) .modal.mod-sidebar-layout:not(.mod-community-modal),
-body:is(.layout-cupertino, .layout-macos).is-phone .modal.mod-sidebar-layout {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-phone) .modal.mod-sidebar-layout:not(.mod-community-modal),
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-phone .modal.mod-sidebar-layout {
   .setting-item:not(.setting-item-heading) {
     border: none;
     background-color: var(--background-modifier-hover);
@@ -41,7 +41,7 @@ body:is(.layout-cupertino, .layout-macos).is-phone .modal.mod-sidebar-layout {
     border-top: none;
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-community-modal) {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-community-modal) {
   --nav-item-background-hover: transparent;
   background-color: var(--background-primary);
 
@@ -52,16 +52,16 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) .modal.mod-sidebar-lay
   }
 
   .setting-item-heading.setting-item {
-    padding: calc(var(--side-padding) * var(--density-modifier)) var(--side-padding) calc(12px * var(--density-modifier));
+    padding: var(--side-padding) var(--side-padding) 12px;
   }
   .setting-item {
-    padding: calc(12px * var(--density-modifier)) var(--side-padding);
+    padding: 12px var(--side-padding);
   }
   .setting-item-name {
     font-weight: var(--font-normal);
   }
 }
-body.layout-cupertino:not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-community-modal) {
+body.liquid-glass-off:not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-community-modal) {
   --nav-item-weight-active: var(--font-normal);
   --nav-item-weight-hover: var(--font-normal);
 
@@ -78,8 +78,8 @@ body.layout-cupertino:not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-communi
   }
 }
 
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone .modal.mod-sidebar-layout,
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet .modal.mod-sidebar-layout:not(.mod-community-modal) {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone .modal.mod-sidebar-layout,
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-tablet .modal.mod-sidebar-layout:not(.mod-community-modal) {
   .vertical-tab-header-group-items {
     border-radius: var(--radius-m);
     background-color: var(--background-primary);
@@ -128,7 +128,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet .modal.m
     }
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
   &.theme-light .modal.mod-sidebar-layout {
     .vertical-tab-header-group-items,
     .setting-item:not(.setting-item-heading),
@@ -283,7 +283,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     }
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet .modal.mod-sidebar-layout {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-tablet .modal.mod-sidebar-layout {
   .setting-item-control {
     --interactive-normal: var(--background-modifier-hover);
     --dropdown-background: var(--interactive-normal);

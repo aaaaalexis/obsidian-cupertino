@@ -1,8 +1,8 @@
 body.is-mobile {
-  --radius-s: calc(8px * var(--radius-modifier));
-  --radius-m: calc(16px * var(--radius-modifier));
-  --radius-l: calc(24px * var(--radius-modifier));
-  --radius-xl: calc(32px * var(--radius-modifier));
+  --radius-s: 8px;
+  --radius-m: 16px;
+  --radius-l: 24px;
+  --radius-xl: 32px;
   --mobile-sidebar-width: 100%;
   --view-header-height: var(--header-height);
 
@@ -57,7 +57,7 @@ body.is-phone {
 
   // Editor panel
   .mod-root {
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
 
     .view-header-title-container {
       opacity: 1;
@@ -88,7 +88,7 @@ body.is-phone {
   // Navbar
   .mobile-navbar {
     border-top: var(--border-width) solid var(--background-modifier-border);
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
     padding-inline: max(var(--safe-area-inset-right), 24px);
   }
 

@@ -1,5 +1,5 @@
 body {
-  --nav-item-padding: calc(8px * var(--density-modifier)) 8px calc(8px * var(--density-modifier)) 24px;
+  --nav-item-padding: 8px 8px 8px 24px;
   --nav-indentation-guide-width: 0px;
 
   --ribbon-background: transparent;
@@ -7,7 +7,7 @@ body {
 }
 
 body.is-mobile {
-  --nav-item-padding: calc(12px * var(--density-modifier)) 24px;
+  --nav-item-padding: 12px 24px;
   --nav-item-children-margin-start: 12px;
 }
 
@@ -20,7 +20,7 @@ body.is-mobile {
 }
 
 .sidebar-toggle-icon-inner {
-  transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
 }
 .sidebar-toggle-button .clickable-icon:hover .sidebar-toggle-icon-inner {
   width: 24%;
@@ -94,7 +94,7 @@ body.bold-folders .nav-folder-title {
   overflow: visible;
   border-right: none;
   z-index: 11;
-  transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino) !important;
   pointer-events: none;
 }
 .workspace-ribbon.mod-left:before {
@@ -175,14 +175,14 @@ body:not(.is-mobile) .mod-sidedock {
 // Animation
 body .mod-sidedock {
   &:not(:active) {
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
+    transition: var(--anim-duration-moderate) var(--anim-motion-cupertino) !important;
   }
 
   .workspace-tab-container {
     position: relative;
   }
   .workspace-leaf:not([style*="display: none"]) {
-    animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+    animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-cupertino) forwards;
   }
 }
 
@@ -198,7 +198,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split {
     align-items: unset;
 
     &::before {
-      transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+      transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
       content: "";
       position: absolute;
       left: 0;
@@ -237,7 +237,7 @@ body:not(.is-mobile, .hide-vault-switcher-off) .mod-sidedock.mod-left-split {
 
   .workspace-drawer-vault-switcher,
   .workspace-drawer-vault-actions .clickable-icon {
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
     pointer-events: visible;
   }
 }

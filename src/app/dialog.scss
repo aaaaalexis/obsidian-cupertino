@@ -26,7 +26,7 @@ body:not(.is-mobile) {
   }
   .modal {
     box-shadow: var(--shadow-s);
-    animation: modalIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+    animation: modalIn var(--anim-duration-moderate) var(--anim-motion-cupertino) forwards;
   }
   .modal-title {
     margin-left: 0;
@@ -51,7 +51,7 @@ body.theme-light .modal {
 
   .modal-title {
     font-family: var(--h1-font);
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
     max-width: 0;
     min-width: fit-content;
     overflow: visible;
@@ -128,7 +128,7 @@ body.is-phone .modal:not(.mod-sidebar-layout) {
 
   .menu-item,
   .suggestion-item {
-    padding: calc(6px * var(--density-modifier)) 8px;
+    padding: 6px 8px;
     border-radius: calc(var(--radius-m) - 4px);
     margin-bottom: 0;
   }
@@ -151,7 +151,7 @@ body:not(.is-phone) {
 
   .menu,
   .suggestion-container {
-    animation: menuIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+    animation: menuIn var(--anim-duration-moderate) var(--anim-motion-cupertino) forwards;
 
     .suggestion-item,
     .suggestion-empty {
@@ -177,13 +177,13 @@ body.is-phone {
       max-height: 80vh;
     }
     .menu-item {
-      padding: calc(16px * var(--density-modifier)) 20px;
+      padding: 16px 20px;
       font-size: var(--nav-item-size);
       gap: 16px;
       border-radius: 0;
     }
     .menu-separator {
-      margin: calc(12px * var(--density-modifier)) 16px;
+      margin: 12px 16px;
     }
     .menu-item-icon .svg-icon {
       --icon-size: var(--icon-s);

@@ -1,13 +1,13 @@
-body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-bar {
-  transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+body.compact-status-bar-off .status-bar {
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
   border: none;
   transform-origin: bottom right;
   background-color: transparent;
   min-height: 8px;
   height: calc-size(auto, size);
 }
-body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-bar::before {
-  transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+body.compact-status-bar-off .status-bar::before {
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
   content: "";
   position: absolute;
   bottom: 0;
@@ -18,49 +18,32 @@ body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-b
   pointer-events: none;
   background: radial-gradient(farthest-side at right bottom, var(--background-primary), rgba(var(--mono-rgb-0), 0));
 }
-body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-bar:not(:hover) {
+body.compact-status-bar-off .status-bar:not(:hover) {
   transform: scale(0.8);
   opacity: 0.5;
 }
-body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-bar:not(:hover)::before {
+body.compact-status-bar-off .status-bar:not(:hover)::before {
   opacity: 0;
 }
-body:is(body, .status-bar-default):not(.status-bar-full, .status-bar-cupertino) {
+body.compact-status-bar-off {
   .mod-sidedock.mod-right-split .workspace-tabs:last-of-type .node-insert-event,
   .mod-sidedock.mod-right-split .workspace-tabs:last-of-type .view-content {
     padding-bottom: 36px;
   }
 }
 
-// Status bar: Full width
-body.status-bar-full {
-  --status-bar-background: transparent;
-  --status-bar-border-width: 0;
-  --status-bar-position: relative;
-  --status-bar-radius: 0;
-
-  .status-bar {
-    width: 100%;
-  }
-}
-
-.workspace,
-.horizontal-main-container {
-  overflow: visible;
-}
-
 // Status bar: Cupertino
-body.status-bar-cupertino .status-bar {
+body:not(.compact-status-bar-off) .status-bar {
   --status-bar-border-width: var(--border-width);
   right: unset;
   justify-content: center;
-  transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color var(--anim-duration-moderate) ease;
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino), background-color var(--anim-duration-moderate) ease;
   border-radius: 100vw;
   max-width: 100%;
   min-height: unset;
 
   > div {
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
   }
   &:not(:hover) {
     bottom: 2px;

@@ -1,4 +1,4 @@
-body.input-cupertino {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)) {
   --input-shadow: none;
   --input-shadow-hover: none;
 

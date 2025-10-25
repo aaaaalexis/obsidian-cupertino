@@ -11,7 +11,7 @@
   .horizontal-tab-nav-item,
   .vertical-tab-nav-item,
   .vertical-tab-header-group-title {
-    padding: calc(8px * var(--density-modifier)) 16px;
+    padding: 8px 16px;
   }
   .horizontal-tab-content,
   .vertical-tab-content {
@@ -20,7 +20,7 @@
   }
 
   .setting-item {
-    padding: calc(16px * var(--density-modifier)) 0;
+    padding: 16px 0;
   }
   .setting-item-name {
     font-weight: var(--font-medium);

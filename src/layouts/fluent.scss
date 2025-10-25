@@ -1,8 +1,8 @@
-body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
-  --radius-s: calc(5px * var(--radius-modifier));
-  --radius-m: calc(5px * var(--radius-modifier));
-  --radius-l: calc(10px * var(--radius-modifier));
-  --radius-xl: calc(10px * var(--radius-modifier));
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).mod-windows:not(.windows-off):not(.is-mobile) {
+  --radius-s: 5px;
+  --radius-m: 5px;
+  --radius-l: 10px;
+  --radius-xl: 10px;
   --tab-radius: var(--radius-m);
   --clickable-icon-radius: var(--radius-m);
 
@@ -238,7 +238,7 @@ body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
     }
 
     .setting-item {
-      padding-block: calc(16px * var(--density-modifier));
+      padding-block: 16px;
     }
     .setting-item:not(.setting-item-heading) {
       border: var(--border-width) solid var(--background-modifier-hover);
@@ -255,7 +255,7 @@ body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
 
     .vertical-tab-header-group-title,
     .vertical-tab-nav-item {
-      padding: calc(8px * var(--density-modifier)) var(--side-padding);
+      padding: 8px var(--side-padding);
       position: relative;
     }
 

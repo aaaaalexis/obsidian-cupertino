@@ -1,4 +1,4 @@
-body:is(.layout-cupertino, .layout-macos, .input-cupertino) {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)) {
   --side-padding: 20px;
 
   --blur-s: blur(2px) saturate(1.5) brightness(1.025);

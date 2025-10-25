@@ -1,5 +1,5 @@
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile),
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile),
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
   --background-modifier-message: var(--modal-background);
   --modal-background: rgb(from var(--background-primary-alt) r g b / 75%);
 
@@ -25,7 +25,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 }
 
 // Menu
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
   .menu,
   .suggestion-container {
     animation: none;
@@ -36,7 +36,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
 
     .menu-item,
     .suggestion-item {
-      padding: calc(4px * var(--density-modifier)) 12px;
+      padding: 4px 12px;
       align-items: center;
     }
     .suggestion-item {
@@ -62,7 +62,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
   --menu-radius: var(--modal-radius);
 
   .menu-scroll {
@@ -73,7 +73,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   .menu .suggestion-item,
   .suggestion-container .menu-item,
   .suggestion-container .suggestion-item {
-    padding: calc(12px * var(--density-modifier)) var(--side-padding);
+    padding: 12px var(--side-padding);
 
     &:not([class*="is-"]) .menu-item-icon {
       color: var(--text-normal);
@@ -84,7 +84,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     }
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
   --menu-shadow: var(--shadow-s);
   --menu-padding: 32px var(--safe-area-inset-side);
 
@@ -111,7 +111,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     }
   }
   .suggestion-container .suggestion-item {
-    padding: calc(12px * var(--density-modifier)) var(--side-padding);
+    padding: 12px var(--side-padding);
   }
 
   .menu-group {
@@ -126,7 +126,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     }
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-tablet {
   --menu-shadow: var(--shadow-l);
 
   .menu,
@@ -146,7 +146,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet {
 }
 
 // Modal
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
   @keyframes modalInCupertino {
     from {
       opacity: 1;
@@ -155,7 +155,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     }
   }
   .modal {
-    animation: modalInCupertino var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+    animation: modalInCupertino var(--anim-duration-moderate) var(--anim-motion-cupertino) forwards;
   }
 
   .modal:not(.mod-sidebar-layout) {
@@ -171,7 +171,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
   --modal-header-height: var(--view-header-height);
 
   .modal-setting-back-button,
@@ -185,7 +185,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     font-size: unset;
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
   --modal-radius: var(--radius-xl);
 
   .modal-container.mod-confirmation .modal {
@@ -223,8 +223,8 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
 }
 
 // Notice & Tooltip
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile),
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile),
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
   .notice-container {
     display: flex;
     top: unset;
@@ -237,7 +237,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     margin-bottom: 0;
     box-shadow: var(--shadow-l);
     border-radius: var(--radius-m);
-    padding: calc(16px * var(--density-modifier)) var(--side-padding);
+    padding: 16px var(--side-padding);
     color: var(--text-muted);
     overflow: hidden;
   }
@@ -248,18 +248,18 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     border-radius: var(--radius-m);
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
   .notice {
     margin-bottom: 0;
     box-shadow: var(--shadow-xs);
     border-radius: var(--radius-m);
-    padding: calc(16px * var(--density-modifier)) var(--side-padding);
+    padding: 16px var(--side-padding);
     color: var(--text-muted);
   }
 }
 
 // Drag ghost
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
   --drag-ghost-background: var(--background-primary);
   --drag-ghost-text-color: var(--text-normal);
 

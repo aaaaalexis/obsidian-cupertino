@@ -39,7 +39,7 @@ body:not(.is-phone) .workspace-leaf-content[data-type="empty"] {
 }
 
 // Empty state: Cupertino
-body:is(.layout-cupertino, .layout-macos) .workspace-leaf-content[data-type="empty"] {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)) .workspace-leaf-content[data-type="empty"] {
   .empty-state-container {
     display: flex;
     justify-content: center;
@@ -121,7 +121,7 @@ body:is(.layout-cupertino, .layout-macos) .workspace-leaf-content[data-type="emp
   }
 }
 
-body:is(.layout-cupertino, .layout-macos).is-mobile .workspace-leaf-content[data-type="empty"] {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-mobile .workspace-leaf-content[data-type="empty"] {
   .empty-state-action {
     margin: 0;
     background-color: transparent;
@@ -135,7 +135,7 @@ body:is(.layout-cupertino, .layout-macos).is-mobile .workspace-leaf-content[data
   }
 }
 
-body:is(.layout-cupertino, .layout-macos).is-phone .workspace-leaf-content[data-type="empty"] {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-phone .workspace-leaf-content[data-type="empty"] {
   .empty-state-container {
     padding-bottom: 96px;
     margin-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
