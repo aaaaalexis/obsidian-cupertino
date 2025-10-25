@@ -9,25 +9,6 @@ body:not(.mobile-stable).is-mobile {
 
   --safe-area-inset-side: 16px;
   --safe-area-inset-bottom-override: 28px;
-  --safe-area-inset-bottom-keyboard: 12px;
-
-  &.mod-toolbar-open {
-    --safe-area-inset-bottom-override: var(--safe-area-inset-bottom-keyboard);
-  }
-
-  &:is(html[style*="--keyboard-height"]:not([style*="--keyboard-height: 0px"]) body.is-phone:not(.mod-toolbar-open)) {
-    --safe-area-inset-bottom-override: var(--safe-area-inset-bottom-keyboard);
-
-    &:not(.mode-switcher-off) .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2),
-    .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::before,
-    .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::after {
-      opacity: 0;
-    }
-
-    .workspace-drawer .nav-header {
-      padding-bottom: var(--keyboard-height);
-    }
-  }
 
   .app-container {
     max-height: calc(100vh - var(--keyboard-height)) !important;
@@ -107,6 +88,27 @@ body:not(.mobile-stable).is-phone {
   // Bottom navbar & Toolbar
   --mobile-toolbar-height: 48px;
   --toolbar-option-width: 48px;
+
+  &.mod-toolbar-open {
+    --safe-area-inset-bottom-override: 12px;
+
+    .cm-scroller {
+      margin-bottom: calc(48px + var(--safe-area-inset-bottom-override));
+    }
+  }
+  &:is(html[style*="--keyboard-height"]:not([style*="--keyboard-height: 0px"]) body.is-phone:not(.mod-toolbar-open)) {
+    --safe-area-inset-bottom-override: 12px;
+
+    &:not(.mode-switcher-off) .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2),
+    .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::before,
+    .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::after {
+      opacity: 0;
+    }
+
+    .workspace-drawer .nav-header {
+      padding-bottom: var(--keyboard-height);
+    }
+  }
 
   &.mode-switcher-off {
     .mobile-navbar,
