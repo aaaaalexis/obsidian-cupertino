@@ -11,6 +11,8 @@
 }
 .omnisearch-input-field {
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 .omnisearch-input-container__buttons button {
   box-shadow: none;
@@ -36,6 +38,27 @@ body:is(.layout-cards, .layout-border) {
   .omnisearch-input-container {
     margin: 8px 8px 0;
     border-bottom-width: 0;
+  }
+}
+body:is(.layout-cupertino, .layout-macos).is-phone {
+  @media only screen and (max-width: 600px) {
+    .omnisearch-modal {
+      --prompt-top: var(--safe-area-inset-top);
+      height: calc(100vh - var(--prompt-top));
+      border-radius: var(--modal-radius) var(--modal-radius) 0 0;
+
+      .prompt-results {
+        padding-top: var(--side-padding);
+        padding-bottom: 160px;
+        mask: none;
+      }
+      .prompt-input {
+        width: 100%;
+      }
+      .omnisearch-input-container__buttons {
+        padding: 0;
+      }
+    }
   }
 }
 

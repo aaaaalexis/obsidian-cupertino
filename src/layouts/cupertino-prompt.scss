@@ -8,7 +8,8 @@ body:is(.layout-cupertino, .layout-macos) {
   .prompt-input-container {
     align-items: center;
   }
-  .prompt-input-container::before {
+  .prompt-input-container::before,
+  .omnisearch-input-field::before {
     position: absolute;
     left: var(--side-padding);
     -webkit-mask-position: 50% 50%;
@@ -71,40 +72,42 @@ body:is(.layout-cupertino, .layout-macos).is-phone {
     border-radius: 0;
     height: 100vh;
     padding-bottom: 0;
-  }
-  .prompt-input-container {
-    border: none;
-    gap: 8px;
-    position: absolute;
-    inset: auto var(--safe-area-inset-side) calc(var(--safe-area-inset-side) + var(--safe-area-inset-bottom));
-    z-index: 1;
-  }
-  .prompt-input {
-    width: calc(100% - 48px - 8px);
-  }
-  .prompt-input,
-  .prompt-input-container .search-input-clear-button {
-    border-radius: 100vh;
-    border: 1px solid var(--background-modifier-border);
-    background-color: var(--background-secondary);
-  }
-  .prompt-input-container .search-input-clear-button {
-    inset-inline-end: 0;
-    width: 48px;
-    height: 48px;
-  }
-  .prompt-input-container .search-input-clear-button:after {
-    -webkit-mask-position: 50% 50%;
-    -webkit-mask-size: 100% 100%;
-    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3e%3cpath fill='black' d='M13.993.26.253 14a.875.875 0 0 0 0 1.23.896.896 0 0 0 1.24 0l13.74-13.74a.875.875 0 0 0 0-1.23.87.87 0 0 0-1.24 0ZM15.233 14 1.493.26a.87.87 0 0 0-1.24 0 .884.884 0 0 0 0 1.23l13.74 13.74c.332.333.908.342 1.24 0a.884.884 0 0 0 0-1.23Z'/%3e%3c/svg%3e");
-  }
 
-  .prompt-results {
-    mask: linear-gradient(to bottom, transparent, black calc(var(--safe-area-inset-top) + 16px), black calc(100vh - var(--side-padding) - var(--safe-area-inset-bottom) - 96px), transparent calc(100vh - var(--side-padding) - var(--safe-area-inset-bottom)));
-    padding: calc(var(--safe-area-inset-top) + 16px) var(--side-padding) 128px;
-  }
-  .prompt .suggestion-item {
-    padding: var(--nav-item-padding);
+    .prompt-input-container,
+    .omnisearch-input-container {
+      border: none;
+      gap: 8px;
+      position: absolute;
+      inset: auto var(--safe-area-inset-side) calc(var(--safe-area-inset-side) + var(--safe-area-inset-bottom));
+      z-index: 1;
+    }
+    .prompt-input {
+      width: calc(100% - 48px - 8px);
+    }
+    .prompt-input,
+    .prompt-input-container .search-input-clear-button {
+      border-radius: 100vh;
+      border: 1px solid var(--background-modifier-border);
+      background-color: var(--background-secondary);
+    }
+    .prompt-input-container .search-input-clear-button {
+      inset-inline-end: 0;
+      width: 48px;
+      height: 48px;
+    }
+    .prompt-input-container .search-input-clear-button:after {
+      -webkit-mask-position: 50% 50%;
+      -webkit-mask-size: 100% 100%;
+      -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3e%3cpath fill='black' d='M13.993.26.253 14a.875.875 0 0 0 0 1.23.896.896 0 0 0 1.24 0l13.74-13.74a.875.875 0 0 0 0-1.23.87.87 0 0 0-1.24 0ZM15.233 14 1.493.26a.87.87 0 0 0-1.24 0 .884.884 0 0 0 0 1.23l13.74 13.74c.332.333.908.342 1.24 0a.884.884 0 0 0 0-1.23Z'/%3e%3c/svg%3e");
+    }
+
+    .prompt-results {
+      mask: linear-gradient(to bottom, transparent, black calc(var(--safe-area-inset-top) + 16px), black calc(100vh - var(--side-padding) - var(--safe-area-inset-bottom) - 96px), transparent calc(100vh - var(--side-padding) - var(--safe-area-inset-bottom)));
+      padding: calc(var(--safe-area-inset-top) + 16px) var(--side-padding) 128px;
+    }
+    .suggestion-item {
+      padding: var(--nav-item-padding);
+    }
   }
 
   // Animation override: Prompt In
