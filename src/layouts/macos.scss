@@ -93,8 +93,8 @@ body.layout-macos:not(.is-mobile) {
   }
   &.stacked-nav-off .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container .sidebar-toggle-button {
-    min-height: calc(var(--header-height) - 8px);
-    max-height: calc(var(--header-height) - 8px);
+    min-height: calc(var(--header-height) - 16px);
+    max-height: calc(var(--header-height) - 16px);
   }
 
   .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
