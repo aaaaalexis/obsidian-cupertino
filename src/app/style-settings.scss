@@ -3156,6 +3156,9 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
     padding-block: 0;
   }
 }
+body.is-mobile .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container .setting-item:last-child {
+  display: none;
+}
 body.is-phone .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container {
   flex-direction: column;
 }

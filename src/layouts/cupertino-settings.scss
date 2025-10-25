@@ -289,6 +289,9 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
   }
 }
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet .modal.mod-sidebar-layout {
+  .setting-item:not(.setting-item-heading) {
+    background-color: var(--background-primary);
+  }
   .setting-item-control {
     --interactive-normal: var(--background-modifier-hover);
     --dropdown-background: var(--interactive-normal);
