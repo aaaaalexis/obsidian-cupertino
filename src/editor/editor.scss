@@ -357,11 +357,12 @@
     }
   }
 
-  .theme-dark {
-    .workspace-leaf-content[data-type="markdown"] img:not([width], .cm-widgetBuffer, .link-favicon, .emoji),
-    .workspace-leaf-content[data-type="markdown"] iframe,
-    .workspace-leaf-content[data-type="markdown"] video,
-    .workspace-leaf-content[data-type="bases"] .bases-cards-cover {
+  .theme-dark .workspace-leaf-content[data-type="markdown"],
+  .theme-dark .workspace-leaf-content[data-type="bases"] {
+    img:not([width], .cm-widgetBuffer, .link-favicon, .emoji),
+    iframe,
+    video,
+    .bases-cards-cover {
       transition: var(--anim-duration-moderate);
 
       &:not(:hover) {
