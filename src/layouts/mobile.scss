@@ -39,10 +39,10 @@ body:not(.mobile-stable).is-mobile {
   }
 
   // Side panels
-  .workspace-drawer .workspace-drawer-header,
-  .workspace-drawer .workspace-leaf-content > .view-content,
-  .workspace-drawer .workspace-leaf-content > .node-insert-event {
-    padding-top: 0;
+  .workspace-drawer .workspace-leaf-content > .node-insert-event,
+  .workspace-drawer .workspace-leaf-content > .view-content > .node-insert-event {
+    padding-inline: 20px;
+    padding-block: 0 calc(var(--safe-area-inset-bottom-override) + 128px);
   }
   .workspace-drawer .nav-header {
     display: flex;
@@ -53,6 +53,7 @@ body:not(.mobile-stable).is-mobile {
     z-index: 1;
     border-bottom: none;
     background: transparent;
+    padding-top: 0;
     padding-bottom: var(--safe-area-inset-bottom-override);
     width: 100%;
     align-items: center;
@@ -71,11 +72,6 @@ body:not(.mobile-stable).is-mobile {
     width: 48px;
     padding: 0;
     background-color: transparent;
-  }
-
-  .workspace-drawer .workspace-leaf-content .node-insert-event {
-    padding-inline: 20px;
-    padding-bottom: calc(var(--safe-area-inset-bottom-override) + 128px);
   }
 }
 
