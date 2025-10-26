@@ -50,7 +50,7 @@
   }
 
   p > em,
-  .cm-line > .cm-em {
+  .cm-line > .cm-em:not(.cm-strong) {
     font-weight: var(--italic-weight);
   }
   .workspace-split.mod-root {
