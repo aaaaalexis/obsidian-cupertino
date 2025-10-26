@@ -259,9 +259,32 @@ body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-con
   }
 }
 
-body:is(.layout-cupertino, .layout-macos).is-mobile:not(.mobile-stable) .workspace-drawer {
-  .novel-word-count--folder-below .nav-files-container .nav-folder-title::after,
-  .novel-word-count--folder-below .nav-files-container .nav-file-title::after {
+body:is(.layout-cupertino, .layout-macos).is-mobile:not(.mobile-stable) .workspace-drawer .novel-word-count--active {
+  .nav-buttons-container {
+    overflow: visible;
+  }
+  .nav-buttons-container::after {
+    position: absolute;
+    transform: translateY(-24px);
+  }
+
+  &.novel-word-count--note-right .nav-files-container .nav-folder-title::after,
+  &.novel-word-count--note-right .nav-files-container .nav-file-title::after {
+    flex: unset;
+    order: 0;
+  }
+
+  &.novel-word-count--note-inline .nav-files-container .tree-item .tree-item-inner {
+    flex: unset;
+    padding: 0 8px;
+  }
+  &.novel-word-count--note-inline .nav-files-container .nav-folder-title::after,
+  &.novel-word-count--note-inline .nav-files-container .nav-file-title::after {
+    order: 0;
+  }
+
+  &.novel-word-count--folder-below .nav-files-container .nav-folder-title::after,
+  &.novel-word-count--folder-below .nav-files-container .nav-file-title::after {
     flex-basis: 100%;
   }
 }
