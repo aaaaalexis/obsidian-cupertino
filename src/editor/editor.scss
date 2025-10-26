@@ -236,6 +236,10 @@
     --embed-background: var(--background-primary-alt);
     --embed-border-start: none;
     --embed-padding: 16px;
+
+    .markdown-embed:not(.image-embed, .canvas-node-content) {
+      border-radius: var(--media-radius);
+    }
   }
   .embed-hide-title .embed-title,
   .embed-title:empty {
