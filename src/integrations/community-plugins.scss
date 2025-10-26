@@ -165,12 +165,20 @@ body:not(.mobile-stable) .view-content.notebook-navigator-mobile {
 .hider-sidebar-buttons.mod-macos {
   --frame-left-space: calc(80px - var(--ribbon-width));
 }
-.hider-sidebar-buttons .sidebar-toggle-button.mod-right,
-.hider-sidebar-buttons .sidebar-toggle-button.mod-left {
+.hider-sidebar-buttons .sidebar-toggle-button.mod-left,
+.hider-sidebar-buttons .sidebar-toggle-button.mod-right {
   display: flex;
   visibility: hidden;
   width: 0;
   opacity: 0;
+}
+body.is-phone.hider-sidebar-buttons {
+  .view-header-left {
+    display: none;
+  }
+  .view-header-title-container {
+    margin-left: 8px !important;
+  }
 }
 
 // Quick Explorer https://github.com/pjeby/quick-explorer
