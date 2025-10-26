@@ -257,3 +257,27 @@ body:is(.layout-cupertino, .layout-macos).is-mobile:not(.mobile-stable) .workspa
     flex-basis: 100%;
   }
 }
+
+// Metadata Menu https://github.com/mdelobelle/metadatamenu
+.field-btn-container {
+  margin-inline-start: 8px;
+}
+.field-btn-container button.property-metadata-menu,
+.plugin-metadata-menu .status-item-bt {
+  padding: 0 !important;
+  background-color: transparent;
+}
+.metadata-menu {
+  .suggester-input {
+    margin-top: 0;
+  }
+  .prompt-input-container {
+    height: var(--prompt-input-height);
+    position: absolute;
+    inset: 0 0 auto;
+    pointer-events: none;
+  }
+  .search-input-clear-button {
+    display: none;
+  }
+}
