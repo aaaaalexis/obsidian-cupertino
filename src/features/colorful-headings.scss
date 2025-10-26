@@ -89,8 +89,9 @@
     }
   }
 
-  .colorful-headings-full,
-  .colorful-headings-subtle {
+  .colorful-headings-subtle,
+  .colorful-headings-block,
+  .colorful-headings-full {
     --inline-title-color: inherit;
     .markdown-rendered h1,
     .HyperMD-header-1 {
@@ -119,6 +120,7 @@
   }
 
   .colorful-headings-subtle,
+  .colorful-headings-block,
   .colorful-headings-strong {
     .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
     .HyperMD-header-1,
@@ -149,7 +151,10 @@
         border-radius: var(--radius-s);
       }
     }
+  }
 
+  .colorful-headings-subtle,
+  .colorful-headings-block {
     .markdown-rendered h1,
     .HyperMD-header-1::after {
       background-color: color-mix(in srgb, var(--h1-color, var(--color-red)) 10%, transparent);
@@ -173,6 +178,19 @@
     .markdown-rendered h6,
     .HyperMD-header-6::after {
       background-color: color-mix(in srgb, var(--h6-color, var(--color-purple)) 10%, transparent);
+    }
+  }
+
+  .colorful-headings-block {
+    .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
+    .HyperMD-header-1,
+    .HyperMD-header-2,
+    .HyperMD-header-3,
+    .HyperMD-header-4,
+    .HyperMD-header-5,
+    .HyperMD-header-6 {
+      width: auto;
+      padding-block: 2px;
     }
   }
 
