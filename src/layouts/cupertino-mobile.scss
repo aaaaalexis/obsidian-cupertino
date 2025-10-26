@@ -266,24 +266,15 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     width: fit-content;
     font-weight: calc(var(--font-weight) + var(--bold-modifier));
   }
-}
 
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet {
-  --border-width: 0.5pt;
-
-  .workspace-drawer.is-pinned {
-    z-index: 4;
-  }
-}
-
-// Tab switcher
-body:not(.is-android:not(.android-off)).is-phone {
+  // Tab switcher
   --tab-switcher-background: transparent;
   --tab-switcher-menubar-background: var(--tab-switcher-background);
   --tab-switcher-preview-background-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   --tab-switcher-preview-radius: var(--radius-m);
 
   .mobile-tab-switcher {
+    background: linear-gradient(rgba(var(--mono-rgb-0), 0.5), var(--mobile-sidebar-background)) !important;
     justify-content: flex-end;
     width: unset;
     height: unset;
@@ -292,7 +283,6 @@ body:not(.is-android:not(.android-off)).is-phone {
   .mobile-tab-switcher-scroll {
     padding-top: 0;
     height: unset;
-    background: linear-gradient(transparent, var(--mobile-sidebar-background) 25%) !important;
   }
   .mobile-tab-wrapper {
     z-index: 2;
@@ -320,6 +310,7 @@ body:not(.is-android:not(.android-off)).is-phone {
   .mobile-tab-switcher-menu-spacer:last-child .clickable-icon {
     padding: var(--input-padding);
     height: var(--input-height);
+    backdrop-filter: none;
 
     &::before {
       position: fixed;
@@ -333,5 +324,13 @@ body:not(.is-android:not(.android-off)).is-phone {
   .mobile-tab .close-button {
     width: 32px;
     height: 32px;
+  }
+}
+
+body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet {
+  --border-width: 0.5pt;
+
+  .workspace-drawer.is-pinned {
+    z-index: 4;
   }
 }
