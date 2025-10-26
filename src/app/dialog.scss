@@ -122,10 +122,6 @@ body.is-phone .modal:not(.mod-sidebar-layout) {
 .suggestion-container {
   padding: 0;
 
-  .suggestion {
-    padding: var(--menu-padding);
-  }
-
   .menu-item,
   .suggestion-item {
     padding: calc(6px * var(--density-modifier)) 8px;
