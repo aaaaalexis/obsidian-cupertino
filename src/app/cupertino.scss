@@ -5,6 +5,12 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)) {
   --blur-m: blur(4px) saturate(1.5) brightness(1.05);
   --blur-l: blur(8px) saturate(1.5) brightness(1.05);
 
+  &.is-translucent {
+    --blur-s: none;
+    --blur-m: none;
+    --blur-l: none;
+  }
+
   &.theme-light {
     --liquid-glass-background: rgba(255, 255, 255, 0.5);
     --background-modifier-border: rgba(0, 0, 0, 0.075);

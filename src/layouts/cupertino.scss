@@ -230,13 +230,15 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
       &::after {
         content: "";
         position: absolute;
+        width: 32px;
+        background-color: red;
       }
 
       &.mod-left-split::after {
-        inset: 0 0 0 -32px;
+        inset: 0 auto 0 -32px;
       }
       &.mod-right-split::after {
-        inset: 0 -32px 0 0;
+        inset: 0 -32px 0 auto;
       }
     }
   }

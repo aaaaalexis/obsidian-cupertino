@@ -1,4 +1,9 @@
 body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
+  --radius-s: 16px;
+  --radius-m: 24px;
+  --radius-l: 32px;
+  --radius-xl: 40px;
+
   --system-status-background: rgb(var(--mono-rgb-0));
   --mobile-sidebar-background: rgb(var(--mono-rgb-0));
   --titlebar-background: transparent;
@@ -7,6 +12,8 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
 
   --nav-item-padding: 16px var(--side-padding);
   --nav-item-background-active: var(--interactive-accent);
+
+  background-color: var(--system-status-background);
 
   &.theme-light {
     --mobile-sidebar-background: var(--background-secondary);
@@ -18,10 +25,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
   }
   &.theme-dark {
     --mobile-sidebar-background: black;
-  }
-
-  .app-container {
-    background-color: var(--system-status-background);
   }
 
   // Liquid Glass

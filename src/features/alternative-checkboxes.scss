@@ -97,6 +97,12 @@ li[data-task="-"] > p > input:checked {
     -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' viewBox='0 0 20 20'%3e%3cpath fill='black' d='M6.025 9.121c-.595 0-.966.313-.966.86 0 .537.39.84.966.84h7.891c.566 0 .947-.303.947-.84 0-.547-.361-.86-.947-.86h-7.89Z'/%3e%3c/svg%3e");
   }
 }
+input[data-task="-"],
+li[data-task="-"],
+.HyperMD-list-line[data-task="-"] .cm-list-1 {
+  text-decoration: line-through;
+  color: var(--text-faint);
+}
 
 // Forwarded
 input[data-task=">"]:checked::after,

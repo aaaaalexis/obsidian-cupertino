@@ -11,6 +11,8 @@
 }
 .omnisearch-input-field {
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 .omnisearch-input-container__buttons button {
   box-shadow: none;
@@ -18,6 +20,27 @@
 }
 body:not(.is-mobile) .omnisearch-input-container__buttons {
   display: none;
+}
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-phone {
+  @media only screen and (max-width: 600px) {
+    .omnisearch-modal {
+      --prompt-top: var(--safe-area-inset-top);
+      height: calc(100vh - var(--prompt-top));
+      border-radius: var(--modal-radius) var(--modal-radius) 0 0;
+
+      .prompt-results {
+        padding-top: var(--side-padding);
+        padding-bottom: 160px;
+        mask: none;
+      }
+      .prompt-input {
+        width: 100%;
+      }
+      .omnisearch-input-container__buttons {
+        padding: 0;
+      }
+    }
+  }
 }
 
 // Notebook Navigator https://github.com/johansan/notebook-navigator
@@ -183,4 +206,35 @@ body .view-content.notebook-navigator-mobile {
 // Excalidraw https://github.com/zsviczian/obsidian-excalidraw-plugin
 body.is-mobile .excalidraw .FixedSideContainer {
   padding-top: 0;
+}
+
+// Novel Word Count https://github.com/isaaclyman/novel-word-count-obsidian
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content.novel-word-count--active > .nav-header {
+  &:not(:hover) .nav-buttons-container {
+    .nav-action-button {
+      opacity: 0;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+  .nav-buttons-container {
+    flex-wrap: nowrap !important;
+
+    &::after {
+      position: absolute;
+      overflow: visible;
+      opacity: 0;
+      transition: var(--anim-duration-moderate);
+      color: var(--text-faint);
+    }
+  }
+}
+
+body:is(.layout-cupertino, .layout-macos).is-mobile:not(.mobile-stable) .workspace-drawer {
+  .novel-word-count--folder-below .nav-files-container .nav-folder-title::after,
+  .novel-word-count--folder-below .nav-files-container .nav-file-title::after {
+    flex-basis: 100%;
+  }
 }
