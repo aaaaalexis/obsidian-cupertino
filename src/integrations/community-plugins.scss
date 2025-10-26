@@ -226,3 +226,34 @@ body:not(.mobile-stable) .view-content.notebook-navigator-mobile {
 body.is-mobile .excalidraw .FixedSideContainer {
   padding-top: 0;
 }
+
+// Novel Word Count https://github.com/isaaclyman/novel-word-count-obsidian
+body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content.novel-word-count--active > .nav-header {
+  &:not(:hover) .nav-buttons-container {
+    .nav-action-button {
+      opacity: 0;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+  .nav-buttons-container {
+    flex-wrap: nowrap !important;
+
+    &::after {
+      position: absolute;
+      overflow: visible;
+      opacity: 0;
+      transition: var(--anim-duration-moderate);
+      color: var(--text-faint);
+    }
+  }
+}
+
+body:is(.layout-cupertino, .layout-macos).is-mobile:not(.mobile-stable) .workspace-drawer {
+  .novel-word-count--folder-below .nav-files-container .nav-folder-title::after,
+  .novel-word-count--folder-below .nav-files-container .nav-file-title::after {
+    flex-basis: 100%;
+  }
+}
