@@ -47,6 +47,8 @@
     --indentation-guide-width: 0px;
 
     --file-header-border: none;
+
+    --checklist-done-decoration: none;
   }
 
   p > em,
@@ -415,10 +417,6 @@
   }
 
   // Tasks
-  body.strike-lists-off {
-    --checklist-done-decoration: none;
-    --checklist-done-color: var(--text-normal);
-  }
   .task-list-item {
     --indentation-guide-reading-indent: -1.05em;
   }
