@@ -2,6 +2,9 @@ body:is(.layout-cupertino, .layout-macos) .modal.mod-sidebar-layout {
   --background-modifier-hover: rgba(var(--mono-rgb-100), 0.03);
   border: none;
 }
+body:is(.layout-cupertino, .layout-macos).theme-dark .modal.mod-sidebar-layout {
+  --background-modifier-border: rgba(255, 255, 255, 0.075);
+}
 
 body:is(.layout-cupertino, .layout-macos):not(.is-phone) .modal.mod-sidebar-layout:not(.mod-community-modal),
 body:is(.layout-cupertino, .layout-macos).is-phone .modal.mod-sidebar-layout {
