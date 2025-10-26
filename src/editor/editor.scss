@@ -48,10 +48,6 @@
     --checklist-done-decoration: none;
   }
 
-  p > em,
-  .cm-line > .cm-em:not(.cm-strong) {
-    font-weight: var(--italic-weight);
-  }
   .workspace-split.mod-root {
     background-color: var(--background-secondary);
     transition: var(--anim-duration-moderate);
