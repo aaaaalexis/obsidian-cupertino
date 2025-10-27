@@ -284,24 +284,16 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     padding-top: 0;
     height: unset;
   }
-  .mobile-tab-wrapper {
-    z-index: 2;
-  }
   .mobile-tab-switcher-menubar {
     background-color: var(--mobile-sidebar-background);
     padding: 0 var(--safe-area-inset-bottom-override) var(--safe-area-inset-bottom-override);
     border: none;
   }
   .mobile-tab-switcher-menu-button {
-    z-index: 2;
     flex: 1;
     height: var(--input-height);
     border-radius: var(--clickable-icon-radius);
     justify-content: center;
-  }
-
-  .mobile-tab-switcher-menu-spacer:first-child {
-    z-index: 2;
   }
   .mobile-tab-switcher-menu-spacer:first-child .clickable-icon {
     width: var(--input-height);
@@ -311,13 +303,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     padding: var(--input-padding);
     height: var(--input-height);
     backdrop-filter: none;
-
-    &::before {
-      position: fixed;
-      z-index: 1;
-      inset: 0;
-      content: "";
-    }
   }
 
   .mobile-tab .mobile-tab-pin,

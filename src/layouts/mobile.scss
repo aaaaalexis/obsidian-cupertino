@@ -176,6 +176,19 @@ body:not(.mobile-stable).is-phone {
     color: var(--text-normal);
   }
 
+  // Tab switcher
+  .mobile-tab-wrapper,
+  .mobile-tab-switcher-menu-button,
+  .mobile-tab-switcher-menu-spacer:first-child {
+    z-index: 2;
+  }
+  .mobile-tab-switcher-menu-spacer:last-child .clickable-icon::before {
+    position: fixed;
+    z-index: 1;
+    inset: 0;
+    content: "";
+  }
+
   // Editor panel
   .mod-root {
     padding-top: 0;
