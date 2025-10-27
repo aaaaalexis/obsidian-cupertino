@@ -314,7 +314,23 @@ body:is(.layout-cupertino, .layout-macos).is-mobile:not(.mobile-stable) .workspa
 }
 
 // Editing Toolbar https://github.com/PKM-er/obsidian-editing-toolbar
-body:is(.layout-cupertino, .layout-macos) #editingToolbarModalBar {
-  margin-top: calc(var(--safe-area-inset-top) + var(--header-height));
-  padding-top: 0;
+body:not(.mobile-stable).is-phone {
+  #editingToolbarModalBar:first-child {
+    margin-top: calc(var(--safe-area-inset-top) + var(--header-height) + 8px);
+    padding-top: 0;
+  }
+
+  #editingToolbarPopoverBar {
+    margin-top: calc(var(--safe-area-inset-top) + var(--header-height) + 8px + var(--toolbar-icon-size) + 24px);
+  }
+}
+
+// Note Toolbar
+body:not(.mobile-stable).is-phone .view-header + .cg-note-toolbar-container {
+  --cg-nt-tbar-bg-color: transparent;
+
+  & + .view-content .cm-scroller,
+  & + .view-content .markdown-preview-pusher {
+    padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px) !important;
+  }
 }
