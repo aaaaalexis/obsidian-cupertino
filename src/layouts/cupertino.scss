@@ -49,6 +49,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   // Find & replace fix
   .document-search-container {
     padding: 8px;
+    background-color: var(--system-status-background);
 
     .document-search,
     .document-replace {
@@ -70,38 +71,25 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 // Editor panel: Edge fade
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile),
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet {
-  .workspace-leaf-content[data-type="markdown"] .view-header {
-    position: absolute;
-    inset: 0 0 auto;
-    background-color: transparent;
-
-    &::before {
-      position: absolute;
-      top: 0;
-      inset-inline: 0;
-      z-index: -1;
-      mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.99) 18.4%, hsla(0, 0%, 0%, 0.963) 33.7%, hsla(0, 0%, 0%, 0.92) 46.4%, hsla(0, 0%, 0%, 0.864) 56.7%, hsla(0, 0%, 0%, 0.796) 64.8%, hsla(0, 0%, 0%, 0.72) 71.2%, hsla(0, 0%, 0%, 0.637) 76.1%, hsla(0, 0%, 0%, 0.55) 79.9%, hsla(0, 0%, 0%, 0.46) 82.8%, hsla(0, 0%, 0%, 0.37) 85.2%, hsla(0, 0%, 0%, 0.283) 87.3%, hsla(0, 0%, 0%, 0.2) 89.6%, hsla(0, 0%, 0%, 0.124) 92.3%, hsla(0, 0%, 0%, 0.056) 95.6%, hsla(0, 0%, 0%, 0) 100%);
-      background-color: var(--background-primary);
-      height: 100%;
-      pointer-events: none;
-      content: "";
+  .mod-root {
+    @keyframes contentScroll {
+      to {
+        box-shadow: 0 16px 32px var(--background-primary);
+      }
     }
 
-    & + div:not(.view-content) {
-      top: calc(var(--safe-area-inset-top, 0) + var(--header-height)) !important;
-      inset-inline: 0;
-      background-color: transparent;
+    .workspace-leaf-content {
+      timeline-scope: --content-scroll;
     }
-    & + .view-content > .markdown-reading-view > div:first-child:not(.markdown-preview-view),
-    & + .view-content > .markdown-reading-view > .markdown-preview-view:first-child > .markdown-preview-sizer > div:first-child {
-      margin-top: var(--header-height);
+    .markdown-preview-view,
+    .cm-scroller {
+      scroll-timeline-name: --content-scroll;
     }
-    & + .view-content > .markdown-source-view > div:first-child:not(.cm-editor) {
-      padding-top: var(--header-height);
-      z-index: 0;
-    }
-    & + .view-content > .markdown-source-view > .cm-editor:first-child > .cm-scroller {
-      padding-top: calc(var(--header-height) + var(--file-margins-block));
+
+    .view-header {
+      animation: contentScroll linear both;
+      animation-timeline: --content-scroll;
+      animation-range: entry 0px entry 64px;
     }
   }
 }
