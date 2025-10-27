@@ -95,32 +95,20 @@ body.bold-folders .nav-folder-title {
   border-right: none;
   z-index: 11;
   transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
-  pointer-events: none;
 }
 .workspace-ribbon.mod-left:before {
   content: none;
 }
 .workspace-ribbon.mod-left .sidebar-toggle-button {
   position: relative;
-  pointer-events: auto;
 }
 
 body:not(.is-mobile).show-ribbon {
-  .workspace-ribbon.mod-left .sidebar-toggle-button::before,
-  .workspace-ribbon.mod-left ~ .workspace-split .sidebar-toggle-button.mod-left::before {
-    content: "";
-    position: fixed;
-    inset: 0 auto 0 0;
-    width: var(--ribbon-width);
-    cursor: pointer;
-  }
-
   .workspace-ribbon.mod-left.is-collapsed .side-dock-actions:not(:hover) {
     opacity: 0.5;
   }
   .side-dock-actions {
     gap: 4px;
-    pointer-events: auto;
     transition: var(--anim-duration-moderate);
     z-index: 1;
   }
