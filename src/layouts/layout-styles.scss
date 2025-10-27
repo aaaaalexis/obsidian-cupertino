@@ -60,6 +60,11 @@ body:is(.layout-classic, .layout-minimal, .layout-frame):not(.is-mobile) .stacke
   }
 }
 
+// Vault switcher
+body:is(.layout-frame, .layout-macos):not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile::before {
+  background-color: var(--background-primary);
+}
+
 // Tab styles
 body:not(.tabs-floating, .tabs-floating-center, .tabs-underline) {
   &:is(.layout-classic, .layout-minimal, .layout-cupertino, .layout-macos, .layout-frame) {

@@ -180,10 +180,10 @@ body:not(.is-mobile) .workspace-split.mod-left-split {
     background-color: transparent;
     border-top: none;
     position: absolute;
-    right: 0;
-    bottom: 0;
+    inset: auto 0 0;
     z-index: 1;
     align-items: unset;
+    width: auto;
 
     &::before {
       transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
