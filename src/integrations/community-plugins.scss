@@ -312,3 +312,9 @@ body:is(.layout-cupertino, .layout-macos).is-mobile:not(.mobile-stable) .workspa
     display: none;
   }
 }
+
+// Editing Toolbar https://github.com/PKM-er/obsidian-editing-toolbar
+body:is(.layout-cupertino, .layout-macos) #editingToolbarModalBar {
+  margin-top: calc(var(--safe-area-inset-top) + var(--header-height));
+  padding-top: 0;
+}
