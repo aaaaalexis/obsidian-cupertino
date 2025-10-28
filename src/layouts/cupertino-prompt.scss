@@ -1,10 +1,4 @@
 body:is(.layout-cupertino, .layout-macos) {
-  .prompt {
-    backdrop-filter: var(--blur-l);
-    border-radius: var(--radius-xl);
-    border: none;
-  }
-
   .prompt-input-container {
     align-items: center;
   }
@@ -52,6 +46,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-phone) {
 
   .prompt {
     animation: var(--anim-duration-moderate) bounceInScale var(--anim-motion-baseline) forwards;
+    border-radius: var(--radius-xl);
   }
 
   .prompt-input-container::after {
@@ -73,8 +68,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     height: 100vh;
     padding-bottom: 0;
 
-    .prompt-input-container,
-    .omnisearch-input-container {
+    .prompt-input-container {
       border: none;
       gap: 8px;
       position: absolute;
