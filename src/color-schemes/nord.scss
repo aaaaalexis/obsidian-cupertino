@@ -50,10 +50,7 @@ https://github.com/nordtheme/nord
   --text-highlight-bg: rgba(208, 135, 112, 0.35);
 }
 
-.theme-dark.nord-dark,
-.theme-light.nord-light.contrast-light-vivid .workspace::before,
-.theme-light.nord-light.contrast-light-vivid div:is(.titlebar, .status-bar, .workspace-ribbon),
-.theme-light.nord-light.contrast-light-vivid:is(.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container, .layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container, .layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container, .layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container, :not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split, :not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split, :not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)) {
+.theme-dark.nord-dark {
   --background-primary: #2e3440;
   --background-primary-alt: #3b4252;
   --background-secondary: #3b4252;
@@ -70,7 +67,4 @@ https://github.com/nordtheme/nord
 
   --text-selection: rgba(129, 142, 180, 0.3);
   --text-highlight-bg: rgba(208, 135, 112, 0.35);
-}
-.theme-dark.nord-dark.contrast-dark-black {
-  --background-modifier-border: #2e3440;
 }

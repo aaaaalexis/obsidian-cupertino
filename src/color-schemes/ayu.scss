@@ -52,10 +52,7 @@ https://github.com/ayu-theme/ayu-colors
   --text-on-accent: var(--background-primary);
   --text-on-accent-inverted: var(--background-primary);
 }
-.theme-dark.ayu-dark,
-.theme-light.ayu-light.contrast-light-vivid .workspace::before,
-.theme-light.ayu-light.contrast-light-vivid div:is(.titlebar, .status-bar, .workspace-ribbon),
-.theme-light.ayu-light.contrast-light-vivid:is(.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container, .layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container, .layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container, .layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container, :not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split, :not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split, :not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)) {
+.theme-dark.ayu-dark {
   --color-red-rgb: 255, 102, 102;
   --color-orange-rgb: 250, 173, 102;
   --color-yellow-rgb: 255, 209, 55;
@@ -89,11 +86,4 @@ https://github.com/ayu-theme/ayu-colors
   --text-faint: #6f768a;
 
   --text-selection: rgba(64, 159, 255, 0.25);
-}
-.theme-dark.ayu-dark.contrast-dark-black {
-  --interactive-normal: #0e1017;
-
-  --text-normal: #bfbdb6;
-
-  --divider-color: #11151c;
 }

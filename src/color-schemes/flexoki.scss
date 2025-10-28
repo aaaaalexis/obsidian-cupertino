@@ -46,19 +46,13 @@ https://stephango.com/flexoki
   --text-selection: rgba(187, 220, 206, 0.3);
   --text-highlight-bg: rgba(247, 209, 61, 0.3);
 }
-.theme-light.flexoki-light.contrast-light-tonal {
-  --background-secondary: #fffcf0;
-}
 
 .theme-dark.flexoki-dark.color-scheme-accent {
   --accent-h: 175;
   --accent-s: 49%;
   --accent-l: 45%;
 }
-.theme-dark.flexoki-dark,
-.theme-light.flexoki-light.contrast-light-vivid .workspace::before,
-.theme-light.flexoki-light.contrast-light-vivid div:is(.titlebar, .status-bar, .workspace-ribbon),
-.theme-light.flexoki-light.contrast-light-vivid:is(.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container, .layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container, .layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container, .layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container, :not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split, :not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split, :not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)) {
+.theme-dark.flexoki-dark {
   --color-red-rgb: 209, 77, 65;
   --color-orange-rgb: 218, 112, 44;
   --color-yellow-rgb: 208, 162, 21;
@@ -93,7 +87,4 @@ https://stephango.com/flexoki
 
   --text-selection: rgba(30, 95, 91, 0.3);
   --text-highlight-bg: rgba(213, 159, 17, 0.3);
-}
-.theme-dark.flexoki-dark.contrast-dark-black {
-  --background-modifier-border: #1c1b1a;
 }

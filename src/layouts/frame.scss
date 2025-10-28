@@ -44,17 +44,6 @@ body.layout-frame:not(.is-mobile) {
 
   // ----------------------------------------------------------------
 
-  // Style Settings: Background contrast fix
-  &.theme-light.contrast-light-vivid {
-    .workspace-ribbon,
-    .workspace-split {
-      border-color: #424242;
-    }
-    .mod-root .workspace-tab-header-container::before {
-      background-color: var(--background-primary);
-    }
-  }
-
   // Style Settings: Status bar fix
   &.status-bar-full .workspace {
     padding-bottom: 0;

@@ -49,18 +49,8 @@ https://github.com/morhetz/gruvbox
   --text-selection: rgba(192, 165, 125, 0.3);
   --text-highlight-bg: rgba(215, 153, 33, 0.4);
 }
-.theme-light.gruvbox-light.contrast-light-tonal {
-  --background-secondary: #fcf2c7;
-}
-.theme-light.gruvbox-light.contrast-light-white {
-  --interactive-normal: #faf5d7;
-  --background-modifier-border: #f2e6bd;
-}
 
-.theme-dark.gruvbox-dark,
-.theme-light.gruvbox-light.contrast-light-vivid .workspace::before,
-.theme-light.gruvbox-light.contrast-light-vivid div:is(.titlebar, .status-bar, .workspace-ribbon),
-.theme-light.gruvbox-light.contrast-light-vivid:is(.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container, .layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container, .layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container, .layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container, :not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split, :not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split, :not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)) {
+.theme-dark.gruvbox-dark {
   --background-primary: #282828;
   --background-primary-alt: #1e2021;
   --background-secondary: #1e2021;
@@ -77,8 +67,4 @@ https://github.com/morhetz/gruvbox
 
   --text-selection: rgba(173, 149, 139, 0.3);
   --text-highlight-bg: rgba(215, 153, 33, 0.4);
-}
-.theme-dark.gruvbox-dark.contrast-dark-black {
-  --text-selection: rgba(173, 149, 139, 0.4);
-  --background-modifier-border: #282828;
 }

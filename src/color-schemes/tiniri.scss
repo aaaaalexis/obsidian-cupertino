@@ -73,10 +73,7 @@ https://tiniri.vlad.studio/
   --text-selection: #353a42;
   --text-highlight-bg: #ad514c44;
 }
-.theme-dark.tiniri-dark,
-.theme-light.tiniri-light.contrast-light-vivid .workspace::before,
-.theme-light.tiniri-light.contrast-light-vivid div:is(.titlebar, .status-bar, .workspace-ribbon),
-.theme-light.tiniri-light.contrast-light-vivid:is(.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container, .layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container, .layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container, .layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container, :not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split, :not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split, :not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)) {
+.theme-dark.tiniri-dark {
   --background-primary: #1f2122;
   --background-primary-alt: #1f2122;
   --background-secondary: #1b1d1e;

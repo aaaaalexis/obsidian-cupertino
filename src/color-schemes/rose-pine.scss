@@ -54,10 +54,7 @@ https://github.com/rose-pine/rose-pine-theme
   --text-on-accent: var(--background-primary);
   --text-on-accent-inverted: var(--background-primary);
 }
-.theme-dark.rose-pine-dark,
-.theme-light.rose-pine-light.contrast-light-vivid .workspace::before,
-.theme-light.rose-pine-light.contrast-light-vivid div:is(.titlebar, .status-bar, .workspace-ribbon),
-.theme-light.rose-pine-light.contrast-light-vivid:is(.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container, .layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container, .layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container, .layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container, :not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split, :not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split, :not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)) {
+.theme-dark.rose-pine-dark {
   --color-red-rgb: 234, 111, 146;
   --color-orange-rgb: 233, 155, 151;
   --color-yellow-rgb: 246, 193, 119;
@@ -91,7 +88,4 @@ https://github.com/rose-pine/rose-pine-theme
   --text-faint: #6e6a86;
 
   --text-selection: rgba(126, 121, 155, 0.35);
-}
-.theme-dark.rose-pine-dark.contrast-dark-black {
-  --background-modifier-border: #21202e;
 }

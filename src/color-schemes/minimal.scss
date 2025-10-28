@@ -50,10 +50,7 @@ https://github.com/kepano/obsidian-minimal
 .theme-dark.minimal-dark.color-scheme-accent {
   --accent-l: 60%;
 }
-.theme-dark.minimal-dark,
-.theme-light.minimal-light.contrast-light-vivid .workspace::before,
-.theme-light.minimal-light.contrast-light-vivid div:is(.titlebar, .status-bar, .workspace-ribbon),
-.theme-light.minimal-light.contrast-light-vivid:is(.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container, .layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container, .layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container, .layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container, :not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split, :not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split, :not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)) {
+.theme-dark.minimal-dark {
   --background-primary: #262626;
   --background-primary-alt: #212121;
   --background-secondary: #212121;

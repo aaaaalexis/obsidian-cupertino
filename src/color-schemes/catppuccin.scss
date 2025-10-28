@@ -46,13 +46,6 @@ https://github.com/catppuccin/catppuccin
   --text-selection: rgba(172, 176, 190, 0.3);
   --text-highlight-bg: rgba(223, 142, 29, 0.3);
 }
-.theme-light.catppuccin-light.contrast-light-tonal {
-  --background-secondary: #dce0e8;
-}
-.theme-light.catppuccin-light.contrast-light-white {
-  --interactive-normal: #f0f1f5;
-  --background-modifier-border: #dce0e8;
-}
 
 .theme-dark.catppuccin-dark.color-scheme-accent {
   --accent-h: 10;
@@ -62,10 +55,7 @@ https://github.com/catppuccin/catppuccin
   --text-on-accent: var(--background-primary);
   --text-on-accent-inverted: var(--background-primary);
 }
-.theme-dark.catppuccin-dark,
-.theme-light.catppuccin-light.contrast-light-vivid .workspace::before,
-.theme-light.catppuccin-light.contrast-light-vivid div:is(.titlebar, .status-bar, .workspace-ribbon),
-.theme-light.catppuccin-light.contrast-light-vivid:is(.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container, .layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container, .layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container, .layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container, :not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split, :not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split, :not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)) {
+.theme-dark.catppuccin-dark {
   --color-red-rgb: 235, 153, 156;
   --color-orange-rgb: 239, 160, 118;
   --color-yellow-rgb: 229, 200, 144;
@@ -100,8 +90,4 @@ https://github.com/catppuccin/catppuccin
 
   --text-selection: rgba(98, 104, 128, 0.5);
   --text-highlight-bg: rgba(223, 142, 29, 0.4);
-}
-.theme-dark.catppuccin-dark.contrast-dark-black {
-  --background-modifier-border: #303446;
-  --text-highlight-bg: rgba(223, 142, 29, 0.5);
 }

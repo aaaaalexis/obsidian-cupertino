@@ -52,14 +52,8 @@ https://ethanschoonover.com/solarized/
   --text-selection: rgba(202, 197, 182, 0.3);
   --text-highlight-bg: rgba(203, 75, 22, 0.3);
 }
-.theme-light.solarized-light.contrast-light-tonal {
-  --background-secondary: #fdf6e3;
-}
 
-.theme-dark.solarize-dark,
-.theme-light.solarize-light.contrast-light-vivid .workspace::before,
-.theme-light.solarize-light.contrast-light-vivid div:is(.titlebar, .status-bar, .workspace-ribbon),
-.theme-light.solarize-light.contrast-light-vivid:is(.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container, .layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container, .layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container, .layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container, :not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split, :not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split, :not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)) {
+.theme-dark.solarize-dark {
   --background-primary: #002b36;
   --background-primary-alt: #073642;
   --background-secondary: #073642;
@@ -77,8 +71,4 @@ https://ethanschoonover.com/solarized/
 
   --text-selection: rgba(15, 81, 98, 0.3);
   --text-highlight-bg: rgba(203, 75, 22, 0.35);
-}
-.theme-dark.solarized-dark.contrast-dark-black {
-  --text-selection: rgba(15, 81, 98, 0.55);
-  --background-modifier-border: #002b36;
 }

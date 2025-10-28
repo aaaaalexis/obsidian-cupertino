@@ -121,25 +121,6 @@ settings:
 				label: Tiniri
 				value: tiniri-light
 	-
-		id: background-contrast-light
-		title: Light mode background contrast
-		type: class-select
-		allowEmpty: false
-		default: contrast-light
-		options:
-			-
-				label: Normal
-				value: contrast-light
-			-
-				label: Low contrast
-				value: contrast-light-tonal
-			-
-				label: High contrast
-				value: contrast-light-vivid
-			-
-				label: White
-				value: contrast-light-white
-	-
 		id: color-scheme-dark
 		title: Dark mode color scheme
 		type: class-select
@@ -212,22 +193,6 @@ settings:
 			-
 				label: Tiniri
 				value: tiniri-dark
-	-
-		id: background-contrast-dark
-		title: Dark mode background contrast
-		type: class-select
-		allowEmpty: false
-		default: contrast-dark
-		options:
-			-
-				label: Normal
-				value: contrast-dark
-			-
-				label: Low contrast
-				value: contrast-dark-tonal
-			-
-				label: Black
-				value: contrast-dark-black
 	-
 		id: color-scheme-accent
 		title: Color scheme accent

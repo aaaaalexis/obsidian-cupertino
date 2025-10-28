@@ -46,13 +46,6 @@ https://github.com/sainnhe/everforest
   --text-selection: rgba(198, 214, 152, 0.4);
   --text-highlight-bg: rgba(222, 179, 51, 0.3);
 }
-.theme-light.everforest-light.contrast-light-tonal {
-  --background-secondary: #fdf6e3;
-}
-.theme-light.everforest-light.contrast-light-white {
-  --interactive-normal: #f3efda;
-  --background-modifier-border: #edead5;
-}
 
 .theme-dark.everforest-dark.color-scheme-accent {
   --accent-h: 81;
@@ -62,10 +55,7 @@ https://github.com/sainnhe/everforest
   --text-on-accent: var(--background-primary);
   --text-on-accent-inverted: var(--background-primary);
 }
-.theme-dark.everforest-dark,
-.theme-light.everforest-light.contrast-light-vivid .workspace::before,
-.theme-light.everforest-light.contrast-light-vivid div:is(.titlebar, .status-bar, .workspace-ribbon),
-.theme-light.everforest-light.contrast-light-vivid:is(.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container, .layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container, .layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container, .layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container, :not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split, :not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split, :not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)) {
+.theme-dark.everforest-dark {
   --color-red-rgb: 230, 126, 128;
   --color-orange-rgb: 230, 152, 117;
   --color-yellow-rgb: 219, 188, 127;
@@ -100,8 +90,4 @@ https://github.com/sainnhe/everforest
 
   --text-selection: rgba(134, 70, 93, 0.5);
   --text-highlight-bg: rgba(147, 185, 96, 0.3);
-}
-.theme-dark.everforest-dark.contrast-dark-black {
-  --text-selection: rgba(134, 70, 93, 0.4);
-  --background-modifier-border: #2b3339;
 }

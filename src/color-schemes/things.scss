@@ -54,17 +54,8 @@
 
   --text-selection: #cae2ff;
 }
-.theme-light.things-light.contrast-light-tonal {
-  --background-modifier-border: #e6e8ec;
-}
-.theme-light.things-light.contrast-light-white {
-  --interactive-normal: #f5f6f8;
-}
 
-.theme-dark.things-dark,
-.theme-light.things-light.contrast-light-vivid .workspace::before,
-.theme-light.things-light.contrast-light-vivid div:is(.titlebar, .status-bar, .workspace-ribbon),
-.theme-light.things-light.contrast-light-vivid:is(.layout-cards.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tab-header-container, .layout-border.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container, .layout-cards .mod-sidedock.mod-right-split .workspace-tab-header-container, .layout-border .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container, :not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split, :not(.layout-cards, .layout-border, .layout-minimal) .mod-sidedock.mod-right-split, :not(.layout-minimal) .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)) {
+.theme-dark.things-dark {
   --background-primary: #24262a;
   --background-primary-alt: #202225;
   --background-secondary: #202225;
@@ -82,8 +73,4 @@
   --text-faint: #6c6e70;
 
   --text-selection: rgba(40, 119, 236, 0.35);
-}
-.theme-dark.things-dark.contrast-dark-black {
-  --interactive-normal: #24262a;
-  --divider-color: #24262a;
 }
