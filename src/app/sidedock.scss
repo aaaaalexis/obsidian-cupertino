@@ -104,7 +104,7 @@ body.bold-folders .nav-folder-title {
 }
 
 body:not(.is-mobile).show-ribbon {
-  .workspace-ribbon.mod-left.is-collapsed .side-dock-actions:not(:hover) {
+  .workspace-ribbon.mod-left.is-collapsed:not(:hover) {
     opacity: 0.5;
   }
   .side-dock-actions {

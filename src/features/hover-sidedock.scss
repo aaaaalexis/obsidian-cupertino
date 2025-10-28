@@ -90,16 +90,18 @@ body:not(.is-mobile).hover-sidedock {
   }
 }
 
-body:not(.is-mobile).hover-ribbon {
+body:not(.is-mobile).show-ribbon.hover-ribbon {
   .workspace-ribbon.mod-left:not(:hover) {
     --ribbon-width: 1px;
     padding-inline: 0;
+    opacity: 0;
   }
   &.hover-sidedock .workspace-ribbon.mod-left:not(.is-collapsed) {
     display: none;
   }
 
-  &.mod-macos .workspace-ribbon.mod-left:not(.is-collapsed):not(:hover) ~ .mod-root .workspace-tab-header-container {
+  &.mod-macos .workspace-ribbon.mod-left.is-collapsed:not(:hover) ~ .mod-root .workspace-tab-header-container,
+  &.mod-macos .workspace-ribbon.mod-left:not(.is-collapsed):not(:hover) + .mod-sidedock.mod-left-split .workspace-tab-header-container {
     padding-left: 88px;
   }
 }
