@@ -152,7 +152,7 @@ body:not(.is-mobile) .mod-sidedock {
   // Sidedock padding
   .workspace-leaf-content > .node-insert-event,
   .workspace-leaf-content > .view-content {
-    padding: 0 16px;
+    padding: 2px 16px;
 
     > div:not(.nav-header, .nav-buttons-container) {
       padding: 0;
