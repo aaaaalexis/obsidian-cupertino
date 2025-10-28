@@ -176,41 +176,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 }
 
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
-  // View header animation
-  &.show-inline-title .mod-root {
-    @keyframes viewHeaderTitleParentScroll {
-      from {
-        font-size: inherit;
-        color: var(--text-muted);
-      }
-    }
-    @keyframes viewHeaderTitleScroll {
-      from {
-        opacity: 0;
-        height: 0;
-        filter: var(--blur-m);
-      }
-    }
-
-    .workspace-leaf-content {
-      timeline-scope: --inline-title-scroll;
-    }
-    .inline-title {
-      view-timeline-name: --inline-title-scroll;
-    }
-
-    .view-header-title-parent {
-      animation: viewHeaderTitleParentScroll linear both;
-      animation-timeline: --inline-title-scroll;
-      animation-range: exit -128px exit -48px;
-    }
-    .view-header-title {
-      animation: viewHeaderTitleScroll linear both;
-      animation-timeline: --inline-title-scroll;
-      animation-range: exit -128px exit -48px;
-    }
-  }
-
   // Editor panel
   .mod-root {
     .view-header-left,
