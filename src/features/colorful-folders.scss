@@ -1,44 +1,64 @@
 body.colorful-folders-side {
-  .nav-files-container {
-    --collapse-icon-color: var(--text-normal);
-  }
   .nav-files-container > div > .nav-folder {
     position: relative;
   }
-
   .nav-files-container > div > .nav-folder::before {
     position: absolute;
-    content: "";
-    width: 4px;
-    height: -webkit-fill-available;
     top: 2px;
     bottom: 2px;
-    left: -4px;
+    left: 8px;
     border-radius: var(--radius-s);
+    width: 4px;
+    height: -webkit-fill-available;
+    content: "";
+  }
+}
+
+body.colorful-folders-dot {
+  .nav-files-container > div > .nav-folder > .nav-folder-title > .collapse-icon::before {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-s);
+    content: "";
+  }
+}
+
+body.colorful-folders-side,
+body.colorful-folders-dot {
+  .nav-files-container > div > .nav-folder > .nav-folder-title > .collapse-icon svg {
+    display: none;
   }
 
-  .nav-files-container > div > .nav-folder:nth-child(8n + 2)::before {
+  .nav-files-container > div > .nav-folder:nth-child(8n + 2)::before,
+  .nav-files-container > div > .nav-folder:nth-child(8n + 2) > .nav-folder-title > .collapse-icon::before {
     background-color: var(--color-red);
   }
-  .nav-files-container > div > .nav-folder:nth-child(8n + 3)::before {
+  .nav-files-container > div > .nav-folder:nth-child(8n + 3)::before,
+  .nav-files-container > div > .nav-folder:nth-child(8n + 3) > .nav-folder-title > .collapse-icon::before {
     background-color: var(--color-orange);
   }
-  .nav-files-container > div > .nav-folder:nth-child(8n + 4)::before {
+  .nav-files-container > div > .nav-folder:nth-child(8n + 4)::before,
+  .nav-files-container > div > .nav-folder:nth-child(8n + 4) > .nav-folder-title > .collapse-icon::before {
     background-color: var(--color-yellow);
   }
-  .nav-files-container > div > .nav-folder:nth-child(8n + 5)::before {
+  .nav-files-container > div > .nav-folder:nth-child(8n + 5)::before,
+  .nav-files-container > div > .nav-folder:nth-child(8n + 5) > .nav-folder-title > .collapse-icon::before {
     background-color: var(--color-green);
   }
-  .nav-files-container > div > .nav-folder:nth-child(8n + 6)::before {
+  .nav-files-container > div > .nav-folder:nth-child(8n + 6)::before,
+  .nav-files-container > div > .nav-folder:nth-child(8n + 6) > .nav-folder-title > .collapse-icon::before {
     background-color: var(--color-cyan);
   }
-  .nav-files-container > div > .nav-folder:nth-child(8n + 7)::before {
+  .nav-files-container > div > .nav-folder:nth-child(8n + 7)::before,
+  .nav-files-container > div > .nav-folder:nth-child(8n + 7) > .nav-folder-title > .collapse-icon::before {
     background-color: var(--color-blue);
   }
-  .nav-files-container > div > .nav-folder:nth-child(8n + 8)::before {
+  .nav-files-container > div > .nav-folder:nth-child(8n + 8)::before,
+  .nav-files-container > div > .nav-folder:nth-child(8n + 8) > .nav-folder-title > .collapse-icon::before {
     background-color: var(--color-purple);
   }
-  .nav-files-container > div > .nav-folder:nth-child(8n + 9)::before {
+  .nav-files-container > div > .nav-folder:nth-child(8n + 9)::before,
+  .nav-files-container > div > .nav-folder:nth-child(8n + 9) > .nav-folder-title > .collapse-icon::before {
     background-color: var(--color-pink);
   }
 }
