@@ -12,8 +12,6 @@ body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
 
   --shadow-xs: none;
 
-  --nav-item-color-active: var(--nav-item-color);
-
   * {
     -electron-corner-smoothing: 0%;
   }
@@ -89,23 +87,26 @@ body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
   }
 
   // File explorer
-  --nav-item-background-hover: var(--background-modifier-hover) !important;
-  --nav-item-background-active: var(--background-modifier-hover) !important;
-  --nav-item-weight: var(--font-normal) !important;
-  --nav-item-weight-hover: var(--nav-item-weight) !important;
-  --nav-item-weight-active: var(--nav-item-weight) !important;
+  .nav-files-container > div {
+    --nav-item-color-active: var(--nav-item-color);
+    --nav-item-background-hover: var(--background-modifier-hover) !important;
+    --nav-item-background-active: var(--background-modifier-hover) !important;
+    --nav-item-weight: var(--font-normal) !important;
+    --nav-item-weight-hover: var(--nav-item-weight) !important;
+    --nav-item-weight-active: var(--nav-item-weight) !important;
 
-  .tree-item-self.is-active::before {
-    position: absolute;
-    top: 8px;
-    bottom: 8px;
-    left: 0;
-    border-radius: var(--button-radius);
-    background-color: var(--interactive-accent);
-    width: 4px;
-    content: "";
-    margin-left: unset;
-    height: unset;
+    .tree-item-self.is-active::before {
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 0;
+      border-radius: var(--button-radius);
+      background-color: var(--interactive-accent);
+      width: 4px;
+      content: "" !important;
+      margin-left: unset;
+      height: unset;
+    }
   }
 
   // Dialog

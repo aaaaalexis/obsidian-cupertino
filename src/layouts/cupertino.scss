@@ -10,19 +10,21 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --icon-color: rgb(var(--mono-rgb-100));
   --icon-color-hover: rgb(var(--mono-rgb-100));
 
-  --nav-collapse-icon-color: rgb(var(--mono-rgb-100));
-  --nav-item-color: rgb(var(--mono-rgb-100));
-  --nav-item-color-hover: rgb(var(--mono-rgb-100));
-  --nav-item-color-active: rgb(var(--mono-rgb-100));
-  --nav-item-color-selected: rgb(var(--mono-rgb-100));
-  --nav-item-weight: var(--font-normal);
-  --nav-item-weight-hover: var(--nav-item-weight);
-  --nav-item-weight-active: var(--nav-item-weight);
-  --nav-item-background-hover: transparent;
-  --nav-item-background-active: var(--background-modifier-hover);
+  // File explorer
+  .nav-files-container > div {
+    --nav-collapse-icon-color: rgb(var(--mono-rgb-100));
+    --nav-item-color: rgb(var(--mono-rgb-100));
+    --nav-item-color-hover: rgb(var(--mono-rgb-100));
+    --nav-item-color-active: rgb(var(--mono-rgb-100));
+    --nav-item-color-selected: rgb(var(--mono-rgb-100));
+    --nav-item-weight: var(--font-normal);
+    --nav-item-weight-hover: var(--nav-item-weight);
+    --nav-item-weight-active: var(--nav-item-weight);
+    --nav-item-background-hover: transparent;
+    --nav-item-background-active: var(--background-modifier-hover);
+  }
 
-  .tree-item-self.is-active::before,
-  .vertical-tab-nav-item.is-active::before {
+  .tree-item-self.is-active::before {
     content: none !important;
   }
 

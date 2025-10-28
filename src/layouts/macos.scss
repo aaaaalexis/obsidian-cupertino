@@ -44,6 +44,12 @@ body.layout-macos:not(.is-mobile) {
   }
 
   // File explorer
+  &.theme-light .nav-files-container > div {
+    --nav-item-background-active: var(--background-modifier-hover);
+  }
+  &.theme-dark .nav-files-container > div {
+    --nav-item-background-active: rgba(0, 0, 0, 0.5);
+  }
   .nav-files-container > div {
     --nav-item-color-active: var(--text-accent);
   }

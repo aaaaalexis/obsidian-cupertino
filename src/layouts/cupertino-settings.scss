@@ -50,7 +50,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone .modal.mo
   }
 }
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-community-modal) {
-  --nav-item-background-hover: transparent;
   background-color: var(--background-primary);
 
   .horizontal-tab-nav-item,
@@ -70,9 +69,6 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) .modal.mod-sidebar-lay
   }
 }
 body.layout-cupertino:not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-community-modal) {
-  --nav-item-weight-active: var(--font-normal);
-  --nav-item-weight-hover: var(--font-normal);
-
   .vertical-tab-nav-item {
     transition: none;
   }
