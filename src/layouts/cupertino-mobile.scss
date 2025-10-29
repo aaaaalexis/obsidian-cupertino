@@ -12,6 +12,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 
   // Liquid Glass
   &.is-phone .prompt-input,
+  &.is-phone .prompt-input-container .prompt-input-cta:not(:empty),
   &.is-phone .prompt-input-container .search-input-clear-button,
   &.is-phone .mod-root .view-header > div > .view-action,
   &.is-phone .mobile-navbar .mobile-navbar-actions,
@@ -115,6 +116,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   // HDR element
   &.is-ios.theme-light {
     &.is-phone .prompt-input-container::after,
+    &.is-phone .prompt-input-container .prompt-input-cta:not(:empty)::before,
     &.is-phone .prompt-input-container .search-input-clear-button::before,
     &.is-phone .mobile-tab-switcher-menu-button::after,
     &.is-phone .mobile-tab-switcher-menu-spacer .clickable-icon::before,

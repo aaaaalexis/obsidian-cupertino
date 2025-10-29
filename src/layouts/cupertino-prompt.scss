@@ -76,18 +76,16 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
       z-index: 1;
     }
     .prompt-input {
-      width: calc(100% - 48px - 8px);
+      border-radius: 100vh;
     }
-    .prompt-input,
+    .prompt-input-container .prompt-input-cta:not(:empty),
     .prompt-input-container .search-input-clear-button {
       border-radius: 100vh;
-      border: 1px solid var(--background-modifier-border);
-      background-color: var(--background-secondary);
-    }
-    .prompt-input-container .search-input-clear-button {
+      position: relative;
       inset-inline-end: 0;
       width: 48px;
       height: 48px;
+      flex-shrink: 0;
     }
     .prompt-input-container .search-input-clear-button:after {
       -webkit-mask-position: 50% 50%;
