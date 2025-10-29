@@ -11,6 +11,9 @@ body.layout-macos:not(.is-mobile) {
   &.is-translucent .mod-root {
     background-color: var(--background-primary) !important;
   }
+  &.is-translucent:not(.is-focused) .app-container {
+    background-color: var(--background-primary);
+  }
   &:not(.is-translucent) .app-container {
     background-color: var(--background-primary);
 
