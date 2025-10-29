@@ -2,12 +2,12 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)) .modal.mod-sidebar-layout {
   --background-modifier-hover: rgba(var(--mono-rgb-100), 0.03);
   border: none;
 }
-body:is(.layout-cupertino, .layout-macos).theme-dark .modal.mod-sidebar-layout {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).theme-dark .modal.mod-sidebar-layout {
   --background-modifier-border: rgba(255, 255, 255, 0.075);
 }
 
 body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-phone) .modal.mod-sidebar-layout:not(.mod-community-modal),
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-phone .modal.mod-sidebar-layout {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone .modal.mod-sidebar-layout {
   .setting-item:not(.setting-item-heading) {
     border: none;
     background-color: var(--background-modifier-hover);
@@ -50,13 +50,15 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-phone .modal.mod-sidebar-
   }
 }
 body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-community-modal) {
-  --nav-item-background-hover: transparent;
   background-color: var(--background-primary);
 
   .horizontal-tab-nav-item,
   .vertical-tab-nav-item,
   .vertical-tab-header-group-title {
     padding: 4px 8px;
+  }
+  .vertical-tab-nav-item:not(.is-active):hover {
+    background-color: transparent;
   }
 
   .setting-item-heading.setting-item {
@@ -67,22 +69,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) .modal.mod-s
   }
   .setting-item-name {
     font-weight: var(--font-normal);
-  }
-}
-body.liquid-glass-off:not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-community-modal) {
-  --nav-item-weight-active: var(--font-normal);
-  --nav-item-weight-hover: var(--font-normal);
-
-  .vertical-tab-nav-item {
-    transition: none;
-  }
-  .vertical-tab-nav-item.is-active {
-    background-color: var(--interactive-accent);
-    color: var(--text-on-accent);
-
-    &::before {
-      content: none;
-    }
   }
 }
 
@@ -290,7 +276,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
     }
   }
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-tablet .modal.mod-sidebar-layout {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-tablet .modal.mod-sidebar-layout:not(.mod-community-modal) {
   .setting-item:not(.setting-item-heading) {
     background-color: var(--background-primary);
   }

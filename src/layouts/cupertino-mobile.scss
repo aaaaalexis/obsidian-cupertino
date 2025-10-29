@@ -4,31 +4,15 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
   --radius-l: 32px;
   --radius-xl: 40px;
 
-  --system-status-background: rgb(var(--mono-rgb-0));
-  --mobile-sidebar-background: rgb(var(--mono-rgb-0));
   --titlebar-background: transparent;
   --titlebar-background-focused: transparent;
   --background-modifier-form-field: var(--interactive-normal);
 
   --nav-item-padding: 16px var(--side-padding);
-  --nav-item-background-active: var(--interactive-accent);
-
-  background-color: var(--system-status-background);
-
-  &.theme-light {
-    --mobile-sidebar-background: var(--background-secondary);
-
-    .mod-sidedock,
-    .workspace-drawer {
-      --background-modifier-form-field: var(--background-primary) !important;
-    }
-  }
-  &.theme-dark {
-    --mobile-sidebar-background: black;
-  }
 
   // Liquid Glass
   &.is-phone .prompt-input,
+  &.is-phone .prompt-input-container .prompt-input-cta:not(:empty),
   &.is-phone .prompt-input-container .search-input-clear-button,
   &.is-phone .mod-root .view-header > div > .view-action,
   &.is-phone .mobile-navbar .mobile-navbar-actions,
@@ -89,6 +73,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
   // File explorer
   .nav-files-container > div {
     --nav-item-color-active: var(--text-on-accent);
+    --nav-item-background-active: var(--interactive-accent);
 
     border-radius: var(--radius-m);
     background-color: var(--background-primary);
@@ -131,6 +116,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
   // HDR element
   &.is-ios.theme-light {
     &.is-phone .prompt-input-container::after,
+    &.is-phone .prompt-input-container .prompt-input-cta:not(:empty)::before,
     &.is-phone .prompt-input-container .search-input-clear-button::before,
     &.is-phone .mobile-tab-switcher-menu-button::after,
     &.is-phone .mobile-tab-switcher-menu-spacer .clickable-icon::before,
@@ -176,41 +162,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
 }
 
 body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
-  // View header animation
-  &.show-inline-title .mod-root {
-    @keyframes viewHeaderTitleParentScroll {
-      from {
-        font-size: inherit;
-        color: var(--text-muted);
-      }
-    }
-    @keyframes viewHeaderTitleScroll {
-      from {
-        opacity: 0;
-        height: 0;
-        filter: var(--blur-m);
-      }
-    }
-
-    .workspace-leaf-content {
-      timeline-scope: --inline-title-scroll;
-    }
-    .inline-title {
-      view-timeline-name: --inline-title-scroll;
-    }
-
-    .view-header-title-parent {
-      animation: viewHeaderTitleParentScroll linear both;
-      animation-timeline: --inline-title-scroll;
-      animation-range: exit -128px exit -48px;
-    }
-    .view-header-title {
-      animation: viewHeaderTitleScroll linear both;
-      animation-timeline: --inline-title-scroll;
-      animation-range: exit -128px exit -48px;
-    }
-  }
-
   // Editor panel
   .mod-root {
     .view-header-left,
@@ -247,10 +198,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
         display: none;
       }
     }
-
-    .view-content {
-      background-color: var(--system-status-background);
-    }
   }
 
   // Pull action
@@ -263,24 +210,15 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
     width: fit-content;
     font-weight: calc(var(--font-weight) + var(--bold-modifier));
   }
-}
 
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-tablet {
-  --border-width: 0.5pt;
-
-  .workspace-drawer.is-pinned {
-    z-index: 4;
-  }
-}
-
-// Tab switcher
-body:not(.is-android:not(.android-off)).is-phone {
+  // Tab switcher
   --tab-switcher-background: transparent;
   --tab-switcher-menubar-background: var(--tab-switcher-background);
   --tab-switcher-preview-background-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   --tab-switcher-preview-radius: var(--radius-m);
 
   .mobile-tab-switcher {
+    background: linear-gradient(rgba(var(--mono-rgb-0), 0.5), var(--mobile-sidebar-background)) !important;
     justify-content: flex-end;
     width: unset;
     height: unset;
@@ -289,10 +227,6 @@ body:not(.is-android:not(.android-off)).is-phone {
   .mobile-tab-switcher-scroll {
     padding-top: 0;
     height: unset;
-    background: linear-gradient(transparent, var(--mobile-sidebar-background) 25%) !important;
-  }
-  .mobile-tab-wrapper {
-    z-index: 2;
   }
   .mobile-tab-switcher-menubar {
     background-color: var(--mobile-sidebar-background);
@@ -300,15 +234,10 @@ body:not(.is-android:not(.android-off)).is-phone {
     border: none;
   }
   .mobile-tab-switcher-menu-button {
-    z-index: 2;
     flex: 1;
     height: var(--input-height);
     border-radius: var(--clickable-icon-radius);
     justify-content: center;
-  }
-
-  .mobile-tab-switcher-menu-spacer:first-child {
-    z-index: 2;
   }
   .mobile-tab-switcher-menu-spacer:first-child .clickable-icon {
     width: var(--input-height);
@@ -317,18 +246,20 @@ body:not(.is-android:not(.android-off)).is-phone {
   .mobile-tab-switcher-menu-spacer:last-child .clickable-icon {
     padding: var(--input-padding);
     height: var(--input-height);
-
-    &::before {
-      position: fixed;
-      z-index: 1;
-      inset: 0;
-      content: "";
-    }
+    backdrop-filter: none;
   }
 
   .mobile-tab .mobile-tab-pin,
   .mobile-tab .close-button {
     width: 32px;
     height: 32px;
+  }
+}
+
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-tablet {
+  --border-width: 0.5pt;
+
+  .workspace-drawer.is-pinned {
+    z-index: 4;
   }
 }

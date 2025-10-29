@@ -1,10 +1,4 @@
 body:is(.liquid-glass-off, :not(.liquid-glass-off)) {
-  .prompt {
-    backdrop-filter: var(--blur-l);
-    border-radius: var(--radius-xl);
-    border: none;
-  }
-
   .prompt-input-container {
     align-items: center;
   }
@@ -52,6 +46,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-phone) {
 
   .prompt {
     animation: var(--anim-duration-moderate) bounceInScale var(--anim-motion-cupertino) forwards;
+    border-radius: var(--radius-xl);
   }
 
   .prompt-input-container::after {
@@ -63,7 +58,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-phone) {
     pointer-events: none;
   }
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-phone {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
   --prompt-input-height: 48px;
 
   .prompt {
@@ -73,8 +68,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-phone {
     height: 100vh;
     padding-bottom: 0;
 
-    .prompt-input-container,
-    .omnisearch-input-container {
+    .prompt-input-container {
       border: none;
       gap: 8px;
       position: absolute;
@@ -82,18 +76,16 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-phone {
       z-index: 1;
     }
     .prompt-input {
-      width: calc(100% - 48px - 8px);
+      border-radius: 100vh;
     }
-    .prompt-input,
+    .prompt-input-container .prompt-input-cta:not(:empty),
     .prompt-input-container .search-input-clear-button {
       border-radius: 100vh;
-      border: 1px solid var(--background-modifier-border);
-      background-color: var(--background-secondary);
-    }
-    .prompt-input-container .search-input-clear-button {
+      position: relative;
       inset-inline-end: 0;
       width: 48px;
       height: 48px;
+      flex-shrink: 0;
     }
     .prompt-input-container .search-input-clear-button:after {
       -webkit-mask-position: 50% 50%;

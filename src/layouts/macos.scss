@@ -4,12 +4,15 @@ body:not(.liquid-glass-off):not(.is-mobile) {
     --nav-item-background-active: var(--background-modifier-hover);
   }
   &.theme-dark {
-    --shadow-sidedock: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.35), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 0 0 16px var(--background-primary);
+    --shadow-sidedock: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.35), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 16px 0 rgba(0, 0, 0, 0.2), -16px 0 0 16px var(--background-primary);
     --nav-item-background-active: rgba(0, 0, 0, 0.5);
   }
 
   &.is-translucent .mod-root {
     background-color: var(--background-primary) !important;
+  }
+  &.is-translucent:not(.is-focused) .app-container {
+    background-color: var(--background-primary);
   }
   &:not(.is-translucent) .app-container {
     background-color: var(--background-primary);
@@ -44,6 +47,12 @@ body:not(.liquid-glass-off):not(.is-mobile) {
   }
 
   // File explorer
+  &.theme-light .nav-files-container > div {
+    --nav-item-background-active: var(--background-modifier-hover);
+  }
+  &.theme-dark .nav-files-container > div {
+    --nav-item-background-active: rgba(0, 0, 0, 0.5);
+  }
   .nav-files-container > div {
     --nav-item-color-active: var(--text-accent);
   }
@@ -101,16 +110,7 @@ body:not(.liquid-glass-off):not(.is-mobile) {
 
 body:not(.liquid-glass-off).is-tablet {
   .workspace {
-    background-color: var(--system-status-background);
-  }
-
-  // Editor panel
-  --tab-background-active: var(--system-status-background);
-
-  .mod-root .view-header,
-  .mod-root .view-header::before,
-  .mod-root .view-content {
-    background-color: var(--system-status-background) !important;
+    background-color: rgb(var(--mono-rgb-0));
   }
 
   // Side panels

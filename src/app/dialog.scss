@@ -33,12 +33,6 @@ body:not(.is-mobile) {
   }
 }
 
-body.theme-light .modal {
-  --interactive-normal: var(--background-primary);
-  --background-modifier-form-field: var(--background-primary);
-  --dropdown-background: var(--background-primary);
-}
-
 .modal {
   &:not(.mod-sidebar-layout) {
     border-radius: var(--modal-radius);
@@ -121,10 +115,6 @@ body.is-phone .modal:not(.mod-sidebar-layout) {
 .menu,
 .suggestion-container {
   padding: 0;
-
-  .suggestion {
-    padding: var(--menu-padding);
-  }
 
   .menu-item,
   .suggestion-item {

@@ -39,10 +39,10 @@ body.obsidian-app.is-mobile {
   }
 
   // Side panels
-  .workspace-drawer .workspace-drawer-header,
-  .workspace-drawer .workspace-leaf-content > .view-content,
-  .workspace-drawer .workspace-leaf-content > .node-insert-event {
-    padding-top: 0;
+  .workspace-drawer .workspace-leaf-content > .node-insert-event,
+  .workspace-drawer .workspace-leaf-content > .view-content > .node-insert-event {
+    padding-inline: 20px;
+    padding-block: 0 calc(var(--safe-area-inset-bottom-override) + 128px);
   }
   .workspace-drawer .nav-header {
     display: flex;
@@ -53,6 +53,7 @@ body.obsidian-app.is-mobile {
     z-index: 1;
     border-bottom: none;
     background: transparent;
+    padding-top: 0;
     padding-bottom: var(--safe-area-inset-bottom-override);
     width: 100%;
     align-items: center;
@@ -71,11 +72,6 @@ body.obsidian-app.is-mobile {
     width: 48px;
     padding: 0;
     background-color: transparent;
-  }
-
-  .workspace-drawer .workspace-leaf-content .node-insert-event {
-    padding-inline: 20px;
-    padding-bottom: calc(var(--safe-area-inset-bottom-override) + 128px);
   }
 }
 
@@ -178,6 +174,19 @@ body.obsidian-app.is-phone {
   .mobile-toolbar-option {
     --icon-size: var(--icon-l);
     color: var(--text-normal);
+  }
+
+  // Tab switcher
+  .mobile-tab-wrapper,
+  .mobile-tab-switcher-menu-button,
+  .mobile-tab-switcher-menu-spacer:first-child {
+    z-index: 2;
+  }
+  .mobile-tab-switcher-menu-spacer:last-child .clickable-icon::before {
+    position: fixed;
+    z-index: 1;
+    inset: 0;
+    content: "";
   }
 
   // Editor panel

@@ -9,6 +9,11 @@ body:not(.liquid-glass-off) {
   }
 }
 
+// Vault switcher
+body:not(.liquid-glass-off):not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile::before {
+  background-color: var(--background-primary);
+}
+
 // Tab styles
 body {
   .mod-root .workspace-tab-header {

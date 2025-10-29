@@ -31,16 +31,13 @@ body.is-mobile {
 }
 
 // File navigation
-body:not(.nav-item-subtle, .nav-item-strong) {
+body:not(.nav-item-subtle, .nav-item-strong) .nav-files-container > div {
   --nav-item-background-hover: transparent;
   --nav-item-background-active: transparent;
+  --nav-item-weight-hover: var(--font-medium);
   --nav-item-weight-active: calc(var(--font-weight) + var(--bold-modifier));
 
-  &:not(.is-mobile) {
-    --nav-item-weight-hover: var(--font-medium);
-  }
-
-  .nav-files-container .tree-item-self.is-active::before {
+  .tree-item-self.is-active::before {
     content: "";
     position: absolute;
     margin-left: -12px;
@@ -50,7 +47,7 @@ body:not(.nav-item-subtle, .nav-item-strong) {
     background-color: var(--nav-item-color-active);
   }
 }
-body.nav-item-strong {
+body.nav-item-strong .nav-files-container > div {
   --nav-item-background-active: var(--interactive-accent);
   --nav-item-color-active: var(--text-on-accent);
 }
@@ -74,7 +71,7 @@ body.bold-folders .nav-folder-title {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 0 16px 8px;
+  padding: 8px 16px;
 }
 .nav-header .nav-buttons-container {
   flex-wrap: nowrap;
@@ -95,32 +92,20 @@ body.bold-folders .nav-folder-title {
   border-right: none;
   z-index: 11;
   transition: var(--anim-duration-moderate) var(--anim-motion-cupertino) !important;
-  pointer-events: none;
 }
 .workspace-ribbon.mod-left:before {
   content: none;
 }
 .workspace-ribbon.mod-left .sidebar-toggle-button {
   position: relative;
-  pointer-events: auto;
 }
 
 body:not(.is-mobile).show-ribbon {
-  .workspace-ribbon.mod-left .sidebar-toggle-button::before,
-  .workspace-ribbon.mod-left ~ .workspace-split .sidebar-toggle-button.mod-left::before {
-    content: "";
-    position: fixed;
-    inset: 0 auto 0 0;
-    width: var(--ribbon-width);
-    cursor: pointer;
-  }
-
-  .workspace-ribbon.mod-left.is-collapsed .side-dock-actions:not(:hover) {
+  .workspace-ribbon.mod-left.is-collapsed:not(:hover) {
     opacity: 0.5;
   }
   .side-dock-actions {
     gap: 4px;
-    pointer-events: auto;
     transition: var(--anim-duration-moderate);
     z-index: 1;
   }
@@ -164,7 +149,7 @@ body:not(.is-mobile) .mod-sidedock {
   // Sidedock padding
   .workspace-leaf-content > .node-insert-event,
   .workspace-leaf-content > .view-content {
-    padding: 0 16px;
+    padding: 2px 16px;
 
     > div:not(.nav-header, .nav-buttons-container) {
       padding: 0;
@@ -192,10 +177,10 @@ body:not(.is-mobile) .workspace-split.mod-left-split {
     background-color: transparent;
     border-top: none;
     position: absolute;
-    right: 0;
-    bottom: 0;
+    inset: auto 0 0;
     z-index: 1;
     align-items: unset;
+    width: auto;
 
     &::before {
       transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);

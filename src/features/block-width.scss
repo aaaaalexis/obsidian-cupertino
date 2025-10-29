@@ -20,7 +20,7 @@ body:not(.block-width-off) {
   // Table
   &:is(.table-wide, .table-max, .table-100),
   div:is(.table-wide, .table-max, .table-100) {
-    div:is(.markdown-preview-sizer > .el-table, .markdown-preview-sizer > .el-pre .block-language-dataview, .markdown-preview-sizer > .el-pre .block-language-datacorejsx, .cm-content > .cm-table-widget, .cm-content > .cm-lang-dataview, .cm-content > .cm-lang-datacorejsx) {
+    div:is(.markdown-preview-sizer > .el-table, .markdown-preview-sizer > .el-pre .block-language-dataview, .markdown-preview-sizer > .el-pre .block-language-dataviewjs, .markdown-preview-sizer > .el-pre .block-language-datacorejsx, .cm-content > .cm-table-widget, .cm-content > .cm-lang-dataview, .cm-content > .cm-lang-dataviewjs, .cm-content > .cm-lang-datacorejsx) {
       max-width: var(--table-line-width);
       width: var(--table-line-width) !important;
       justify-self: center;

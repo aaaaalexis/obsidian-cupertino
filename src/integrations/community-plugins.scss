@@ -10,28 +10,62 @@
   }
 }
 .omnisearch-input-field {
-  width: 100%;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 .omnisearch-input-container__buttons button {
   box-shadow: none;
   border: var(--input-border-width) solid var(--background-modifier-border);
 }
+.omnisearch-result > div {
+  gap: 4px;
+  width: 100%;
+
+  .omnisearch-result__title,
+  .omnisearch-result__icon + span {
+    flex: 1;
+  }
+  .omnisearch-result__title-container,
+  .omnisearch-result__folder-path {
+    margin-bottom: 4px;
+  }
+  .omnisearch-result__body {
+    margin-inline: 0;
+  }
+}
+
 body:not(.is-mobile) .omnisearch-input-container__buttons {
   display: none;
 }
 body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-phone {
   @media only screen and (max-width: 600px) {
     .omnisearch-modal {
-      --prompt-top: var(--safe-area-inset-top);
+      --prompt-top: calc(var(--safe-area-inset-top) + var(--header-height));
+      backdrop-filter: none;
+      background-color: transparent;
       height: calc(100vh - var(--prompt-top));
-      border-radius: var(--modal-radius) var(--modal-radius) 0 0;
+
+      &::before {
+        position: fixed;
+        z-index: -1;
+        backdrop-filter: var(--blur-l);
+        inset: 0;
+        pointer-events: none;
+        content: "";
+      }
 
       .prompt-results {
-        padding-top: var(--side-padding);
-        padding-bottom: 160px;
+        backdrop-filter: var(--blur-l);
         mask: none;
+        border-radius: var(--modal-radius) var(--modal-radius) 0 0;
+        background-color: var(--modal-background);
+        padding-top: var(--safe-area-inset-side);
+      }
+      .omnisearch-input-container {
+        gap: 8px;
+        margin-bottom: var(--safe-area-inset-side);
+        padding-inline: var(--safe-area-inset-side);
       }
       .prompt-input {
         width: 100%;
@@ -146,12 +180,20 @@ body .view-content.notebook-navigator-mobile {
 .hider-sidebar-buttons.mod-macos {
   --frame-left-space: calc(80px - var(--ribbon-width));
 }
-.hider-sidebar-buttons .sidebar-toggle-button.mod-right,
-.hider-sidebar-buttons .sidebar-toggle-button.mod-left {
+.hider-sidebar-buttons .sidebar-toggle-button.mod-left,
+.hider-sidebar-buttons .sidebar-toggle-button.mod-right {
   display: flex;
   visibility: hidden;
-  width: 0;
+  width: 0 !important;
   opacity: 0;
+}
+body.is-phone.hider-sidebar-buttons {
+  .view-header-left {
+    display: none;
+  }
+  .view-header-title-container {
+    margin-left: 8px !important;
+  }
 }
 
 // Quick Explorer https://github.com/pjeby/quick-explorer
@@ -232,9 +274,84 @@ body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-con
   }
 }
 
-body:is(.layout-cupertino, .layout-macos).is-mobile:not(.mobile-stable) .workspace-drawer {
-  .novel-word-count--folder-below .nav-files-container .nav-folder-title::after,
-  .novel-word-count--folder-below .nav-files-container .nav-file-title::after {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-mobile:not(.mobile-stable) .workspace-drawer .novel-word-count--active {
+  .nav-buttons-container {
+    overflow: visible;
+  }
+  .nav-buttons-container::after {
+    position: absolute;
+    transform: translateY(-24px);
+  }
+
+  &.novel-word-count--note-right .nav-files-container .nav-folder-title::after,
+  &.novel-word-count--note-right .nav-files-container .nav-file-title::after {
+    flex: unset;
+    order: 0;
+  }
+
+  &.novel-word-count--note-inline .nav-files-container .tree-item .tree-item-inner {
+    flex: unset;
+    padding: 0 8px;
+  }
+  &.novel-word-count--note-inline .nav-files-container .nav-folder-title::after,
+  &.novel-word-count--note-inline .nav-files-container .nav-file-title::after {
+    order: 0;
+  }
+
+  &.novel-word-count--folder-below .nav-files-container .nav-folder-title::after,
+  &.novel-word-count--folder-below .nav-files-container .nav-file-title::after {
     flex-basis: 100%;
   }
+}
+
+// Metadata Menu https://github.com/mdelobelle/metadatamenu
+.field-btn-container {
+  margin-inline-start: 8px;
+}
+.field-btn-container button.property-metadata-menu,
+.plugin-metadata-menu .status-item-bt {
+  padding: 0 !important;
+  background-color: transparent;
+}
+.metadata-menu {
+  .suggester-input {
+    margin-top: 0;
+  }
+  .prompt-input-container {
+    height: var(--prompt-input-height);
+    position: absolute;
+    inset: 0 0 auto;
+    pointer-events: none;
+  }
+  .search-input-clear-button {
+    display: none;
+  }
+}
+
+// Editing Toolbar https://github.com/PKM-er/obsidian-editing-toolbar
+body.obsidian-app.is-phone {
+  #editingToolbarModalBar:first-child {
+    margin-top: calc(var(--safe-area-inset-top) + var(--header-height) + 8px);
+    padding-top: 0;
+  }
+
+  #editingToolbarPopoverBar {
+    margin-top: calc(var(--safe-area-inset-top) + var(--header-height) + 8px + var(--toolbar-icon-size) + 24px);
+  }
+}
+
+// Note Toolbar https://github.com/chrisgurney/obsidian-note-toolbar
+body.obsidian-app.is-phone .view-header + .cg-note-toolbar-container {
+  --cg-nt-tbar-bg-color: transparent;
+
+  & + .view-content .cm-scroller,
+  & + .view-content .markdown-preview-pusher {
+    padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px) !important;
+  }
+}
+
+// Relative Line Numbers https://github.com/nadavspi/obsidian-relative-line-numbers
+.relative-line-numbers-mono {
+  position: absolute;
+  width: 100%;
 }

@@ -49,18 +49,12 @@
     --indentation-guide-width: 0px;
 
     --file-header-border: none;
-
-    --checklist-done-decoration: none;
   }
 
   body:not(.font-variant-off) .workspace-leaf-content .view-content {
     font-feature-settings: "ss01" 1, "ss07" 1, "cv07" 1;
   }
 
-  p > em,
-  .cm-line > .cm-em:not(.cm-strong) {
-    font-weight: var(--italic-weight);
-  }
   .workspace-split.mod-root {
     background-color: var(--background-secondary);
     transition: var(--anim-duration-moderate);
@@ -107,6 +101,9 @@
   body:not(.is-mobile) .cm-gutters {
     position: absolute;
 
+    .cm-gutterElement {
+      text-align: center;
+    }
     .cm-gutterElement.cm-active {
       font-weight: calc(var(--font-weight) + var(--bold-modifier));
       color: var(--text-muted);

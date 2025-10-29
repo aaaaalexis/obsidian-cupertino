@@ -29,32 +29,7 @@
   .setting-item-description {
     word-break: break-word;
   }
-}
 
-body:not(.nav-item-subtle, .nav-item-strong) .modal.mod-sidebar-layout {
-  .vertical-tab-nav-item:hover:not(.is-active) {
-    font-weight: var(--nav-item-weight-hover);
-    background-color: var(--nav-item-background-hover);
-  }
-  .vertical-tab-nav-item.is-active {
-    font-weight: var(--nav-item-weight-active);
-    display: inline-flex;
-    align-items: center;
-    background-color: var(--nav-item-background-active);
-    color: var(--nav-item-color-active);
-
-    &::before {
-      content: "";
-      position: absolute;
-      margin-left: -12px;
-      width: 4px;
-      height: 4px;
-      border-radius: var(--button-radius);
-      background-color: var(--nav-item-color-active);
-    }
-  }
-}
-body.nav-item-subtle .modal.mod-sidebar-layout {
   .vertical-tab-nav-item.is-active {
     background-color: var(--nav-item-background-active);
     color: var(--nav-item-color-active);
