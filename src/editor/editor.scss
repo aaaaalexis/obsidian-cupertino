@@ -158,6 +158,9 @@
   body:not(.is-mobile) .cm-gutters {
     position: absolute;
 
+    .cm-gutterElement {
+      text-align: center;
+    }
     .cm-gutterElement.cm-active {
       font-weight: calc(var(--font-weight) + var(--bold-modifier));
       color: var(--text-muted);

@@ -359,7 +359,7 @@ body:not(.mobile-stable).is-phone {
   }
 }
 
-// Note Toolbar
+// Note Toolbar https://github.com/chrisgurney/obsidian-note-toolbar
 body:not(.mobile-stable).is-phone .view-header + .cg-note-toolbar-container {
   --cg-nt-tbar-bg-color: transparent;
 
@@ -367,4 +367,10 @@ body:not(.mobile-stable).is-phone .view-header + .cg-note-toolbar-container {
   & + .view-content .markdown-preview-pusher {
     padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px) !important;
   }
+}
+
+// Relative Line Numbers https://github.com/nadavspi/obsidian-relative-line-numbers
+.relative-line-numbers-mono {
+  position: absolute;
+  width: 100%;
 }
