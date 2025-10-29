@@ -83,9 +83,51 @@ body.layout-border:not(.is-mobile) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
+
+  // Deep dark
+  &.deep-dark-all.theme-dark {
+    .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
+      border-color: transparent;
+    }
+    .mod-root {
+      .workspace-tab-container {
+        border: var(--divider-width) solid var(--divider-color);
+      }
+      .workspace-tab-header-container-inner {
+        margin-bottom: -1px;
+      }
+    }
+
+    .mod-sidedock {
+      .workspace-tab-container {
+        border: var(--divider-width) solid var(--divider-color);
+      }
+      &.mod-left-split {
+        .workspace-tabs.mod-top .workspace-tab-container {
+          border-width: var(--divider-width) 0 0 var(--divider-width);
+        }
+        .workspace-tabs:last-child .workspace-tab-container {
+          border-width: 0 0 var(--divider-width) var(--divider-width);
+        }
+      }
+      &.mod-right-split {
+        .workspace-tabs.mod-top .workspace-tab-container {
+          border-width: var(--divider-width) var(--divider-width) 0 0;
+        }
+        .workspace-tabs:last-child .workspace-tab-container {
+          border-width: 0 var(--divider-width) var(--divider-width) 0;
+        }
+      }
+    }
+
+    &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
+      border: var(--divider-width) solid var(--divider-color);
+      border-width: var(--divider-width) 0 0 var(--divider-width);
+    }
+  }
 }
 
-// Mobile
+// Tablet
 body.layout-border.is-tablet {
   .workspace-drawer.is-pinned.mod-left {
     margin-right: 0;
@@ -96,5 +138,21 @@ body.layout-border.is-tablet {
     margin-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+  }
+
+  &.deep-dark-all.theme-dark,
+  &.deep-dark-mobile.theme-dark {
+    .mod-root {
+      .workspace-tab-container {
+        border: var(--divider-width) solid var(--divider-color);
+        border-width: var(--divider-width) 0 var(--divider-width);
+      }
+      .workspace-tab-header-container-inner {
+        margin-bottom: -1px;
+      }
+    }
+    .workspace-drawer {
+      border: var(--divider-width) solid var(--divider-color);
+    }
   }
 }

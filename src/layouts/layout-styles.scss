@@ -67,6 +67,7 @@ body:is(.layout-frame, .layout-macos):not(.is-mobile) .workspace-split.mod-left-
 
 // Tab styles
 body:not(.tabs-floating, .tabs-floating-center, .tabs-underline) {
+  &:is(.deep-dark-all, .deep-dark-mobile.is-mobile).theme-dark,
   &:is(.layout-classic, .layout-minimal, .layout-cupertino, .layout-macos, .layout-frame) {
     .mod-root .workspace-tab-header {
       --tab-outline-width: 1px;
@@ -95,7 +96,8 @@ body:is(.layout-classic, .layout-minimal, .layout-frame).stacked-nav-off .mod-si
 body:is(.layout-classic, .layout-minimal, .layout-frame) .mod-root,
 body:is(.layout-classic, .layout-minimal, .layout-frame) .mod-sidedock.mod-right-split:not(.is-sidedock-collapsed),
 body.layout-cupertino:not(.tabs-floating, .tabs-floating-center):not(.is-mobile) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root,
-body.layout-macos:not(.tabs-floating, .tabs-floating-center) .mod-root {
+body.layout-macos:not(.tabs-floating, .tabs-floating-center) .mod-root,
+body:not(.layout-cupertino, .layout-cards, .layout-border):is(.deep-dark-all, .deep-dark-mobile.is-mobile).theme-dark .mod-root {
   .workspace-tabs.mod-top .workspace-tab-header-container {
     border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
   }

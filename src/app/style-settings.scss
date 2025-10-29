@@ -57,6 +57,12 @@ settings:
 		type: class-toggle
 		default: false
 	-
+		id: color-scheme-accent
+		title: Color scheme accent
+		description: Override accent color with color scheme predefined color 
+		type: class-toggle
+		default: false
+	-
 		id: color-scheme-light
 		title: Light mode color scheme
 		type: class-select
@@ -194,11 +200,21 @@ settings:
 				label: Tiniri
 				value: tiniri-dark
 	-
-		id: color-scheme-accent
-		title: Color scheme accent
-		description: Override accent color with color scheme predefined color 
-		type: class-toggle
-		default: false
+		id: deep-dark
+		title: Dark mode intensity
+		type: class-select
+		allowEmpty: false
+		default: deep-dark-off
+		options:
+			-
+				label: Dark
+				value: deep-dark-off
+			-
+				label: Black
+				value: deep-dark-all
+			-
+				label: Black (Mobile)
+				value: deep-dark-mobile
 	-
 		id: base-palette
 		title: Base colors

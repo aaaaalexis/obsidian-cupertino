@@ -4,27 +4,11 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --radius-l: calc(32px * var(--radius-modifier));
   --radius-xl: calc(40px * var(--radius-modifier));
 
-  --system-status-background: rgb(var(--mono-rgb-0));
-  --mobile-sidebar-background: rgb(var(--mono-rgb-0));
   --titlebar-background: transparent;
   --titlebar-background-focused: transparent;
   --background-modifier-form-field: var(--interactive-normal);
 
   --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
-
-  background-color: var(--system-status-background);
-
-  &.theme-light {
-    --mobile-sidebar-background: var(--background-secondary);
-
-    .mod-sidedock,
-    .workspace-drawer {
-      --background-modifier-form-field: var(--background-primary) !important;
-    }
-  }
-  &.theme-dark {
-    --mobile-sidebar-background: black;
-  }
 
   // Liquid Glass
   &.is-phone .prompt-input,
@@ -211,10 +195,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
       &:last-child {
         display: none;
       }
-    }
-
-    .view-content {
-      background-color: var(--system-status-background);
     }
   }
 
