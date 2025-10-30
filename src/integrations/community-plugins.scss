@@ -179,6 +179,7 @@ body:not(.mobile-stable) .view-content.notebook-navigator-mobile {
     border-radius: 100vh;
     background: var(--background-secondary);
     padding: 4px;
+    min-height: 48px;
     height: 48px;
     width: fit-content;
   }
