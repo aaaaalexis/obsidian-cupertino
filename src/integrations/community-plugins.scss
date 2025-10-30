@@ -332,6 +332,7 @@ body:is(.layout-cupertino, .layout-macos).is-mobile:not(.mobile-stable) .workspa
 .plugin-metadata-menu .status-item-bt {
   padding: 0 !important;
   background-color: transparent;
+  align-self: center;
 }
 .metadata-menu {
   .suggester-input {
