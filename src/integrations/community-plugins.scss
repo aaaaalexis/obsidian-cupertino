@@ -41,10 +41,10 @@ body:not(.is-mobile) .omnisearch-input-container__buttons {
 body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-phone {
   @media only screen and (max-width: 600px) {
     .omnisearch-modal {
-      --prompt-top: calc(var(--safe-area-inset-top) + var(--header-height));
-      backdrop-filter: none;
-      background-color: transparent;
-      height: calc(100vh - var(--prompt-top));
+      --prompt-top: calc(var(--safe-area-inset-top) + var(--header-height)) !important;
+      backdrop-filter: none !important;
+      background-color: transparent !important;
+      height: calc(100vh - var(--prompt-top)) !important;
 
       &::before {
         position: fixed;
@@ -57,10 +57,11 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-phone {
 
       .prompt-results {
         backdrop-filter: var(--blur-l);
-        mask: none;
+        mask: none !important;
         border-radius: var(--modal-radius) var(--modal-radius) 0 0;
         background-color: var(--modal-background);
-        padding-top: var(--safe-area-inset-side);
+        padding-top: var(--safe-area-inset-side) !important;
+        padding-bottom: var(--safe-area-inset-bottom);
       }
       .omnisearch-input-container {
         gap: 8px;
@@ -312,6 +313,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-mobile:not(.mobile-stable
 .plugin-metadata-menu .status-item-bt {
   padding: 0 !important;
   background-color: transparent;
+  align-self: center;
 }
 .metadata-menu {
   .suggester-input {
@@ -326,27 +328,8 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-mobile:not(.mobile-stable
   .search-input-clear-button {
     display: none;
   }
-}
-
-// Editing Toolbar https://github.com/PKM-er/obsidian-editing-toolbar
-body.obsidian-app.is-phone {
-  #editingToolbarModalBar:first-child {
-    margin-top: calc(var(--safe-area-inset-top) + var(--header-height) + 8px);
-    padding-top: 0;
-  }
-
-  #editingToolbarPopoverBar {
-    margin-top: calc(var(--safe-area-inset-top) + var(--header-height) + 8px + var(--toolbar-icon-size) + 24px);
-  }
-}
-
-// Note Toolbar https://github.com/chrisgurney/obsidian-note-toolbar
-body.obsidian-app.is-phone .view-header + .cg-note-toolbar-container {
-  --cg-nt-tbar-bg-color: transparent;
-
-  & + .view-content .cm-scroller,
-  & + .view-content .markdown-preview-pusher {
-    padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px) !important;
+  .value-container.value-checked.is-selected {
+    color: var(--text-on-accent);
   }
 }
 
@@ -354,4 +337,14 @@ body.obsidian-app.is-phone .view-header + .cg-note-toolbar-container {
 .relative-line-numbers-mono {
   position: absolute;
   width: 100%;
+}
+
+// Pixel Banner https://github.com/jparkerweb/pixel-banner
+body.is-phone:not(.mobile-stable) .pixel-banner {
+  .select-image-icon {
+    display: none;
+  }
+  .pixel-banner-image {
+    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
+  }
 }

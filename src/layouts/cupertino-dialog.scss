@@ -197,6 +197,9 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
   }
   .modal:not(.mod-sidebar-layout) {
     margin: 0 8px 8px;
+    width: calc(100vw - 16px) !important;
+    left: 0 !important;
+    transform: none !important;
 
     .modal-close-button {
       top: 16px !important;

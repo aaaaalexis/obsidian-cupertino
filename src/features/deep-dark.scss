@@ -2,10 +2,15 @@ body.is-mobile.theme-dark {
   --system-status-background: black;
   --mobile-sidebar-background: black;
   --tab-background-active: black;
+
+  --background-primary-alt: var(--color-base-05);
+  --background-secondary-alt: var(--color-base-10);
+
   background-color: black;
 
+  &.mobile-stable .mod-root .view-header,
+  &.mobile-stable .mobile-navbar,
   .workspace,
-  .mod-root .view-header,
   .mod-root .view-header::before,
   .mod-root .view-content {
     background-color: black !important;

@@ -232,20 +232,12 @@ body.obsidian-app.is-phone {
 
       & + div:not(.view-content) {
         top: calc(var(--safe-area-inset-top) + var(--view-header-height)) !important;
-        inset-inline: 0;
-        background-color: transparent;
       }
-      & + .view-content > .markdown-reading-view > div:first-child:not(.markdown-preview-view),
-      & + .view-content > .markdown-reading-view > .markdown-preview-view:first-child > .markdown-preview-sizer > div:first-child {
+      & ~ .view-content > .markdown-reading-view > .markdown-preview-view:first-child > .markdown-preview-sizer,
+      & ~ .view-content > .markdown-reading-view > div:not(.markdown-preview-view),
+      & ~ .view-content > .markdown-source-view > .cm-editor:first-child > .cm-scroller > .cm-sizer,
+      & ~ .view-content > .markdown-source-view > div:not(.cm-editor) {
         margin-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
-      }
-      & + .view-content > .markdown-source-view > div:first-child:not(.cm-editor) {
-        padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
-        z-index: 0;
-      }
-      & + .view-content > .markdown-source-view > .cm-editor:first-child > .cm-scroller {
-        padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
-        padding-bottom: calc(var(--safe-area-inset-bottom-override) + 64px);
       }
     }
 

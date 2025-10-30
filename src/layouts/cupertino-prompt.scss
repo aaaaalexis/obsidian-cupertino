@@ -68,7 +68,8 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
     height: 100vh;
     padding-bottom: 0;
 
-    .prompt-input-container {
+    .prompt-input-container,
+    .suggester-input {
       border: none;
       gap: 8px;
       position: absolute;
