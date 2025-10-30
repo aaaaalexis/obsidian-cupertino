@@ -219,6 +219,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
 
   .mobile-tab-switcher {
     background: linear-gradient(rgba(var(--mono-rgb-0), 0.5), var(--mobile-sidebar-background)) !important;
+    backdrop-filter: var(--blur-l);
     justify-content: flex-end;
     width: unset;
     height: unset;
