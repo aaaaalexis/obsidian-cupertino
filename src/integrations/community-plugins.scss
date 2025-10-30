@@ -60,10 +60,10 @@ body:is(.layout-cards, .layout-border) {
 body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
   @media only screen and (max-width: 600px) {
     .omnisearch-modal {
-      --prompt-top: calc(var(--safe-area-inset-top) + var(--header-height));
-      backdrop-filter: none;
-      background-color: transparent;
-      height: calc(100vh - var(--prompt-top));
+      --prompt-top: calc(var(--safe-area-inset-top) + var(--header-height)) !important;
+      backdrop-filter: none !important;
+      background-color: transparent !important;
+      height: calc(100vh - var(--prompt-top)) !important;
 
       &::before {
         position: fixed;
@@ -76,10 +76,11 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
 
       .prompt-results {
         backdrop-filter: var(--blur-l);
-        mask: none;
+        mask: none !important;
         border-radius: var(--modal-radius) var(--modal-radius) 0 0;
         background-color: var(--modal-background);
-        padding-top: var(--safe-area-inset-side);
+        padding-top: var(--safe-area-inset-side) !important;
+        padding-bottom: var(--safe-area-inset-bottom);
       }
       .omnisearch-input-container {
         gap: 8px;
