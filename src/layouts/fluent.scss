@@ -12,6 +12,8 @@ body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
 
   --shadow-xs: none;
 
+  --tab-outline-color: rgba(var(--mono-rgb-100), 0.05);
+
   * {
     -electron-corner-smoothing: 0%;
   }
@@ -227,9 +229,6 @@ body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
   // Settings
   &.theme-light .modal.mod-sidebar-layout:not(.mod-community-modal) .setting-item:not(.setting-item-heading) {
     background-color: var(--background-primary);
-  }
-  &.theme-dark .modal.mod-sidebar-layout:not(.mod-community-modal) .setting-item:not(.setting-item-heading) {
-    background-color: var(--background-secondary);
   }
   .modal.mod-sidebar-layout:not(.mod-community-modal) {
     background-color: var(--modal-background);
