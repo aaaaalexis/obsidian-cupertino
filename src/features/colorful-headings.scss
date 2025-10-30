@@ -1,6 +1,32 @@
 @media screen, print {
-  .colorful-headings-side,
-  .colorful-headings-full {
+  body.colorful-headings-text {
+    .markdown-rendered h1,
+    .HyperMD-header-1 {
+      color: color-mix(in srgb, var(--h1-color, var(--color-red)) 75%, var(--color-base-100));
+    }
+    .markdown-rendered h2,
+    .HyperMD-header-2 {
+      color: color-mix(in srgb, var(--h2-color, var(--color-orange)) 75%, var(--color-base-100));
+    }
+    .markdown-rendered h3,
+    .HyperMD-header-3 {
+      color: color-mix(in srgb, var(--h3-color, var(--color-yellow)) 75%, var(--color-base-100));
+    }
+    .markdown-rendered h4,
+    .HyperMD-header-4 {
+      color: color-mix(in srgb, var(--h4-color, var(--color-green)) 75%, var(--color-base-100));
+    }
+    .markdown-rendered h5,
+    .HyperMD-header-5 {
+      color: color-mix(in srgb, var(--h5-color, var(--color-blue)) 75%, var(--color-base-100));
+    }
+    .markdown-rendered h6,
+    .HyperMD-header-6 {
+      color: color-mix(in srgb, var(--h6-color, var(--color-purple)) 75%, var(--color-base-100));
+    }
+  }
+
+  body.colorful-headings-side {
     .markdown-rendered h1::before,
     .HyperMD-header-1::before {
       background-color: var(--h1-color, var(--color-red));
@@ -51,21 +77,9 @@
       &.cm-line::before {
         height: calc(100% - 6px - var(--p-spacing));
       }
-      &.cm-line .cm-header:not(.cm-inline-code) {
+      &.cm-line .cm-header:not(.cm-inline-code, .cm-formatting-header + .cm-header) {
         padding-inline-start: var(--font-ui-smaller);
         box-decoration-break: clone;
-      }
-      &.cm-line.cm-active {
-        &::before {
-          inset-inline-start: -16px;
-        }
-
-        .cm-header:not(.cm-inline-code) {
-          padding-inline-start: 0;
-        }
-        .cm-fold-indicator {
-          inset-inline-start: 4px;
-        }
       }
     }
     .collapse-indicator.heading-collapse-indicator {
@@ -77,51 +91,19 @@
     }
   }
 
-  .colorful-headings-side {
-    .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
+  body.colorful-headings-background.colorful-headings-side {
     .HyperMD-header-1,
     .HyperMD-header-2,
     .HyperMD-header-3,
     .HyperMD-header-4,
     .HyperMD-header-5,
     .HyperMD-header-6 {
-      color: inherit;
+      &::after {
+        margin-inline-start: var(--font-ui-smaller);
+      }
     }
   }
-
-  .colorful-headings-subtle,
-  .colorful-headings-block,
-  .colorful-headings-full {
-    --inline-title-color: inherit;
-    .markdown-rendered h1,
-    .HyperMD-header-1 {
-      color: color-mix(in srgb, var(--h1-color, var(--color-red)) 75%, var(--color-base-100));
-    }
-    .markdown-rendered h2,
-    .HyperMD-header-2 {
-      color: color-mix(in srgb, var(--h2-color, var(--color-orange)) 75%, var(--color-base-100));
-    }
-    .markdown-rendered h3,
-    .HyperMD-header-3 {
-      color: color-mix(in srgb, var(--h3-color, var(--color-yellow)) 75%, var(--color-base-100));
-    }
-    .markdown-rendered h4,
-    .HyperMD-header-4 {
-      color: color-mix(in srgb, var(--h4-color, var(--color-green)) 75%, var(--color-base-100));
-    }
-    .markdown-rendered h5,
-    .HyperMD-header-5 {
-      color: color-mix(in srgb, var(--h5-color, var(--color-blue)) 75%, var(--color-base-100));
-    }
-    .markdown-rendered h6,
-    .HyperMD-header-6 {
-      color: color-mix(in srgb, var(--h6-color, var(--color-purple)) 75%, var(--color-base-100));
-    }
-  }
-
-  .colorful-headings-subtle,
-  .colorful-headings-block,
-  .colorful-headings-strong {
+  body.colorful-headings-background {
     .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
     .HyperMD-header-1,
     .HyperMD-header-2,
@@ -131,7 +113,6 @@
     .HyperMD-header-6 {
       padding-inline: 0.2em;
       border-radius: var(--radius-s);
-      width: fit-content;
 
       &.cm-line {
         padding-inline: 0.2em;
@@ -156,36 +137,31 @@
 
     .markdown-rendered h1,
     .HyperMD-header-1::after {
-      background-color: color-mix(in srgb, var(--h1-color, var(--color-red)) var(--colorful-headings-background-opacity), transparent);
+      background-color: color-mix(in srgb, var(--h1-color, var(--color-red)) 10%, transparent);
     }
     .markdown-rendered h2,
     .HyperMD-header-2::after {
-      background-color: color-mix(in srgb, var(--h2-color, var(--color-orange)) var(--colorful-headings-background-opacity), transparent);
+      background-color: color-mix(in srgb, var(--h2-color, var(--color-orange)) 10%, transparent);
     }
     .markdown-rendered h3,
     .HyperMD-header-3::after {
-      background-color: color-mix(in srgb, var(--h3-color, var(--color-yellow)) var(--colorful-headings-background-opacity), transparent);
+      background-color: color-mix(in srgb, var(--h3-color, var(--color-yellow)) 10%, transparent);
     }
     .markdown-rendered h4,
     .HyperMD-header-4::after {
-      background-color: color-mix(in srgb, var(--h4-color, var(--color-green)) var(--colorful-headings-background-opacity), transparent);
+      background-color: color-mix(in srgb, var(--h4-color, var(--color-green)) 10%, transparent);
     }
     .markdown-rendered h5,
     .HyperMD-header-5::after {
-      background-color: color-mix(in srgb, var(--h5-color, var(--color-blue)) var(--colorful-headings-background-opacity), transparent);
+      background-color: color-mix(in srgb, var(--h5-color, var(--color-blue)) 10%, transparent);
     }
     .markdown-rendered h6,
     .HyperMD-header-6::after {
-      background-color: color-mix(in srgb, var(--h6-color, var(--color-purple)) var(--colorful-headings-background-opacity), transparent);
+      background-color: color-mix(in srgb, var(--h6-color, var(--color-purple)) 10%, transparent);
     }
   }
 
-  .colorful-headings-subtle,
-  .colorful-headings-block {
-    --colorful-headings-background-opacity: 10%;
-  }
-
-  .colorful-headings-block {
+  body:not(.colorful-headings-full-width) {
     .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
     .HyperMD-header-1,
     .HyperMD-header-2,
@@ -193,22 +169,7 @@
     .HyperMD-header-4,
     .HyperMD-header-5,
     .HyperMD-header-6 {
-      width: auto;
-      padding-block: 2px;
-    }
-  }
-
-  .colorful-headings-strong {
-    --colorful-headings-background-opacity: 75%;
-
-    .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
-    .HyperMD-header-1,
-    .HyperMD-header-2,
-    .HyperMD-header-3,
-    .HyperMD-header-4,
-    .HyperMD-header-5,
-    .HyperMD-header-6 {
-      color: rgb(var(--mono-rgb-100));
+      width: fit-content;
     }
   }
 }
