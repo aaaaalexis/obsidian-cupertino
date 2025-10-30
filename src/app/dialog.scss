@@ -34,6 +34,8 @@ body:not(.is-mobile) {
 }
 
 .modal {
+  -electron-corner-smoothing: system-ui;
+
   &:not(.mod-sidebar-layout) {
     border-radius: var(--modal-radius);
 
@@ -68,7 +70,7 @@ body:not(.is-mobile) {
   line-height: 12px;
   z-index: 1;
 
-  &::before {
+  &:empty::before {
     content: "\2715";
     line-height: 1;
     display: block;
@@ -114,10 +116,12 @@ body.is-phone .modal:not(.mod-sidebar-layout) {
 
 .menu,
 .suggestion-container {
+  -electron-corner-smoothing: system-ui;
   padding: 0;
 
   .menu-item,
   .suggestion-item {
+    -electron-corner-smoothing: system-ui;
     padding: 6px 8px;
     border-radius: calc(var(--radius-m) - 4px);
     margin-bottom: 0;

@@ -1,5 +1,7 @@
 @media screen, print {
   body {
+    --inline-title-color: inherit;
+
     --inline-title-margin-bottom: 1em;
     --heading-spacing: 2em;
     --p-spacing: 1.75rem;
@@ -63,7 +65,9 @@
   .workspace-split.mod-root .workspace-tab-container {
     border-radius: var(--tab-radius);
     transition: var(--anim-duration-moderate);
-    overflow: hidden !important;
+  }
+  .workspace-split.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-container {
+    overflow: hidden;
   }
 
   // Tab title bar
@@ -111,10 +115,13 @@
   }
 
   // Codeblocks
+  .markdown-rendered pre {
+    -electron-corner-smoothing: system-ui;
+  }
   .markdown-rendered code {
+    -electron-corner-smoothing: system-ui;
     padding: 2px 4px;
   }
-
   .markdown-rendered pre code {
     white-space: var(--code-white-space);
   }
@@ -162,6 +169,9 @@
     display: none;
   }
 
+  .markdown-embed {
+    -electron-corner-smoothing: system-ui;
+  }
   .markdown-embed:not(.image-embed, .canvas-node-content) {
     display: flex;
     flex-direction: column;
@@ -176,18 +186,35 @@
   .inline-embed > .markdown-embed-content {
     max-height: 100%;
   }
-
-  iframe.external-embed {
-    width: -webkit-fill-available;
-    aspect-ratio: 16/9;
-    height: auto;
-    border-radius: var(--media-radius);
-  }
   .block-language-chart {
     width: 100% !important;
   }
 
-  // Headings
+  // Inline tiele & Headings
+  .inline-title:not([data-level]) {
+    position: relative;
+
+    &:not(:focus-within) {
+      cursor: pointer;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: var(--radius-s);
+      background-color: transparent;
+      pointer-events: none;
+      z-index: 0;
+      transition: var(--anim-duration-fast);
+    }
+
+    &:hover::before,
+    &:focus-within::before {
+      background-color: var(--background-modifier-hover);
+    }
+  }
+
   .inline-title:not([data-level]),
   .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
   .HyperMD-header-1,
@@ -241,12 +268,8 @@
   img:not(.link-favicon),
   iframe,
   video {
+    -electron-corner-smoothing: system-ui;
     border-radius: var(--media-radius);
-  }
-
-  iframe {
-    aspect-ratio: 16/9;
-    height: auto;
   }
 
   body:not(.full-width-media-off) .workspace-leaf-content[data-type="markdown"] {

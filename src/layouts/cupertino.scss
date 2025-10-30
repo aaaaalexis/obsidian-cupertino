@@ -70,32 +70,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
   }
 }
 
-// Editor panel: Edge fade
-body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile),
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-tablet {
-  .mod-root {
-    @keyframes contentScroll {
-      to {
-        box-shadow: 0 16px 32px var(--background-primary);
-      }
-    }
-
-    .workspace-leaf-content {
-      timeline-scope: --content-scroll;
-    }
-    .markdown-preview-view,
-    .cm-scroller {
-      scroll-timeline-name: --content-scroll;
-    }
-
-    .view-header {
-      animation: contentScroll linear both;
-      animation-timeline: --content-scroll;
-      animation-range: entry 0px entry 64px;
-    }
-  }
-}
-
 body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
   --radius-s: 8px;
   --radius-m: 12px;

@@ -7,6 +7,7 @@ body.is-mobile {
 }
 
 .prompt {
+  -electron-corner-smoothing: system-ui;
   background-color: var(--background-secondary);
   animation: modalIn var(--anim-duration-moderate) var(--anim-motion-cupertino) forwards;
 

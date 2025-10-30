@@ -18,12 +18,23 @@ body.mod-windows:not(.windows-off):not(.is-mobile) {
   &.theme-light {
     --input-shadow: 0px 0px 0px 1px var(--background-modifier-border), 0 -0.5px 0 0 rgba(0, 0, 0, 0.25) inset !important;
     --input-shadow-hover: var(--input-shadow) !important;
+    --input-shadow-active: inset 0 0 0 1px var(--background-modifier-border);
     --slider-thumb-border-color: var(--color-base-00);
   }
   &.theme-dark {
     --input-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0 0.5px 0 0 rgba(255, 255, 255, 0.1) inset !important;
     --input-shadow-hover: var(--input-shadow) !important;
+    --input-shadow-active: inset 0 0 1px var(--background-modifier-border);
     --slider-thumb-border-color: var(--color-base-35);
+  }
+
+  // Button
+  button:active,
+  select:focus,
+  .combobox-button:focus,
+  .dropdown:focus {
+    opacity: 0.75;
+    box-shadow: var(--input-shadow-active);
   }
 
   // Text input

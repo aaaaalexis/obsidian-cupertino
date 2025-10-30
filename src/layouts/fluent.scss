@@ -12,9 +12,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).mod-windows:not(.windows-off
 
   --shadow-xs: none;
 
-  * {
-    -electron-corner-smoothing: 0%;
-  }
+  --tab-outline-color: rgba(var(--mono-rgb-100), 0.05);
 
   &.theme-light {
     --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
@@ -227,9 +225,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).mod-windows:not(.windows-off
   // Settings
   &.theme-light .modal.mod-sidebar-layout:not(.mod-community-modal) .setting-item:not(.setting-item-heading) {
     background-color: var(--background-primary);
-  }
-  &.theme-dark .modal.mod-sidebar-layout:not(.mod-community-modal) .setting-item:not(.setting-item-heading) {
-    background-color: var(--background-secondary);
   }
   .modal.mod-sidebar-layout:not(.mod-community-modal) {
     background-color: var(--modal-background);

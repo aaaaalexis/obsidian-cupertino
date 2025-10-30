@@ -8,8 +8,7 @@ body.is-mobile.theme-dark {
 
   background-color: black;
 
-  &.mobile-stable .mod-root .view-header,
-  &.mobile-stable .mobile-navbar,
+  &.is-tablet .mod-root .view-header,
   .workspace,
   .mod-root .view-header::before,
   .mod-root .view-content {
