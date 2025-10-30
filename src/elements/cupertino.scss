@@ -1,4 +1,4 @@
-body:is(.liquid-glass-off, :not(.liquid-glass-off)) {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.mod-windows:not(.windows-off)) {
   --input-shadow: none;
   --input-shadow-hover: none;
 
