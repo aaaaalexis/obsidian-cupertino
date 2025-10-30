@@ -260,13 +260,6 @@
   .inline-embed > .markdown-embed-content {
     max-height: 100%;
   }
-
-  iframe.external-embed {
-    width: -webkit-fill-available;
-    aspect-ratio: 16/9;
-    height: auto;
-    border-radius: var(--media-radius);
-  }
   .block-language-chart {
     width: 100% !important;
   }
@@ -345,11 +338,6 @@
   iframe,
   video {
     border-radius: var(--media-radius);
-  }
-
-  iframe {
-    aspect-ratio: 16/9;
-    height: auto;
   }
 
   body:not(.full-width-media-off) .workspace-leaf-content[data-type="markdown"] {
