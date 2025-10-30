@@ -77,10 +77,6 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   --radius-xl: calc(28px * var(--radius-modifier));
   --radius-window: 6px;
 
-  * {
-    -electron-corner-smoothing: 60%;
-  }
-
   &:is(.tabs-floating, .tabs-floating-center) {
     --tab-action-width: 40px;
   }

@@ -36,6 +36,11 @@
       background-color: var(--background-modifier-hover);
     }
 
+    th,
+    td {
+      -electron-corner-smoothing: system-ui;
+    }
+
     tbody {
       background-color: var(--background-primary-alt);
       position: relative;

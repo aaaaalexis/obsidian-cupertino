@@ -38,6 +38,7 @@ button,
 .clickable-icon,
 select,
 .dropdown {
+  -electron-corner-smoothing: system-ui;
   transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color var(--anim-duration-fast);
 }
 
@@ -56,9 +57,11 @@ body:not(.accented-interface) .checkbox-container {
   --interactive-accent: var(--color-green);
 }
 .checkbox-container {
+  -electron-corner-smoothing: system-ui;
   box-shadow: none;
 }
 .checkbox-container:after {
+  -electron-corner-smoothing: system-ui;
   box-shadow: none;
 }
 .checkbox-container:focus-within {
@@ -67,5 +70,6 @@ body:not(.accented-interface) .checkbox-container {
 
 // Slider
 input[type="range"]::-webkit-slider-thumb {
+  -electron-corner-smoothing: system-ui;
   box-shadow: none;
 }

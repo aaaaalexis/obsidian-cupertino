@@ -172,10 +172,13 @@
   }
 
   // Codeblocks
+  .markdown-rendered pre {
+    -electron-corner-smoothing: system-ui;
+  }
   .markdown-rendered code {
+    -electron-corner-smoothing: system-ui;
     padding: 2px 4px;
   }
-
   .markdown-rendered pre code {
     white-space: var(--code-white-space);
   }
@@ -246,6 +249,9 @@
     display: none;
   }
 
+  .markdown-embed {
+    -electron-corner-smoothing: system-ui;
+  }
   .markdown-embed:not(.image-embed, .canvas-node-content) {
     display: flex;
     flex-direction: column;
@@ -361,6 +367,7 @@
   img:not(.link-favicon),
   iframe,
   video {
+    -electron-corner-smoothing: system-ui;
     border-radius: var(--media-radius);
   }
 
