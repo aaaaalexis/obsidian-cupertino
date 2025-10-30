@@ -100,20 +100,48 @@ body:is(.layout-cards, .layout-border).is-tablet {
     border-radius: var(--radius-s);
     background-color: var(--background-primary);
   }
+
+  &.contrast-light-tonal.theme-light,
+  &.contrast-dark-tonal.theme-dark,
+  &.contrast-dark-black.theme-dark,
+  &.contrast-dark-black-mobile.theme-dark {
+    .mod-root {
+      .workspace-tab-container {
+        border: var(--divider-width) solid var(--divider-color);
+      }
+      .workspace-tab-header-container-inner {
+        margin-bottom: -1px;
+      }
+    }
+
+    .workspace-drawer {
+      border: var(--divider-width) solid var(--divider-color);
+    }
+  }
+  &.contrast-dark-black.theme-dark,
+  &.contrast-dark-black-mobile.theme-dark {
+    .workspace-drawer,
+    .view-header {
+      background-color: black !important;
+    }
+  }
 }
 
-body.layout-cards:not(.is-mobile) .mod-sidedock {
-  .workspace-leaf-resize-handle:not(:hover) {
+// Cards specific
+body.layout-cards:not(.is-mobile) {
+  .mod-sidedock .workspace-leaf-resize-handle:not(:hover) {
     border-color: transparent;
   }
-  .workspace-tabs .workspace-tab-container {
+  .mod-sidedock .workspace-tabs .workspace-tab-container {
     margin: 0 8px;
     border-radius: var(--radius-s);
   }
 
-  // Deep dark
-  &:not(.stacked-nav-off).deep-dark-all.theme-dark {
-    .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
+  // Contrast
+  &.contrast-light-tonal.theme-light,
+  &.contrast-dark-tonal.theme-dark,
+  &.contrast-dark-black.theme-dark {
+    &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
     .mod-sidedock .workspace-tabs .workspace-tab-container,
     .mod-root .workspace-tab-container {
       border: var(--divider-width) solid var(--divider-color);

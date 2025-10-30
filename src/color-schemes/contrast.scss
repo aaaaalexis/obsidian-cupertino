@@ -1,18 +1,19 @@
-body:not(.is-mobile).deep-dark-all.theme-dark {
+body.contrast-light-tonal.theme-light,
+body.contrast-dark-tonal.theme-dark {
+  --background-primary: var(--background-secondary);
+}
+
+body:not(.is-mobile).contrast-dark-black.theme-dark {
   --background-primary: black;
   --background-primary-alt: var(--color-base-00);
   --background-secondary: black;
   --background-secondary-alt: var(--color-base-05);
   --background-modifier-hover: rgba(var(--mono-rgb-100), 0.2);
   --interactive-normal: var(--color-base-10);
-
-  &:not(.layout-cupertino, .layout-macos, .layout-cards, .layout-border, .layout-frame) .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
-    border-color: var(--divider-color);
-  }
 }
 
-body.is-mobile.deep-dark-all.theme-dark,
-body.is-mobile.deep-dark-mobile.theme-dark {
+body.is-mobile.contrast-dark-black.theme-dark,
+body.is-mobile.contrast-dark-black-mobile.theme-dark {
   --system-status-background: black;
   --mobile-sidebar-background: black;
   --tab-background-active: black;
@@ -22,6 +23,7 @@ body.is-mobile.deep-dark-mobile.theme-dark {
 
   background-color: black;
 
+  &.is-tablet .mod-root .view-header,
   &.mobile-stable .mod-root .view-header,
   &.mobile-stable .mobile-navbar,
   .workspace,

@@ -113,10 +113,6 @@ body.layout-macos:not(.is-mobile) {
 }
 
 body.layout-macos.is-tablet {
-  .workspace {
-    background-color: rgb(var(--mono-rgb-0));
-  }
-
   // Side panels
   .workspace-drawer:not(.is-pinned) {
     box-shadow: var(--shadow-s);

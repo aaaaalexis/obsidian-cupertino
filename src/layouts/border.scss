@@ -84,8 +84,10 @@ body.layout-border:not(.is-mobile) {
     border-bottom-right-radius: 0;
   }
 
-  // Deep dark
-  &.deep-dark-all.theme-dark {
+  // Contrast
+  &.contrast-light-tonal.theme-light,
+  &.contrast-dark-tonal.theme-dark,
+  &.contrast-dark-black.theme-dark {
     .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
       border-color: transparent;
     }
@@ -140,19 +142,12 @@ body.layout-border.is-tablet {
     border-bottom-left-radius: 0;
   }
 
-  &.deep-dark-all.theme-dark,
-  &.deep-dark-mobile.theme-dark {
-    .mod-root {
-      .workspace-tab-container {
-        border: var(--divider-width) solid var(--divider-color);
-        border-width: var(--divider-width) 0 var(--divider-width);
-      }
-      .workspace-tab-header-container-inner {
-        margin-bottom: -1px;
-      }
-    }
-    .workspace-drawer {
-      border: var(--divider-width) solid var(--divider-color);
+  &.contrast-light-tonal.theme-light,
+  &.contrast-dark-tonal.theme-dark,
+  &.contrast-dark-black.theme-dark,
+  &.contrast-dark-black-mobile.theme-dark {
+    .mod-root .workspace-tab-container {
+      border-width: var(--divider-width) 0 var(--divider-width);
     }
   }
 }

@@ -127,6 +127,19 @@ settings:
 				label: Tiniri
 				value: tiniri-light
 	-
+		id: background-contrast-light
+		title: Light mode background contrast
+		type: class-select
+		allowEmpty: false
+		default: contrast-light
+		options:
+			-
+				label: Normal
+				value: contrast-light
+			-
+				label: Low contrast
+				value: contrast-light-tonal
+	-
 		id: color-scheme-dark
 		title: Dark mode color scheme
 		type: class-select
@@ -200,21 +213,24 @@ settings:
 				label: Tiniri
 				value: tiniri-dark
 	-
-		id: deep-dark
-		title: Dark mode intensity
+		id: background-contrast-dark
+		title: Dark mode background contrast
 		type: class-select
 		allowEmpty: false
-		default: deep-dark-off
+		default: contrast-dark
 		options:
 			-
-				label: Dark
-				value: deep-dark-off
+				label: Normal
+				value: contrast-dark
+			-
+				label: Low contrast
+				value: contrast-dark-tonal
 			-
 				label: Black
-				value: deep-dark-all
+				value: contrast-dark-black
 			-
 				label: Black (Mobile)
-				value: deep-dark-mobile
+				value: contrast-dark-black-mobile
 	-
 		id: base-palette
 		title: Base colors

@@ -9,6 +9,11 @@ body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-
   }
 }
 
+// Side panels
+body:not(.layout-cupertino, .layout-macos, .layout-cards, .layout-border, .layout-frame):is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark):not(.is-mobile) .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
+  border-color: var(--divider-color);
+}
+
 // Mobile editor panels
 body:is(.layout-cupertino, .layout-cards, .layout-border).is-tablet .mod-root {
   padding-bottom: 8px;
@@ -67,13 +72,13 @@ body:is(.layout-frame, .layout-macos):not(.is-mobile) .workspace-split.mod-left-
 
 // Tab styles
 body:not(.tabs-floating, .tabs-floating-center, .tabs-underline) {
-  &:is(.deep-dark-all, .deep-dark-mobile.is-mobile).theme-dark,
+  &:is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.theme-dark.is-mobile),
   &:is(.layout-classic, .layout-minimal, .layout-cupertino, .layout-macos, .layout-frame) {
     .mod-root .workspace-tab-header {
       --tab-outline-width: 1px;
     }
     &.is-tablet .workspace-tab-header-container-inner {
-      padding-top: 8px;
+      padding-top: 1px;
     }
   }
 }
@@ -97,7 +102,7 @@ body:is(.layout-classic, .layout-minimal, .layout-frame) .mod-root,
 body:is(.layout-classic, .layout-minimal, .layout-frame) .mod-sidedock.mod-right-split:not(.is-sidedock-collapsed),
 body.layout-cupertino:not(.tabs-floating, .tabs-floating-center):not(.is-mobile) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root,
 body.layout-macos:not(.tabs-floating, .tabs-floating-center) .mod-root,
-body:not(.layout-cupertino, .layout-cards, .layout-border):is(.deep-dark-all, .deep-dark-mobile.is-mobile).theme-dark:not(.tabs-floating, .tabs-floating-center) .mod-root {
+body:not(.layout-cupertino, .layout-cards, .layout-border):is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark):not(.tabs-floating, .tabs-floating-center) .mod-root {
   .workspace-tabs.mod-top .workspace-tab-header-container {
     border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
   }
@@ -108,7 +113,7 @@ body:not(.layout-cupertino, .layout-cards, .layout-border):is(.deep-dark-all, .d
 }
 
 // Mobile drawer
-body:not(.layout-classic, .layout-minimal, .layout-border, .layout-frame, .layout-macos).is-tablet .workspace-drawer.is-pinned,
+body:not(.layout-classic, .layout-minimal, .layout-border, .layout-frame, .layout-macos):not(.contrast-light-tonal.theme-light:not(.layout-cupertino), .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark).is-tablet .workspace-drawer.is-pinned,
 body.layout-macos.is-tablet .workspace-drawer.is-pinned.mod-left {
   border: none;
 }

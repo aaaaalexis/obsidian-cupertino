@@ -29,7 +29,18 @@ body.layout-minimal {
   .workspace-drawer.mod-right,
   .mod-sidedock.mod-right-split,
   .mod-sidedock.mod-right-split .workspace-tabs .workspace-leaf {
-    --mobile-sidebar-background: var(--background-primary);
     background-color: var(--background-primary);
+  }
+
+  &.contrast-dark-black.theme-dark,
+  &.contrast-dark-black-mobile.theme-dark {
+    .workspace > .mod-root,
+    .workspace-drawer.mod-right,
+    .mod-sidedock.mod-right-split,
+    .mod-sidedock.mod-right-split .workspace-tabs .workspace-leaf,
+    .workspace-tab-header-container,
+    .mod-root .view-header {
+      background-color: black !important;
+    }
   }
 }

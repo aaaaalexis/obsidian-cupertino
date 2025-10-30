@@ -57,10 +57,9 @@ body.layout-frame:not(.is-mobile) {
 
 // Mobile
 body.layout-frame.is-tablet {
-  --mobile-sidebar-background: var(--background-primary);
-
   .workspace {
     padding: 0 4px;
+    background-color: var(--mobile-sidebar-background);
   }
   .mod-root,
   .workspace-drawer {
@@ -77,5 +76,18 @@ body.layout-frame.is-tablet {
     margin-inline: 4px;
     padding-top: 16px;
     padding-bottom: 0;
+  }
+
+  &.contrast-dark-black.theme-dark,
+  &.contrast-dark-black-mobile.theme-dark {
+    .mod-root,
+    .workspace-drawer {
+      background-color: transparent;
+    }
+  }
+
+  // Tab style
+  &:not(.tabs-floating, .tabs-floating-center, .tabs-underline) .workspace-tab-header-container-inner {
+    padding-top: 8px !important;
   }
 }
