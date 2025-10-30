@@ -264,7 +264,31 @@
     width: 100% !important;
   }
 
-  // Headings
+  // Inline tiele & Headings
+  .inline-title:not([data-level]) {
+    position: relative;
+
+    &:not(:focus-within) {
+      cursor: pointer;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: var(--radius-s);
+      background-color: transparent;
+      pointer-events: none;
+      z-index: 0;
+      transition: var(--anim-duration-fast);
+    }
+
+    &:hover::before,
+    &:focus-within::before {
+      background-color: var(--background-modifier-hover);
+    }
+  }
+
   .markdown-rendered h1,
   .HyperMD-header-1,
   .HyperMD-list-line .cm-header-1 {
