@@ -7,7 +7,6 @@ body,
 
   --titlebar-background: transparent;
   --titlebar-background-focused: transparent;
-  --workspace-background-translucent: rgba(var(--mono-rgb-0), 0.75);
 
   --divider-color-hover: var(--color-base-50);
 
@@ -37,6 +36,8 @@ body,
 }
 
 .theme-light {
+  --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
+
   --color-base-80: #494949;
   --color-base-90: #363636;
 
@@ -69,6 +70,8 @@ body,
   --code-value: #a626a4;
 }
 .theme-dark {
+  --workspace-background-translucent: transparent;
+
   --color-base-80: #c0c0c0;
   --color-base-90: #cdcdcd;
 
