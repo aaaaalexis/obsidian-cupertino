@@ -179,11 +179,12 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   --modal-header-height: var(--view-header-height);
 
   .modal-setting-back-button,
-  .modal-close-button {
-    padding: 10px;
+  .modal-close-button:not(:empty) {
+    --icon-size: var(--icon-xl);
+    padding: 6px;
   }
 
-  .modal-close-button::before {
+  .modal-close-button:empty::before {
     width: var(--icon-l);
     height: var(--icon-l);
     font-size: unset;

@@ -9,15 +9,12 @@
     display: none;
   }
   path[d="m12 19-7-7 7-7"] {
-    transform: translateX(4px);
+    transform: translateX(2px);
   }
 }
 .lucide-arrow-right {
   path[d="M5 12h14"] {
     display: none;
-  }
-  path[d="m12 5 7 7-7 7"] {
-    transform: translateX(-2px);
   }
 }
 .lucide-edit-3 {
