@@ -50,8 +50,8 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 
   // Find & replace fix
   .document-search-container {
-    padding: 8px;
-    background-color: var(--system-status-background);
+    padding: 8px var(--safe-area-inset-side);
+    background-color: transparent;
 
     .document-search,
     .document-replace {
