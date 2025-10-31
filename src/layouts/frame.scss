@@ -65,7 +65,7 @@ body.layout-frame.is-tablet {
   .workspace-drawer {
     padding-top: 0;
     margin-top: var(--safe-area-inset-top);
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     height: auto;
     background-color: var(--background-primary);
     border-radius: var(--radius-m);
@@ -76,6 +76,13 @@ body.layout-frame.is-tablet {
     margin-inline: 4px;
     padding-top: 16px;
     padding-bottom: 0;
+
+    &.mod-left.is-pinned {
+      margin-left: 0;
+    }
+    &.mod-right.is-pinned {
+      margin-right: 0;
+    }
   }
 
   &.contrast-dark-black.theme-dark,
