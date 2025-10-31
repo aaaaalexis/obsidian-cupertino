@@ -1,45 +1,42 @@
-body:is(.focus-view-tabs, .focus-view-all):not(.is-popout-window) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
-  --tab-container-background: transparent;
-  background-color: var(--background-primary);
+body.focus-view:not(.is-mobile):not(.is-popout-window) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
+  --file-margins: calc(var(--file-margins-block) + var(--header-height)) var(--file-margins-block);
 
-  .mod-root {
-    .workspace-tab-header-container,
-    .workspace-tab-header-container-inner,
-    .workspace-tab-header-spacer {
-      -webkit-app-region: no-drag;
-    }
-    .workspace-tab-header-container:not(:hover) {
-      height: 1px;
+  .workspace-tab-header-container {
+    height: 0;
+    border-width: 0px;
+
+    > div:not(.sidebar-toggle-button) {
       opacity: 0;
-      padding-block: 0;
-    }
-    .workspace-tab-container {
-      background-color: var(--background-primary);
-    }
-    .workspace-tab-container .view-header {
-      margin-left: var(--frame-left-space);
-      margin-right: var(--frame-right-space);
     }
   }
-}
+  .view-header {
+    -webkit-app-region: drag;
 
-body.focus-view-all:not(.is-popout-window) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
-  .workspace-tab-container .view-header {
     position: absolute;
-    left: var(--frame-left-space);
-    right: var(--frame-right-space);
-    margin: 0;
+    left: calc(var(--frame-left-space) + var(--tab-action-width));
+    right: calc(var(--frame-right-space) + var(--tab-action-width));
     background-color: transparent;
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    transition: var(--anim-duration-fast);
 
     &:not(:hover) {
-      opacity: 0;
+      opacity: 0.5;
     }
   }
 
-  // Content pusher
-  .workspace-tab-container .view-content > .markdown-reading-view > div:first-child,
-  .workspace-tab-container .view-content > .markdown-source-view > .cm-editor > .cm-scroller {
-    padding-top: calc(var(--file-margins) + var(--header-height)) !important;
+  .sidebar-toggle-button {
+    position: absolute;
+    height: var(--header-height);
+    z-index: 1;
+
+    &.mod-left {
+      left: calc(var(--frame-left-space) + 8px);
+    }
+    &.mod-right {
+      right: calc(var(--frame-right-space) + 8px);
+    }
+
+    &:not(:hover) {
+      opacity: 0.5;
+    }
   }
 }

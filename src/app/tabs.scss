@@ -12,13 +12,16 @@ body {
   --tab-text-color-focused-active: var(--tab-text-color-active);
   --tab-text-color-focused-active-current: var(--tab-text-color-active);
 }
-
+body:not(.is-mobile) {
+  --tab-action-width: 32px;
+}
 body.is-mobile {
   --header-height: 44px !important;
 }
 body.is-tablet {
   --header-height: 52px !important;
   --view-header-height: 60px !important;
+  --tab-action-width: 44px;
 }
 
 // All panels
@@ -140,8 +143,6 @@ body:not(.is-phone).tabs-floating-center .mod-root .workspace-tabs:not(.mod-stac
 }
 
 body.mod-macos:not(.is-mobile).tabs-floating-center {
-  --tab-action-width: 32px;
-
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
       // Both sidedocks hidden
@@ -165,8 +166,6 @@ body.mod-macos:not(.is-mobile).tabs-floating-center {
 }
 
 body:not(.mod-macos):not(.is-mobile).tabs-floating-center {
-  --tab-action-width: 32px;
-
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
       // Both sidedocks hidden
@@ -200,8 +199,6 @@ body:not(.mod-macos):not(.is-mobile).tabs-floating-center {
 }
 
 body.is-tablet.tabs-floating-center {
-  --tab-action-width: 44px;
-
   // Both drawer hidden
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
