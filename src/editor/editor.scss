@@ -159,7 +159,7 @@
   }
 
   // Line numbers
-  body:not(.is-mobile) .cm-gutters {
+  body:not(.is-mobile) .workspace-leaf-content[data-type="markdown"] .cm-gutters {
     position: absolute;
 
     .cm-gutterElement {
