@@ -143,6 +143,10 @@
     }
   }
   body.active-line-background .markdown-source-view {
+    .cm-scroller {
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
     .cm-line.cm-active:not(.cm-gutterElement)::after {
       position: absolute;
       inset: -2px -100%;
