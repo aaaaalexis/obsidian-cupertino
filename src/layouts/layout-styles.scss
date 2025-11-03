@@ -66,8 +66,11 @@ body:is(.layout-classic, .layout-minimal, .layout-frame):not(.is-mobile) .stacke
 }
 
 // Vault switcher
-body:is(.layout-frame, .layout-macos):not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile::before {
-  background-color: var(--background-primary);
+body:is(.layout-frame, .layout-macos):not(.is-mobile).hide-vault-switcher-off .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+  background-color: inherit;
+}
+body:not(.layout-classic, .layout-minimal):not(.is-mobile).hide-vault-switcher-off .mod-sidedock.mod-left-split .workspace-sidedock-vault-profile {
+  border-top: none;
 }
 
 // Tab styles

@@ -137,6 +137,14 @@ body.layout-cards:not(.is-mobile) {
     border-radius: var(--radius-s);
   }
 
+  // Vault switcher
+  &.hide-vault-switcher-off .mod-sidedock .workspace-sidedock-vault-profile {
+    margin: 8px 8px 0;
+    border-radius: var(--radius-s);
+    background-color: var(--background-primary);
+    width: auto;
+  }
+
   // Contrast
   &.contrast-light-tonal.theme-light,
   &.contrast-dark-tonal.theme-dark,

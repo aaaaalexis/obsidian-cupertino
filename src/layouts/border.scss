@@ -74,6 +74,19 @@ body.layout-border:not(.is-mobile) {
     }
   }
 
+  // Vault switcher
+  &.hide-vault-switcher-off .mod-sidedock {
+    &.mod-left-split .workspace-tabs:last-child .workspace-tab-container {
+      border-bottom-left-radius: 0;
+    }
+    .workspace-sidedock-vault-profile {
+      width: auto;
+      margin: 0 0 0 8px;
+      background-color: var(--background-primary);
+      border-bottom-left-radius: var(--radius-m);
+    }
+  }
+
   // Editor panel
   .workspace.is-left-sidedock-open .mod-root .workspace-tab-container {
     border-top-left-radius: 0;
