@@ -156,8 +156,7 @@
       background-color: color-mix(in srgb, var(--h6-color, var(--color-purple)) 10%, transparent);
     }
   }
-
-  body:not(.colorful-headings-full-width) {
+  body.colorful-headings-background:not(.colorful-headings-full-width) {
     .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
     .HyperMD-header-1,
     .HyperMD-header-2,
