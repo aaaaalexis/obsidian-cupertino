@@ -5,8 +5,13 @@ name: Cupertino
 id: cupertino
 settings:
     -
-        id: macos-header
-        title: On macOS
+        id: cupertino-desc
+        description: All following settings are for **turning off** Cupertino customizations. You don't need to change anything if you want to keep all default Cupertino optimizations.
+        type: info-text
+        markdown: true
+    -
+        id: cupertino-header
+        title: Cupertino
         type: heading
         level: 1
     -
@@ -38,15 +43,10 @@ settings:
         description: Turn off Android specific styling.
         type: class-toggle
     -
-        id: general-header
-        title: General
+        id: editor-header
+        title: Editor
         type: heading
         level: 1
-    -
-        id: cupertino-desc
-        description: All following settings are for **turning off** Cupertino customizations. You don't need to change anything if you want to keep all default Cupertino optimizations.
-        type: info-text
-        markdown: true
     -
         id: active-line-off
         title: Disable active editing line highlight
@@ -113,9 +113,9 @@ settings:
   color: var(--text-normal) !important;
 }
 
-body.is-phone .style-settings-heading[data-id="cupertino"] + .style-settings-container {
-  .style-settings-heading[data-id="macos-header"],
-  .style-settings-heading[data-id="macos-header"] + .style-settings-container {
+body.is-android:not(.android-off) .style-settings-heading[data-id="cupertino"] + .style-settings-container {
+  .style-settings-heading[data-id="cupertino-header"],
+  .style-settings-heading[data-id="cupertino-header"] + .style-settings-container {
     display: none;
   }
 }

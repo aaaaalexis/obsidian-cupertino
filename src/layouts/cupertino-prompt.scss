@@ -1,4 +1,4 @@
-body:is(.liquid-glass-off, :not(.liquid-glass-off)) {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)) {
   .prompt-input-container {
     align-items: center;
   }
@@ -31,7 +31,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)) {
     border-top: none;
   }
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-phone) {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)):not(.is-phone) {
   --prompt-input-height: 56px;
 
   @keyframes bounceInScale {
@@ -58,7 +58,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-phone) {
     pointer-events: none;
   }
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-phone {
   --prompt-input-height: 48px;
 
   .prompt {
@@ -128,6 +128,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
   }
 }
 
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-tablet .prompt {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).is-tablet .prompt {
   border-radius: var(--radius-l);
 }

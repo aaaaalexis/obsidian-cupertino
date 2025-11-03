@@ -1,13 +1,13 @@
-body:is(.liquid-glass-off, :not(.liquid-glass-off)) .modal.mod-sidebar-layout {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)) .modal.mod-sidebar-layout {
   --background-modifier-hover: rgba(var(--mono-rgb-100), 0.03);
   border: none;
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).theme-dark .modal.mod-sidebar-layout {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).theme-dark .modal.mod-sidebar-layout {
   --background-modifier-border: rgba(255, 255, 255, 0.075);
 }
 
-body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-phone) .modal.mod-sidebar-layout:not(.mod-community-modal),
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone .modal.mod-sidebar-layout {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)):not(.is-phone) .modal.mod-sidebar-layout:not(.mod-community-modal),
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-phone .modal.mod-sidebar-layout {
   .setting-item:not(.setting-item-heading) {
     border: none;
     background-color: var(--background-modifier-hover);
@@ -72,8 +72,8 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) .modal.mod-s
   }
 }
 
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone .modal.mod-sidebar-layout,
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-tablet .modal.mod-sidebar-layout:not(.mod-community-modal) {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-phone .modal.mod-sidebar-layout,
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-tablet .modal.mod-sidebar-layout:not(.mod-community-modal) {
   .vertical-tab-header-group-items {
     border-radius: var(--radius-m);
     background-color: var(--background-primary);
@@ -122,7 +122,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-tablet .moda
     }
   }
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-phone {
   &.theme-light .modal.mod-sidebar-layout {
     .vertical-tab-header-group-items,
     .setting-item:not(.setting-item-heading) {
@@ -276,7 +276,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
     }
   }
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-tablet .modal.mod-sidebar-layout:not(.mod-community-modal) {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-tablet .modal.mod-sidebar-layout:not(.mod-community-modal) {
   .setting-item:not(.setting-item-heading) {
     background-color: var(--background-primary);
   }

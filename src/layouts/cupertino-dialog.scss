@@ -1,5 +1,5 @@
 body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile),
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-mobile {
   --background-modifier-message: var(--modal-background);
   --modal-background: rgb(from var(--background-primary-alt) r g b / 75%);
 
@@ -66,7 +66,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
   }
 }
 
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-mobile {
   --menu-radius: var(--modal-radius);
 
   .menu-scroll {
@@ -88,7 +88,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
     }
   }
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-phone {
   --menu-shadow: var(--shadow-s);
   --menu-padding: 32px var(--safe-area-inset-side);
 
@@ -130,7 +130,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
     }
   }
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-tablet {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-tablet {
   --menu-shadow: var(--shadow-l);
 
   .menu,
@@ -175,7 +175,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
   }
 }
 
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-mobile {
   --modal-header-height: var(--view-header-height);
 
   .modal-setting-back-button,
@@ -190,7 +190,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
     font-size: unset;
   }
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-phone {
   --modal-radius: var(--radius-xl);
 
   .modal-container.mod-confirmation .modal {
@@ -232,7 +232,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
 
 // Notice & Tooltip
 body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile),
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-mobile {
   .notice-container {
     display: flex;
     top: unset;
@@ -261,7 +261,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
     font-weight: var(--font-normal);
   }
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-mobile {
   .notice {
     margin-bottom: 0;
     box-shadow: var(--shadow-xs);

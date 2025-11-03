@@ -38,7 +38,7 @@
 body:not(.is-mobile) .omnisearch-input-container__buttons {
   display: none;
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-phone {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
   @media only screen and (max-width: 600px) {
     .omnisearch-modal {
       --prompt-top: calc(var(--safe-area-inset-top) + var(--header-height)) !important;
@@ -135,7 +135,7 @@ body.is-mobile .view-content.notebook-navigator-mobile {
     padding: 0;
   }
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)) .view-content.notebook-navigator-mobile {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app .view-content.notebook-navigator-mobile {
   --nn-scroller-padding: 0;
 
   .nn-back-button,
@@ -147,7 +147,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)) .view-content.notebook-navig
     border-radius: 100vh;
   }
 }
-body .view-content.notebook-navigator-mobile {
+body.obsidian-app .view-content.notebook-navigator-mobile {
   .nn-nav-bottom-spacer,
   .nn-list-bottom-spacer {
     height: calc(var(--safe-area-inset-bottom-override) + 128px);
@@ -276,7 +276,7 @@ body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-con
   }
 }
 
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-mobile:not(.mobile-stable) .workspace-drawer .novel-word-count--active {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-mobile.obsidian-app .workspace-drawer .novel-word-count--active {
   .nav-buttons-container {
     overflow: visible;
   }
@@ -341,7 +341,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-mobile:not(.mobile-stable
 }
 
 // Pixel Banner https://github.com/jparkerweb/pixel-banner
-body.is-phone:not(.mobile-stable) .pixel-banner {
+body.is-phone.obsidian-app .pixel-banner {
   .select-image-icon {
     display: none;
   }
