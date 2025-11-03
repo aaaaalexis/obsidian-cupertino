@@ -51,6 +51,9 @@ body {
   align-items: var(--bases-table-align-items, start);
 }
 
+.bases-thead .bases-table-header {
+  overflow: hidden;
+}
 .bases-thead .bases-td {
   box-shadow: none;
   border-radius: var(--radius-s);
