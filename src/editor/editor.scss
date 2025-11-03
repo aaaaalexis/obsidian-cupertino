@@ -391,7 +391,7 @@
     iframe,
     video,
     .bases-cards-cover {
-      transition: var(--anim-duration-moderate);
+      transition: opacity var(--anim-duration-moderate);
 
       &:not(:hover) {
         opacity: var(--media-muted, 1);
