@@ -92,7 +92,7 @@ body:not(.is-phone) .workspace .mod-root {
 }
 
 // Editor panel: Floating
-body:is(.tabs-floating, .tabs-floating-center):not(.is-phone) .workspace .mod-root {
+body:is(.tabs-floating, .tabs-floating-center):not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
   --tab-radius-active: var(--tab-radius);
   --tab-curve: 0;
 
@@ -113,13 +113,13 @@ body:is(.tabs-floating, .tabs-floating-center):not(.is-phone) .workspace .mod-ro
     margin-bottom: 0;
   }
 }
-body:is(.tabs-floating, .tabs-floating-center).is-tablet {
+body:is(.tabs-floating, .tabs-floating-center).is-tablet .mod-root .workspace-tabs:not(.mod-stacked) {
   --header-height: 60px !important;
 
-  .mod-root .workspace-tab-header-container-inner {
+  .workspace-tab-header-container-inner {
     padding: 0 !important;
   }
-  .mod-root .workspace-tab-header {
+  .workspace-tab-header {
     margin: 8px 0;
   }
 }
@@ -247,7 +247,7 @@ body.is-tablet.tabs-floating-center {
 }
 
 // Editor panel: Underline
-body:not(.is-phone).tabs-underline .workspace .mod-root {
+body:not(.is-phone).tabs-underline .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
   --tab-background-active: transparent;
 
   .workspace-tab-header-container-inner {
@@ -274,6 +274,9 @@ body:not(.is-phone).tabs-underline .workspace .mod-root {
 }
 
 // Editor panel: Stacks
+.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container-inner {
+  display: none;
+}
 .tab-stack-top-flipped {
   --tab-stacked-text-transform: rotate(180deg);
   --tab-stacked-text-align: right;
