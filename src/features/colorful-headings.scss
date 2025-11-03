@@ -27,6 +27,40 @@
   }
 
   body.colorful-headings-side {
+    .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
+    .cm-line.HyperMD-header-1,
+    .cm-line.HyperMD-header-2,
+    .cm-line.HyperMD-header-3,
+    .cm-line.HyperMD-header-4,
+    .cm-line.HyperMD-header-5,
+    .cm-line.HyperMD-header-6 {
+      position: relative;
+      padding-inline-start: var(--font-ui-smaller);
+
+      &::before {
+        pointer-events: none;
+        display: inline-flex;
+        border-radius: var(--radius-s);
+        width: 4px;
+        inset-block: 0;
+        content: "";
+        position: absolute;
+        inset-inline-start: 0;
+        transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+      }
+    }
+
+    .collapse-indicator {
+      inset-inline-start: 0;
+    }
+    .cm-active .collapse-indicator {
+      inset-inline-start: -32px;
+    }
+
+    .HyperMD-header:not(.cm-line.HyperMD-header + .cm-line:not(.HyperMD-header):has(> br:only-child) + .cm-line.HyperMD-header)::before {
+      margin-top: var(--p-spacing);
+    }
+
     .markdown-rendered h1::before,
     .HyperMD-header-1::before {
       background-color: var(--h1-color, var(--color-red));
@@ -51,111 +85,73 @@
     .HyperMD-header-6::before {
       background-color: var(--h6-color, var(--color-purple));
     }
+  }
 
+  body.colorful-headings-side.colorful-headings-background {
     .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
-    .HyperMD-header-1,
-    .HyperMD-header-2,
-    .HyperMD-header-3,
-    .HyperMD-header-4,
-    .HyperMD-header-5,
-    .HyperMD-header-6 {
-      position: relative;
+    .cm-line.HyperMD-header-1,
+    .cm-line.HyperMD-header-2,
+    .cm-line.HyperMD-header-3,
+    .cm-line.HyperMD-header-4,
+    .cm-line.HyperMD-header-5,
+    .cm-line.HyperMD-header-6 {
       padding-inline-start: var(--font-ui-smaller);
 
-      &::before {
+      &::after {
+        inset-inline: 8px -4px;
+      }
+    }
+  }
+
+  body.colorful-headings-background {
+    .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
+    .cm-line.HyperMD-header-1,
+    .cm-line.HyperMD-header-2,
+    .cm-line.HyperMD-header-3,
+    .cm-line.HyperMD-header-4,
+    .cm-line.HyperMD-header-5,
+    .cm-line.HyperMD-header-6 {
+      position: relative;
+      padding-inline-start: 8px;
+
+      &::after {
         pointer-events: none;
         display: inline-flex;
         border-radius: var(--radius-s);
-        width: 4px;
-        height: calc(100% - 6px);
+        inset-block: -4px;
         content: "";
-        bottom: 4px;
         position: absolute;
-        inset-inline-start: 0;
+        inset-inline: 0 -8px;
+        max-width: 100cqw;
         transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
       }
-      &.cm-line::before {
-        height: calc(100% - 6px - var(--p-spacing));
-      }
-      &.cm-line .cm-header:not(.cm-inline-code, .cm-formatting-header + .cm-header) {
-        padding-inline-start: var(--font-ui-smaller);
-        box-decoration-break: clone;
-      }
-    }
-    .collapse-indicator.heading-collapse-indicator {
-      margin-inline-start: -36px;
     }
 
-    .cm-line:is(.HyperMD-header-1, .HyperMD-header-2, .HyperMD-header-3, .HyperMD-header-4, .HyperMD-header-5, .HyperMD-header-6) + .cm-line:has(br:only-child):not(.HyperMD-header-1, .HyperMD-header-2, .HyperMD-header-3, .HyperMD-header-4, .HyperMD-header-5, .HyperMD-header-6) + .cm-line:is(.HyperMD-header-1, .HyperMD-header-2, .HyperMD-header-3, .HyperMD-header-4, .HyperMD-header-5, .HyperMD-header-6)::before {
-      height: calc(100% - 6px);
-    }
-  }
-
-  body.colorful-headings-background.colorful-headings-side {
-    .HyperMD-header-1,
-    .HyperMD-header-2,
-    .HyperMD-header-3,
-    .HyperMD-header-4,
-    .HyperMD-header-5,
-    .HyperMD-header-6 {
-      &::after {
-        margin-inline-start: var(--font-ui-smaller);
-      }
-    }
-  }
-  body.colorful-headings-background {
-    .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
-    .HyperMD-header-1,
-    .HyperMD-header-2,
-    .HyperMD-header-3,
-    .HyperMD-header-4,
-    .HyperMD-header-5,
-    .HyperMD-header-6 {
-      padding-inline: 0.2em;
-      border-radius: var(--radius-s);
-
-      &.cm-line {
-        padding-inline: 0.2em;
-      }
+    .HyperMD-header:not(.cm-line.HyperMD-header + .cm-line:not(.HyperMD-header):has(> br:only-child) + .cm-line.HyperMD-header)::after {
+      margin-top: var(--p-spacing);
     }
 
-    .HyperMD-header-1,
-    .HyperMD-header-2,
-    .HyperMD-header-3,
-    .HyperMD-header-4,
-    .HyperMD-header-5,
-    .HyperMD-header-6 {
-      &::after {
-        content: "";
-        position: absolute;
-        inset: var(--p-spacing) 0 0;
-        border-radius: var(--radius-s);
-        pointer-events: none;
-        z-index: -1;
-      }
-    }
-
-    .markdown-rendered h1,
+    .markdown-rendered h1::after,
     .HyperMD-header-1::after {
       background-color: color-mix(in srgb, var(--h1-color, var(--color-red)) 10%, transparent);
     }
-    .markdown-rendered h2,
+    .markdown-rendered h2::after,
     .HyperMD-header-2::after {
       background-color: color-mix(in srgb, var(--h2-color, var(--color-orange)) 10%, transparent);
     }
-    .markdown-rendered h3,
+    .markdown-rendered h3::after,
     .HyperMD-header-3::after {
       background-color: color-mix(in srgb, var(--h3-color, var(--color-yellow)) 10%, transparent);
     }
-    .markdown-rendered h4,
+    .markdown-rendered h4::after,
     .HyperMD-header-4::after {
       background-color: color-mix(in srgb, var(--h4-color, var(--color-green)) 10%, transparent);
     }
-    .markdown-rendered h5,
+    .markdown-rendered h5::after,
     .HyperMD-header-5::after {
       background-color: color-mix(in srgb, var(--h5-color, var(--color-blue)) 10%, transparent);
     }
-    .markdown-rendered h6,
+    .markdown-rendered h6::after,
     .HyperMD-header-6::after {
       background-color: color-mix(in srgb, var(--h6-color, var(--color-purple)) 10%, transparent);
     }
@@ -170,6 +166,8 @@
     .HyperMD-header-5,
     .HyperMD-header-6 {
       width: fit-content;
+      justify-self: self-start;
+      max-width: 100%;
     }
   }
 }
