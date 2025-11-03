@@ -71,16 +71,23 @@
     --h4-line-height: var(--line-height-normal);
     --readable-spacing-modifier: 0.25;
 
+    .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
     .markdown-rendered div:is(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5, .el-h6) > :is(h1, h2, h3, h4, h5, h6),
     .markdown-rendered div.el-p:has(+ div:is(.el-ul, .el-ol)) > p {
       margin-block-end: calc(var(--p-spacing) * var(--readable-spacing-modifier));
     }
-    .markdown-rendered div.el-h1 + div > *:not(hr),
-    .markdown-rendered div.el-h2 + div > *:not(hr, h1),
-    .markdown-rendered div.el-h3 + div > *:not(hr, h1, h2),
-    .markdown-rendered div.el-h4 + div > *:not(hr, h1, h2, h3),
-    .markdown-rendered div.el-h5 + div > *:not(hr, h1, h2, h3, h4),
-    .markdown-rendered div.el-h6 + div > *:not(hr, h1, h2, h3, h4, h5),
+    .markdown-rendered h1 + :not(hr),
+    .markdown-rendered h2 + :not(hr, h1),
+    .markdown-rendered h3 + :not(hr, h1, h2),
+    .markdown-rendered h4 + :not(hr, h1, h2, h3),
+    .markdown-rendered h5 + :not(hr, h1, h2, h3, h4),
+    .markdown-rendered h6 + :not(hr, h1, h2, h3, h4, h5),
+    .markdown-rendered div.el-h1 + div > :not(hr),
+    .markdown-rendered div.el-h2 + div > :not(hr, h1),
+    .markdown-rendered div.el-h3 + div > :not(hr, h1, h2),
+    .markdown-rendered div.el-h4 + div > :not(hr, h1, h2, h3),
+    .markdown-rendered div.el-h5 + div > :not(hr, h1, h2, h3, h4),
+    .markdown-rendered div.el-h6 + div > :not(hr, h1, h2, h3, h4, h5),
     .markdown-rendered div.el-p + div:is(.el-ul, .el-ol) > * {
       margin-block-start: calc(var(--p-spacing) * var(--readable-spacing-modifier));
     }
