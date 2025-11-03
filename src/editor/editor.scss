@@ -279,26 +279,24 @@
 
   // Inline tiele & Headings
   .inline-title:not([data-level]) {
+    padding-block: 8px;
     position: relative;
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    border: var(--border-width) solid transparent;
+    border-radius: var(--radius-s);
+
+    &:focus-within {
+      padding-inline: 8px;
+      border-color: var(--background-modifier-border);
+    }
 
     &:not(:focus-within) {
       cursor: pointer;
-    }
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: -8px;
-      border-radius: var(--radius-s);
-      background-color: transparent;
-      pointer-events: none;
-      z-index: 0;
-      transition: var(--anim-duration-fast);
-    }
-
-    &:hover::before,
-    &:focus-within::before {
-      background-color: var(--background-modifier-hover);
+      &:hover {
+        padding-inline: 8px;
+        background-color: var(--background-modifier-hover);
+      }
     }
   }
 
