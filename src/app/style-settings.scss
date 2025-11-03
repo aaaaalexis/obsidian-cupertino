@@ -868,6 +868,59 @@ settings:
 				label: Reversed
 				value: row-reverse
 	-
+		id: tab-title-bar
+		title: Tab title bar
+		type: heading
+		level: 2
+		collapsed: true
+    - 
+        id: tab-title-bar-info
+		description: Tab title bar must be turned on in **Appearance** settings.
+        type: info-text
+		markdown: true
+	-
+		id: file-header-visibility
+		title: Tab title visibility
+		description: Visibility of the tab title text
+		type: class-select
+		default: view-header-title-hover
+		options:
+			-
+				label: Hover only
+				value: view-header-title-hover
+			-
+				label: Hidden
+				value: view-header-title-hidden
+			-
+				label: Always
+				value: view-header-title-always
+	-
+		id: file-header-font-size
+		title: Tab title font size
+		description: Accepts any CSS font-size value
+		type: variable-text
+		default: ''
+	-
+		id: file-header-font-weight
+		title: Tab title font weight
+		type: variable-number-slider
+		default: 400
+		min: 100
+		max: 900
+		step: 100
+	-
+		id: file-header-justify
+		title: Tab title alignment
+		type: variable-select
+		default: center
+		options:
+			-
+				label: Center
+				value: center
+			-
+				label: Left
+				value: left
+	-
 		id: sidebars
 		title: Sidebars
 		type: heading
@@ -1132,132 +1185,42 @@ settings:
 		description: Turns off mobile editor mode switcher quick access
 		default: false
 	-
-		id: spacing
-		title: Spacing
+		id: active-line
+		title: Active line
 		type: heading
 		level: 2
 		collapsed: true
 	-
-		id: heading-spacing
-		title: Heading spacing
-		description: Space between paragraphs and headings in reading mode
-		type: variable-text
-		default: 2em
-	-
-		id: p-spacing
-		title: Paragraph spacing
-		description: Space between paragraphs in reading mode
-		type: variable-text
-		default: 1.75rem
-	-
-		id: readable-spacing
-		title: Readable spacing
-		description: Use readable spacing in reading and editing views
-		type: class-toggle
-		default: false
-	-
-		id: readable-spacing-modifier
-		title: Readable spacing modifier
-		description: Lower value is tighter spacing after headings, relative to paragraph spacing
-		type: variable-number-slider
-		default: 0.25
-		min: 0
-		max: 1
-		step: 0.25
-	-
-		id: indentation-guide
-		title: Indentation guides
-		type: heading
-		level: 2
-		collapsed: true
-	-
-		id: indentation-guide-width
-		title: Indentation guides thickness
-		type: variable-select
-		allowEmpty: false
-		default: 0px
+		id: active-line-style
+		title: Highlight active line style
+		description: Adds an indicator to current line in editor
+		type: class-select
+		default: active-line-off
 		options:
 			-
 				label: None
-				value: 0px
+				value: active-line-off
 			-
-				label: Thin
-				value: 1px
+				label: Indicator
+				value: active-line-side
 			-
-				label: Medium
-				value: 2px
+				label: Block background
+				value: active-line-block
 			-
-				label: Thick
-				value: 3px
+				label: Line background
+				value: active-line-background
 	-
-		id: indentation-guide-color
-		title: Indentation guides color
-		type: variable-select
-		allowEmpty: false
-		default: rgba(var(--mono-rgb-100), 0.12)
+		id: active-line-color
+		title: Highlight active line color
+		type: class-select
+		default: active-line-color-default
 		options:
 			-
-				label: Subtle
-				value: rgba(var(--mono-rgb-100), 0.12)
-			-
-				label: Strong
-				value: var(--text-faint)
+				label: Monochrome
+				value: active-line-color-default
 			-
 				label: Accent color
-				value: var(--color-accent)
-	-
-		id: tab-title-bar
-		title: Tab title bar
-		type: heading
-		level: 2
-		collapsed: true
-    - 
-        id: tab-title-bar-info
-		description: Tab title bar must be turned on in **Appearance** settings.
-        type: info-text
-		markdown: true
-	-
-		id: file-header-visibility
-		title: Tab title visibility
-		description: Visibility of the tab title text
-		type: class-select
-		default: view-header-title-hover
-		options:
-			-
-				label: Hover only
-				value: view-header-title-hover
-			-
-				label: Hidden
-				value: view-header-title-hidden
-			-
-				label: Always
-				value: view-header-title-always
-	-
-		id: file-header-font-size
-		title: Tab title font size
-		description: Accepts any CSS font-size value
-		type: variable-text
-		default: ''
-	-
-		id: file-header-font-weight
-		title: Tab title font weight
-		type: variable-number-slider
-		default: 400
-		min: 100
-		max: 900
-		step: 100
-	-
-		id: file-header-justify
-		title: Tab title alignment
-		type: variable-select
-		default: center
-		options:
-			-
-				label: Center
-				value: center
-			-
-				label: Left
-				value: left
+				value: active-line-color-accent
 	-
 		id: blockwidth
 		title: Block width
@@ -1388,42 +1351,134 @@ settings:
 				label: 100% pane width
 				value: chart-100
 	-
-		id: active-line
-		title: Active line
+		id: indentation-guide
+		title: Indentation guides
 		type: heading
 		level: 2
 		collapsed: true
 	-
-		id: active-line-style
-		title: Highlight active line style
-		description: Adds an indicator to current line in editor
-		type: class-select
-		default: active-line-off
+		id: indentation-guide-width
+		title: Indentation guides thickness
+		type: variable-select
+		allowEmpty: false
+		default: 0px
 		options:
 			-
 				label: None
-				value: active-line-off
+				value: 0px
 			-
-				label: Indicator
-				value: active-line-side
+				label: Thin
+				value: 1px
 			-
-				label: Block background
-				value: active-line-block
+				label: Medium
+				value: 2px
 			-
-				label: Line background
-				value: active-line-background
+				label: Thick
+				value: 3px
 	-
-		id: active-line-color
-		title: Highlight active line color
-		type: class-select
-		default: active-line-color-default
+		id: indentation-guide-color
+		title: Indentation guides color
+		type: variable-select
+		allowEmpty: false
+		default: rgba(var(--mono-rgb-100), 0.12)
 		options:
 			-
-				label: Monochrome
-				value: active-line-color-default
+				label: Subtle
+				value: rgba(var(--mono-rgb-100), 0.12)
+			-
+				label: Strong
+				value: var(--text-faint)
 			-
 				label: Accent color
-				value: active-line-color-accent
+				value: var(--color-accent)
+	-
+		id: properties
+		title: Properties
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: metadata-style
+		title: Properties style
+		type: class-select
+		allowEmpty: false
+		default: metadata-default
+		options:
+			-
+				label: Default
+				value: metadata-default
+			-
+				label: Block
+				value: metadata-block
+			-
+				label: Cupertino
+				value: metadata-cupertino
+	-
+		id: metadata-heading-off
+		title: Hide properties heading
+		description: Hide "Properties" heading above properties
+		type: class-toggle
+		default: false
+	-
+		id: metadata-add-property-off
+		title: Hide "Add property" button
+		description: Hide "Add property" button below properties
+		type: class-toggle
+		default: false
+	-
+		id: metadata-icons-off
+		title: Hide property icons
+		description: Hide icons next to property names
+		type: class-toggle
+		default: false
+	-
+		id: metadata-link-nowrap
+		title: Disable link line wrap
+		description: Turns off line wrapping for links in properties
+		type: class-toggle
+		default: false
+	-
+		id: metadata-label-width-modifier
+		title: Property name width
+		description: Width for the name of the property
+		type: variable-number-slider
+		default: 1
+		min: 0.5
+		max: 1.5
+		step: 0.1
+	-
+		id: spacing
+		title: Spacing
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: heading-spacing
+		title: Heading spacing
+		description: Space between paragraphs and headings in reading mode
+		type: variable-text
+		default: 2em
+	-
+		id: p-spacing
+		title: Paragraph spacing
+		description: Space between paragraphs in reading mode
+		type: variable-text
+		default: 1.75rem
+	-
+		id: readable-spacing
+		title: Readable spacing
+		description: Use readable spacing in reading and editing views
+		type: class-toggle
+		default: false
+	-
+		id: readable-spacing-modifier
+		title: Readable spacing modifier
+		description: Lower value is tighter spacing after headings, relative to paragraph spacing
+		type: variable-number-slider
+		default: 0.25
+		min: 0
+		max: 1
+		step: 0.25
 	-
 		id: inline-title
 		title: Inline title
@@ -2022,60 +2077,56 @@ settings:
 		description: Adds a border below the heading
 		default: false
 	-
-		id: properties
-		title: Properties
+		id: banner
+		title: Banner
 		type: heading
 		level: 2
 		collapsed: true
 	-
-		id: metadata-style
-		title: Properties style
-		type: class-select
+		id: banner-content-offset
+		title: Content offset
+		type: variable-text
 		allowEmpty: false
-		default: metadata-default
+		default: 0px
+	-
+		id: banner-content-offset-fade
+		title: Fade offset
+		type: variable-text
+		allowEmpty: false
+		default: 64px
+	- 
+		id: banner-image-height
+		title: Banner image height
+		type: variable-text
+		allowEmpty: false
+		default: 320px
+	-
+		id: banner-image-inset
+		title: Banner image side spacing
+		type: variable-text
+		allowEmpty: false
+		default: 8px
+	-
+		id: banner-image-object-fit
+		title: Banner image fit
+		type: class-select
+		default: banner-image-cover
 		options:
 			-
-				label: Default
-				value: metadata-default
+				label: Cover
+				value: banner-image-cover
 			-
-				label: Block
-				value: metadata-block
+				label: Contain
+				value: banner-image-contain
 			-
-				label: Cupertino
-				value: metadata-cupertino
+				label: Fill
+				value: banner-image-fill
 	-
-		id: metadata-heading-off
-		title: Hide properties heading
-		description: Hide "Properties" heading above properties
-		type: class-toggle
-		default: false
-	-
-		id: metadata-add-property-off
-		title: Hide "Add property" button
-		description: Hide "Add property" button below properties
-		type: class-toggle
-		default: false
-	-
-		id: metadata-icons-off
-		title: Hide property icons
-		description: Hide icons next to property names
-		type: class-toggle
-		default: false
-	-
-		id: metadata-link-nowrap
-		title: Disable link line wrap
-		description: Turns off line wrapping for links in properties
-		type: class-toggle
-		default: false
-	-
-		id: metadata-label-width-modifier
-		title: Property name width
-		description: Width for the name of the property
-		type: variable-number-slider
-		default: 1
-		min: 0.5
-		max: 1.5
-		step: 0.1
+		id: banner-icon-size
+		title: Banner icon size
+		type: variable-text
+		allowEmpty: false
+		default: 48px
 	-
 		id: bases
 		title: Bases
@@ -2105,12 +2156,6 @@ settings:
 		id: bases-col-alt
 		title: Striped columns
 		description: Display striped background in alternating Bases table columns
-		type: class-toggle
-		default: false
-	-
-		id: bases-table-numbers
-		title: Row numbers
-		description: Display row numbers in Bases table
 		type: class-toggle
 		default: false
 	-
