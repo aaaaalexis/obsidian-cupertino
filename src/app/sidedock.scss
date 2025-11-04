@@ -143,7 +143,7 @@ body:not(.is-mobile) .mod-sidedock {
   }
 
   .workspace-leaf:not([style*="display: none"]) {
-    animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+    animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-cupertino) forwards;
   }
 
   // Sidedock padding
