@@ -240,6 +240,9 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     border-radius: var(--clickable-icon-radius);
     justify-content: center;
   }
+  .mobile-tab-switcher-menu-spacer .clickable-icon {
+    position: relative;
+  }
   .mobile-tab-switcher-menu-spacer:first-child .clickable-icon {
     width: var(--input-height);
     height: var(--input-height);
