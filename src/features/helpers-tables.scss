@@ -50,46 +50,26 @@
 }
 
 .table-numbers {
-  table:not(.calendar) {
+  table {
     counter-reset: section;
-    > thead > tr > th:first-child {
-      white-space: nowrap;
-      &::before {
-        content: " ";
-        padding-right: 0.5em;
-        display: inline-block;
-        min-width: 2em;
-      }
-      .table-cell-wrapper,
-      .cm-s-obsidian {
-        display: inline-block;
-        min-width: 10px;
-      }
+    &:not(.table-editor) > :is(thead, tbody) > tr > :is(th, td):first-child,
+    &.table-editor > :is(thead, tbody) > tr > :is(th, td):first-child .table-cell-wrapper {
+      position: relative;
+      padding-left: 3em;
     }
-    &:not(.table-editor) tr > :first-child,
-    &.table-editor tr > :first-child .table-cell-wrapper {
-      > .node-insert-event,
-      img {
-        max-width: calc(100% - 2.5em);
-      }
-    }
-    &:not(.table-editor) > tbody > tr > td:first-child,
-    &.table-editor > tbody > tr > td:first-child .table-cell-wrapper {
-      white-space: nowrap;
-      &::before {
-        counter-increment: section;
-        content: counter(section) " ";
-        text-align: center;
-        padding-right: 0.5em;
-        display: inline-block;
-        min-width: 2em;
-        color: var(--text-faint);
-        font-variant-numeric: tabular-nums;
-      }
-      .cm-s-obsidian {
-        display: inline-block;
-        min-width: 10px;
-      }
+
+    &:not(.table-editor) tbody > tr > td:first-child::before,
+    &.table-editor tbody > tr > td:first-child .table-cell-wrapper::before {
+      display: inline-block;
+      position: absolute;
+      top: 0.5em;
+      left: 0.5em;
+      counter-increment: section;
+      min-width: 2em;
+      content: counter(section);
+      color: var(--text-faint);
+      font-variant-numeric: tabular-nums;
+      text-align: center;
     }
   }
 }
