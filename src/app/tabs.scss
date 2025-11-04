@@ -143,8 +143,6 @@ body:not(.is-phone):not(.center-tabs-off) .mod-root .workspace-tabs:not(.mod-sta
 }
 
 body.mod-macos:not(.is-mobile):not(.center-tabs-off) {
-  --tab-action-width: 32px;
-
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
       // Both sidedocks hidden
@@ -168,8 +166,6 @@ body.mod-macos:not(.is-mobile):not(.center-tabs-off) {
 }
 
 body:not(.mod-macos):not(.is-mobile):not(.center-tabs-off) {
-  --tab-action-width: 32px;
-
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
       // Both sidedocks hidden
@@ -203,8 +199,6 @@ body:not(.mod-macos):not(.is-mobile):not(.center-tabs-off) {
 }
 
 body.is-tablet:not(.center-tabs-off) {
-  --tab-action-width: 44px;
-
   // Both drawer hidden
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
