@@ -179,6 +179,10 @@ body:not(.is-mobile):not(.hide-vault-switcher-off) .mod-sidedock.mod-left-split 
       background-color: var(--background-secondary);
     }
 
+    .workspace-drawer-vault-switcher.has-active-menu {
+      background-color: var(--interactive-normal);
+    }
+
     &:not(:hover) {
       pointer-events: none;
 
