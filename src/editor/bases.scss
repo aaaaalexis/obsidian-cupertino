@@ -71,6 +71,13 @@ body {
   overflow: hidden;
 }
 
+body.bases-row-alt .bases-tbody .bases-tr:nth-child(odd) {
+  background-color: var(--background-secondary);
+}
+body.bases-col-alt .bases-tbody .bases-tr > .bases-td:nth-child(2n + 2) {
+  background-color: var(--background-secondary);
+}
+
 // Bases: Embed
 .workspace-leaf-content[data-type="markdown"] .bases-embed .bases-view {
   border: none;
