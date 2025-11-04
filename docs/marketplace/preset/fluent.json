@@ -1,0 +1,17 @@
+{
+  "baseline-style@@accented-interface": true,
+  "baseline-style@@font-interface-override": "Segoe UI Variable, Segoe UI Variable Text, Segoe UI",
+  "baseline-style@@layout-style": "layout-cupertino",
+  "baseline-style@@input-style": "input-fluent",
+  "baseline-style@@anim-motion-baseline": "cubic-bezier(0.32, 0.72, 0, 1)",
+  "baseline-style@@stacked-nav-off": true,
+  "baseline-style@@compact-tabs-off": true,
+  "baseline-style@@font-text-override": "Segoe UI Variable Text, Segoe UI Variable, Segoe UI",
+  "baseline-style@@font-monospace-override": "Cascadia Code, Cascadia Mono",
+  "baseline-style@@inline-title-size": "2.5rem",
+  "baseline-style@@h1-size": "2.5rem",
+  "baseline-style@@h2-size": "1.8rem",
+  "baseline-style@@h3-size": "2.45rem",
+  "baseline-style@@h4-size": "1.55rem",
+  "baseline-style@@media-radius": 16
+}

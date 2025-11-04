@@ -1,14 +1,12 @@
 {
   "baseline-style@@accented-interface": true,
   "baseline-style@@color-scheme-light": "admin-light",
-  "baseline-style@@background-contrast-light": "contrast-light-vivid",
   "baseline-style@@color-scheme-dark": "admin-dark",
   "baseline-style@@color-scheme-accent": true,
   "baseline-style@@font-interface-override": "Avenir",
   "baseline-style@@stacked-nav-off": true,
   "baseline-style@@nav-item-active-style": "nav-item-strong",
   "baseline-style@@hide-vault-switcher-off": true,
-  "baseline-style@@hide-help": true,
   "baseline-style@@font-text-override": "Avenir",
   "baseline-style@@metadata-style": "metadata-block"
 }

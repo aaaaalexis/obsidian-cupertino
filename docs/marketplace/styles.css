@@ -90,7 +90,6 @@
   outline: none;
   border: none;
   background-color: transparent;
-  height: -webkit-fill-available;
   font-size: 1em;
   text-indent: 8px;
 }

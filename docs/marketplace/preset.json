@@ -51,5 +51,11 @@
     "author": "kepano",
     "url": "https://github.com/kepano/obsidian-minimal",
     "description": "A distraction-free experience for your vault."
+  },
+  "Fluent": {
+    "id": "fluent",
+    "author": "Alexis C",
+    "url": "https://github.com/aaaaalexis",
+    "description": "Modern and clean interface, inspired by Microsoft Fluent Design System"
   }
 }

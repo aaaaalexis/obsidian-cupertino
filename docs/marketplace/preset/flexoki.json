@@ -7,6 +7,6 @@
   "baseline-style@@nav-item-active-style": "nav-item-subtle",
   "baseline-style@@bold-folders": true,
   "baseline-style@@readable-spacing": true,
-  "baseline-style@@colorful-headings": "colorful-headings-side",
+  "baseline-style@@colorful-headings-side": true,
   "baseline-style@@metadata-style": "metadata-block"
 }
