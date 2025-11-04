@@ -12,13 +12,16 @@ body {
   --tab-text-color-focused-active: var(--tab-text-color-active);
   --tab-text-color-focused-active-current: var(--tab-text-color-active);
 }
-
+body:not(.is-mobile) {
+  --tab-action-width: 32px;
+}
 body.is-mobile {
   --header-height: 44px !important;
 }
 body.is-tablet {
   --header-height: 52px !important;
   --view-header-height: 60px !important;
+  --tab-action-width: 44px;
 }
 
 // All panels
@@ -89,7 +92,7 @@ body:not(.is-phone) .workspace .mod-root {
 }
 
 // Editor panel: Floating
-body:not(.is-phone) .workspace .mod-root {
+body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
   --tab-radius-active: var(--tab-radius);
   --tab-curve: 0;
 
@@ -110,13 +113,13 @@ body:not(.is-phone) .workspace .mod-root {
     margin-bottom: 0;
   }
 }
-body.is-tablet {
+body.is-tablet .mod-root .workspace-tabs:not(.mod-stacked) {
   --header-height: 60px !important;
 
-  .mod-root .workspace-tab-header-container-inner {
+  .workspace-tab-header-container-inner {
     padding: 0 !important;
   }
-  .mod-root .workspace-tab-header {
+  .workspace-tab-header {
     margin: 8px 0;
   }
 }

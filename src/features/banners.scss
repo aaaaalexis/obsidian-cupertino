@@ -1,0 +1,135 @@
+body:not(.banner-off) {
+  --banner-image-height: 320px;
+  --banner-image-inset: 8px;
+  --banner-image-object-fit: cover;
+  --banner-icon-size: 48px;
+  --banner-icon-spacer: 16px;
+  --banner-icon-offset: -64px;
+  --banner-content-offset: 0px;
+  --banner-mobile-spacer: 0px;
+  --banner-mobile-offset: 0px;
+
+  --banner-calc-base: calc(var(--banner-mobile-spacer) + var(--banner-mobile-offset) + var(--banner-content-offset));
+  --banner-calc-icon: calc(var(--banner-icon-size) + var(--banner-icon-spacer));
+
+  &.is-phone {
+    --banner-mobile-spacer: calc(var(--safe-area-inset-top) + var(--view-header-height) + 32px);
+    --banner-mobile-offset: 16px;
+  }
+
+  &.banner-image-contain,
+  .banner-image-contain {
+    --banner-image-object-fit: contain;
+  }
+  &.banner-image-cover,
+  .banner-image-cover {
+    --banner-image-object-fit: cover;
+  }
+  &.banner-image-fill,
+  .banner-image-fill {
+    --banner-image-object-fit: fill;
+  }
+
+  // Banner: Spacing
+  .banner:not(.banner-icon) {
+    .markdown-preview-pusher,
+    .cm-sizer {
+      margin-top: calc(var(--banner-calc-base) + var(--banner-image-height)) !important;
+    }
+  }
+  .banner.banner-icon {
+    .markdown-preview-pusher,
+    .cm-sizer {
+      margin-top: calc(var(--banner-calc-base) + var(--banner-image-height) + var(--banner-calc-icon) + var(--banner-icon-offset)) !important;
+    }
+    .callout[data-callout="banner-icon"] {
+      top: calc(var(--banner-calc-base) + var(--file-margins-block) + var(--banner-image-height) + var(--banner-icon-offset));
+    }
+  }
+  .banner-icon:not(.banner) {
+    .markdown-preview-pusher,
+    .cm-sizer {
+      margin-top: calc(var(--banner-calc-base) + var(--banner-calc-icon)) !important;
+    }
+    .callout[data-callout="banner-icon"] {
+      top: calc(var(--banner-calc-base) + var(--file-margins-block));
+    }
+  }
+
+  // Banner: Image
+  .banner {
+    img[alt="banner"] {
+      position: absolute;
+      inset: var(--banner-mobile-spacer) var(--banner-image-inset) auto;
+      max-width: -webkit-fill-available;
+      height: var(--banner-image-height);
+      object-fit: var(--banner-image-object-fit);
+    }
+
+    .image-embed:has(img[alt="banner"]) {
+      display: contents !important;
+    }
+  }
+  .banner.banner-fade {
+    img[alt="banner"] {
+      mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 15%, hsla(0, 0%, 0%, 0.951) 28.2%, hsla(0, 0%, 0%, 0.896) 39.7%, hsla(0, 0%, 0%, 0.825) 49.6%, hsla(0, 0%, 0%, 0.741) 58.1%, hsla(0, 0%, 0%, 0.648) 65.4%, hsla(0, 0%, 0%, 0.55) 71.6%, hsla(0, 0%, 0%, 0.45) 76.9%, hsla(0, 0%, 0%, 0.352) 81.4%, hsla(0, 0%, 0%, 0.259) 85.2%, hsla(0, 0%, 0%, 0.175) 88.5%, hsla(0, 0%, 0%, 0.104) 91.5%, hsla(0, 0%, 0%, 0.049) 94.3%, hsla(0, 0%, 0%, 0.013) 97.1%, hsla(0, 0%, 0%, 0) 100%);
+    }
+  }
+  @for $i from 0 through 100 {
+    .banner.y#{$i} {
+      img[alt="banner"] {
+        object-position: center #{percentage($i / 100)};
+      }
+    }
+  }
+
+  // Banner: Icon
+  .banner-icon {
+    .cm-callout:has(.callout[data-callout="banner-icon"]) {
+      display: contents !important;
+    }
+
+    .callout[data-callout="banner-icon"] {
+      // Positioning
+      position: absolute;
+      z-index: 1;
+      container-type: inline-size;
+      margin: 0;
+
+      // Styling
+      border: none !important;
+      background-color: transparent !important;
+      padding: 0;
+      width: var(--banner-icon-size);
+      height: var(--banner-icon-size);
+      overflow: visible;
+      font-size: 0;
+
+      .callout-title {
+        justify-content: center;
+      }
+
+      .callout-title-inner::first-letter {
+        color: var(--color-accent);
+        font-size: 100cqw;
+        line-height: 100%;
+      }
+
+      .callout-icon,
+      .callout-content {
+        display: none;
+      }
+    }
+  }
+  .banner-icon.banner-title {
+    --banner-icon-spacer: var(--inline-title-size);
+
+    .inline-title:not([data-level]) {
+      z-index: 1;
+      margin-top: calc(-1 * var(--banner-calc-icon));
+      margin-left: calc(var(--banner-icon-size) + 16px);
+      width: fit-content;
+      max-width: calc(100cqw - (var(--banner-icon-size) + 16px));
+    }
+  }
+}

@@ -72,7 +72,7 @@ body:not(.liquid-glass-off):not(.is-mobile) {
     background-color: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
   }
   &.show-ribbon {
-    &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button {
+    &:not(.mod-macos):not(.stacked-nav-off) .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button {
       height: calc(var(--header-height) - 8px);
     }
     .workspace-ribbon.mod-left:not(.is-collapsed) {

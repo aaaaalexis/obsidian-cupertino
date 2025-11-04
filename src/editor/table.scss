@@ -23,11 +23,11 @@
     border-spacing: 0;
   }
 
-  .markdown-preview-view,
-  .cm-sizer {
+  .el-table,
+  .cm-table-widget,
+  .block-language-dataview {
     table {
       position: relative;
-      border-radius: var(--radius-s);
     }
 
     .table-cell-wrapper:active,
@@ -48,29 +48,53 @@
 
     thead > th,
     tbody > tr:not(:last-child) > td {
-      border-block-end: none;
+      border-bottom: none;
     }
 
     thead > th:not(:last-child),
     tbody > tr > td:not(:last-child) {
-      border-inline-end: none;
+      border-right: none;
     }
 
     tbody > tr:first-child > td:first-child,
     tbody > tr:first-child > td:first-child .table-cell-wrapper {
-      border-start-start-radius: var(--radius-s);
+      border-top-left-radius: var(--radius-s);
     }
     tbody > tr:first-child > td:last-child,
     tbody > tr:first-child > td:last-child .table-cell-wrapper {
-      border-start-end-radius: var(--radius-s);
+      border-top-right-radius: var(--radius-s);
     }
     tbody > tr:last-child > td:first-child,
     tbody > tr:last-child > td:first-child .table-cell-wrapper {
-      border-end-start-radius: var(--radius-s);
+      border-bottom-left-radius: var(--radius-s);
     }
     tbody > tr:last-child > td:last-child,
     tbody > tr:last-child > td:last-child .table-cell-wrapper {
-      border-end-end-radius: var(--radius-s);
+      border-bottom-right-radius: var(--radius-s);
+    }
+
+    &[dir="rtl"] {
+      thead > th:not(:last-child),
+      tbody > tr > td:not(:last-child) {
+        border-left: none;
+      }
+
+      tbody > tr:first-child > td:first-child,
+      tbody > tr:first-child > td:first-child .table-cell-wrapper {
+        border-top-right-radius: var(--radius-s);
+      }
+      tbody > tr:first-child > td:last-child,
+      tbody > tr:first-child > td:last-child .table-cell-wrapper {
+        border-top-left-radius: var(--radius-s);
+      }
+      tbody > tr:last-child > td:first-child,
+      tbody > tr:last-child > td:first-child .table-cell-wrapper {
+        border-bottom-right-radius: var(--radius-s);
+      }
+      tbody > tr:last-child > td:last-child,
+      tbody > tr:last-child > td:last-child .table-cell-wrapper {
+        border-bottom-left-radius: var(--radius-s);
+      }
     }
   }
 

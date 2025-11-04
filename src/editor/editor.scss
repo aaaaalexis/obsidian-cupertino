@@ -2,7 +2,7 @@
   body {
     --inline-title-color: inherit;
 
-    --inline-title-margin-bottom: 1em;
+    --inline-title-margin-bottom: 0.5em;
     --heading-spacing: 2em;
     --p-spacing: 1.75rem;
     --list-spacing: 0.2em;
@@ -102,7 +102,7 @@
   }
 
   // Line numbers
-  body:not(.is-mobile) .cm-gutters {
+  body:not(.is-mobile) .workspace-leaf-content[data-type="markdown"] .cm-gutters {
     position: absolute;
 
     .cm-gutterElement {
@@ -192,26 +192,24 @@
 
   // Inline tiele & Headings
   .inline-title:not([data-level]) {
+    padding-block: 8px;
     position: relative;
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    border: var(--border-width) solid transparent;
+    border-radius: var(--radius-s);
+
+    &:focus-within {
+      padding-inline: 8px;
+      border-color: var(--background-modifier-border);
+    }
 
     &:not(:focus-within) {
       cursor: pointer;
-    }
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: -8px;
-      border-radius: var(--radius-s);
-      background-color: transparent;
-      pointer-events: none;
-      z-index: 0;
-      transition: var(--anim-duration-fast);
-    }
-
-    &:hover::before,
-    &:focus-within::before {
-      background-color: var(--background-modifier-hover);
+      &:hover {
+        padding-inline: 8px;
+        background-color: var(--background-modifier-hover);
+      }
     }
   }
 
@@ -287,7 +285,7 @@
     iframe,
     video,
     .bases-cards-cover {
-      transition: var(--anim-duration-moderate);
+      transition: opacity var(--anim-duration-moderate);
 
       &:not(:hover) {
         opacity: var(--media-muted, 1);

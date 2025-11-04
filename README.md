@@ -54,6 +54,26 @@ I’ve spent way too much time on customizing Obsidian, thousands of themes with
 
 Cupertino supports most filter and helper classes from [Minimal](https://github.com/kepano/obsidian-minimal).
 
+### Banner
+
+| Class          | Description                                                                   |
+| :------------- | :---------------------------------------------------------------------------- |
+| `banner`       | Add at the end of the image link, e.g. `![[image.jpeg\|banner]]`              |
+| `banner-fade`  | Add faded edge to the banner (requires `banner`)                              |
+| `banner-icon`  | Add an emoji or letter as note icon using callout, e.g. `> [!banner-icon] 👋` |
+| `banner-title` | Moves inline title next to the icon (requires `banner-icon`)                  |
+| `y0` to `y100` | Adjust the vertical position of the banner (requires `banner`, from 0 to 100) |
+
+### [Block width](https://minimal.guide/features/block-width)
+
+| Class                                  | Description                           |
+| :------------------------------------- | :------------------------------------ |
+| `wide`                                 | Entire note uses wide line width      |
+| `max`                                  | Entire note uses max line width       |
+| `table-100`, `bases-100`, `img-100`    | Fill 100% of the pane width           |
+| `table-max`, `bases-max`, `img-max`    | Fill the max line width (default 90%) |
+| `table-wide`, `bases-wide`, `img-wide` | Fill the wide line width              |
+
 ### [Cards](https://minimal.guide/Block+types/Cards)
 
 | Class                 | Description                                      |
@@ -68,15 +88,12 @@ Cupertino supports most filter and helper classes from [Minimal](https://github.
 | `cards-2-3`           | Fit images in cards to 2:3 ratio                 |
 | `cards-cols-1` to `8` | Force a specific number of columns (from 1 to 8) |
 
-### [Block width](https://minimal.guide/features/block-width)
+### Embeds
 
-| Class                                  | Description                           |
-| :------------------------------------- | :------------------------------------ |
-| `wide`                                 | Entire note uses wide line width      |
-| `max`                                  | Entire note uses max line width       |
-| `table-100`, `bases-100`, `img-100`    | Fill 100% of the pane width           |
-| `table-max`, `bases-max`, `img-max`    | Fill the max line width (default 90%) |
-| `table-wide`, `bases-wide`, `img-wide` | Fill the wide line width              |
+| Class              | Description              |
+| :----------------- | :----------------------- |
+| `embed-strict`     | Remove embed background  |
+| `embed-hide-title` | Hide embedded file title |
 
 ### [Image filters](https://minimal.guide/images#Image+filters)
 
@@ -97,35 +114,25 @@ Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
 | :--------- | :------------------- |
 | `img-grid` | Activate image grids |
 
-### Tables
+### [Tables](https://minimal.guide/tables)
 
-| Class           | Description                                         |
-| :-------------- | :-------------------------------------------------- |
-| `table-nowrap`  | Disable line wrapping in table cells                |
-| `table-wrap`    | Force line wrapping in table cells                  |
-| `table-numbers` | Add row numbers to tables                           |
-| `table-tabular` | Use tabular figures in tables                       |
-| `table-small`   | Use small font size in tables                       |
-| `table-tiny`    | Use tiny font size in tables                        |
-| `row-lines`     | Add borders between table rows                      |
-| `col-lines`     | Add borders between table columns                   |
-| `row-alt`       | Add striped background to alternating table rows    |
-| `col-alt`       | Add striped background to alternating table columns |
-
-### Bases
-
-| Class                 | Description                                                    |
-| :-------------------- | :------------------------------------------------------------- |
-| `bases-table-numbers` | Add row numbers to Bases table view                            |
-| `bases-row-alt`       | Add striped background to alternating Bases table view rows    |
-| `bases-col-alt`       | Add striped background to alternating Bases table view columns |
-
-### Embeds
-
-| Class              | Description              |
-| :----------------- | :----------------------- |
-| `embed-strict`     | Remove embed background  |
-| `embed-hide-title` | Hide embedded file title |
+| Class           | Description                                                    |
+| :-------------- | :------------------------------------------------------------- |
+| `table-nowrap`  | Disable line wrapping in table cells                           |
+| `table-wrap`    | Force line wrapping in table cells                             |
+| `table-center`  | Center small tables narrower than line width                   |
+| `table-numbers` | Add row numbers to tables                                      |
+| `table-tabular` | Use tabular figures in tables                                  |
+| `table-small`   | Use small font size in tables                                  |
+| `table-tiny`    | Use tiny font size in tables                                   |
+| `table-lines`   | Add borders around all table cells                             |
+| `row-lines`     | Add borders between table rows                                 |
+| `col-lines`     | Add borders between table columns                              |
+| `row-alt`       | Add striped background to alternating table rows               |
+| `col-alt`       | Add striped background to alternating table columns            |
+| `row-hover`     | Highlight rows on hover                                        |
+| `bases-row-alt` | Add striped background to alternating Bases table view rows    |
+| `bases-col-alt` | Add striped background to alternating Bases table view columns |
 
 ### [Alternate checkboxes](https://github.com/damiankorcz/Alternative-Checkboxes-Reference-Set)
 
@@ -166,7 +173,7 @@ Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
 
 ## Credits
 
-- **@kepano** - **[Minimal](https://github.com/kepano/obsidian-minimal)**: Cards, image filters
+- **@kepano** - **[Minimal](https://github.com/kepano/obsidian-minimal)**: Cards, Image filters, Table helpers
 
 ## Licensing
 

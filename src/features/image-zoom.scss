@@ -18,6 +18,8 @@ body:not(.is-mobile):not(.zoom-off) .markdown-preview-view {
     height: 100%;
     max-height: unset;
     object-fit: contain;
+    mask: none;
+    padding: 0;
   }
 }
 
@@ -32,7 +34,7 @@ body:not(.is-mobile):not(.zoom-off) .markdown-source-view {
   }
 
   .image-embed:not(.canvas-node-content):active {
-    display: flex;
+    display: flex !important;
     justify-content: center;
 
     img {
@@ -41,6 +43,9 @@ body:not(.is-mobile):not(.zoom-off) .markdown-source-view {
       height: auto;
       max-height: unset;
       object-fit: contain;
+      mask: none;
+      position: relative;
+      padding: 0;
     }
   }
 

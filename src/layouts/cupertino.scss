@@ -1,6 +1,5 @@
 body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile),
 body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
-  --inline-title-margin-bottom: 0.5em;
   --p-spacing: 1rem;
   --line-height-normal: 1.6;
 
@@ -76,10 +75,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
   --radius-l: 20px;
   --radius-xl: 28px;
   --radius-window: 6px;
-
-  * {
-    -electron-corner-smoothing: 60%;
-  }
 
   --tab-action-width: 40px !important;
 
@@ -195,7 +190,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
         content: "";
         position: absolute;
         width: 32px;
-        background-color: red;
       }
 
       &.mod-left-split::after {
