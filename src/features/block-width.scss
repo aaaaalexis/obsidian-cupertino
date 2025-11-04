@@ -12,15 +12,22 @@ body:not(.block-width-off) {
     --file-line-width: 100%;
   }
 
-  .mod-root .markdown-preview-view,
-  .mod-root .cm-scroller {
+  .mod-root .markdown-reading-view > .markdown-preview-view,
+  .mod-root .markdown-source-view > .cm-editor > .cm-scroller {
     container-type: inline-size;
   }
 
   // Table
   &:is(.table-wide, .table-max, .table-100),
   div:is(.table-wide, .table-max, .table-100) {
-    div:is(.markdown-preview-sizer > .el-table, .markdown-preview-sizer > .el-pre .block-language-dataview, .markdown-preview-sizer > .el-pre .block-language-dataviewjs, .markdown-preview-sizer > .el-pre .block-language-datacorejsx, .cm-content > .cm-table-widget, .cm-content > .cm-lang-dataview, .cm-content > .cm-lang-dataviewjs, .cm-content > .cm-lang-datacorejsx) {
+    .markdown-preview-sizer > .el-table,
+    .markdown-preview-sizer > .el-pre .block-language-dataview,
+    .markdown-preview-sizer > .el-pre .block-language-dataviewjs,
+    .markdown-preview-sizer > .el-pre .block-language-datacorejsx,
+    .cm-content > .cm-table-widget,
+    .cm-content > .cm-lang-dataview,
+    .cm-content > .cm-lang-dataviewjs,
+    .cm-content > .cm-lang-datacorejsx {
       max-width: var(--table-line-width);
       width: var(--table-line-width) !important;
       justify-self: center;
@@ -41,7 +48,8 @@ body:not(.block-width-off) {
 
   &.table-100,
   .table-100 {
-    div:is(.markdown-preview-sizer > .el-table, .cm-content > .cm-table-widget) {
+    .markdown-preview-sizer > .el-table,
+    .cm-content > .cm-table-widget {
       tbody > tr > td {
         border-radius: 0;
       }
@@ -63,7 +71,10 @@ body:not(.block-width-off) {
   // Bases
   &:is(.bases-wide, .bases-max, .bases-100),
   div:is(.bases-wide, .bases-max, .bases-100) {
-    div:is(.markdown-preview-sizer > .el-pre .bases-embed, .markdown-preview-sizer > .el-p .bases-embed, .cm-content > .bases-embed, .cm-content > .cm-lang-base) {
+    .markdown-preview-sizer > .el-pre .bases-embed,
+    .markdown-preview-sizer > .el-p .bases-embed,
+    .cm-content > .bases-embed,
+    .cm-content > .cm-lang-base {
       max-width: var(--bases-line-width);
       width: var(--bases-line-width) !important;
       justify-self: center;
@@ -85,7 +96,9 @@ body:not(.block-width-off) {
   // Image
   &:is(.img-wide, .img-max, .img-100),
   div:is(.img-wide, .img-max, .img-100) {
-    div:is(.markdown-preview-sizer > .el-p p:has(img), .markdown-preview-sizer > .el-iframe, .cm-content .image-embed) {
+    .markdown-preview-sizer > .el-p p:has(img),
+    .markdown-preview-sizer > .el-iframe,
+    .cm-content .image-embed {
       max-width: var(--img-line-width);
       width: var(--img-line-width) !important;
       justify-self: center;
