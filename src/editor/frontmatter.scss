@@ -5,6 +5,9 @@
   body.is-phone {
     --metadata-label-width: calc(7.5em * var(--metadata-label-width-multiplier, 1));
   }
+  body:not(.accented-interface) {
+    --collapse-icon-color-collapsed: var(--text-muted);
+  }
 
   .metadata-container {
     --metadata-divider-width: 0 !important;
