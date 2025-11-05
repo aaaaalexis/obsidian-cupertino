@@ -38,37 +38,21 @@ body:is(.layout-cupertino, .layout-macos, .input-cupertino) {
 
 body:is(.layout-cupertino, .layout-macos).theme-light {
   --color-red-rgb: 255, 56, 60;
-  --color-red: #ff383c;
   --color-orange-rgb: 255, 141, 40;
-  --color-orange: #ff8d28;
   --color-yellow-rgb: 255, 204, 0;
-  --color-yellow: #ffcc00;
   --color-green-rgb: 52, 199, 89;
-  --color-green: #34c759;
   --color-cyan-rgb: 0, 192, 232;
-  --color-cyan: #00c0e8;
   --color-blue-rgb: 0, 136, 255;
-  --color-blue: #0088ff;
   --color-purple-rgb: 203, 48, 224;
-  --color-purple: #cb30e0;
   --color-pink-rgb: 255, 45, 85;
-  --color-pink: #ff2d55;
 }
 body:is(.layout-cupertino, .layout-macos).theme-dark {
   --color-red-rgb: 255, 66, 69;
-  --color-red: #ff4245;
   --color-orange-rgb: 255, 146, 48;
-  --color-orange: #ff9230;
   --color-yellow-rgb: 255, 214, 0;
-  --color-yellow: #ffd600;
   --color-green-rgb: 48, 209, 88;
-  --color-green: #30d158;
   --color-cyan-rgb: 60, 211, 254;
-  --color-cyan: #3cd3fe;
   --color-blue-rgb: 0, 145, 255;
-  --color-blue: #0091ff;
   --color-purple-rgb: 107, 52, 242;
-  --color-purple: #6b34f2;
   --color-pink-rgb: 255, 55, 95;
-  --color-pink: #ff375f;
 }

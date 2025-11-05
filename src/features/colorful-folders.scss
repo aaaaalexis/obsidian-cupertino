@@ -74,35 +74,35 @@ body.colorful-folders-subtle {
   }
 
   .nav-files-container > div > .nav-folder:nth-child(8n + 2) {
-    --nav-item-color: color-mix(in srgb, var(--color-red), var(--color-base-100));
+    --nav-item-color: color-mix(in srgb, var(--color-red), var(--text-normal));
     background-color: rgba(var(--color-red-rgb), 0.1);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 3) {
-    --nav-item-color: color-mix(in srgb, var(--color-orange), var(--color-base-100));
+    --nav-item-color: color-mix(in srgb, var(--color-orange), var(--text-normal));
     background-color: rgba(var(--color-orange-rgb), 0.1);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 4) {
-    --nav-item-color: color-mix(in srgb, var(--color-yellow), var(--color-base-100));
+    --nav-item-color: color-mix(in srgb, var(--color-yellow), var(--text-normal));
     background-color: rgba(var(--color-yellow-rgb), 0.1);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 5) {
-    --nav-item-color: color-mix(in srgb, var(--color-green), var(--color-base-100));
+    --nav-item-color: color-mix(in srgb, var(--color-green), var(--text-normal));
     background-color: rgba(var(--color-green-rgb), 0.1);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 6) {
-    --nav-item-color: color-mix(in srgb, var(--color-cyan), var(--color-base-100));
+    --nav-item-color: color-mix(in srgb, var(--color-cyan), var(--text-normal));
     background-color: rgba(var(--color-cyan-rgb), 0.1);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 7) {
-    --nav-item-color: color-mix(in srgb, var(--color-blue), var(--color-base-100));
+    --nav-item-color: color-mix(in srgb, var(--color-blue), var(--text-normal));
     background-color: rgba(var(--color-blue-rgb), 0.1);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 8) {
-    --nav-item-color: color-mix(in srgb, var(--color-purple), var(--color-base-100));
+    --nav-item-color: color-mix(in srgb, var(--color-purple), var(--text-normal));
     background-color: rgba(var(--color-purple-rgb), 0.1);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 9) {
-    --nav-item-color: color-mix(in srgb, var(--color-pink), var(--color-base-100));
+    --nav-item-color: color-mix(in srgb, var(--color-pink), var(--text-normal));
     background-color: rgba(var(--color-pink-rgb), 0.1);
   }
 }
