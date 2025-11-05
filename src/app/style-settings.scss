@@ -3031,8 +3031,13 @@ settings:
 .vertical-tab-content > div > .setting-item-heading:not(.is-collapsed) {
   border-bottom: 0;
 }
-.workspace-leaf-content .style-settings-container .setting-item {
+.view-content .style-settings-container .style-settings-container .setting-item {
   padding: 16px;
+  align-items: center;
+
+  .setting-item-control {
+    padding-top: 0;
+  }
 }
 .style-settings-heading,
 .style-settings-container {
