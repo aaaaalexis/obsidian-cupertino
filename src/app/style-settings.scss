@@ -2105,10 +2105,17 @@ settings:
 		level: 2
 		collapsed: true
 	-
+		id: hr-color
+		title: Horizontal rule color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
 		id: hr-width
 		title: Horizontal rule width
 		type: variable-text
-		default: 100%	
+		default: 100%
 	-
 		id: hr-thickness
 		title: Horizontal rule thickness
@@ -2144,13 +2151,13 @@ settings:
 		title: Dashed line size
 		type: variable-text
 		allowEmpty: false
-		default: 2em
+		default: 1em
 	- 
 		id: hr-dashed-spacing
 		title: Dashed line spacing
 		type: variable-text
 		allowEmpty: false
-		default: 1em
+		default: 0.5em
 	-
 		id: banner
 		title: Banner

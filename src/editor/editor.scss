@@ -49,8 +49,8 @@
 
     --hr-width: 100%;
     --hr-align: center;
-    --hr-dashed-size: 2em;
-    --hr-dashed-spacing: 1em;
+    --hr-dashed-size: 1em;
+    --hr-dashed-spacing: 0.5em;
   }
 
   .workspace-split.mod-root {
@@ -367,7 +367,7 @@
   body.hr-dashed .markdown-rendered hr,
   body.hr-dashed .markdown-source-view.mod-cm6 .hr {
     border-top: none;
-    background: linear-gradient(to right, var(--hr-color) var(--hr-dashed-size), transparent 0%) center/calc(var(--hr-dashed-size) + var(--hr-dashed-spacing)) repeat-x;
+    background: repeating-linear-gradient(to right, var(--hr-color), var(--hr-color) var(--hr-dashed-size), transparent var(--hr-dashed-size), transparent calc(var(--hr-dashed-size) + var(--hr-dashed-spacing)));
   }
 
   // Highlights
