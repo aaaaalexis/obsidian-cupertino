@@ -34,3 +34,29 @@ body:not(.is-mobile) .backlink-pane {
     border-top: none;
   }
 }
+
+// Canvas
+
+body:not(.is-mobile) {
+  .canvas-control-group:not(:hover),
+  .canvas-card-menu:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+.canvas-control-group {
+  border: none;
+  transition: var(--anim-duration-fast);
+}
+
+.canvas-card-menu {
+  transition: var(--anim-duration-fast);
+  padding: 8px;
+  gap: 4px;
+}
+.canvas-card-menu .canvas-card-menu-button {
+  --icon-size: 24px;
+}
+.canvas-card-menu .canvas-card-menu-button svg {
+  transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
+}
