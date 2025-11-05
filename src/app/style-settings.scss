@@ -1500,6 +1500,11 @@ settings:
         type: info-text
 		markdown: true
 	-
+		id: inline-title-block-off
+		title: Disable inline title background
+		type: class-toggle
+		default: false
+	-
 		id: inline-title-font
 		title: Inline title font
 		description: Name of the font as it appears on your system
