@@ -46,6 +46,11 @@
     --indentation-guide-width: 0px;
 
     --file-header-border: none;
+
+    --hr-width: 100%;
+    --hr-align: center;
+    --hr-dashed-size: 2em;
+    --hr-dashed-spacing: 1em;
   }
 
   .workspace-split.mod-root {
@@ -344,6 +349,18 @@
   .HyperMD-header-5,
   .HyperMD-header-6 {
     letter-spacing: normal !important;
+
+  // Horizontal rule (Editor divider)
+  .markdown-rendered hr,
+  .markdown-source-view.mod-cm6 .hr {
+    width: var(--hr-width, 100%);
+    height: var(--hr-thickness);
+    justify-self: var(--hr-align, center);
+  }
+  body.hr-dashed .markdown-rendered hr,
+  body.hr-dashed .markdown-source-view.mod-cm6 .hr {
+    border-top: none;
+    background: linear-gradient(to right, var(--hr-color) var(--hr-dashed-size), transparent 0%) center/calc(var(--hr-dashed-size) + var(--hr-dashed-spacing)) repeat-x;
   }
 
   // Highlights

@@ -2077,6 +2077,59 @@ settings:
 		description: Adds a border below the heading
 		default: false
 	-
+		id: horizontal-rule
+		title: Horizontal rule
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: hr-width
+		title: Horizontal rule width
+		type: variable-text
+		default: 100%	
+	-
+		id: hr-thickness
+		title: Horizontal rule thickness
+		type: variable-number-slider
+		format: px
+		default: 2
+		min: 0
+		max: 8
+		step: 0.5
+	-
+		id: hr-align
+		title: Horizontal rule alignment
+		type: variable-select
+		default: center
+		options:
+			-
+				label: Start
+				value: start
+			-
+				label: Center
+				value: center
+			-
+				label: End
+				value: end
+	-
+		id: hr-dashed
+		title: Dashed horizontal rule
+		type: class-toggle
+		description: Turn horizontal rule into dashed line
+		default: false
+	- 
+		id: hr-dashed-size
+		title: Dashed line size
+		type: variable-text
+		allowEmpty: false
+		default: 2em
+	- 
+		id: hr-dashed-spacing
+		title: Dashed line spacing
+		type: variable-text
+		allowEmpty: false
+		default: 1em
+	-
 		id: banner
 		title: Banner
 		type: heading
