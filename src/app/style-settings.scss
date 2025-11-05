@@ -455,7 +455,16 @@ settings:
 		id: text-normal
 		title: Normal text color
 		type: variable-themed-color
-		description: Primary text color used by default across all elements
+		description: Primary text color used by default across Obsidian
+		opacity: true
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: text-normal-editor
+		title: Editor text color
+		type: variable-themed-color
+		description: Primary text color used by default in editor
 		opacity: true
 		format: hex
 		default-light: '#'

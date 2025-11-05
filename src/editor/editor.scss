@@ -66,6 +66,11 @@
     overflow: hidden;
   }
 
+  .markdown-preview-view,
+  .markdown-source-view {
+    color: var(--text-normal-editor, var(--text-normal));
+  }
+
   // Readable spacing
   .readable-spacing {
     --heading-spacing: var(--p-spacing);

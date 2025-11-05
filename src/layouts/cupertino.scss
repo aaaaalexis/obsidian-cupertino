@@ -5,6 +5,8 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
 
   --clickable-icon-radius: 100vh;
 
+  --text-normal-editor: var(--color-base-90);
+
   --icon-opacity: 1;
   --icon-color: rgb(var(--mono-rgb-100));
   --icon-color-hover: rgb(var(--mono-rgb-100));
@@ -30,7 +32,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   // Editor panel
   .markdown-source-view,
   .markdown-preview-view {
-    --text-normal: var(--color-base-90);
     transition: transform var(--anim-duration-slow) var(--anim-motion-baseline);
   }
   .workspace-leaf-content[data-mode="source"] > .view-content > .markdown-reading-view > .markdown-preview-view {
