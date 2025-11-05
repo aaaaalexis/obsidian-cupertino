@@ -279,7 +279,7 @@ settings:
 		default-dark: '#'
 	-
 		id: interactive-hover
-		title: Highlighted interactive background
+		title: Hover interactive background
 		description: Used when hovering over buttons, dropdowns, and filled elements
 		type: variable-themed-color
 		opacity: true
@@ -288,7 +288,7 @@ settings:
 		default-dark: '#'
 	-
 		id: background-modifier-hover
-		title: Highlighted background
+		title: Hover background
 		description: Used when hovering over buttons, dividers, and outlined elements
 		type: variable-themed-color
 		opacity: true
@@ -297,7 +297,7 @@ settings:
 		default-dark: '#'
 	-
 		id: background-modifier-active-hover
-		title: Active highlighted background 
+		title: Hover active background 
 		description: Used when clicking buttons and outlined elements
 		type: variable-themed-color
 		opacity: true
@@ -315,7 +315,7 @@ settings:
 		default-dark: '#'
 	-
 		id: background-modifier-border-hover
-		title: Highlighted border color
+		title: Hover border color
 		description: Used when hovering over buttons, dividers, and outlined elements
 		type: variable-themed-color
 		opacity: true
