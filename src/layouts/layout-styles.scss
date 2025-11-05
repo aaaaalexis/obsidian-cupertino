@@ -1,7 +1,3 @@
-.workspace-split .workspace-tabs .workspace-leaf {
-  background-color: transparent;
-}
-
 // Editor panel
 body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-border.is-tablet) {
   .workspace-split.mod-root .workspace-tab-container {
@@ -10,6 +6,9 @@ body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-
 }
 
 // Side panels
+.mod-sidedock .workspace-tabs .workspace-leaf {
+  background-color: transparent;
+}
 body:not(.layout-cupertino, .layout-macos, .layout-cards, .layout-border, .layout-frame):is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark):not(.is-mobile) .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
   border-color: var(--divider-color);
 }
