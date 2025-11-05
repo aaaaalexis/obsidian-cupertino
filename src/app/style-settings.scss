@@ -2943,6 +2943,9 @@ settings:
 .vertical-tab-content > div > .setting-item-heading:not(.is-collapsed) {
   border-bottom: 0;
 }
+.workspace-leaf-content .style-settings-container .setting-item {
+  padding: 16px;
+}
 .style-settings-heading,
 .style-settings-container {
   padding-left: 32px;
