@@ -2,7 +2,7 @@
   body {
     --inline-title-color: inherit;
 
-    --inline-title-margin-bottom: calc(0.5em * var(--readable-spacing-modifier));
+    --inline-title-margin-bottom: calc(0.5em * var(--readable-spacing-modifier, 1));
     --heading-spacing: 2em;
     --p-spacing: 1.75rem;
     --list-spacing: 0.2em;
@@ -11,8 +11,6 @@
     --file-margins-block: 32px;
     --file-margins-inline: 32px;
     --file-margins: var(--file-margins-block) var(--file-margins-inline);
-
-    --italic-weight: var(--font-medium);
 
     --h1-font: var(--font-text-override), InstrumentSerif;
     --h2-font: var(--font-text-override), InstrumentSerif;
