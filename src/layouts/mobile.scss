@@ -102,14 +102,12 @@ body:not(.mobile-stable).is-phone {
     }
   }
 
-  &.mode-switcher-off {
-    .mobile-navbar,
-    .mobile-toolbar {
-      padding-top: var(--safe-area-inset-bottom-override);
-      padding-right: var(--safe-area-inset-bottom-override);
-      max-width: 100%;
-      width: 100%;
-    }
+  &.mode-switcher-off .mobile-navbar,
+  &.mode-switcher-off .mobile-toolbar,
+  & > .app-container > .horizontal-main-container:not(:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content[data-type="markdown"])) ~ .mobile-navbar {
+    padding-right: var(--safe-area-inset-bottom-override);
+    max-width: 100%;
+    width: 100%;
   }
 
   .mobile-navbar,
