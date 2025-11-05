@@ -208,6 +208,28 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
       }
     }
   }
+
+  &.hover-ribbon.hover-sidedock:not(.mod-macos) {
+    .workspace-ribbon.mod-left.is-collapsed:hover + .mod-sidedock {
+      margin-left: 8px;
+    }
+
+    .workspace-ribbon.mod-left.is-collapsed {
+      margin-top: 8px;
+
+      .side-dock-actions {
+        margin-top: 0;
+      }
+
+      &::before {
+        content: none;
+      }
+
+      &:hover {
+        padding-left: 16px;
+      }
+    }
+  }
 }
 
 body.layout-cupertino:not(.is-phone) {

@@ -81,7 +81,8 @@ body.layout-macos:not(.is-mobile) {
     .workspace-ribbon.mod-left:not(.is-collapsed) {
       padding-left: 16px;
     }
-    .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) {
+    &:not(.hover-ribbon) .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed),
+    &.hover-ribbon .workspace-ribbon.mod-left:hover + .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) {
       margin-left: calc(-1 * var(--ribbon-width) + 8px);
       padding-left: var(--ribbon-width);
     }
