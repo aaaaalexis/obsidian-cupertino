@@ -177,7 +177,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   &.hover-sidedock {
     .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
       backdrop-filter: var(--blur-m);
-      box-shadow: var(--shadow-xs);
+      box-shadow: none;
       border-radius: var(--radius-m);
       background-color: var(--modal-background);
       border: var(--border-width) solid var(--background-modifier-border);
