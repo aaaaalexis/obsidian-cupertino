@@ -84,6 +84,10 @@ body:not(.is-mobile).show-ribbon.hover-ribbon {
     --ribbon-width: 1px;
     padding-inline: 0;
     opacity: 0;
+
+    > div {
+      pointer-events: none;
+    }
   }
   &.hover-sidedock .workspace-ribbon.mod-left:not(.is-collapsed) {
     display: none;
