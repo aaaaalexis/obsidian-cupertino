@@ -91,7 +91,7 @@ body:not(.mobile-stable).is-phone {
   &:is(html[style*="--keyboard-height"]:not([style*="--keyboard-height: 0px"]) body.is-phone:not(.mod-toolbar-open)) {
     --safe-area-inset-bottom-override: 12px;
 
-    &:not(.mode-switcher-off) .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2),
+    &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2),
     .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::before,
     .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::after {
       opacity: 0;
@@ -144,7 +144,7 @@ body:not(.mobile-stable).is-phone {
     width: 48px;
     height: 48px;
   }
-  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2) {
+  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     transition: var(--anim-duration-moderate);
     right: var(--safe-area-inset-bottom-override);
     bottom: var(--safe-area-inset-bottom-override);
