@@ -758,7 +758,7 @@ settings:
 		default: 1
 		min: 0
 		max: 2
-		step: 0.1
+		step: 0.5
 	-
 		id: tabs
 		title: Tabs
@@ -916,7 +916,7 @@ settings:
 		default: 400
 		min: 100
 		max: 900
-		step: 100
+		step: 50
 	-
 		id: file-header-justify
 		title: Tab title alignment
@@ -1132,7 +1132,7 @@ settings:
 		default: 600
 		min: 100
 		max: 900
-		step: 100
+		step: 50
 	-
 		id: tablet
 		title: Tablet
@@ -1181,6 +1181,14 @@ settings:
 		description: Name of the font as it appears on your system
 		type: variable-text
 		default: ''
+	-
+		id: bold-modifier
+		title: Bold text modifier
+		type: variable-number-slider
+		default: 300
+		min: 100
+		max: 600
+		step: 50
 	-
 		id: focus-view
 		title: Focus view
@@ -1523,7 +1531,7 @@ settings:
 		default: 400
 		min: 100
 		max: 900
-		step: 100
+		step: 50
 	-
 		id: inline-title-color
 		title: Inline title text color
@@ -1600,7 +1608,7 @@ settings:
 		default: 700
 		min: 100
 		max: 900
-		step: 100
+		step: 50
 	-
 		id: h1-variant
 		title: H1 font variant
@@ -1687,7 +1695,7 @@ settings:
 		default: 600
 		min: 100
 		max: 900
-		step: 100
+		step: 50
 	-
 		id: h2-variant
 		title: H2 font variant
@@ -1774,7 +1782,7 @@ settings:
 		default: 600
 		min: 100
 		max: 900
-		step: 100
+		step: 50
 	-
 		id: h3-variant
 		title: H3 font variant
@@ -1861,7 +1869,7 @@ settings:
 		default: 600
 		min: 100
 		max: 900
-		step: 100
+		step: 50
 	-
 		id: h4-variant
 		title: H4 font variant
@@ -1948,7 +1956,7 @@ settings:
 		default: 600
 		min: 100
 		max: 900
-		step: 100
+		step: 50
 	-
 		id: h5-variant
 		title: H5 font variant
@@ -2035,7 +2043,7 @@ settings:
 		default: 600
 		min: 100
 		max: 900
-		step: 100
+		step: 50
 	-
 		id: h6-variant
 		title: H6 font variant
@@ -2932,7 +2940,7 @@ settings:
 		default: 1fr
 	-
 		id: cards-mobile-width
-		title: Card minimum width on mobile
+		title: Card minimum width (Mobile)
 		type: variable-text
 		default: 120px
 	-
@@ -3155,7 +3163,8 @@ body.metadata-cupertino .style-settings-container .setting-item[data-id="metadat
 body.unstyled-tags .style-settings-container .setting-item[data-id="unstyled-tags"] ~ .setting-item,
 body:is(.layout-cupertino.input-fluent, .layout-macos) .style-settings-container .setting-item[data-id="nav-item-active-style"],
 body:not(.colorful-headings-background) .style-settings-container .setting-item[data-id="colorful-headings-full-width"],
-body.banner-off .style-settings-container .setting-item[data-id="banner-off"] ~ .setting-item {
+body.banner-off .style-settings-container .setting-item[data-id="banner-off"] ~ .setting-item,
+body:not(.hr-dashed) .style-settings-container .setting-item[data-id="hr-dashed"] ~ .setting-item {
   pointer-events: none;
 
   > * {
