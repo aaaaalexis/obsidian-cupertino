@@ -1,21 +1,11 @@
 body:not(.is-mobile).hover-sidedock {
-  &:not(.stacked-nav-off) .mod-sidedock.mod-left-split.is-sidedock-collapsed .mod-top-left-space .workspace-tab-header-container {
+  &:not(.stacked-nav-off) .mod-sidedock.mod-left-split.is-sidedock-collapsed:hover .mod-top-left-space .workspace-tab-header-container {
     padding-top: var(--header-height);
-  }
-
-  &.layout-frame {
-    .mod-sidedock.mod-left-split.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
-      margin: -4px 0 0 -4px;
-      border: none;
-    }
-    .mod-sidedock.mod-right-split.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
-      margin: -4px -4px 0 0;
-      border: none;
-    }
   }
 
   .mod-sidedock .workspace-tab-header-container {
     -webkit-app-region: no-drag !important;
+    transition: 0s var(--anim-duration-superfast);
   }
 
   .mod-sidedock {
