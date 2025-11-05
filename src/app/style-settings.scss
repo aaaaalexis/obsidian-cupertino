@@ -2094,6 +2094,12 @@ settings:
 		type: variable-text
 		allowEmpty: false
 		default: 320px
+	- 
+		id: banner-image-height-mobile
+		title: Banner image height (Mobile)
+		type: variable-text
+		allowEmpty: false
+		default: 240px
 	-
 		id: banner-image-inset
 		title: Banner image side spacing

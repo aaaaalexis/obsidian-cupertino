@@ -1,5 +1,6 @@
 body:not(.banner-off) {
   --banner-image-height: 320px;
+  --banner-image-height-mobile: 240px;
   --banner-image-inset: 8px;
   --banner-image-object-fit: cover;
   --banner-icon-size: 48px;
@@ -9,12 +10,16 @@ body:not(.banner-off) {
   --banner-mobile-spacer: 0px;
   --banner-mobile-offset: 0px;
 
+  --banner-image-actual-height: var(--banner-image-height);
+
   --banner-calc-base: calc(var(--banner-mobile-spacer) + var(--banner-mobile-offset) + var(--banner-content-offset));
   --banner-calc-icon: calc(var(--banner-icon-size) + var(--banner-icon-spacer));
 
   &.is-phone {
     --banner-mobile-spacer: calc(var(--safe-area-inset-top) + var(--view-header-height) + 32px);
     --banner-mobile-offset: 16px;
+
+    --banner-image-actual-height: var(--banner-image-height-mobile);
   }
 
   &.banner-image-contain,
@@ -34,16 +39,16 @@ body:not(.banner-off) {
   .banner:not(.banner-icon) {
     .markdown-preview-pusher,
     .cm-sizer {
-      margin-top: calc(var(--banner-calc-base) + var(--banner-image-height)) !important;
+      margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height)) !important;
     }
   }
   .banner.banner-icon {
     .markdown-preview-pusher,
     .cm-sizer {
-      margin-top: calc(var(--banner-calc-base) + var(--banner-image-height) + var(--banner-calc-icon) + var(--banner-icon-offset)) !important;
+      margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height) + var(--banner-calc-icon) + var(--banner-icon-offset)) !important;
     }
     .callout[data-callout="banner-icon"] {
-      top: calc(var(--banner-calc-base) + var(--file-margins-block) + var(--banner-image-height) + var(--banner-icon-offset));
+      top: calc(var(--banner-calc-base) + var(--file-margins-block) + var(--banner-image-actual-height) + var(--banner-icon-offset));
     }
   }
   .banner-icon:not(.banner) {
@@ -61,8 +66,8 @@ body:not(.banner-off) {
     img[alt="banner"] {
       position: absolute;
       inset: var(--banner-mobile-spacer) var(--banner-image-inset) auto;
-      max-width: -webkit-fill-available;
-      height: var(--banner-image-height);
+      max-width: calc(100% - var(--banner-image-inset) * 2);
+      height: var(--banner-image-actual-height);
       object-fit: var(--banner-image-object-fit);
     }
 
