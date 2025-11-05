@@ -42,6 +42,18 @@ body.layout-frame:not(.is-mobile) {
     bottom: 8px;
   }
 
+  // Hover sidedock
+  &.hover-sidedock {
+    .mod-sidedock.mod-left-split.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
+      margin: -4px 0 0 -4px;
+      border: none;
+    }
+    .mod-sidedock.mod-right-split.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
+      margin: -4px -4px 0 0;
+      border: none;
+    }
+  }
+
   // ----------------------------------------------------------------
 
   // Style Settings: Status bar fix

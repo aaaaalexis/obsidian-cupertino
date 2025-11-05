@@ -180,7 +180,6 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
       border-radius: var(--radius-m);
       background-color: var(--modal-background);
       border: var(--border-width) solid var(--background-modifier-border);
-      z-index: var(--layer-popover);
       margin: 8px;
       overflow: visible;
 
@@ -198,6 +197,13 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
       }
       &.mod-right-split::after {
         inset: 0 -32px 0 auto;
+      }
+
+      &.mod-left-split:not(:hover) {
+        margin-left: 0;
+      }
+      &.mod-right-split:not(:hover) {
+        margin-right: 0;
       }
     }
   }
