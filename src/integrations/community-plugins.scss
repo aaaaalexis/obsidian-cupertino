@@ -110,10 +110,10 @@ body {
   --nn-theme-file-tag-bg: var(--tag-background);
   --nn-theme-file-tag-color: var(--tag-color);
 
-  --nn-theme-mobile-list-header-link-color: var(--icon-color);
-  --nn-theme-mobile-toolbar-button-active-bg: var(--interactive-accent);
-  --nn-theme-mobile-toolbar-button-icon-color: var(--icon-color);
+  --nn-theme-mobile-list-header-link-color: var(--text-normal);
+  --nn-theme-mobile-toolbar-button-icon-color: var(--text-normal);
   --nn-theme-mobile-toolbar-button-active-icon-color: var(--text-on-accent);
+  --nn-theme-mobile-toolbar-button-active-bg: var(--interactive-accent);
 
   --nn-theme-navitem-border-radius: var(--radius-m);
   --nn-theme-file-border-radius: var(--radius-m);
@@ -190,9 +190,14 @@ body:not(.mobile-stable) .view-content.notebook-navigator-mobile {
     min-height: 100%;
     max-height: 100%;
     padding: 12px;
+    border-radius: 100vh;
 
     span {
       display: flex;
+    }
+
+    span svg {
+      stroke-width: var(--icon-l-stroke-width);
     }
   }
 }
