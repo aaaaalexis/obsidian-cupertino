@@ -1,4 +1,5 @@
 /* Notion */
+
 .theme-light.notion-light.color-scheme-accent,
 .theme-dark.notion-dark.color-scheme-accent {
   --accent-h: 217;
@@ -9,6 +10,18 @@
 
   --interactive-accent: var(--color-accent);
 }
+.theme-light.notion-light,
+.theme-dark.notion-dark {
+  --color-red-rgb: 229, 100, 88;
+  --color-orange-rgb: 213, 128, 59;
+  --color-yellow-rgb: 216, 163, 47;
+  --color-green-rgb: 70, 161, 113;
+  --color-cyan-rgb: 55, 164, 180;
+  --color-blue-rgb: 39, 131, 222;
+  --color-purple-rgb: 181, 119, 214;
+  --color-pink-rgb: 219, 105, 153;
+}
+
 .theme-light.notion-light {
   --background-primary-alt: #f9f8f7;
   --background-secondary: #f9f8f7;
