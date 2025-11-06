@@ -42,15 +42,6 @@ body,
   --color-blue: rgb(var(--color-blue-rgb));
   --color-purple: rgb(var(--color-purple-rgb));
   --color-pink: rgb(var(--color-pink-rgb));
-
-  --color-red-rgb: 252, 66, 78;
-  --color-orange-rgb: 255, 148, 0;
-  --color-yellow-rgb: 252, 213, 10;
-  --color-green-rgb: 98, 227, 66;
-  --color-cyan-rgb: 5, 237, 229;
-  --color-blue-rgb: 39, 194, 255;
-  --color-purple-rgb: 169, 171, 255;
-  --color-pink-rgb: 255, 121, 187;
 }
 
 .theme-light {
@@ -58,6 +49,15 @@ body,
 
   --color-base-80: #494949;
   --color-base-90: #363636;
+
+  --color-red-rgb: 254, 112, 112;
+  --color-orange-rgb: 242, 154, 100;
+  --color-yellow-rgb: 224, 205, 99;
+  --color-green-rgb: 74, 213, 95;
+  --color-cyan-rgb: 56, 219, 214;
+  --color-blue-rgb: 106, 173, 250;
+  --color-purple-rgb: 187, 158, 245;
+  --color-pink-rgb: 243, 125, 183;
 
   --code-normal: #383a42;
   --code-comment: #b6b9c5;
@@ -75,6 +75,15 @@ body,
 
   --color-base-80: #c0c0c0;
   --color-base-90: #cdcdcd;
+
+  --color-red-rgb: 217, 90, 95;
+  --color-orange-rgb: 219, 134, 80;
+  --color-yellow-rgb: 196, 180, 94;
+  --color-green-rgb: 72, 196, 90;
+  --color-cyan-rgb: 63, 186, 182;
+  --color-blue-rgb: 86, 148, 218;
+  --color-purple-rgb: 142, 125, 194;
+  --color-pink-rgb: 222, 103, 147;
 
   --code-normal: #abb2bf;
   --code-comment: #5c6370;
