@@ -134,9 +134,8 @@ body:not(.banner-off) {
 
     .inline-title:not([data-level]) {
       z-index: 1;
-      margin-top: calc(-1 * var(--banner-calc-icon));
+      margin-top: calc(-1 * var(--banner-calc-icon) + ((var(--banner-icon-size) - 1em) / 2));
       margin-left: calc(var(--banner-icon-size) + 16px);
-      width: fit-content;
       max-width: calc(100cqw - (var(--banner-icon-size) + 16px));
     }
   }
