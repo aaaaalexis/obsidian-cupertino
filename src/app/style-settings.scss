@@ -1093,9 +1093,51 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
+	-
+		id: hidden-frame
+		title: Hidden frame
+		type: heading
+		level: 3
+		collapsed: true
+    - 
+        id: hidden-frame-info
+		description: Following settings requires *Hidden (default)* frame to be set in **Appearance** settings.
+        type: info-text
+		markdown: true
+	-
+		id: colorful-frame
+		title: Colorful frame
+		description: Hide title in the custom title bar
+		type: class-toggle
+	-
+		id: colorful-frame-color
+		title: Colorful frame color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: colorful-frame-opacity
+		title: Colorful frame opacity
+		type: variable-number-slider
+		default: 30
+		min: 10
+		max: 100
+		step: 10
+		format: '%'
+	-
+		id: colorful-frame-invert
+		title: Invert icon color
+		type: class-toggle
+	-
+		id: obsidian-frame
+		title: Obsidian frame
+		type: heading
+		level: 3
+		collapsed: true
     - 
         id: obsidian-frame-info
-		description: Following settings requires Obsidian frame to be set in **Appearance** settings.
+		description: Following settings requires *Obsidian* frame to be set in **Appearance** settings.
         type: info-text
 		markdown: true
 	-
@@ -1128,31 +1170,6 @@ settings:
 		min: 100
 		max: 900
 		step: 50
-	-
-		id: colorful-frame
-		title: Colorful frame
-		description: Hide title in the custom title bar
-		type: class-toggle
-	-
-		id: colorful-frame-color
-		title: Colorful frame color
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: colorful-frame-opacity
-		title: Colorful frame opacity
-		type: variable-number-slider
-		default: 30
-		min: 10
-		max: 100
-		step: 10
-		format: '%'
-	-
-		id: colorful-frame-invert
-		title: Invert icon color
-		type: class-toggle
 	-
 		id: tablet
 		title: Tablet
@@ -3197,7 +3214,9 @@ body:is(.layout-cupertino.input-fluent, .layout-macos) .style-settings-container
 body:not(.colorful-headings-background) .style-settings-container .setting-item[data-id="colorful-headings-full-width"],
 body.banner-off .style-settings-container .setting-item[data-id="banner-off"] ~ .setting-item,
 body:not(.hr-dashed) .style-settings-container .setting-item[data-id="hr-dashed"] ~ .setting-item,
-body:not(.colorful-frame) .style-settings-container .setting-item[data-id="colorful-frame"] ~ .setting-item {
+body:not(.colorful-frame) .style-settings-container .setting-item[data-id="colorful-frame"] ~ .setting-item,
+body:not(.is-hidden-frameless) .style-settings-container .setting-item[data-id="hidden-frame-info"] ~ .setting-item,
+body:is(.is-hidden-frameless, :not(.is-frameless)) .style-settings-container .setting-item[data-id="obsidian-frame-info"] ~ .setting-item {
   pointer-events: none;
 
   > * {

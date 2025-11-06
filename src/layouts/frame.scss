@@ -18,14 +18,14 @@ body.layout-frame:not(.is-mobile) {
     overflow: hidden;
   }
 
-  // macOs fix
-  &.mod-macos .workspace-ribbon.mod-left {
+  // macOS fix
+  &.mod-macos.is-hidden-frameless .workspace-ribbon.mod-left {
     --ribbon-width: 74px;
     padding-top: var(--header-height);
   }
 
   // Windows & Linux fix
-  &:not(.mod-macos).is-frameless.is-hidden-frameless .titlebar {
+  &:not(.mod-macos).is-hidden-frameless .titlebar {
     height: var(--header-height);
     top: 8px;
     right: 8px;
@@ -75,8 +75,10 @@ body.layout-frame:not(.is-mobile) {
     }
   }
   &.hover-sidedock.hover-ribbon .workspace-ribbon.mod-left {
-    --ribbon-width: 56px;
     border: none;
+  }
+  &.hover-sidedock.hover-ribbon.mod-macos.is-hidden-frameless .workspace-ribbon.mod-left {
+    --ribbon-width: 56px;
   }
 
   // Style Settings: Status bar fix

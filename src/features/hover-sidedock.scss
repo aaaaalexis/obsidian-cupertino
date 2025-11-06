@@ -63,7 +63,7 @@ body:not(.is-mobile).hover-sidedock {
   }
 
   // macOS fix
-  &:not(.stacked-nav-off).mod-macos .mod-sidedock.mod-left-split.is-sidedock-collapsed .mod-top-left-space .workspace-tab-header-container {
+  &:not(.stacked-nav-off).mod-macos.is-hidden-frameless .mod-sidedock.mod-left-split.is-sidedock-collapsed .mod-top-left-space .workspace-tab-header-container {
     padding-top: var(--header-height);
   }
 }
@@ -93,7 +93,7 @@ body:not(.is-mobile).hover-ribbon {
   }
 
   // macOS fix
-  &.mod-macos:not(.is-fullscreen) .workspace-ribbon.mod-left.is-collapsed ~ .mod-root .workspace-tab-header-container {
+  &.mod-macos:not(.is-fullscreen).is-hidden-frameless .workspace-ribbon.mod-left.is-collapsed ~ .mod-root .workspace-tab-header-container {
     padding-left: 88px;
   }
 }

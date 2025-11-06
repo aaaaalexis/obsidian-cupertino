@@ -133,6 +133,7 @@ body:not(.accented-interface) {
 
 body.is-frameless:not(.is-hidden-frameless, .is-fullscreen) .titlebar {
   background-color: var(--background-secondary);
+  border-bottom: none;
 }
 body.window-title-off .titlebar-text {
   display: none;

@@ -1,4 +1,4 @@
-body.colorful-frame:not(.is-mobile):not(.layout-cards, .layout-border, .layout-frame, .layout-macos) {
+body.colorful-frame.is-hidden-frameless:not(.is-mobile):not(.layout-cards, .layout-border, .layout-frame, .layout-macos) {
   .workspace-ribbon.mod-left:not(.is-collapsed)::before,
   .workspace-split:not(.is-sidedock-collapsed) .workspace-tabs.mod-top .workspace-tab-header-container::before {
     content: "";

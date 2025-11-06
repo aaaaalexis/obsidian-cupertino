@@ -39,6 +39,7 @@ body:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space {
   }
 }
 
-body:not(.stacked-nav-off):not(.mod-macos) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+body:not(.stacked-nav-off):not(.mod-macos) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner,
+body:not(.stacked-nav-off).mod-macos:not(.is-hidden-frameless).show-ribbon .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
   margin-top: 8px;
 }

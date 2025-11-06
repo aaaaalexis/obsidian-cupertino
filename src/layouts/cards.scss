@@ -1,6 +1,7 @@
 body:is(.layout-cards, .layout-border):not(.is-mobile) {
   // Editor panel
-  &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
+  &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container,
+  &.show-ribbon.hover-ribbon .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
     margin-left: 8px;
   }
   .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
@@ -28,13 +29,14 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   }
 
   // Ribbon
-  &.show-ribbon .workspace {
+  &.show-ribbon {
     &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
-    .mod-sidedock.mod-left-split .workspace-tabs .workspace-tab-container,
+    &:not(.hover-sidedock) .mod-sidedock.mod-left-split .workspace-tabs .workspace-tab-container,
     .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
       margin-left: 0;
     }
-    &:not(.stacked-nav-off):not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed) {
+    &:not(.stacked-nav-off):not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed),
+    &:not(.stacked-nav-off).mod-macos:not(.is-hidden-frameless) .workspace-ribbon.mod-left:not(.is-collapsed) {
       margin-top: var(--header-height);
     }
   }
@@ -48,7 +50,8 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
       margin: 0 8px 8px;
     }
   }
-  &.show-ribbon:not(.stacked-nav-off):not(.mod-macos) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
+  &.show-ribbon:not(.stacked-nav-off):not(.mod-macos) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
+  &.show-ribbon:not(.stacked-nav-off).mod-macos:not(.is-hidden-frameless) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
     margin-top: var(--header-height);
   }
 
