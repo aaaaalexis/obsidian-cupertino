@@ -25,6 +25,7 @@
   .setting-item-name {
     font-weight: var(--font-medium);
     overflow: visible;
+    font-size: calc(var(--font-ui-small) + 1px);
   }
   .setting-item-description {
     word-break: break-word;

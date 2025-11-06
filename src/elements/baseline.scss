@@ -16,10 +16,14 @@ body {
   --button-radius: calc((8px * var(--radius-modifier)) * (1 - var(--radius-modifier-check)) + 100vw * var(--radius-modifier-check));
 }
 
-body:not([class*="input-"]).is-mobile,
-body.input-baseline.is-mobile {
-  --interactive-normal: var(--background-primary);
-  --input-border-width: var(--divider-width);
+body:not([class*="input-"]),
+body.input-baseline {
+  --input-font-weight: var(--font-medium);
+
+  &.is-mobile {
+    --interactive-normal: var(--background-primary);
+    --input-border-width: var(--divider-width);
+  }
 }
 
 .theme-light {
