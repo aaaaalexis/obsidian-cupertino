@@ -6,6 +6,11 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
     }
   }
 
+  // Ribbon
+  &:not(.hover-ribbon) .workspace-ribbon.mod-left.is-collapsed {
+    border-right: var(--divider-width) solid var(--divider-color);
+  }
+
   // Status bar
   &.status-bar-full {
     --status-bar-border-width: 1px 0 0 0;
@@ -14,7 +19,6 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
 
 body.layout-minimal {
   &.show-ribbon:not(.is-mobile) .workspace:not(.is-left-sidedock-open) .workspace-ribbon {
-    box-shadow: 0 calc(-1 * var(--header-height)) 0 0 var(--background-primary);
     background-color: var(--background-primary);
   }
 

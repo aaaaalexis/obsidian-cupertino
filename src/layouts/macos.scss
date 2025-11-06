@@ -73,7 +73,7 @@ body.layout-macos:not(.is-mobile) {
   }
   &.show-ribbon {
     &:not(.mod-macos):not(.stacked-nav-off) .workspace-ribbon.mod-left:not(.is-collapsed) {
-      padding-top: 16px;
+      margin-top: 8px;
     }
     &:not(.mod-macos) .workspace-ribbon.mod-left.is-collapsed .sidebar-toggle-button {
       height: calc(var(--header-height) - 16px);
@@ -98,9 +98,6 @@ body.layout-macos:not(.is-mobile) {
     border-radius: var(--radius-window, var(--radius-m));
     height: -webkit-fill-available;
     overflow: hidden;
-  }
-  .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) + .mod-root {
-    padding-left: 8px;
   }
   &.stacked-nav-off .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container .sidebar-toggle-button {

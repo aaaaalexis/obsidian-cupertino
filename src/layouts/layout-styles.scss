@@ -40,8 +40,8 @@ body.mod-macos:not(:not(.is-hidden-frameless)):not(.hover-ribbon):is(.layout-cla
 }
 body:not(.mod-macos):is(.layout-classic, .layout-minimal).stacked-nav-off .workspace-ribbon.mod-left,
 body.mod-macos:not(.is-hidden-frameless):is(.layout-classic, .layout-minimal).stacked-nav-off .workspace-ribbon.mod-left,
-body:not(.mod-macos).layout-macos:not(.tabs-floating, .tabs-floating-center) .workspace-ribbon.mod-left.is-collapsed,
-body.mod-macos:not(.is-hidden-frameless).layout-macos:not(.tabs-floating, .tabs-floating-center) .workspace-ribbon.mod-left.is-collapsed {
+body:not(.mod-macos):is(.layout-cupertino, .layout-macos):not(.tabs-floating, .tabs-floating-center):not(.hover-ribbon) .workspace-ribbon.mod-left.is-collapsed,
+body.mod-macos:not(.is-hidden-frameless):is(.layout-cupertino, .layout-macos):not(.tabs-floating, .tabs-floating-center):not(.hover-ribbon) .workspace-ribbon.mod-left.is-collapsed {
   &::before {
     content: "";
     height: var(--tab-outline-width);
