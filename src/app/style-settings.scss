@@ -1018,17 +1018,20 @@ settings:
 		title: Hover sidebars trigger area
 		type: variable-select
 		description: Width of the detection area for revealing hover sidebars
-		default: 8px
+		default: 1px
 		options:
+			-
+				label: Edge
+				value: 1px
 			-
 				label: Small
 				value: 2px
 			-
 				label: Medium
-				value: 8px
+				value: 4px
 			-
 				label: Large
-				value: 12px
+				value: 8px
 	-
 		id: hover-sidedock-width
 		title: Hover sidebars width

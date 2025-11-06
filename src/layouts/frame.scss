@@ -43,18 +43,41 @@ body.layout-frame:not(.is-mobile) {
   }
 
   // Hover sidedock
-  &.hover-sidedock {
-    .mod-sidedock.mod-left-split.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
-      margin: -4px 0 0 -4px;
-      border: none;
+  &.hover-sidedock .mod-sidedock.is-sidedock-collapsed[style*="display"] {
+    height: calc(100% - 16px);
+    overflow: visible;
+    background-color: var(--background-primary);
+
+    &.mod-left-split {
+      margin: 4px 4px 4px 8px;
     }
-    .mod-sidedock.mod-right-split.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
-      margin: -4px -4px 0 0;
-      border: none;
+    &.mod-right-split {
+      margin: 4px 8px 4px 4px;
+    }
+
+    &::before {
+      background: none;
+      margin-inline: -16px;
+      pointer-events: auto;
+      width: 16px;
     }
   }
+  &.hover-ribbon .workspace-ribbon.mod-left {
+    height: calc(100% - 16px);
+    overflow: visible;
 
-  // ----------------------------------------------------------------
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      margin-left: -16px;
+    }
+  }
+  &.hover-sidedock.hover-ribbon .workspace-ribbon.mod-left {
+    --ribbon-width: 56px;
+    border: none;
+  }
 
   // Style Settings: Status bar fix
   &.status-bar-full .workspace {
