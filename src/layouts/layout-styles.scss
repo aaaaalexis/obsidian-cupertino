@@ -86,10 +86,10 @@ body:not(.tabs-floating, .tabs-floating-center, .tabs-underline) {
 }
 
 body:is(.tabs-floating, .tabs-floating-center) {
-  &:not(.layout-classic, .layout-frame) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  &:not(.layout-classic, .layout-frame):not(.colorful-frame) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     background-color: var(--background-modifier-hover);
   }
-  &:is(.layout-classic, .layout-frame) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  &:is(.layout-classic:not(.colorful-frame), .layout-frame) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     --tab-outline-width: 1px;
     margin-inline: var(--tab-outline-width);
   }

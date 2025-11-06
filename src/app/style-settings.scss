@@ -1129,6 +1129,31 @@ settings:
 		max: 900
 		step: 50
 	-
+		id: colorful-frame
+		title: Colorful frame
+		description: Hide title in the custom title bar
+		type: class-toggle
+	-
+		id: colorful-frame-color
+		title: Colorful frame color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: colorful-frame-opacity
+		title: Colorful frame opacity
+		type: variable-number-slider
+		default: 30
+		min: 10
+		max: 100
+		step: 10
+		format: '%'
+	-
+		id: colorful-frame-invert
+		title: Invert icon color
+		type: class-toggle
+	-
 		id: tablet
 		title: Tablet
 		type: heading
@@ -3171,7 +3196,8 @@ body.unstyled-tags .style-settings-container .setting-item[data-id="unstyled-tag
 body:is(.layout-cupertino.input-fluent, .layout-macos) .style-settings-container .setting-item[data-id="nav-item-active-style"],
 body:not(.colorful-headings-background) .style-settings-container .setting-item[data-id="colorful-headings-full-width"],
 body.banner-off .style-settings-container .setting-item[data-id="banner-off"] ~ .setting-item,
-body:not(.hr-dashed) .style-settings-container .setting-item[data-id="hr-dashed"] ~ .setting-item {
+body:not(.hr-dashed) .style-settings-container .setting-item[data-id="hr-dashed"] ~ .setting-item,
+body:not(.colorful-frame) .style-settings-container .setting-item[data-id="colorful-frame"] ~ .setting-item {
   pointer-events: none;
 
   > * {

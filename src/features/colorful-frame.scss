@@ -1,0 +1,106 @@
+body.colorful-frame:not(.is-mobile):not(.layout-cards, .layout-border, .layout-frame, .layout-macos) {
+  .workspace-ribbon.mod-left:not(.is-collapsed)::before,
+  .workspace-split:not(.is-sidedock-collapsed) .workspace-tabs.mod-top .workspace-tab-header-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 30%), var(--background-primary));
+    height: var(--header-height);
+    pointer-events: none;
+    border-bottom: none;
+  }
+
+  // Stacked nav spacing
+  &:not(.stacked-nav-off):not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
+    gap: 8px;
+  }
+
+  // Layout style fix
+  &:is(.layout-classic, .layout-minimal) .mod-sidedock > .workspace-leaf-resize-handle {
+    top: var(--header-height);
+  }
+
+  // Tab style fix
+  .mod-root .workspace-tab-header {
+    --tab-outline-width: 0px;
+  }
+
+  // Ribbon fix
+  &.mod-macos:not(.hover-ribbon) .workspace-ribbon.mod-left,
+  &.mod-macos.hover-ribbon .workspace-ribbon.mod-left:not(.is-collapsed) {
+    padding-top: 8px;
+  }
+  &.mod-macos.hover-ribbon .workspace-ribbon.mod-left::before {
+    top: calc(-1 * var(--header-height));
+  }
+}
+
+// Icons & Tab colors
+body.colorful-frame:not(.is-mobile):not(.layout-frame, .layout-macos) {
+  &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top .sidebar-toggle-button,
+  &:not(.stacked-nav-off) .mod-root .workspace-tabs.mod-top .workspace-tab-header-container,
+  &:not(.stacked-nav-off) .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
+  &.stacked-nav-off.workspace-tabs.mod-top .workspace-tab-header-container,
+  .workspace-ribbon.mod-left .side-dock-actions {
+    --icon-color: var(--color-base-100);
+    --icon-color-hover: var(--icon-color);
+    --icon-color-active: var(--icon-color);
+    --icon-color-focused: var(--icon-color);
+    z-index: 1;
+  }
+
+  &.tabs-underline .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+    --tab-text-color: rgb(from var(--color-base-100) r g b / 50%);
+    --tab-text-color-focused: var(--tab-text-color);
+    --tab-text-color-focused-active: var(--tab-text-color);
+    --tab-text-color-active: var(--color-base-100);
+    --tab-text-color-focused-active-current: var(--tab-text-color-active);
+
+    &.is-active {
+      border-bottom-color: var(--tab-text-color-active);
+    }
+    &:not(.is-active):hover {
+      border-bottom-color: var(--tab-text-color);
+    }
+  }
+}
+body.colorful-frame.colorful-frame-invert:not(.is-mobile):not(.layout-frame, .layout-macos) {
+  &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top .sidebar-toggle-button,
+  &:not(.stacked-nav-off) .mod-root .workspace-tabs.mod-top .workspace-tab-header-container,
+  &:not(.stacked-nav-off) .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
+  &.stacked-nav-off .workspace-tabs.mod-top .workspace-tab-header-container,
+  .workspace-ribbon.mod-left .side-dock-actions {
+    --icon-color: var(--color-base-00);
+  }
+
+  &.tabs-underline .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+    --tab-text-color: rgb(from var(--color-base-00) r g b / 50%);
+    --tab-text-color-active: var(--color-base-00);
+  }
+}
+
+// Layout style specific
+body.colorful-frame:not(.is-mobile):is(.layout-cards, .layout-border) {
+  --tab-container-background: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 30%), var(--background-primary));
+
+  .workspace-ribbon.mod-left {
+    background-color: var(--tab-container-background);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 30%), var(--background-primary));
+      height: var(--header-height);
+      pointer-events: none;
+      border-bottom: none;
+    }
+  }
+  .mod-root {
+    background-color: var(--tab-container-background);
+  }
+}
+
+body.colorful-frame:not(.is-mobile).layout-frame .workspace {
+  background-color: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 30%), var(--background-primary));
+}
