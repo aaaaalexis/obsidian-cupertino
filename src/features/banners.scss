@@ -1,8 +1,9 @@
 body:not(.banner-off) {
   --banner-image-height: 320px;
-  --banner-image-height-mobile: 240px;
+  --banner-image-height-s: 240px;
   --banner-image-inset: 8px;
   --banner-image-object-fit: cover;
+  --banner-image-radius: var(--media-radius);
   --banner-icon-size: 48px;
   --banner-icon-spacer: 16px;
   --banner-icon-offset: -64px;
@@ -19,7 +20,7 @@ body:not(.banner-off) {
     --banner-mobile-spacer: calc(var(--safe-area-inset-top) + var(--view-header-height) + 32px);
     --banner-mobile-offset: 16px;
 
-    --banner-image-actual-height: var(--banner-image-height-mobile);
+    --banner-image-actual-height: var(--banner-image-height-s);
   }
 
   &.banner-image-contain,
@@ -38,13 +39,13 @@ body:not(.banner-off) {
   // Banner: Spacing
   .banner:not(.banner-icon) {
     .markdown-preview-pusher,
-    .cm-sizer {
+    &.is-live-preview .cm-sizer {
       margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height)) !important;
     }
   }
   .banner.banner-icon {
     .markdown-preview-pusher,
-    .cm-sizer {
+    &.is-live-preview .cm-sizer {
       margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height) + var(--banner-calc-icon) + var(--banner-icon-offset)) !important;
     }
     .callout[data-callout="banner-icon"] {
@@ -53,7 +54,7 @@ body:not(.banner-off) {
   }
   .banner-icon:not(.banner) {
     .markdown-preview-pusher,
-    .cm-sizer {
+    &.is-live-preview .cm-sizer {
       margin-top: calc(var(--banner-calc-base) + var(--banner-calc-icon)) !important;
     }
     .callout[data-callout="banner-icon"] {
@@ -66,9 +67,11 @@ body:not(.banner-off) {
     img[alt="banner"] {
       position: absolute;
       inset: var(--banner-mobile-spacer) var(--banner-image-inset) auto;
+      width: 100%;
       max-width: calc(100% - var(--banner-image-inset) * 2);
       height: var(--banner-image-actual-height);
       object-fit: var(--banner-image-object-fit);
+      border-radius: var(--banner-image-radius) !important;
     }
 
     .image-embed:has(img[alt="banner"]) {
@@ -135,6 +138,16 @@ body:not(.banner-off) {
       margin-left: calc(var(--banner-icon-size) + 16px);
       width: fit-content;
       max-width: calc(100cqw - (var(--banner-icon-size) + 16px));
+    }
+  }
+
+  // Popover fix
+  &:not(.is-mobile) .popover .markdown-embed {
+    --banner-image-actual-height: var(--banner-image-height-s);
+    --banner-image-inset: 0px;
+
+    .banner-icon .inline-title {
+      display: flex;
     }
   }
 }

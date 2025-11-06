@@ -2210,12 +2210,14 @@ settings:
 	- 
 		id: banner-image-height
 		title: Banner image height
+		description: Height for banner images on desktop editor
 		type: variable-text
 		allowEmpty: false
 		default: 320px
 	- 
-		id: banner-image-height-mobile
-		title: Banner image height (Mobile)
+		id: banner-image-height-s
+		title: Banner image height (Small)
+		description: Height for banner images on desktop popover & mobile
 		type: variable-text
 		allowEmpty: false
 		default: 240px
@@ -2225,6 +2227,15 @@ settings:
 		type: variable-text
 		allowEmpty: false
 		default: 8px
+	-
+		id: banner-image-radius
+		title: Banner image radius
+		type: variable-number-slider
+		default: 8
+		min: 0
+		max: 24
+		step: 1
+		format: px
 	-
 		id: banner-image-object-fit
 		title: Banner image fit
@@ -2710,9 +2721,9 @@ settings:
 		title: Media radius
 		description: Rounded corners for images and videos
 		type: variable-number-slider
-		default: 4
+		default: 8
 		min: 0
-		max: 16
+		max: 24
 		step: 1
 		format: px
 	-
