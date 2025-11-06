@@ -5,7 +5,7 @@ body:not(.is-mobile) {
 }
 
 body:not(.is-mobile).hover-sidedock {
-  .mod-sidedock.is-sidedock-collapsed {
+  .mod-sidedock.is-sidedock-collapsed[style*="display"] {
     display: flex !important;
     position: absolute;
     opacity: 0;
@@ -93,7 +93,7 @@ body:not(.is-mobile).hover-ribbon {
   }
 
   // macOS fix
-  &.mod-macos .workspace-ribbon.mod-left.is-collapsed ~ .mod-root .workspace-tab-header-container {
+  &.mod-macos:not(.is-fullscreen) .workspace-ribbon.mod-left.is-collapsed ~ .mod-root .workspace-tab-header-container {
     padding-left: 88px;
   }
 }
