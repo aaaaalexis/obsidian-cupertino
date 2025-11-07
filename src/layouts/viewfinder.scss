@@ -1,0 +1,38 @@
+body.layout-viewfinder:not(.is-mobile) {
+  .mod-root {
+    margin-block: 8px;
+    height: unset;
+    background-color: var(--background-primary);
+    border-radius: var(--radius-s);
+    border: var(--border-width) solid var(--background-modifier-border);
+    overflow: hidden;
+  }
+}
+
+// Mobile
+body.layout-viewfinder.is-tablet {
+  .mod-root {
+    padding-top: 0;
+    margin: var(--safe-area-inset-top) 8px 8px;
+    height: auto;
+    background-color: var(--background-primary);
+    border-radius: var(--radius-m);
+    border: var(--border-width) solid var(--background-modifier-border);
+    overflow: hidden;
+  }
+
+  &.contrast-dark-black.theme-dark,
+  &.contrast-dark-black-mobile.theme-dark {
+    .mod-root {
+      background-color: transparent;
+    }
+    .workspace-drawer {
+      border: none;
+    }
+  }
+
+  // Tab style
+  &:not(.tabs-floating, .tabs-floating-center, .tabs-underline) .workspace-tab-header-container-inner {
+    padding-top: 8px !important;
+  }
+}
