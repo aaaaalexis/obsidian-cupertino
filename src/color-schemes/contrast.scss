@@ -23,8 +23,7 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
 
   background-color: black;
 
-  &.is-tablet .mod-root .view-header,
-  &.mobile-stable .mod-root .view-header,
+  &.is-mobile .mod-root .view-header,
   &.mobile-stable .mobile-navbar,
   .workspace,
   .mod-root .view-header::before,
@@ -32,7 +31,7 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
     background-color: black !important;
   }
 
-  &:not(.layout-cupertino, .layout-macos) {
+  &:not(.is-mobile):not(.layout-cupertino, .layout-macos) {
     .menu,
     .menu-scroll {
       background-color: black;
