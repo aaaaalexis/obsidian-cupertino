@@ -113,6 +113,9 @@
   .view-header-title-parent {
     color: var(--text-faint);
   }
+  .view-header-title {
+    font-weight: max(var(--file-header-font-weight), var(--font-medium));
+  }
   body:not(.is-mobile, .view-header-title-always) .view-header:not(.view-header-always-show):not(:hover) .view-header-title-container > div:not(:focus-within) {
     opacity: 0 !important;
   }

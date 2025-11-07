@@ -1,5 +1,6 @@
 body:not(.stacked-nav-off) .mod-sidedock.mod-left-split .mod-top-left-space {
   --sidebar-tab-text-display: flex;
+  --tab-font-weight: var(--font-medium);
 
   .workspace-tab-header-container {
     height: fit-content;

@@ -35,7 +35,7 @@ body:not(.nav-item-subtle, .nav-item-strong) .nav-files-container > div {
   --nav-item-background-hover: transparent;
   --nav-item-background-active: transparent;
   --nav-item-weight-hover: var(--font-medium);
-  --nav-item-weight-active: calc(var(--font-weight) + var(--bold-modifier));
+  --nav-item-weight-active: var(--font-medium);
 
   .tree-item-self.is-active::before {
     content: "";
@@ -149,7 +149,7 @@ body:not(.is-mobile) .mod-sidedock {
   .workspace-leaf-content > .view-content {
     padding: 2px 16px;
 
-    > div:not(.nav-header, .nav-buttons-container) {
+    > .node-insert-event {
       padding: 0;
     }
   }
