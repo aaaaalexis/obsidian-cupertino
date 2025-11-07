@@ -1,10 +1,23 @@
-body.colorful-frame.is-hidden-frameless:not(.is-mobile):not(.layout-cards, .layout-border, .layout-frame, .layout-macos) {
+body.colorful-frame.is-frameless:not(.is-hidden-frameless):not(.is-mobile) {
+  .titlebar {
+    background-color: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 100%), var(--background-primary));
+  }
+
+  .titlebar-inner {
+    color: var(--text-on-accent);
+  }
+  &.colorful-frame-invert .titlebar-inner {
+    color: var(--text-on-accent-invert);
+  }
+}
+
+body.colorful-frame.is-hidden-frameless:not(.is-mobile):not(.layout-macos, .layout-cards, .layout-border, .layout-frame, .layout-viewfinder) {
   .workspace-ribbon.mod-left:not(.is-collapsed)::before,
   .workspace-split:not(.is-sidedock-collapsed) .workspace-tabs.mod-top .workspace-tab-header-container::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 30%), var(--background-primary));
+    background-color: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 100%), var(--background-primary));
     height: var(--header-height);
     pointer-events: none;
     border-bottom: none;
@@ -36,13 +49,19 @@ body.colorful-frame.is-hidden-frameless:not(.is-mobile):not(.layout-cards, .layo
 }
 
 // Icons & Tab colors
-body.colorful-frame:not(.is-mobile):not(.layout-frame, .layout-macos) {
-  &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top .sidebar-toggle-button,
+body.colorful-frame.is-hidden-frameless:not(.is-mobile):not(.layout-frame, .layout-macos) {
+  --colorful-frame-content-color: var(--text-on-accent);
+
+  &.colorful-frame-invert {
+    --colorful-frame-content-color: var(--text-on-accent-invert);
+  }
+
+  &:not(.layout-viewfinder):not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top .sidebar-toggle-button,
   &:not(.stacked-nav-off) .mod-root .workspace-tabs.mod-top .workspace-tab-header-container,
-  &:not(.stacked-nav-off) .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
-  &.stacked-nav-off.workspace-tabs.mod-top .workspace-tab-header-container,
-  .workspace-ribbon.mod-left .side-dock-actions {
-    --icon-color: var(--color-base-100);
+  &:not(.layout-viewfinder):not(.stacked-nav-off) .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
+  &:not(.layout-viewfinder).stacked-nav-off.workspace-tabs.mod-top .workspace-tab-header-container,
+  &:not(.layout-viewfinder) .workspace-ribbon.mod-left .side-dock-actions {
+    --icon-color: var(--colorful-frame-content-color);
     --icon-color-hover: var(--icon-color);
     --icon-color-active: var(--icon-color);
     --icon-color-focused: var(--icon-color);
@@ -50,10 +69,10 @@ body.colorful-frame:not(.is-mobile):not(.layout-frame, .layout-macos) {
   }
 
   &.tabs-underline .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
-    --tab-text-color: rgb(from var(--color-base-100) r g b / 50%);
+    --tab-text-color: rgb(from var(--colorful-frame-content-color) r g b / 50%);
     --tab-text-color-focused: var(--tab-text-color);
     --tab-text-color-focused-active: var(--tab-text-color);
-    --tab-text-color-active: var(--color-base-100);
+    --tab-text-color-active: var(--colorful-frame-content-color);
     --tab-text-color-focused-active-current: var(--tab-text-color-active);
 
     &.is-active {
@@ -64,43 +83,24 @@ body.colorful-frame:not(.is-mobile):not(.layout-frame, .layout-macos) {
     }
   }
 }
-body.colorful-frame.colorful-frame-invert:not(.is-mobile):not(.layout-frame, .layout-macos) {
-  &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top .sidebar-toggle-button,
-  &:not(.stacked-nav-off) .mod-root .workspace-tabs.mod-top .workspace-tab-header-container,
-  &:not(.stacked-nav-off) .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
-  &.stacked-nav-off .workspace-tabs.mod-top .workspace-tab-header-container,
-  .workspace-ribbon.mod-left .side-dock-actions {
-    --icon-color: var(--color-base-00);
-  }
-
-  &.tabs-underline .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
-    --tab-text-color: rgb(from var(--color-base-00) r g b / 50%);
-    --tab-text-color-active: var(--color-base-00);
-  }
-}
 
 // Layout style specific
-body.colorful-frame:not(.is-mobile):is(.layout-cards, .layout-border) {
-  --tab-container-background: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 30%), var(--background-primary));
-
-  .workspace-ribbon.mod-left {
-    background-color: var(--tab-container-background);
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 30%), var(--background-primary));
-      height: var(--header-height);
-      pointer-events: none;
-      border-bottom: none;
-    }
+body.colorful-frame:not(.is-mobile):is(.layout-cards, .layout-border, .layout-frame) {
+  .workspace {
+    background-color: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 100%), var(--background-primary));
   }
-  .mod-root {
-    background-color: var(--tab-container-background);
+
+  .workspace-ribbon.mod-left::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 100%), var(--background-primary));
+    height: var(--header-height);
+    pointer-events: none;
+    border-bottom: none;
   }
 }
 
-body.colorful-frame:not(.is-mobile).layout-frame .workspace {
-  background-color: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 30%), var(--background-primary));
+body.colorful-frame:not(.is-mobile).layout-viewfinder .mod-root .workspace-tab-header-container {
+  background-color: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 100%), var(--background-primary));
 }

@@ -654,6 +654,9 @@ settings:
 				label: Cupertino
 				value: layout-cupertino
 			-
+				label: macOS
+				value: layout-macos
+			-
 				label: Classic
 				value: layout-classic
 			-
@@ -669,8 +672,8 @@ settings:
 				label: Frame
 				value: layout-frame
 			-
-				label: macOS
-				value: layout-macos
+				label: Viewfinder
+				value: layout-viewfinder
 	-
 		id: input-style
 		title: Element style
@@ -1094,20 +1097,20 @@ settings:
 		level: 2
 		collapsed: true
 	-
-		id: hidden-frame
-		title: Hidden frame
+		id: frameless-frame
+		title: Colorful frame
 		type: heading
 		level: 3
 		collapsed: true
     - 
-        id: hidden-frame-info
-		description: Following settings requires *Hidden (default)* frame to be set in **Appearance** settings.
+        id: colorful-frame-info
+		description: Colorful frame requires **Hidden (default)** or **Obsidian** frame to be set in **Appearance** settings.
         type: info-text
 		markdown: true
 	-
 		id: colorful-frame
 		title: Colorful frame
-		description: Hide title in the custom title bar
+		description: Add colored background to the window frame
 		type: class-toggle
 	-
 		id: colorful-frame-color
@@ -1120,51 +1123,34 @@ settings:
 		id: colorful-frame-opacity
 		title: Colorful frame opacity
 		type: variable-number-slider
-		default: 30
+		default: 100
 		min: 10
 		max: 100
 		step: 10
 		format: '%'
 	-
 		id: colorful-frame-invert
-		title: Invert icon color
+		title: Invert icon and text color
 		type: class-toggle
 	-
-		id: obsidian-frame
-		title: Obsidian frame
+		id: titlebar
+		title: Frame title
 		type: heading
 		level: 3
 		collapsed: true
     - 
-        id: obsidian-frame-info
-		description: Following settings requires *Obsidian* frame to be set in **Appearance** settings.
+        id: titlebar-info
+		description: Frame title settings requires **Obsidian** frame to be set in **Appearance** settings.
         type: info-text
 		markdown: true
 	-
-		id: window-title-off
-		title: Hide window frame title
+		id: titlebar-text-off
+		title: Hide frame title
 		description: Hide title in the custom title bar
 		type: class-toggle
 	-
-		id: titlebar-text-color-focused
-		title: Frame title color (focused)
-		description: Requires custom title bar
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: titlebar-text-color
-		title: Frame title color (inactive)
-		description: Requires custom title bar
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
 		id: titlebar-text-weight
 		title: Frame title font weight
-		description: Requires custom title bar
 		type: variable-number-slider
 		default: 600
 		min: 100
@@ -2217,7 +2203,7 @@ settings:
 	- 
 		id: banner-image-height-s
 		title: Banner image height (Small)
-		description: Height for banner images on desktop popover & mobile
+		description: Height for banner images on desktop popover and mobile
 		type: variable-text
 		allowEmpty: false
 		default: 240px
@@ -3226,8 +3212,8 @@ body:not(.colorful-headings-background) .style-settings-container .setting-item[
 body.banner-off .style-settings-container .setting-item[data-id="banner-off"] ~ .setting-item,
 body:not(.hr-dashed) .style-settings-container .setting-item[data-id="hr-dashed"] ~ .setting-item,
 body:not(.colorful-frame) .style-settings-container .setting-item[data-id="colorful-frame"] ~ .setting-item,
-body:not(.is-hidden-frameless) .style-settings-container .setting-item[data-id="hidden-frame-info"] ~ .setting-item,
-body:is(.is-hidden-frameless, :not(.is-frameless)) .style-settings-container .setting-item[data-id="obsidian-frame-info"] ~ .setting-item {
+body:not(.is-frameless) .style-settings-container .setting-item[data-id="colorful-frame-info"] ~ .setting-item,
+body:is(.is-hidden-frameless, :not(.is-frameless)) .style-settings-container .setting-item[data-id="titlebar-info"] ~ .setting-item {
   pointer-events: none;
 
   > * {
