@@ -81,6 +81,12 @@ body:not(.mobile-stable).is-mobile {
 }
 
 body:not(.mobile-stable).is-phone {
+  // Immersive exceptions
+  .mod-root .workspace-leaf-content:not([data-type="markdown"], [data-type="graph"], [data-type="canvas"], [data-type="bases"]) .view-content > div:not(.markdown-source-view, .markdown-reading-view, .excalidraw-wrapper) {
+    margin-top: 16px;
+    height: calc(100% - 48px - var(--safe-area-inset-bottom-override) - 32px);
+  }
+
   // Bottom navbar & Toolbar
   --mobile-toolbar-height: 48px;
   --toolbar-option-width: 48px;
