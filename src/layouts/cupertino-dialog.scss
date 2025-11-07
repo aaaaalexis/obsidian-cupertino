@@ -42,6 +42,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     .suggestion-item {
       padding: calc(4px * var(--density-modifier)) 12px;
       align-items: center;
+      display: flex;
     }
     .suggestion-item {
       min-height: 32px;
