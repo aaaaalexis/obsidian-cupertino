@@ -52,10 +52,14 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone .modal.mo
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-community-modal) {
   background-color: var(--background-primary);
 
-  .horizontal-tab-nav-item,
-  .vertical-tab-nav-item,
   .vertical-tab-header-group-title {
+    padding: 8px;
+  }
+  .horizontal-tab-nav-item,
+  .vertical-tab-nav-item {
     padding: 4px 8px;
+    min-height: unset;
+    font-size: calc(var(--font-ui-small) + 1px);
   }
   .vertical-tab-nav-item:not(.is-active):hover {
     background-color: transparent;

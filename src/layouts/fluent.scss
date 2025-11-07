@@ -253,7 +253,9 @@ body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
       padding: calc(8px * var(--density-modifier)) var(--side-padding);
       position: relative;
     }
-
+    .vertical-tab-nav-item {
+      font-size: calc(var(--font-ui-small) + 1px);
+    }
     .vertical-tab-nav-item.is-active {
       --background-modifier-hover: var(--nav-item-background-active);
       background-color: var(--background-modifier-hover);
@@ -271,6 +273,10 @@ body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
         margin-left: unset;
         height: unset;
       }
+    }
+
+    .setting-item-name {
+      font-size: var(--font-ui-medium);
     }
   }
 }

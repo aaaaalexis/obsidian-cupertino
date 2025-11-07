@@ -42,6 +42,18 @@ body:not(.is-mobile) .modal.mod-sidebar-layout {
     container-type: inline-size;
   }
 
+  .horizontal-tab-nav-item,
+  .vertical-tab-nav-item {
+    display: flex;
+    align-items: center;
+    padding: calc(4px * var(--density-modifier)) 16px;
+    min-height: var(--input-height);
+    color: var(--text-muted);
+    font-weight: var(--font-medium);
+    font-size: var(--font-ui-small);
+    word-break: break-word;
+  }
+
   @container (max-width: 560px) {
     .vertical-tab-content {
       .setting-item-info {
