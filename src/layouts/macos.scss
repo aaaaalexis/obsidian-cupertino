@@ -47,6 +47,18 @@ body.layout-macos:not(.is-mobile) {
     }
   }
 
+  // Editor panel
+  .mod-root {
+    .workspace-leaf {
+      contain: size !important;
+    }
+    .workspace-leaf,
+    .workspace-leaf-content,
+    .workspace-tab-container {
+      overflow: visible;
+    }
+  }
+
   // File explorer
   &.theme-light .nav-files-container > div {
     --nav-item-background-active: var(--background-modifier-hover);

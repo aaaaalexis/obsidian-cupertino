@@ -54,8 +54,6 @@
   .workspace-split.mod-root .workspace-tab-container {
     border-radius: var(--tab-radius);
     transition: var(--anim-duration-moderate);
-  }
-  .workspace-split.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-container {
     overflow: hidden;
   }
 
