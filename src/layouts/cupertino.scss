@@ -253,13 +253,6 @@ body.layout-cupertino:not(.is-mobile) {
       outline-color: transparent;
     }
   }
-  .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root {
-    margin-right: 8px;
-  }
-  &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root,
-  &.show-ribbon.hover-ribbon .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
-    margin-left: 8px;
-  }
 
   // Status bar
   &:not(.status-bar-full) .mod-root {

@@ -51,11 +51,6 @@
     --hr-dashed-spacing: 0.5em;
   }
 
-  .workspace-split.mod-root {
-    background-color: var(--background-secondary);
-    transition: var(--anim-duration-moderate);
-  }
-
   .workspace-split.mod-root .workspace-tab-container {
     border-radius: var(--tab-radius);
     transition: var(--anim-duration-moderate);

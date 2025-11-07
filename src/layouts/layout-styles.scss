@@ -4,12 +4,21 @@ body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-
     border-radius: 0;
   }
 }
+body:is(.layout-cupertino, .layout-viewfinder) {
+  &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root,
+  &.show-ribbon.hover-ribbon .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
+    margin-left: 8px;
+  }
+  .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root {
+    margin-right: 8px;
+  }
+}
 
 // Side panels
 .mod-sidedock .workspace-tabs .workspace-leaf {
   background-color: transparent;
 }
-body:not(.layout-cupertino, .layout-macos, .layout-cards, .layout-border, .layout-frame):is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark):not(.is-mobile) .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
+body:not(.layout-cupertino, .layout-macos, .layout-cards, .layout-border, .layout-frame, .layout-viewfinder):is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark):not(.is-mobile) .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
   border-color: var(--divider-color);
 }
 
@@ -77,7 +86,7 @@ body:not(.layout-classic, .layout-minimal):not(.is-mobile).hide-vault-switcher-o
 // Tab styles
 body:not(.tabs-floating, .tabs-floating-center, .tabs-underline) {
   &:is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.theme-dark.is-mobile),
-  &:is(.layout-classic, .layout-minimal, .layout-cupertino, .layout-macos, .layout-frame) {
+  &:is(.layout-classic, .layout-minimal, .layout-cupertino, .layout-macos, .layout-frame, .layout-viewfinder:not(.colorful-frame)) {
     .mod-root .workspace-tab-header {
       --tab-outline-width: 1px;
     }
@@ -102,7 +111,7 @@ body:is(.tabs-floating, .tabs-floating-center) {
 }
 
 body:is(.layout-classic, .layout-minimal, .layout-frame).stacked-nav-off .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed),
-body:is(.layout-classic, .layout-minimal, .layout-frame) .mod-root,
+body:is(.layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder:not(.colorful-frame)) .mod-root,
 body:is(.layout-classic, .layout-minimal, .layout-frame) .mod-sidedock.mod-right-split:not(.is-sidedock-collapsed),
 body.layout-cupertino:not(.tabs-floating, .tabs-floating-center):not(.is-mobile) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root,
 body.layout-macos:not(.tabs-floating, .tabs-floating-center) .mod-root,

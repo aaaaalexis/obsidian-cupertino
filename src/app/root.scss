@@ -122,6 +122,11 @@ body:not(.is-mobile) {
     align-items: center;
     background: var(--background-secondary);
   }
+
+  .workspace-split {
+    background-color: transparent;
+    transition: var(--anim-duration-moderate);
+  }
 }
 
 body:not(.accented-interface) {
@@ -135,7 +140,7 @@ body.is-frameless:not(.is-hidden-frameless, .is-fullscreen) .titlebar {
   background-color: var(--background-secondary);
   border-bottom: none;
 }
-body.window-title-off .titlebar-text {
+body.titlebar-text-off .titlebar-text {
   display: none;
 }
 

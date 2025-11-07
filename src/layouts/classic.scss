@@ -22,6 +22,10 @@ body.layout-minimal {
     background-color: var(--background-primary);
   }
 
+  .workspace {
+    background-color: var(--background-primary);
+  }
+
   .mod-sidedock .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
     border-bottom: none;
   }
@@ -29,11 +33,8 @@ body.layout-minimal {
     background-color: var(--background-primary);
   }
 
-  .workspace > .mod-root,
-  .workspace-drawer.mod-right,
-  .mod-sidedock.mod-right-split,
-  .mod-sidedock.mod-right-split .workspace-tabs .workspace-leaf {
-    background-color: var(--background-primary);
+  .mod-sidedock.mod-left-split {
+    background-color: var(--background-secondary);
   }
 
   &.contrast-dark-black.theme-dark,

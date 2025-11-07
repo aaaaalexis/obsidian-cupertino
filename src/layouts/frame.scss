@@ -1,6 +1,4 @@
 body.layout-frame:not(.is-mobile) {
-  --tab-container-background: transparent;
-
   .workspace {
     padding: 4px;
     background-color: var(--background-secondary);
@@ -12,9 +10,6 @@ body.layout-frame:not(.is-mobile) {
     background-color: var(--background-primary);
     border-radius: var(--radius-s);
     border: var(--border-width) solid var(--background-modifier-border);
-    overflow: hidden;
-  }
-  .mod-root {
     overflow: hidden;
   }
 
