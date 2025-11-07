@@ -226,16 +226,14 @@ body.layout-cupertino:not(.is-phone) {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 24px 48px, rgba(0, 0, 0, 0.12) 0px 4px 16px;
   }
 
-  .mod-root {
-    z-index: 5;
-
-    .workspace-tabs,
-    .workspace-tab-container {
-      overflow: visible;
-    }
-    .workspace-tab-container {
-      outline: var(--tab-outline-width) solid var(--tab-outline-color);
-    }
+  .workspace.is-left-sidedock-open .mod-root .workspace-tab-header-container {
+    overflow: hidden;
+  }
+  .mod-root .workspace-tabs {
+    overflow: visible;
+  }
+  .mod-root .workspace-tab-container {
+    outline: var(--tab-outline-width) solid var(--tab-outline-color);
   }
 }
 

@@ -259,11 +259,3 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     height: 32px;
   }
 }
-
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet {
-  --border-width: 0.5pt;
-
-  .workspace-drawer.is-pinned {
-    z-index: 4;
-  }
-}
