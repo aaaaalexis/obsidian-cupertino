@@ -90,12 +90,11 @@ body.layout-macos:not(.is-mobile) {
     &:not(.mod-macos) .workspace-ribbon.mod-left.is-collapsed .sidebar-toggle-button {
       height: calc(var(--header-height) - 16px);
     }
-    .workspace-ribbon.mod-left:not(.is-collapsed) {
-      padding-left: 16px;
-    }
-    &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed),
     &.mod-macos.is-hidden-frameless .workspace-ribbon.mod-left:not(.is-collapsed) {
       margin-top: calc(var(--header-height) - 8px);
+    }
+    .workspace-ribbon.mod-left:not(.is-collapsed) {
+      padding-left: 16px;
     }
     &:not(.hover-ribbon) .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) {
       margin-left: calc(-1 * var(--ribbon-width) + 8px);
