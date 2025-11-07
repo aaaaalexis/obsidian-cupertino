@@ -255,4 +255,9 @@ body.layout-cupertino:not(.is-mobile) {
   &:not(.status-bar-full) .mod-root {
     padding-bottom: 8px;
   }
+
+  // Windows & Linux fix
+  &.is-hidden-frameless .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+    padding-right: var(--frame-right-space);
+  }
 }
