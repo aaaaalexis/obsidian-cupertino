@@ -31,9 +31,8 @@ body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
     color: var(--icon-color-focused);
     background-color: var(--background-primary);
   }
-  .clickable-icon:not([aria-disabled="true"]):hover,
-  .clickable-icon.has-active-menu,
-  .modal-close-button:hover {
+  .clickable-icon:not([aria-disabled="true"], .modal-close-button):hover,
+  .clickable-icon.has-active-menu {
     background-color: var(--background-modifier-hover);
   }
 
@@ -178,7 +177,7 @@ body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
     padding-inline: 16px;
     border-radius: 0;
 
-    &::before {
+    &:empty::before {
       margin: 0;
       width: var(--icon-s);
       height: var(--icon-s);
@@ -252,9 +251,6 @@ body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
     .vertical-tab-nav-item {
       padding: calc(8px * var(--density-modifier)) var(--side-padding);
       position: relative;
-    }
-    .vertical-tab-nav-item {
-      font-size: calc(var(--font-ui-small) + 1px);
     }
     .vertical-tab-nav-item.is-active {
       --background-modifier-hover: var(--nav-item-background-active);

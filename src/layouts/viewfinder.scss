@@ -1,4 +1,6 @@
 body.layout-viewfinder:not(.is-mobile) {
+  --viewfinder-sidedock-header-height: calc(var(--header-height) + 16px);
+
   .workspace:not(.is-left-sidedock-open) .mod-root {
     margin-left: 8px;
   }
@@ -13,6 +15,9 @@ body.layout-viewfinder:not(.is-mobile) {
     border: var(--border-width) solid var(--background-modifier-border);
     overflow: hidden;
   }
+  .mod-sidedock {
+    --header-height: var(--viewfinder-sidedock-header-height);
+  }
 
   // Windows & Linux fix
   &:not(.mod-macos).is-hidden-frameless .titlebar {
@@ -20,9 +25,8 @@ body.layout-viewfinder:not(.is-mobile) {
     top: 8px;
     right: 8px;
 
-    .titlebar-button-container.mod-right {
-      border-top-right-radius: var(--radius-s);
-      overflow: hidden;
+    .titlebar-button {
+      border-radius: var(--radius-s);
     }
   }
 }
