@@ -12,7 +12,6 @@ body:not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-con
     gap: 4px !important;
     padding: 0 !important;
     background-color: transparent !important;
-    width: 0 !important;
 
     .nav-action-button {
       padding: 2px !important;
@@ -36,6 +35,19 @@ body:not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-con
     svg {
       width: 0px;
       height: 0px;
+    }
+  }
+}
+
+body.compact-actions-indicator .mod-sidedock .workspace-leaf-content > .nav-header,
+body.compact-actions-indicator .mod-sidedock .workspace-leaf-content > .view-content > .nav-header {
+  &:not(:hover) .nav-buttons-container {
+    background-color: var(--background-modifier-hover) !important;
+    border-radius: 100vh;
+    width: 48px;
+
+    .nav-action-button {
+      background-color: transparent;
     }
   }
 }

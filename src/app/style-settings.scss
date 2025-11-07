@@ -801,14 +801,38 @@ settings:
 				label: Single tab
 				value: labeled-tabs-single
 	-
+		id: nav-header-align
+		title: Tab action alignment
+		type: variable-select
+		allowEmpty: false
+		default: nav-header-center
+		options:
+			-
+				label: Center
+				value: center
+			-
+				label: Side
+				value: Start
+	-
+		id: compact-actions
+		title: Compact tab actions
+		type: class-select
+		allowEmpty: false
+		default: compact-actions-dot
+		options:
+			-
+				label: Disable
+				value: compact-actions-off
+			-
+				label: Dot
+				value: compact-actions-dot
+			-
+				label: Indicator
+				value: compact-actions-indicator
+	-
 		id: stacked-nav-off
 		title: Disable large primary navigation
 		description: Turns off vertically stacked tabs in the left sidebar 
-		type: class-toggle
-	-
-		id: compact-actions-off
-		title: Disable compact panel actions
-		description: Turns off auto hiding panel actions
 		type: class-toggle
 	-
 		id: compact-tabs-off

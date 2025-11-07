@@ -152,7 +152,6 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
         background-color: var(--background-modifier-hover);
         padding: 2px;
         gap: 0;
-        align-self: center;
 
         .nav-action-button {
           position: relative;

@@ -59,7 +59,6 @@ body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
     .mod-sidedock .workspace-leaf-content > .view-content > .nav-header {
       .nav-buttons-container {
         padding: 0;
-        width: 100%;
 
         .nav-action-button {
           flex: 1;
