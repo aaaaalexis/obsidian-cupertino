@@ -15,6 +15,7 @@ body.layout-viewfinder:not(.is-mobile) {
     border: var(--border-width) solid var(--background-modifier-border);
     overflow: hidden;
   }
+  .workspace-ribbon.mod-left,
   .mod-sidedock {
     --header-height: var(--viewfinder-sidedock-header-height);
   }
