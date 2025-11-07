@@ -64,15 +64,19 @@ body.obsidian-app.is-mobile {
     border: var(--border-width) solid var(--background-modifier-border);
     border-radius: 100vh;
     background: var(--background-secondary);
-    padding-inline: 8px;
+    padding: 4px;
     max-width: 100%;
+    height: 48px;
   }
   .workspace-drawer .nav-buttons-container .nav-action-button {
     border-radius: 100vh;
-    height: 48px;
+    height: auto;
     width: 48px;
     padding: 0;
-    background-color: transparent;
+  }
+  .workspace-drawer .nav-buttons-container .nav-action-button.is-active {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
   }
 }
 
@@ -91,7 +95,7 @@ body.obsidian-app.is-phone {
   &:is(html[style*="--keyboard-height"]:not([style*="--keyboard-height: 0px"]) body.is-phone:not(.mod-toolbar-open)) {
     --safe-area-inset-bottom-override: 12px;
 
-    &:not(.mode-switcher-off) .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2),
+    &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2),
     .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::before,
     .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::after {
       opacity: 0;
@@ -102,14 +106,12 @@ body.obsidian-app.is-phone {
     }
   }
 
-  &.mode-switcher-off {
-    .mobile-navbar,
-    .mobile-toolbar {
-      padding-top: var(--safe-area-inset-bottom-override);
-      padding-right: var(--safe-area-inset-bottom-override);
-      max-width: 100%;
-      width: 100%;
-    }
+  &.mode-switcher-off .mobile-navbar,
+  &.mode-switcher-off .mobile-toolbar,
+  & > .app-container > .horizontal-main-container:not(:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content[data-type="markdown"])) ~ .mobile-navbar {
+    padding-right: var(--safe-area-inset-bottom-override);
+    max-width: 100%;
+    width: 100%;
   }
 
   .mobile-navbar,
@@ -146,7 +148,7 @@ body.obsidian-app.is-phone {
     width: 48px;
     height: 48px;
   }
-  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2) {
+  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     transition: var(--anim-duration-moderate);
     right: var(--safe-area-inset-bottom-override);
     bottom: var(--safe-area-inset-bottom-override);
@@ -183,7 +185,7 @@ body.obsidian-app.is-phone {
   .mobile-tab-switcher-menu-spacer:first-child {
     z-index: 2;
   }
-  .mobile-tab-switcher-menu-spacer:last-child .clickable-icon::before {
+  .mobile-tab-switcher-menu-spacer:last-child .clickable-icon::after {
     position: fixed;
     z-index: 1;
     inset: 0;

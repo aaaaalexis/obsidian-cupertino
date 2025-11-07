@@ -25,75 +25,84 @@
 
   .el-table,
   .cm-table-widget,
-  .block-language-dataview {
+  .block-language-dataview,
+  .block-language-dataviewjs,
+  .block-language-datacorejsx {
     table {
       position: relative;
-    }
 
-    .table-cell-wrapper:active,
-    .table-cell-wrapper:focus,
-    .table-cell-wrapper:focus-within {
-      background-color: var(--background-modifier-hover);
-    }
-
-    th,
-    td {
-      -electron-corner-smoothing: system-ui;
-    }
-
-    tbody {
-      background-color: var(--background-primary-alt);
-      position: relative;
-    }
-
-    thead > th,
-    tbody > tr:not(:last-child) > td {
-      border-bottom: none;
-    }
-
-    thead > th:not(:last-child),
-    tbody > tr > td:not(:last-child) {
-      border-right: none;
-    }
-
-    tbody > tr:first-child > td:first-child,
-    tbody > tr:first-child > td:first-child .table-cell-wrapper {
-      border-top-left-radius: var(--radius-s);
-    }
-    tbody > tr:first-child > td:last-child,
-    tbody > tr:first-child > td:last-child .table-cell-wrapper {
-      border-top-right-radius: var(--radius-s);
-    }
-    tbody > tr:last-child > td:first-child,
-    tbody > tr:last-child > td:first-child .table-cell-wrapper {
-      border-bottom-left-radius: var(--radius-s);
-    }
-    tbody > tr:last-child > td:last-child,
-    tbody > tr:last-child > td:last-child .table-cell-wrapper {
-      border-bottom-right-radius: var(--radius-s);
-    }
-
-    &[dir="rtl"] {
-      thead > th:not(:last-child),
-      tbody > tr > td:not(:last-child) {
-        border-left: none;
+      .table-cell-wrapper:active,
+      .table-cell-wrapper:focus,
+      .table-cell-wrapper:focus-within {
+        background-color: var(--background-modifier-hover);
       }
 
-      tbody > tr:first-child > td:first-child,
-      tbody > tr:first-child > td:first-child .table-cell-wrapper {
-        border-top-right-radius: var(--radius-s);
+      th,
+      td {
+        -electron-corner-smoothing: system-ui;
       }
-      tbody > tr:first-child > td:last-child,
-      tbody > tr:first-child > td:last-child .table-cell-wrapper {
+
+      > thead:only-child,
+      > tbody {
+        --table-header-border-color: var(--table-border-color);
+
+        background-color: var(--background-primary-alt);
+        position: relative;
+      }
+
+      > thead:not(:only-child) > tr > th,
+      > thead:not(:only-child) > tr > th .table-cell-wrapper {
+        border-radius: var(--radius-s);
+      }
+
+      > tbody > tr:not(:last-child) > td {
+        border-bottom: none;
+      }
+
+      > thead > tr > th:not(:last-child),
+      > tbody > tr > td:not(:last-child) {
+        border-right: none;
+      }
+
+      > :is(thead, tbody) > tr:first-child > :is(th, td):first-child,
+      > :is(thead, tbody) > tr:first-child > :is(th, td):first-child .table-cell-wrapper {
         border-top-left-radius: var(--radius-s);
       }
-      tbody > tr:last-child > td:first-child,
-      tbody > tr:last-child > td:first-child .table-cell-wrapper {
+      > :is(thead, tbody) > tr:first-child > :is(th, td):last-child,
+      > :is(thead, tbody) > tr:first-child > :is(th, td):last-child .table-cell-wrapper {
+        border-top-right-radius: var(--radius-s);
+      }
+      > :is(thead, tbody) > tr:last-child > :is(th, td):first-child,
+      > :is(thead, tbody) > tr:last-child > :is(th, td):first-child .table-cell-wrapper {
+        border-bottom-left-radius: var(--radius-s);
+      }
+      > :is(thead, tbody) > tr:last-child > :is(th, td):last-child,
+      > :is(thead, tbody) > tr:last-child > :is(th, td):last-child .table-cell-wrapper {
         border-bottom-right-radius: var(--radius-s);
       }
-      tbody > tr:last-child > td:last-child,
-      tbody > tr:last-child > td:last-child .table-cell-wrapper {
-        border-bottom-left-radius: var(--radius-s);
+
+      &[dir="rtl"] {
+        > thead > tr > th:not(:last-child),
+        > tbody > tr > td:not(:last-child) {
+          border-left: none;
+        }
+
+        > :is(thead, tbody) > tr:first-child > :is(th, td):first-child,
+        > :is(thead, tbody) > tr:first-child > :is(th, td):first-child .table-cell-wrapper {
+          border-top-right-radius: var(--radius-s);
+        }
+        > :is(thead, tbody) > tr:first-child > :is(th, td):last-child,
+        > :is(thead, tbody) > tr:first-child > :is(th, td):last-child .table-cell-wrapper {
+          border-top-left-radius: var(--radius-s);
+        }
+        > :is(thead, tbody) > tr:last-child > :is(th, td):first-child,
+        > :is(thead, tbody) > tr:last-child > :is(th, td):first-child .table-cell-wrapper {
+          border-bottom-right-radius: var(--radius-s);
+        }
+        > :is(thead, tbody) > tr:last-child > :is(th, td):last-child,
+        > :is(thead, tbody) > tr:last-child > :is(th, td):last-child .table-cell-wrapper {
+          border-bottom-left-radius: var(--radius-s);
+        }
       }
     }
   }

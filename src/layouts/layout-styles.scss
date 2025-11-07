@@ -1,12 +1,26 @@
-.workspace-split .workspace-tabs .workspace-leaf {
-  background-color: transparent;
-}
-
 // Editor panel
 body:not(.liquid-glass-off) {
   .workspace-split.mod-root .workspace-tab-container {
     border-radius: 0;
   }
+}
+body.liquid-glass-off {
+  &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
+    margin-left: 8px;
+  }
+  .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root {
+    margin-right: 8px;
+  }
+}
+
+// Side panels
+.mod-sidedock .workspace-tabs .workspace-leaf {
+  background-color: transparent;
+}
+
+// Ribbon
+.workspace-ribbon.mod-left:not(.is-collapsed) {
+  padding-left: 12px;
 }
 
 // Vault switcher
@@ -15,14 +29,13 @@ body:not(.liquid-glass-off):not(.is-mobile) .workspace-split.mod-left-split .wor
 }
 
 // Tab styles
-body {
-  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
-    background-color: var(--background-modifier-hover);
-  }
-  &:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
-    height: 32px;
-    margin: auto 0;
-  }
+
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  background-color: var(--background-modifier-hover);
+}
+body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  height: 32px;
+  margin: auto 0;
 }
 
 // Mobile drawer

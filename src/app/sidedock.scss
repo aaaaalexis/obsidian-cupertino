@@ -1,6 +1,7 @@
 body {
   --nav-item-padding: 8px 8px 8px 24px;
   --nav-indentation-guide-width: 0px;
+  --nav-header-align: center;
 
   --ribbon-background: transparent;
   --ribbon-background-collapsed: var(--ribbon-background);
@@ -35,7 +36,7 @@ body:not(.nav-item-subtle, .nav-item-strong) .nav-files-container > div {
   --nav-item-background-hover: transparent;
   --nav-item-background-active: transparent;
   --nav-item-weight-hover: var(--font-medium);
-  --nav-item-weight-active: calc(var(--font-weight) + var(--bold-modifier));
+  --nav-item-weight-active: var(--font-medium);
 
   .tree-item-self.is-active::before {
     content: "";
@@ -70,7 +71,7 @@ body.bold-folders .nav-folder-title {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  align-items: var(--nav-header-align);
   padding: 8px 16px;
 }
 .nav-header .nav-buttons-container {
@@ -91,38 +92,13 @@ body.bold-folders .nav-folder-title {
   overflow: visible;
   border-right: none;
   z-index: 11;
-  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino) !important;
+  transition: var(--anim-duration-moderate) !important;
 }
 .workspace-ribbon.mod-left:before {
   content: none;
 }
 .workspace-ribbon.mod-left .sidebar-toggle-button {
   position: relative;
-}
-
-body:not(.is-mobile).show-ribbon {
-  .workspace-ribbon.mod-left.is-collapsed:not(:hover) {
-    opacity: 0.5;
-  }
-  .side-dock-actions {
-    gap: 4px;
-    transition: var(--anim-duration-moderate);
-    z-index: 1;
-  }
-}
-
-body.mod-macos .workspace-ribbon.mod-left {
-  padding-top: 0;
-}
-body:not(.mod-macos) .workspace-ribbon.mod-left {
-  margin-top: 0;
-}
-
-.workspace-ribbon .sidebar-toggle-button .clickable-icon {
-  pointer-events: auto;
-  z-index: 1;
-}
-.workspace-ribbon .sidebar-toggle-button {
   display: flex;
   height: var(--header-height);
   padding: 8px;
@@ -130,14 +106,37 @@ body:not(.mod-macos) .workspace-ribbon.mod-left {
   align-items: center;
   justify-content: center;
 }
-body:not(.mod-macos):not(.is-mobile) .workspace-ribbon .sidebar-toggle-button {
-  height: calc(var(--header-height) - 16px);
+.workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon {
+  pointer-events: auto;
+  z-index: 1;
+}
+.workspace-ribbon.mod-left .side-dock-actions {
+  gap: 4px;
+  transition: var(--anim-duration-moderate);
+  z-index: 1;
+}
+body.mod-macos.is-hidden-frameless:not(.is-mobile):not(.layout-cards, .layout-border) .workspace-ribbon.mod-left {
+  padding-top: 0;
+}
+
+body:not(.mod-macos):not(.is-mobile):not(.layout-frame) .workspace-ribbon.mod-left,
+body.mod-macos:not(.is-hidden-frameless):not(.is-mobile):not(.layout-frame) .workspace-ribbon.mod-left {
+  margin-top: 0;
+}
+body:not(.mod-macos):not(.is-mobile) .workspace-ribbon.mod-left .sidebar-toggle-button,
+body.mod-macos:not(.is-hidden-frameless):not(.is-mobile) .workspace-ribbon.mod-left .sidebar-toggle-button {
+  height: auto;
   padding: 0;
   margin: 0 auto;
+}
+body:not(.mod-macos):not(.is-mobile) .workspace-ribbon.mod-left .sidebar-toggle-button {
+  height: calc(var(--header-height) - 16px);
 }
 
 // Desktop sidedock
 body:not(.is-mobile) .mod-sidedock {
+  transition: var(--anim-duration-moderate);
+
   & > .workspace-leaf-resize-handle:not(:hover) {
     border-color: transparent;
   }
@@ -151,7 +150,7 @@ body:not(.is-mobile) .mod-sidedock {
   .workspace-leaf-content > .view-content {
     padding: 2px 16px;
 
-    > div:not(.nav-header, .nav-buttons-container) {
+    > .node-insert-event {
       padding: 0;
     }
   }
@@ -185,6 +184,10 @@ body:not(.is-mobile):not(.hide-vault-switcher-off) .mod-sidedock.mod-left-split 
       background-color: var(--background-secondary);
     }
 
+    .workspace-drawer-vault-switcher.has-active-menu {
+      background-color: var(--interactive-normal);
+    }
+
     &:not(:hover) {
       pointer-events: none;
 
@@ -211,6 +214,9 @@ body:not(.is-mobile):not(.hide-vault-switcher-off) .mod-sidedock.mod-left-split 
   .workspace-leaf-content > .view-content {
     padding-bottom: 64px;
   }
+}
+body:not(.is-mobile):not(.hide-vault-switcher-off):not(.layout-cupertino, .layout-macos).hover-sidedock .mod-sidedock.mod-left-split.is-sidedock-collapsed .workspace-sidedock-vault-profile::before {
+  background-color: var(--background-primary);
 }
 
 // Desktop sidedock: Style Settings

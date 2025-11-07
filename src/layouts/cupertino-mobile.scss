@@ -237,6 +237,9 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android
     border-radius: var(--clickable-icon-radius);
     justify-content: center;
   }
+  .mobile-tab-switcher-menu-spacer .clickable-icon {
+    position: relative;
+  }
   .mobile-tab-switcher-menu-spacer:first-child .clickable-icon {
     width: var(--input-height);
     height: var(--input-height);
@@ -251,13 +254,5 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android
   .mobile-tab .close-button {
     width: 32px;
     height: 32px;
-  }
-}
-
-body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-tablet {
-  --border-width: 0.5pt;
-
-  .workspace-drawer.is-pinned {
-    z-index: 4;
   }
 }

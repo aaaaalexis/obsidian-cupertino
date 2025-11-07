@@ -2,7 +2,7 @@
   body {
     --inline-title-color: inherit;
 
-    --inline-title-margin-bottom: 0.5em;
+    --inline-title-margin-bottom: calc(0.5em * var(--readable-spacing-modifier, 1));
     --heading-spacing: 2em;
     --p-spacing: 1.75rem;
     --list-spacing: 0.2em;
@@ -11,8 +11,6 @@
     --file-margins-block: 32px;
     --file-margins-inline: 32px;
     --file-margins: var(--file-margins-block) var(--file-margins-inline);
-
-    --italic-weight: var(--font-medium);
 
     --h1-size: 1.5em;
     --h2-size: 1.25em;
@@ -57,17 +55,15 @@
     font-feature-settings: "ss01" 1, "ss07" 1, "cv07" 1;
   }
 
-  .workspace-split.mod-root {
-    background-color: var(--background-secondary);
-    transition: var(--anim-duration-moderate);
-  }
-
   .workspace-split.mod-root .workspace-tab-container {
     border-radius: var(--tab-radius);
     transition: var(--anim-duration-moderate);
-  }
-  .workspace-split.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-container {
     overflow: hidden;
+  }
+
+  .markdown-preview-view,
+  .markdown-source-view {
+    color: var(--text-normal-editor, var(--text-normal));
   }
 
   // Tab title bar
@@ -88,6 +84,9 @@
   }
   .view-header-title-parent {
     color: var(--text-faint);
+  }
+  .view-header-title {
+    font-weight: max(var(--file-header-font-weight), var(--font-medium));
   }
 
   // Active line
@@ -191,25 +190,26 @@
   }
 
   // Inline tiele & Headings
-  .inline-title:not([data-level]) {
-    padding-block: 8px;
+  body:not(.inline-title-block-off) .inline-title:not([data-level]) {
     position: relative;
-    transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
-    border: var(--border-width) solid transparent;
-    border-radius: var(--radius-s);
 
-    &:focus-within {
-      padding-inline: 8px;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: var(--radius-s);
+      pointer-events: none;
+      transition: var(--anim-duration-fast);
+      border: var(--border-width) solid transparent;
+    }
+    &:focus-within::before {
       border-color: var(--background-modifier-border);
     }
-
+    &:hover:not(:focus-within)::before {
+      background-color: var(--background-modifier-hover);
+    }
     &:not(:focus-within) {
       cursor: pointer;
-
-      &:hover {
-        padding-inline: 8px;
-        background-color: var(--background-modifier-hover);
-      }
     }
   }
 
@@ -222,6 +222,20 @@
   .HyperMD-header-5,
   .HyperMD-header-6 {
     letter-spacing: normal !important;
+    text-wrap: pretty;
+  }
+
+  // Horizontal rule (Editor divider)
+  .markdown-rendered hr,
+  .markdown-source-view.mod-cm6 .hr {
+    width: var(--hr-width, 100%);
+    height: var(--hr-thickness);
+    justify-self: var(--hr-align, center);
+  }
+  body.hr-dashed .markdown-rendered hr,
+  body.hr-dashed .markdown-source-view.mod-cm6 .hr {
+    border-top: none;
+    background: repeating-linear-gradient(to right, var(--hr-color), var(--hr-color) var(--hr-dashed-size), transparent var(--hr-dashed-size), transparent calc(var(--hr-dashed-size) + var(--hr-dashed-spacing)));
   }
 
   .markdown-rendered h6,
@@ -265,7 +279,8 @@
   // Media
   img:not(.link-favicon),
   iframe,
-  video {
+  video,
+  .file-embed {
     -electron-corner-smoothing: system-ui;
     border-radius: var(--media-radius);
   }

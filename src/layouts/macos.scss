@@ -24,7 +24,7 @@ body:not(.liquid-glass-off):not(.is-mobile) {
     }
   }
 
-  &.is-frameless:not(.is-hidden-frameless) {
+  &:not(.is-hidden-frameless) {
     .titlebar {
       background-color: var(--background-primary);
     }
@@ -44,6 +44,18 @@ body:not(.liquid-glass-off):not(.is-mobile) {
     .mod-sidedock {
       background-color: var(--color-base-20) !important;
       box-shadow: none !important;
+    }
+  }
+
+  // Editor panel
+  .mod-root {
+    .workspace-leaf {
+      contain: size !important;
+    }
+    .workspace-leaf,
+    .workspace-leaf-content,
+    .workspace-tab-container {
+      overflow: visible;
     }
   }
 
@@ -68,18 +80,18 @@ body:not(.liquid-glass-off):not(.is-mobile) {
     }
   }
 
-  &:not(.is-translucent) .mod-sidedock {
+  &:not(.is-translucent):not(.liquid-glass-tint-off) .mod-sidedock {
     background-color: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
   }
   &.show-ribbon {
-    &:not(.mod-macos):not(.stacked-nav-off) .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button {
-      height: calc(var(--header-height) - 8px);
+    &:not(.mod-macos) .workspace-ribbon.mod-left.is-collapsed .sidebar-toggle-button {
+      height: calc(var(--header-height) - 16px);
+    }
+    &.mod-macos.is-hidden-frameless .workspace-ribbon.mod-left:not(.is-collapsed) {
+      margin-top: calc(var(--header-height) - 8px);
     }
     .workspace-ribbon.mod-left:not(.is-collapsed) {
       padding-left: 16px;
-    }
-    .mod-sidedock.mod-left-split.is-sidedock-collapsed {
-      margin-left: 0;
     }
     .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) {
       margin-left: calc(-1 * var(--ribbon-width) + 8px);
@@ -94,9 +106,6 @@ body:not(.liquid-glass-off):not(.is-mobile) {
     border-radius: var(--radius-window, var(--radius-m));
     height: -webkit-fill-available;
     overflow: hidden;
-  }
-  .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) + .mod-root {
-    padding-left: 8px;
   }
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container .sidebar-toggle-button {

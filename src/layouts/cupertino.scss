@@ -5,6 +5,8 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
 
   --clickable-icon-radius: 100vh;
 
+  --text-normal-editor: var(--color-base-90);
+
   --icon-opacity: 1;
   --icon-color: rgb(var(--mono-rgb-100));
   --icon-color-hover: rgb(var(--mono-rgb-100));
@@ -30,7 +32,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-mobile {
   // Editor panel
   .markdown-source-view,
   .markdown-preview-view {
-    --text-normal: var(--color-base-90);
     transition: transform var(--anim-duration-slow) var(--anim-motion-cupertino);
   }
   .workspace-leaf-content[data-mode="source"] > .view-content > .markdown-reading-view > .markdown-preview-view {
@@ -150,7 +151,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
         background-color: var(--background-modifier-hover);
         padding: 2px;
         gap: 0;
-        align-self: center;
 
         .nav-action-button {
           position: relative;
@@ -170,36 +170,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
     contain: size !important;
     overflow: visible;
   }
-
-  // Hover sidedock
-  &.hover-sidedock {
-    .mod-sidedock.is-sidedock-collapsed:not([style*="overflow: hidden;"]) {
-      backdrop-filter: var(--blur-m);
-      box-shadow: var(--shadow-xs);
-      border-radius: var(--radius-m);
-      background-color: var(--modal-background);
-      border: var(--border-width) solid var(--background-modifier-border);
-      z-index: var(--layer-popover);
-      margin: 8px;
-      overflow: visible;
-
-      &::before {
-        content: none;
-      }
-      &::after {
-        content: "";
-        position: absolute;
-        width: 32px;
-      }
-
-      &.mod-left-split::after {
-        inset: 0 auto 0 -32px;
-      }
-      &.mod-right-split::after {
-        inset: 0 -32px 0 auto;
-      }
-    }
-  }
 }
 
 body.liquid-glass-off:not(.is-mobile) {
@@ -211,16 +181,14 @@ body.liquid-glass-off:not(.is-mobile) {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 24px 48px, rgba(0, 0, 0, 0.12) 0px 4px 16px;
   }
 
-  .mod-root {
-    z-index: 5;
-
-    .workspace-tabs,
-    .workspace-tab-container {
-      overflow: visible;
-    }
-    .workspace-tab-container {
-      outline: var(--tab-outline-width) solid var(--tab-outline-color);
-    }
+  .workspace.is-left-sidedock-open .mod-root .workspace-tab-header-container {
+    overflow: hidden;
+  }
+  .mod-root .workspace-tabs {
+    overflow: visible;
+  }
+  .mod-root .workspace-tab-container {
+    outline: var(--tab-outline-width) solid var(--tab-outline-color);
   }
 }
 
@@ -238,15 +206,14 @@ body.liquid-glass-off:not(.is-mobile) {
       outline-color: transparent;
     }
   }
-  .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
-    margin-right: 8px;
-  }
-  &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root .workspace-tab-container {
-    margin-left: 8px;
-  }
 
   // Status bar
   &:not(.status-bar-full) .mod-root {
     padding-bottom: 8px;
+  }
+
+  // Windows & Linux fix
+  &.is-hidden-frameless .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+    padding-right: var(--frame-right-space);
   }
 }

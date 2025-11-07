@@ -4,13 +4,6 @@ body {
   --tab-radius: var(--radius-s);
   --tab-radius-active: var(--tab-radius) var(--tab-radius) 0 0;
   --tab-curve: calc(var(--tab-radius) + 4px);
-
-  --tab-text-color: var(--text-faint);
-  --tab-text-color-focused: var(--tab-text-color);
-
-  --tab-text-color-active: var(--text-normal);
-  --tab-text-color-focused-active: var(--tab-text-color-active);
-  --tab-text-color-focused-active-current: var(--tab-text-color-active);
 }
 body:not(.is-mobile) {
   --tab-action-width: 32px;
@@ -38,7 +31,7 @@ body:not(.is-mobile) {
 body:not(.is-phone) .workspace-tab-header-container {
   transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
   background-color: transparent;
-  border-bottom: 0;
+  border-bottom: none;
 }
 
 .sidebar-toggle-button {
@@ -60,7 +53,7 @@ body:not(.is-phone) .workspace .mod-root {
   }
 
   .workspace-tab-header {
-    --tab-outline-width: 0;
+    --tab-outline-width: 0px;
     padding: 0;
   }
 
@@ -293,12 +286,14 @@ body.is-tablet {
   }
 
   .workspace-tab-header {
-    --icon-color: var(--text-faint);
     height: calc-size(auto, size);
     line-height: normal;
   }
   .workspace-tab-header.is-active {
     background-color: inherit;
+  }
+  .workspace-tab-header:not(.is-active):not(:hover) {
+    opacity: 0.5;
   }
   .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
     background-color: inherit;

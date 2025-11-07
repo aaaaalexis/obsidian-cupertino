@@ -46,6 +46,8 @@ body:not(.is-mobile):not(.zoom-off) .markdown-source-view {
       mask: none;
       position: relative;
       padding: 0;
+      max-width: unset;
+      inset: auto;
     }
   }
 

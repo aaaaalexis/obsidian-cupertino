@@ -6,6 +6,10 @@ body.is-mobile {
   --mobile-sidebar-width: 100%;
   --view-header-height: var(--header-height);
 
+  --border-width: 1pt;
+  --divider-width: 1pt;
+  --tab-outline-width: 1pt;
+
   --file-margins-block: 8px;
   --file-margins-inline: 24px;
 
@@ -69,7 +73,7 @@ body.is-phone {
   .mod-root .view-header {
     z-index: 3;
   }
-  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content .view-actions button:nth-last-child(2) {
+  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     position: fixed;
     right: 16px;
     bottom: 16px;

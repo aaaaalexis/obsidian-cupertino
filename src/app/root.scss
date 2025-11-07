@@ -29,6 +29,15 @@ body,
   --icon-m-stroke-width: 1.75px;
   --icon-l-stroke-width: 1.75px;
   --icon-xl-stroke-width: 1.25px;
+
+  --color-red: rgb(var(--color-red-rgb));
+  --color-orange: rgb(var(--color-orange-rgb));
+  --color-yellow: rgb(var(--color-yellow-rgb));
+  --color-green: rgb(var(--color-green-rgb));
+  --color-cyan: rgb(var(--color-cyan-rgb));
+  --color-blue: rgb(var(--color-blue-rgb));
+  --color-purple: rgb(var(--color-purple-rgb));
+  --color-pink: rgb(var(--color-pink-rgb));
 }
 
 .theme-light {
@@ -37,22 +46,14 @@ body,
   --color-base-80: #494949;
   --color-base-90: #363636;
 
-  --color-red-rgb: 255, 56, 60;
-  --color-red: #ff383c;
-  --color-orange-rgb: 255, 141, 40;
-  --color-orange: #ff8d28;
-  --color-yellow-rgb: 255, 204, 0;
-  --color-yellow: #ffcc00;
-  --color-green-rgb: 52, 199, 89;
-  --color-green: #34c759;
-  --color-cyan-rgb: 0, 192, 232;
-  --color-cyan: #00c0e8;
-  --color-blue-rgb: 0, 136, 255;
-  --color-blue: #0088ff;
-  --color-purple-rgb: 203, 48, 224;
-  --color-purple: #cb30e0;
-  --color-pink-rgb: 255, 45, 85;
-  --color-pink: #ff2d55;
+  --color-red-rgb: 254, 112, 112;
+  --color-orange-rgb: 242, 154, 100;
+  --color-yellow-rgb: 224, 205, 99;
+  --color-green-rgb: 74, 213, 95;
+  --color-cyan-rgb: 56, 219, 214;
+  --color-blue-rgb: 106, 173, 250;
+  --color-purple-rgb: 187, 158, 245;
+  --color-pink-rgb: 243, 125, 183;
 
   --code-normal: #383a42;
   --code-comment: #b6b9c5;
@@ -71,22 +72,14 @@ body,
   --color-base-80: #c0c0c0;
   --color-base-90: #cdcdcd;
 
-  --color-red-rgb: 255, 66, 69;
-  --color-red: #ff4245;
-  --color-orange-rgb: 255, 146, 48;
-  --color-orange: #ff9230;
-  --color-yellow-rgb: 255, 214, 0;
-  --color-yellow: #ffd600;
-  --color-green-rgb: 48, 209, 88;
-  --color-green: #30d158;
-  --color-cyan-rgb: 60, 211, 254;
-  --color-cyan: #3cd3fe;
-  --color-blue-rgb: 0, 145, 255;
-  --color-blue: #0091ff;
-  --color-purple-rgb: 107, 52, 242;
-  --color-purple: #6b34f2;
-  --color-pink-rgb: 255, 55, 95;
-  --color-pink: #ff375f;
+  --color-red-rgb: 217, 90, 95;
+  --color-orange-rgb: 219, 134, 80;
+  --color-yellow-rgb: 196, 180, 94;
+  --color-green-rgb: 72, 196, 90;
+  --color-cyan-rgb: 63, 186, 182;
+  --color-blue-rgb: 86, 148, 218;
+  --color-purple-rgb: 142, 125, 194;
+  --color-pink-rgb: 222, 103, 147;
 
   --code-normal: #abb2bf;
   --code-comment: #5c6370;
@@ -125,10 +118,16 @@ body:not(.is-mobile) {
     align-items: center;
     background: var(--background-secondary);
   }
+
+  .workspace-split {
+    background-color: transparent;
+    transition: var(--anim-duration-moderate);
+  }
 }
 
 body.is-frameless:not(.is-hidden-frameless, .is-fullscreen) .titlebar {
   background-color: var(--background-secondary);
+  border-bottom: none;
 }
 
 body:not(.mod-macos):not(.is-mobile) {

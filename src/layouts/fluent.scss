@@ -31,9 +31,8 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).mod-windows:not(.windows-off
     color: var(--icon-color-focused);
     background-color: var(--background-primary);
   }
-  .clickable-icon:not([aria-disabled="true"]):hover,
-  .clickable-icon.has-active-menu,
-  .modal-close-button:hover {
+  .clickable-icon:not([aria-disabled="true"], .modal-close-button):hover,
+  .clickable-icon.has-active-menu {
     background-color: var(--background-modifier-hover);
   }
 
@@ -59,7 +58,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).mod-windows:not(.windows-off
     .mod-sidedock .workspace-leaf-content > .view-content > .nav-header {
       .nav-buttons-container {
         padding: 0;
-        width: 100%;
 
         .nav-action-button {
           flex: 1;
@@ -179,7 +177,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).mod-windows:not(.windows-off
     padding-inline: 16px;
     border-radius: 0;
 
-    &::before {
+    &:empty::before {
       margin: 0;
       width: var(--icon-s);
       height: var(--icon-s);
@@ -254,7 +252,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).mod-windows:not(.windows-off
       padding: 8px var(--side-padding);
       position: relative;
     }
-
     .vertical-tab-nav-item.is-active {
       --background-modifier-hover: var(--nav-item-background-active);
       background-color: var(--background-modifier-hover);
@@ -272,6 +269,10 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).mod-windows:not(.windows-off
         margin-left: unset;
         height: unset;
       }
+    }
+
+    .setting-item-name {
+      font-size: var(--font-ui-medium);
     }
   }
 }

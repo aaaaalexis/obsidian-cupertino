@@ -35,3 +35,24 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android
     --shadow-l: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 0 rgba(0, 0, 0, 0.7), 0 16px 64px 0 rgba(0, 0, 0, 0.3);
   }
 }
+
+body:is(.layout-cupertino, .layout-macos).theme-light {
+  --color-red-rgb: 255, 56, 60;
+  --color-orange-rgb: 255, 141, 40;
+  --color-yellow-rgb: 255, 204, 0;
+  --color-green-rgb: 52, 199, 89;
+  --color-cyan-rgb: 0, 192, 232;
+  --color-blue-rgb: 0, 136, 255;
+  --color-purple-rgb: 203, 48, 224;
+  --color-pink-rgb: 255, 45, 85;
+}
+body:is(.layout-cupertino, .layout-macos).theme-dark {
+  --color-red-rgb: 255, 66, 69;
+  --color-orange-rgb: 255, 146, 48;
+  --color-yellow-rgb: 255, 214, 0;
+  --color-green-rgb: 48, 209, 88;
+  --color-cyan-rgb: 60, 211, 254;
+  --color-blue-rgb: 0, 145, 255;
+  --color-purple-rgb: 107, 52, 242;
+  --color-pink-rgb: 255, 55, 95;
+}
