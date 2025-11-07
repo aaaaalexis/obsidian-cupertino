@@ -1074,6 +1074,12 @@ settings:
 		default: 160
 		format: ms
 	-
+		id: hover-sidedock-active-off
+		title: Disable hover sidebars active state
+		description: Turns off hover sidebars staying after interaction
+		type: class-toggle
+		default: false
+	-
 		id: nav-indentation-guide
 		title: Indentation guides
 		type: heading

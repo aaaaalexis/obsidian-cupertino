@@ -30,7 +30,7 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
 
   // Ribbon
   &.show-ribbon {
-    &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
+    &.stacked-nav-off .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
     &:not(.hover-sidedock) .mod-sidedock.mod-left-split .workspace-tabs .workspace-tab-container,
     .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
       margin-left: 0;
@@ -54,6 +54,18 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   &.show-ribbon:not(.stacked-nav-off):not(.mod-macos).hover-sidedock .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
   &.show-ribbon:not(.stacked-nav-off).mod-macos:not(.is-hidden-frameless) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
     margin-top: var(--header-height);
+  }
+  &.hover-ribbon .workspace-ribbon.mod-left.is-collapsed ~ .mod-root .workspace-tab-header-container-inner {
+    padding-left: calc(var(--tab-curve) + 8px);
+  }
+
+  // Hover sidedock {
+  &.hover-sidedock {
+    &:not(.stacked-nav-off) .mod-sidedock.mod-left-split.is-sidedock-collapsed .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
+    .mod-sidedock.is-sidedock-collapsed .workspace-tabs .workspace-tab-container {
+      background-color: transparent;
+      margin: 0;
+    }
   }
 
   // Status bar

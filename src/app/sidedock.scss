@@ -215,6 +215,9 @@ body:not(.is-mobile):not(.hide-vault-switcher-off) .mod-sidedock.mod-left-split 
     padding-bottom: 64px;
   }
 }
+body:not(.is-mobile):not(.hide-vault-switcher-off):not(.layout-cupertino, .layout-macos).hover-sidedock .mod-sidedock.mod-left-split.is-sidedock-collapsed .workspace-sidedock-vault-profile::before {
+  background-color: var(--background-primary);
+}
 
 // Desktop sidedock: Style Settings
 body.large-new-note .mod-sidedock .workspace-leaf-content[data-type="file-explorer"] {

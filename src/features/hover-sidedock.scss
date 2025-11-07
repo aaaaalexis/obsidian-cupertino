@@ -4,6 +4,15 @@ body:not(.is-mobile) {
   --hover-sidedock-trigger-area: 1px;
 }
 
+// Window drag fix
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed[style*="display"].mod-left-split:hover + .mod-root,
+body:not(.is-mobile).hover-ribbon .workspace-ribbon.mod-left:hover ~ .mod-root {
+  .workspace-tab-header-container,
+  .workspace-tab-header-container-inner {
+    -webkit-app-region: no-drag;
+  }
+}
+
 body:not(.is-mobile).hover-sidedock {
   .mod-sidedock.is-sidedock-collapsed[style*="display"] {
     display: flex !important;
@@ -52,7 +61,7 @@ body:not(.is-mobile).hover-sidedock {
   // Hovered
   .mod-sidedock.is-sidedock-collapsed[style*="display"]:hover,
   &.hover-ribbon .workspace-ribbon.mod-left.is-collapsed:hover + .mod-sidedock,
-  & > .app-container > .horizontal-main-container > .workspace > .mod-sidedock:has(> .workspace-tabs.mod-active) {
+  &:not(.hover-sidedock-active-off) > .app-container > .horizontal-main-container > .workspace > .mod-sidedock:has(> .workspace-tabs.mod-active) {
     transition-delay: var(--hover-sidedock-delay);
     transform: none;
     opacity: 1;
