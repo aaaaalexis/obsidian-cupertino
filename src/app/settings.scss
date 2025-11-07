@@ -46,7 +46,7 @@ body:not(.is-mobile) .modal.mod-sidebar-layout {
   .vertical-tab-nav-item {
     display: flex;
     align-items: center;
-    padding: calc(4px * var(--density-modifier)) 16px;
+    padding: 4px 16px;
     min-height: var(--input-height);
     color: var(--text-muted);
     font-weight: var(--font-medium);
