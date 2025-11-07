@@ -1,4 +1,10 @@
 body.layout-viewfinder:not(.is-mobile) {
+  .workspace:not(.is-left-sidedock-open) .mod-root {
+    margin-left: 8px;
+  }
+  .workspace:not(.is-right-sidedock-open) .mod-root {
+    margin-right: 8px;
+  }
   .mod-root {
     margin-block: 8px;
     height: unset;
@@ -6,6 +12,18 @@ body.layout-viewfinder:not(.is-mobile) {
     border-radius: var(--radius-s);
     border: var(--border-width) solid var(--background-modifier-border);
     overflow: hidden;
+  }
+
+  // Windows & Linux fix
+  &:not(.mod-macos).is-hidden-frameless .titlebar {
+    height: var(--header-height);
+    top: 8px;
+    right: 8px;
+
+    .titlebar-button-container.mod-right {
+      border-top-right-radius: var(--radius-s);
+      overflow: hidden;
+    }
   }
 }
 
