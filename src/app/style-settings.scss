@@ -2268,20 +2268,20 @@ settings:
 				label: Fill
 				value: fill
 	-
+		id: banner-fade-penalty
+		title: Banner image fade offset
+		type: variable-text
+		allowEmpty: false
+		default: 32px
+	-
 		id: banner-icon-size
 		title: Banner icon size
 		type: variable-text
 		allowEmpty: false
 		default: 48px
 	-
-		id: banner-icon-offset
-		title: Banner icon offset
-		type: variable-text
-		allowEmpty: false
-		default: -64px
-	-
 		id: banner-content-offset
-		title: Content offset
+		title: Banner to content offset
 		type: variable-text
 		allowEmpty: false
 		default: 0px

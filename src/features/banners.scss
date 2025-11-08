@@ -10,6 +10,7 @@ body:not(.banner-off) {
   --banner-content-offset: 0px;
   --banner-mobile-spacer: 0px;
   --banner-mobile-offset: 0px;
+  --banner-fade-penalty: 32px;
 
   --banner-image-actual-height: var(--banner-image-height);
 
@@ -42,14 +43,33 @@ body:not(.banner-off) {
     &.is-live-preview .cm-sizer {
       margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height)) !important;
     }
+
+    &.banner-fade .markdown-preview-pusher {
+      margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height) - var(--banner-fade-penalty)) !important;
+    }
+
+    .markdown-preview-sizer div:nth-child(1 of .el-h1) h1 {
+      margin-top: 0px;
+    }
+
+    &.banner-fade .cm-sizer .inline-title:not([data-level]) {
+      margin-top: calc(-1 * var(--banner-fade-penalty));
+    }
   }
   .banner.banner-icon {
     .markdown-preview-pusher,
     &.is-live-preview .cm-sizer {
       margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height) + var(--banner-calc-icon) + var(--banner-icon-offset)) !important;
     }
+    &.banner-fade .markdown-preview-pusher,
+    &.banner-fade.is-live-preview .cm-sizer {
+      margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height) + var(--banner-calc-icon) + var(--banner-icon-offset) - var(--banner-fade-penalty)) !important;
+    }
     .callout[data-callout="banner-icon"] {
       top: calc(var(--banner-calc-base) + var(--file-margins-block) + var(--banner-image-actual-height) + var(--banner-icon-offset));
+    }
+    &.banner-fade .callout[data-callout="banner-icon"] {
+      top: calc(var(--banner-calc-base) + var(--file-margins-block) + var(--banner-image-actual-height) + var(--banner-icon-offset) - var(--banner-fade-penalty));
     }
   }
   .banner-icon:not(.banner) {
@@ -59,6 +79,18 @@ body:not(.banner-off) {
     }
     .callout[data-callout="banner-icon"] {
       top: calc(var(--banner-calc-base) + var(--file-margins-block));
+    }
+  }
+  &:not(.show-inline-title) .banner {
+    .markdown-preview-sizer div:nth-child(1 of .el-h1) h1 {
+      margin-top: calc(-1 * var(--banner-icon-spacer));
+    }
+  }
+  &:not(.show-inline-title) .banner-icon.banner-title {
+    .markdown-preview-sizer div:nth-child(1 of .el-h1) h1 {
+      position: absolute;
+      margin-top: calc(-1 * var(--banner-icon-size) - 1lh);
+      margin-left: calc(var(--banner-icon-size) + 16px);
     }
   }
 
@@ -136,6 +168,7 @@ body:not(.banner-off) {
       z-index: 1;
       margin-top: calc(-1 * var(--banner-calc-icon) + ((var(--banner-icon-size) - 1em) / 2));
       margin-left: calc(var(--banner-icon-size) + 16px);
+      margin-bottom: calc(var(--banner-icon-size) / 2);
       max-width: calc(100cqw - (var(--banner-icon-size) + 16px));
     }
   }
