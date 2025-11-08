@@ -11,7 +11,7 @@
   .horizontal-tab-nav-item,
   .vertical-tab-nav-item,
   .vertical-tab-header-group-title {
-    padding: 8px 16px;
+    padding: 8px;
   }
   .horizontal-tab-content,
   .vertical-tab-content {
@@ -44,14 +44,7 @@ body:not(.is-mobile) .modal.mod-sidebar-layout {
 
   .horizontal-tab-nav-item,
   .vertical-tab-nav-item {
-    display: flex;
-    align-items: center;
-    padding: 4px 16px;
-    min-height: var(--input-height);
-    color: var(--text-muted);
-    font-weight: var(--font-medium);
-    font-size: var(--font-ui-small);
-    word-break: break-word;
+    padding: 6px 8px;
   }
 
   @container (max-width: 560px) {

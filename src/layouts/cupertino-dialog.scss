@@ -42,6 +42,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
     .suggestion-item {
       padding: 4px 12px;
       align-items: center;
+      display: flex;
     }
     .suggestion-item {
       min-height: 32px;
@@ -217,8 +218,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android
 
     .modal-button-container {
       gap: 8px;
-      margin-bottom: 0;
-      padding: var(--safe-area-inset-side);
+      padding: 16px var(--safe-area-inset-side) 0;
     }
     .modal-button-container button {
       margin-top: 0;

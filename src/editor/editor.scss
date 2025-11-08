@@ -190,7 +190,7 @@
   }
 
   // Inline tiele & Headings
-  body:not(.inline-title-block-off) .inline-title:not([data-level]) {
+  body:not(.is-mobile):not(.inline-title-block-off) .inline-title:not([data-level]) {
     position: relative;
 
     &::before {

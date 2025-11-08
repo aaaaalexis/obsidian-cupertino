@@ -52,14 +52,9 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android
 body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-community-modal) {
   background-color: var(--background-primary);
 
-  .vertical-tab-header-group-title {
-    padding: 8px;
-  }
   .horizontal-tab-nav-item,
   .vertical-tab-nav-item {
     padding: 4px 8px;
-    min-height: unset;
-    font-size: calc(var(--font-ui-small) + 1px);
   }
   .vertical-tab-nav-item:not(.is-active):hover {
     background-color: transparent;
