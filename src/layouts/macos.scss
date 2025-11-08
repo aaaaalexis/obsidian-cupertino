@@ -115,6 +115,11 @@ body.layout-macos:not(.is-mobile) {
     min-height: calc(var(--header-height) - 16px);
     max-height: calc(var(--header-height) - 16px);
   }
+  &.stacked-nav-off .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-inner,
+  &.stacked-nav-off .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button .clickable-icon,
+  .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) .sidebar-toggle-button .clickable-icon {
+    max-height: calc(var(--header-height) - 16px - 8px);
+  }
 
   .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
     border-color: var(--divider-color);

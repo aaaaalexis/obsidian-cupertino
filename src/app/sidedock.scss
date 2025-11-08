@@ -115,6 +115,10 @@ body.bold-folders .nav-folder-title {
   transition: var(--anim-duration-moderate);
   z-index: 1;
 }
+.workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon,
+.workspace-ribbon.mod-left .side-dock-actions .side-dock-ribbon-action {
+  width: var(--tab-action-width);
+}
 body.mod-macos.is-hidden-frameless:not(.is-mobile):not(.layout-cards, .layout-border) .workspace-ribbon.mod-left {
   padding-top: 0;
 }
