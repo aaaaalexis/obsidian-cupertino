@@ -1,4 +1,8 @@
 body:is(.liquid-glass-off, :not(.liquid-glass-off)).mod-windows:not(.windows-off):not(.is-mobile) {
+  --font-interface-theme: "Segoe UI Variable", "Segoe UI Variable Text", "Segoe UI";
+  --font-text-theme: "Segoe UI Variable Text", "Segoe UI Variable", "Segoe UI";
+  --font-monospace-theme: "Cascadia Code", "Cascadia Mono";
+
   --radius-s: 5px;
   --radius-m: 5px;
   --radius-l: 10px;
