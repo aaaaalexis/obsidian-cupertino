@@ -45,7 +45,6 @@ body:not(.is-mobile) .modal.mod-sidebar-layout {
   .horizontal-tab-nav-item,
   .vertical-tab-nav-item {
     padding: calc(6px * var(--density-modifier)) 8px;
-    font-weight: var(--font-medium);
   }
 
   @container (max-width: 560px) {
