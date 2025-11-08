@@ -44,17 +44,25 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     padding-inline: var(--safe-area-inset-side);
   }
 
-  .workspace-drawer .workspace-drawer-header-left {
-    margin-left: 8px;
-  }
+  .workspace-drawer {
+    .workspace-drawer-inner {
+      overflow: visible;
+    }
+    .workspace-drawer-header {
+      padding-top: 0px;
+    }
+    .workspace-drawer-header-left {
+      margin-left: 8px;
+    }
 
-  .workspace-drawer .workspace-drawer-active-tab-header {
-    margin: 0 var(--safe-area-inset-side) 8px;
-    border-radius: 100vh;
-    background-color: var(--background-primary);
-    padding-right: 8px;
-    padding-left: 16px;
-    width: fit-content;
+    .workspace-drawer-active-tab-header {
+      margin: 0 var(--safe-area-inset-side) 8px;
+      border-radius: 100vh;
+      background-color: var(--background-primary);
+      padding-right: 8px;
+      padding-left: 16px;
+      width: fit-content;
+    }
   }
 
   .workspace-leaf-content:not([data-type="empty"]) .mod-left-split-toggle svg.svg-icon {
