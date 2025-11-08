@@ -3,6 +3,8 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).mod-windows:not(.windows-off
   --font-text-theme: "Segoe UI Variable Text", "Segoe UI Variable", "Segoe UI";
   --font-monospace-theme: "Cascadia Code", "Cascadia Mono";
 
+  --header-height: 48px;
+
   --radius-s: 5px;
   --radius-m: 5px;
   --radius-l: 10px;
