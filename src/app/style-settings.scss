@@ -3263,6 +3263,10 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
     display: flex;
     flex-wrap: wrap;
 
+    .setting-item {
+      margin-top: 0 !important;
+    }
+
     .setting-item:not(:last-child) {
       flex: 1;
       border-radius: var(--radius-m);
