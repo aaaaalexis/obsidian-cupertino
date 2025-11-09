@@ -1,7 +1,8 @@
 body:is(.layout-cards, .layout-border):not(.is-mobile) {
   // Editor panel
   &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container,
-  &.show-ribbon.hover-ribbon .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
+  &.show-ribbon.hover-ribbon .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container,
+  &.show-ribbon.hover-ribbon .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) {
     margin-left: 8px;
   }
   .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
@@ -54,6 +55,7 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   &.show-ribbon:not(.stacked-nav-off):not(.mod-macos).hover-sidedock .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
   &.show-ribbon:not(.stacked-nav-off).mod-macos:not(.is-hidden-frameless) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
     margin-top: var(--header-height);
+    margin-left: 0;
   }
   &.hover-ribbon .workspace-ribbon.mod-left.is-collapsed ~ .mod-root .workspace-tab-header-container-inner {
     padding-left: calc(var(--tab-curve) + 8px);
