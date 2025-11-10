@@ -28,21 +28,42 @@ body.layout-border:not(.is-mobile) {
       border-color: var(--divider-color);
     }
 
-    &.mod-left-split .workspace-tabs .workspace-tab-container {
-      margin-right: 0;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
+    &.mod-left-split .workspace-tabs {
+      &:not(.mod-top) .workspace-tab-header-container {
+        margin-left: 8px;
+      }
+      &.mod-top .workspace-tab-container {
+        border-top-left-radius: var(--tab-radius);
+      }
+      &:last-child .workspace-tab-container {
+        border-bottom-left-radius: var(--tab-radius);
+      }
+      .workspace-tab-container {
+        margin-right: 0;
+        border-radius: 0;
+      }
     }
-    &.mod-right-split .workspace-tabs .workspace-tab-container {
-      margin-left: 0;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
+    &.mod-right-split .workspace-tabs {
+      &:not(.mod-top) .workspace-tab-header-container {
+        margin-right: 8px;
+      }
+      &.mod-top .workspace-tab-container {
+        border-top-right-radius: var(--tab-radius);
+      }
+      &:last-child .workspace-tab-container {
+        border-bottom-right-radius: var(--tab-radius);
+      }
+      .workspace-tab-container {
+        margin-left: 0;
+        border-radius: 0;
+      }
     }
   }
   &:not(.stacked-nav-off) .mod-sidedock {
     &.mod-left-split .workspace-tabs.mod-top-left-space {
       .workspace-tab-header-container-inner {
         border-radius: var(--tab-radius) 0 0 0;
+        margin-left: 8px;
       }
       .workspace-tab-container {
         border-top-left-radius: 0;
@@ -63,6 +84,10 @@ body.layout-border:not(.is-mobile) {
   }
 
   // Vault switcher
+  .mod-sidedock .workspace-sidedock-vault-profile {
+    margin-right: 0;
+    border-bottom-right-radius: 0;
+  }
   &.hide-vault-switcher-off .mod-sidedock {
     &.mod-left-split .workspace-tabs:last-child .workspace-tab-container {
       border-bottom-left-radius: 0;

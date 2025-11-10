@@ -3099,6 +3099,10 @@ settings:
   padding: 16px;
   align-items: center;
 
+  &:not(.setting-item-heading) {
+    flex-direction: row;
+  }
+
   .setting-item-control {
     padding-top: 0;
   }
@@ -3144,10 +3148,6 @@ settings:
   &::after {
     border-radius: var(--button-radius);
   }
-}
-
-.view-content .style-settings-container .setting-item:not(.setting-item-heading) {
-  flex-direction: row;
 }
 
 // Credits

@@ -5,7 +5,7 @@ body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-
   }
 }
 body:is(.layout-cupertino, .layout-viewfinder) {
-  &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
+  &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
     margin-left: 8px;
   }
   .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root {
