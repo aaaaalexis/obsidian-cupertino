@@ -77,7 +77,7 @@ body:not(.is-mobile).hover-sidedock {
   }
 }
 
-body:not(.is-mobile).hover-ribbon {
+body:not(.is-mobile).hover-ribbon.show-ribbon {
   .workspace-ribbon.mod-left {
     position: absolute;
     z-index: 12;

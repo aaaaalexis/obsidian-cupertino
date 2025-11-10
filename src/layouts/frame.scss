@@ -57,22 +57,9 @@ body.layout-frame:not(.is-mobile) {
       width: 16px;
     }
   }
-  &.hover-ribbon .workspace-ribbon.mod-left {
-    height: calc(100% - 16px);
-    overflow: visible;
-    border: none;
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      height: 100%;
-      margin-left: -16px;
-    }
-  }
-
-  &.hover-sidedock.hover-ribbon.mod-macos.is-hidden-frameless .workspace-ribbon.mod-left {
+  &.hover-ribbon.show-ribbon .workspace-ribbon.mod-left:not(.is-collapsed) {
     --ribbon-width: 56px;
+    border: none;
   }
 
   // Style Settings: Status bar fix

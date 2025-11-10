@@ -5,8 +5,7 @@ body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-
   }
 }
 body:is(.layout-cupertino, .layout-viewfinder) {
-  &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root,
-  &.show-ribbon.hover-ribbon .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
+  &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
     margin-left: 8px;
   }
   .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root {
@@ -42,15 +41,22 @@ body:is(.layout-cupertino, .layout-cards, .layout-border, .layout-frame).is-tabl
 }
 
 // Ribbon
-body.mod-macos:not(:not(.is-hidden-frameless)):not(.hover-ribbon):is(.layout-classic, .layout-minimal, .layout-macos:not(.tabs-floating, .tabs-floating-center)) .workspace-ribbon.mod-left.is-collapsed {
-  margin-top: calc(var(--header-height) - 1px);
-  padding-top: 8px;
-  border-top: var(--tab-outline-width) solid var(--tab-outline-color);
+body.mod-macos.is-hidden-frameless:not(.is-mobile) {
+  &:is(.layout-classic, .layout-minimal) .workspace-ribbon.mod-left.is-collapsed,
+  &:is(.layout-classic, .layout-minimal).hover-ribbon .workspace-ribbon.mod-left:not(.is-collapsed),
+  &.layout-cupertino:not(.tabs-floating, .tabs-floating-center) .workspace:not(.is-left-sidedock-open, .is-right-sidedock-open) .workspace-ribbon.mod-left.is-collapsed,
+  &.layout-macos:not(.tabs-floating, .tabs-floating-center) .workspace-ribbon.mod-left.is-collapsed {
+    margin-top: calc(var(--header-height) - 1px);
+    padding-top: 8px;
+    border-top: var(--tab-outline-width) solid var(--tab-outline-color);
+  }
+  &:not(.layout-classic, .layout-minimal, .layout-cards, .layout-border, .layout-frame) .workspace-ribbon.mod-left,
+  &:is(.layout-classic, .layout-minimal) .workspace-ribbon.mod-left:not(.is-collapsed) {
+    padding-top: 0;
+  }
 }
 body:not(.mod-macos):is(.layout-classic, .layout-minimal).stacked-nav-off .workspace-ribbon.mod-left,
-body.mod-macos:not(.is-hidden-frameless):is(.layout-classic, .layout-minimal).stacked-nav-off .workspace-ribbon.mod-left,
-body:not(.mod-macos):is(.layout-cupertino, .layout-macos):not(.tabs-floating, .tabs-floating-center):not(.hover-ribbon) .workspace-ribbon.mod-left.is-collapsed,
-body.mod-macos:not(.is-hidden-frameless):is(.layout-cupertino, .layout-macos):not(.tabs-floating, .tabs-floating-center):not(.hover-ribbon) .workspace-ribbon.mod-left.is-collapsed {
+body.mod-macos:not(.is-hidden-frameless):is(.layout-classic, .layout-minimal).stacked-nav-off .workspace-ribbon.mod-left {
   &::before {
     content: "";
     height: var(--tab-outline-width);

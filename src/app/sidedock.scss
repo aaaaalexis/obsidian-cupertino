@@ -119,9 +119,6 @@ body.bold-folders .nav-folder-title {
 .workspace-ribbon.mod-left .side-dock-actions .side-dock-ribbon-action {
   width: var(--tab-action-width);
 }
-body.mod-macos.is-hidden-frameless:not(.is-mobile):not(.layout-cards, .layout-border) .workspace-ribbon.mod-left {
-  padding-top: 0;
-}
 
 body:not(.mod-macos):not(.is-mobile):not(.layout-frame) .workspace-ribbon.mod-left,
 body.mod-macos:not(.is-hidden-frameless):not(.is-mobile):not(.layout-frame) .workspace-ribbon.mod-left {

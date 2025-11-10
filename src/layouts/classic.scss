@@ -7,7 +7,7 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
   }
 
   // Ribbon
-  &:not(.hover-ribbon) .workspace-ribbon.mod-left.is-collapsed {
+  .workspace-ribbon.mod-left.is-collapsed {
     border-right: var(--divider-width) solid var(--divider-color);
   }
 
@@ -18,8 +18,9 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
 }
 
 body.layout-minimal {
-  &.show-ribbon:not(.is-mobile) .workspace:not(.is-left-sidedock-open) .workspace-ribbon {
-    background-color: var(--background-primary);
+  &.show-ribbon:not(.is-mobile) .workspace-ribbon:not(.is-collapsed) {
+    background-color: var(--background-secondary);
+    box-shadow: 0 calc(-1 * var(--header-height)) var(--background-secondary);
   }
 
   .workspace {

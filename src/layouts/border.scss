@@ -28,37 +28,21 @@ body.layout-border:not(.is-mobile) {
       border-color: var(--divider-color);
     }
 
-    &.mod-left-split {
-      .workspace-tabs:not(.mod-top) .workspace-tab-header-container,
-      .workspace-tab-container {
-        margin-left: 8px;
-      }
-      .workspace-tabs.mod-top .workspace-tab-container {
-        border-top-left-radius: var(--radius-m);
-      }
-      .workspace-tabs:last-child .workspace-tab-container {
-        border-bottom-left-radius: var(--radius-m);
-      }
+    &.mod-left-split .workspace-tabs .workspace-tab-container {
+      margin-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
     }
-    &.mod-right-split {
-      .workspace-tabs:not(.mod-top) .workspace-tab-header-container,
-      .workspace-tab-container {
-        margin-right: 8px;
-      }
-      .workspace-tabs.mod-top .workspace-tab-container {
-        border-top-right-radius: var(--radius-m);
-      }
-      .workspace-tabs:last-child .workspace-tab-container {
-        border-bottom-right-radius: var(--radius-m);
-      }
+    &.mod-right-split .workspace-tabs .workspace-tab-container {
+      margin-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
   }
   &:not(.stacked-nav-off) .mod-sidedock {
     &.mod-left-split .workspace-tabs.mod-top-left-space {
       .workspace-tab-header-container-inner {
-        border-radius: var(--radius-m) 0 0 0;
-        margin-right: 0;
-        margin-bottom: 0;
+        border-radius: var(--tab-radius) 0 0 0;
       }
       .workspace-tab-container {
         border-top-left-radius: 0;
@@ -74,6 +58,10 @@ body.layout-border:not(.is-mobile) {
     }
   }
 
+  &:not(.stacked-nav-off).show-ribbon.hover-ribbon .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
+    margin-left: 8px;
+  }
+
   // Vault switcher
   &.hide-vault-switcher-off .mod-sidedock {
     &.mod-left-split .workspace-tabs:last-child .workspace-tab-container {
@@ -83,7 +71,7 @@ body.layout-border:not(.is-mobile) {
       width: auto;
       margin: 0 0 0 8px;
       background-color: var(--background-primary);
-      border-bottom-left-radius: var(--radius-m);
+      border-bottom-left-radius: var(--tab-radius);
     }
   }
 
