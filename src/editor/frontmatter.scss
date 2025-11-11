@@ -102,7 +102,7 @@
       --input-padding: 8px;
 
       .metadata-properties-heading {
-        display: none;
+        padding-inline: 0px;
       }
 
       .metadata-properties {
@@ -138,6 +138,7 @@
       margin-left: 0;
       padding-block: 4px;
       padding-inline-start: 12px;
+      padding-inline-end: 16px;
       width: fit-content;
     }
 
