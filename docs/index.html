@@ -27,7 +27,12 @@
   <body>
     <div class="header">
       <div class="header-title"><h1>Baseline for Obsidian</h1></div>
-      <div class="header-actions"><a href="https://github.com/aaaaalexis/obsidian-baseline" class="header-link">View Baseline on GitHub</a></div>
+      <div class="header-actions">
+        <a href="https://github.com/aaaaalexis/obsidian-baseline" class="header-link">View Baseline on GitHub</a>
+        <button class="mode-btn" data-mode="light">
+          <i class="mode-icon" data-lucide="sun"></i>
+        </button>
+      </div>
     </div>
     <div class="content">
       <div class="panel-container">
@@ -46,10 +51,12 @@
       </div>
     </div>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" onload="lucide.createIcons()"></script>
+    <script src="mode.js"></script>
     <script>
       (() => {
         lucide.createIcons();
+
         document.querySelectorAll(".link-panel").forEach((link) => {
           link.addEventListener("click", () => {
             const label = link.querySelector("h2")?.textContent.trim() || link.href;

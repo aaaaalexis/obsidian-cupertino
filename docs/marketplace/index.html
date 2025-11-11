@@ -37,6 +37,9 @@
           <button><i data-lucide="upload"></i>Submit</button>
         </a>
         <a href="https://github.com/aaaaalexis/obsidian-baseline" class="header-link">View Baseline on GitHub</a>
+        <button class="mode-btn" data-mode="light">
+          <i class="mode-icon" data-lucide="sun"></i>
+        </button>
       </div>
     </div>
     <div class="content">
@@ -82,6 +85,7 @@
     </div>
 
     <script src="https://unpkg.com/lucide@latest" onload="lucide.createIcons()"></script>
+    <script src="../mode.js"></script>
     <script>
       (() => {
         const fetchJSON = async (path) => {
@@ -90,10 +94,15 @@
         };
         const mdLinks = (t) => t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
 
+        // color mode helpers (compact): prefer saved `colorMode`, else system
+        const isDarkMode = () => {
+          const s = localStorage.getItem("colorMode");
+          if (!s) return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+          return s === "dark" ? true : s === "light" ? false : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        };
         const pickSrc = (img) => {
           const { light, dark, base } = img.dataset;
-          const darkPref = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-          return darkPref ? dark || light || base : light || dark || base;
+          return isDarkMode() ? dark || light || base : light || dark || base;
         };
 
         const loadAndReveal = (picture) => {
@@ -183,6 +192,21 @@
           const q = params.get("q");
           if (q) searchInput.value = q;
           updateFilterLabel();
+          const reloadPictures = () =>
+            container.querySelectorAll(".preset-panel picture").forEach((p) => {
+              p.classList.add("loading");
+              loadAndReveal(p);
+            });
+          document.addEventListener("colorModeChange", reloadPictures);
+          if (window.matchMedia) {
+            const mq = window.matchMedia("(prefers-color-scheme: dark)");
+            const mqHandler = () => {
+              const s = localStorage.getItem("colorMode");
+              if (!s || (s.includes("light") && s.includes("dark"))) reloadPictures();
+            };
+            if (mq.addEventListener) mq.addEventListener("change", mqHandler);
+            else mq.addListener(mqHandler);
+          }
           let debounce;
           searchInput.addEventListener("input", () => {
             clearTimeout(debounce);
@@ -213,6 +237,12 @@
         let hiddenHandler;
 
         let openedPicture = null;
+        const _isDark = () => {
+          const s = localStorage.getItem("colorMode");
+          if (!s) return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+          return s === "dark" ? true : s === "light" ? false : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        };
+
         function openLightbox(src, picture) {
           overlay.classList.remove("hidden");
           if (hiddenHandler) lightboxImg.removeEventListener("transitionend", hiddenHandler);
@@ -263,8 +293,8 @@
               const darkSrc = img.getAttribute("data-dark");
               let src = img.src;
               if (lightSrc || darkSrc) {
-                const isDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-                src = isDark ? darkSrc || lightSrc : lightSrc || darkSrc;
+                const dark = _isDark();
+                src = dark ? darkSrc || lightSrc : lightSrc || darkSrc;
               }
               return openLightbox(src, picture);
             }
@@ -273,6 +303,20 @@
         });
         document.addEventListener("keydown", function (e) {
           if (e.key === "Escape" && overlay.classList.contains("active")) closeLightbox();
+        });
+
+        // update open lightbox image when color mode changes
+        document.addEventListener("colorModeChange", () => {
+          if (!overlay.classList.contains("active") || !openedPicture) return;
+          const img = openedPicture.querySelector("img");
+          if (!img) return;
+          const lightSrc = img.getAttribute("data-light");
+          const darkSrc = img.getAttribute("data-dark");
+          if (lightSrc || darkSrc) {
+            const src = _isDark() ? darkSrc || lightSrc : lightSrc || darkSrc;
+            // update without triggering transitionend hidden handler
+            lightboxImg.src = src;
+          }
         });
       });
     </script>

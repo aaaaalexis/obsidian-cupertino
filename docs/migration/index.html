@@ -34,6 +34,9 @@
       </div>
       <div class="header-actions">
         <a href="https://github.com/aaaaalexis/obsidian-baseline" class="header-link">View Baseline on GitHub</a>
+        <button class="mode-btn" data-mode="light">
+          <i class="mode-icon" data-lucide="sun"></i>
+        </button>
       </div>
     </div>
     <div class="content">
@@ -82,7 +85,9 @@ Supported themes:
 - AnuPpuccin
 - Border
 - Sanctum
-- Things 2'
+- Things 2
+
+Last updated: 2025-09-09'
           ></textarea>
           <div class="panel-actions">
             <button class="clear-btn">Clear</button>
@@ -103,6 +108,8 @@ Supported themes:
       </div>
     </div>
 
+    <script src="https://unpkg.com/lucide@latest" onload="lucide.createIcons()"></script>
+    <script src="../mode.js"></script>
     <script>
       (() => {
         const $ = (s, r = document) => r.querySelector(s);
@@ -323,6 +330,5 @@ Supported themes:
         showResults({}, [], {}, {});
       })();
     </script>
-    <script src="https://unpkg.com/lucide@latest" onload="lucide.createIcons()"></script>
   </body>
 </html>

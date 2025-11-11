@@ -99,15 +99,9 @@
 }
 .preset-filter {
   transition: 320ms cubic-bezier(0.1, 0, 0.1, 1.25);
-  border: none;
-}
-.preset-filter:active {
-  transform: scale(0.75);
-  opacity: 0.75;
 }
 
 /* Lightbox */
-
 .lightbox-overlay {
   display: flex;
   position: fixed;
@@ -155,6 +149,8 @@
 .setting {
   border-radius: 16px 16px 0 0;
   background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: 0 14px 62px 0 #00000040;
 }
 .setting-sidebar,
 .setting-content {
@@ -165,28 +161,20 @@
   gap: 0;
 }
 .sidebar-title {
-  padding: 8px 16px;
-  font-size: 0.85rem;
+  padding: 6px 8px;
+  font-size: 0.7rem;
 }
 .sidebar-link.is-active {
   display: flex;
   align-items: center;
-  background-color: transparent;
-  padding: 8px 16px;
-  font-weight: 700;
-  font-size: 1rem;
-}
-.sidebar-link::before {
-  position: absolute;
-  margin-left: -12px;
-  border-radius: 100vh;
-  background-color: var(--text-normal);
-  width: 4px;
-  height: 4px;
-  content: "";
+  padding: 6px 8px;
+  font-size: 0.85rem;
+  background-color: var(--background-modifier-border);
+  border-radius: 8px;
 }
 .setting-search {
   border-radius: 8px;
+  font-size: 0.85rem;
 }
 .setting-actions button {
   border-radius: 100vh;
@@ -194,4 +182,7 @@
 }
 .setting-actions button:first-child {
   animation: pulse 3s infinite alternate;
+}
+.setting-item-name {
+  font-size: 0.85rem;
 }
