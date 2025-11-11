@@ -51,8 +51,8 @@ Now, let's add an entry for your preset so it appears in Marketplace.
 3.  Scroll to the bottom of the file. Add a comma `,` after the last closing curly brace `}` and paste the following template on a new line:
 
     ```json
-      "Preset Name": {
-        "id": "unique-preset-id",
+      "unique-preset-id": {
+        "name": "Preset Name",
         "author": "Name or Username",
         "url": "https://github.com/my-username",
         "description": "A short, engaging description of your preset's look and feel."
@@ -61,8 +61,8 @@ Now, let's add an entry for your preset so it appears in Marketplace.
 
 4.  **Fill in your details:**
 
-- **`Preset Name`**: The display name for your preset.
 - **`id`**: A unique identifier in `kebab-case`. This must match your preset file name and image file name (excluding the extension).
+- **`name`**: The display name for your preset.
 - **`author`**: Your name or username for credit.
 - **`url`**: A link to your GitHub profile, website, or social media.
 - **`description`**: A short, engaging description of your preset's look and feel. Supports Markdown link syntax `[Text](URL)`.

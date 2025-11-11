@@ -160,7 +160,7 @@ p {
 }
 p a {
   color: var(--text-normal);
-  font-weight: 600;
+  font-weight: 500;
 }
 a {
   transition: 160ms;

@@ -111,20 +111,20 @@
         };
 
         const loadPresets = async () => {
-          const mainPreset = await fetchJSON("preset.json");
-          if (!mainPreset) return;
+          const presets = await fetchJSON("preset.json");
+          if (!presets) return;
           const presetDetails = {};
 
           const items = await Promise.all(
-            Object.entries(mainPreset).map(async ([name, meta]) => {
-              const presetFile = `${meta.id}.json`;
-              const img = { light: `img/${meta.id}@light.png`, dark: `img/${meta.id}@dark.png`, base: `img/${meta.id}.png` };
-              presetDetails[meta.id] = (await fetchJSON(`preset/${presetFile}`)) || {};
+            Object.entries(presets).map(async ([id, meta]) => {
+              const presetFile = `${id}.json`;
+              const img = { light: `img/${id}@light.png`, dark: `img/${id}@dark.png`, base: `img/${id}.png` };
+              presetDetails[id] = (await fetchJSON(`preset/${presetFile}`)) || {};
               const desc = meta.description ? mdLinks(meta.description) : "No description available.";
               const imageHTML = `<picture class="loading"><div class="preset-img-loader"></div><source data-srcset="${img.dark}" media="(prefers-color-scheme: dark)"><source data-srcset="${img.light}" media="(prefers-color-scheme: light)"><img loading="lazy" decoding="async" data-base="${img.base}" data-light="${img.light}" data-dark="${img.dark}"></picture>`;
-              const authorHTML = meta.url ? `<a href="${meta.url}">${meta.author}</a>` : `${meta.author}`;
-              const html = `<div class="preset-panel" data-preset="${meta.id}"><div class="preset-info"><h2>${name}</h2><p>By ${authorHTML}</p></div>${imageHTML}<p>${desc}</p><div class="panel-actions"><button class="copy-btn"><span><i data-lucide="copy"></i>Copy</span></button><a class="download-btn" href="preset/${presetFile}" download="baseline-${presetFile}"><button>Download</button></a></div></div>`;
-              return { name, id: meta.id, meta, html, searchable: (name + " " + (meta.author || "") + " " + (meta.description || "")).toLowerCase() };
+              const authorHTML = meta.url ? `<a href="${meta.url}">${meta.author}</a>` : meta.author;
+              const html = `<div class="preset-panel" data-preset="${id}"><div class="preset-info"><h2>${meta.name}</h2><p>By ${authorHTML}</p></div>${imageHTML}<p>${desc}</p><div class="panel-actions"><button class="copy-btn"><span><i data-lucide="copy"></i>Copy</span></button><a class="download-btn" href="preset/${presetFile}" download="baseline-${presetFile}"><button>Download</button></a></div></div>`;
+              return { name: meta.name, id, meta, html, searchable: `${meta.name} ${meta.author || ""} ${meta.description || ""}`.toLowerCase() };
             })
           );
 
@@ -133,19 +133,19 @@
           const filterBtn = document.querySelector(".preset-filter");
 
           const modes = ["new", "old", "a-z", "z-a"];
+          const labels = { new: "New to old", old: "Old to new", "a-z": "A to Z", "z-a": "Z to A" };
           let modeIndex = 0;
 
-          const labelFor = (m) => ({ new: "New to old", old: "Old to new", "a-z": "A to Z", "z-a": "Z to A" }[m]);
           const updateFilterLabel = () => {
-            filterBtn.innerHTML = `<i data-lucide="filter"></i>${labelFor(modes[modeIndex])}`;
+            filterBtn.innerHTML = `<i data-lucide="filter"></i>${labels[modes[modeIndex]]}`;
             lucide.createIcons();
           };
 
           const render = () => {
-            const q = (searchInput.value || "").trim().toLowerCase();
+            const q = searchInput.value.trim().toLowerCase();
             let list = items.slice();
             const mode = modes[modeIndex];
-            if (mode === "new") list = list.slice().reverse();
+            if (mode === "new") list.reverse();
             else if (mode === "a-z") list.sort((a, b) => a.name.localeCompare(b.name));
             else if (mode === "z-a") list.sort((a, b) => b.name.localeCompare(a.name));
 
@@ -159,7 +159,6 @@
               btn.onclick = () => {
                 const presetId = container.querySelectorAll(".preset-panel")[idx].dataset.preset;
                 const details = presetDetails[presetId];
-                const meta = Object.values(mainPreset).find((m) => m.id === presetId);
                 if (!details) return;
                 navigator.clipboard.writeText(JSON.stringify(details, null, 2)).then(() => {
                   btn.innerHTML = "<span>Copied!</span>";
@@ -167,18 +166,17 @@
                     btn.innerHTML = orig;
                     lucide.createIcons();
                   }, 1000);
-                  if (window.gtag && meta?.id) gtag("event", "preset_copy", { preset: meta.id });
+                  if (window.gtag) gtag("event", "preset_copy", { preset: presetId });
                 });
               };
             });
 
-            container.querySelectorAll(".download-btn").forEach((dl, idx) =>
+            container.querySelectorAll(".download-btn").forEach((dl, idx) => {
               dl.addEventListener("click", () => {
                 const presetId = container.querySelectorAll(".preset-panel")[idx].dataset.preset;
-                const meta = Object.values(mainPreset).find((m) => m.id === presetId);
-                if (window.gtag && meta?.id) gtag("event", "preset_download", { preset: meta.id });
-              })
-            );
+                if (window.gtag) gtag("event", "preset_download", { preset: presetId });
+              });
+            });
           };
 
           const params = new URLSearchParams(window.location.search);
@@ -191,8 +189,7 @@
             debounce = setTimeout(() => {
               const val = searchInput.value.trim();
               const url = new URL(window.location);
-              if (val) url.searchParams.set("q", val);
-              else url.searchParams.delete("q");
+              val ? url.searchParams.set("q", val) : url.searchParams.delete("q");
               window.history.replaceState({}, "", url);
               render();
             }, 150);
