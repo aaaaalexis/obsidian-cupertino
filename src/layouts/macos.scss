@@ -47,18 +47,6 @@ body:not(.liquid-glass-off):not(.is-mobile) {
     }
   }
 
-  // Editor panel
-  .mod-root {
-    .workspace-leaf {
-      contain: size !important;
-    }
-    .workspace-leaf,
-    .workspace-leaf-content,
-    .workspace-tab-container {
-      overflow: visible;
-    }
-  }
-
   // File explorer
   &.theme-light .nav-files-container > div {
     --nav-item-background-active: var(--background-modifier-hover);
@@ -87,10 +75,7 @@ body:not(.liquid-glass-off):not(.is-mobile) {
     &:not(.mod-macos) .workspace-ribbon.mod-left.is-collapsed .sidebar-toggle-button {
       height: calc(var(--header-height) - 16px);
     }
-    &.mod-macos.is-hidden-frameless .workspace-ribbon.mod-left:not(.is-collapsed) {
-      margin-top: calc(var(--header-height) - 8px);
-    }
-    .workspace-ribbon.mod-left:not(.is-collapsed) {
+    &:not(.hover-ribbon) .workspace-ribbon.mod-left:not(.is-collapsed) {
       padding-left: 16px;
     }
     .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) {
@@ -109,8 +94,8 @@ body:not(.liquid-glass-off):not(.is-mobile) {
   }
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container .sidebar-toggle-button {
-    min-height: calc(var(--header-height) - 16px);
-    max-height: calc(var(--header-height) - 16px);
+    min-height: calc(var(--header-height) - 8px);
+    max-height: calc(var(--header-height) - 8px);
   }
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-inner,
   .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button .clickable-icon,

@@ -72,7 +72,7 @@ settings:
         title: Disable font variants
         type: class-toggle
     -
-        id: frontmatter-off
+        id: metadata-heading-off
         title: Disable simplified properties
         type: class-toggle
     -
@@ -104,6 +104,10 @@ settings:
 .view-content .style-settings-container .style-settings-container .setting-item {
   padding: 16px;
   align-items: center;
+
+  &:not(.setting-item-heading) {
+    flex-direction: row;
+  }
 
   .setting-item-control {
     padding-top: 0;

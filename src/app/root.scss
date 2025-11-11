@@ -137,6 +137,20 @@ body:not(.mod-macos):not(.is-mobile) {
     height: var(--header-height);
   }
 
+  &:not(.is-hidden-frameless) .titlebar-button.mod-logo {
+    transition: var(--anim-duration-fast);
+    opacity: 0.5;
+    background: linear-gradient(to right bottom, var(--interactive-accent), transparent 50%);
+
+    svg {
+      display: none;
+    }
+
+    &:not(:hover) {
+      opacity: 0;
+    }
+  }
+
   .titlebar .titlebar-button-container.mod-right {
     width: var(--frame-right-space);
 

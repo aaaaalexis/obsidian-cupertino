@@ -97,6 +97,18 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
     background-color: var(--background-primary);
   }
 
+  // Editor panel
+  .mod-root {
+    .workspace-leaf {
+      contain: size !important;
+    }
+    .workspace-leaf,
+    .workspace-leaf-content,
+    .workspace-tab-container {
+      overflow: visible;
+    }
+  }
+
   // Side panels
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
     margin-left: 0;
