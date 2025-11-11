@@ -94,3 +94,18 @@ body.status-bar-cupertino .status-bar {
     content: "";
   }
 }
+
+body.status-bar-cupertino .app-container.no-transition .status-bar {
+  bottom: 4px;
+  border-color: transparent;
+  background-color: var(--color-accent);
+  color: var(--text-on-accent);
+  max-width: 100% !important;
+  height: 40px !important;
+
+  > div {
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}
