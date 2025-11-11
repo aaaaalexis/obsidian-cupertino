@@ -90,7 +90,7 @@ body:not(.layout-classic, .layout-minimal):not(.is-mobile).hide-vault-switcher-o
 }
 
 // Tab styles
-body:not(.tabs-floating, .tabs-floating-center, .tabs-underline) {
+body:not(.tabs-floating, .tabs-floating-center, .tabs-underline, .tabs-underline-accented) {
   &:is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.theme-dark.is-mobile),
   &:is(.layout-classic, .layout-minimal, .layout-cupertino, .layout-macos, .layout-frame, .layout-viewfinder:not(.colorful-frame)) {
     .mod-root .workspace-tab-header {

@@ -69,7 +69,7 @@ body.colorful-frame.is-hidden-frameless:not(.is-mobile):not(.layout-frame, .layo
     z-index: 1;
   }
 
-  &.tabs-underline .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  &:is(.tabs-underline, .tabs-underline-accented) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     --tab-text-color: rgb(from var(--colorful-frame-content-color) r g b / 50%);
     --tab-text-color-focused: var(--tab-text-color);
     --tab-text-color-focused-active: var(--tab-text-color);

@@ -240,7 +240,7 @@ body.is-tablet.tabs-floating-center {
 }
 
 // Editor panel: Underline
-body:not(.is-phone).tabs-underline .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
+body:not(.is-phone):is(.tabs-underline, .tabs-underline-accented) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
   --tab-background-active: transparent;
 
   .workspace-tab-header-container-inner {
@@ -264,6 +264,9 @@ body:not(.is-phone).tabs-underline .workspace .mod-root .workspace-tabs:not(.mod
   .workspace-tab-header-inner {
     margin-bottom: 6px;
   }
+}
+body:not(.is-phone).tabs-underline-accented .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+  border-color: var(--color-accent);
 }
 
 // Editor panel: Stacks
