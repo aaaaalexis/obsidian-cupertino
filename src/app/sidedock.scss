@@ -115,6 +115,7 @@ body.bold-folders .nav-folder-title {
   gap: 4px;
   transition: var(--anim-duration-moderate);
   z-index: 1;
+  color: var(--icon-color);
 }
 .workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon,
 .workspace-ribbon.mod-left .side-dock-actions .side-dock-ribbon-action {
