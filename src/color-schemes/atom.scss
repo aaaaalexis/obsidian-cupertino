@@ -37,6 +37,12 @@
   --accent-s: 86%;
   --accent-l: 65%;
 }
+.theme-light.atom-light.contrast-light-vivid:not(.layout-minimal) .app-container {
+  --background-secondary: #21252c;
+}
+.theme-light.atom-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
+.theme-light.atom-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
+.theme-light.atom-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.atom-dark {
   --color-red-rgb: 225, 109, 118;
   --color-orange-rgb: 209, 154, 102;

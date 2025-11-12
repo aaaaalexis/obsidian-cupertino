@@ -30,6 +30,9 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   }
 
   // Editor panel
+  .mod-root {
+    z-index: 1;
+  }
   .markdown-source-view,
   .markdown-preview-view {
     transition: transform var(--anim-duration-slow) var(--anim-motion-baseline);
@@ -95,18 +98,6 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
 
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
     background-color: var(--background-primary);
-  }
-
-  // Editor panel
-  .mod-root {
-    .workspace-leaf {
-      contain: size !important;
-    }
-    .workspace-leaf,
-    .workspace-leaf-content,
-    .workspace-tab-container {
-      overflow: visible;
-    }
   }
 
   // Side panels
@@ -237,8 +228,8 @@ body.layout-cupertino:not(.is-phone) {
 }
 
 body.layout-cupertino:not(.is-mobile) {
-  .workspace-split.mod-sidedock {
-    background-color: transparent;
+  .workspace {
+    background-color: var(--tab-container-background);
   }
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
     .mod-root {

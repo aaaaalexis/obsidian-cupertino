@@ -22,6 +22,7 @@ body.colorful-frame.is-hidden-frameless:not(.is-mobile):not(.layout-macos, .layo
     height: var(--header-height);
     pointer-events: none;
     border-bottom: none;
+    width: 100%;
   }
 
   // Stacked nav spacing
@@ -58,14 +59,18 @@ body.colorful-frame.is-hidden-frameless:not(.is-mobile):not(.layout-frame, .layo
   }
 
   &:not(.layout-viewfinder):not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top .sidebar-toggle-button,
-  &:not(.stacked-nav-off) .mod-root .workspace-tabs.mod-top .workspace-tab-header-container,
+  &:not(.stacked-nav-off) .mod-root .workspace-tabs.mod-top .workspace-tab-header-container > div,
   &:not(.layout-viewfinder):not(.stacked-nav-off) .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
-  &:not(.layout-viewfinder).stacked-nav-off.workspace-tabs.mod-top .workspace-tab-header-container,
-  &:is(.layout-cards, .layout-border) .workspace-ribbon.mod-left .side-dock-actions {
+  &.layout-cards .mod-sidedock.mod-right-split .workspace-tabs .workspace-tab-header-container,
+  &:not(.layout-viewfinder).stacked-nav-off .workspace-tabs.mod-top .workspace-tab-header-container,
+  &:not(.layout-frame, .layout-viewfinder) .titlebar-inner,
+  &:is(.layout-cards, .layout-border) .workspace-ribbon.mod-left {
     --icon-color: var(--colorful-frame-content-color);
     --icon-color-hover: var(--icon-color);
     --icon-color-active: var(--icon-color);
     --icon-color-focused: var(--icon-color);
+    --titlebar-text-color: var(--icon-color);
+    --titlebar-text-color-focused: var(--icon-color);
     z-index: 1;
   }
 
@@ -86,12 +91,11 @@ body.colorful-frame.is-hidden-frameless:not(.is-mobile):not(.layout-frame, .layo
 }
 
 // Layout style specific
-body.colorful-frame:not(.is-mobile):is(.layout-cards, .layout-border, .layout-frame) {
-  .workspace {
+body.colorful-frame:not(.is-mobile):is(.layout-cards, .layout-border) {
+  .workspace-ribbon.mod-left,
+  .workspace-split {
     background-color: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 100%), var(--background-primary));
   }
-}
-body.colorful-frame:not(.is-mobile):is(.layout-cards, .layout-border) {
   .workspace-ribbon.mod-left::before {
     content: "";
     position: absolute;
@@ -100,7 +104,11 @@ body.colorful-frame:not(.is-mobile):is(.layout-cards, .layout-border) {
     height: var(--header-height);
     pointer-events: none;
     border-bottom: none;
+    top: calc(-1 * var(--header-height));
   }
+}
+body.colorful-frame:not(.is-mobile).layout-frame .workspace {
+  background-color: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 100%), var(--background-primary));
 }
 body.colorful-frame:not(.is-mobile).layout-viewfinder .mod-root .workspace-tab-header-container {
   background-color: color-mix(in srgb, var(--colorful-frame-color, var(--color-accent)) var(--colorful-frame-opacity, 100%), var(--background-primary));

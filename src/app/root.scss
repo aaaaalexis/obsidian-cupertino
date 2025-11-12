@@ -124,7 +124,6 @@ body:not(.is-mobile) {
   }
 
   .workspace-split {
-    background-color: transparent;
     transition: var(--anim-duration-moderate);
   }
 }
@@ -171,10 +170,6 @@ body:not(.mod-macos):not(.is-mobile) {
     .titlebar-button {
       justify-content: center;
       flex: 1;
-
-      &:hover {
-        color: rgb(var(--mono-rgb-100));
-      }
 
       path,
       rect,

@@ -43,6 +43,12 @@ https://github.com/ayu-theme/ayu-colors
   --text-on-accent: var(--background-primary);
   --text-on-accent-inverted: var(--background-primary);
 }
+.theme-light.ayu-light.contrast-light-vivid:not(.layout-minimal) .app-container {
+  --background-secondary: #1e2431;
+}
+.theme-light.ayu-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
+.theme-light.ayu-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
+.theme-light.ayu-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.ayu-dark {
   --color-red-rgb: 255, 102, 102;
   --color-orange-rgb: 250, 173, 102;

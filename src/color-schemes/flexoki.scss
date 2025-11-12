@@ -43,6 +43,12 @@ https://stephango.com/flexoki
   --accent-s: 49%;
   --accent-l: 45%;
 }
+.theme-light.flexoki-light.contrast-light-vivid:not(.layout-minimal) .app-container {
+  --background-secondary: #1c1b1a;
+}
+.theme-light.flexoki-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
+.theme-light.flexoki-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
+.theme-light.flexoki-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.flexoki-dark {
   --color-red-rgb: 209, 77, 65;
   --color-orange-rgb: 218, 112, 44;
@@ -52,7 +58,7 @@ https://stephango.com/flexoki
   --color-blue-rgb: 67, 133, 190;
   --color-purple-rgb: 139, 126, 200;
   --color-pink-rgb: 206, 93, 151;
-  
+
   --background-primary: #100f0f;
   --background-primary-alt: #100f0f;
   --background-secondary: #1c1b1a;

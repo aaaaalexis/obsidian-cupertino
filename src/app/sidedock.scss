@@ -93,6 +93,7 @@ body.bold-folders .nav-folder-title {
   border-right: none;
   z-index: 11;
   transition: var(--anim-duration-moderate) !important;
+  position: relative;
 }
 .workspace-ribbon.mod-left:before {
   content: none;
@@ -136,8 +137,6 @@ body:not(.mod-macos):not(.is-mobile).stacked-nav-off .workspace-ribbon.mod-left 
 
 // Desktop sidedock
 body:not(.is-mobile) .mod-sidedock {
-  transition: var(--anim-duration-moderate);
-
   & > .workspace-leaf-resize-handle:not(:hover) {
     border-color: transparent;
   }
