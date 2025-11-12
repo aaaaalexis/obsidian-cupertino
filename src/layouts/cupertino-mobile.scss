@@ -239,7 +239,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
   }
   .mobile-tab-switcher-menubar {
     background-color: var(--mobile-sidebar-background);
-    padding: 0 var(--safe-area-inset-bottom-override) var(--safe-area-inset-bottom-override);
+    padding: 0 var(--navbar-side-padding) var(--navbar-bottom-padding);
     border: none;
   }
   .mobile-tab-switcher-menu-button {

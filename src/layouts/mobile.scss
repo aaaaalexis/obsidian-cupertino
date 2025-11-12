@@ -2,16 +2,20 @@ body:not(.mobile-stable).is-mobile {
   --tab-radius: var(--radius-s);
   --tab-curve: var(--tab-radius);
 
+  --navbar-bottom-padding: var(--safe-area-inset-bottom);
+  --navbar-side-padding: var(--safe-area-inset-side);
   --safe-area-inset-side: 16px;
-  --safe-area-inset-bottom-override: 28px;
 
   .app-container {
     max-height: calc(100vh - var(--keyboard-height)) !important;
     transition: var(--anim-duration-moderate);
   }
 
-  // iOS font size
+  // iOS specific
   &.is-ios {
+    --navbar-bottom-padding: 28px;
+    --navbar-side-padding: var(--navbar-bottom-padding);
+
     --font-ui-smaller: calc(var(--font-text-size) * 0.8 + 1px);
     --font-ui-small: calc(var(--font-text-size) * 0.937 + 1px);
     --font-ui-medium: calc(var(--font-text-size) + 1px);
@@ -43,7 +47,7 @@ body:not(.mobile-stable).is-mobile {
   .workspace-drawer .workspace-leaf-content > .node-insert-event,
   .workspace-drawer .workspace-leaf-content > .view-content > .node-insert-event {
     padding-inline: 20px;
-    padding-block: 0 calc(var(--safe-area-inset-bottom-override) + 128px);
+    padding-block: 0 calc(var(--navbar-bottom-padding) + 128px);
   }
   .workspace-drawer .nav-header {
     display: flex;
@@ -55,7 +59,7 @@ body:not(.mobile-stable).is-mobile {
     border-bottom: none;
     background: transparent;
     padding-top: 0;
-    padding-bottom: var(--safe-area-inset-bottom-override);
+    padding-bottom: var(--navbar-bottom-padding);
     width: 100%;
     align-items: center;
   }
@@ -86,14 +90,14 @@ body:not(.mobile-stable).is-phone {
   --toolbar-option-width: 48px;
 
   &.mod-toolbar-open {
-    --safe-area-inset-bottom-override: 12px;
+    --navbar-bottom-padding: 12px;
 
     .cm-scroller {
-      margin-bottom: calc(48px + var(--safe-area-inset-bottom-override));
+      margin-bottom: calc(48px + var(--navbar-bottom-padding));
     }
   }
   &:is(html[style*="--keyboard-height"]:not([style*="--keyboard-height: 0px"]) body.is-phone:not(.mod-toolbar-open)) {
-    --safe-area-inset-bottom-override: 12px;
+    --navbar-bottom-padding: 12px;
 
     &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2),
     .mod-root .workspace-leaf-content[data-type="markdown"] .view-content::before,
@@ -109,7 +113,7 @@ body:not(.mobile-stable).is-phone {
   &.mode-switcher-off .mobile-navbar,
   &.mode-switcher-off .mobile-toolbar,
   & > .app-container > .horizontal-main-container:not(:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content[data-type="markdown"])) ~ .mobile-navbar {
-    padding-right: var(--safe-area-inset-bottom-override);
+    padding-right: var(--navbar-side-padding);
     max-width: 100%;
     width: 100%;
   }
@@ -124,9 +128,9 @@ body:not(.mobile-stable).is-phone {
     background: transparent;
     padding-top: 0;
     padding-right: 0;
-    padding-bottom: var(--safe-area-inset-bottom-override);
-    padding-left: var(--safe-area-inset-bottom-override);
-    max-width: calc(100% - 8px - 48px - var(--safe-area-inset-bottom-override));
+    padding-bottom: var(--navbar-bottom-padding);
+    padding-left: var(--navbar-side-padding);
+    max-width: calc(100% - 8px - 48px - var(--navbar-side-padding));
     overflow: visible;
   }
 
@@ -150,8 +154,8 @@ body:not(.mobile-stable).is-phone {
   }
   &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     transition: var(--anim-duration-moderate);
-    right: var(--safe-area-inset-bottom-override);
-    bottom: var(--safe-area-inset-bottom-override);
+    right: var(--navbar-side-padding);
+    bottom: var(--navbar-bottom-padding);
     padding: 12px;
   }
 
@@ -252,7 +256,7 @@ body:not(.mobile-stable).is-phone {
         z-index: 2;
         mask: linear-gradient(to top, hsla(0, 0%, 0%, 0.8) 0%, hsla(0, 0%, 0%, 0.79) 9.7%, hsla(0, 0%, 0%, 0.761) 18.7%, hsla(0, 0%, 0%, 0.717) 27.2%, hsla(0, 0%, 0%, 0.66) 35.1%, hsla(0, 0%, 0%, 0.593) 42.6%, hsla(0, 0%, 0%, 0.518) 49.6%, hsla(0, 0%, 0%, 0.44) 56.2%, hsla(0, 0%, 0%, 0.36) 62.5%, hsla(0, 0%, 0%, 0.282) 68.4%, hsla(0, 0%, 0%, 0.207) 74.1%, hsla(0, 0%, 0%, 0.14) 79.5%, hsla(0, 0%, 0%, 0.083) 84.8%, hsla(0, 0%, 0%, 0.039) 89.9%, hsla(0, 0%, 0%, 0.01) 95%, hsla(0, 0%, 0%, 0) 100%);
         background-color: var(--system-status-background);
-        height: calc(var(--safe-area-inset-bottom-override) + 64px);
+        height: calc(var(--navbar-bottom-padding) + 64px);
         pointer-events: none;
         content: "";
         transition: var(--anim-duration-moderate);
@@ -262,9 +266,9 @@ body:not(.mobile-stable).is-phone {
         bottom: 0;
         z-index: 1;
         backdrop-filter: blur(4px);
-        mask: linear-gradient(to top, black var(--safe-area-inset-bottom-override), transparent);
+        mask: linear-gradient(to top, black var(--navbar-bottom-padding), transparent);
         inset-inline: 0;
-        height: calc(var(--safe-area-inset-bottom-override) + 64px);
+        height: calc(var(--navbar-bottom-padding) + 64px);
         pointer-events: none;
         content: "";
       }

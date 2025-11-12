@@ -169,11 +169,11 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable) .view-content.note
 body:not(.mobile-stable) .view-content.notebook-navigator-mobile {
   .nn-nav-bottom-spacer,
   .nn-list-bottom-spacer {
-    height: calc(var(--safe-area-inset-bottom-override) + 128px);
+    height: calc(var(--navbar-bottom-padding) + 128px);
   }
   .nn-mobile-toolbar {
     position: absolute;
-    inset: auto 0 var(--safe-area-inset-bottom-override);
+    inset: auto 0 var(--navbar-bottom-padding);
     margin: 0 auto;
     border: var(--border-width) solid var(--background-modifier-border);
     border-radius: 100vh;
