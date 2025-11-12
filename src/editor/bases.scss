@@ -47,6 +47,9 @@ body {
   color: var(--text-faint);
 }
 
+.bases-table-container {
+  background-color: transparent;
+}
 .bases-table-container.mod-multiline .bases-table-cell {
   align-items: var(--bases-table-align-items, start);
 }
