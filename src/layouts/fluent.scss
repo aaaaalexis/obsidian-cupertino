@@ -136,7 +136,6 @@ body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
     .suggestion-item {
       border-radius: var(--radius-m);
       padding: 8px 10px;
-      gap: 10px;
     }
 
     .menu-item-icon .svg-icon {
