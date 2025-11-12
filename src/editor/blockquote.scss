@@ -79,8 +79,8 @@
   body.blockquote-edge {
     .markdown-rendered blockquote {
       border-radius: calc(var(--blockquote-border-thickness) / 2) var(--radius-s) var(--radius-s) calc(var(--blockquote-border-thickness) / 2);
-      padding-inline: calc(var(--blockquote-border-thickness) + 16px) 16px;
-      padding-block: 12px;
+      padding-inline: calc(var(--blockquote-border-thickness) + 20px) 16px;
+      padding-block: 8px;
     }
     .markdown-rendered blockquote::before {
       top: 0;
