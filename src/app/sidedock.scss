@@ -120,8 +120,8 @@ body.bold-folders .nav-folder-title {
   width: var(--tab-action-width);
 }
 
-body:not(.mod-macos):not(.is-mobile):not(.layout-frame) .workspace-ribbon.mod-left,
-body.mod-macos:not(.is-hidden-frameless):not(.is-mobile):not(.layout-frame) .workspace-ribbon.mod-left {
+body:not(.mod-macos):not(.is-mobile) .workspace-ribbon.mod-left,
+body.mod-macos:not(.is-hidden-frameless):not(.is-mobile)  .workspace-ribbon.mod-left {
   margin-top: 0;
 }
 body:not(.mod-macos):not(.is-mobile) .workspace-ribbon.mod-left .sidebar-toggle-button,
@@ -215,9 +215,6 @@ body:not(.is-mobile):not(.hide-vault-switcher-off) .mod-sidedock.mod-left-split 
   .workspace-leaf-content > .view-content {
     padding-bottom: 64px;
   }
-}
-body:not(.is-mobile):not(.hide-vault-switcher-off):not(.layout-cupertino, .layout-macos).hover-sidedock .mod-sidedock.mod-left-split.is-sidedock-collapsed .workspace-sidedock-vault-profile::before {
-  background-color: var(--background-primary);
 }
 
 // Desktop sidedock: Style Settings

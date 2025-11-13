@@ -36,7 +36,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android
   }
 }
 
-body:is(.layout-cupertino, .layout-macos).theme-light {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).theme-light {
   --color-red-rgb: 255, 56, 60;
   --color-orange-rgb: 255, 141, 40;
   --color-yellow-rgb: 255, 204, 0;
@@ -46,7 +46,7 @@ body:is(.layout-cupertino, .layout-macos).theme-light {
   --color-purple-rgb: 203, 48, 224;
   --color-pink-rgb: 255, 45, 85;
 }
-body:is(.layout-cupertino, .layout-macos).theme-dark {
+body:is(.liquid-glass-off, :not(.liquid-glass-off)).theme-dark {
   --color-red-rgb: 255, 66, 69;
   --color-orange-rgb: 255, 146, 48;
   --color-yellow-rgb: 255, 214, 0;
