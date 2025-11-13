@@ -23,11 +23,15 @@
     border-spacing: 0;
   }
 
+  blockquote,
+  .callout,
   .el-table,
   .cm-table-widget,
   .block-language-dataview,
   .block-language-dataviewjs,
   .block-language-datacorejsx {
+    --table-border-color: var(--background-modifier-border);
+
     table {
       position: relative;
 
