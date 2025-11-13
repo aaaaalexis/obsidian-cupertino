@@ -33,6 +33,8 @@ body,
   --icon-xl-stroke-width: calc(1.25px * var(--icon-stroke-modifier));
 
   --density-modifier: 1;
+  --translucent-light-opacity: 50%;
+  --translucent-dark-opacity: 50%;
 
   --color-red: rgb(var(--color-red-rgb));
   --color-orange: rgb(var(--color-orange-rgb));
@@ -45,7 +47,7 @@ body,
 }
 
 .theme-light {
-  --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
+  --workspace-background-translucent: rgb(from var(--background-secondary) r g b / var(--translucent-light-opacity));
 
   --color-base-80: #494949;
   --color-base-90: #363636;
@@ -71,7 +73,7 @@ body,
   --code-value: #a626a4;
 }
 .theme-dark {
-  --workspace-background-translucent: transparent;
+  --workspace-background-translucent: rgb(from var(--background-secondary) r g b / var(--translucent-dark-opacity));
 
   --color-base-80: #c0c0c0;
   --color-base-90: #cdcdcd;

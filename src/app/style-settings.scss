@@ -1193,6 +1193,35 @@ settings:
 		max: 900
 		step: 50
 	-
+		id: translucent-window
+		title: Translucent window
+		type: heading
+		level: 3
+		collapsed: true
+    - 
+        id: translucent-window-info
+		description: Translucent window settings requires **Translucent window** to be enabled in **Appearance** settings. For Windows users, install [Pseudo Mica](obsidian://show-plugin?id=pseudo-mica) to enable translucency.
+        type: info-text
+		markdown: true
+	-
+		id: translucent-light-opacity
+		title: Light mode translucent window opacity
+		type: variable-number-slider
+		default: 50
+		min: 0
+		max: 100
+		step: 10
+		format: '%'
+	-
+		id: translucent-dark-opacity
+		title: Dark mode translucent window opacity
+		type: variable-number-slider
+		default: 50
+		min: 0
+		max: 100
+		step: 10
+		format: '%'
+	-
 		id: tablet
 		title: Tablet
 		type: heading
@@ -3249,7 +3278,8 @@ body.banner-off .style-settings-container .setting-item[data-id="banner-off"] ~ 
 body:not(.hr-dashed) .style-settings-container .setting-item[data-id="hr-dashed"] ~ .setting-item,
 body:not(.colorful-frame) .style-settings-container .setting-item[data-id="colorful-frame"] ~ .setting-item,
 body:not(.is-frameless) .style-settings-container .setting-item[data-id="colorful-frame-info"] ~ .setting-item,
-body:is(.is-hidden-frameless, :not(.is-frameless)) .style-settings-container .setting-item[data-id="titlebar-info"] ~ .setting-item {
+body:is(.is-hidden-frameless, :not(.is-frameless)) .style-settings-container .setting-item[data-id="titlebar-info"] ~ .setting-item,
+body:not(.is-translucent) .style-settings-container .setting-item[data-id="translucent-window-info"] ~ .setting-item {
   pointer-events: none;
 
   > * {
