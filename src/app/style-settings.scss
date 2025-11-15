@@ -1340,19 +1340,19 @@ settings:
 		default: false
     - 
         id: block-width-info
-		description: Readable line length must be set in Obsidian **Editor** settings.
+		description: Block width requires **Readable line length** to be enabled in Obsidian **Editor** settings.
         type: info-text
 		markdown: true
 	-
 		id: line-width
-		title: Normal line width
+		title: Default line width
 		description: Accepts valid CSS units
 		type: variable-text
 		default: 700px
 	-
 		id: line-width-wide
 		title: Wide line width
-		description: Accepts valid CSS units
+		description: Enable by adding "wide" in cssclasses property, accepts valid CSS units.
 		type: variable-text
 		default: 50rem
 	-
