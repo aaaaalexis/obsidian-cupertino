@@ -4,7 +4,6 @@ body:not(.liquid-glass-off):not(.is-mobile) {
     --nav-item-background-active: var(--background-modifier-hover);
   }
   &.theme-dark {
-    --workspace-background-translucent: rgb(from var(--background-secondary) r g b / 90%);
     --shadow-sidedock: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.35), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 16px 0 rgba(0, 0, 0, 0.2), -16px 0 0 16px var(--background-primary);
     --nav-item-background-active: rgba(0, 0, 0, 0.5);
   }

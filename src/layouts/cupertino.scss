@@ -97,18 +97,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) {
     background-color: var(--background-primary);
   }
 
-  // Editor panel
-  .mod-root {
-    .workspace-leaf {
-      contain: size !important;
-    }
-    .workspace-leaf,
-    .workspace-leaf-content,
-    .workspace-tab-container {
-      overflow: visible;
-    }
-  }
-
   // Side panels
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
     margin-left: 0;
@@ -196,6 +184,9 @@ body.liquid-glass-off:not(.is-mobile) {
   .workspace.is-left-sidedock-open .mod-root .workspace-tab-header-container {
     overflow: hidden;
   }
+  .mod-root {
+    z-index: 1;
+  }
   .mod-root .workspace-tabs {
     overflow: visible;
   }
@@ -205,8 +196,8 @@ body.liquid-glass-off:not(.is-mobile) {
 }
 
 body.liquid-glass-off:not(.is-mobile) {
-  .workspace-split.mod-sidedock {
-    background-color: transparent;
+  .workspace {
+    background-color: var(--tab-container-background);
   }
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
     .mod-root {

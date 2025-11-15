@@ -39,12 +39,12 @@ body:not(.banner-off) {
 
   // Banner: Spacing
   .banner:not(.banner-icon) {
-    .markdown-preview-pusher,
+    & > .markdown-preview-sizer > .markdown-preview-pusher,
     &.is-live-preview .cm-sizer {
       margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height)) !important;
     }
 
-    &.banner-fade .markdown-preview-pusher {
+    &.banner-fade > .markdown-preview-sizer > .markdown-preview-pusher {
       margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height) - var(--banner-fade-penalty)) !important;
     }
 
@@ -57,11 +57,11 @@ body:not(.banner-off) {
     }
   }
   .banner.banner-icon {
-    .markdown-preview-pusher,
+    & > .markdown-preview-sizer > .markdown-preview-pusher,
     &.is-live-preview .cm-sizer {
       margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height) + var(--banner-calc-icon) + var(--banner-icon-offset)) !important;
     }
-    &.banner-fade .markdown-preview-pusher,
+    &.banner-fade > .markdown-preview-sizer > .markdown-preview-pusher,
     &.banner-fade.is-live-preview .cm-sizer {
       margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height) + var(--banner-calc-icon) + var(--banner-icon-offset) - var(--banner-fade-penalty)) !important;
     }
@@ -73,7 +73,7 @@ body:not(.banner-off) {
     }
   }
   .banner-icon:not(.banner) {
-    .markdown-preview-pusher,
+    & > .markdown-preview-sizer > .markdown-preview-pusher,
     &.is-live-preview .cm-sizer {
       margin-top: calc(var(--banner-calc-base) + var(--banner-calc-icon)) !important;
     }

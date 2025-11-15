@@ -93,6 +93,7 @@ body.bold-folders .nav-folder-title {
   border-right: none;
   z-index: 11;
   transition: var(--anim-duration-moderate) !important;
+  position: relative;
 }
 .workspace-ribbon.mod-left:before {
   content: none;
@@ -114,6 +115,7 @@ body.bold-folders .nav-folder-title {
   gap: 4px;
   transition: var(--anim-duration-moderate);
   z-index: 1;
+  color: var(--icon-color);
 }
 .workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon,
 .workspace-ribbon.mod-left .side-dock-actions .side-dock-ribbon-action {
@@ -136,8 +138,6 @@ body:not(.mod-macos):not(.is-mobile) .workspace-ribbon.mod-left .sidebar-toggle-
 
 // Desktop sidedock
 body:not(.is-mobile) .mod-sidedock {
-  transition: var(--anim-duration-moderate);
-
   & > .workspace-leaf-resize-handle:not(:hover) {
     border-color: transparent;
   }
