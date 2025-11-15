@@ -30,9 +30,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   }
 
   // Editor panel
-  .mod-root {
-    z-index: 1;
-  }
   .markdown-source-view,
   .markdown-preview-view {
     transition: transform var(--anim-duration-slow) var(--anim-motion-baseline);
@@ -218,6 +215,9 @@ body.layout-cupertino:not(.is-phone) {
 
   .workspace.is-left-sidedock-open .mod-root .workspace-tab-header-container {
     overflow: hidden;
+  }
+  .mod-root {
+    z-index: 1;
   }
   .mod-root .workspace-tabs {
     overflow: visible;
