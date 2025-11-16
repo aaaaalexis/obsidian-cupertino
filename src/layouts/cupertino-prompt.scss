@@ -58,7 +58,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-phone) {
     pointer-events: none;
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
+body:is(.layout-cupertino, .layout-macos).is-mobile.is-phone {
   --prompt-input-height: 48px;
 
   .prompt {

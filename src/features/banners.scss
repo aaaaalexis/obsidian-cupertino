@@ -18,7 +18,7 @@ body:not(.banner-off) {
   --banner-calc-icon: calc(var(--banner-icon-size) + var(--banner-icon-spacer));
 
   &.is-phone {
-    --banner-mobile-spacer: calc(var(--safe-area-inset-top) + var(--view-header-height) + 32px);
+    --banner-mobile-spacer: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
     --banner-mobile-offset: 16px;
 
     --banner-image-actual-height: var(--banner-image-height-s);

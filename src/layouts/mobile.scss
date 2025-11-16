@@ -1,4 +1,4 @@
-body:not(.mobile-stable).is-mobile {
+body.is-mobile {
   --tab-radius: var(--radius-s);
   --tab-curve: var(--tab-radius);
 
@@ -84,7 +84,7 @@ body:not(.mobile-stable).is-mobile {
   }
 }
 
-body:not(.mobile-stable).is-phone {
+body.is-mobile.is-phone {
   // Bottom navbar & Toolbar
   --mobile-toolbar-height: 48px;
   --toolbar-option-width: 48px;
@@ -276,6 +276,6 @@ body:not(.mobile-stable).is-phone {
   }
 }
 
-body:not(.mobile-stable).is-tablet .workspace-drawer.is-pinned {
+body.is-mobile.is-tablet .workspace-drawer.is-pinned {
   height: auto;
 }

@@ -25,10 +25,12 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
 
   background-color: black;
 
-  &.is-mobile .mod-root .view-header,
-  &.mobile-stable .mobile-navbar,
+  &.is-mobile:not(.layout-cupertino, .layout-macos) .nav-buttons-container,
+  &.is-mobile:not(.layout-cupertino, .layout-macos) .mobile-navbar-actions,
+  &.is-mobile:not(.layout-cupertino, .layout-macos):not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2),
+  &.is-phone .mod-root .view-header::before,
+  &.is-tablet .mod-root .view-header,
   .workspace,
-  .mod-root .view-header::before,
   .mod-root .view-content {
     background-color: black !important;
   }
