@@ -2,7 +2,7 @@ body.is-mobile {
   --tab-radius: var(--radius-s);
   --tab-curve: var(--tab-radius);
 
-  --navbar-bottom-padding: var(--safe-area-inset-bottom);
+  --navbar-bottom-padding: max(var(--safe-area-inset-bottom), 28px);
   --navbar-side-padding: var(--safe-area-inset-side);
   --safe-area-inset-side: 16px;
 
