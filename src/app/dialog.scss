@@ -163,6 +163,11 @@ body:not(.is-phone) {
       font-size: var(--font-ui-small);
     }
   }
+
+  .app-container .menu,
+  .app-container .suggestion-container {
+    animation: none;
+  }
 }
 
 body.is-phone {
