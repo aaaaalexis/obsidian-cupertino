@@ -19,25 +19,23 @@ body {
   border-radius: var(--clickable-icon-radius);
 }
 
-.menu.bases-toolbar-menu {
-  .bases-toolbar-menu-form {
+body:not(.is-phone) .menu {
+  &.bases-toolbar-menu .bases-toolbar-menu-form {
     padding: var(--menu-padding);
     overflow: visible;
   }
-
-  .search-input-container {
+  &.bases-toolbar-menu .search-input-container {
     margin: var(--menu-padding) var(--menu-padding) 0;
     padding-bottom: 0;
     background: var(--background-modifier-form-field);
     border: var(--input-border-width) solid var(--background-modifier-border);
     border-radius: var(--input-radius);
   }
-}
 
-.menu.mod-filters {
-  padding: 4px;
-
-  .query-toolbar-section-header {
+  &.mod-filters {
+    padding: 4px;
+  }
+  &.mod-filters .query-toolbar-section-header {
     padding: 8px;
   }
 }
@@ -53,7 +51,9 @@ body {
 .bases-table-container.mod-multiline .bases-table-cell {
   align-items: var(--bases-table-align-items, start);
 }
-
+.bases-thead {
+  z-index: unset;
+}
 .bases-thead .bases-table-header {
   overflow: hidden;
 }
