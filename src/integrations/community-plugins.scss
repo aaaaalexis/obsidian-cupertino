@@ -368,3 +368,9 @@ body.is-phone.is-mobile .pixel-banner {
     top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
   }
 }
+
+// Kanban
+body.is-mobile .kanban-plugin__item,
+body.is-mobile .kanban-plugin__item-input-wrapper {
+  border-radius: var(--radius-s);
+}
