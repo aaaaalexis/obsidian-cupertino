@@ -48,22 +48,6 @@ body:is(.layout-cupertino, .layout-macos).is-mobile {
     color: var(--text-on-accent);
   }
 
-  // Find & replace fix
-  .document-search-container {
-    padding: 8px var(--safe-area-inset-side);
-    background-color: transparent;
-
-    .document-search,
-    .document-replace {
-      max-width: 100%;
-      padding: 0;
-    }
-    .document-search-buttons,
-    .document-replace-buttons {
-      flex-grow: 0;
-    }
-  }
-
   // Style Settings fix
   .style-settings-heading {
     border-bottom: none;

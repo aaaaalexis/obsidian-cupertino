@@ -98,7 +98,7 @@ body:not(.banner-off) {
   .banner {
     img[alt="banner"] {
       position: absolute;
-      inset: var(--banner-mobile-spacer) var(--banner-image-inset) auto;
+      inset: max(var(--banner-mobile-spacer), var(--header-height)) var(--banner-image-inset) auto;
       width: 100%;
       max-width: calc(100% - var(--banner-image-inset) * 2);
       height: var(--banner-image-actual-height);
