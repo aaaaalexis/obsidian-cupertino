@@ -23,6 +23,7 @@ body:not(.compact-actions-off) .mod-sidedock .workspace-leaf-content > .view-con
 
       &::after {
         font-size: 0;
+        opacity: 0;
       }
     }
     .nav-action-button.is-active {
