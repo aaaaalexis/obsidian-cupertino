@@ -1239,6 +1239,18 @@ settings:
 		type: variable-text
 		default: '320px'
 	-
+		id: settings
+		title: Settings
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: plugins-grid-off
+		title: Disable Community plugins grid layout
+		description: Turns off compact grid layout in Community plugins
+		type: class-toggle
+		default: false
+	-
 		id: editor
 		title: Editor
 		type: heading

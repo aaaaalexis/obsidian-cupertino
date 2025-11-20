@@ -75,7 +75,7 @@ body:not(.is-mobile) .modal.mod-sidebar-layout {
   }
 }
 
-body:not(.is-phone) .modal.mod-sidebar-layout .installed-plugins-container {
+body:not(.is-phone):not(.plugins-grid-off) .modal.mod-sidebar-layout .installed-plugins-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-auto-rows: 1fr;
