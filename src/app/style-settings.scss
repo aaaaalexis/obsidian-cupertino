@@ -719,6 +719,19 @@ settings:
 				label: Full width
 				value: status-bar-full
 	-
+		id: mobile-style
+		title: Mobile style
+		type: class-select
+		allowEmpty: false
+		default: mobile-immersive
+		options:
+			-
+				label: Immersive
+				value: mobile-immersive
+			-
+				label: Stable
+				value: mobile-stable
+	-
 		id: animation
 		title: Animation
 		type: heading
