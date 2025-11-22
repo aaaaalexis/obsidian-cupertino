@@ -341,6 +341,12 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-mobile.obsidian-app .work
 }
 
 // Pixel Banner https://github.com/jparkerweb/pixel-banner
+body:not(.is-phone) .pixel-banner {
+  > .markdown-source-view > .cm-editor:first-child .pixel-banner-image,
+  > .markdown-reading-view > .markdown-preview-view:first-child > .pixel-banner-image {
+    top: var(--view-header-height, var(--header-height));
+  }
+}
 body.is-phone.obsidian-app .pixel-banner {
   .select-image-icon {
     display: none;
@@ -348,4 +354,10 @@ body.is-phone.obsidian-app .pixel-banner {
   .pixel-banner-image {
     top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
   }
+}
+
+// Kanban
+body.is-mobile .kanban-plugin__item,
+body.is-mobile .kanban-plugin__item-input-wrapper {
+  border-radius: var(--radius-s);
 }
