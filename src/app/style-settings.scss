@@ -72,12 +72,16 @@ settings:
         title: Disable font variants
         type: class-toggle
     -
+        id: full-width-media-off
+        title: Disable full width elements
+        type: class-toggle
+    -
         id: metadata-heading-off
         title: Disable simplified properties
         type: class-toggle
     -
-        id: full-width-media-off
-        title: Disable full width elements
+        id: mode-switcher-off
+        title: Disable quick mode switcher
         type: class-toggle
     -
         id: desktop-header
