@@ -1269,6 +1269,24 @@ settings:
 		type: class-toggle
 		default: false
 	-
+		id: accessibility
+		title: Accessibility
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: reduce-contrast-change
+		title: Reduce contrast change
+		description: Minimizes contrast changes and color flashing when Obsidian is unfocused
+		type: class-toggle
+		default: false
+	-
+		id: reduce-motion
+		title: Reduce motion
+		description: Minimizes animation effects across the interface
+		type: class-toggle
+		default: false
+	-
 		id: editor
 		title: Editor
 		type: heading
