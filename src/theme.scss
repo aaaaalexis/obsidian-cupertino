@@ -42,7 +42,6 @@
 @use "elements/material.scss";
 
 @use "features/alternative-checkboxes.scss";
-@use "features/banners.scss";
 @use "features/block-width.scss";
 @use "features/callout-icon.scss";
 @use "features/compact-actions.scss";
@@ -84,3 +83,4 @@
 
 @use "integrations/core-plugins.scss";
 @use "integrations/community-plugins.scss";
+@use "integrations/flash-notice.scss";
