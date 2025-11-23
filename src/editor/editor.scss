@@ -65,39 +65,6 @@
     color: var(--text-normal-editor, var(--text-normal));
   }
 
-  // View header
-  body:not(.is-phone) .mod-root .workspace-leaf-content[data-type="markdown"] {
-    .view-header {
-      position: absolute;
-      inset: 0;
-      background: transparent;
-    }
-    .view-header::before {
-      position: absolute;
-      z-index: -1;
-      mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 14%, hsla(0, 0%, 0%, 0.951) 26.2%, hsla(0, 0%, 0%, 0.896) 36.8%, hsla(0, 0%, 0%, 0.825) 45.9%, hsla(0, 0%, 0%, 0.741) 53.7%, hsla(0, 0%, 0%, 0.648) 60.4%, hsla(0, 0%, 0%, 0.55) 66.2%, hsla(0, 0%, 0%, 0.45) 71.2%, hsla(0, 0%, 0%, 0.352) 75.6%, hsla(0, 0%, 0%, 0.259) 79.6%, hsla(0, 0%, 0%, 0.175) 83.4%, hsla(0, 0%, 0%, 0.104) 87.2%, hsla(0, 0%, 0%, 0.049) 91.1%, hsla(0, 0%, 0%, 0.013) 95.3%, hsla(0, 0%, 0%, 0) 100%);
-      inset: 0;
-      background-color: var(--background-primary);
-      pointer-events: none;
-      content: "";
-    }
-
-    .view-header + div:not(.view-content),
-    .view-header + .view-content > .markdown-source-view > div:not(.cm-editor):first-child,
-    .view-header + .view-content > .markdown-reading-view > div:not(.markdown-preview-view):first-child {
-      margin-top: var(--view-header-height, var(--header-height));
-    }
-    .view-header + .view-content:not(.pixel-banner) > .markdown-source-view > .cm-editor:first-child > .cm-scroller,
-    .view-header + .view-content:not(.pixel-banner) > .markdown-reading-view > .markdown-preview-view:first-child {
-      padding-top: calc(var(--view-header-height, var(--header-height)) + var(--file-margins-block));
-    }
-  }
-
-  .document-search-buttons,
-  .document-replace-buttons {
-    flex-grow: 0 !important;
-  }
-
   // Readable spacing
   .readable-spacing {
     --heading-spacing: var(--p-spacing);
@@ -157,6 +124,38 @@
   }
   body:not(.is-mobile).view-header-title-hidden .view-header-title-container > div {
     visibility: hidden;
+  }
+
+  body:not(.is-phone).file-header-fade .mod-root .workspace-leaf-content[data-type="markdown"] {
+    .view-header {
+      position: absolute;
+      inset: 0;
+      background: transparent;
+    }
+    .view-header::before {
+      position: absolute;
+      z-index: -1;
+      mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 14%, hsla(0, 0%, 0%, 0.951) 26.2%, hsla(0, 0%, 0%, 0.896) 36.8%, hsla(0, 0%, 0%, 0.825) 45.9%, hsla(0, 0%, 0%, 0.741) 53.7%, hsla(0, 0%, 0%, 0.648) 60.4%, hsla(0, 0%, 0%, 0.55) 66.2%, hsla(0, 0%, 0%, 0.45) 71.2%, hsla(0, 0%, 0%, 0.352) 75.6%, hsla(0, 0%, 0%, 0.259) 79.6%, hsla(0, 0%, 0%, 0.175) 83.4%, hsla(0, 0%, 0%, 0.104) 87.2%, hsla(0, 0%, 0%, 0.049) 91.1%, hsla(0, 0%, 0%, 0.013) 95.3%, hsla(0, 0%, 0%, 0) 100%);
+      inset: 0;
+      background-color: var(--background-primary);
+      pointer-events: none;
+      content: "";
+    }
+
+    .view-header + div:not(.view-content),
+    .view-header + .view-content > .markdown-source-view > div:not(.cm-editor):first-child,
+    .view-header + .view-content > .markdown-reading-view > div:not(.markdown-preview-view):first-child {
+      margin-top: var(--view-header-height, var(--header-height));
+    }
+    .view-header + .view-content:not(.pixel-banner) > .markdown-source-view > .cm-editor:first-child > .cm-scroller,
+    .view-header + .view-content:not(.pixel-banner) > .markdown-reading-view > .markdown-preview-view:first-child {
+      padding-top: calc(var(--view-header-height, var(--header-height)) + var(--file-margins-block));
+    }
+  }
+
+  .document-search-buttons,
+  .document-replace-buttons {
+    flex-grow: 0 !important;
   }
 
   // Active line
