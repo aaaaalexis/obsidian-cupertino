@@ -1680,10 +1680,21 @@ settings:
 		type: class-toggle
 		default: false
 	-
-		id: colorful-headings-side
+		id: colorful-headings
 		title: Heading indicator
-		type: class-toggle
-		default: false
+		type: class-select
+		allowEmpty: false
+		default: colorful-headings-off
+		options:
+			-
+				label: None
+				value: colorful-headings-off
+			-
+				label: Dot
+				value: colorful-headings-dot
+			-
+				label: Indicator
+				value: colorful-headings-side
 	-
 		id: colorful-headings-background
 		title: Heading background
