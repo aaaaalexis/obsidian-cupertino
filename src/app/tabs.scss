@@ -248,11 +248,12 @@ body:not(.is-phone):is(.tabs-underline, .tabs-underline-accented) .workspace .mo
     gap: 0;
   }
   .workspace-tab-header {
+    --tab-background-active: transparent;
     border-bottom: 2px solid transparent;
     padding-top: 8px;
   }
   .workspace-tab-header.is-active {
-    border-color: var(--background-modifier-border-focus);
+    border-color: var(--text-muted);
   }
   .workspace-tab-header:not(.is-active):hover {
     border-color: var(--background-modifier-border);
