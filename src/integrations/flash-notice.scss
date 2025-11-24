@@ -1,0 +1,17 @@
+body.minimal-theme .workspace::before {
+  content: "Community plugin “Minimal Theme Settings” conflicts with Baseline.\APlease disable the plugin to avoid visual bugs and instability.";
+  text-align: center;
+  white-space: pre-wrap;
+  position: fixed;
+  inset: 0;
+  color: var(--text-muted);
+  font-size: var(--font-smaller);
+  z-index: 49;
+  pointer-events: none;
+  background-color: var(--background-primary);
+  align-self: center;
+  justify-self: center;
+  padding: 32px;
+  border-radius: 100vw;
+  box-shadow: var(--shadow-l);
+}

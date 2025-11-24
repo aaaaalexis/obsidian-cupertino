@@ -68,10 +68,10 @@ body:not(.banner-off) {
         margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height) + var(--banner-calc-icon) + var(--banner-icon-offset) - var(--banner-fade-penalty)) !important;
       }
       .callout[data-callout="banner-icon"] {
-        top: calc(var(--banner-calc-base) + var(--header-height) + var(--file-margins-block) + var(--banner-image-actual-height) + var(--banner-icon-offset));
+        top: calc(var(--banner-calc-base) + var(--file-margins-block) + var(--banner-image-actual-height) + var(--banner-icon-offset));
       }
       &.banner-fade .callout[data-callout="banner-icon"] {
-        top: calc(var(--banner-calc-base) + var(--header-height) + var(--file-margins-block) + var(--banner-image-actual-height) + var(--banner-icon-offset) - var(--banner-fade-penalty));
+        top: calc(var(--banner-calc-base) + var(--file-margins-block) + var(--banner-image-actual-height) + var(--banner-icon-offset) - var(--banner-fade-penalty));
       }
     }
     &.banner-icon:not(.banner) {
@@ -100,7 +100,7 @@ body:not(.banner-off) {
     &.banner {
       img[alt="banner"] {
         position: absolute;
-        inset: max(var(--banner-mobile-spacer), var(--header-height)) var(--banner-image-inset) auto;
+        inset: var(--banner-mobile-spacer) var(--banner-image-inset) auto;
         width: 100%;
         max-width: calc(100% - var(--banner-image-inset) * 2);
         height: var(--banner-image-actual-height);
@@ -183,11 +183,6 @@ body:not(.banner-off) {
 
     .banner-icon .inline-title {
       display: flex;
-    }
-
-    .markdown-source-view.is-live-preview,
-    .markdown-preview-view {
-      --header-height: 0px;
     }
   }
 }

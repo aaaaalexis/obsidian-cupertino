@@ -83,7 +83,7 @@ body:not(.compact-status-bar-off) .status-bar {
   }
 }
 
-body.status-bar-cupertino .app-container.no-transition .status-bar {
+body:not(.is-mobile) .app-container.no-transition .status-bar {
   bottom: 4px;
   border-color: transparent;
   background-color: var(--color-accent);
