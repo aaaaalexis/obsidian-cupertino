@@ -29,7 +29,7 @@ body.is-mobile .modal-bg:has(+ .prompt) {
 // Modal
 body:not(.is-mobile) {
   &.mod-macos.is-translucent .modal {
-    animation: modalInTranslucent var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+    animation: modalInTranslucent var(--anim-duration-moderate) var(--anim-motion-cupertino) forwards;
   }
 
   .modal-bg {

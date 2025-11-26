@@ -7,7 +7,7 @@ body.is-mobile {
 }
 
 body.mod-macos.is-translucent .prompt {
-  animation: modalInTranslucent var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+  animation: modalInTranslucent var(--anim-duration-moderate) var(--anim-motion-cupertino) forwards;
 }
 
 .prompt {
