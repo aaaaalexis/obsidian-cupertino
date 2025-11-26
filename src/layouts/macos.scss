@@ -71,11 +71,11 @@ body.layout-macos:not(.is-mobile) {
     background-color: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
   }
   &.show-ribbon {
-    &:not(.mod-macos):not(.stacked-nav-off) .workspace-ribbon.mod-left:not(.is-collapsed) {
+    &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed) {
       margin-top: 8px;
     }
-    &:not(.mod-macos) .workspace-ribbon.mod-left.is-collapsed .sidebar-toggle-button {
-      height: calc(var(--header-height) - 16px);
+    &:not(.mod-macos).stacked-nav-off .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button {
+      height: calc(var(--header-height) - 24px);
     }
     &:not(.hover-ribbon) .workspace-ribbon.mod-left:not(.is-collapsed) {
       padding-left: 16px;
