@@ -271,13 +271,13 @@
 
   // Dataview
   .dataview .inline-field-standalone-value,
-  body .dataview.inline-field-key,
-  body .dataview.inline-field-value {
+  .dataview.inline-field-key,
+  .dataview.inline-field-value {
     font-family: var(--font-text);
     font-size: var(--font-smaller);
     background: transparent;
     color: var(--text-faint);
-    padding: 0;
+    padding-inline: 2px;
   }
 
   // Embeds
