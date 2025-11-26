@@ -18,17 +18,17 @@ https://github.com/bwya77/obsidian-baseline-customization/
 }
 
 .theme-light.admin-light.contrast-light-vivid:not(.layout-minimal) .app-container,
-.theme-light.admin-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split)  {
+.theme-light.admin-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split) {
   --background-secondary: #171b21;
 }
 .theme-light.admin-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
 .theme-light.admin-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.admin-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split) ,
+.theme-light.admin-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.admin-dark {
   --background-primary: #23282e;
   --background-primary-alt: #1c2128;
   --background-secondary: #171b21;
-  --background-modifier-hover: #2d343e;
+  --background-modifier-hover: #cde1ff0d;
 
   --interactive-normal: #2d343e;
   --interactive-hover: #23282e;
