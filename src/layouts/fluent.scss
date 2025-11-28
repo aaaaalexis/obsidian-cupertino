@@ -14,6 +14,9 @@ body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
 
   --tab-outline-color: rgba(var(--mono-rgb-100), 0.05);
 
+  --setting-items-padding: 0;
+  --setting-items-background: transparent;
+
   &.theme-light {
     --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
     --shadow-l: 0px 32px 64px 0px rgba(0, 0, 0, 0.19), 0px 2px 21px 0px rgba(0, 0, 0, 0.15);
@@ -230,12 +233,13 @@ body:is(.layout-cupertino, .layout-macos).input-fluent:not(.is-mobile) {
       animation: workspaceLeafInFluent var(--anim-duration-moderate);
     }
 
-    .setting-item {
-      padding-block: calc(16px * var(--density-modifier));
+    .setting-item-heading {
+      margin-left: var(--side-padding);
     }
     .setting-item:not(.setting-item-heading) {
       border: var(--border-width) solid var(--background-modifier-hover);
       border-radius: var(--radius-m);
+      padding: calc(16px * var(--density-modifier)) var(--side-padding);
 
       &:not(:first-child) {
         margin-top: 6px;

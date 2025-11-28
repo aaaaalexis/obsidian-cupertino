@@ -12,11 +12,15 @@ body:not(.is-mobile) {
       background-color: transparent;
     }
 
-    .setting-group .setting-item-heading {
-      padding: 0;
-    }
     .setting-group-search {
       padding: 16px 0;
+    }
+
+    .setting-item-heading {
+      padding: 0;
+    }
+    .setting-item:not(.setting-items .setting-item) {
+      padding-inline: 0;
     }
   }
 
