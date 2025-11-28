@@ -1,9 +1,9 @@
 body:is(.layout-cupertino, .layout-macos, .input-cupertino) {
   --side-padding: 20px;
 
-  --blur-s: blur(2px) saturate(1.5) brightness(1.05);
-  --blur-m: blur(4px) saturate(1.5) brightness(1.05);
-  --blur-l: blur(8px) saturate(1.5) brightness(1.05);
+  --blur-s: blur(2px) saturate(1.5) brightness(1.025);
+  --blur-m: blur(4px) saturate(1.5) brightness(1.025);
+  --blur-l: blur(8px) saturate(1.5) brightness(1.025);
 
   &.mod-macos.is-translucent {
     --blur-s: none;
@@ -12,7 +12,7 @@ body:is(.layout-cupertino, .layout-macos, .input-cupertino) {
   }
 
   &.theme-light {
-    --liquid-glass-background: rgba(255, 255, 255, 0.5);
+    --blur-background: rgba(255, 255, 255, 0.35);
     --background-modifier-border: rgba(0, 0, 0, 0.075);
 
     --shadow-base: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025);
@@ -24,7 +24,7 @@ body:is(.layout-cupertino, .layout-macos, .input-cupertino) {
   }
 
   &.theme-dark {
-    --liquid-glass-background: rgba(255, 255, 255, 0.075);
+    --blur-background: rgba(255, 255, 255, 0.1);
     --background-modifier-border: rgba(255, 255, 255, 0.15);
 
     --shadow-base: inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);

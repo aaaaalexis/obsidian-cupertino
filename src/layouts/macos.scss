@@ -122,7 +122,7 @@ body.layout-macos.is-tablet {
   }
   &.theme-dark .workspace-drawer.is-pinned.mod-left {
     box-shadow: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.5);
-    background-color: var(--liquid-glass-background);
+    background-color: var(--blur-background);
   }
   .workspace-drawer.is-pinned.mod-left {
     margin: calc(var(--safe-area-inset-top) + 8px) 0 8px 8px;

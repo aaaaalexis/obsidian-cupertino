@@ -25,9 +25,10 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
 
   background-color: black;
 
-  &.is-mobile .mod-root .view-header,
+  &.is-tablet .mod-root .view-header,
   &.mobile-stable .mobile-navbar,
   .workspace,
+  .mod-root .workspace-tabs .workspace-leaf,
   .mod-root .view-header::before,
   .mod-root .view-content {
     background-color: black !important;

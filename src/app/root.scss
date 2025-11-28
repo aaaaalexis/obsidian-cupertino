@@ -23,7 +23,7 @@ body,
   --anim-duration-superfast: calc(80ms * var(--anim-speed-modifier));
   --anim-duration-fast: calc(160ms * var(--anim-speed-modifier));
   --anim-duration-moderate: calc(320ms * var(--anim-speed-modifier));
-  --anim-duration-slow: calc(640ms * var(--anim-speed-modifier));
+  --anim-duration-slow: calc(480ms * var(--anim-speed-modifier));
 
   --icon-stroke-modifier: 1;
   --icon-xs-stroke-width: calc(2px * var(--icon-stroke-modifier));

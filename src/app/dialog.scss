@@ -63,10 +63,8 @@ body:not(.is-mobile) {
     min-width: fit-content;
     overflow: visible;
     text-align: left;
-  }
-
-  .modal-content .setting-item {
-    padding: 8px 0;
+    display: flex;
+    align-items: center;
   }
 }
 .modal-close-button {
@@ -96,9 +94,6 @@ body.is-phone .modal:not(.mod-sidebar-layout) {
   .modal-header {
     border-bottom: none;
     padding-top: 24px;
-  }
-  .modal-title {
-    padding-left: var(--safe-area-inset-side);
   }
 
   .modal-content {
@@ -192,6 +187,9 @@ body.is-phone {
       gap: 16px;
       border-radius: 0;
     }
+    .menu-item:only-child {
+      border-radius: var(--radius-s);
+    }
     .menu-separator {
       margin: calc(12px * var(--density-modifier)) 16px;
     }
@@ -219,4 +217,9 @@ body.is-tablet .suggestion-container {
   .menu-item-title {
     max-width: 240px;
   }
+}
+
+// Notice
+.notice {
+  overflow: hidden;
 }

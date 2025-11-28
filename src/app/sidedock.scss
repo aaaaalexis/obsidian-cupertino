@@ -235,32 +235,3 @@ body.large-new-note .mod-sidedock .workspace-leaf-content[data-type="file-explor
     margin-left: 8px;
   }
 }
-
-// Mobile drawer
-body.is-mobile .workspace-drawer {
-  .workspace-drawer-header-name-text {
-    font-family: var(--h1-font);
-  }
-  .workspace-drawer-active-tab-header {
-    padding-inline-start: 0;
-    padding-inline-end: 0;
-    background-color: transparent;
-    margin: 0 20px;
-  }
-  .workspace-drawer-active-tab-chevron {
-    margin-inline-start: 0;
-  }
-  .workspace-drawer-active-tab-header select {
-    width: 100%;
-  }
-}
-
-// Tablet drawer
-body.is-tablet .workspace-drawer {
-  padding-top: calc(var(--safe-area-inset-top) + 16px);
-}
-body.is-tablet .workspace-drawer:not(.is-pinned) {
-  margin: var(--safe-area-inset-top) 16px var(--safe-area-inset-bottom);
-  padding-top: 16px;
-  border-radius: var(--mobile-sidebar-radius);
-}

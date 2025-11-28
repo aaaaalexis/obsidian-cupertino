@@ -1,4 +1,4 @@
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
+body:is(.layout-cupertino, .layout-macos).is-mobile {
   --radius-s: calc(16px * var(--radius-modifier));
   --radius-m: calc(24px * var(--radius-modifier));
   --radius-l: calc(32px * var(--radius-modifier));
@@ -15,9 +15,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   &.is-phone .prompt-input,
   &.is-phone .prompt-input-container .prompt-input-cta:not(:empty),
   &.is-phone .prompt-input-container .search-input-clear-button,
-  &.is-phone .mod-root .view-header > div > .view-action,
-  &.is-phone .mobile-navbar .mobile-navbar-actions,
-  &.is-phone .mobile-toolbar-options-list,
+  &.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2),
   &.is-phone .workspace-drawer-header-icon,
   &.is-phone .mobile-tab-switcher-menu-button,
   &.is-phone .mobile-tab-switcher-menu-spacer .clickable-icon,
@@ -27,7 +25,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     backdrop-filter: var(--blur-s);
     box-shadow: var(--shadow-xs);
     border: none;
-    background-color: var(--liquid-glass-background) !important;
+    background-color: var(--blur-background);
     color: var(--text-normal);
     transition: var(--anim-duration-moderate);
 
@@ -120,32 +118,34 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   }
 
   // HDR element
+  &.theme-dark .mod-raised::after {
+    content: none !important;
+  }
   &.is-ios.theme-light {
+    .mod-raised::after,
     &.is-phone .prompt-input-container::after,
     &.is-phone .prompt-input-container .prompt-input-cta:not(:empty)::before,
     &.is-phone .prompt-input-container .search-input-clear-button::before,
+    &.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2)::after,
     &.is-phone .mobile-tab-switcher-menu-button::after,
     &.is-phone .mobile-tab-switcher-menu-spacer .clickable-icon::before,
     &.is-tablet .menu::after,
     &.is-tablet .workspace-drawer:not(.is-pinned)::after,
-    .mod-root .view-header > div > .view-action::after,
     .workspace-drawer-header-icon::after,
     .workspace-drawer .nav-buttons-container::after,
-    .mobile-navbar-actions::after,
-    .mobile-toolbar-options-list::after,
     .modal-setting-back-button::after,
     .modal-close-button::after,
     .notice::after {
       position: absolute;
       z-index: 1;
-      backdrop-filter: brightness(1.1);
-      mask: linear-gradient(white, white) padding-box, linear-gradient(white, white) border-box;
-      mask-composite: exclude, add;
+      backdrop-filter: brightness(var(--blur-brightness));
+      mask: var(--blur-mask);
+      mask-composite: var(--blur-mask-composite);
       filter: blur(1px);
       inset: 0;
-      border: 1px solid transparent;
+      border: var(--blur-mask-border-width) solid transparent;
       border-radius: inherit;
-      background: linear-gradient(to bottom left, white, transparent, white) border-box no-repeat;
+      background: var(--blur-mask-background);
       pointer-events: none;
       content: "";
     }
@@ -167,13 +167,13 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
+body:is(.layout-cupertino, .layout-macos).is-phone {
   // Editor panel
   .mod-root {
     .view-header-left,
     .view-actions {
       flex: 0;
-      gap: 8px !important;
+      position: relative;
     }
 
     .view-header {
@@ -206,12 +206,18 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     }
   }
 
+  // Navigaition bar
+  .mobile-navbar {
+    border: none !important;
+    background-color: var(--blur-background) !important;
+  }
+
   // Pull action
   &:not(.accented-interface) .pull-action.mod-activated {
     background-color: var(--text-normal);
   }
   .pull-action:not(.mod-activated) {
-    background-color: var(--liquid-glass-background);
+    background-color: var(--blur-background);
   }
   .pull-action {
     backdrop-filter: var(--blur-s);

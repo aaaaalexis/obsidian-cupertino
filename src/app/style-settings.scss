@@ -722,19 +722,6 @@ settings:
 				label: Full width
 				value: status-bar-full
 	-
-		id: mobile-style
-		title: Mobile style
-		type: class-select
-		allowEmpty: false
-		default: mobile-immersive
-		options:
-			-
-				label: Immersive
-				value: mobile-immersive
-			-
-				label: Stable
-				value: mobile-stable
-	-
 		id: animation
 		title: Animation
 		type: heading
@@ -3102,9 +3089,6 @@ settings:
 		default-dark: '#'
 */
 
-.vertical-tab-content > div > .setting-item-heading:not(.is-collapsed) {
-  border-bottom: 0;
-}
 .view-content .style-settings-container .style-settings-container .setting-item {
   padding: 16px;
   align-items: center;
@@ -3117,6 +3101,9 @@ settings:
     padding-top: 0;
   }
 }
+.style-settings-heading:not(.is-collapsed) {
+  border-bottom: none;
+}
 .style-settings-heading,
 .style-settings-container {
   padding-left: 32px;
@@ -3124,11 +3111,22 @@ settings:
 }
 .style-settings-heading {
   padding: 16px !important;
+  border-radius: 0;
 }
 .style-settings-heading .setting-item-name {
   color: var(--text-normal) !important;
 }
 
+.style-settings-container .setting-item {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+.style-settings-container .setting-item:nth-child(1 of .setting-item:not(.setting-item-heading)) {
+  border-radius: var(--setting-items-radius) var(--setting-items-radius) 0 0;
+}
+.style-settings-container .setting-item:nth-last-child(1 of .setting-item:not(.setting-item-heading)) {
+  border-radius: 0 0 var(--setting-items-radius) var(--setting-items-radius);
+}
 .style-settings-container .themed-color-wrapper > div {
   background-color: transparent;
   color: var(--color-base-100);
@@ -3280,7 +3278,7 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
     .setting-item:not(:last-child) {
       flex: 1;
       border-radius: var(--radius-m);
-      border: 1px solid var(--background-modifier-border);
+      border: var(--border-width) solid var(--background-modifier-border);
       background-color: var(--background-primary);
       padding: calc(16px * var(--density-modifier));
       align-items: flex-start;

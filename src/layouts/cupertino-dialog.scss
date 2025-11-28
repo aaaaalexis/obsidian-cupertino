@@ -1,7 +1,6 @@
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile),
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
-  --background-modifier-message: var(--modal-background);
-  --modal-background: rgb(from var(--background-primary-alt) r g b / 75%);
+body:is(.layout-cupertino, .layout-macos) {
+  --background-modifier-message: var(--modal-background) !important;
+  --modal-background: rgb(from var(--background-primary-alt) r g b / 75%) !important;
 
   &.is-translucent {
     --modal-background: var(--background-primary);
@@ -67,7 +66,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
+body:is(.layout-cupertino, .layout-macos).is-mobile {
   --menu-radius: var(--modal-radius);
 
   .menu-scroll {
@@ -89,7 +88,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     }
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
+body:is(.layout-cupertino, .layout-macos).is-phone {
   --menu-shadow: var(--shadow-s);
   --menu-padding: 32px var(--safe-area-inset-side);
 
@@ -115,9 +114,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
       content: "";
     }
   }
-  .suggestion-container .suggestion-item {
-    padding: calc(12px * var(--density-modifier)) var(--side-padding);
-  }
 
   .menu-group {
     .menu-item.is-label + .menu-item:not(.is-label),
@@ -131,7 +127,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     }
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-tablet {
+body:is(.layout-cupertino, .layout-macos).is-tablet {
   --menu-shadow: var(--shadow-l);
 
   .menu,
@@ -176,9 +172,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
-  --modal-header-height: var(--view-header-height);
-
+body:is(.layout-cupertino, .layout-macos).is-mobile {
   .modal-setting-back-button,
   .modal-close-button:not(:empty) {
     --icon-size: var(--icon-xl);
@@ -191,13 +185,15 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     font-size: unset;
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
+body:is(.layout-cupertino, .layout-macos).is-phone {
   --modal-radius: var(--radius-xl);
 
   .modal-container.mod-confirmation .modal {
     border-radius: var(--modal-radius) var(--modal-radius) calc(var(--safe-area-inset-top) - 8px) calc(var(--safe-area-inset-top) - 8px);
   }
   .modal:not(.mod-sidebar-layout) {
+    --modal-radius: var(--radius-xl);
+
     margin: 0 8px 8px;
     width: calc(100vw - 16px) !important;
     left: 0 !important;
@@ -206,10 +202,6 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     .modal-close-button {
       top: 16px !important;
       inset-inline-end: 16px !important;
-    }
-
-    .modal-title {
-      padding-left: var(--safe-area-inset-side);
     }
 
     .modal-content {
@@ -223,16 +215,11 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-phone {
     .modal-button-container button {
       margin-top: 0;
     }
-
-    .modal-nav-action {
-      margin: 0 var(--safe-area-inset-side) 8px;
-    }
   }
 }
 
 // Notice & Tooltip
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile),
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
+body:is(.layout-cupertino, .layout-macos) {
   .notice-container {
     display: flex;
     top: unset;
@@ -261,7 +248,7 @@ body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
     font-weight: var(--font-normal);
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.mobile-stable).is-mobile {
+body:is(.layout-cupertino, .layout-macos).is-mobile {
   .notice {
     margin-bottom: 0;
     box-shadow: var(--shadow-xs);

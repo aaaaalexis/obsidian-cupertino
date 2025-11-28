@@ -4,7 +4,7 @@ body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-
     border-radius: 0;
   }
 }
-body:is(.layout-cupertino, .layout-viewfinder) {
+body:is(.layout-cupertino, .layout-viewfinder):not(.is-phone) {
   &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
     margin-left: 8px;
   }
