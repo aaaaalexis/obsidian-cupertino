@@ -45,7 +45,9 @@ body:not(.is-phone) .menu {
   color: var(--text-faint);
 }
 
-.bases-table-container {
+.bases-table-container,
+.bases-thead,
+.bases-tbody {
   background-color: transparent;
 }
 .bases-table-container.mod-multiline .bases-table-cell {
