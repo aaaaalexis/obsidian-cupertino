@@ -16,16 +16,6 @@ body {
   --button-radius: calc((8px * var(--radius-modifier)) * (1 - var(--radius-modifier-check)) + 100vw * var(--radius-modifier-check));
 }
 
-body:not([class*="input-"]),
-body.input-baseline {
-  --input-font-weight: var(--font-medium);
-
-  &.is-mobile {
-    --interactive-normal: var(--background-primary);
-    --input-border-width: var(--divider-width);
-  }
-}
-
 .theme-light {
   --input-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border);
   --input-shadow-hover: 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
@@ -35,6 +25,16 @@ body.input-baseline {
   --input-shadow-hover: 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
 
   --background-modifier-form-field: var(--interactive-normal);
+}
+
+body:not([class*="input-"]),
+body.input-baseline {
+  --input-font-weight: var(--font-medium);
+
+  &.is-mobile {
+    --interactive-normal: var(--background-primary);
+    --input-border-width: var(--divider-width);
+  }
 }
 
 // Button

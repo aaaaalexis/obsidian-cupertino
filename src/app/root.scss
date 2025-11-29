@@ -111,10 +111,6 @@ body,
   }
 }
 
-body.is-translucent {
-  --divider-color: var(--background-modifier-border) !important;
-}
-
 body:not(.is-mobile) {
   .workspace,
   .app-container {
