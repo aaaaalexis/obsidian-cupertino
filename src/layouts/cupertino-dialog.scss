@@ -77,7 +77,7 @@ body:is(.layout-cupertino, .layout-macos).is-mobile {
   .menu .suggestion-item,
   .suggestion-container .menu-item,
   .suggestion-container .suggestion-item {
-    padding: calc(12px * var(--density-modifier)) var(--side-padding);
+    padding: calc(8px * var(--density-modifier)) var(--side-padding);
 
     &:not([class*="is-"]) .menu-item-icon {
       color: var(--text-normal);

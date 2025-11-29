@@ -203,7 +203,7 @@ body.is-phone {
       backdrop-filter: blur(4px);
       mask: linear-gradient(to bottom, black calc(var(--safe-area-inset-top) + (var(--view-header-height) / 2)), transparent);
       inset-inline: 0;
-      height: calc(var(--safe-area-inset-top) + var(--view-header-height) + 32px);
+      height: var(--view-top-spacing-markdown);
       pointer-events: none;
       content: "";
     }
@@ -214,7 +214,7 @@ body.is-phone {
       backdrop-filter: blur(4px);
       mask: linear-gradient(to top, black var(--navbar-bottom-padding), transparent);
       inset-inline: 0;
-      height: calc(var(--navbar-bottom-padding) + 64px);
+      height: var(--view-bottom-spacing);
       pointer-events: none;
       content: "";
     }

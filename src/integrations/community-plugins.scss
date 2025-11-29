@@ -371,7 +371,7 @@ body.is-phone.is-mobile .pixel-banner {
     display: none;
   }
   .pixel-banner-image {
-    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
+    top: var(--view-top-spacing-markdown);
   }
 }
 

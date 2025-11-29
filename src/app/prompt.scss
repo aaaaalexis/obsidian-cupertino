@@ -36,7 +36,7 @@ body.is-phone {
     border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   }
   .suggestion-item {
-    padding: 16px;
+    padding: calc(8px * var(--density-modifier)) 16px;
   }
 
   .suggestion-container {

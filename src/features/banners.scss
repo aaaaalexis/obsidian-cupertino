@@ -5,10 +5,20 @@ body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner
   --banner-image-height: 320px;
   --banner-fade-height: 80px;
   --banner-icon-size: 3rem;
+  --banner-mobile-offset: 0px;
 
-  &.is-phone {
-    --banner-image-height: var(--banner-image-height-mobile);
+  // Mobile
+  &:where(.is-mobile) {
+    --banner-mobile-offset: 1rem;
+    --banner-image-height: var(--banner-image-height-s);
     --banner-image-height-s: 240px;
+  }
+
+  &:not(.is-phone) {
+    --view-top-spacing-markdown: 0px;
+  }
+  &.is-mobile .banner-icon.banner-title .inline-title {
+    padding-top: 0;
   }
 
   @for $n from 0 through 20 {
@@ -26,7 +36,7 @@ body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner
     .markdown-source-view.is-live-preview {
       .markdown-preview-sizer,
       .cm-editor > .cm-scroller > .cm-sizer {
-        margin-top: calc(var(--banner-image-height) + var(--banner-icon-size) - var(--banner-fade-height));
+        margin-top: calc(var(--banner-image-height) + var(--banner-icon-size) - var(--banner-fade-height) + var(--banner-mobile-offset));
       }
 
       &:not(.banner) {
@@ -53,7 +63,7 @@ body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner
     // Banner image
     .banner .image-embed[alt="banner"] {
       position: absolute;
-      inset: 0 var(--banner-image-inset) auto;
+      inset: var(--view-top-spacing-markdown) var(--banner-image-inset) auto;
       height: var(--banner-image-height);
       overflow: hidden;
       line-height: 0;
@@ -82,8 +92,9 @@ body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner
       }
 
       .callout[data-callout="banner-icon"] {
+        z-index: 1;
         position: absolute;
-        top: calc(var(--banner-image-height) - var(--banner-fade-height) + 1rem);
+        top: calc(var(--view-top-spacing-markdown) + var(--banner-image-height) - var(--banner-fade-height) + 1rem);
         margin: 0 !important;
         border: none !important;
         background: none !important;
@@ -133,7 +144,7 @@ body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner
     }
     .banner-icon.banner-title .inline-title:not(:focus-within) {
       position: absolute;
-      top: calc(var(--banner-image-height) - var(--banner-fade-height) + 1rem);
+      top: calc(var(--view-top-spacing-markdown) + var(--banner-image-height) - var(--banner-fade-height) + 1rem);
       align-items: center;
       animation: bannerTitleEditOut var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
       margin-bottom: 0;
