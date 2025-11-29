@@ -2283,6 +2283,68 @@ settings:
 		allowEmpty: false
 		default: 0.5em
 	-
+		id: banner
+		title: Banner
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: banner-off
+		title: Disable banner
+		type: class-toggle
+		description: Turns off built-in banner styling for CSS snippet support
+		default: false
+	-
+		id: banner-icon-size
+		title: Banner icon size
+		type: variable-text
+		allowEmpty: false
+		default: 3rem
+	- 
+		id: banner-image-height
+		title: Banner image height
+		description: Height for banner images on desktop
+		type: variable-text
+		allowEmpty: false
+		default: 320px
+	- 
+		id: banner-image-height-s
+		title: Banner image height (Mobile)
+		description: Height for banner images on mobile
+		type: variable-text
+		allowEmpty: false
+		default: 240px
+	-
+		id: banner-image-inset
+		title: Banner image side spacing
+		type: variable-text
+		allowEmpty: false
+		default: 8px
+	-
+		id: banner-image-radius
+		title: Banner image radius
+		type: variable-number-slider
+		default: 8
+		min: 0
+		max: 24
+		step: 1
+		format: px
+	-
+		id: banner-image-object-fit
+		title: Banner image fit
+		type: variable-select
+		default: cover
+		options:
+			-
+				label: Cover
+				value: cover
+			-
+				label: Contain
+				value: contain
+			-
+				label: Fill
+				value: fill
+	-
 		id: bases
 		title: Bases
 		type: heading

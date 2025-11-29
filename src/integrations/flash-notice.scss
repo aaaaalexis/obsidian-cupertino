@@ -1,14 +1,3 @@
-:is(.banner, .banner-icon, .banner-title, .banner-fade):not(.banner-ok) :is(.markdown-preview-sizer, .cm-sizer)::before {
-  display: inline-block;
-  margin-bottom: var(--h1-size);
-  pointer-events: none;
-  content: "Note banners are temporarily disabled due to reliability issues. Please use plugins (e.g., Pixel Banners) or custom CSS solutions instead.\A\A A new implementation is not yet planned. Apologies for the inconvenience. \A\A To hide this message, add “banner-ok” CSS class to this document OR remove all banner-related classes.";
-  color: var(--text-faint);
-  font-size: var(--font-smallest);
-  line-height: var(--line-height-tight);
-  white-space: pre-wrap;
-}
-
 body.minimal-theme .workspace::before {
   content: "Community plugin “Minimal Theme Settings” conflicts with Baseline.\APlease disable the plugin to avoid visual bugs and instability.";
   text-align: center;

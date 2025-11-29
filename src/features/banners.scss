@@ -1,0 +1,154 @@
+body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner-off) {
+  --banner-image-object-fit: cover;
+  --banner-image-radius: 8px;
+  --banner-image-inset: 8px;
+  --banner-image-height: 320px;
+  --banner-fade-height: 80px;
+  --banner-icon-size: 3rem;
+
+  &.is-phone {
+    --banner-image-height: var(--banner-image-height-mobile);
+    --banner-image-height-s: 240px;
+  }
+
+  @for $n from 0 through 20 {
+    $i: $n * 5;
+    .banner.y#{$i} {
+      img[alt="banner"] {
+        object-position: center #{percentage($i / 100)};
+      }
+    }
+  }
+
+  .mod-root .view-content:not(.pixel-banner) {
+    // Spacing
+    .markdown-preview-view,
+    .markdown-source-view.is-live-preview {
+      .markdown-preview-sizer,
+      .cm-editor > .cm-scroller > .cm-sizer {
+        margin-top: calc(var(--banner-image-height) + var(--banner-icon-size) - var(--banner-fade-height));
+      }
+
+      &:not(.banner) {
+        --banner-image-height: 0px;
+      }
+      &:not(.banner.banner-fade) {
+        --banner-fade-height: 0px;
+      }
+      &:not(.banner-icon) {
+        --banner-icon-size: 0px;
+      }
+
+      &.banner-icon:not(.banner) {
+        --banner-image-height: var(--banner-icon-size);
+      }
+      &.banner-icon:not(.banner.banner-fade) {
+        --banner-fade-height: var(--banner-icon-size);
+      }
+      &.banner.banner-icon.banner-title:not(.banner-fade) {
+        --banner-fade-height: 0px;
+      }
+    }
+
+    // Banner image
+    .banner .image-embed[alt="banner"] {
+      position: absolute;
+      inset: 0 var(--banner-image-inset) auto;
+      height: var(--banner-image-height);
+      overflow: hidden;
+      line-height: 0;
+
+      &:not(:active) img {
+        height: 100%;
+        object-fit: var(--banner-image-object-fit);
+        border-radius: var(--banner-image-radius);
+      }
+    }
+    .banner .mod-header,
+    .banner .inline-title,
+    .banner .metadata-container {
+      z-index: 1;
+    }
+
+    // Banner image fade
+    .banner.banner-fade .image-embed[alt="banner"]:not(:active) {
+      mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 14%, hsla(0, 0%, 0%, 0.951) 26.2%, hsla(0, 0%, 0%, 0.896) 36.8%, hsla(0, 0%, 0%, 0.825) 45.9%, hsla(0, 0%, 0%, 0.741) 53.7%, hsla(0, 0%, 0%, 0.648) 60.4%, hsla(0, 0%, 0%, 0.55) 66.2%, hsla(0, 0%, 0%, 0.45) 71.2%, hsla(0, 0%, 0%, 0.352) 75.6%, hsla(0, 0%, 0%, 0.259) 79.6%, hsla(0, 0%, 0%, 0.175) 83.4%, hsla(0, 0%, 0%, 0.104) 87.2%, hsla(0, 0%, 0%, 0.049) 91.1%, hsla(0, 0%, 0%, 0.013) 95.3%, hsla(0, 0%, 0%, 0) 100%);
+    }
+
+    // Banner icon
+    .banner-icon {
+      .cm-callout:has(.callout[data-callout="banner-icon"]) {
+        display: contents !important;
+      }
+
+      .callout[data-callout="banner-icon"] {
+        position: absolute;
+        top: calc(var(--banner-image-height) - var(--banner-fade-height) + 1rem);
+        margin: 0 !important;
+        border: none !important;
+        background: none !important;
+        padding: 0 !important;
+        width: var(--banner-icon-size);
+        height: var(--banner-icon-size);
+        font-size: var(--banner-icon-size);
+
+        .callout-title-inner {
+          line-height: 1;
+        }
+
+        .callout-icon,
+        .callout-content {
+          display: none;
+        }
+      }
+    }
+
+    // Banner title
+    @keyframes bannerTitleEditIn {
+      from {
+        transform: translateY(-0.5rem);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    @keyframes bannerTitleEditOut {
+      from {
+        transform: translateY(0.5rem);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .banner-icon.banner-title .inline-title {
+      transition: var(--anim-duration-moderate) var(--anim-motion-baseline), margin-left 0s;
+    }
+    .banner-icon.banner-title .inline-title:focus-within {
+      animation: bannerTitleEditIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+    }
+    .banner-icon.banner-title .inline-title:not(:focus-within) {
+      position: absolute;
+      top: calc(var(--banner-image-height) - var(--banner-fade-height) + 1rem);
+      align-items: center;
+      animation: bannerTitleEditOut var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+      margin-bottom: 0;
+      margin-left: calc(var(--banner-icon-size) + 1rem);
+      width: calc(var(--file-line-width) - var(--banner-icon-size) - 1rem);
+      max-width: calc(100% - var(--file-margins-x) * 2 - var(--banner-icon-size) - 1rem);
+      height: var(--banner-icon-size);
+      overflow: hidden;
+      line-height: var(--banner-icon-size);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+}
