@@ -1,5 +1,6 @@
 @media screen, print {
   body {
+    --text-normal-editor: var(--color-base-90);
     --inline-title-color: inherit;
 
     --inline-title-margin-bottom: calc(0.5em * var(--readable-spacing-modifier, 1));

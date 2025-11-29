@@ -1,76 +1,5 @@
-body:is(.layout-cupertino, .layout-macos) {
-  --p-spacing: 1rem;
-  --line-height-normal: 1.6;
-
-  --clickable-icon-radius: 100vh;
-
-  --text-normal-editor: var(--color-base-90);
-
-  --icon-opacity: 1;
-  --icon-color: rgb(var(--mono-rgb-100));
-  --icon-color-hover: rgb(var(--mono-rgb-100));
-
-  // File explorer
-  .nav-files-container > div {
-    --nav-collapse-icon-color: rgb(var(--mono-rgb-100));
-    --nav-item-color: rgb(var(--mono-rgb-100));
-    --nav-item-color-hover: rgb(var(--mono-rgb-100));
-    --nav-item-color-active: rgb(var(--mono-rgb-100));
-    --nav-item-color-selected: rgb(var(--mono-rgb-100));
-    --nav-item-weight: var(--font-normal);
-    --nav-item-weight-hover: var(--nav-item-weight);
-    --nav-item-weight-active: var(--nav-item-weight);
-    --nav-item-background-hover: transparent;
-    --nav-item-background-active: var(--background-modifier-hover);
-  }
-
-  .tree-item-self.is-active::before {
-    content: none !important;
-  }
-
-  // Editor panel
-  .markdown-source-view,
-  .markdown-preview-view {
-    transition: transform var(--anim-duration-slow) var(--anim-motion-baseline);
-  }
-  .workspace-leaf-content[data-mode="source"] > .view-content > .markdown-reading-view > .markdown-preview-view {
-    transform: scale(0.995);
-    opacity: 0;
-  }
-  .workspace-leaf-content[data-mode="preview"] > .view-content > .markdown-source-view {
-    transform: scale(0.995);
-    opacity: 0;
-  }
-
-  &.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"][data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
-    background-color: var(--interactive-accent);
-    color: var(--text-on-accent);
-  }
-
-  // Style Settings fix
-  .style-settings-heading {
-    border-bottom: none;
-  }
-}
-
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
-  --radius-s: calc(8px * var(--radius-modifier));
-  --radius-m: calc(12px * var(--radius-modifier));
-  --radius-l: calc(20px * var(--radius-modifier));
-  --radius-xl: calc(28px * var(--radius-modifier));
   --radius-window: 6px;
-
-  --tab-action-width: 40px;
-
-  .workspace-split .clickable-icon {
-    min-width: 40px;
-  }
-  .clickable-icon:not([aria-disabled="true"]):hover,
-  .clickable-icon.has-active-menu,
-  .modal-close-button:hover {
-    box-shadow: var(--shadow-xs);
-    background-color: var(--blur-background);
-  }
 
   // Ribbon
   --ribbon-background: transparent;
@@ -118,41 +47,13 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     .sidebar-toggle-button,
     .workspace-tab-header-inner {
       border-radius: var(--clickable-icon-radius);
-      width: 40px;
+      width: var(--tab-action-width);
       height: fit-content;
     }
   }
 
   .mod-sidedock.mod-left-split .sidebar-toggle-button {
     order: -1;
-  }
-
-  &:not(.compact-actions-off) {
-    .mod-sidedock .workspace-leaf-content > .nav-header,
-    .mod-sidedock .workspace-leaf-content > .view-content > .nav-header {
-      .nav-buttons-container {
-        border-radius: var(--clickable-icon-radius);
-        background-color: var(--background-modifier-hover);
-        padding: 2px;
-        gap: 0;
-
-        .nav-action-button {
-          position: relative;
-          padding: 8px;
-          border-radius: var(--clickable-icon-radius);
-        }
-        .nav-action-button:hover:not([aria-disabled="true"]) {
-          background-color: var(--background-modifier-hover);
-          box-shadow: none;
-        }
-      }
-    }
-  }
-  .mod-sidedock .workspace-tab-container,
-  .mod-sidedock .workspace-leaf,
-  .mod-sidedock .workspace-leaf-content {
-    contain: size !important;
-    overflow: visible;
   }
 
   // Hover sidedock
@@ -224,9 +125,7 @@ body.layout-cupertino:not(.is-mobile) {
       outline-color: transparent;
     }
   }
-
-  // Status bar
-  &:not(.status-bar-full) .mod-root {
+  .mod-root {
     padding-bottom: 8px;
   }
 

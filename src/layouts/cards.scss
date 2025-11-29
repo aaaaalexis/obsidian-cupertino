@@ -68,7 +68,7 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   }
 
   // Status bar
-  &:not(.status-bar-cupertino, .status-bar-full) {
+  &:not(.status-bar-cupertino) {
     .workspace-split {
       padding-bottom: 8px;
     }
@@ -80,29 +80,6 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   &.status-bar-default .status-bar {
     border: none;
   }
-}
-
-// Prompt
-body:is(.layout-cards, .layout-border):not(.is-phone) .prompt {
-  .prompt-input-container {
-    margin: 8px 8px 0;
-    border-bottom-width: 0;
-  }
-  .prompt-input {
-    border-radius: var(--radius-m);
-    border-bottom: none;
-    padding-left: 16px;
-    background: var(--background-primary) !important;
-  }
-  .prompt-results {
-    padding: 8px;
-  }
-  .suggestion-item {
-    padding: 12px 16px;
-  }
-}
-body:is(.layout-cards, .layout-border).is-phone .prompt .prompt-input {
-  border-radius: var(--radius-l);
 }
 
 // Tablet

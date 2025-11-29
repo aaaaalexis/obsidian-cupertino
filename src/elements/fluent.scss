@@ -36,6 +36,16 @@ body.input-fluent {
     opacity: 0.75;
     box-shadow: var(--input-shadow-active);
   }
+  &:not(.is-mobile) {
+    .clickable-icon.is-active {
+      color: var(--icon-color-focused);
+      background-color: var(--background-primary);
+    }
+    .clickable-icon:not([aria-disabled="true"], .modal-close-button):hover,
+    .clickable-icon.has-active-menu {
+      background-color: var(--background-modifier-hover);
+    }
+  }
 
   // Text input
   input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]):not(.prompt-input) {
@@ -66,5 +76,236 @@ body.input-fluent {
     --toggle-thumb-color: var(--text-muted);
     outline: 1px solid var(--text-faint);
     background-color: var(--color-base-10);
+  }
+}
+
+body.input-fluent:not(.is-mobile) {
+  --radius-s: calc(5px * var(--radius-modifier));
+  --radius-m: calc(5px * var(--radius-modifier));
+  --radius-l: calc(10px * var(--radius-modifier));
+  --radius-xl: calc(10px * var(--radius-modifier));
+  --tab-radius: var(--radius-m);
+  --clickable-icon-radius: var(--radius-m);
+
+  --menu-padding: 5px;
+
+  --prompt-input-height: 64px;
+
+  --tab-outline-color: rgba(var(--mono-rgb-100), 0.05);
+
+  &.theme-light {
+    --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
+    --shadow-l: 0px 32px 64px 0px rgba(0, 0, 0, 0.19), 0px 2px 21px 0px rgba(0, 0, 0, 0.15);
+
+    --modal-background: rgb(from white r g b / 85%);
+  }
+  &.theme-dark {
+    --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
+    --shadow-l: 0px 32px 64px 0px rgba(0, 0, 0, 0.37), 0px 2px 21px 0px rgba(0, 0, 0, 0.37);
+
+    --modal-background: rgb(from var(--color-base-20) r g b / 65%);
+  }
+
+  // Side panels
+  @keyframes workspaceLeafInFluent {
+    from {
+      transform: translateY(16px);
+      opacity: 0;
+    }
+  }
+
+  .mod-sidedock .workspace-leaf {
+    animation: workspaceLeafInFluent var(--anim-duration-moderate);
+  }
+
+  // Panel actions
+  &:not(.compact-actions-off, .compact-actions-left) .mod-sidedock .workspace-leaf-content > div:is(.nav-header, .view-content > .nav-header) .nav-buttons-container {
+    padding: 0;
+
+    .nav-action-button {
+      flex: 1;
+      padding: 12px;
+    }
+    .nav-action-button.is-active {
+      background-color: var(--interactive-normal);
+      color: var(--icon-color);
+      box-shadow: inset 0 0 0 1px var(--background-modifier-hover);
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        border-radius: var(--button-radius);
+        background-color: var(--interactive-accent);
+        width: 24px;
+        height: 3px;
+        content: "";
+      }
+    }
+  }
+
+  // Dialog
+  .menu,
+  .suggestion-container,
+  .popover,
+  .cm-tooltip,
+  .prompt,
+  .modal,
+  .notice {
+    background-color: var(--modal-background);
+    backdrop-filter: var(--blur-l);
+  }
+
+  .modal-bg {
+    background-color: black;
+    opacity: 0.3 !important;
+  }
+
+  // Menu
+  .menu,
+  .suggestion-container {
+    animation: none;
+    border-radius: var(--radius-l);
+    border: var(--border-width) solid var(--background-modifier-border);
+
+    .menu-separator {
+      margin: var(--menu-padding) calc(-1 * var(--menu-padding));
+    }
+
+    .menu-item,
+    .suggestion-item {
+      border-radius: var(--radius-m);
+      padding: 8px 10px;
+    }
+
+    .menu-item-icon .svg-icon {
+      --icon-size: var(--icon-s);
+    }
+  }
+
+  // Prompt
+  .prompt {
+    animation: none;
+
+    .prompt-results {
+      position: relative;
+    }
+    .prompt-results .suggestion-item {
+      position: relative;
+      padding: calc(12px * var(--density-modifier)) 20px;
+    }
+    .prompt-results .suggestion-item.is-selected::after {
+      position: absolute;
+      top: 12px;
+      bottom: 12px;
+      left: 0;
+      border-radius: var(--button-radius);
+      background-color: var(--interactive-accent);
+      width: 4px;
+      content: "";
+    }
+  }
+
+  // Modal
+  .modal {
+    animation: none;
+  }
+
+  .modal-close-button {
+    top: 0;
+    inset-inline-end: 0 !important;
+    padding-inline: 16px;
+    border-radius: 0;
+
+    &:empty::before {
+      margin: 0;
+      width: var(--icon-s);
+      height: var(--icon-s);
+      font-size: var(--icon-xs);
+      font-weight: 100;
+    }
+
+    &:hover {
+      background-color: var(--color-red);
+      color: rgb(var(--mono-rgb-100));
+    }
+  }
+
+  .modal:not(.mod-sidebar-layout) {
+    padding: 0;
+    min-width: 480px;
+
+    .modal-title {
+      padding: 24px 24px 4px;
+      font-size: var(--font-ui-large);
+    }
+
+    .modal-content {
+      padding: 4px 24px 16px;
+    }
+
+    .modal-button-container {
+      margin: 0;
+      border-top: var(--border-width) solid var(--background-modifier-border);
+      background-color: rgba(0, 0, 0, 0.05);
+      padding: 24px;
+
+      button {
+        border-radius: var(--button-radius);
+      }
+    }
+
+    .modal-content > .modal-button-container {
+      margin: 0 -24px -16px;
+    }
+  }
+
+  // Settings
+  &.theme-light .modal.mod-sidebar-layout:not(.mod-community-modal) .setting-item:not(.setting-item-heading) {
+    background-color: var(--background-primary);
+  }
+  &.theme-dark .modal.mod-sidebar-layout:not(.mod-community-modal) .setting-item:not(.setting-item-heading) {
+    background-color: var(--background-secondary);
+  }
+  .modal.mod-sidebar-layout:not(.mod-community-modal) {
+    .vertical-tab-content {
+      animation: workspaceLeafInFluent var(--anim-duration-moderate);
+    }
+
+    .setting-item-heading {
+      margin-left: 20px;
+    }
+    .setting-item:not(.setting-item-heading) {
+      border: var(--border-width) solid var(--background-modifier-hover);
+      border-radius: var(--radius-m);
+      padding: calc(16px * var(--density-modifier)) 20px;
+
+      &:not(:first-child) {
+        margin-top: 6px;
+      }
+    }
+
+    .vertical-tab-header-group-title,
+    .vertical-tab-nav-item {
+      padding: calc(8px * var(--density-modifier)) 20px;
+      position: relative;
+    }
+    .vertical-tab-nav-item.is-active {
+      --background-modifier-hover: var(--nav-item-background-active);
+      background-color: var(--background-modifier-hover);
+      color: var(--text-normal);
+
+      &::before {
+        position: absolute;
+        top: 8px;
+        bottom: 8px;
+        left: 0;
+        border-radius: var(--button-radius);
+        background-color: var(--interactive-accent);
+        width: 4px;
+        content: "";
+        margin-left: unset;
+        height: unset;
+      }
+    }
   }
 }

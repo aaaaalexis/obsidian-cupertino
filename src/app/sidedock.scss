@@ -1,7 +1,6 @@
 body {
   --nav-item-padding: calc(8px * var(--density-modifier)) 8px calc(8px * var(--density-modifier)) 24px;
   --nav-indentation-guide-width: 0px;
-  --nav-header-align: center;
 
   --ribbon-background: transparent;
   --ribbon-background-collapsed: var(--ribbon-background);
@@ -31,27 +30,8 @@ body.is-mobile {
   width: revert-layer;
 }
 
-// File navigation
-body:not(.nav-item-subtle, .nav-item-strong) .nav-files-container > div {
-  --nav-item-background-hover: transparent;
-  --nav-item-background-active: transparent;
-  --nav-item-weight-hover: var(--font-medium);
-  --nav-item-weight-active: var(--font-medium);
+// File explorer
 
-  .tree-item-self.is-active::before {
-    content: "";
-    position: absolute;
-    margin-left: -12px;
-    width: 4px;
-    height: 4px;
-    border-radius: var(--button-radius);
-    background-color: var(--nav-item-color-active);
-  }
-}
-body.nav-item-strong .nav-files-container > div {
-  --nav-item-background-active: var(--interactive-accent);
-  --nav-item-color-active: var(--text-on-accent);
-}
 body.full-item-name {
   --nav-item-white-space: none;
 }
@@ -60,7 +40,6 @@ body.bold-folders .nav-folder-title {
   --nav-item-weight-hover: calc(var(--font-weight) + var(--bold-modifier));
 }
 
-// File explorer
 .tree-item-self,
 .tree-item-inner {
   align-items: center;
@@ -71,7 +50,7 @@ body.bold-folders .nav-folder-title {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: var(--nav-header-align);
+  align-items: center;
   padding: 8px 16px;
 }
 .nav-header .nav-buttons-container {

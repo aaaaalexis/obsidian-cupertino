@@ -1,9 +1,4 @@
-body:is(.layout-cupertino, .layout-macos).is-mobile {
-  --radius-s: calc(16px * var(--radius-modifier));
-  --radius-m: calc(24px * var(--radius-modifier));
-  --radius-l: calc(32px * var(--radius-modifier));
-  --radius-xl: calc(40px * var(--radius-modifier));
-
+body.input-cupertino.is-mobile {
   --titlebar-background: transparent;
   --titlebar-background-focused: transparent;
   --background-modifier-form-field: var(--interactive-normal);
@@ -167,7 +162,7 @@ body:is(.layout-cupertino, .layout-macos).is-mobile {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos).is-phone {
+body.input-cupertino.is-phone {
   // Editor panel
   .mod-root {
     .view-header-left,

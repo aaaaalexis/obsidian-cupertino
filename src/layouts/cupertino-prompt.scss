@@ -1,4 +1,4 @@
-body:is(.layout-cupertino, .layout-macos) {
+body.input-cupertino {
   .prompt-input-container {
     align-items: center;
   }
@@ -31,7 +31,7 @@ body:is(.layout-cupertino, .layout-macos) {
     border-top: none;
   }
 }
-body:is(.layout-cupertino, .layout-macos):not(.is-phone) {
+body.input-cupertino:not(.is-phone) {
   --prompt-input-height: 56px;
 
   @keyframes bounceInScale {
@@ -58,7 +58,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-phone) {
     pointer-events: none;
   }
 }
-body:is(.layout-cupertino, .layout-macos).is-phone {
+body.input-cupertino.is-phone {
   --prompt-input-height: 48px;
 
   .prompt {
@@ -136,6 +136,6 @@ body:is(.layout-cupertino, .layout-macos).is-phone {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos).is-tablet .prompt {
+body.input-cupertino.is-tablet .prompt {
   border-radius: var(--radius-l);
 }

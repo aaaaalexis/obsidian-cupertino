@@ -1,4 +1,4 @@
-body:is(.layout-cupertino, .layout-macos) {
+body.input-cupertino {
   --background-modifier-message: var(--modal-background) !important;
   --modal-background: rgb(from var(--background-primary-alt) r g b / 75%) !important;
 
@@ -28,7 +28,7 @@ body:is(.layout-cupertino, .layout-macos) {
 }
 
 // Menu
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
+body.input-cupertino:not(.is-mobile) {
   .menu,
   .suggestion-container {
     animation: none;
@@ -66,7 +66,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos).is-mobile {
+body.input-cupertino.is-mobile {
   --menu-radius: var(--modal-radius);
 
   .menu-scroll {
@@ -88,7 +88,7 @@ body:is(.layout-cupertino, .layout-macos).is-mobile {
     }
   }
 }
-body:is(.layout-cupertino, .layout-macos).is-phone {
+body.input-cupertino.is-phone {
   --menu-shadow: var(--shadow-s);
   --menu-padding: 32px var(--safe-area-inset-side);
 
@@ -127,7 +127,7 @@ body:is(.layout-cupertino, .layout-macos).is-phone {
     }
   }
 }
-body:is(.layout-cupertino, .layout-macos).is-tablet {
+body.input-cupertino.is-tablet {
   --menu-shadow: var(--shadow-l);
 
   .menu,
@@ -147,7 +147,7 @@ body:is(.layout-cupertino, .layout-macos).is-tablet {
 }
 
 // Modal
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
+body.input-cupertino:not(.is-mobile) {
   @keyframes modalInCupertino {
     from {
       opacity: 1;
@@ -172,7 +172,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos).is-mobile {
+body.input-cupertino.is-mobile {
   .modal-setting-back-button,
   .modal-close-button:not(:empty) {
     --icon-size: var(--icon-xl);
@@ -185,7 +185,7 @@ body:is(.layout-cupertino, .layout-macos).is-mobile {
     font-size: unset;
   }
 }
-body:is(.layout-cupertino, .layout-macos).is-phone {
+body.input-cupertino.is-phone {
   --modal-radius: var(--radius-xl);
 
   .modal-container.mod-confirmation .modal {
@@ -219,7 +219,7 @@ body:is(.layout-cupertino, .layout-macos).is-phone {
 }
 
 // Notice & Tooltip
-body:is(.layout-cupertino, .layout-macos) {
+body.input-cupertino {
   .notice-container {
     display: flex;
     top: unset;
@@ -248,7 +248,7 @@ body:is(.layout-cupertino, .layout-macos) {
     font-weight: var(--font-normal);
   }
 }
-body:is(.layout-cupertino, .layout-macos).is-mobile {
+body.input-cupertino.is-mobile {
   .notice {
     margin-bottom: 0;
     box-shadow: var(--shadow-xs);
@@ -259,7 +259,7 @@ body:is(.layout-cupertino, .layout-macos).is-mobile {
 }
 
 // Drag ghost
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
+body.input-cupertino:not(.is-mobile) {
   --drag-ghost-background: var(--background-primary);
   --drag-ghost-text-color: var(--text-normal);
 

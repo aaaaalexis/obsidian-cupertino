@@ -644,8 +644,30 @@ settings:
 		max: 1
 		step: 0.25
 	-
+		id: element-style
+		title: Personality
+		type: class-select
+		allowEmpty: false
+		default: input-baseline
+		options:
+			-
+				label: Baseline
+				value: input-baseline
+			-
+				label: Cupertino
+				value: input-cupertino
+			-
+				label: Fluent
+				value: input-fluent
+			-
+				label: Material
+				value: input-material
+			-
+				label: Tactile
+				value: input-tactile
+	-
 		id: layout-style
-		title: Layout style
+		title: Workspace
 		type: class-select
 		allowEmpty: false
 		default: layout-baseline
@@ -678,33 +700,8 @@ settings:
 				label: Viewfinder
 				value: layout-viewfinder
 	-
-		id: input-style
-		title: Element style
-		type: class-select
-		allowEmpty: false
-		default: input-baseline
-		options:
-			-
-				label: Baseline
-				value: input-baseline
-			-
-				label: Cupertino
-				value: input-cupertino
-			-
-				label: Elevated
-				value: input-elevated
-			-
-				label: Fluent
-				value: input-fluent
-			-
-				label: Material
-				value: input-material
-			-
-				label: Tactile
-				value: input-tactile
-	-
 		id: status-bar-style
-		title: Status bar style
+		title: Status bar
 		type: class-select
 		allowEmpty: false
 		default: status-bar-baseline
@@ -718,9 +715,6 @@ settings:
 			-
 				label: Obsidian
 				value: status-bar-default
-			-
-				label: Full width
-				value: status-bar-full
 	-
 		id: animation
 		title: Animation
@@ -788,27 +782,14 @@ settings:
 		default: labeled-tabs-off
 		options:
 			-
-				label: Hidden
+				label: Disable
 				value: labeled-tabs-off
 			-
-				label: Visible
+				label: All tabs
 				value: labeled-tabs-all
 			-
 				label: Single tab
 				value: labeled-tabs-single
-	-
-		id: nav-header-align
-		title: Tab action alignment
-		type: variable-select
-		allowEmpty: false
-		default: center
-		options:
-			-
-				label: Center
-				value: center
-			-
-				label: Side
-				value: Start
 	-
 		id: compact-actions
 		title: Compact tab actions
@@ -817,7 +798,10 @@ settings:
 		default: compact-actions-dot
 		options:
 			-
-				label: Disable
+				label: Disable 
+				value: compact-actions-left
+			-
+				label: Disable (Center)
 				value: compact-actions-off
 			-
 				label: Dot
@@ -827,8 +811,8 @@ settings:
 				value: compact-actions-indicator
 	-
 		id: stacked-nav-off
-		title: Disable large primary navigation
-		description: Turns off vertically stacked tabs in the left sidebar 
+		title: Disable stacked primary navigation
+		description: Turns off vertically stacked and labeled navigation tabs in the left sidebar
 		type: class-toggle
 	-
 		id: compact-tabs-off
@@ -904,7 +888,8 @@ settings:
 		markdown: true
 	-
 		id: file-header-fade
-		title: Tab title edge fade
+		title: Tab title edge fade (Experimental)
+		description: Adds fading effect to content area on scroll
 		type: class-toggle
 		default: false
 	-
@@ -971,6 +956,12 @@ settings:
 			-
 				label: Strong
 				value: nav-item-strong
+			-
+				label: macOS
+				value: nav-item-macos
+			-
+				label: Fluent
+				value: nav-item-fluent
 	-
 		id: colorful-folders
 		title: Colorful folders
@@ -3184,10 +3175,12 @@ settings:
   margin-bottom: 0;
 }
 .style-settings-container .setting-item:nth-child(1 of .setting-item:not(.setting-item-heading)) {
-  border-radius: var(--setting-items-radius) var(--setting-items-radius) 0 0;
+  border-top-left-radius: var(--setting-items-radius);
+  border-top-right-radius: var(--setting-items-radius);
 }
 .style-settings-container .setting-item:nth-last-child(1 of .setting-item:not(.setting-item-heading)) {
-  border-radius: 0 0 var(--setting-items-radius) var(--setting-items-radius);
+  border-bottom-left-radius: var(--setting-items-radius);
+  border-bottom-right-radius: var(--setting-items-radius);
 }
 .style-settings-container .themed-color-wrapper > div {
   background-color: transparent;
@@ -3280,8 +3273,7 @@ body.rose-pine-dark .style-settings-container .setting-item[data-id="color-schem
   content: "Author: Rose Pine";
 }
 body.sanctum-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.sanctum-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before,
-body.input-elevated .style-settings-container .setting-item[data-id="input-style"] .setting-item-control::before {
+body.sanctum-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
   content: "Author: José Daniel Mourão (jdanielmourao)";
 }
 body.solarized-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,

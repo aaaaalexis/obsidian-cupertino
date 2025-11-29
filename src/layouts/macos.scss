@@ -1,10 +1,10 @@
 body.layout-macos:not(.is-mobile) {
   &.theme-light {
-    --shadow-sidedock: var(--shadow-base), inset 0 0 1px 1px white, 0 4px 32px 0 rgba(0, 0, 0, 0.075), -32px 0 0 32px var(--background-primary);
+    --shadow-sidedock: 0 0 1px 0 rgba(0, 0, 0, 0.4), inset 0 0 1px 1px white, 0 4px 32px 0 rgba(0, 0, 0, 0.075), -32px 0 0 32px var(--background-primary);
     --nav-item-background-active: var(--background-modifier-hover);
   }
   &.theme-dark {
-    --shadow-sidedock: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.35), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 16px 0 rgba(0, 0, 0, 0.2), -32px 0 0 32px var(--background-primary);
+    --shadow-sidedock: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.35), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 16px 0 rgba(0, 0, 0, 0.2), -32px 0 0 32px var(--background-primary);
     --nav-item-background-active: rgba(0, 0, 0, 0.5);
   }
 
@@ -44,17 +44,6 @@ body.layout-macos:not(.is-mobile) {
       background-color: var(--color-base-20) !important;
       box-shadow: none !important;
     }
-  }
-
-  // File explorer
-  &.theme-light .nav-files-container > div {
-    --nav-item-background-active: var(--background-modifier-hover);
-  }
-  &.theme-dark .nav-files-container > div {
-    --nav-item-background-active: rgba(0, 0, 0, 0.5);
-  }
-  .nav-files-container > div {
-    --nav-item-color-active: var(--text-accent);
   }
 
   // Side panels

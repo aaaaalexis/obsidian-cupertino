@@ -1,0 +1,44 @@
+body:is(.nav-item-baseline, :not([class*="nav-item-"])) .nav-files-container > div {
+  --nav-item-background-hover: transparent;
+  --nav-item-background-active: transparent;
+  --nav-item-weight-hover: var(--font-medium);
+  --nav-item-weight-active: var(--font-medium);
+
+  .tree-item-self.is-active::before {
+    content: "";
+    position: absolute;
+    margin-left: -12px;
+    width: 4px;
+    height: 4px;
+    border-radius: var(--button-radius);
+    background-color: var(--nav-item-color-active);
+  }
+}
+
+body.nav-item-strong .nav-files-container > div {
+  --nav-item-background-active: var(--interactive-accent);
+  --nav-item-color-active: var(--text-on-accent);
+}
+
+body.nav-item-macos .nav-files-container > div {
+  --nav-item-color-active: var(--text-accent);
+  --nav-item-background-hover: transparent;
+  --nav-item-background-active: var(--background-modifier-cover);
+}
+
+body.nav-item-fluent .nav-files-container > div {
+  --nav-item-color-active: var(--nav-item-color);
+  --nav-item-background-hover: var(--background-modifier-hover);
+  --nav-item-background-active: var(--background-modifier-hover);
+
+  .tree-item-self.is-active::before {
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 0;
+    border-radius: var(--button-radius);
+    background-color: var(--interactive-accent);
+    width: 4px;
+    content: "";
+  }
+}

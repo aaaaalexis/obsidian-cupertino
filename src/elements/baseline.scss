@@ -27,8 +27,7 @@ body {
   --background-modifier-form-field: var(--interactive-normal);
 }
 
-body:not([class*="input-"]),
-body.input-baseline {
+body:is(.input-baseline, :not([class*="input-"])) {
   --input-font-weight: var(--font-medium);
 
   &.is-mobile {

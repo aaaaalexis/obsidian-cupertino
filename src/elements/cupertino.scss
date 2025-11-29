@@ -1,18 +1,45 @@
+body:where(.input-cupertino).theme-light {
+  --color-red-rgb: 255, 56, 60;
+  --color-orange-rgb: 255, 141, 40;
+  --color-yellow-rgb: 255, 204, 0;
+  --color-green-rgb: 52, 199, 89;
+  --color-cyan-rgb: 0, 192, 232;
+  --color-blue-rgb: 0, 136, 255;
+  --color-purple-rgb: 203, 48, 224;
+  --color-pink-rgb: 255, 45, 85;
+}
+body:where(.input-cupertino).theme-dark {
+  --color-red-rgb: 255, 66, 69;
+  --color-orange-rgb: 255, 146, 48;
+  --color-yellow-rgb: 255, 214, 0;
+  --color-green-rgb: 48, 209, 88;
+  --color-cyan-rgb: 60, 211, 254;
+  --color-blue-rgb: 0, 145, 255;
+  --color-purple-rgb: 107, 52, 242;
+  --color-pink-rgb: 255, 55, 95;
+}
+
 body.input-cupertino {
+  --side-padding: 20px;
+
+  --p-spacing: 1rem;
+
   --input-shadow: none;
   --input-shadow-hover: none;
 
-  --interactive-hover: var(--interactive-normal);
-  --background-modifier-border-hover: var(--background-modifier-border);
-  --background-modifier-border-focus: hsla(var(--interactive-accent-hsl), 0.5);
+  --blur-s: blur(2px) saturate(1.5) brightness(1.025);
+  --blur-m: blur(4px) saturate(1.5) brightness(1.025);
+  --blur-l: blur(8px) saturate(1.5) brightness(1.025);
 
-  &.theme-light:not(.is-mobile) {
-    --interactive-normal: var(--color-base-25);
-    --background-modifier-form-field: var(--color-base-00);
-  }
+  --radius-s: calc(8px * var(--radius-modifier));
+  --radius-m: calc(12px * var(--radius-modifier));
+  --radius-l: calc(20px * var(--radius-modifier));
+  --radius-xl: calc(28px * var(--radius-modifier));
 
-  --input-radius: var(--radius-s);
+  --clickable-icon-radius: 100vh;
   --button-radius: var(--input-radius);
+  --input-radius: var(--radius-s);
+  --input-height: 24px;
 
   --slider-thumb-border-width: 0;
   --slider-thumb-height: 18px;
@@ -30,8 +57,22 @@ body.input-cupertino {
   --toggle-thumb-width: 21px;
   --toggle-width: 36px;
 
-  &:not(.is-mobile) {
-    --input-height: 24px;
+  --icon-color: rgb(var(--mono-rgb-100));
+  --icon-color-hover: rgb(var(--mono-rgb-100));
+
+  --interactive-hover: var(--interactive-normal);
+  --background-modifier-border-hover: var(--background-modifier-border);
+  --background-modifier-border-focus: hsla(var(--interactive-accent-hsl), 0.5);
+
+  --nav-collapse-icon-color: rgb(var(--mono-rgb-100));
+  --nav-item-color: rgb(var(--mono-rgb-100));
+  --nav-item-color-hover: rgb(var(--mono-rgb-100));
+  --nav-item-color-active: rgb(var(--mono-rgb-100));
+  --nav-item-color-selected: rgb(var(--mono-rgb-100));
+
+  &.theme-light {
+    --interactive-normal: var(--color-base-25);
+    --background-modifier-form-field: var(--color-base-00);
   }
 
   &.is-mobile {
@@ -47,8 +88,37 @@ body.input-cupertino {
     --input-padding: 0 var(--side-padding);
     --dropdown-padding: 0 32px 0 var(--side-padding);
 
+    --radius-s: calc(16px * var(--radius-modifier));
+    --radius-m: calc(24px * var(--radius-modifier));
+    --radius-l: calc(32px * var(--radius-modifier));
+    --radius-xl: calc(40px * var(--radius-modifier));
+
     --input-radius: var(--radius-l);
     --input-height: 48px;
+  }
+
+  &.theme-light {
+    --blur-background: rgba(255, 255, 255, 0.35);
+    --background-modifier-border: rgba(0, 0, 0, 0.075);
+
+    --shadow-base: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025);
+    --shadow-border: 0 0 1px rgba(0, 0, 0, 0.4);
+
+    --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 0 8px rgba(0, 0, 0, 0.025), 0 4px 48px rgba(0, 0, 0, 0.15);
+    --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    --shadow-l: var(--shadow-border), inset 0 0 1px 1px white, 0 16px 64px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &.theme-dark {
+    --blur-background: rgba(255, 255, 255, 0.1);
+    --background-modifier-border: rgba(255, 255, 255, 0.075);
+
+    --shadow-base: inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
+    --shadow-border: 0 0 1px rgba(255, 255, 255, 0.3);
+
+    --shadow-xs: var(--shadow-base);
+    --shadow-s: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    --shadow-l: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 0 rgba(0, 0, 0, 0.7), 0 16px 64px 0 rgba(0, 0, 0, 0.3);
   }
 
   // Button
@@ -60,6 +130,19 @@ body.input-cupertino {
   }
   &.is-tablet button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button) {
     padding: 4px var(--side-padding);
+  }
+  &:not(.is-mobile) {
+    --tab-action-width: 40px;
+
+    .clickable-icon {
+      min-width: var(--tab-action-width);
+    }
+    .clickable-icon:not([aria-disabled="true"]):hover,
+    .clickable-icon.has-active-menu,
+    .modal-close-button:hover {
+      box-shadow: var(--shadow-xs);
+      background-color: var(--blur-background);
+    }
   }
 
   // Slider
@@ -135,14 +218,47 @@ body.input-cupertino {
     inset-inline-start: 12px;
   }
 
-  // Border fix
-  .menu,
-  .suggestion-container,
-  .popover,
-  .prompt,
-  .modal,
-  .cm-tooltip,
-  .notice {
-    border: none;
+  // Panel actions
+  &:not(.compact-actions-off, .compact-actions-left) .mod-sidedock .workspace-leaf-content > div:is(.nav-header, .view-content > .nav-header) .nav-buttons-container {
+    border-radius: var(--clickable-icon-radius);
+    background-color: var(--background-modifier-hover);
+    padding: 2px;
+    gap: 0;
+
+    .nav-action-button {
+      position: relative;
+      padding: 8px;
+      border-radius: var(--clickable-icon-radius);
+    }
+    .nav-action-button:hover:not([aria-disabled="true"]) {
+      background-color: var(--background-modifier-hover);
+      box-shadow: none;
+    }
+  }
+
+  .mod-sidedock .workspace-tab-container,
+  .mod-sidedock .workspace-leaf,
+  .mod-sidedock .workspace-leaf-content {
+    contain: size !important;
+    overflow: visible;
+  }
+
+  // Editor panel
+  .markdown-source-view,
+  .markdown-preview-view {
+    transition: transform var(--anim-duration-slow) var(--anim-motion-baseline);
+  }
+  .workspace-leaf-content[data-mode="source"] > .view-content > .markdown-reading-view > .markdown-preview-view {
+    transform: scale(0.995);
+    opacity: 0;
+  }
+  .workspace-leaf-content[data-mode="preview"] > .view-content > .markdown-source-view {
+    transform: scale(0.995);
+    opacity: 0;
+  }
+
+  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"][data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
   }
 }

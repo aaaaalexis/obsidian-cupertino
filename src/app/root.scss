@@ -99,18 +99,6 @@ body,
   --code-value: #c678de;
 }
 
-// Translucent window
-@media (prefers-color-scheme: light) {
-  .theme-dark {
-    --workspace-background-translucent: var(--background-secondary);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  .theme-light {
-    --workspace-background-translucent: var(--background-secondary);
-  }
-}
-
 body:not(.is-mobile) {
   .workspace,
   .app-container {
@@ -125,6 +113,23 @@ body:not(.is-mobile) {
   .workspace-split {
     transition: var(--anim-duration-moderate);
   }
+}
+
+// Translucent window
+@media (prefers-color-scheme: light) {
+  .theme-dark {
+    --workspace-background-translucent: var(--background-secondary);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .theme-light {
+    --workspace-background-translucent: var(--background-secondary);
+  }
+}
+body.is-translucent {
+  --blur-s: none;
+  --blur-m: none;
+  --blur-l: none;
 }
 
 // Title bar
