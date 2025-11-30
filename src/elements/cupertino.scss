@@ -49,13 +49,13 @@ body.input-cupertino {
   --slider-track-background: var(--background-modifier-border-hover);
 
   --toggle-border-width: 1.5px;
+  --toggle-thumb-height: 13px;
+  --toggle-thumb-width: 21px;
+  --toggle-width: 36px;
   --toggle-s-border-width: var(--toggle-border-width);
   --toggle-s-thumb-height: var(--toggle-thumb-height);
   --toggle-s-thumb-width: var(--toggle-thumb-width);
   --toggle-s-width: var(--toggle-width);
-  --toggle-thumb-height: 13px;
-  --toggle-thumb-width: 21px;
-  --toggle-width: 36px;
 
   --icon-color: rgb(var(--mono-rgb-100));
   --icon-color-hover: rgb(var(--mono-rgb-100));

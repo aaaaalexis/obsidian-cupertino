@@ -123,13 +123,14 @@ body.is-phone .modal:not(.mod-sidebar-layout) {
 .menu,
 .suggestion-container {
   -electron-corner-smoothing: system-ui;
+  border-radius: var(--menu-radius);
   padding: 0;
 
   .menu-item,
   .suggestion-item {
     -electron-corner-smoothing: system-ui;
     padding: calc(6px * var(--density-modifier)) 8px;
-    border-radius: calc(var(--radius-m) - 4px);
+    border-radius: calc(var(--menu-radius) - 4px);
     margin-bottom: 0;
   }
 
@@ -156,6 +157,7 @@ body:not(.is-phone) {
     .suggestion-item,
     .suggestion-empty {
       font-size: var(--font-ui-small);
+      align-items: center;
     }
   }
 

@@ -1,18 +1,56 @@
 body.input-material {
-  --input-border-width: 0px;
+  --clickable-icon-radius: 100vh;
+  --input-font-weight: var(--font-medium);
+  --input-border-width: 1px;
   --input-height: 40px;
   --input-radius: var(--radius-s);
   --toggle-border-width: 4px;
-  --toggle-width: 52px;
   --toggle-thumb-height: 24px;
   --toggle-thumb-width: 24px;
+  --toggle-width: 52px;
+  --toggle-s-border-width: var(--toggle-border-width);
+  --toggle-s-thumb-height: var(--toggle-thumb-height);
+  --toggle-s-thumb-width: var(--toggle-thumb-width);
+  --toggle-s-width: var(--toggle-width);
   --slider-thumb-height: 44px;
   --slider-thumb-width: 4px;
   --slider-thumb-y: -19px;
   --slider-thumb-radius: 100vh;
   --slider-track-height: 16px;
+
+  --background-modifier-border: var(--color-base-30);
   --interactive-hover: var(--color-base-25);
-  --interactive-normal: var(--color-base-30);
+  --interactive-normal: var(--background-primary);
+  --dropdown-background: var(--color-base-30);
+  --background-modifier-form-field: var(--color-base-30);
+
+  --menu-radius: var(--radius-l);
+
+  --nav-item-background-active: var(--interactive-accent-active);
+  --nav-item-background-selected: var(--interactive-accent-active);
+  --nav-item-color-active: var(--text-accent-active);
+
+  --setting-items-radius: var(--radius-l);
+
+  --shadow-s: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px !important;
+  --shadow-l: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px !important;
+
+  &.theme-light {
+    --text-accent-active: hsl(calc(var(--accent-h) + 15), calc(var(--accent-s) * 0.93), calc(var(--accent-l) * 0.475));
+    --interactive-accent-active: hsl(calc(var(--accent-h) - 9), calc(var(--accent-s) * 1.05), calc(var(--accent-l) * 1.375));
+  }
+  &.theme-dark {
+    --text-accent-active: hsl(calc(var(--accent-h) - 9), calc(var(--accent-s) * 1.05), calc(var(--accent-l) * 1.375));
+    --interactive-accent-active: hsl(calc(var(--accent-h) + 7), calc(var(--accent-s) * 0.78), calc(var(--accent-l) * 0.45));
+  }
+
+  // Button
+  button:not([aria-disabled="true"]),
+  .clickable-icon:not([aria-disabled="true"]),
+  .tappable,
+  .is-clickable {
+    cursor: pointer;
+  }
 
   // Text input
   textarea,
@@ -22,9 +60,12 @@ body.input-material {
   .dropdown {
     transition: var(--anim-duration-fast);
     box-shadow: inset 0 0 var(--interactive-accent);
-    border-bottom: var(--border-width) solid var(--background-modifier-border-focus);
+    border-width: 0 0 var(--border-width);
+    border-style: solid;
+    border-color: var(--background-modifier-border-focus);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+    cursor: pointer;
 
     &:focus {
       box-shadow: inset 0 -2px var(--interactive-accent);
@@ -36,7 +77,7 @@ body.input-material {
 
   // Slider
   input[type="range"]::-webkit-slider-thumb {
-    outline: 6px solid var(--background-secondary);
+    outline: 6px solid var(--background-primary);
     background-color: var(--interactive-accent);
   }
   input[type="range"]:active {
@@ -46,6 +87,8 @@ body.input-material {
 
   // Toggle
   .checkbox-container {
+    cursor: pointer;
+
     &::after {
       transition: var(--anim-duration-fast);
     }
@@ -55,16 +98,127 @@ body.input-material {
       left: unset;
     }
     &:not(.is-enabled) {
+      --toggle-s-border-width: 8px;
+      --toggle-s-thumb-height: 16px;
+      --toggle-s-thumb-width: 16px;
       --toggle-border-width: 8px;
-      --toggle-thumb-color: var(--text-muted);
       --toggle-thumb-height: 16px;
       --toggle-thumb-width: 16px;
+      --toggle-thumb-color: var(--text-muted);
+
       box-shadow: inset 0 0 0 2px var(--text-muted);
     }
     &:not(.is-enabled):active::after {
       scale: 1.5;
       width: var(--toggle-thumb-height);
-      margin-left: -4px;
+      height: var(--toggle-thumb-height);
+      margin: var(--toggle-border-width) 0 0 -4px;
+      transform: translate3d(var(--toggle-border-width), 0, 0);
+    }
+  }
+
+  // Dialog
+  .menu,
+  .suggestion-container,
+  .popover,
+  .prompt,
+  .modal,
+  .cm-tooltip,
+  .notice {
+    border: none;
+  }
+
+  // Settings
+  .modal.mod-settings {
+    .vertical-tab-header-group-title {
+      padding-inline: 16px;
+    }
+    .vertical-tab-nav-item {
+      border-radius: var(--button-radius);
+      padding: calc(12px * var(--density-modifier)) 16px;
+      font-weight: var(--font-medium);
+      border-bottom: 0;
+      cursor: pointer;
+    }
+    .vertical-tab-nav-item.is-active {
+      background-color: var(--nav-item-background-active);
+      color: var(--nav-item-color-active);
+    }
+
+    .setting-group + .setting-group {
+      margin-top: 32px;
+    }
+
+    .setting-item-heading {
+      padding-inline: 16px;
+    }
+
+    .setting-item:not(.setting-item-heading):not(.setting-items .setting-item) {
+      padding-inline: 16px;
+    }
+    .setting-item:not(.setting-item-heading) {
+      border-top: none;
+      border-radius: var(--radius-s);
+      background-color: var(--background-primary);
+      padding: calc(16px * var(--density-modifier)) 16px;
+      margin-bottom: 2px;
+    }
+    .setting-item:nth-child(1 of .setting-item:not(.setting-item-heading)) {
+      border-top-left-radius: var(--setting-items-radius);
+      border-top-right-radius: var(--setting-items-radius);
+    }
+    .setting-item:nth-last-child(1 of .setting-item:not(.setting-item-heading)) {
+      border-bottom-left-radius: var(--setting-items-radius);
+      border-bottom-right-radius: var(--setting-items-radius);
+    }
+    .setting-item-name {
+      font-weight: var(--font-medium);
+    }
+
+    .installed-plugins-container .setting-items .setting-item {
+      border: none;
+    }
+  }
+}
+
+body.input-material:not(.is-phone) {
+  @keyframes menuInMaterial {
+    from {
+      opacity: 0;
+      transform: translateY(-4px) scaleY(95%);
+    }
+  }
+
+  // Menu
+  .menu,
+  .suggestion-container {
+    transform-origin: top center;
+    animation: menuInMaterial var(--anim-duration-fast) forwards;
+
+    .menu-item,
+    .suggestion-item {
+      padding: 12px;
+      font-weight: var(--font-medium);
+      cursor: pointer;
+    }
+    .menu-item-icon .svg-icon {
+      --icon-size: var(--icon-l);
+    }
+  }
+
+  // Prompt
+  .prompt {
+    border-radius: var(--radius-xl);
+
+    .prompt-input-container {
+      margin: 16px 16px 0;
+    }
+    .prompt-input {
+      box-shadow: none;
+      border: none;
+      border-radius: 100vh;
+      background-color: var(--background-modifier-hover);
+      font-size: var(--font-ui-large);
     }
   }
 }

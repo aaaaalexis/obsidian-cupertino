@@ -644,28 +644,6 @@ settings:
 		max: 1
 		step: 0.25
 	-
-		id: element-style
-		title: Personality
-		type: class-select
-		allowEmpty: false
-		default: input-baseline
-		options:
-			-
-				label: Baseline
-				value: input-baseline
-			-
-				label: Cupertino
-				value: input-cupertino
-			-
-				label: Fluent
-				value: input-fluent
-			-
-				label: Material
-				value: input-material
-			-
-				label: Tactile
-				value: input-tactile
-	-
 		id: layout-style
 		title: Workspace
 		type: class-select
@@ -700,6 +678,28 @@ settings:
 				label: Viewfinder
 				value: layout-viewfinder
 	-
+		id: element-style
+		title: Personality
+		type: class-select
+		allowEmpty: false
+		default: input-baseline
+		options:
+			-
+				label: Baseline
+				value: input-baseline
+			-
+				label: Cupertino
+				value: input-cupertino
+			-
+				label: Fluent
+				value: input-fluent
+			-
+				label: Material
+				value: input-material
+			-
+				label: Tactile
+				value: input-tactile
+	-
 		id: status-bar-style
 		title: Status bar
 		type: class-select
@@ -723,7 +723,7 @@ settings:
 		collapsed: true
 	-
 		id: anim-motion-baseline
-		title: Animation personality profile
+		title: Animation personality
 		type: variable-select
 		default: cubic-bezier(0.1, 0, 0.1, 1.25)
 		options:
@@ -3334,7 +3334,7 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
       border-radius: var(--radius-m);
       border: var(--border-width) solid var(--background-modifier-border);
       background-color: var(--background-primary);
-      padding: calc(16px * var(--density-modifier));
+      padding: calc(16px * var(--density-modifier)) !important;
       align-items: flex-start;
       position: relative;
       transition: var(--anim-duration-fast);
