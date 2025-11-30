@@ -956,12 +956,6 @@ settings:
 			-
 				label: Strong
 				value: nav-item-strong
-			-
-				label: macOS
-				value: nav-item-macos
-			-
-				label: Fluent
-				value: nav-item-fluent
 	-
 		id: colorful-folders
 		title: Colorful folders
@@ -3299,7 +3293,6 @@ body.view-header-title-hidden .style-settings-container .setting-item[data-id="f
 body.block-width-off .style-settings-container .setting-item[data-id="block-width-off"] ~ .setting-item,
 body.metadata-cupertino .style-settings-container .setting-item[data-id="metadata-heading-off"],
 body.unstyled-tags .style-settings-container .setting-item[data-id="unstyled-tags"] ~ .setting-item,
-body:is(.layout-cupertino.input-fluent, .layout-macos) .style-settings-container .setting-item[data-id="nav-item-active-style"],
 body:not(.colorful-headings-background) .style-settings-container .setting-item[data-id="colorful-headings-full-width"],
 body:not(.hr-dashed) .style-settings-container .setting-item[data-id="hr-dashed"] ~ .setting-item,
 body:not(.colorful-frame) .style-settings-container .setting-item[data-id="colorful-frame"] ~ .setting-item,

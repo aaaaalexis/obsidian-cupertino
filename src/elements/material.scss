@@ -26,10 +26,6 @@ body.input-material {
 
   --menu-radius: var(--radius-l);
 
-  --nav-item-background-active: var(--interactive-accent-active);
-  --nav-item-background-selected: var(--interactive-accent-active);
-  --nav-item-color-active: var(--text-accent-active);
-
   --setting-items-radius: var(--radius-l);
 
   --shadow-s: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px !important;
@@ -141,8 +137,8 @@ body.input-material {
       cursor: pointer;
     }
     .vertical-tab-nav-item.is-active {
-      background-color: var(--nav-item-background-active);
-      color: var(--nav-item-color-active);
+      background-color: var(--interactive-accent-active);
+      color: var(--text-accent-active);
     }
 
     .setting-group + .setting-group {
