@@ -126,8 +126,10 @@ body.input-material {
 
   // Settings
   .modal.mod-settings {
-    .vertical-tab-header-group-title {
-      padding-inline: 16px;
+    .vertical-tab-header-group-title,
+    .setting-item-heading,
+    .setting-item:not(.setting-item-heading):not(.setting-items .setting-item) {
+      padding-inline: 16px !important;
     }
     .vertical-tab-nav-item {
       border-radius: var(--button-radius);
@@ -145,13 +147,6 @@ body.input-material {
       margin-top: 32px;
     }
 
-    .setting-item-heading {
-      padding-inline: 16px;
-    }
-
-    .setting-item:not(.setting-item-heading):not(.setting-items .setting-item) {
-      padding-inline: 16px;
-    }
     .setting-item:not(.setting-item-heading) {
       border-top: none;
       border-radius: var(--radius-s);
