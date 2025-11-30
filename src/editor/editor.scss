@@ -224,10 +224,10 @@
 
   // Codeblocks
   .markdown-rendered pre {
-    -electron-corner-smoothing: system-ui;
+    -electron-corner-smoothing: var(--corner-smoothing);
   }
   .markdown-rendered code {
-    -electron-corner-smoothing: system-ui;
+    -electron-corner-smoothing: var(--corner-smoothing);
     padding: 2px 4px;
   }
   .markdown-rendered pre code {
@@ -301,7 +301,7 @@
   }
 
   .markdown-embed {
-    -electron-corner-smoothing: system-ui;
+    -electron-corner-smoothing: var(--corner-smoothing);
   }
   .markdown-embed:not(.image-embed, .canvas-node-content) {
     display: flex;
@@ -431,7 +431,7 @@
   iframe,
   video,
   .file-embed {
-    -electron-corner-smoothing: system-ui;
+    -electron-corner-smoothing: var(--corner-smoothing);
     border-radius: var(--media-radius);
   }
 

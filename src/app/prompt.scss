@@ -11,7 +11,7 @@ body.mod-macos.is-translucent .prompt {
 }
 
 .prompt {
-  -electron-corner-smoothing: system-ui;
+  -electron-corner-smoothing: var(--corner-smoothing);
   background-color: var(--background-secondary);
   animation: modalIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
 

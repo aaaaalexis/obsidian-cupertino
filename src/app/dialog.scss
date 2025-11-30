@@ -45,7 +45,7 @@ body:not(.is-mobile) {
 }
 
 .modal {
-  -electron-corner-smoothing: system-ui;
+  -electron-corner-smoothing: var(--corner-smoothing);
 
   &:not(.mod-sidebar-layout) {
     border-radius: var(--modal-radius);
@@ -122,13 +122,13 @@ body.is-phone .modal:not(.mod-sidebar-layout) {
 
 .menu,
 .suggestion-container {
-  -electron-corner-smoothing: system-ui;
+  -electron-corner-smoothing: var(--corner-smoothing);
   border-radius: var(--menu-radius);
   padding: 0;
 
   .menu-item,
   .suggestion-item {
-    -electron-corner-smoothing: system-ui;
+    -electron-corner-smoothing: var(--corner-smoothing);
     padding: calc(6px * var(--density-modifier)) 8px;
     border-radius: calc(var(--menu-radius) - 4px);
     margin-bottom: 0;
