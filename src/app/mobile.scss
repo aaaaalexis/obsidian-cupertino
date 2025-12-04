@@ -201,7 +201,7 @@ body.is-phone {
     .workspace-leaf-content[data-type="markdown"] > .view-header::after {
       position: absolute;
       top: calc(-1 * var(--safe-area-inset-top));
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(2px);
       mask: linear-gradient(to bottom, black calc(var(--safe-area-inset-top) + (var(--view-header-height) / 2)), transparent);
       inset-inline: 0;
       height: var(--view-top-spacing-markdown);
@@ -212,7 +212,7 @@ body.is-phone {
       position: absolute;
       bottom: 0;
       z-index: 1;
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(2px);
       mask: linear-gradient(to top, black var(--navbar-bottom-padding), transparent);
       inset-inline: 0;
       height: var(--view-bottom-spacing);
