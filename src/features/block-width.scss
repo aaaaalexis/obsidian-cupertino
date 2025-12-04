@@ -12,11 +12,6 @@ body:not(.block-width-off) {
     --file-line-width: 100%;
   }
 
-  .mod-root .markdown-reading-view > .markdown-preview-view,
-  .mod-root .markdown-source-view > .cm-editor > .cm-scroller {
-    container-type: inline-size;
-  }
-
   // Table
   &:is(.table-wide, .table-max, .table-100),
   div:is(.table-wide, .table-max, .table-100) {
@@ -39,11 +34,11 @@ body:not(.block-width-off) {
   }
   &.table-max,
   .table-max {
-    --table-line-width: 100cqw;
+    --table-line-width: calc(100cqw - (var(--file-margins-inline) * 2));
   }
   &.table-100,
   .table-100 {
-    --table-line-width: calc(100cqw + (var(--file-margins-inline) * 2));
+    --table-line-width: 100cqw;
   }
 
   &.table-100,
@@ -86,11 +81,11 @@ body:not(.block-width-off) {
   }
   &.bases-max,
   .bases-max {
-    --bases-line-width: 100cqw;
+    --bases-line-width: calc(100cqw - (var(--file-margins-inline) * 2));
   }
   &.bases-100,
   .bases-100 {
-    --bases-line-width: calc(100cqw + (var(--file-margins-inline) * 2));
+    --bases-line-width: 100cqw;
   }
 
   // Image
@@ -110,11 +105,11 @@ body:not(.block-width-off) {
   }
   &.img-max,
   .img-max {
-    --img-line-width: 100cqw;
+    --img-line-width: calc(100cqw - (var(--file-margins-inline) * 2));
   }
   &.img-100,
   .img-100 {
-    --img-line-width: calc(100cqw + (var(--file-margins-inline) * 2));
+    --img-line-width: 100cqw;
   }
 
   &.img-100,
