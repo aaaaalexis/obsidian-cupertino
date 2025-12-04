@@ -209,19 +209,6 @@
     background-color: var(--background-modifier-active-hover);
   }
 
-  // Line numbers
-  body:not(.is-mobile) .workspace-leaf-content[data-type="markdown"] .cm-gutters {
-    position: absolute;
-
-    .cm-gutterElement {
-      text-align: center;
-    }
-    .cm-gutterElement.cm-active {
-      font-weight: calc(var(--font-weight) + var(--bold-modifier));
-      color: var(--text-muted);
-    }
-  }
-
   // Codeblocks
   .markdown-rendered pre {
     -electron-corner-smoothing: var(--corner-smoothing);
