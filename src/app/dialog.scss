@@ -155,8 +155,8 @@ body:not(.is-phone) {
     animation: menuIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
   }
 
-  .suggestion-item,
-  .suggestion-empty {
+  .menu,
+  .suggestion-container div:is(.suggestion-item, .suggestion-empty) {
     font-size: var(--font-ui-small);
     align-items: center;
   }
