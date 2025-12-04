@@ -110,6 +110,10 @@ body.input-cupertino.is-mobile {
       height: var(--border-width);
       content: "";
     }
+
+    .tree-item-self.is-active::before {
+      content: none;
+    }
   }
 
   // HDR element

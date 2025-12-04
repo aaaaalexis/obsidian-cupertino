@@ -59,7 +59,7 @@ body.is-mobile {
   }
 
   // Non-Liquid Glass
-  &:not(.layout-cupertino, .layout-macos) {
+  &:not(.input-cupertino) {
     .mod-raised {
       backdrop-filter: none;
       box-shadow: none;
