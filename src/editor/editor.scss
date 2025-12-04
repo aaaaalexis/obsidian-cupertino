@@ -424,7 +424,7 @@
   }
 
   body:not(.full-width-media-off) .workspace-leaf-content[data-type="markdown"] {
-    img:not([width], .cm-widgetBuffer, .link-favicon, .emoji),
+    img:not([width], .cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]),
     iframe,
     video {
       width: 100%;
@@ -434,7 +434,7 @@
 
   .theme-dark .workspace-leaf-content[data-type="markdown"],
   .theme-dark .workspace-leaf-content[data-type="bases"] {
-    img:not([width], .cm-widgetBuffer, .link-favicon, .emoji),
+    img:not([width], .cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]),
     iframe,
     video,
     .bases-cards-cover {
