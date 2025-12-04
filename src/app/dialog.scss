@@ -150,20 +150,15 @@ body.is-phone .modal:not(.mod-sidebar-layout) {
 body:not(.is-phone) {
   --menu-padding: 4px;
 
-  .menu,
-  .suggestion-container {
+  & > .menu,
+  & > .suggestion-container {
     animation: menuIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
-
-    .suggestion-item,
-    .suggestion-empty {
-      font-size: var(--font-ui-small);
-      align-items: center;
-    }
   }
 
-  .app-container .menu,
-  .app-container .suggestion-container {
-    animation: none;
+  .suggestion-item,
+  .suggestion-empty {
+    font-size: var(--font-ui-small);
+    align-items: center;
   }
 }
 
