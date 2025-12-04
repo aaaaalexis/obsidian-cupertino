@@ -41,7 +41,7 @@ body.layout-macos:not(.is-mobile) {
       opacity: 0.5;
     }
     .mod-sidedock {
-      background-color: var(--color-base-20) !important;
+      background-color: var(--color-base-05) !important;
       box-shadow: none !important;
     }
   }
@@ -57,7 +57,7 @@ body.layout-macos:not(.is-mobile) {
   }
 
   &:not(.is-translucent) .mod-sidedock {
-    background-color: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
+    background-color: color-mix(in srgb, rgb(21, 21, 21) 98%, var(--interactive-accent));
   }
   &.show-ribbon {
     &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed) {
