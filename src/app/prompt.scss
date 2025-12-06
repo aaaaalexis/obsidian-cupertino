@@ -35,12 +35,25 @@ body.is-phone {
     animation: none;
     border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   }
-  .suggestion-item {
-    padding: calc(8px * var(--density-modifier)) 16px;
+  .prompt .prompt-results {
+    padding: var(--navbar-side-padding);
+  }
+  .prompt .prompt-input-container {
+    width: auto;
+    margin: auto var(--navbar-side-padding);
+  }
+  .prompt .prompt-input {
+    height: auto;
+  }
+  .prompt .suggestion-item {
+    padding: calc(16px * var(--density-modifier)) 16px;
   }
 
   .suggestion-container {
     border-radius: var(--radius-m);
+  }
+  .suggestion-item {
+    padding: calc(8px * var(--density-modifier)) 16px;
   }
 }
 body.is-tablet {

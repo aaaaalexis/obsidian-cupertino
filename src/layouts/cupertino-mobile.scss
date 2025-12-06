@@ -6,7 +6,6 @@ body.input-cupertino.is-mobile {
   --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
 
   // Liquid Glass
-  .liquid-glass,
   &.is-phone .prompt-input,
   &.is-phone .prompt-input-container .prompt-input-cta:not(:empty),
   &.is-phone .prompt-input-container .search-input-clear-button,
@@ -16,7 +15,8 @@ body.input-cupertino.is-mobile {
   &.is-phone .mobile-tab-switcher-menu-spacer .clickable-icon,
   .modal-setting-back-button,
   .modal-close-button,
-  .workspace-drawer .nav-header .nav-buttons-container {
+  .workspace-drawer .nav-header .nav-buttons-container,
+  .pull-action {
     backdrop-filter: var(--blur-s);
     box-shadow: var(--shadow-xs);
     border: none;

@@ -12,6 +12,10 @@
   .metadata-container {
     --metadata-divider-width: 0 !important;
   }
+  .metadata-content {
+    width: auto !important;
+    transform: none !important;
+  }
   .metadata-properties-heading {
     width: 100%;
   }

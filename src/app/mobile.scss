@@ -1,11 +1,12 @@
 body.is-mobile {
+  --touch-radius-xxs: var(--radius-s);
   --touch-radius-xs: var(--radius-s);
   --touch-radius-s: var(--radius-s);
   --touch-radius-m: var(--radius-m);
   --touch-radius-l: var(--radius-l);
   --touch-radius-xl: var(--radius-xl);
-  --radius-s: calc(8px * var(--radius-modifier));
-  --radius-m: calc(16px * var(--radius-modifier));
+  --radius-s: calc(16px * var(--radius-modifier));
+  --radius-m: calc(20px * var(--radius-modifier));
   --radius-l: calc(24px * var(--radius-modifier));
   --radius-xl: calc(32px * var(--radius-modifier));
   --tab-radius: var(--radius-s);
@@ -64,6 +65,7 @@ body.is-mobile {
       backdrop-filter: none;
       box-shadow: none;
       background-color: transparent;
+      background-image: none;
       border: none;
     }
     .mod-raised::after {
@@ -174,6 +176,28 @@ body.is-mobile {
     padding: 10px;
     position: relative;
     margin-left: 0;
+  }
+
+  // Pull action
+  .pull-action {
+    border-radius: 100vh;
+    background-color: var(--background-secondary);
+    background-image: none;
+    border: var(--border-width) solid var(--background-modifier-border);
+    padding: 16px;
+    width: auto;
+    color: var(--text-normal);
+    font-size: var(--font-ui-small);
+  }
+  .pull-action.pull-action.mod-activated {
+    font-weight: var(--font-bold);
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+  }
+
+  .pull-down-action {
+    inset: calc(var(--safe-area-inset-top) + 8px) 8px auto;
+    max-width: 480px;
   }
 }
 
