@@ -9,12 +9,15 @@
     --collapse-icon-color-collapsed: var(--text-muted);
   }
 
+  body.is-mobile .metadata-content {
+    transform: none;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 0;
+    width: auto;
+  }
   .metadata-container {
     --metadata-divider-width: 0 !important;
-  }
-  .metadata-content {
-    width: auto !important;
-    transform: none !important;
   }
   .metadata-properties-heading {
     width: 100%;
@@ -79,6 +82,8 @@
 
     .metadata-container {
       border-radius: var(--radius-s);
+      transform: translateX(-8px);
+      width: calc(100% + 16px);
     }
 
     .metadata-properties-heading.is-collapsed {
@@ -104,6 +109,11 @@
 
     .metadata-container {
       --input-padding: 8px;
+
+      .metadata-content {
+        transform: translateX(-8px);
+        width: calc(100% + 16px);
+      }
 
       .metadata-properties-heading {
         padding-inline: 0px;
