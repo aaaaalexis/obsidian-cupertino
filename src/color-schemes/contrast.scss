@@ -16,6 +16,8 @@ body:not(.is-mobile).contrast-dark-black.theme-dark {
 body.is-mobile.contrast-dark-black.theme-dark,
 body.is-mobile.contrast-dark-black-mobile.theme-dark {
   --system-status-background: black;
+  --settings-background: black;
+  --modal-sidebar-background: black;
   --mobile-sidebar-background: black;
   --tab-background-active: black;
 
