@@ -15,7 +15,6 @@ body.input-cupertino.is-mobile {
   &.is-phone .mobile-tab-switcher-menu-spacer .clickable-icon,
   .modal-setting-back-button,
   .modal-close-button,
-  .workspace-drawer .nav-header .nav-buttons-container,
   .pull-action {
     backdrop-filter: var(--blur-s);
     box-shadow: var(--shadow-xs);
@@ -32,33 +31,6 @@ body.input-cupertino.is-mobile {
   }
 
   // Side panels
-  .workspace-drawer .workspace-drawer-header,
-  .workspace-drawer .workspace-leaf-content > .view-content,
-  .workspace-drawer .workspace-leaf-content > .node-insert-event {
-    padding-inline: var(--safe-area-inset-side);
-  }
-
-  .workspace-drawer {
-    .workspace-drawer-inner {
-      overflow: visible;
-    }
-    .workspace-drawer-header {
-      padding-top: 0px;
-    }
-    .workspace-drawer-header-left {
-      margin-left: 8px;
-    }
-
-    .workspace-drawer-active-tab-header {
-      margin: 0 var(--safe-area-inset-side) 8px;
-      border-radius: 100vh;
-      background-color: var(--background-primary);
-      padding-right: 8px;
-      padding-left: 16px;
-      width: fit-content;
-    }
-  }
-
   .workspace-leaf-content:not([data-type="empty"]) .mod-left-split-toggle svg.svg-icon {
     --icon-size: var(--icon-l);
     background-color: currentColor;
