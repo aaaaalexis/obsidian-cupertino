@@ -63,14 +63,6 @@ body.input-tactile {
 }
 
 body.input-tactile:not(.is-mobile) {
-  // Settings
-  .modal.mod-sidebar-layout {
-    .vertical-tab-header-group-title,
-    .vertical-tab-nav-item {
-      padding: calc(8px * var(--density-modifier)) 12px;
-    }
-  }
-
   // Menu
   .menu-item,
   .suggestion-item {

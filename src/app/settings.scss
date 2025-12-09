@@ -1,12 +1,18 @@
 body:not(.is-mobile) {
   --setting-items-radius: var(--radius-m);
   --setting-items-padding: 0;
+  --setting-items-background: transparent;
   --setting-group-heading-color: var(--text-faint);
   --setting-group-heading-size: var(--font-ui-small);
 
   .modal.mod-sidebar-layout {
     .vertical-tab-header {
       border-inline-end: none;
+    }
+    .vertical-tab-header-group-title,
+    .vertical-tab-nav-item {
+      padding: calc(8px * var(--density-modifier)) 12px;
+      align-items: center;
     }
     .vertical-tab-content {
       background-color: transparent;
