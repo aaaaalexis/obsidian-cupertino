@@ -11,6 +11,11 @@ body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner
     --banner-mobile-offset: 1rem;
     --banner-image-height: var(--banner-image-height-s);
     --banner-image-height-s: 240px;
+
+    .markdown-preview-view:not(.banner),
+    .markdown-source-view.is-live-preview:not(.banner) {
+      --banner-mobile-offset: 0;
+    }
   }
 
   &:not(.is-phone) {
