@@ -8,6 +8,7 @@ body {
 .bases-toolbar-menu,
 .cm-tooltip {
   animation: none !important;
+  min-width: unset;
 }
 
 .text-icon-button {
@@ -35,11 +36,7 @@ body:not(.is-phone) .menu {
   }
 }
 
-// Bases
-.bases-cards-label {
-  color: var(--text-faint);
-}
-
+// Bases: Table
 .bases-table-container,
 .bases-thead,
 .bases-tbody {
@@ -78,7 +75,15 @@ body.bases-col-alt .bases-tbody .bases-tr > .bases-td:nth-child(2n + 2) {
   background-color: var(--background-secondary);
 }
 
-// Bases: Embed
+// Bases: Cards
+.bases-cards-item {
+  gap: 2px;
+}
+.bases-cards-label {
+  color: var(--text-faint);
+}
+
+// Embedded Bases
 .workspace-leaf-content[data-type="markdown"] .bases-embed .bases-view {
   border: none;
   border-radius: 0;
