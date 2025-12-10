@@ -40,10 +40,10 @@ body.is-phone {
   }
   .prompt .prompt-input-container {
     width: auto;
-    margin: auto var(--navbar-side-padding);
+    margin: auto var(--navbar-side-padding) var(--keyboard-spacing);
   }
   .prompt .prompt-input {
-    height: auto;
+    background-color: var(--background-primary);
   }
   .prompt .suggestion-item {
     padding: calc(16px * var(--density-modifier)) 16px;

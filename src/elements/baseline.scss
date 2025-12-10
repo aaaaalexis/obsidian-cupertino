@@ -29,11 +29,6 @@ body {
 
 body:is(.input-baseline, :not([class*="input-"])) {
   --input-font-weight: var(--font-medium);
-
-  &.is-mobile {
-    --interactive-normal: var(--background-primary);
-    --input-border-width: var(--divider-width);
-  }
 }
 
 // Button
