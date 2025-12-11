@@ -140,8 +140,8 @@ body.input-cupertino {
     .clickable-icon:not([aria-disabled="true"]):hover,
     .clickable-icon.has-active-menu,
     .modal-close-button:hover {
-      box-shadow: var(--shadow-xs);
-      background-color: var(--blur-background);
+      box-shadow: var(--raised-shadow);
+      background-color: var(--raised-background);
     }
   }
 

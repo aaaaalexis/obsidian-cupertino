@@ -16,16 +16,16 @@ body.input-cupertino.is-mobile {
   .modal-setting-back-button,
   .modal-close-button,
   .pull-action {
-    backdrop-filter: var(--blur-s);
-    box-shadow: var(--shadow-xs);
+    backdrop-filter: var(--raised-blur);
+    box-shadow: var(--raised-shadow);
     border: none;
-    background-color: var(--blur-background);
+    background-color: var(--raised-background);
     color: var(--text-normal);
     transition: var(--anim-duration-moderate);
 
     @starting-style {
       opacity: 0;
-      filter: var(--blur-s);
+      filter: var(--raised-blur);
       transform: scale(0.75);
     }
   }
@@ -110,13 +110,13 @@ body.input-cupertino.is-mobile {
       position: absolute;
       z-index: 1;
       backdrop-filter: brightness(var(--blur-brightness));
-      mask: var(--blur-mask);
-      mask-composite: var(--blur-mask-composite);
+      mask: var(--raised-mask);
+      mask-composite: var(--raised-mask-composite);
       filter: blur(1px);
       inset: 0;
-      border: var(--blur-mask-border-width) solid transparent;
+      border: var(--raised-mask-border-width) solid transparent;
       border-radius: inherit;
-      background: var(--blur-mask-background);
+      background: var(--raised-mask-background);
       pointer-events: none;
       content: "";
     }
@@ -180,7 +180,7 @@ body.input-cupertino.is-phone {
   // Navigaition bar
   .mobile-navbar {
     border: none !important;
-    background-color: var(--blur-background) !important;
+    background-color: var(--raised-background) !important;
   }
 
   // Pull action
@@ -188,11 +188,11 @@ body.input-cupertino.is-phone {
     background-color: var(--text-normal);
   }
   .pull-action:not(.mod-activated) {
-    background-color: var(--blur-background);
+    background-color: var(--raised-background);
   }
   .pull-action {
-    backdrop-filter: var(--blur-s);
-    box-shadow: var(--shadow-xs);
+    backdrop-filter: var(--raised-blur);
+    box-shadow: var(--raised-shadow);
     width: fit-content;
     font-weight: calc(var(--font-weight) + var(--bold-modifier));
   }
