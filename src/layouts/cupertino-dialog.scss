@@ -67,22 +67,22 @@ body.input-cupertino:not(.is-mobile) {
 }
 
 body.input-cupertino.is-mobile {
-  .menu-scroll {
-    background-color: transparent;
-  }
-
-  .menu .menu-item,
-  .menu .suggestion-item,
-  .suggestion-container .menu-item,
-  .suggestion-container .suggestion-item {
-    padding: calc(8px * var(--density-modifier)) var(--side-padding);
-
-    &:not([class*="is-"]) .menu-item-icon {
-      color: var(--text-normal);
+  .menu,
+  .suggestion-container {
+    .menu-scroll {
+      background-color: transparent;
     }
-    .menu-item-icon .svg-icon {
-      --icon-size: var(--icon-m);
-      --icon-stroke: var(--icon-m-stroke-width);
+    .menu-item,
+    .suggestion-item {
+      padding: calc(8px * var(--density-modifier)) var(--side-padding);
+
+      &:not([class*="is-"]) .menu-item-icon {
+        color: var(--text-normal);
+      }
+      .menu-item-icon .svg-icon {
+        --icon-size: var(--icon-m);
+        --icon-stroke: var(--icon-m-stroke-width);
+      }
     }
   }
 }
@@ -136,6 +136,7 @@ body.input-cupertino.is-tablet {
     .menu-item,
     .suggestion-item {
       gap: 16px;
+      padding: calc(12px * var(--density-modifier)) var(--side-padding);
     }
   }
 

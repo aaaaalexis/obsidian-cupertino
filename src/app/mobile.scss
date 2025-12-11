@@ -52,8 +52,11 @@ body.is-mobile {
     --color-base-00: #1e1e1e;
     --color-base-10: #242424;
     --color-base-20: #262626;
-    --modal-sidebar-background: var(--mobile-sidebar-background);
+    --modal-sidebar-background: var(--background-primary);
     --search-result-background: var(--background-primary);
+  }
+  &.theme-dark.is-phone {
+    --mobile-sidebar-background: var(--background-primary);
   }
 
   .app-container {
@@ -133,6 +136,8 @@ body.is-mobile {
 
     .workspace-drawer-inner {
       background-color: transparent;
+    }
+    &:not(.is-pinned) .workspace-drawer-inner {
       padding-top: 0px;
     }
 
@@ -217,7 +222,6 @@ body.is-phone {
   --mobile-sidebar-radius: 0;
 
   // Side panels
-
   .workspace-drawer {
     .workspace-drawer-header {
       z-index: 1;

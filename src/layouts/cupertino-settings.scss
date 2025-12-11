@@ -145,10 +145,6 @@ body.input-cupertino:not(.is-phone) {
 }
 
 body.input-cupertino.is-mobile {
-  &.theme-dark {
-    --modal-sidebar-background: var(--background-primary);
-  }
-
   .modal.mod-settings {
     .vertical-tab-nav-item .vertical-tab-nav-item-icon {
       padding: 5px;

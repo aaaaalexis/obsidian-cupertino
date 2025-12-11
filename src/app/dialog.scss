@@ -211,7 +211,7 @@ body.is-tablet .suggestion-container {
   }
 
   .menu-item {
-    padding: 8px 12px;
+    padding: calc(8px * var(--density-modifier)) 12px;
   }
   .menu-item-icon .svg-icon {
     --icon-size: var(--icon-s);

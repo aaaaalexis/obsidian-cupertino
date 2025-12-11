@@ -5,6 +5,10 @@ body:not(.is-phone) {
   --setting-group-heading-color: var(--text-faint);
   --setting-group-heading-size: var(--font-ui-small);
 
+  &.theme-dark {
+    --setting-items-background: transparent;
+  }
+
   .modal-sidebar {
     --background-modifier-form-field: var(--interactive-normal);
   }
