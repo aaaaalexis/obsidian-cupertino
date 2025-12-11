@@ -56,7 +56,10 @@ body.layout-macos:not(.is-mobile) {
     }
   }
 
-  &:not(.is-translucent) .mod-sidedock {
+  &:not(.is-translucent).theme-light .mod-sidedock {
+    background-color: color-mix(in srgb, white 98%, var(--interactive-accent));
+  }
+  &:not(.is-translucent).theme-dark .mod-sidedock {
     background-color: color-mix(in srgb, rgb(21, 21, 21) 98%, var(--interactive-accent));
   }
   &.show-ribbon {
