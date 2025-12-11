@@ -98,6 +98,9 @@ body.input-cupertino.is-phone {
   .menu .menu-item {
     min-height: 48px;
   }
+  .menu .menu-item::after {
+    content: none;
+  }
   .menu .menu-item:not(:last-child) {
     border-bottom: none;
 
