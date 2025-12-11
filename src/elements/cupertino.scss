@@ -219,7 +219,7 @@ body.input-cupertino {
   }
 
   // Panel actions
-  &:not(.compact-actions-off, .compact-actions-left) .mod-sidedock .workspace-leaf-content > div:is(.nav-header, .view-content > .nav-header) .nav-buttons-container {
+  &:not(.compact-actions-off, .compact-actions-left) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
     border-radius: var(--clickable-icon-radius);
     background-color: var(--background-modifier-hover);
     padding: 2px;

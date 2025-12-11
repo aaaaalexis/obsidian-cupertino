@@ -6,10 +6,11 @@
   transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color var(--anim-duration-fast);
 }
 
-body:not(.compact-actions-off, .compact-actions-left) .mod-sidedock .workspace-leaf-content > div:is(.nav-header, .view-content > .nav-header):not(:hover) .nav-buttons-container {
+body:not(.compact-actions-off, .compact-actions-left) .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover) .nav-buttons-container {
   gap: 4px !important;
   padding: 0 !important;
   background-color: transparent !important;
+  box-shadow: none !important;
 
   .nav-action-button {
     padding: 2px !important;
@@ -37,7 +38,7 @@ body:not(.compact-actions-off, .compact-actions-left) .mod-sidedock .workspace-l
   }
 }
 
-body.compact-actions-indicator .mod-sidedock .workspace-leaf-content > div:is(.nav-header, .view-content > .nav-header):not(:hover) .nav-buttons-container {
+body.compact-actions-indicator .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover) .nav-buttons-container {
   background-color: var(--background-modifier-hover) !important;
   border-radius: 100vh;
   width: 48px;
@@ -47,6 +48,6 @@ body.compact-actions-indicator .mod-sidedock .workspace-leaf-content > div:is(.n
   }
 }
 
-body.compact-actions-left .mod-sidedock .workspace-leaf-content > div:is(.nav-header, .view-content > .nav-header) {
+body.compact-actions-left .mod-sidedock .workspace-leaf-content .nav-header:first-child {
   align-items: start;
 }
