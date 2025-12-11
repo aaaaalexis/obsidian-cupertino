@@ -1,9 +1,13 @@
-body:not(.is-mobile) {
+body:not(.is-phone) {
   --setting-items-radius: var(--radius-m);
   --setting-items-padding: 0;
   --setting-items-background: transparent;
   --setting-group-heading-color: var(--text-faint);
   --setting-group-heading-size: var(--font-ui-small);
+
+  .modal-sidebar {
+    --background-modifier-form-field: var(--interactive-normal);
+  }
 
   .modal.mod-sidebar-layout {
     .vertical-tab-header {
@@ -15,7 +19,7 @@ body:not(.is-mobile) {
       align-items: center;
     }
     .vertical-tab-content {
-      background-color: transparent;
+      background-color: var(--modal-sidebar-background);
     }
 
     .setting-group-search {
@@ -78,6 +82,10 @@ body:not(.is-mobile) {
       width: 100%;
       flex-wrap: wrap;
     }
+    .modal-sidebar:not(:only-child) .community-modal-controls .setting-item {
+      width: 100%;
+      margin-right: 0;
+    }
     .community-modal-controls .setting-item {
       margin: 0;
       padding: 8px 0;
@@ -96,6 +104,10 @@ body:not(.is-mobile) {
     }
     .community-modal-search-results {
       gap: 8px;
+      padding: 8px;
+    }
+    .community-item:not(.is-selected) {
+      background-color: var(--background-primary);
     }
   }
 }
@@ -134,6 +146,9 @@ body.is-phone {
   .modal.mod-community-modal {
     .modal-title {
       height: calc(var(--touch-size-m) + 16px);
+    }
+    .installed-plugins-container .setting-items .setting-item {
+      border: none;
     }
   }
 }

@@ -28,6 +28,8 @@ body.input-material {
 
   --setting-items-radius: var(--radius-l);
 
+  --input-shadow: none;
+  --input-shadow-hover: none;
   --shadow-s: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px !important;
   --shadow-l: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px !important;
 
@@ -126,21 +128,96 @@ body.input-material {
 
   // Settings
   .modal.mod-settings {
-    .vertical-tab-header-group-title,
     .setting-item-heading,
     .setting-item:not(.setting-item-heading):not(.setting-items .setting-item) {
       padding-inline: 16px !important;
     }
+    .vertical-tab-header-group-title {
+      display: none;
+    }
+    .vertical-tab-header-group-items {
+      gap: 0;
+    }
     .vertical-tab-nav-item {
       border-radius: var(--button-radius);
       padding: calc(12px * var(--density-modifier)) 16px;
+      width: fit-content;
       font-weight: var(--font-medium);
       border-bottom: 0;
       cursor: pointer;
+      align-items: center;
     }
     .vertical-tab-nav-item.is-active {
-      background-color: var(--interactive-accent-active);
-      color: var(--text-accent-active);
+      background-color: var(--background-primary);
+    }
+
+    .vertical-tab-nav-item {
+      .vertical-tab-nav-item-icon {
+        --icon-size: 20px;
+        --setting-icon-color: var(--color-base-50);
+        padding: 10px;
+        border-radius: var(--clickable-icon-radius);
+        color: hsl(from var(--setting-icon-color) h calc(s * 1.05) calc(l * 0.35));
+        background-color: hsl(from var(--setting-icon-color) h calc(s * 0.9) calc(l * 1.15));
+        margin-top: -4px;
+        margin-left: -8px;
+        margin-bottom: -4px;
+      }
+
+      &[data-setting-id="editor"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-blue);
+      }
+      &[data-setting-id="file"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-orange);
+      }
+      &[data-setting-id="appearance"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-accent);
+      }
+      &[data-setting-id="hotkeys"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-pink);
+      }
+      &[data-setting-id="keychain"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-green);
+      }
+      &[data-setting-id="plugins"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-cyan);
+      }
+      &[data-setting-id="community-plugins"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-purple);
+      }
+      &[data-setting-id="backlink"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-purple);
+      }
+      &[data-setting-id="canvas"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-red);
+      }
+      &[data-setting-id="daily-notes"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-red);
+      }
+      &[data-setting-id="file-recovery"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-green);
+      }
+      &[data-setting-id="note-composer"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-cyan);
+      }
+      &[data-setting-id="page-preview"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-blue);
+      }
+      &[data-setting-id="switcher"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-purple);
+      }
+      &[data-setting-id="sync"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-green);
+      }
+      &[data-setting-id="templates"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-blue);
+      }
+      &[data-setting-id="zk-prefixer"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-orange);
+      }
+      &[data-setting-id="webviewer"] .vertical-tab-nav-item-icon {
+        --setting-icon-color: var(--color-blue);
+      }
     }
 
     .setting-group + .setting-group {
@@ -172,6 +249,28 @@ body.input-material {
   }
 }
 
+body.input-material.is-mobile {
+  --radius-s: calc(8px * var(--radius-modifier));
+  --radius-m: calc(16px * var(--radius-modifier));
+  --radius-l: calc(24px * var(--radius-modifier));
+  --radius-xl: calc(32px * var(--radius-modifier));
+
+  // Settings
+  .modal.mod-settings {
+    --setting-items-background: transparent;
+    --setting-items-padding: 0;
+
+    .setting-group .setting-item:not(:last-child):not(.setting-item-heading) {
+      margin-bottom: 2px;
+    }
+
+    .setting-item-control button:not(.clickable-icon) {
+      width: fit-content;
+      padding: 16px;
+    }
+  }
+}
+
 body.input-material:not(.is-phone) {
   @keyframes menuInMaterial {
     from {
@@ -199,7 +298,7 @@ body.input-material:not(.is-phone) {
 
   // Prompt
   .prompt {
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-l);
 
     .prompt-input-container {
       margin: 16px 16px 0;
@@ -208,8 +307,51 @@ body.input-material:not(.is-phone) {
       box-shadow: none;
       border: none;
       border-radius: 100vh;
-      background-color: var(--background-modifier-hover);
+      background-color: var(--interactive-normal);
       font-size: var(--font-ui-large);
+    }
+  }
+}
+
+body.input-material.is-phone {
+  // Editor
+  .mobile-navbar,
+  .mobile-toolbar-options-list-container,
+  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+    border: none !important;
+  }
+  .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::before,
+  .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::after {
+    content: none;
+  }
+
+  // Settings
+  .modal.mod-settings {
+    .vertical-tab-header-group-items {
+      gap: 2px;
+    }
+    .vertical-tab-nav-item {
+      width: 100%;
+      border-radius: var(--radius-s);
+      padding: calc(16px * var(--density-modifier)) 20px;
+      height: auto;
+      background-color: var(--background-primary);
+    }
+    .vertical-tab-nav-item-title,
+    .vertical-tab-nav-item-chevron {
+      border-bottom: none;
+    }
+  }
+
+  // Prompt
+  .prompt {
+    .prompt-input {
+      border-radius: 100vh;
+      border: 2px solid transparent;
+    }
+    .prompt-input:focus {
+      border-color: var(--interactive-accent);
+      box-shadow: none;
     }
   }
 }

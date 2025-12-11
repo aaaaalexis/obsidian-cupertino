@@ -1,4 +1,82 @@
-body.input-cupertino:not(.is-mobile) {
+body.input-cupertino {
+  .modal.mod-settings .vertical-tab-nav-item {
+    .vertical-tab-nav-item-icon {
+      --icon-size: var(--icon-xs);
+      padding: 4px;
+      border-radius: 6px;
+      color: white;
+      box-shadow: inset 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.25), inset -0.5px -0.5px 0.5px rgba(255, 255, 255, 0.25), 0 0 2px rgba(0, 0, 0, 0.25), 0 1px 4px rgba(0, 0, 0, 0.15);
+      background-image: linear-gradient(rgba(255, 255, 255, 0.25), transparent);
+      background-color: var(--color-base-60);
+    }
+
+    &[data-setting-id="editor"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-blue);
+    }
+    &[data-setting-id="file"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-orange);
+    }
+    &[data-setting-id="appearance"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-accent);
+    }
+    &[data-setting-id="hotkeys"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-pink);
+    }
+    &[data-setting-id="keychain"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-green);
+    }
+    &[data-setting-id="plugins"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-cyan);
+    }
+    &[data-setting-id="community-plugins"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-purple);
+    }
+    &[data-setting-id="backlink"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-purple);
+    }
+    &[data-setting-id="canvas"] .vertical-tab-nav-item-icon {
+      color: var(--color-red);
+      background-color: rgb(238, 238, 238);
+      background-image: linear-gradient(rgb(255, 255, 255), transparent);
+    }
+    &[data-setting-id="command-palette"] .vertical-tab-nav-item-icon {
+      background-color: rgb(21, 21, 21);
+    }
+    &[data-setting-id="daily-notes"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-red);
+    }
+    &[data-setting-id="file-recovery"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-green);
+    }
+    &[data-setting-id="note-composer"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-cyan);
+    }
+    &[data-setting-id="page-preview"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-blue);
+    }
+    &[data-setting-id="switcher"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-purple);
+    }
+    &[data-setting-id="sync"] .vertical-tab-nav-item-icon {
+      color: var(--color-green);
+      background-color: rgb(238, 238, 238);
+      background-image: linear-gradient(rgb(255, 255, 255), transparent);
+    }
+    &[data-setting-id="templates"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-blue);
+    }
+    &[data-setting-id="zk-prefixer"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-orange);
+    }
+    &[data-setting-id="webviewer"] .vertical-tab-nav-item-icon {
+      color: var(--color-blue);
+      background-color: rgb(238, 238, 238);
+      background-image: linear-gradient(rgb(255, 255, 255), transparent);
+    }
+  }
+}
+
+body.input-cupertino:not(.is-phone) {
   --setting-items-padding: calc(12px * var(--density-modifier)) var(--side-padding);
   --setting-items-background: var(--background-primary-alt);
 
@@ -16,7 +94,7 @@ body.input-cupertino:not(.is-mobile) {
     }
     .vertical-tab-header-group-title,
     .vertical-tab-nav-item {
-      padding: 4px 8px;
+      padding: 6px 8px;
     }
 
     .setting-item-heading {
@@ -40,11 +118,6 @@ body.input-cupertino:not(.is-mobile) {
     .setting-group .setting-item:last-child {
       padding-bottom: 0;
     }
-
-    .setting-item:not(.setting-item-heading) {
-      padding: calc(12px * var(--density-modifier)) var(--side-padding);
-      position: relative;
-    }
   }
 
   .modal.mod-settings {
@@ -52,8 +125,36 @@ body.input-cupertino:not(.is-mobile) {
       margin-top: 24px;
     }
 
+    .setting-item:not(.setting-item-heading) {
+      padding: calc(12px * var(--density-modifier)) var(--side-padding);
+    }
+
     .installed-plugins-container .setting-items {
       padding: 0 16px 16px;
+    }
+    .installed-plugins-container .setting-items .setting-item {
+      border: none;
+    }
+  }
+
+  .modal.mod-community-modal {
+    .community-modal-search-results {
+      background-color: var(--setting-items-background);
+    }
+  }
+}
+
+body.input-cupertino.is-mobile {
+  &.theme-dark {
+    --modal-sidebar-background: var(--background-primary);
+  }
+
+  .modal.mod-settings {
+    .vertical-tab-nav-item .vertical-tab-nav-item-icon {
+      padding: 5px;
+      border-radius: 8px;
+      box-shadow: 0 0 0 0.5px var(--background-modifier-border);
+      margin-left: -4px;
     }
   }
 }
@@ -78,6 +179,10 @@ body.input-cupertino.is-phone {
     .vertical-tab-header,
     .vertical-tab-content {
       padding-top: var(--modal-header-height);
+    }
+
+    .vertical-tab-nav-item {
+      height: var(--touch-size-xl);
     }
   }
   .modal.mod-settings {
@@ -104,12 +209,18 @@ body.input-cupertino.is-phone {
 }
 
 body.input-cupertino.is-tablet {
-  --setting-items-radius: var(--radius-m);
+  --setting-items-padding: calc(16px * var(--density-modifier)) var(--side-padding);
 
   .modal.mod-settings {
-    .vertical-tab-header-group-title,
+    .vertical-tab-header-group-title {
+      display: none;
+    }
     .vertical-tab-nav-item {
       padding: calc(12px * var(--density-modifier)) var(--side-padding);
+    }
+    .vertical-tab-nav-item.is-active {
+      color: var(--interactive-accent);
+      background-color: var(--background-modifier-hover);
     }
   }
 }

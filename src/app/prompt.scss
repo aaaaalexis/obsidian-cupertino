@@ -59,6 +59,7 @@ body.is-phone {
 body.is-tablet {
   .prompt {
     border: var(--prompt-border-width) solid var(--prompt-border-color);
+    border-radius: var(--modal-radius);
   }
   .prompt-input {
     background-color: transparent;

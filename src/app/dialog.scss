@@ -3,6 +3,10 @@ body {
   --modal-border-color: var(--background-modifier-border-hover);
 }
 
+body.is-mobile.is-tablet {
+  --modal-radius: var(--radius-l);
+}
+
 body.is-mobile .modal-bg:has(+ .prompt) {
   opacity: 0 !important;
 }
@@ -199,6 +203,7 @@ body.is-phone {
 body.is-tablet .menu,
 body.is-tablet .suggestion-container {
   border: 1px solid var(--background-modifier-border-hover);
+  border-radius: var(--menu-radius);
   overflow: auto;
 
   .menu-scroll {

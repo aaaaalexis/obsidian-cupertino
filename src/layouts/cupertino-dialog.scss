@@ -67,8 +67,6 @@ body.input-cupertino:not(.is-mobile) {
 }
 
 body.input-cupertino.is-mobile {
-  --menu-radius: var(--modal-radius);
-
   .menu-scroll {
     background-color: transparent;
   }
