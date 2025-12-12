@@ -25,7 +25,6 @@ body.input-material {
   --background-modifier-form-field: var(--color-base-30);
 
   --menu-radius: var(--radius-l);
-
   --setting-items-radius: var(--radius-l);
 
   --shadow-s: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px !important;
@@ -253,6 +252,9 @@ body.input-material.is-mobile {
   --radius-l: calc(24px * var(--radius-modifier));
   --radius-xl: calc(32px * var(--radius-modifier));
 
+  --nav-item-radius: var(--clickable-icon-radius);
+  --nav-item-padding: calc(16px * var(--density-modifier)) 24px;
+
   // Settings
   &.theme-dark {
     --modal-sidebar-background: var(--background-secondary);
@@ -292,9 +294,10 @@ body.input-material:not(.is-phone) {
       padding: 12px;
       font-weight: var(--font-medium);
       cursor: pointer;
+      gap: 12px;
     }
     .menu-item-icon .svg-icon {
-      --icon-size: var(--icon-l);
+      --icon-size: var(--icon-m);
     }
   }
 
@@ -321,7 +324,6 @@ body.input-material.is-phone {
   .mobile-toolbar-options-list-container,
   &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     border: none !important;
-    box-shadow: var(--shadow-s);
   }
   .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::before,
   .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::after {
