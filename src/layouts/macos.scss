@@ -1,10 +1,14 @@
 body.layout-macos:not(.is-mobile) {
+  --shadow-sidedock-spread: -32px 0 0 32px var(--background-primary);
+
   &.theme-light {
-    --shadow-sidedock: 0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px white, 0 4px 32px rgba(0, 0, 0, 0.075), -32px 0 0 32px var(--background-primary);
+    --sidedock-background: color-mix(in srgb, white 98%, var(--interactive-accent));
+    --shadow-sidedock: 0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px white, 0 4px 32px rgba(0, 0, 0, 0.075);
     --nav-item-background-active: var(--background-modifier-hover);
   }
   &.theme-dark {
-    --shadow-sidedock: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.35), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2), -32px 0 0 32px var(--background-primary);
+    --sidedock-background: color-mix(in srgb, rgb(21, 21, 21) 98%, var(--interactive-accent));
+    --shadow-sidedock: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.35), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
     --nav-item-background-active: rgba(0, 0, 0, 0.5);
   }
 
@@ -56,11 +60,8 @@ body.layout-macos:not(.is-mobile) {
     }
   }
 
-  &:not(.is-translucent).theme-light .mod-sidedock {
-    background-color: color-mix(in srgb, white 98%, var(--interactive-accent));
-  }
-  &:not(.is-translucent).theme-dark .mod-sidedock {
-    background-color: color-mix(in srgb, rgb(21, 21, 21) 98%, var(--interactive-accent));
+  &:not(.is-translucent) .mod-sidedock {
+    background-color: var(--sidedock-background);
   }
   &.show-ribbon {
     &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed) {
@@ -81,7 +82,7 @@ body.layout-macos:not(.is-mobile) {
     display: flex;
     z-index: var(--layer-sidedock);
     margin: 8px 0 8px 8px;
-    box-shadow: var(--shadow-sidedock);
+    box-shadow: var(--shadow-sidedock), var(--shadow-sidedock-spread);
     border-radius: var(--radius-window, var(--radius-m));
     height: -webkit-fill-available;
     overflow: hidden;
@@ -99,6 +100,14 @@ body.layout-macos:not(.is-mobile) {
 
   .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
     border-color: var(--divider-color);
+  }
+
+  // Settings
+  .modal.mod-settings .vertical-tab-header {
+    margin: 8px 0 8px 8px;
+    box-shadow: var(--shadow-sidedock);
+    border-radius: var(--radius-m);
+    background-color: var(--sidedock-background);
   }
 }
 

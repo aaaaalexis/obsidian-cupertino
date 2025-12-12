@@ -112,9 +112,6 @@ body.layout-cupertino:not(.is-phone) {
 }
 
 body.layout-cupertino:not(.is-mobile) {
-  .workspace {
-    background-color: var(--tab-container-background);
-  }
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
     .mod-root {
       background-color: var(--background-primary);

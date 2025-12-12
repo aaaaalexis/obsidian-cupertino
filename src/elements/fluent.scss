@@ -290,7 +290,6 @@ body.input-fluent:not(.is-mobile) {
       position: relative;
     }
     .vertical-tab-nav-item.is-active {
-      --background-modifier-hover: var(--nav-item-background-active);
       background-color: var(--background-modifier-hover);
       color: var(--text-normal);
 

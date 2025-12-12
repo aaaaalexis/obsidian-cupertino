@@ -17,9 +17,6 @@ body:is(.layout-cupertino, .layout-viewfinder):not(.is-phone) {
 .mod-sidedock .workspace-tabs .workspace-leaf {
   background-color: transparent;
 }
-body:not(.layout-cupertino, .layout-macos, .layout-cards, .layout-border, .layout-frame, .layout-viewfinder):is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark):not(.is-mobile) .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
-  border-color: var(--divider-color);
-}
 
 // Mobile editor panels
 body:is(.layout-cupertino, .layout-cards, .layout-border).is-tablet .mod-root {
@@ -91,7 +88,7 @@ body:not(.layout-classic, .layout-minimal):not(.is-mobile).hide-vault-switcher-o
 
 // Tab styles
 body:not(.tabs-floating, .tabs-floating-center, .tabs-underline, .tabs-underline-accented) {
-  &:is(.layout-minimal, .contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.theme-dark.is-mobile),
+  &:is(.layout-minimal, .is-translucent, .contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.theme-dark.is-mobile),
   &:is(.layout-classic, .layout-cupertino):not(.contrast-light-vivid.theme-light),
   &:is(.layout-macos, .layout-frame, .layout-viewfinder:not(.colorful-frame)) {
     .mod-root .workspace-tab-header {
@@ -122,7 +119,7 @@ body:is(.layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder:not(
 body:is(.layout-classic, .layout-minimal, .layout-frame) .mod-sidedock.mod-right-split:not(.is-sidedock-collapsed),
 body.layout-cupertino:not(.tabs-floating, .tabs-floating-center):not(.is-mobile) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root,
 body.layout-macos:not(.tabs-floating, .tabs-floating-center) .mod-root,
-body:not(.layout-cupertino, .layout-cards, .layout-border):is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark):not(.tabs-floating, .tabs-floating-center) .mod-root {
+body:is(.layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder, .layout-macos):is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark):not(.tabs-floating, .tabs-floating-center) .mod-root {
   .workspace-tabs.mod-top .workspace-tab-header-container {
     border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
   }
@@ -132,9 +129,20 @@ body:not(.layout-cupertino, .layout-cards, .layout-border):is(.contrast-light-to
   }
 }
 
-// Light high contrast
+// Contrast
 body.contrast-light-vivid.theme-light:is(.layout-frame, .layout-viewfinder) .mod-root {
   border: none;
+}
+
+body:is(.layout-baseline, :not([class*="layout-"])):not(.is-phone):is(.is-translucent, .contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark) .mod-root {
+  z-index: 1;
+
+  .workspace-tabs {
+    overflow: visible;
+  }
+  .workspace-tab-container {
+    outline: var(--tab-outline-width) solid var(--tab-outline-color);
+  }
 }
 
 // Mobile drawer

@@ -1,9 +1,6 @@
 body.layout-viewfinder:not(.is-mobile) {
   --viewfinder-sidedock-header-height: calc(var(--header-height) + 16px);
 
-  .workspace {
-    background-color: var(--tab-container-background);
-  }
   &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root,
   &.show-ribbon.hover-ribbon .workspace:not(.is-left-sidedock-open) .mod-root {
     margin-left: 8px;

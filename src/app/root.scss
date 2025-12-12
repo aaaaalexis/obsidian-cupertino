@@ -128,10 +128,13 @@ body:not(.is-mobile) {
     --workspace-background-translucent: var(--background-secondary);
   }
 }
-body.is-translucent {
+.is-translucent {
   --blur-s: none;
   --blur-m: none;
   --blur-l: none;
+
+  --divider-color: var(--background-modifier-border) !important;
+  --tab-outline-color: var(--background-modifier-border);
 }
 
 // Title bar
