@@ -1,4 +1,4 @@
-body.is-android:not(.android-off) {
+body.is-android:not(.android-off).is-mobile {
   --clickable-icon-radius: 100vh;
   --button-radius: 100vh;
   --input-font-weight: var(--font-medium);
@@ -26,11 +26,8 @@ body.is-android:not(.android-off) {
   --background-modifier-form-field: var(--color-base-30);
 
   --menu-radius: var(--radius-l);
-
   --setting-items-radius: var(--radius-l);
 
-  --input-shadow: none;
-  --input-shadow-hover: none;
   --shadow-s: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px !important;
   --shadow-l: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px !important;
 
@@ -164,6 +161,7 @@ body.is-android:not(.android-off) {
         margin-top: -4px;
         margin-left: -8px;
         margin-bottom: -4px;
+        box-shadow: none;
       }
 
       &[data-setting-id="editor"] .vertical-tab-nav-item-icon {
@@ -257,6 +255,9 @@ body.is-android:not(.android-off).is-mobile {
   --radius-l: 24px;
   --radius-xl: 32px;
 
+  --nav-item-radius: var(--clickable-icon-radius);
+  --nav-item-padding: calc(16px * var(--density-modifier)) 24px;
+
   // Settings
   &.theme-dark {
     --modal-sidebar-background: var(--background-secondary);
@@ -277,7 +278,7 @@ body.is-android:not(.android-off).is-mobile {
   }
 }
 
-body.is-android:not(.android-off):not(.is-phone) {
+body.is-android:not(.android-off).is-tablet {
   @keyframes menuInMaterial {
     from {
       opacity: 0;
@@ -296,9 +297,10 @@ body.is-android:not(.android-off):not(.is-phone) {
       padding: 12px;
       font-weight: var(--font-medium);
       cursor: pointer;
+      gap: 12px;
     }
     .menu-item-icon .svg-icon {
-      --icon-size: var(--icon-l);
+      --icon-size: var(--icon-m);
     }
   }
 
@@ -329,6 +331,31 @@ body.is-android:not(.android-off).is-phone {
   .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::before,
   .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::after {
     content: none;
+  }
+
+  // Menu
+  .menu {
+    .menu-item {
+      border-radius: var(--radius-s);
+    }
+    .menu-item.is-label + .menu-item:not(.is-label),
+    .menu-item:first-child {
+      border-top-left-radius: var(--setting-items-radius);
+      border-top-right-radius: var(--setting-items-radius);
+    }
+    .menu-item:last-child {
+      border-bottom-left-radius: var(--setting-items-radius);
+      border-bottom-right-radius: var(--setting-items-radius);
+    }
+    .menu-item:not(:last-child) {
+      margin-bottom: 2px;
+    }
+    .menu-item::after {
+      content: none;
+    }
+    .menu-item-icon .svg-icon {
+      --icon-size: var(--icon-m);
+    }
   }
 
   // Settings

@@ -65,8 +65,7 @@ body.is-mobile {
   }
 
   // Non-Liquid Glass
-  &.mod-windows:not(.windows-off):not(.is-mobile),
-  &.is-android:not(.android-off).is-mobile {
+  &.is-android:not(.android-off) {
     .mod-raised {
       backdrop-filter: none;
       box-shadow: none;
@@ -178,6 +177,9 @@ body.is-mobile {
     .nav-buttons-container .nav-action-button {
       background-color: transparent;
     }
+    .nav-buttons-container .nav-action-button.is-active {
+      color: var(--interactive-accent);
+    }
   }
 
   // Editor panels
@@ -200,7 +202,7 @@ body.is-mobile {
     width: auto;
     color: var(--text-normal);
     font-size: var(--font-ui-small);
-    transition: var(--anim-duration-fast), opacity var(--anim-duration-slow), transform 0s;
+    transition: var(--anim-duration-fast), opacity var(--anim-duration-slow), transform 0s !important;
 
     @starting-style {
       opacity: 0;

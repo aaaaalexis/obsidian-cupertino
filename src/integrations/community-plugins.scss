@@ -41,7 +41,7 @@
 body:not(.is-mobile) .omnisearch-input-container__buttons {
   display: none;
 }
-body.obsidian-app.is-phone {
+body.is-phone {
   @media only screen and (max-width: 600px) {
     .omnisearch-modal {
       --prompt-top: calc(var(--safe-area-inset-top) + var(--header-height)) !important;
@@ -137,7 +137,7 @@ body.is-mobile .view-content.notebook-navigator-mobile {
     padding: 0;
   }
 }
-body.obsidian-app .view-content.notebook-navigator-mobile {
+body .view-content.notebook-navigator-mobile {
   --nn-scroller-padding: 0;
 
   .nn-back-button,
@@ -243,7 +243,7 @@ body:not(.is-mobile):not(.compact-actions-off, .compact-actions-left) .mod-sided
   }
 }
 
-body.obsidian-app.is-mobile .workspace-drawer .novel-word-count--active {
+body.is-mobile .workspace-drawer .novel-word-count--active {
   .nav-buttons-container {
     overflow: visible;
   }

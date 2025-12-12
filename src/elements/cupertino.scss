@@ -19,7 +19,7 @@ body.theme-dark {
   --color-pink-rgb: 255, 55, 95;
 }
 
-body.obsidian-app:not(.is-android:not(.android-off)):not(.mod-windows:not(.windows-off)) {
+body:not(.is-android:not(.android-off)):not(.mod-windows:not(.windows-off)) {
   --side-padding: 20px;
 
   --p-spacing: 1rem;
@@ -72,9 +72,11 @@ body.obsidian-app:not(.is-android:not(.android-off)):not(.mod-windows:not(.windo
 
   &.theme-light {
     --interactive-normal: var(--color-base-25);
-    --background-modifier-form-field: var(--color-base-00);
+    --background-modifier-form-field: var(--background-primary);
   }
-
+  &.theme-light.is-mobile {
+    --background-modifier-form-field: var(--interactive-normal);
+  }
   &.is-mobile {
     --slider-thumb-height: 25px;
     --slider-thumb-y: -10px;

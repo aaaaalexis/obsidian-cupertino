@@ -299,7 +299,7 @@
       transition: opacity var(--anim-duration-moderate);
 
       &:not(:hover) {
-        opacity: var(--media-muted, 1);
+        opacity: 0.5;
       }
     }
   }

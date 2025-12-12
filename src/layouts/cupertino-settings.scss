@@ -1,4 +1,4 @@
-body.obsidian-app {
+body:not(.mod-windows:not(.windows-off)) {
   .modal.mod-settings .vertical-tab-nav-item {
     .vertical-tab-nav-item-icon {
       --icon-size: var(--icon-xs);
@@ -76,7 +76,7 @@ body.obsidian-app {
   }
 }
 
-body.obsidian-app:not(.is-phone) {
+body:not(.mod-windows:not(.windows-off)):not(.is-android:not(.android-off)):not(.is-phone) {
   --setting-items-padding: 12px var(--side-padding);
   --setting-items-background: var(--background-primary-alt);
 
@@ -144,7 +144,7 @@ body.obsidian-app:not(.is-phone) {
   }
 }
 
-body.obsidian-app.is-mobile {
+body:not(.is-android:not(.android-off)).is-mobile {
   .modal.mod-settings {
     .vertical-tab-nav-item .vertical-tab-nav-item-icon {
       padding: 5px;
@@ -155,7 +155,7 @@ body.obsidian-app.is-mobile {
   }
 }
 
-body.obsidian-app.is-phone {
+body:not(.is-android:not(.android-off)).is-phone {
   --setting-items-radius: var(--radius-m);
   --setting-group-heading-color: var(--text-faint);
   --setting-group-heading-size: var(--font-ui-medium);
@@ -204,7 +204,7 @@ body.obsidian-app.is-phone {
   }
 }
 
-body.obsidian-app.is-tablet {
+body:not(.is-android:not(.android-off)).is-tablet {
   --setting-items-padding: 16px var(--side-padding);
 
   .modal.mod-settings {

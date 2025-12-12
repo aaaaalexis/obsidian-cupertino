@@ -32,7 +32,7 @@ body:not(.layout-macos):not(.is-mobile) .workspace-split.mod-left-split .workspa
 .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
   background-color: var(--background-modifier-hover);
 }
-body.obsidian-app:not(.is-mobile) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+body:not(.is-mobile) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
   height: 32px;
   margin: auto 0;
 }

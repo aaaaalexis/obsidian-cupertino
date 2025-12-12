@@ -1,5 +1,5 @@
-body.obsidian-app:not(.is-mobile),
-body.obsidian-app:not(.is-android:not(.android-off)).is-mobile {
+body:not(.is-mobile),
+body:not(.is-android:not(.android-off)).is-mobile {
   --background-modifier-message: var(--modal-background) !important;
   --modal-background: rgb(from var(--background-primary-alt) r g b / 75%) !important;
 
@@ -29,7 +29,7 @@ body.obsidian-app:not(.is-android:not(.android-off)).is-mobile {
 }
 
 // Menu
-body.obsidian-app:not(.is-mobile) {
+body:not(.is-mobile) {
   .menu,
   .suggestion-container {
     animation: none;
@@ -67,7 +67,7 @@ body.obsidian-app:not(.is-mobile) {
   }
 }
 
-body.obsidian-app:not(.is-android:not(.android-off)).is-mobile {
+body:not(.is-android:not(.android-off)).is-mobile {
   .menu,
   .suggestion-container {
     .menu-scroll {
@@ -87,7 +87,7 @@ body.obsidian-app:not(.is-android:not(.android-off)).is-mobile {
     }
   }
 }
-body.obsidian-app:not(.is-android:not(.android-off)).is-phone {
+body:not(.is-android:not(.android-off)).is-phone {
   --menu-shadow: var(--shadow-s);
   --menu-padding: 32px var(--safe-area-inset-side);
 
@@ -129,7 +129,7 @@ body.obsidian-app:not(.is-android:not(.android-off)).is-phone {
     }
   }
 }
-body.obsidian-app:not(.is-android:not(.android-off)).is-tablet {
+body:not(.is-android:not(.android-off)).is-tablet {
   --menu-shadow: var(--shadow-l);
 
   .menu,
@@ -150,7 +150,7 @@ body.obsidian-app:not(.is-android:not(.android-off)).is-tablet {
 }
 
 // Modal
-body.obsidian-app:not(.is-mobile) {
+body:not(.is-mobile) {
   @keyframes modalInCupertino {
     from {
       opacity: 1;
@@ -175,7 +175,7 @@ body.obsidian-app:not(.is-mobile) {
   }
 }
 
-body.obsidian-app:not(.is-android:not(.android-off)).is-mobile {
+body:not(.is-android:not(.android-off)).is-mobile {
   .modal-setting-back-button,
   .modal-close-button:not(:empty) {
     --icon-size: var(--icon-xl);
@@ -188,7 +188,7 @@ body.obsidian-app:not(.is-android:not(.android-off)).is-mobile {
     font-size: unset;
   }
 }
-body.obsidian-app:not(.is-android:not(.android-off)).is-phone {
+body:not(.is-android:not(.android-off)).is-phone {
   --modal-radius: var(--radius-xl);
 
   .modal-container.mod-confirmation .modal {
@@ -222,8 +222,8 @@ body.obsidian-app:not(.is-android:not(.android-off)).is-phone {
 }
 
 // Notice & Tooltip
-body.obsidian-app:not(.is-mobile),
-body.obsidian-app:not(.is-android:not(.android-off)).is-mobile {
+body:not(.is-mobile),
+body:not(.is-android:not(.android-off)).is-mobile {
   .notice-container {
     display: flex;
     top: unset;
@@ -252,7 +252,7 @@ body.obsidian-app:not(.is-android:not(.android-off)).is-mobile {
     font-weight: var(--font-normal);
   }
 }
-body.obsidian-app:not(.is-android:not(.android-off)).is-mobile {
+body:not(.is-android:not(.android-off)).is-mobile {
   .notice {
     margin-bottom: 0;
     box-shadow: var(--raised-shadow);
@@ -263,7 +263,7 @@ body.obsidian-app:not(.is-android:not(.android-off)).is-mobile {
 }
 
 // Drag ghost
-body.obsidian-app:not(.is-mobile) {
+body:not(.is-mobile) {
   --drag-ghost-background: var(--background-primary);
   --drag-ghost-text-color: var(--text-normal);
 
