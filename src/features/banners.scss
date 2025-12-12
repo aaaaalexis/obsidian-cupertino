@@ -1,160 +1,115 @@
-body:not(.banner-off) {
-  --banner-image-height: 320px;
-  --banner-image-height-s: 240px;
-  --banner-image-inset: 8px;
+body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner-off) {
   --banner-image-object-fit: cover;
-  --banner-image-radius: var(--media-radius);
-  --banner-icon-size: 48px;
-  --banner-icon-spacer: 16px;
-  --banner-icon-offset: -64px;
-  --banner-content-offset: 0px;
-  --banner-mobile-spacer: 0px;
+  --banner-image-inset: 8px;
+  --banner-image-height: 320px;
+  --banner-fade-height: 80px;
+  --banner-icon-size: 3rem;
   --banner-mobile-offset: 0px;
-  --banner-fade-penalty: 32px;
 
-  --banner-image-actual-height: var(--banner-image-height);
+  // Mobile
+  &:where(.is-mobile) {
+    --banner-mobile-offset: 1rem;
+    --banner-image-height: var(--banner-image-height-s);
+    --banner-image-height-s: 240px;
 
-  --banner-calc-base: calc(var(--banner-mobile-spacer) + var(--banner-mobile-offset) + var(--banner-content-offset));
-  --banner-calc-icon: calc(var(--banner-icon-size) + var(--banner-icon-spacer));
-
-  &.is-phone {
-    --banner-mobile-spacer: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
-    --banner-mobile-offset: 16px;
-
-    --banner-image-actual-height: var(--banner-image-height-s);
+    .markdown-preview-view:not(.banner),
+    .markdown-source-view.is-live-preview:not(.banner) {
+      --banner-mobile-offset: 0;
+    }
   }
 
-  &.banner-image-contain,
-  .banner-image-contain {
-    --banner-image-object-fit: contain;
+  &:not(.is-phone) {
+    --view-top-spacing-markdown: 0px;
   }
-  &.banner-image-cover,
-  .banner-image-cover {
-    --banner-image-object-fit: cover;
-  }
-  &.banner-image-fill,
-  .banner-image-fill {
-    --banner-image-object-fit: fill;
+  &.is-mobile .banner-icon.banner-title .inline-title {
+    padding-top: 0;
   }
 
-  .markdown-source-view.is-live-preview,
-  .markdown-preview-view {
-    // Banner: Spacing
-    &.banner:not(.banner-icon) {
-      & > .markdown-preview-sizer > .markdown-preview-pusher,
-      .cm-sizer {
-        margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height)) !important;
-      }
-
-      &.banner-fade > .markdown-preview-sizer > .markdown-preview-pusher {
-        margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height) - var(--banner-fade-penalty)) !important;
-      }
-
-      .markdown-preview-sizer div:nth-child(1 of .el-h1) h1 {
-        margin-top: 0px;
-      }
-
-      &.banner-fade .cm-sizer .inline-title:not([data-level]) {
-        margin-top: calc(-1 * var(--banner-fade-penalty));
-      }
-    }
-    &.banner.banner-icon {
-      & > .markdown-preview-sizer > .markdown-preview-pusher,
-      .cm-sizer {
-        margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height) + var(--banner-calc-icon) + var(--banner-icon-offset)) !important;
-      }
-      &.banner-fade > .markdown-preview-sizer > .markdown-preview-pusher,
-      &.banner-fade.is-live-preview .cm-sizer {
-        margin-top: calc(var(--banner-calc-base) + var(--banner-image-actual-height) + var(--banner-calc-icon) + var(--banner-icon-offset) - var(--banner-fade-penalty)) !important;
-      }
-      .callout[data-callout="banner-icon"] {
-        top: calc(var(--banner-calc-base) + var(--file-margins-block) + var(--banner-image-actual-height) + var(--banner-icon-offset));
-      }
-      &.banner-fade .callout[data-callout="banner-icon"] {
-        top: calc(var(--banner-calc-base) + var(--file-margins-block) + var(--banner-image-actual-height) + var(--banner-icon-offset) - var(--banner-fade-penalty));
-      }
-    }
-    &.banner-icon:not(.banner) {
-      & > .markdown-preview-sizer > .markdown-preview-pusher,
-      .cm-sizer {
-        margin-top: calc(var(--banner-calc-base) + var(--banner-calc-icon)) !important;
-      }
-      .callout[data-callout="banner-icon"] {
-        top: calc(var(--banner-calc-base) + var(--file-margins-block));
-      }
-    }
-    &.banner:is(body:not(.show-inline-title) .banner) {
-      .markdown-preview-sizer div:nth-child(1 of .el-h1) h1 {
-        margin-top: calc(-1 * var(--banner-icon-spacer));
-      }
-    }
-    &.banner-icon.banner-title:is(body:not(.show-inline-title) .banner-icon.banner-title) {
-      .markdown-preview-sizer div:nth-child(1 of .el-h1) h1 {
-        position: absolute;
-        margin-top: calc(-1 * var(--banner-icon-size) - 1lh);
-        margin-left: calc(var(--banner-icon-size) + 16px);
-      }
-    }
-
-    // Banner: Image
-    &.banner {
+  @for $n from 0 through 20 {
+    $i: $n * 5;
+    .banner.y#{$i} {
       img[alt="banner"] {
-        position: absolute;
-        inset: var(--banner-mobile-spacer) var(--banner-image-inset) auto;
+        object-position: center #{percentage($i / 100)};
+      }
+    }
+  }
+
+  .mod-root .view-content:not(.pixel-banner) {
+    // Spacing
+    .markdown-preview-view,
+    .markdown-source-view.is-live-preview {
+      .markdown-preview-sizer,
+      .cm-editor > .cm-scroller > .cm-sizer {
+        margin-top: calc(var(--banner-image-height) + var(--banner-icon-size) - var(--banner-fade-height) + var(--banner-mobile-offset));
+      }
+
+      &:not(.banner) {
+        --banner-image-height: 0px;
+      }
+      &:not(.banner.banner-fade) {
+        --banner-fade-height: 0px;
+      }
+      &:not(.banner-icon) {
+        --banner-icon-size: 0px;
+      }
+
+      &.banner-icon:not(.banner) {
+        --banner-image-height: var(--banner-icon-size);
+      }
+      &.banner-icon:not(.banner.banner-fade) {
+        --banner-fade-height: var(--banner-icon-size);
+      }
+      &.banner.banner-icon.banner-title:not(.banner-fade) {
+        --banner-fade-height: 0px;
+      }
+    }
+
+    // Banner image
+    .banner .image-embed[alt="banner"] {
+      position: absolute;
+      inset: var(--view-top-spacing-markdown) var(--banner-image-inset) auto;
+      height: var(--banner-image-height);
+      overflow: hidden;
+      line-height: 0;
+
+      &:not(:active) img {
         width: 100%;
-        max-width: calc(100% - var(--banner-image-inset) * 2);
-        height: var(--banner-image-actual-height);
+        height: 100%;
         object-fit: var(--banner-image-object-fit);
-        border-radius: var(--banner-image-radius) !important;
-      }
-
-      .image-embed:has(img[alt="banner"]) {
-        display: contents !important;
+        border-radius: var(--banner-image-radius, var(--media-radius));
       }
     }
-    &.banner.banner-fade {
-      img[alt="banner"] {
-        mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 15%, hsla(0, 0%, 0%, 0.951) 28.2%, hsla(0, 0%, 0%, 0.896) 39.7%, hsla(0, 0%, 0%, 0.825) 49.6%, hsla(0, 0%, 0%, 0.741) 58.1%, hsla(0, 0%, 0%, 0.648) 65.4%, hsla(0, 0%, 0%, 0.55) 71.6%, hsla(0, 0%, 0%, 0.45) 76.9%, hsla(0, 0%, 0%, 0.352) 81.4%, hsla(0, 0%, 0%, 0.259) 85.2%, hsla(0, 0%, 0%, 0.175) 88.5%, hsla(0, 0%, 0%, 0.104) 91.5%, hsla(0, 0%, 0%, 0.049) 94.3%, hsla(0, 0%, 0%, 0.013) 97.1%, hsla(0, 0%, 0%, 0) 100%);
-      }
-    }
-    @for $i from 0 through 100 {
-      &.banner.y#{$i} {
-        img[alt="banner"] {
-          object-position: center #{percentage($i / 100)};
-        }
-      }
+    .banner .mod-header,
+    .banner .inline-title,
+    .banner .metadata-container {
+      z-index: 1;
     }
 
-    // Banner: Icon
-    &.banner-icon {
+    // Banner image fade
+    .banner.banner-fade .image-embed[alt="banner"]:not(:active) {
+      mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 14%, hsla(0, 0%, 0%, 0.951) 26.2%, hsla(0, 0%, 0%, 0.896) 36.8%, hsla(0, 0%, 0%, 0.825) 45.9%, hsla(0, 0%, 0%, 0.741) 53.7%, hsla(0, 0%, 0%, 0.648) 60.4%, hsla(0, 0%, 0%, 0.55) 66.2%, hsla(0, 0%, 0%, 0.45) 71.2%, hsla(0, 0%, 0%, 0.352) 75.6%, hsla(0, 0%, 0%, 0.259) 79.6%, hsla(0, 0%, 0%, 0.175) 83.4%, hsla(0, 0%, 0%, 0.104) 87.2%, hsla(0, 0%, 0%, 0.049) 91.1%, hsla(0, 0%, 0%, 0.013) 95.3%, hsla(0, 0%, 0%, 0) 100%);
+    }
+
+    // Banner icon
+    .banner-icon {
       .cm-callout:has(.callout[data-callout="banner-icon"]) {
         display: contents !important;
       }
 
       .callout[data-callout="banner-icon"] {
-        // Positioning
-        position: absolute;
         z-index: 1;
-        container-type: inline-size;
-        margin: 0;
-
-        // Styling
+        position: absolute;
+        top: calc(var(--view-top-spacing-markdown) + var(--banner-image-height) - var(--banner-fade-height) + 1rem);
+        margin: 0 !important;
         border: none !important;
-        background-color: transparent !important;
-        padding: 0;
+        background: none !important;
+        padding: 0 !important;
         width: var(--banner-icon-size);
         height: var(--banner-icon-size);
-        overflow: visible;
-        font-size: 0;
+        font-size: var(--banner-icon-size);
 
-        .callout-title {
-          justify-content: center;
-        }
-
-        .callout-title-inner::first-letter {
-          color: var(--color-accent);
-          font-size: 100cqw;
-          line-height: 100%;
+        .callout-title-inner {
+          line-height: 1;
         }
 
         .callout-icon,
@@ -163,26 +118,53 @@ body:not(.banner-off) {
         }
       }
     }
-    &.banner-icon.banner-title {
-      --banner-icon-spacer: var(--inline-title-size);
 
-      .inline-title:not([data-level]) {
-        z-index: 1;
-        margin-top: calc(-1 * var(--banner-calc-icon) + ((var(--banner-icon-size) - 1em) / 2));
-        margin-left: calc(var(--banner-icon-size) + 16px);
-        margin-bottom: calc(var(--banner-icon-size) / 2);
-        max-width: calc(100cqw - (var(--banner-icon-size) + 16px));
+    // Banner title
+    @keyframes bannerTitleEditIn {
+      from {
+        transform: translateY(-0.5rem);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
       }
     }
-  }
+    @keyframes bannerTitleEditOut {
+      from {
+        transform: translateY(0.5rem);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
 
-  // Popover fix
-  &:not(.is-mobile) .popover .markdown-embed {
-    --banner-image-actual-height: var(--banner-image-height-s);
-    --banner-image-inset: 0px;
+    .banner-icon.banner-title .inline-title {
+      transition: var(--anim-duration-moderate) var(--anim-motion-cupertino), margin-left 0s;
+    }
+    .banner-icon.banner-title .inline-title:focus-within {
+      animation: bannerTitleEditIn var(--anim-duration-moderate) var(--anim-motion-cupertino) forwards;
+    }
+    .banner-icon.banner-title .inline-title:not(:focus-within) {
+      position: absolute;
+      top: calc(var(--view-top-spacing-markdown) + var(--banner-image-height) - var(--banner-fade-height) + 1rem);
+      align-items: center;
+      animation: bannerTitleEditOut var(--anim-duration-moderate) var(--anim-motion-cupertino) forwards;
+      margin-bottom: 0;
+      margin-left: calc(var(--banner-icon-size) + 1rem);
+      width: calc(var(--file-line-width) - var(--banner-icon-size) - 1rem);
+      max-width: calc(100% - var(--file-margins-x) * 2 - var(--banner-icon-size) - 1rem);
+      height: var(--banner-icon-size);
+      overflow: hidden;
+      line-height: var(--banner-icon-size);
+      text-overflow: ellipsis;
+      white-space: nowrap;
 
-    .banner-icon .inline-title {
-      display: flex;
+      &::before {
+        content: none;
+      }
     }
   }
 }

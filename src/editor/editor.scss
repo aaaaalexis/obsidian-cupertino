@@ -1,5 +1,6 @@
 @media screen, print {
   body {
+    --text-normal-editor: var(--color-base-90);
     --inline-title-color: inherit;
 
     --inline-title-margin-bottom: calc(0.5em * var(--readable-spacing-modifier, 1));
@@ -108,25 +109,12 @@
     content: "";
   }
 
-  // Line numbers
-  body:not(.is-mobile) .workspace-leaf-content[data-type="markdown"] .cm-gutters {
-    position: absolute;
-
-    .cm-gutterElement {
-      text-align: center;
-    }
-    .cm-gutterElement.cm-active {
-      font-weight: calc(var(--font-weight) + var(--bold-modifier));
-      color: var(--text-muted);
-    }
-  }
-
   // Codeblocks
   .markdown-rendered pre {
-    -electron-corner-smoothing: system-ui;
+    -electron-corner-smoothing: var(--corner-smoothing);
   }
   .markdown-rendered code {
-    -electron-corner-smoothing: system-ui;
+    -electron-corner-smoothing: var(--corner-smoothing);
     padding: 2px 4px;
   }
   .markdown-rendered pre code {
@@ -144,6 +132,7 @@
     background: linear-gradient(var(--background-primary), var(--background-secondary));
     padding: var(--tag-padding-y) var(--tag-padding-x);
     font-family: var(--font-text);
+    color: var(--text-muted);
   }
 
   // Dataview
@@ -177,7 +166,7 @@
   }
 
   .markdown-embed {
-    -electron-corner-smoothing: system-ui;
+    -electron-corner-smoothing: var(--corner-smoothing);
   }
   .markdown-embed:not(.image-embed, .canvas-node-content) {
     display: flex;
@@ -288,12 +277,12 @@
   iframe,
   video,
   .file-embed {
-    -electron-corner-smoothing: system-ui;
+    -electron-corner-smoothing: var(--corner-smoothing);
     border-radius: var(--media-radius);
   }
 
   body:not(.full-width-media-off) .workspace-leaf-content[data-type="markdown"] {
-    img:not([width], .cm-widgetBuffer, .link-favicon, .emoji),
+    img:not([width], .cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]),
     iframe,
     video {
       width: 100%;
@@ -303,7 +292,7 @@
 
   body:not(.media-dimming-off).theme-dark .workspace-leaf-content[data-type="markdown"],
   body:not(.media-dimming-off).theme-dark .workspace-leaf-content[data-type="bases"] {
-    img:not([width], .cm-widgetBuffer, .link-favicon, .emoji),
+    img:not([width], .cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]),
     iframe,
     video,
     .bases-cards-cover {

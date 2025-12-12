@@ -3,6 +3,9 @@
   .omnisearch-input-container__buttons {
     padding: 0 8px;
   }
+  .omnisearch-input-field {
+    padding: 8px;
+  }
 }
 @media only screen and (min-width: 600px) {
   .omnisearch-input-container__buttons {
@@ -38,7 +41,7 @@
 body:not(.is-mobile) .omnisearch-input-container__buttons {
   display: none;
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app.is-phone {
+body.obsidian-app.is-phone {
   @media only screen and (max-width: 600px) {
     .omnisearch-modal {
       --prompt-top: calc(var(--safe-area-inset-top) + var(--header-height)) !important;
@@ -98,10 +101,9 @@ body {
 
   --nn-theme-navitem-border-radius: var(--radius-m);
   --nn-theme-file-border-radius: var(--radius-m);
-
-  .notebook-navigator {
-    background-color: transparent;
-  }
+}
+.notebook-navigator {
+  background-color: transparent;
 }
 body:not(.is-mobile) .view-content.notebook-navigator {
   padding: 0 !important;
@@ -135,51 +137,16 @@ body.is-mobile .view-content.notebook-navigator-mobile {
     padding: 0;
   }
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).obsidian-app .view-content.notebook-navigator-mobile {
+body.obsidian-app .view-content.notebook-navigator-mobile {
   --nn-scroller-padding: 0;
 
   .nn-back-button,
   .nn-mobile-toolbar {
-    backdrop-filter: var(--blur-s);
-    box-shadow: var(--shadow-xs);
+    backdrop-filter: var(--raised-blur);
+    box-shadow: var(--raised-shadow);
     border: none;
-    background-color: var(--liquid-glass-background);
+    background-color: var(--raised-background);
     border-radius: 100vh;
-  }
-}
-body.obsidian-app .view-content.notebook-navigator-mobile {
-  .nn-nav-bottom-spacer,
-  .nn-list-bottom-spacer {
-    height: calc(var(--navbar-bottom-padding) + 128px);
-  }
-  .nn-mobile-toolbar {
-    position: absolute;
-    inset: auto 0 var(--navbar-bottom-padding);
-    margin: 0 auto;
-    border: var(--border-width) solid var(--background-modifier-border);
-    border-radius: 100vh;
-    background: var(--background-secondary);
-    padding: 4px;
-    min-height: 48px;
-    height: 48px;
-    width: fit-content;
-  }
-  .nn-mobile-toolbar-button {
-    width: unset;
-    height: unset;
-    min-width: unset;
-    min-height: 100%;
-    max-height: 100%;
-    padding: 12px;
-    border-radius: 100vh;
-
-    span {
-      display: flex;
-    }
-
-    span svg {
-      stroke-width: var(--icon-l-stroke-width);
-    }
   }
 }
 
@@ -241,7 +208,7 @@ body.is-phone.hider-sidebar-buttons {
     }
   }
 
-  &.liquid-glass-off:not(.is-mobile) {
+  &.layout-macos:not(.is-mobile) {
     .workspace-split {
       padding-bottom: 0 !important;
     }
@@ -253,7 +220,7 @@ body.is-phone.hider-sidebar-buttons {
 }
 
 // Novel Word Count https://github.com/isaaclyman/novel-word-count-obsidian
-body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-content.novel-word-count--active > .nav-header {
+body:not(.is-mobile):not(.compact-actions-off, .compact-actions-left) .mod-sidedock .workspace-leaf-content.novel-word-count--active > .nav-header {
   &:not(:hover) .nav-buttons-container {
     .nav-action-button {
       opacity: 0;
@@ -276,7 +243,7 @@ body:not(.is-mobile):not(.compact-actions-off) .mod-sidedock .workspace-leaf-con
   }
 }
 
-body:is(.liquid-glass-off, :not(.liquid-glass-off)).is-mobile.obsidian-app .workspace-drawer .novel-word-count--active {
+body.obsidian-app.is-mobile .workspace-drawer .novel-word-count--active {
   .nav-buttons-container {
     overflow: visible;
   }
@@ -347,12 +314,12 @@ body:not(.is-phone) .pixel-banner {
     top: var(--view-header-height, var(--header-height));
   }
 }
-body.is-phone.obsidian-app .pixel-banner {
+body.is-phone .pixel-banner {
   .select-image-icon {
     display: none;
   }
   .pixel-banner-image {
-    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
+    top: var(--view-top-spacing-markdown);
   }
 }
 

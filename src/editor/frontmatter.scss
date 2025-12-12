@@ -6,6 +6,13 @@
     --metadata-label-width: calc(7.5em * var(--metadata-label-width-multiplier, 1));
   }
 
+  body.is-mobile .metadata-content {
+    transform: none;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 0;
+    width: auto;
+  }
   .metadata-container {
     --metadata-divider-width: 0 !important;
   }
@@ -46,7 +53,7 @@
   }
 
   // Metadata: Cupertino
-  body.obsidian-app {
+  body {
     --metadata-gap: 0;
     --metadata-padding: 0;
     --metadata-property-radius: var(--radius-m);
@@ -55,6 +62,11 @@
 
     .metadata-container {
       --input-padding: 8px;
+
+      .metadata-content {
+        transform: translateX(-8px);
+        width: calc(100% + 16px);
+      }
 
       .metadata-properties-heading {
         padding-inline: 0px;

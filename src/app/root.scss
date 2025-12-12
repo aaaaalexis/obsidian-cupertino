@@ -14,15 +14,17 @@ body,
 
   --icon-opacity: 1;
 
+  --corner-smoothing: system-ui;
+
   --shadow-s: rgba(0, 0, 0, 0.08) 0px 12px 24px -4px, rgba(0, 0, 0, 0.04) 0px 8px 16px -4px;
-  --shadow-l: 0 14px 62px 0 #00000040;
+  --shadow-l: 0 14px 62px #00000040;
   --shadow-tactile: rgba(0, 0, 0, 0.04) 0px 2px 8px -2px, rgba(var(--mono-rgb-100), 0.04) 0px 2px 4px -2px;
 
   --anim-motion-cupertino: cubic-bezier(0.32, 0.72, 0, 1);
   --anim-duration-superfast: 80ms;
   --anim-duration-fast: 160ms;
   --anim-duration-moderate: 320ms;
-  --anim-duration-slow: 640ms;
+  --anim-duration-slow: 480ms;
 
   --icon-xs-stroke-width: 2px;
   --icon-s-stroke-width: 2px;
@@ -78,22 +80,6 @@ body,
   --code-value: #c678de;
 }
 
-// Translucent window
-@media (prefers-color-scheme: light) {
-  .theme-dark {
-    --workspace-background-translucent: var(--background-secondary);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  .theme-light {
-    --workspace-background-translucent: var(--background-secondary);
-  }
-}
-
-body.is-translucent {
-  --divider-color: var(--background-modifier-border) !important;
-}
-
 body:not(.is-mobile) {
   .workspace,
   .app-container {
@@ -108,6 +94,23 @@ body:not(.is-mobile) {
   .workspace-split {
     transition: var(--anim-duration-moderate);
   }
+}
+
+// Translucent window
+@media (prefers-color-scheme: light) {
+  .theme-dark {
+    --workspace-background-translucent: var(--background-secondary);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .theme-light {
+    --workspace-background-translucent: var(--background-secondary);
+  }
+}
+body.is-translucent {
+  --blur-s: none;
+  --blur-m: none;
+  --blur-l: none;
 }
 
 // Title bar

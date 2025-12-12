@@ -56,13 +56,13 @@ Cupertino supports most filter and helper classes from [Minimal](https://github.
 
 ### Banner
 
-| Class          | Description                                                                   |
-| :------------- | :---------------------------------------------------------------------------- |
-| `banner`       | Add at the end of the image link, e.g. `![[image.jpeg\|banner]]`              |
-| `banner-fade`  | Add faded edge to the banner (requires `banner`)                              |
-| `banner-icon`  | Add an emoji or letter as note icon using callout, e.g. `> [!banner-icon] 👋` |
-| `banner-title` | Moves inline title next to the icon (requires `banner-icon`)                  |
-| `y0` to `y100` | Adjust the vertical position of the banner (requires `banner`, from 0 to 100) |
+| Class                   | Description                                                                                 |
+| :---------------------- | :------------------------------------------------------------------------------------------ |
+| `banner`                | Add at the end of the image link, e.g. `![[image.jpeg\|banner]]`                            |
+| `banner-fade`           | Add faded edge to the banner (requires `banner`)                                            |
+| `banner-icon`           | Add an emoji or letter as note icon using callout, e.g. `> [!banner-icon] 👋`               |
+| `banner-title`          | Moves inline title next to the icon (requires `banner-icon`)                                |
+| `y0`, `y5`... to `y100` | Adjust the vertical position of the banner (requires `banner`), from 0 to 100 in steps of 5 |
 
 ### [Block width](https://minimal.guide/features/block-width)
 

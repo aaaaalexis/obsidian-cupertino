@@ -1,4 +1,4 @@
-body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)) {
+body.obsidian-app:not(.is-android:not(.android-off)) {
   .prompt-input-container {
     align-items: center;
   }
@@ -31,7 +31,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android
     border-top: none;
   }
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)):not(.is-phone) {
+body.obsidian-app:not(.is-android:not(.android-off)):not(.is-phone) {
   --prompt-input-height: 56px;
 
   @keyframes bounceInScale {
@@ -58,7 +58,7 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android
     pointer-events: none;
   }
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).obsidian-app.is-phone {
+body.obsidian-app:not(.is-android:not(.android-off)).is-phone {
   --prompt-input-height: 48px;
 
   .prompt {
@@ -68,6 +68,9 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android
     height: 100vh;
     padding-bottom: 0;
 
+    .prompt-input-container {
+      width: calc(100% - var(--safe-area-inset-side) * 2);
+    }
     .prompt-input-container,
     .suggester-input {
       border: none;
@@ -75,6 +78,10 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android
       position: absolute;
       inset: auto var(--safe-area-inset-side) calc(var(--safe-area-inset-side) + var(--safe-area-inset-bottom));
       z-index: 1;
+      background-color: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+      margin: 0;
     }
     .prompt-input {
       border-radius: 100vh;
@@ -84,9 +91,10 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android
       border-radius: 100vh;
       position: relative;
       inset-inline-end: 0;
-      width: 48px;
-      height: 48px;
+      width: var(--prompt-input-height);
+      height: var(--prompt-input-height);
       flex-shrink: 0;
+      margin: 0;
     }
     .prompt-input-container .search-input-clear-button:after {
       -webkit-mask-position: 50% 50%;
@@ -128,6 +136,6 @@ body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android
   }
 }
 
-body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-android:not(.android-off)).is-tablet .prompt {
+body.obsidian-app:not(.is-android:not(.android-off)).is-tablet .prompt {
   border-radius: var(--radius-l);
 }

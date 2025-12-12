@@ -2,7 +2,7 @@ body {
   --prompt-border-color: var(--background-modifier-border-hover);
   --prompt-input-height: 64px;
 }
-body.is-mobile {
+body.is-tablet {
   --prompt-input-height: 64px;
 }
 
@@ -11,7 +11,7 @@ body.mod-macos.is-translucent .prompt {
 }
 
 .prompt {
-  -electron-corner-smoothing: system-ui;
+  -electron-corner-smoothing: var(--corner-smoothing);
   background-color: var(--background-secondary);
   animation: modalIn var(--anim-duration-moderate) var(--anim-motion-cupertino) forwards;
 
@@ -35,19 +35,33 @@ body.is-phone {
     animation: none;
     border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   }
-  .suggestion-item {
-    padding: 16px;
+  .prompt .prompt-results {
+    padding: var(--navbar-side-padding);
+  }
+  .prompt .prompt-input-container {
+    width: auto;
+    margin: auto var(--navbar-side-padding) var(--keyboard-spacing);
+  }
+  .prompt .prompt-input {
+    background-color: var(--background-primary);
+  }
+  .prompt .suggestion-item {
+    padding: 16px 16px;
   }
 
   .suggestion-container {
     border-radius: var(--radius-m);
   }
+  .suggestion-item {
+    padding: 8px 16px;
+  }
 }
 body.is-tablet {
   .prompt {
     border: var(--prompt-border-width) solid var(--prompt-border-color);
+    border-radius: var(--modal-radius);
   }
   .prompt-input {
-    background-color: transparent !important;
+    background-color: transparent;
   }
 }

@@ -43,7 +43,7 @@
 
       th,
       td {
-        -electron-corner-smoothing: system-ui;
+        -electron-corner-smoothing: var(--corner-smoothing);
       }
 
       > thead:only-child,

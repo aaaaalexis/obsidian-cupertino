@@ -1,10 +1,10 @@
 // Editor panel
-body:not(.liquid-glass-off) {
+body:not(.layout-macos) {
   .workspace-split.mod-root .workspace-tab-container {
     border-radius: 0;
   }
 }
-body.liquid-glass-off {
+body.layout-macos {
   &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
     margin-left: 8px;
   }
@@ -24,7 +24,7 @@ body.liquid-glass-off {
 }
 
 // Vault switcher
-body:not(.liquid-glass-off):not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile::before {
+body:not(.layout-macos):not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile::before {
   background-color: var(--background-primary);
 }
 
@@ -32,12 +32,12 @@ body:not(.liquid-glass-off):not(.is-mobile) .workspace-split.mod-left-split .wor
 .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
   background-color: var(--background-modifier-hover);
 }
-body:is(.liquid-glass-off, :not(.liquid-glass-off)):not(.is-mobile) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+body.obsidian-app:not(.is-mobile) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
   height: 32px;
   margin: auto 0;
 }
 
 // Mobile drawer
-body:not(.liquid-glass-off).is-tablet .workspace-drawer.is-pinned.mod-left {
+body:not(.layout-macos).is-tablet .workspace-drawer.is-pinned.mod-left {
   border: none;
 }

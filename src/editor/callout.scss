@@ -7,7 +7,7 @@
   }
 
   .callout:not([data-callout="note-toolbar"]) {
-    -electron-corner-smoothing: system-ui;
+    -electron-corner-smoothing: var(--corner-smoothing);
     font-size: var(--callout-size);
 
     .callout-content > *:first-child {

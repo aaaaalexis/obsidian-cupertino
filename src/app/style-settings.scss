@@ -10,21 +10,8 @@ settings:
         type: info-text
         markdown: true
     -
-        id: cupertino-header
-        title: Cupertino
-        type: heading
-        level: 1
-    -
-        id: liquid-glass-off
-        title: Disable floating sidebar
-        type: class-toggle
-    -
-        id: liquid-glass-tint-off
-        title: Disable sidebar tinting
-        type: class-toggle
-    -
         id: windows-header
-        title: On Windows
+        title: Windows
         type: heading
         level: 1
     -
@@ -34,13 +21,26 @@ settings:
         type: class-toggle
     -
         id: android-header
-        title: On Android
+        title: Android
         type: heading
         level: 1
     -
         id: android-off
         title: Disable Android mode
         description: Turn off Android specific styling.
+        type: class-toggle
+    -
+        id: cupertino-header
+        title: Workspace
+        type: heading
+        level: 1
+    -
+        id: layout-macos
+        title: Disable floating sidebar
+        type: class-toggle
+    -
+        id: layout-macos-tint-off
+        title: Disable sidebar tinting
         type: class-toggle
     -
         id: editor-header
@@ -100,12 +100,14 @@ settings:
         id: zoom-off
         title: Disable media zoom
         type: class-toggle
-	-
-		id: accessibility-header
-		title: Accessibility
-		type: heading
-		level: 1
-		collapsed: true
+*/
+
+/*!
+/* @settings
+
+name: Cupertino Accessibility
+id: cupertino-accessibility
+settings:
 	-
 		id: reduce-contrast-change
 		title: Reduce contrast change
@@ -118,12 +120,8 @@ settings:
 		description: Minimizes animation effects across the interface
 		type: class-toggle
 		default: false
-
 */
 
-.vertical-tab-content > div > .setting-item-heading:not(.is-collapsed) {
-  border-bottom: 0;
-}
 .view-content .style-settings-container .style-settings-container .setting-item {
   padding: 16px;
   align-items: center;
@@ -136,19 +134,66 @@ settings:
     padding-top: 0;
   }
 }
+.style-settings-heading:not(.is-collapsed) {
+  border-bottom: none;
+}
 .style-settings-heading,
 .style-settings-container {
   padding-left: 32px;
   margin-block: 0 !important;
 }
 .style-settings-heading {
-  padding: 16px var(--side-padding) !important;
+  padding: 16px !important;
+  border-radius: 0;
 }
 .style-settings-heading .setting-item-name {
   color: var(--text-normal) !important;
 }
 
-body.liquid-glass-off .style-settings-container .setting-item[data-id="liquid-glass-tint-off"] {
+.style-settings-container .setting-item {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+.style-settings-container .setting-item:nth-child(1 of .setting-item:not(.setting-item-heading)) {
+  border-top-left-radius: var(--setting-items-radius);
+  border-top-right-radius: var(--setting-items-radius);
+}
+.style-settings-container .setting-item:nth-last-child(1 of .setting-item:not(.setting-item-heading)) {
+  border-bottom-left-radius: var(--setting-items-radius);
+  border-bottom-right-radius: var(--setting-items-radius);
+}
+.style-settings-container .themed-color-wrapper > div {
+  background-color: transparent;
+  color: var(--color-base-100);
+  gap: 8px;
+
+  .pickr-reset > button {
+    color: var(--color-base-100);
+    background-color: var(--color-base-10);
+    margin: 0;
+  }
+}
+.themed-color-wrapper {
+  display: flex;
+}
+.themed-color-wrapper > div + div {
+  margin-top: 0;
+}
+
+.style-settings-container .pickr .pcr-button {
+  box-shadow: none;
+
+  &::before {
+    background: var(--color-base-50);
+    border-radius: var(--button-radius);
+  }
+
+  &::after {
+    border-radius: var(--button-radius);
+  }
+}
+
+body.layout-macos .style-settings-container .setting-item[data-id="layout-macos-tint-off"] {
   pointer-events: none;
 
   > * {

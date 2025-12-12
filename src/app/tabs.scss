@@ -291,6 +291,7 @@ body.is-tablet {
   }
   .workspace-tab-header.is-active {
     background-color: inherit;
+    box-shadow: none;
   }
   .workspace-tab-header:not(.is-active):not(:hover) {
     opacity: 0.5;

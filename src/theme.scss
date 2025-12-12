@@ -1,5 +1,4 @@
 @use "app/root.scss";
-@use "app/cupertino.scss";
 @use "app/icons.scss";
 @use "app/tabs.scss";
 @use "app/sidedock.scss";
@@ -23,14 +22,13 @@
 @use "layouts/cupertino-settings.scss";
 @use "layouts/cupertino-prompt.scss";
 @use "layouts/cupertino-mobile.scss";
-@use "layouts/fluent.scss" as layout-fluent;
 @use "layouts/macos.scss";
-@use "layouts/mobile.scss" as layout-mobile;
 @use "layouts/layout-styles.scss";
 
 @use "elements/baseline.scss";
 @use "elements/cupertino.scss" as element-cupertino;
-@use "elements/fluent.scss" as element-fluent;
+@use "elements/fluent.scss";
+@use "elements/material.scss";
 
 @use "features/alternative-checkboxes.scss";
 @use "features/banners.scss";
