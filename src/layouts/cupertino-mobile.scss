@@ -185,20 +185,6 @@ body.input-cupertino.is-phone {
     background-color: var(--raised-background) !important;
   }
 
-  // Pull action
-  &:not(.accented-interface) .pull-action.mod-activated {
-    background-color: var(--text-normal);
-  }
-  .pull-action:not(.mod-activated) {
-    background-color: var(--raised-background);
-  }
-  .pull-action {
-    backdrop-filter: var(--raised-blur);
-    box-shadow: var(--raised-shadow);
-    width: fit-content;
-    font-weight: calc(var(--font-weight) + var(--bold-modifier));
-  }
-
   // Tab switcher
   --tab-switcher-background: transparent;
   --tab-switcher-menubar-background: var(--tab-switcher-background);

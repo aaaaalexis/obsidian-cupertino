@@ -206,11 +206,13 @@ body.reduce-motion {
     --mobile-sidebar-width: 90vw;
 
     .workspace-drawer,
+    .workspace-split,
     .mobile-tab-switcher,
     .menu,
     .suggestion-bg,
     .modal,
-    .modal-bg {
+    .modal-bg,
+    .mobile-navbar {
       transform: none !important;
       transition: none !important;
 

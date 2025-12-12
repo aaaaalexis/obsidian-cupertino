@@ -28,8 +28,6 @@ body.input-material {
 
   --setting-items-radius: var(--radius-l);
 
-  --input-shadow: none;
-  --input-shadow-hover: none;
   --shadow-s: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px !important;
   --shadow-l: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px !important;
 
@@ -323,10 +321,36 @@ body.input-material.is-phone {
   .mobile-toolbar-options-list-container,
   &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     border: none !important;
+    box-shadow: var(--shadow-s);
   }
   .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::before,
   .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::after {
     content: none;
+  }
+
+  // Menu
+  .menu {
+    .menu-item {
+      border-radius: var(--radius-s);
+    }
+    .menu-item.is-label + .menu-item:not(.is-label),
+    .menu-item:first-child {
+      border-top-left-radius: var(--setting-items-radius);
+      border-top-right-radius: var(--setting-items-radius);
+    }
+    .menu-item:last-child {
+      border-bottom-left-radius: var(--setting-items-radius);
+      border-bottom-right-radius: var(--setting-items-radius);
+    }
+    .menu-item:not(:last-child) {
+      margin-bottom: 2px;
+    }
+    .menu-item::after {
+      content: none;
+    }
+    .menu-item-icon .svg-icon {
+      --icon-size: var(--icon-m);
+    }
   }
 
   // Settings

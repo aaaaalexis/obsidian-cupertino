@@ -29,6 +29,10 @@ body {
 
 body:is(.input-baseline, :not([class*="input-"])) {
   --input-font-weight: var(--font-medium);
+
+  &.is-mobile {
+    --input-border-width: var(--border-width);
+  }
 }
 
 // Button

@@ -72,9 +72,11 @@ body.input-cupertino {
 
   &.theme-light {
     --interactive-normal: var(--color-base-25);
-    --background-modifier-form-field: var(--color-base-00);
+    --background-modifier-form-field: var(--background-primary);
   }
-
+  &.theme-light.is-mobile {
+    --background-modifier-form-field: var(--interactive-normal);
+  }
   &.is-mobile {
     --slider-thumb-height: 25px;
     --slider-thumb-y: -10px;
