@@ -208,7 +208,7 @@ body.is-phone.hider-sidebar-buttons {
     }
   }
 
-  &.layout-macos:not(.is-mobile) {
+  &.layout-cupertino:not(.is-mobile) {
     .workspace-split {
       padding-bottom: 0 !important;
     }

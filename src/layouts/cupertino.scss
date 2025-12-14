@@ -8,55 +8,9 @@ body:not(.is-mobile) {
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
     background-color: var(--background-primary);
   }
-
-  // Side panels
-  .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
-    margin-left: 0;
-  }
-  .mod-sidedock .workspace-tab-header-container {
-    .workspace-tab-header-container-inner {
-      -webkit-app-region: no-drag;
-      gap: 0px;
-      transition: var(--anim-duration-moderate);
-      border-radius: var(--clickable-icon-radius);
-      padding: 0;
-      outline: 2px solid transparent;
-      background-clip: content-box;
-      height: auto;
-    }
-
-    .workspace-tab-header-container-inner:hover {
-      background-color: var(--background-modifier-hover);
-      outline-color: var(--background-modifier-hover);
-    }
-    .workspace-tab-header-container-inner:hover .workspace-tab-header.is-active {
-      background-color: var(--background-primary);
-      box-shadow: var(--raised-shadow);
-    }
-
-    .workspace-tab-header {
-      border-radius: var(--clickable-icon-radius);
-    }
-    .workspace-tab-header-inner {
-      padding: 8px;
-    }
-    .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
-      background-color: var(--background-modifier-hover);
-    }
-    .sidebar-toggle-button,
-    .workspace-tab-header-inner {
-      border-radius: var(--clickable-icon-radius);
-      width: var(--tab-action-width);
-      height: fit-content;
-    }
-  }
-
-  .mod-sidedock.mod-left-split .sidebar-toggle-button {
-    order: -1;
-  }
 }
 
-body.layout-macos:not(.is-mobile) {
+body.layout-cupertino:not(.is-mobile) {
   // Editor panel
   &.theme-light .mod-root .workspace-tab-container {
     box-shadow: rgba(0, 0, 0, 0.04) 0px 24px 48px, rgba(0, 0, 0, 0.02) 0px 4px 16px;
@@ -79,10 +33,7 @@ body.layout-macos:not(.is-mobile) {
   }
 }
 
-body.layout-macos:not(.is-mobile) {
-  .workspace {
-    background-color: var(--tab-container-background);
-  }
+body.layout-cupertino:not(.is-mobile) {
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
     .mod-root {
       background-color: var(--background-primary);

@@ -31,6 +31,14 @@ body.is-mobile {
 }
 
 // File explorer
+body.full-item-name {
+  --nav-item-white-space: none;
+}
+body.bold-folders .nav-folder-title {
+  --nav-item-weight: calc(var(--font-weight) + var(--bold-modifier));
+  --nav-item-weight-hover: calc(var(--font-weight) + var(--bold-modifier));
+}
+
 .tree-item-self,
 .tree-item-inner {
   align-items: center;
@@ -107,18 +115,22 @@ body:not(.mod-macos):not(.is-mobile) .workspace-ribbon.mod-left .sidebar-toggle-
 }
 
 // Desktop sidedock
-body:not(.is-mobile) .mod-sidedock {
-  & > .workspace-leaf-resize-handle:not(:hover) {
+body:not(.is-mobile) {
+  &.layout-cupertino .mod-sidedock.mod-left-split .sidebar-toggle-button {
+    order: -1;
+  }
+
+  .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
     border-color: transparent;
   }
 
-  .workspace-leaf:not([style*="display: none"]) {
+  .mod-sidedock .workspace-leaf:not([style*="display: none"]) {
     animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-cupertino) forwards;
   }
 
   // Sidedock padding
-  .workspace-leaf-content > .node-insert-event,
-  .workspace-leaf-content > .view-content {
+  .mod-sidedock .workspace-leaf-content > .node-insert-event,
+  .mod-sidedock .workspace-leaf-content > .view-content {
     padding: 2px 16px;
 
     > .node-insert-event {

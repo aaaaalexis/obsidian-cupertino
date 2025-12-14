@@ -35,7 +35,7 @@ settings:
         type: heading
         level: 1
     -
-        id: layout-macos
+        id: layout-cupertino
         title: Disable floating sidebar
         type: class-toggle
     -
@@ -193,7 +193,7 @@ settings:
   }
 }
 
-body.layout-macos .style-settings-container .setting-item[data-id="layout-macos-tint-off"] {
+body.layout-cupertino .style-settings-container .setting-item[data-id="layout-macos-tint-off"] {
   pointer-events: none;
 
   > * {

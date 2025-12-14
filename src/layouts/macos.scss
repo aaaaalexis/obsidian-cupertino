@@ -1,12 +1,19 @@
-body:not(.layout-macos):not(.is-android:not(.android-off)):not(.mod-windows:not(.windows-off)):not(.is-mobile) {
-  --nav-item-background-hover: transparent;
-  --nav-item-color-active: var(--text-accent);
+body:not(.layout-cupertino):not(.is-android:not(.android-off)):not(.mod-windows:not(.windows-off)):not(.is-mobile) {
+  --shadow-sidedock-spread: -32px 0 0 32px var(--background-primary);
+
+  &.layout-macos-tint-off {
+    --sidedock-background-tint-opacity: 100%;
+  }
 
   &.theme-light {
-    --shadow-sidedock: 0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px white, 0 4px 32px rgba(0, 0, 0, 0.075), -32px 0 0 32px var(--background-primary);
+    --sidedock-background: color-mix(in srgb, white var(--sidedock-background-tint-opacity, 98%), var(--interactive-accent));
+    --shadow-sidedock: 0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px white, 0 4px 32px rgba(0, 0, 0, 0.075);
+    --nav-item-background-active: var(--background-modifier-hover);
   }
   &.theme-dark {
-    --shadow-sidedock: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.35), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2), -32px 0 0 32px var(--background-primary);
+    --sidedock-background: color-mix(in srgb, rgb(21, 21, 21) var(--sidedock-background-tint-opacity, 98%), var(--interactive-accent));
+    --shadow-sidedock: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.35), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
+    --nav-item-background-active: rgba(0, 0, 0, 0.5);
   }
 
   &.is-translucent .mod-root {
@@ -57,14 +64,8 @@ body:not(.layout-macos):not(.is-android:not(.android-off)):not(.mod-windows:not(
     }
   }
 
-  &:not(.is-translucent).layout-macos-tint-off .mod-sidedock {
-    background-color: var(--background-primary);
-  }
-  &:not(.is-translucent):not(.layout-macos-tint-off).theme-light .mod-sidedock {
-    background-color: color-mix(in srgb, white 98%, var(--interactive-accent));
-  }
-  &:not(.is-translucent):not(.layout-macos-tint-off).theme-dark .mod-sidedock {
-    background-color: color-mix(in srgb, rgb(21, 21, 21) 98%, var(--interactive-accent));
+  &:not(.is-translucent) .mod-sidedock {
+    background-color: var(--sidedock-background);
   }
   &.show-ribbon {
     &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed) {
@@ -85,7 +86,7 @@ body:not(.layout-macos):not(.is-android:not(.android-off)):not(.mod-windows:not(
     display: flex;
     z-index: var(--layer-sidedock);
     margin: 8px 0 8px 8px;
-    box-shadow: var(--shadow-sidedock);
+    box-shadow: var(--shadow-sidedock), var(--shadow-sidedock-spread);
     border-radius: var(--radius-window, var(--radius-m));
     height: -webkit-fill-available;
     overflow: hidden;
@@ -104,9 +105,17 @@ body:not(.layout-macos):not(.is-android:not(.android-off)):not(.mod-windows:not(
   .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
     border-color: var(--divider-color);
   }
+
+  // Settings
+  .modal.mod-settings .vertical-tab-header {
+    margin: 8px 0 8px 8px;
+    box-shadow: var(--shadow-sidedock);
+    border-radius: var(--radius-m);
+    background-color: var(--sidedock-background);
+  }
 }
 
-body:not(.layout-macos):not(.is-android:not(.android-off)):not(.mod-windows:not(.windows-off)).is-tablet {
+body:not(.layout-cupertino):not(.is-android:not(.android-off)):not(.mod-windows:not(.windows-off)).is-tablet {
   &.theme-light {
     --shadow-sidedock: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025), 0 0 1px rgba(0, 0, 0, 0.25), 0 8px 16px 0 rgba(0, 0, 0, 0.05);
   }

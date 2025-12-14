@@ -1,10 +1,10 @@
 // Editor panel
-body:not(.layout-macos) {
+body:not(.layout-cupertino) {
   .workspace-split.mod-root .workspace-tab-container {
     border-radius: 0;
   }
 }
-body.layout-macos {
+body.layout-cupertino {
   &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
     margin-left: 8px;
   }
@@ -24,7 +24,7 @@ body.layout-macos {
 }
 
 // Vault switcher
-body:not(.layout-macos):not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile::before {
+body:not(.layout-cupertino):not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile::before {
   background-color: var(--background-primary);
 }
 
@@ -35,9 +35,4 @@ body:not(.layout-macos):not(.is-mobile) .workspace-split.mod-left-split .workspa
 body:not(.is-mobile) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
   height: 32px;
   margin: auto 0;
-}
-
-// Mobile drawer
-body:not(.layout-macos).is-tablet .workspace-drawer.is-pinned.mod-left {
-  border: none;
 }
