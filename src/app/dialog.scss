@@ -94,6 +94,10 @@ body:not(.is-mobile) {
     font-weight: bold;
   }
 }
+body.is-phone .modal-container.mod-confirmation .modal:not(.mod-sidebar-layout) {
+  --modal-radius: var(--radius-l) var(--radius-l) 0 0;
+}
+
 body.is-phone .modal:not(.mod-sidebar-layout) {
   .modal-header {
     border-bottom: none;
@@ -171,7 +175,7 @@ body.is-phone {
 
   .menu,
   .suggestion-container {
-    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    border-radius: var(--radius-l) var(--radius-l) 0 0;
     overflow: hidden;
 
     .menu-grabber {

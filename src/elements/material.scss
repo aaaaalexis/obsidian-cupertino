@@ -260,11 +260,6 @@ body.input-material {
 }
 
 body.input-material.is-mobile {
-  --radius-s: calc(8px * var(--radius-modifier));
-  --radius-m: calc(16px * var(--radius-modifier));
-  --radius-l: calc(24px * var(--radius-modifier));
-  --radius-xl: calc(32px * var(--radius-modifier));
-
   --nav-item-radius: var(--clickable-icon-radius);
   --nav-item-padding: calc(16px * var(--density-modifier)) 24px;
 

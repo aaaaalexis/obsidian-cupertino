@@ -33,7 +33,7 @@ body.mod-macos.is-translucent .prompt {
 body.is-phone {
   .prompt {
     animation: none;
-    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    border-radius: var(--radius-l) var(--radius-l) 0 0;
   }
   .prompt .prompt-results {
     padding: var(--navbar-side-padding);

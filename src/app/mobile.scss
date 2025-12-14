@@ -6,9 +6,9 @@ body.is-mobile {
   --touch-radius-l: var(--radius-l);
   --touch-radius-xl: var(--radius-xl);
   --radius-s: calc(16px * var(--radius-modifier));
-  --radius-m: calc(20px * var(--radius-modifier));
-  --radius-l: calc(24px * var(--radius-modifier));
-  --radius-xl: calc(32px * var(--radius-modifier));
+  --radius-m: calc(24px * var(--radius-modifier));
+  --radius-l: calc(32px * var(--radius-modifier));
+  --radius-xl: calc(40px * var(--radius-modifier));
   --tab-radius: var(--radius-s);
   --tab-curve: var(--tab-radius);
 
