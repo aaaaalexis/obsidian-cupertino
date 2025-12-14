@@ -73,6 +73,11 @@ body.input-cupertino {
     --background-modifier-form-field: var(--interactive-normal);
   }
   &.is-mobile {
+    --radius-s: calc(16px * var(--radius-modifier));
+    --radius-m: calc(24px * var(--radius-modifier));
+    --radius-l: calc(32px * var(--radius-modifier));
+    --radius-xl: calc(40px * var(--radius-modifier));
+
     --slider-thumb-height: 25px;
     --slider-thumb-y: -10px;
     --slider-thumb-width: 38px;
