@@ -1,19 +1,28 @@
 body:not(.is-phone) {
+  &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-sidebar-layout .setting-group {
+    .setting-items,
+    .setting-group-search {
+      padding-inline: 0;
+      padding-top: 0;
+      background-color: transparent;
+    }
+    .setting-item-heading {
+      padding: 0;
+    }
+  }
+
   --setting-items-radius: var(--radius-m);
-  --setting-items-padding: 0;
-  --setting-items-background: transparent;
+  --setting-items-padding: calc(16px * var(--density-modifier)) 16px;
   --setting-group-heading-color: var(--text-faint);
   --setting-group-heading-size: var(--font-ui-small);
-
-  &.theme-dark {
-    --setting-items-background: transparent;
-  }
 
   .modal-sidebar {
     --background-modifier-form-field: var(--interactive-normal);
   }
 
   .modal.mod-sidebar-layout {
+    background-color: var(--background-primary);
+
     .vertical-tab-header {
       border-inline-end: none;
     }
@@ -22,27 +31,9 @@ body:not(.is-phone) {
       padding: calc(8px * var(--density-modifier)) 12px;
       align-items: center;
     }
-    .vertical-tab-content {
-      background-color: var(--modal-sidebar-background);
-    }
-
-    .setting-group-search {
-      padding: 16px 0;
-    }
-
-    .setting-item-heading {
-      padding: 0;
-    }
-    .setting-item:not(.setting-items .setting-item) {
-      padding-inline: 0;
-    }
   }
 
   .modal.mod-settings {
-    .setting-group + .setting-group {
-      margin-top: 48px;
-    }
-
     .installed-plugins-container .setting-items {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

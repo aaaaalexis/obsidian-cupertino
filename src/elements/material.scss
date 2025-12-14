@@ -25,7 +25,6 @@ body.input-material {
   --background-modifier-form-field: var(--color-base-30);
 
   --menu-radius: var(--radius-l);
-  --setting-items-radius: var(--radius-l);
 
   --shadow-s: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px !important;
   --shadow-l: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px !important;
@@ -124,11 +123,13 @@ body.input-material {
   }
 
   // Settings
+  --setting-items-radius: var(--radius-l);
+  --setting-items-background: var(--background-primary);
+
+  .modal.mod-sidebar-layout {
+    background-color: var(--background-secondary);
+  }
   .modal.mod-settings {
-    .setting-item-heading,
-    .setting-item:not(.setting-item-heading):not(.setting-items .setting-item) {
-      padding-inline: 16px !important;
-    }
     .vertical-tab-header-group-title {
       display: none;
     }
@@ -217,27 +218,39 @@ body.input-material {
       }
     }
 
-    .setting-group + .setting-group {
-      margin-top: 32px;
+    .vertical-tab-content {
+      background-color: transparent;
+    }
+
+    .setting-items {
+      padding: 0;
+      background-color: transparent;
     }
 
     .setting-item:not(.setting-item-heading) {
       border-top: none;
       border-radius: var(--radius-s);
-      background-color: var(--background-primary);
-      padding: calc(16px * var(--density-modifier)) 16px;
+      background-color: var(--setting-items-background);
+      padding: var(--setting-items-padding);
       margin-bottom: 2px;
     }
-    .setting-item:nth-child(1 of .setting-item:not(.setting-item-heading)) {
+    .setting-item:nth-child(1 of .setting-item:not(.setting-item-heading)),
+    .setting-item-heading + .setting-item {
       border-top-left-radius: var(--setting-items-radius);
       border-top-right-radius: var(--setting-items-radius);
     }
-    .setting-item:nth-last-child(1 of .setting-item:not(.setting-item-heading)) {
+    .setting-item:nth-last-child(1 of .setting-item:not(.setting-item-heading)),
+    .setting-item:has(+ .setting-item-heading) {
       border-bottom-left-radius: var(--setting-items-radius);
       border-bottom-right-radius: var(--setting-items-radius);
     }
     .setting-item-name {
       font-weight: var(--font-medium);
+    }
+
+    .setting-group .setting-group-search {
+      background-color: transparent;
+      padding-inline: 0;
     }
 
     .installed-plugins-container .setting-items .setting-item {
@@ -256,14 +269,7 @@ body.input-material.is-mobile {
   --nav-item-padding: calc(16px * var(--density-modifier)) 24px;
 
   // Settings
-  &.theme-dark {
-    --modal-sidebar-background: var(--background-secondary);
-    --settings-background: var(--background-secondary);
-  }
   .modal.mod-settings {
-    --setting-items-background: transparent;
-    --setting-items-padding: 0;
-
     .setting-group .setting-item:not(:last-child):not(.setting-item-heading) {
       margin-bottom: 2px;
     }
