@@ -36,7 +36,7 @@ body.is-phone {
     border-radius: var(--radius-l) var(--radius-l) 0 0;
   }
   .prompt .prompt-results {
-    padding: var(--navbar-side-padding);
+    padding: var(--safe-area-inset-side);
   }
   .prompt .prompt-input-container {
     width: auto;
