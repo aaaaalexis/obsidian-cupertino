@@ -1,13 +1,25 @@
 body:not(.is-phone) {
-  &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-sidebar-layout .setting-group {
-    .setting-items,
-    .setting-group-search {
+  &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-sidebar-layout {
+    background-color: var(--background-secondary);
+
+    .vertical-tab-content {
+      background-color: transparent;
+    }
+
+    .setting-group .setting-items,
+    .setting-group .setting-group-search {
       padding-inline: 0;
       padding-top: 0;
       background-color: transparent;
     }
     .setting-item-heading {
       padding: 0;
+    }
+
+    .setting-item:not(.setting-items > .setting-item):not(.setting-item-heading) {
+      padding-inline: 0;
+      margin-bottom: 0;
+      background-color: transparent;
     }
   }
 
