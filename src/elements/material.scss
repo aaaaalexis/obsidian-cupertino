@@ -73,6 +73,7 @@ body.input-material {
   input[type="range"]::-webkit-slider-thumb {
     outline: 6px solid var(--background-primary);
     background-color: var(--interactive-accent);
+    border: none;
   }
   input[type="range"]:active {
     --slider-thumb-y: -23px;
@@ -83,31 +84,17 @@ body.input-material {
   .checkbox-container {
     cursor: pointer;
 
-    &::after {
-      transition: var(--anim-duration-fast);
-    }
-    &.is-enabled:active::after {
-      opacity: 0.8;
-      width: var(--toggle-thumb-height);
-      left: unset;
-    }
     &:not(.is-enabled) {
+      --toggle-thumb-color: var(--text-muted);
+      box-shadow: inset 0 0 0 2px var(--text-muted);
+    }
+    &:not(.is-enabled):not(:hover, :active) {
       --toggle-s-border-width: 8px;
       --toggle-s-thumb-height: 16px;
       --toggle-s-thumb-width: 16px;
       --toggle-border-width: 8px;
       --toggle-thumb-height: 16px;
       --toggle-thumb-width: 16px;
-      --toggle-thumb-color: var(--text-muted);
-
-      box-shadow: inset 0 0 0 2px var(--text-muted);
-    }
-    &:not(.is-enabled):active::after {
-      scale: 1.5;
-      width: var(--toggle-thumb-height);
-      height: var(--toggle-thumb-height);
-      margin: var(--toggle-border-width) 0 0 -4px;
-      transform: translate3d(var(--toggle-border-width), 0, 0);
     }
   }
 

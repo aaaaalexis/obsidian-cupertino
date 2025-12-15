@@ -3327,7 +3327,7 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
 
     .setting-item:not(:last-child) {
       flex: 1;
-      border-radius: var(--radius-m);
+      border-radius: var(--radius-m) !important;
       border: var(--border-width) solid var(--background-modifier-border);
       background-color: var(--background-primary) !important;
       padding: calc(16px * var(--density-modifier)) !important;

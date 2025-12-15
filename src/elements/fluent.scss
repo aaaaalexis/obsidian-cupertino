@@ -94,10 +94,17 @@ body.input-fluent {
   }
 
   // Toggle
-  .checkbox-container:not(.is-enabled) {
-    --toggle-thumb-color: var(--text-muted);
-    outline: 1px solid var(--text-faint);
-    background-color: var(--color-base-10);
+  .checkbox-container {
+    &:not(.is-enabled) {
+      --toggle-thumb-color: var(--text-muted);
+      outline: 1px solid var(--text-faint);
+      background-color: var(--color-base-10);
+    }
+    &:hover {
+      --toggle-thumb-height: 16px;
+      --toggle-thumb-width: 16px;
+      --toggle-border-width: 2px;
+    }
   }
 
   // Settings
