@@ -137,9 +137,6 @@ body.is-mobile {
     .workspace-drawer-inner {
       background-color: transparent;
     }
-    &:not(.is-pinned) .workspace-drawer-inner {
-      padding-top: 0px;
-    }
 
     .workspace-drawer-header {
       padding-top: 8px;
@@ -225,14 +222,8 @@ body.is-phone {
   --mobile-sidebar-radius: 0;
 
   // Side panels
-  .workspace-drawer {
-    .workspace-drawer-header {
-      z-index: 1;
-    }
-    .workspace-leaf-content > .node-insert-event,
-    .workspace-leaf-content > .view-content > .node-insert-event {
-      padding-top: var(--safe-area-inset-top);
-    }
+  .workspace-drawer-header {
+    z-index: 1;
   }
 
   // Editor panel
@@ -443,15 +434,18 @@ body.is-tablet {
       border-radius: var(--mobile-sidebar-radius);
       height: auto;
     }
+    &:not(.is-pinned) .workspace-drawer-inner {
+      padding-top: 0px;
+    }
+    &:not(.is-pinned) .workspace-drawer-header-icon {
+      margin-left: 8px;
+    }
 
     &.is-pinned .workspace-drawer-header-icon {
       backdrop-filter: none;
       box-shadow: none;
       background-color: transparent;
       border: none;
-    }
-    &:not(.is-pinned) .workspace-drawer-header-icon {
-      margin-left: 8px;
     }
 
     .workspace-drawer-active-tab-container {

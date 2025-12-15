@@ -2,10 +2,6 @@ body:not(.is-phone) {
   &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-sidebar-layout {
     background-color: var(--background-secondary);
 
-    .vertical-tab-content {
-      background-color: transparent;
-    }
-
     .setting-group .setting-items,
     .setting-group .setting-group-search {
       padding-inline: 0;
@@ -42,6 +38,10 @@ body:not(.is-phone) {
     .vertical-tab-nav-item {
       padding: calc(8px * var(--density-modifier)) 12px;
       align-items: center;
+    }
+
+    .vertical-tab-content {
+      background-color: transparent;
     }
   }
 
