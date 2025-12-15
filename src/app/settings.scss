@@ -43,6 +43,10 @@ body:not(.is-phone) {
     .vertical-tab-content {
       background-color: transparent;
     }
+
+    .setting-item-name {
+      overflow: visible;
+    }
   }
 
   .modal.mod-settings {

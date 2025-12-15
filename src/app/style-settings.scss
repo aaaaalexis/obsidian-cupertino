@@ -3329,7 +3329,7 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
       flex: 1;
       border-radius: var(--radius-m);
       border: var(--border-width) solid var(--background-modifier-border);
-      background-color: var(--background-primary);
+      background-color: var(--background-primary) !important;
       padding: calc(16px * var(--density-modifier)) !important;
       align-items: flex-start;
       position: relative;
