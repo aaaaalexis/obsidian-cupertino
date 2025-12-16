@@ -52,11 +52,11 @@ body.is-mobile {
     --color-base-00: #1e1e1e;
     --color-base-10: #242424;
     --color-base-20: #262626;
-    --modal-sidebar-background: var(--background-primary);
     --search-result-background: var(--background-primary);
     --setting-items-background: var(--background-primary-alt);
   }
   &.theme-dark.is-phone {
+    --modal-sidebar-background: var(--background-primary);
     --mobile-sidebar-background: var(--background-primary);
   }
 
