@@ -55,6 +55,9 @@ body.is-mobile {
     --modal-sidebar-background: var(--background-primary);
     --search-result-background: var(--background-primary);
   }
+  &.theme-dark .workspace-drawer {
+    --setting-items-background: var(--background-primary);
+  }
 
   .app-container {
     max-height: calc(100vh - var(--keyboard-height)) !important;
