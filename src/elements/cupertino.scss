@@ -145,7 +145,7 @@ body:not(.is-android:not(.android-off)):not(.mod-windows:not(.windows-off)) {
 
   // Slider
   input[type="range"]::-webkit-slider-thumb {
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
+    transition: var(--anim-duration-moderate) var(--anim-motion-cupertino) !important;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.1) !important;
 
     &:active {
@@ -167,7 +167,7 @@ body:not(.is-android:not(.android-off)):not(.mod-windows:not(.windows-off)) {
     }
 
     &::after {
-      transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
+      transition: var(--anim-duration-moderate) var(--anim-motion-cupertino) !important;
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.1);
     }
     &:active:after {
