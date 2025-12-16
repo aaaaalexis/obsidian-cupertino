@@ -139,6 +139,9 @@ body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner
       }
     }
 
+    &.banner-icon.banner-title .inline-title ~ .metadata-container {
+      margin-top: var(--inline-title-margin-bottom);
+    }
     &.banner-icon.banner-title .inline-title {
       transition: var(--anim-duration-moderate) var(--anim-motion-baseline), margin-left 0s;
     }
