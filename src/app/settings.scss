@@ -1,19 +1,16 @@
 body:not(.is-phone) {
   --setting-items-radius: var(--radius-m);
-  --setting-items-padding: 0;
-  --setting-items-background: transparent;
+  --setting-items-padding: 16px 16px;
   --setting-group-heading-color: var(--text-faint);
   --setting-group-heading-size: var(--font-ui-small);
-
-  &.theme-dark {
-    --setting-items-background: transparent;
-  }
 
   .modal-sidebar {
     --background-modifier-form-field: var(--interactive-normal);
   }
 
   .modal.mod-sidebar-layout {
+    background-color: var(--background-primary);
+
     .vertical-tab-header {
       border-inline-end: none;
     }
@@ -22,27 +19,17 @@ body:not(.is-phone) {
       padding: 8px 12px;
       align-items: center;
     }
+
     .vertical-tab-content {
-      background-color: var(--modal-sidebar-background);
+      background-color: transparent;
     }
 
-    .setting-group-search {
-      padding: 16px 0;
-    }
-
-    .setting-item-heading {
-      padding: 0;
-    }
-    .setting-item:not(.setting-items .setting-item) {
-      padding-inline: 0;
+    .setting-item-name {
+      overflow: visible;
     }
   }
 
   .modal.mod-settings {
-    .setting-group + .setting-group {
-      margin-top: 48px;
-    }
-
     .installed-plugins-container .setting-items {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

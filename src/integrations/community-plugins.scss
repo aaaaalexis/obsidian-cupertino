@@ -137,18 +137,6 @@ body.is-mobile .view-content.notebook-navigator-mobile {
     padding: 0;
   }
 }
-body .view-content.notebook-navigator-mobile {
-  --nn-scroller-padding: 0;
-
-  .nn-back-button,
-  .nn-mobile-toolbar {
-    backdrop-filter: var(--raised-blur);
-    box-shadow: var(--raised-shadow);
-    border: none;
-    background-color: var(--raised-background);
-    border-radius: 100vh;
-  }
-}
 
 // Hider https://github.com/kepano/obsidian-hider
 .hider-sidebar-buttons.mod-macos {

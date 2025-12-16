@@ -5,8 +5,8 @@ body {
   --input-radius: var(--radius-s);
   --radius-s: 8px;
   --radius-m: 12px;
-  --radius-l: 16px;
-  --radius-xl: 24px;
+  --radius-l: 20px;
+  --radius-xl: 28px;
 
   --background-modifier-form-field: var(--interactive-normal);
 
@@ -44,16 +44,28 @@ button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type=
 }
 
 // Toggle
-.checkbox-container {
+body.obsidian-app .checkbox-container {
   -electron-corner-smoothing: var(--corner-smoothing);
+  transition: var(--anim-duration-moderate);
   box-shadow: none;
-}
-.checkbox-container:after {
-  -electron-corner-smoothing: var(--corner-smoothing);
-  box-shadow: none;
-}
-.checkbox-container:focus-within {
-  outline: none;
+
+  &:focus-within {
+    outline: none;
+  }
+
+  &::after {
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color 0s;
+  }
+  &:active:after {
+    -electron-corner-smoothing: var(--corner-smoothing);
+    box-shadow: none;
+    width: calc(var(--toggle-thumb-width) + var(--toggle-border-width));
+    height: var(--toggle-thumb-height);
+    margin-top: var(--toggle-border-width);
+  }
+  &.is-enabled:active:after {
+    left: calc(var(--toggle-border-width) * -1);
+  }
 }
 
 // Slider
