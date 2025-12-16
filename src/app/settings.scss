@@ -164,3 +164,65 @@ body.is-phone {
     }
   }
 }
+
+body:is(.input-cupertino, .input-material) {
+  .modal.mod-settings .vertical-tab-nav-item {
+    &[data-setting-id="editor"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-blue);
+    }
+    &[data-setting-id="mobile"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-red);
+    }
+    &[data-setting-id="file"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-orange);
+    }
+    &[data-setting-id="appearance"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-accent);
+    }
+    &[data-setting-id="hotkeys"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-pink);
+    }
+    &[data-setting-id="keychain"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-green);
+    }
+    &[data-setting-id="plugins"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-cyan);
+    }
+    &[data-setting-id="community-plugins"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-purple);
+    }
+    &[data-setting-id="backlink"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-purple);
+    }
+    &[data-setting-id="canvas"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-red);
+    }
+    &[data-setting-id="daily-notes"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-red);
+    }
+    &[data-setting-id="file-recovery"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-green);
+    }
+    &[data-setting-id="note-composer"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-cyan);
+    }
+    &[data-setting-id="page-preview"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-blue);
+    }
+    &[data-setting-id="switcher"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-purple);
+    }
+    &[data-setting-id="sync"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-green);
+    }
+    &[data-setting-id="templates"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-blue);
+    }
+    &[data-setting-id="zk-prefixer"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-orange);
+    }
+    &[data-setting-id="webviewer"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-blue);
+    }
+  }
+}
