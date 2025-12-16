@@ -13,6 +13,9 @@ body:not(.mod-windows:not(.windows-off)) {
     &[data-setting-id="editor"] .vertical-tab-nav-item-icon {
       background-color: var(--color-blue);
     }
+    &[data-setting-id="mobile"] .vertical-tab-nav-item-icon {
+      background-color: var(--color-red);
+    }
     &[data-setting-id="file"] .vertical-tab-nav-item-icon {
       background-color: var(--color-orange);
     }
@@ -99,8 +102,6 @@ body:not(.mod-windows:not(.windows-off)):not(.is-android:not(.android-off)):not(
 }
 
 body:not(.is-android:not(.android-off)).is-mobile {
-  --modal-sidebar-background: var(--background-secondary);
-
   .modal.mod-settings .vertical-tab-nav-item .vertical-tab-nav-item-icon {
     padding: 5px;
     border-radius: 8px;

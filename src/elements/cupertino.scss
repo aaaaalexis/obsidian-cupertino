@@ -37,8 +37,9 @@ body:not(.is-android:not(.android-off)):not(.mod-windows:not(.windows-off)) {
   --input-height: 24px;
 
   --slider-thumb-border-width: 0;
-  --slider-thumb-height: 18px;
-  --slider-thumb-width: 28px;
+  --slider-thumb-y: -5px;
+  --slider-thumb-height: 16px;
+  --slider-thumb-width: 20px;
   --slider-thumb-radius: var(--toggle-thumb-radius);
   --slider-track-height: 6px;
   --slider-track-background: var(--background-modifier-border-hover);
@@ -78,13 +79,13 @@ body:not(.is-android:not(.android-off)):not(.mod-windows:not(.windows-off)) {
     --radius-l: 32px;
     --radius-xl: 40px;
 
-    --slider-thumb-height: 25px;
-    --slider-thumb-y: -10px;
-    --slider-thumb-width: 38px;
+    --slider-thumb-y: -9px;
+    --slider-thumb-height: 24px;
+    --slider-thumb-width: 37px;
 
     --toggle-border-width: 2px;
-    --toggle-thumb-height: 25px;
-    --toggle-thumb-width: 38px;
+    --toggle-thumb-height: 24px;
+    --toggle-thumb-width: 37px;
     --toggle-width: 68px;
 
     --input-padding: 0 var(--side-padding);
@@ -144,17 +145,17 @@ body:not(.is-android:not(.android-off)):not(.mod-windows:not(.windows-off)) {
 
   // Slider
   input[type="range"]::-webkit-slider-thumb {
-    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.075)) drop-shadow(0 1px 16px rgba(0, 0, 0, 0.1));
-    transition: var(--anim-duration-moderate);
-    box-shadow: none;
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.1) !important;
 
     &:active {
-      scale: 1.5;
-      backdrop-filter: var(--blur-s);
-      filter: none;
-      box-shadow: inset 1px 1px 2px -2px rgba(var(--mono-rgb-100), 1), inset -1px -1px 2px -2px rgba(var(--mono-rgb-100), 1), var(--shadow-xs);
-      background-color: transparent;
+      scale: 1.2;
+      box-shadow: inset 1px 1px 2px -2px rgba(var(--mono-rgb-100), 1), inset -1px -1px 2px -2px rgba(var(--mono-rgb-100), 1), var(--shadow-xs) !important;
+      background-color: var(--raised-background);
     }
+  }
+  &.is-mobile input[type="range"]::-webkit-slider-thumb:active {
+    scale: 1.4;
   }
 
   // Toggle
@@ -172,14 +173,22 @@ body:not(.is-android:not(.android-off)):not(.mod-windows:not(.windows-off)) {
     &:active:after {
       --toggle-border-width: -2.5px;
       --toggle-thumb-height: 21px;
-      --toggle-thumb-width: 29px;
+      --toggle-thumb-width: 35.5px;
       --toggle-s-border-width: var(--toggle-border-width);
       --toggle-s-thumb-height: var(--toggle-thumb-height);
       --toggle-s-thumb-width: var(--toggle-thumb-width);
 
-      box-shadow: var(--shadow-xs);
-      background-color: transparent;
+      box-shadow: inset 1px 1px 2px -2px rgba(var(--mono-rgb-100), 1), inset -1px -1px 2px -2px rgba(var(--mono-rgb-100), 1), var(--shadow-xs);
+      background-color: var(--raised-background);
     }
+  }
+  &.is-mobile .checkbox-container:active:after {
+    --toggle-border-width: -6px;
+    --toggle-thumb-height: 40px;
+    --toggle-thumb-width: 59px;
+    --toggle-s-border-width: var(--toggle-border-width);
+    --toggle-s-thumb-height: var(--toggle-thumb-height);
+    --toggle-s-thumb-width: var(--toggle-thumb-width);
   }
 
   // Dropdown
