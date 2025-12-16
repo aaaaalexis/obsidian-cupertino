@@ -20,10 +20,6 @@ body.theme-dark {
 }
 
 body:not(.is-android:not(.android-off)):not(.mod-windows:not(.windows-off)) {
-  --side-padding: 20px;
-
-  --p-spacing: 1rem;
-
   --input-shadow: none;
   --input-shadow-hover: none;
 

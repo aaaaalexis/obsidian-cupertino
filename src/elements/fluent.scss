@@ -142,7 +142,7 @@ body.mod-windows:not(.windows-off):not(.is-mobile) {
       border: var(--border-width) solid var(--background-modifier-hover);
       border-radius: var(--radius-m);
       padding: 16px;
-      background-color: var(--settings-item-background);
+      background-color: var(--setting-items-background);
 
       &:not(:first-child) {
         margin-top: 6px;
