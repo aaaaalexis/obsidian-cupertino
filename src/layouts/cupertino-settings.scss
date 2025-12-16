@@ -47,6 +47,10 @@ body.input-cupertino:not(.is-phone) {
     .vertical-tab-nav-item {
       padding: 6px 8px;
     }
+
+    .installed-plugins-container .extra-setting-button {
+      min-width: unset;
+    }
   }
 }
 
