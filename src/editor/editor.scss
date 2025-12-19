@@ -272,6 +272,7 @@
   // Embeds
   .embed-strict {
     --embed-border-start: none;
+    --embed-background: transparent;
     --embed-padding: 0;
   }
   .embed-block {
@@ -300,7 +301,7 @@
     border-end-end-radius: var(--media-radius);
   }
   .inline-embed > .markdown-embed-title {
-    padding: 16px;
+    padding-bottom: var(--inline-title-margin-bottom);
   }
   .inline-embed > .markdown-embed-content {
     max-height: 100%;
