@@ -150,7 +150,7 @@ body.input-fluent {
     }
 
     .setting-item:not(.setting-item-heading) {
-      border: var(--border-width) solid var(--background-modifier-hover);
+      border: var(--border-width) solid var(--background-modifier-border);
       border-radius: var(--radius-m);
       padding: calc(16px * var(--density-modifier));
       background-color: var(--setting-items-background);

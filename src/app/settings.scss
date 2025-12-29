@@ -41,7 +41,7 @@ body:not(.is-phone) {
     }
 
     .vertical-tab-content {
-      background-color: transparent;
+      background-color: var(--modal-sidebar-background);
     }
 
     .setting-item-name {
