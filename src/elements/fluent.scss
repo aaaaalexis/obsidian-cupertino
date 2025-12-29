@@ -18,6 +18,8 @@ body.input-fluent {
   --slider-track-height: 4px;
 
   &.is-mobile {
+    --input-border-width: var(--border-width);
+
     --slider-thumb-width: 24px;
     --slider-thumb-height: 24px;
   }
@@ -44,10 +46,6 @@ body.input-fluent {
 
     --modal-background: rgb(from var(--color-base-20) r g b / 65%);
     --setting-items-background: var(--background-secondary);
-  }
-
-  &.is-mobile {
-    --input-border-width: var(--border-width);
   }
 
   // Button
@@ -107,6 +105,18 @@ body.input-fluent {
     }
   }
 
+  // Dialog
+  .menu,
+  .suggestion-container,
+  .popover,
+  .cm-tooltip,
+  .prompt,
+  .modal,
+  .notice {
+    background-color: var(--modal-background) !important;
+    backdrop-filter: var(--blur-l);
+  }
+
   // Settings
   .modal.mod-sidebar-layout.mod-settings {
     --setting-items-padding: 0px;
@@ -148,6 +158,11 @@ body.input-fluent {
       &:not(:first-child) {
         margin-top: 6px;
       }
+    }
+
+    .setting-group-search {
+      padding-bottom: calc(16px * var(--density-modifier));
+      background-color: transparent;
     }
   }
 }
@@ -192,18 +207,6 @@ body.input-fluent:not(.is-mobile) {
         content: "";
       }
     }
-  }
-
-  // Dialog
-  .menu,
-  .suggestion-container,
-  .popover,
-  .cm-tooltip,
-  .prompt,
-  .modal,
-  .notice {
-    background-color: var(--modal-background);
-    backdrop-filter: var(--blur-l);
   }
 
   .modal-bg {

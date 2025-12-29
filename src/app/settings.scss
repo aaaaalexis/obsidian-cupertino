@@ -153,6 +153,9 @@ body.is-phone {
     .modal-title {
       margin-top: var(--safe-area-inset-top);
       height: var(--touch-size-m);
+      display: flex;
+      align-items: center;
+      min-width: fit-content;
     }
   }
   .modal.mod-community-modal {
