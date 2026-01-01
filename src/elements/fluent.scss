@@ -17,6 +17,10 @@ body.input-fluent {
   --slider-track-background: var(--color-base-50);
   --slider-track-height: 4px;
 
+  --blur-s: blur(8px) saturate(0.75);
+  --blur-m: blur(16px) saturate(0.75);
+  --blur-l: blur(32px) saturate(0.75);
+
   &.is-mobile {
     --input-border-width: var(--border-width);
 
@@ -150,7 +154,7 @@ body.input-fluent {
     }
 
     .setting-item:not(.setting-item-heading) {
-      border: var(--border-width) solid var(--background-modifier-border);
+      border: var(--border-width) solid rgba(0, 0, 0, 0.1);
       border-radius: var(--radius-m);
       padding: calc(16px * var(--density-modifier));
       background-color: var(--setting-items-background);
