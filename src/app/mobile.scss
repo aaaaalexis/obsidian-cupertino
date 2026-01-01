@@ -106,8 +106,7 @@ body.is-mobile {
   }
 
   // Icon color
-  &.is-phone .mod-root .view-header > div > .view-action,
-  &.is-tablet .mod-root .view-header .view-action,
+  .mod-root .view-header .view-action,
   .mobile-navbar .mobile-navbar-actions,
   .mobile-navbar .navbar-action-flair,
   .mobile-toolbar-options-list,
@@ -242,6 +241,7 @@ body.is-phone {
     .view-header {
       top: 0;
       transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+      will-change: top;
     }
     .view-actions {
       padding: 0;
@@ -326,14 +326,14 @@ body.is-phone {
     right: var(--keyboard-spacing);
     bottom: var(--keyboard-spacing);
   }
-  &:not(html:where([style*="--keyboard-height: 0px"], :not([style*="--keyboard-height"])) body):not(.mod-toolbar-open):not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+  & > .app-container > .horizontal-main-container:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content:not([data-type="markdown"])) .view-actions button:nth-last-child(2) {
     opacity: 0;
     pointer-events: none;
   }
 
   // Navigation bar
   &.mode-switcher-off .mobile-navbar,
-  & > .app-container > .horizontal-main-container:not(:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content[data-type="markdown"])) ~ .mobile-navbar {
+  & > .app-container > .horizontal-main-container:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content:not([data-type="markdown"])) ~ .mobile-navbar {
     max-width: calc(100% - var(--navbar-side-padding) * 2);
   }
 
@@ -344,6 +344,7 @@ body.is-phone {
     padding: 4px;
     margin: 0;
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color var(--anim-duration-moderate);
+    will-change: bottom;
   }
   .mobile-navbar-action {
     min-width: 0;
@@ -384,6 +385,7 @@ body.is-phone {
   // Tab switcher
   .mobile-tab-switcher-menubar {
     border-top: none;
+    z-index: 2;
   }
   .mobile-tab-wrapper {
     pointer-events: all;
