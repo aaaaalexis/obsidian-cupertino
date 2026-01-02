@@ -90,7 +90,7 @@ body:is(.layout-cards, .layout-border).is-tablet {
     margin-bottom: 8px;
     border-radius: var(--radius-s);
     background-color: var(--background-primary);
-    height: stretch;
+    height: auto;
   }
 
   &.contrast-light-tonal.theme-light,
