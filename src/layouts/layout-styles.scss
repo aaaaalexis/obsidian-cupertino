@@ -18,6 +18,11 @@ body.layout-cupertino {
   background-color: transparent;
 }
 
+// Tablet panels
+body:not(.layout-cupertino).is-tablet .workspace-drawer.is-pinned .workspace-drawer-inner {
+  padding-top: 0px;
+}
+
 // Ribbon
 .workspace-ribbon.mod-left:not(.is-collapsed) {
   padding-left: 12px;

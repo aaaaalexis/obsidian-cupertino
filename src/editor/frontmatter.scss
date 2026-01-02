@@ -38,9 +38,6 @@
   .mod-root .metadata-container .metadata-show-source-button,
   .mod-root .metadata-container .metadata-add-button {
     gap: 8px;
-    padding-inline-start: 8px;
-    margin-left: -4px;
-    margin-top: var(--metadata-gap);
   }
 
   .markdown-source-view .metadata-container,
@@ -116,6 +113,13 @@
         margin-top: 0;
         padding-block: 0;
         height: 0;
+      }
+    }
+
+    &.is-phone {
+      .metadata-container .metadata-show-source-button,
+      .metadata-container .metadata-add-button {
+        padding: 8px 8px 8px 12px;
       }
     }
   }

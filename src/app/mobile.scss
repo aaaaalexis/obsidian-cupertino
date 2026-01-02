@@ -52,11 +52,9 @@ body.is-mobile {
     --color-base-00: #1e1e1e;
     --color-base-10: #242424;
     --color-base-20: #262626;
-    --modal-sidebar-background: var(--background-primary);
     --search-result-background: var(--background-primary);
-  }
-  &.theme-dark .workspace-drawer {
-    --setting-items-background: var(--background-primary);
+    --setting-items-background: var(--background-primary-alt);
+    --modal-sidebar-background: var(--background-primary);
   }
 
   .app-container {
@@ -107,8 +105,7 @@ body.is-mobile {
   }
 
   // Icon color
-  &.is-phone .mod-root .view-header > div > .view-action,
-  &.is-tablet .mod-root .view-header .view-action,
+  .mod-root .view-header .view-action,
   .mobile-navbar .mobile-navbar-actions,
   .mobile-navbar .navbar-action-flair,
   .mobile-toolbar-options-list,
@@ -154,17 +151,27 @@ body.is-mobile {
 
     .workspace-drawer-tab-options {
       transition: var(--anim-duration-moderate);
-      background-color: transparent;
       padding: 0;
       margin: 0 16px;
+    }
+    .workspace-drawer-tab-options-list {
+      padding: 0;
+      background-color: transparent;
+      overflow: hidden;
+    }
+    .workspace-drawer-tab-options-list::before {
+      position: fixed;
+      inset: 0;
+      content: "";
+      background-color: var(--mobile-sidebar-background);
+      z-index: -1;
     }
     .workspace-drawer-tab-options .workspace-tab-header-inner {
       padding: 12px 16px;
       font-weight: var(--font-normal);
     }
-
-    .workspace-drawer-tab-options:not(.is-collapsed) + .workspace-drawer-active-tab-content .nav-buttons-container {
-      opacity: 0;
+    .workspace-drawer-tab-options .workspace-drawer-tab-select .workspace-tab-header-inner {
+      background-color: var(--mobile-sidebar-background);
     }
 
     .nav-header,
@@ -233,6 +240,7 @@ body.is-phone {
     .view-header {
       top: 0;
       transition: var(--anim-duration-moderate) var(--anim-motion-cupertino);
+      will-change: top;
     }
     .view-actions {
       padding: 0;
@@ -317,14 +325,14 @@ body.is-phone {
     right: var(--keyboard-spacing);
     bottom: var(--keyboard-spacing);
   }
-  &:not(html:where([style*="--keyboard-height: 0px"], :not([style*="--keyboard-height"])) body):not(.mod-toolbar-open):not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+  & > .app-container > .horizontal-main-container:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content:not([data-type="markdown"])) .view-actions button:nth-last-child(2) {
     opacity: 0;
     pointer-events: none;
   }
 
   // Navigation bar
   &.mode-switcher-off .mobile-navbar,
-  & > .app-container > .horizontal-main-container:not(:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content[data-type="markdown"])) ~ .mobile-navbar {
+  & > .app-container > .horizontal-main-container:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content:not([data-type="markdown"])) ~ .mobile-navbar {
     max-width: calc(100% - var(--navbar-side-padding) * 2);
   }
 
@@ -335,6 +343,7 @@ body.is-phone {
     padding: 4px;
     margin: 0;
     transition: var(--anim-duration-moderate) var(--anim-motion-cupertino), background-color var(--anim-duration-moderate);
+    will-change: bottom;
   }
   .mobile-navbar-action {
     min-width: 0;
@@ -381,6 +390,7 @@ body.is-phone {
   }
   .mobile-tab-switcher-scroll {
     pointer-events: none;
+    background-color: transparent;
   }
   .mobile-tab-switcher-scroll,
   .mobile-tab-switcher-menu-button,
@@ -403,7 +413,6 @@ body.is-tablet {
     padding-bottom: 0 !important;
   }
 
-  .workspace-tab-header,
   .workspace-tab-header-new-tab,
   .workspace-tab-header-tab-list,
   .sidebar-toggle-button,
@@ -454,6 +463,17 @@ body.is-tablet {
       border: none;
     }
 
+    .workspace-drawer-tab-options {
+      margin: 8px;
+    }
+    .nav-buttons-container:after {
+      background: linear-gradient(to bottom, var(--mobile-sidebar-background) 50%, transparent);
+    }
+
+    .workspace-leaf-content > .node-insert-event,
+    .workspace-leaf-content > .view-content > .node-insert-event {
+      padding-top: 48px;
+    }
     .workspace-drawer-active-tab-container {
       background-color: transparent;
     }

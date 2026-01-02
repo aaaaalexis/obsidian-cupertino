@@ -1,80 +1,29 @@
-body {
+body:not(.mod-windows:not(.windows-off)) {
   .modal.mod-settings .vertical-tab-nav-item {
     .vertical-tab-nav-item-icon {
       --icon-size: var(--icon-xs);
       padding: 4px;
       border-radius: 6px;
-      color: white;
+      color: var(--setting-nav-icon-color, white);
       box-shadow: inset 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.25), inset -0.5px -0.5px 0.5px rgba(255, 255, 255, 0.25), 0 0 2px rgba(0, 0, 0, 0.25), 0 1px 4px rgba(0, 0, 0, 0.15);
       background-image: linear-gradient(rgba(255, 255, 255, 0.25), transparent);
-      background-color: var(--color-base-60);
+      background-color: var(--setting-nav-icon-background, var(--color-base-60));
     }
 
-    &[data-setting-id="editor"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-blue);
-    }
-    &[data-setting-id="mobile"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-red);
-    }
-    &[data-setting-id="file"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-orange);
-    }
-    &[data-setting-id="appearance"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-accent);
-    }
-    &[data-setting-id="hotkeys"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-pink);
-    }
-    &[data-setting-id="keychain"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-green);
-    }
-    &[data-setting-id="plugins"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-cyan);
-    }
-    &[data-setting-id="community-plugins"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-purple);
-    }
-    &[data-setting-id="backlink"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-purple);
-    }
     &[data-setting-id="canvas"] .vertical-tab-nav-item-icon {
-      color: var(--color-red);
-      background-color: rgb(238, 238, 238);
-      background-image: linear-gradient(rgb(255, 255, 255), transparent);
+      --setting-nav-icon-color: var(--color-red);
+      --setting-nav-icon-background: #eee;
     }
     &[data-setting-id="command-palette"] .vertical-tab-nav-item-icon {
-      background-color: rgb(21, 21, 21);
-    }
-    &[data-setting-id="daily-notes"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-red);
-    }
-    &[data-setting-id="file-recovery"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-green);
-    }
-    &[data-setting-id="note-composer"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-cyan);
-    }
-    &[data-setting-id="page-preview"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-blue);
-    }
-    &[data-setting-id="switcher"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-purple);
+      --setting-nav-icon-background: #111;
     }
     &[data-setting-id="sync"] .vertical-tab-nav-item-icon {
-      color: var(--color-green);
-      background-color: rgb(238, 238, 238);
-      background-image: linear-gradient(rgb(255, 255, 255), transparent);
-    }
-    &[data-setting-id="templates"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-blue);
-    }
-    &[data-setting-id="zk-prefixer"] .vertical-tab-nav-item-icon {
-      background-color: var(--color-orange);
+      --setting-nav-icon-color: var(--color-green);
+      --setting-nav-icon-background: #eee;
     }
     &[data-setting-id="webviewer"] .vertical-tab-nav-item-icon {
-      color: var(--color-blue);
-      background-color: rgb(238, 238, 238);
-      background-image: linear-gradient(rgb(255, 255, 255), transparent);
+      --setting-nav-icon-color: var(--color-blue);
+      --setting-nav-icon-background: #eee;
     }
   }
 }
@@ -97,6 +46,10 @@ body:not(.mod-windows:not(.windows-off)):not(.is-android:not(.android-off)):not(
     .vertical-tab-header-group-title,
     .vertical-tab-nav-item {
       padding: 6px 8px;
+    }
+
+    .installed-plugins-container .extra-setting-button {
+      min-width: unset;
     }
   }
 }

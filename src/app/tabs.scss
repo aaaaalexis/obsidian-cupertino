@@ -293,6 +293,9 @@ body.is-tablet {
     background-color: inherit;
     box-shadow: none;
   }
+  .workspace-tab-header.is-active:hover {
+    background-color: inherit;
+  }
   .workspace-tab-header:not(.is-active):not(:hover) {
     opacity: 0.5;
   }

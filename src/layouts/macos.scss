@@ -69,7 +69,8 @@ body:not(.layout-cupertino):not(.is-android:not(.android-off)):not(.is-mobile) {
     background-color: var(--sidedock-background);
   }
   &.show-ribbon {
-    &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed) {
+    &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed),
+    &.mod-macos.is-frameless:not(.is-hidden-frameless) .workspace-ribbon.mod-left:not(.is-collapsed) {
       margin-top: 8px;
     }
     &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button {
@@ -153,9 +154,7 @@ body:not(.layout-cupertino):not(.is-android:not(.android-off)).is-tablet {
     border-radius: var(--radius-l);
     height: auto;
   }
-  .workspace-drawer.is-pinned.mod-left .workspace-drawer-inner {
-    padding-top: 0px;
-  }
+
   .modal.mod-settings .vertical-tab-header {
     margin: 8px 0 8px 8px;
     border-radius: var(--radius-m);

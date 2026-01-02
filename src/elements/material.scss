@@ -137,78 +137,16 @@ body.is-android:not(.android-off).is-mobile {
       background-color: var(--background-primary);
     }
 
-    .vertical-tab-nav-item {
-      .vertical-tab-nav-item-icon {
-        --icon-size: 20px;
-        --setting-icon-color: var(--color-base-50);
-        padding: 10px;
-        border-radius: var(--clickable-icon-radius);
-        color: hsl(from var(--setting-icon-color) h calc(s * 1.05) calc(l * 0.35));
-        background-image: none;
-        background-color: hsl(from var(--setting-icon-color) h calc(s * 0.9) calc(l * 1.15));
-        margin-top: -4px;
-        margin-left: -8px;
-        margin-bottom: -4px;
-        box-shadow: none;
-      }
-
-      &[data-setting-id="editor"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-blue);
-      }
-      &[data-setting-id="mobile"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-red);
-      }
-      &[data-setting-id="file"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-orange);
-      }
-      &[data-setting-id="appearance"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-accent);
-      }
-      &[data-setting-id="hotkeys"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-pink);
-      }
-      &[data-setting-id="keychain"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-green);
-      }
-      &[data-setting-id="plugins"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-cyan);
-      }
-      &[data-setting-id="community-plugins"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-purple);
-      }
-      &[data-setting-id="backlink"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-purple);
-      }
-      &[data-setting-id="canvas"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-red);
-      }
-      &[data-setting-id="daily-notes"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-red);
-      }
-      &[data-setting-id="file-recovery"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-green);
-      }
-      &[data-setting-id="note-composer"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-cyan);
-      }
-      &[data-setting-id="page-preview"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-blue);
-      }
-      &[data-setting-id="switcher"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-purple);
-      }
-      &[data-setting-id="sync"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-green);
-      }
-      &[data-setting-id="templates"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-blue);
-      }
-      &[data-setting-id="zk-prefixer"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-orange);
-      }
-      &[data-setting-id="webviewer"] .vertical-tab-nav-item-icon {
-        --setting-icon-color: var(--color-blue);
-      }
+    .vertical-tab-nav-item .vertical-tab-nav-item-icon {
+      --icon-size: 20px;
+      --setting-nav-icon-background: var(--color-base-50);
+      padding: 10px;
+      border-radius: var(--clickable-icon-radius);
+      color: hsl(from var(--setting-nav-icon-background) h calc(s * 1.05) calc(l * 0.35));
+      background-color: hsl(from var(--setting-nav-icon-background) h calc(s * 0.9) calc(l * 1.15));
+      margin-top: -4px;
+      margin-left: -8px;
+      margin-bottom: -4px;
     }
 
     .setting-items {

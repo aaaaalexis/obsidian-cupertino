@@ -52,6 +52,10 @@ settings:
         title: Disable active editing line highlight
         type: class-toggle
     -
+        id: banner-off
+        title: Disable banner
+        type: class-toggle
+    -
         id: block-width-off
         title: Disable block width
         type: class-toggle
@@ -113,18 +117,16 @@ settings:
 		title: Reduce contrast change
 		description: Minimizes contrast changes and color flashing when Obsidian is unfocused
 		type: class-toggle
-		default: false
 	-
 		id: reduce-motion
 		title: Reduce motion
 		description: Minimizes animation effects across the interface
 		type: class-toggle
-		default: false
 */
 
 .view-content .style-settings-container .style-settings-container .setting-item {
-  padding: 16px;
   align-items: center;
+  padding: 16px;
 
   &:not(.setting-item-heading) {
     flex-direction: row;
@@ -139,57 +141,135 @@ settings:
 }
 .style-settings-heading,
 .style-settings-container {
-  padding-left: 32px;
   margin-block: 0 !important;
+  padding-left: 32px;
 }
 .style-settings-heading {
-  padding: 16px !important;
   border-radius: 0;
+  padding: 16px !important;
 }
 .style-settings-heading .setting-item-name {
   color: var(--text-normal) !important;
 }
 
 .style-settings-container .setting-item {
-  border-radius: 0;
   margin-bottom: 0;
+  border-radius: 0;
 }
 .style-settings-container .setting-item:nth-child(1 of .setting-item:not(.setting-item-heading)) {
-  border-top-left-radius: var(--setting-items-radius);
   border-top-right-radius: var(--setting-items-radius);
+  border-top-left-radius: var(--setting-items-radius);
 }
 .style-settings-container .setting-item:nth-last-child(1 of .setting-item:not(.setting-item-heading)) {
-  border-bottom-left-radius: var(--setting-items-radius);
   border-bottom-right-radius: var(--setting-items-radius);
+  border-bottom-left-radius: var(--setting-items-radius);
 }
-.style-settings-container .themed-color-wrapper > div {
-  background-color: transparent;
-  color: var(--color-base-100);
-  gap: 8px;
+.style-settings-container .themed-color-wrapper {
+  display: flex;
 
-  .pickr-reset > button {
+  > div {
+    gap: 8px;
+    margin-top: 0 !important;
+    background-color: transparent;
     color: var(--color-base-100);
-    background-color: var(--color-base-10);
+
+    .pickr .pcr-button {
+      box-shadow: none;
+    }
+    .pickr .pcr-button::before {
+      border-radius: var(--button-radius);
+      background: var(--color-base-50);
+    }
+    .pickr .pcr-button::after {
+      border-radius: var(--button-radius);
+    }
+
+    .pickr-reset > button {
+      margin: 0;
+      background-color: var(--color-base-10);
+      color: var(--color-base-100);
+    }
+  }
+}
+.style-settings-container .pcr-app.visible {
+  box-shadow: var(--shadow-l);
+  border-radius: var(--modal-radius);
+  background-color: var(--modal-background);
+  padding: 8px;
+
+  .pcr-selection .pcr-palette,
+  .pcr-selection .pcr-palette::before {
+    border-radius: calc(var(--modal-radius) - 8px);
+  }
+  .pcr-selection .pcr-color-preview {
     margin: 0;
   }
-}
-.themed-color-wrapper {
-  display: flex;
-}
-.themed-color-wrapper > div + div {
-  margin-top: 0;
-}
 
-.style-settings-container .pickr .pcr-button {
-  box-shadow: none;
+  .pcr-swatches {
+    margin: 8px 0;
+    padding: 0;
 
-  &::before {
-    background: var(--color-base-50);
-    border-radius: var(--button-radius);
+    > button {
+      margin: 0;
+      box-shadow: none;
+      border-radius: 100vh;
+    }
+    > button.pcr-active {
+      box-shadow: 0 0 0 1px white;
+      border-radius: 100vh;
+    }
   }
 
-  &::after {
-    border-radius: var(--button-radius);
+  .pcr-interaction {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+
+    input.pcr-type[value="HEX"],
+    input.pcr-type[value="RGB"],
+    input.pcr-type[value="HSL"],
+    input.pcr-type[value="HEXA"],
+    input.pcr-type[value="RGBA"],
+    input.pcr-type[value="HSLA"] {
+      grid-column: span 2;
+    }
+    input.pcr-save,
+    input.pcr-cancel {
+      grid-column: span 3;
+    }
+
+    input:focus {
+      box-shadow: none;
+    }
+    input.pcr-result {
+      grid-column: span 6;
+      margin: 0;
+      border-radius: var(--input-radius);
+      background: var(--background-modifier-form-field);
+      padding: var(--input-padding);
+      min-width: unset;
+      color: var(--text-normal);
+      caret-color: var(--text-normal);
+      font-size: var(--font-ui-small);
+    }
+    input[type="button"] {
+      margin: 0;
+      box-shadow: var(--input-shadow);
+      border-radius: var(--button-radius);
+      background-color: var(--interactive-normal);
+      padding: 8px 12px;
+      color: var(--text-normal);
+      font-weight: var(--input-font-weight);
+      font-size: var(--font-ui-small);
+      font-family: var(--font-interface);
+      letter-spacing: normal;
+    }
+    input.pcr-save {
+      background-color: var(--interactive-accent);
+      color: var(--text-on-accent);
+    }
   }
 }
 
