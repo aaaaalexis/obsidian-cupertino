@@ -1,5 +1,7 @@
 body:not(.layout-cupertino):not(.is-android:not(.android-off)):not(.is-mobile) {
   --shadow-sidedock-spread: -32px 0 0 32px var(--background-primary);
+  --nav-item-color-active: var(--text-accent) !important;
+  --nav-item-color-selected: var(--text-accent) !important;
 
   &.layout-macos-tint-off {
     --sidedock-background-tint-opacity: 100%;
