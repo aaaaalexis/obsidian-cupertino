@@ -18,7 +18,7 @@ body:is(.layout-cupertino, .layout-viewfinder):not(.is-phone) {
   background-color: transparent;
 }
 
-// Mobile editor panels
+// Tablet panels
 body:is(.layout-cupertino, .layout-cards, .layout-border).is-tablet .mod-root {
   padding-bottom: 8px;
   height: auto;
@@ -34,6 +34,16 @@ body:is(.layout-cupertino, .layout-cards, .layout-border, .layout-frame).is-tabl
     border-top-right-radius: var(--safe-area-inset-top);
     border-bottom-right-radius: var(--safe-area-inset-top);
     background-color: var(--background-primary);
+  }
+}
+body:is(.layout-macos, .layout-cards, .layout-border, .layout-frame).is-tablet {
+  .workspace-drawer.is-pinned .workspace-drawer-inner {
+    padding-top: 0px;
+  }
+}
+body:is(.layout-cards, .layout-border, .layout-frame).is-tablet {
+  .workspace-drawer .nav-buttons-container:after {
+    --mobile-sidebar-background: var(--background-primary);
   }
 }
 

@@ -55,7 +55,6 @@ body.is-mobile {
     --search-result-background: var(--background-primary);
     --setting-items-background: var(--background-primary-alt);
     --modal-sidebar-background: var(--background-primary);
-    --mobile-sidebar-background: var(--background-primary);
   }
 
   .app-container {
@@ -423,7 +422,7 @@ body.is-tablet {
   }
 
   .workspace {
-    background-color: var(--background-secondary);
+    background-color: var(--mobile-sidebar-background);
   }
 
   .workspace-drawer.is-pinned,
@@ -474,6 +473,9 @@ body.is-tablet {
     .workspace-leaf-content > .node-insert-event,
     .workspace-leaf-content > .view-content > .node-insert-event {
       padding-top: 48px;
+    }
+    .workspace-drawer-active-tab-container {
+      background-color: transparent;
     }
   }
 }
