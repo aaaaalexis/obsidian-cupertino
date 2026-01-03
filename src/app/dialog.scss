@@ -22,20 +22,9 @@ body.is-mobile .modal-bg:has(+ .prompt) {
     transform: scale(0.95) rotateX(-1deg);
   }
 }
-@keyframes modalInTranslucent {
-  from {
-    opacity: 0;
-    filter: blur(4px);
-    transform: scale(0.95);
-  }
-}
 
 // Modal
 body:not(.is-mobile) {
-  &.mod-macos.is-translucent .modal {
-    animation: modalInTranslucent var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
-  }
-
   .modal-bg {
     opacity: 0 !important;
   }

@@ -48,6 +48,19 @@ body.input-cupertino:not(.is-phone) {
       padding: 6px 8px;
     }
 
+    .setting-group .setting-item {
+      padding: 12px 0;
+    }
+    .setting-group .setting-item:first-child {
+      padding-top: 0;
+    }
+    .setting-group .setting-item:last-child {
+      padding-bottom: 0;
+    }
+    .setting-item:not(.setting-group .setting-item) {
+      padding: var(--setting-items-padding);
+    }
+
     .installed-plugins-container .extra-setting-button {
       min-width: unset;
     }
