@@ -136,7 +136,7 @@ body.is-mobile {
 
     .workspace-drawer-header {
       padding-top: 8px;
-      padding-inline: 20px;
+      padding-inline: var(--safe-area-inset-side);
     }
     .workspace-drawer-header-left {
       margin-left: 12px;
@@ -148,14 +148,8 @@ body.is-mobile {
       margin-inline-start: 0;
     }
 
-    .workspace-drawer-tab-options {
-      transition: var(--anim-duration-moderate);
-      padding: 0;
-      margin: 0 16px;
-    }
     .workspace-drawer-tab-options-list {
-      padding: 0;
-      background-color: transparent;
+      padding: 0 0 var(--touch-size-l);
       overflow: hidden;
     }
     .workspace-drawer-tab-options-list::before {
@@ -471,7 +465,7 @@ body.is-tablet {
 
     .workspace-leaf-content > .node-insert-event,
     .workspace-leaf-content > .view-content > .node-insert-event {
-      padding-top: 48px;
+      padding-top: 0;
     }
     .workspace-drawer-active-tab-container {
       background-color: transparent;
