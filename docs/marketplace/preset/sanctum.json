@@ -9,7 +9,7 @@
   "baseline-style@@radius-modifier": 0.5,
   "baseline-style@@icon-stroke-modifier": 0.75,
   "baseline-style@@layout-style": "layout-classic",
-  "baseline-style@@input-style": "input-elevated",
+  "baseline-style@@element-style": "input-elevated",
   "baseline-style@@anim-motion-baseline": "cubic-bezier(0.32, 0.72, 0, 1)",
   "baseline-style@@stacked-nav-off": true,
   "baseline-style@@compact-actions-off": true,

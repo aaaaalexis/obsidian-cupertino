@@ -112,8 +112,16 @@
           if (!src) return picture.classList.remove("loading");
           const loader = new Image();
           loader.onload = () => {
-            img.src = src;
-            requestAnimationFrame(() => picture.classList.remove("loading"));
+            if (img.src && img.src !== src) {
+              img.src = src;
+              requestAnimationFrame(() => {
+                img.style.opacity = "1";
+                picture.classList.remove("loading");
+              });
+            } else {
+              img.src = src;
+              requestAnimationFrame(() => picture.classList.remove("loading"));
+            }
           };
           loader.onerror = () => picture.classList.remove("loading");
           loader.src = src;

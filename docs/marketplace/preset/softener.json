@@ -4,7 +4,7 @@
   "baseline-style@@color-scheme-dark": "melange-dark",
   "baseline-style@@color-scheme-accent": true,
   "baseline-style@@radius-modifier": 1.5,
-  "baseline-style@@input-style": "input-fluent",
+  "baseline-style@@element-style": "input-fluent",
   "baseline-style@@stacked-nav-off": true,
   "baseline-style@@compact-actions-off": true,
   "baseline-style@@compact-tabs-off": true,

@@ -6,7 +6,7 @@
   "baseline-style@@density-modifier": 0.75,
   "baseline-style@@radius-modifier": 0.5,
   "baseline-style@@layout-style": "layout-minimal",
-  "baseline-style@@input-style": "input-obsidian",
+  "baseline-style@@element-style": "input-obsidian",
   "baseline-style@@status-bar-style": "status-bar-compact",
   "baseline-style@@stacked-nav-off": true,
   "baseline-style@@compact-actions-off": true,

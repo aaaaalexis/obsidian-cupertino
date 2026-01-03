@@ -2,7 +2,7 @@
   "baseline-style@@accented-interface": true,
   "baseline-style@@font-interface-override": "Segoe UI Variable, Segoe UI Variable Text, Segoe UI",
   "baseline-style@@layout-style": "layout-cupertino",
-  "baseline-style@@input-style": "input-fluent",
+  "baseline-style@@element-style": "input-fluent",
   "baseline-style@@status-bar-style": "status-bar-cupertino",
   "baseline-style@@anim-motion-baseline": "cubic-bezier(0.32, 0.72, 0, 1)",
   "baseline-style@@stacked-nav-off": true,

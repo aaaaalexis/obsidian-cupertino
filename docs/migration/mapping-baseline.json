@@ -106,7 +106,7 @@
   "layout-border": "Border",
   "layout-frame": "Frame",
   "layout-macos": "macOS",
-  "input-style": "Element style",
+  "element-style": "Element style",
   "input-baseline": "Baseline",
   "input-cupertino": "Cupertino",
   "input-elevated": "Elevated",
