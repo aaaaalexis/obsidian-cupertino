@@ -116,3 +116,12 @@ body.input-tactile:not(.is-mobile) {
     }
   }
 }
+
+body.input-tactile.is-phone {
+  .mobile-navbar,
+  .mobile-toolbar-options-list-container,
+  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+    box-shadow: var(--input-shadow);
+    border: none !important;
+  }
+}
