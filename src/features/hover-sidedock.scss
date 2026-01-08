@@ -23,6 +23,10 @@ body:not(.is-mobile).hover-sidedock {
     background-color: transparent;
     width: var(--hover-sidedock-width) !important;
 
+    .workspace-tabs {
+      visibility: visible;
+    }
+
     // Position
     &.mod-left-split {
       transform: translateX(calc(-1 * (var(--hover-sidedock-width) - var(--hover-sidedock-trigger-area))));
