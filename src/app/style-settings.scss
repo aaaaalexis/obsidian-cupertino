@@ -3373,7 +3373,7 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
       transition: var(--anim-duration-fast);
       border: var(--border-width) solid var(--background-modifier-border);
       border-radius: var(--radius-m) !important;
-      background-color: var(--background-primary) !important;
+      background-color: var(--setting-items-background) !important;
       padding: calc(16px * var(--density-modifier)) !important;
 
       &:hover {
