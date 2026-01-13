@@ -1,5 +1,7 @@
 body.is-mobile.theme-dark {
   --system-status-background: black;
+  --settings-background: black;
+  --modal-sidebar-background: black;
   --mobile-sidebar-background: black;
   --tab-background-active: black;
 
@@ -9,7 +11,8 @@ body.is-mobile.theme-dark {
 
   background-color: black;
 
-  &.is-mobile .mod-root .view-header,
+  &.is-tablet .mod-root .view-header,
+  &.is-mobile .vertical-tab-content,
   .workspace,
   .mod-root .workspace-tabs .workspace-leaf,
   .mod-root .view-header::before,
