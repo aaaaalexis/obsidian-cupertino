@@ -151,7 +151,6 @@ body.is-mobile {
 
     .workspace-drawer-tab-options-list {
       padding: 0 0 var(--touch-size-l);
-      overflow: hidden;
     }
     .workspace-drawer-tab-options-list::before {
       position: fixed;
@@ -166,6 +165,7 @@ body.is-mobile {
     }
     .workspace-drawer-tab-options .workspace-drawer-tab-select .workspace-tab-header-inner {
       background-color: var(--mobile-sidebar-background);
+      border-radius: 0;
     }
 
     .nav-header,
