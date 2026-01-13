@@ -55,11 +55,12 @@ body:not(.is-phone) {
       .setting-item {
         display: flex;
         flex-direction: column;
+        margin: 0px !important;
         border: 1px solid var(--background-modifier-border);
         border-radius: var(--radius-m);
         background-color: var(--setting-items-background);
         padding: 16px !important;
-        margin: 0px !important;
+        overflow: hidden;
       }
       .setting-item-info {
         margin-inline-end: 0;
@@ -73,7 +74,13 @@ body:not(.is-phone) {
       }
       .setting-item-control {
         flex: none;
+        flex-wrap: wrap;
         align-self: flex-end;
+        width: 100%;
+      }
+      .setting-item-control button.mod-cta {
+        flex-grow: 1;
+        flex-basis: 100%;
       }
     }
   }
