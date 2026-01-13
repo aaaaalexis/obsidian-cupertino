@@ -124,7 +124,7 @@ body.is-phone .modal:not(.mod-sidebar-layout) {
   .suggestion-item {
     -electron-corner-smoothing: var(--corner-smoothing);
     padding: calc(6px * var(--density-modifier)) 8px;
-    border-radius: calc(var(--menu-radius) - 4px);
+    border-radius: calc(var(--menu-radius) - var(--menu-padding));
     margin-bottom: 0;
   }
 

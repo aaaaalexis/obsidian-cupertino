@@ -35,6 +35,7 @@ body.input-cupertino:not(.is-phone) {
   --setting-group-heading-color: var(--text-normal);
 
   .modal.mod-sidebar-layout {
+    background-color: var(--background-primary);
     border: none;
 
     .vertical-tab-nav-item.is-active {
