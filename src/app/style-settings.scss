@@ -778,6 +778,18 @@ settings:
 				label: Underline (Accented)
 				value: tabs-underline-accented
 	-
+		id: tab-text-align
+		title: Tab label alignment
+		type: variable-select
+		default: left
+		options:
+			-
+				label: Left
+				value: left
+			-
+				label: Center
+				value: center
+	-
 		id: labeled-tabs
 		title: Tab labels
 		type: class-select
