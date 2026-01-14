@@ -1,5 +1,5 @@
 body.layout-macos:not(.is-mobile) {
-  --sidedock-background: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
+  --sidedock-background: color-mix(in srgb, var(--background-primary) 99%, var(--interactive-accent));
   --shadow-sidedock-spread: -32px 0 0 32px var(--background-primary);
 
   &.theme-light {
