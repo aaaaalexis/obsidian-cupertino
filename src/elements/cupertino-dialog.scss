@@ -176,17 +176,12 @@ body.input-cupertino:not(.is-mobile) {
 
 body.input-cupertino.is-mobile {
   .modal-setting-back-button,
-  .modal-close-button:not(:empty) {
+  .modal-close-button {
     --icon-size: var(--icon-xl);
     padding: 6px;
   }
-
-  .modal-close-button:empty::before {
-    width: var(--icon-l);
-    height: var(--icon-l);
-    font-size: unset;
-  }
 }
+
 body.input-cupertino.is-phone {
   --modal-radius: var(--radius-xl);
 

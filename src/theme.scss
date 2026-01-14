@@ -24,15 +24,15 @@
 @use "layouts/frame.scss";
 @use "layouts/viewfinder.scss";
 @use "layouts/cupertino.scss" as layout-cupertino;
-@use "layouts/cupertino-dialog.scss";
-@use "layouts/cupertino-settings.scss";
-@use "layouts/cupertino-prompt.scss";
-@use "layouts/cupertino-mobile.scss";
 @use "layouts/macos.scss";
 @use "layouts/layout-styles.scss";
 
 @use "elements/baseline.scss";
 @use "elements/cupertino.scss" as element-cupertino;
+@use "elements/cupertino-dialog.scss";
+@use "elements/cupertino-settings.scss";
+@use "elements/cupertino-prompt.scss";
+@use "elements/cupertino-mobile.scss";
 @use "elements/fluent.scss";
 @use "elements/material.scss";
 @use "elements/tactile.scss";
@@ -60,7 +60,7 @@
 @use "color-schemes/atom.scss";
 @use "color-schemes/ayu.scss";
 @use "color-schemes/catppuccin.scss";
-@use "color-schemes/cupertino.scss";
+@use "color-schemes/cupertino.scss" as color-cupertino;
 @use "color-schemes/dracula.scss";
 @use "color-schemes/everforest.scss";
 @use "color-schemes/flexoki.scss";

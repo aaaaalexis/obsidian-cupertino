@@ -15,23 +15,6 @@ body.input-cupertino {
   --input-radius: var(--radius-s);
   --input-height: 24px;
 
-  --slider-thumb-border-width: 0;
-  --slider-thumb-y: -5px;
-  --slider-thumb-height: 16px;
-  --slider-thumb-width: 20px;
-  --slider-thumb-radius: var(--toggle-thumb-radius);
-  --slider-track-height: 6px;
-  --slider-track-background: var(--background-modifier-border-hover);
-
-  --toggle-border-width: 1.5px;
-  --toggle-thumb-height: 13px;
-  --toggle-thumb-width: 21px;
-  --toggle-width: 36px;
-  --toggle-s-border-width: var(--toggle-border-width);
-  --toggle-s-thumb-height: var(--toggle-thumb-height);
-  --toggle-s-thumb-width: var(--toggle-thumb-width);
-  --toggle-s-width: var(--toggle-width);
-
   --icon-color: rgb(var(--mono-rgb-100));
   --icon-color-hover: rgb(var(--mono-rgb-100));
 
@@ -46,34 +29,32 @@ body.input-cupertino {
   --nav-item-color-selected: rgb(var(--mono-rgb-100));
 
   &.is-mobile {
+    --titlebar-background: transparent;
+    --titlebar-background-focused: transparent;
+    --background-modifier-form-field: var(--interactive-normal);
+
+    --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
+
     --radius-s: calc(16px * var(--radius-modifier));
     --radius-m: calc(24px * var(--radius-modifier));
     --radius-l: calc(32px * var(--radius-modifier));
     --radius-xl: calc(40px * var(--radius-modifier));
 
-    --slider-thumb-y: -9px;
-    --slider-thumb-height: 24px;
-    --slider-thumb-width: 37px;
-
-    --toggle-border-width: 2px;
-    --toggle-thumb-height: 24px;
-    --toggle-thumb-width: 37px;
-    --toggle-width: 68px;
+    --input-radius: var(--radius-l);
+    --input-height: 48px;
 
     --input-padding: 0 var(--side-padding);
     --dropdown-padding: 0 32px 0 var(--side-padding);
 
-    --input-radius: var(--radius-l);
-    --input-height: 48px;
-  }
-  &.theme-light.is-mobile {
-    --background-modifier-form-field: var(--interactive-normal);
-  }
-  &.theme-dark.is-mobile {
-    --settings-background: var(--background-secondary);
-    --setting-items-background: var(--background-secondary-alt);
-    --modal-sidebar-background: var(--background-secondary);
-    --mobile-sidebar-background: var(--background-primary);
+    &.theme-light {
+      --background-modifier-form-field: var(--interactive-normal);
+    }
+    &.theme-dark {
+      --settings-background: var(--background-secondary);
+      --setting-items-background: var(--background-secondary-alt);
+      --modal-sidebar-background: var(--background-secondary);
+      --mobile-sidebar-background: var(--background-primary);
+    }
   }
 
   &.theme-light {
@@ -125,6 +106,24 @@ body.input-cupertino {
   }
 
   // Slider
+  --slider-thumb-border-width: 0;
+  --slider-thumb-y: -5px;
+  --slider-thumb-height: 16px;
+  --slider-thumb-width: 20px;
+  --slider-thumb-radius: var(--toggle-thumb-radius);
+  --slider-track-height: 6px;
+  --slider-track-background: var(--background-modifier-border-hover);
+
+  &.is-mobile {
+    --slider-thumb-y: -9px;
+    --slider-thumb-height: 24px;
+    --slider-thumb-width: 37px;
+
+    input[type="range"]::-webkit-slider-thumb:active {
+      scale: 1.4;
+    }
+  }
+
   input[type="range"]::-webkit-slider-thumb {
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.1) !important;
@@ -135,11 +134,24 @@ body.input-cupertino {
       background-color: var(--raised-background);
     }
   }
-  &.is-mobile input[type="range"]::-webkit-slider-thumb:active {
-    scale: 1.4;
-  }
 
   // Toggle
+  --toggle-border-width: 1.5px;
+  --toggle-thumb-height: 13px;
+  --toggle-thumb-width: 21px;
+  --toggle-width: 36px;
+  --toggle-s-border-width: var(--toggle-border-width);
+  --toggle-s-thumb-height: var(--toggle-thumb-height);
+  --toggle-s-thumb-width: var(--toggle-thumb-width);
+  --toggle-s-width: var(--toggle-width);
+
+  &.is-mobile {
+    --toggle-border-width: 2px;
+    --toggle-thumb-height: 24px;
+    --toggle-thumb-width: 37px;
+    --toggle-width: 68px;
+  }
+
   .checkbox-container {
     box-shadow: none;
 
