@@ -1,0 +1,88 @@
+/*
+Cupertino
+https://developer.apple.com/design/human-interface-guidelines/color
+*/
+
+.theme-light.cupertino-light:not(.is-mobile),
+.theme-dark.cupertino-dark:not(.is-mobile) {
+  --background-primary-alt: color-mix(in srgb, var(--background-primary), rgb(var(--mono-rgb-100)) 3%);
+  --background-secondary: color-mix(in srgb, var(--background-primary), rgb(var(--mono-rgb-100)) 5%);
+  --background-secondary-alt: color-mix(in srgb, var(--background-primary), rgb(var(--mono-rgb-100)) 8%);
+
+  --interactive-normal: rgba(var(--mono-rgb-100), 5%);
+  --interactive-hover: rgba(var(--mono-rgb-100), 5%);
+
+  --text-normal: rgba(var(--mono-rgb-100), 85%);
+  --text-muted: rgba(var(--mono-rgb-100), 55%);
+  --text-faint: rgba(var(--mono-rgb-100), 25%);
+}
+
+.theme-light.cupertino-light.color-scheme-accent {
+  --accent-h: 208;
+  --accent-s: 100%;
+  --accent-l: 50%;
+}
+.theme-light.cupertino-light {
+  --color-red-rgb: 255, 56, 60;
+  --color-orange-rgb: 255, 141, 40;
+  --color-yellow-rgb: 255, 204, 0;
+  --color-green-rgb: 52, 199, 89;
+  --color-cyan-rgb: 0, 192, 232;
+  --color-blue-rgb: 0, 136, 255;
+  --color-purple-rgb: 203, 48, 224;
+  --color-pink-rgb: 255, 45, 85;
+}
+.theme-light.cupertino-light:not(.is-mobile) {
+  --background-primary: #fff;
+}
+.theme-light.cupertino-light.is-mobile {
+  --background-primary: #fff;
+  --background-primary-alt: #fff;
+  --background-secondary: #f2f2f7;
+  --background-secondary-alt: #fff;
+
+  --interactive-normal: rgba(118, 118, 128, 12%);
+  --interactive-hover: rgba(120, 120, 120, 20%);
+
+  --text-normal: #000;
+  --text-muted: rgba(60, 60, 67, 60%);
+  --text-faint: rgba(60, 60, 67, 30%);
+}
+
+.theme-dark.cupertino-dark.color-scheme-accent {
+  --accent-h: 206;
+  --accent-s: 100%;
+  --accent-l: 50%;
+}
+.theme-light.cupertino-light.contrast-light-vivid:not(.layout-minimal) .app-container {
+  --background-secondary: color-mix(in srgb, var(--background-primary), var(--mono-rgb-100) 5%);
+}
+.theme-light.cupertino-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
+.theme-light.cupertino-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
+.theme-light.cupertino-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
+.theme-dark.cupertino-dark {
+  --color-red-rgb: 255, 66, 69;
+  --color-orange-rgb: 255, 146, 48;
+  --color-yellow-rgb: 255, 214, 0;
+  --color-green-rgb: 48, 209, 88;
+  --color-cyan-rgb: 60, 211, 254;
+  --color-blue-rgb: 0, 145, 255;
+  --color-purple-rgb: 107, 52, 242;
+  --color-pink-rgb: 255, 55, 95;
+}
+.theme-dark.cupertino-dark:not(.is-mobile) {
+  --background-primary: #1e1e1e;
+}
+.theme-dark.cupertino-dark.is-mobile {
+  --background-primary: #000;
+  --background-primary-alt: #1c1c1e;
+  --background-secondary: #1c1c1e;
+  --background-secondary-alt: #2c2c2e;
+
+  --interactive-normal: rgba(118, 118, 128, 24%);
+  --interactive-hover: rgba(120, 120, 120, 36%);
+
+  --text-normal: #fff;
+  --text-muted: rgba(235, 235, 245, 60%);
+  --text-faint: rgba(235, 235, 245, 30%);
+}

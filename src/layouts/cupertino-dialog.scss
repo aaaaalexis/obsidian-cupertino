@@ -191,7 +191,7 @@ body.input-cupertino.is-phone {
   --modal-radius: var(--radius-xl);
 
   .modal-container.mod-confirmation .modal {
-    border-radius: var(--modal-radius) var(--modal-radius) calc(var(--safe-area-inset-top) - 8px) calc(var(--safe-area-inset-top) - 8px);
+    border-radius: var(--radius-xl) var(--radius-xl) calc(var(--safe-area-inset-top) - 8px) calc(var(--safe-area-inset-top) - 8px);
   }
   .modal:not(.mod-sidebar-layout) {
     --modal-radius: var(--radius-xl);
@@ -199,7 +199,6 @@ body.input-cupertino.is-phone {
     margin: 0 8px 8px;
     width: calc(100vw - 16px) !important;
     left: 0 !important;
-    transform: none !important;
 
     .modal-close-button {
       top: 16px !important;

@@ -1,15 +1,12 @@
 body.layout-macos:not(.is-mobile) {
+  --sidedock-background: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
   --shadow-sidedock-spread: -32px 0 0 32px var(--background-primary);
 
   &.theme-light {
-    --sidedock-background: color-mix(in srgb, white 98%, var(--interactive-accent));
     --shadow-sidedock: 0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px white, 0 4px 32px rgba(0, 0, 0, 0.075);
-    --nav-item-background-active: var(--background-modifier-hover);
   }
   &.theme-dark {
-    --sidedock-background: color-mix(in srgb, rgb(21, 21, 21) 98%, var(--interactive-accent));
     --shadow-sidedock: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.35), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
-    --nav-item-background-active: rgba(0, 0, 0, 0.5);
   }
 
   &.is-translucent .mod-root {

@@ -42,6 +42,12 @@ body.input-cupertino.is-mobile {
   }
 
   // File explorer
+  &.theme-light .nav-files-container > div {
+    background-color: var(--background-primary);
+  }
+  &.theme-dark .nav-files-container > div {
+    background-color: var(--background-secondary);
+  }
   .nav-files-container > div {
     --nav-item-color-active: var(--text-on-accent);
     --nav-item-background-active: var(--interactive-accent);
@@ -49,7 +55,6 @@ body.input-cupertino.is-mobile {
     --nav-item-weight-active: var(--font-normal);
 
     border-radius: var(--radius-m);
-    background-color: var(--setting-items-background);
 
     > .tree-item:nth-child(2) > .tree-item-self {
       border-top-left-radius: var(--radius-m);

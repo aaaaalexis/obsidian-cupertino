@@ -85,6 +85,9 @@ settings:
 				label: Catppuccin
 				value: catppuccin-light
 			-
+				label: Cupertino
+				value: cupertino-light
+			-
 				label: Everforest
 				value: everforest-light
 			-
@@ -164,6 +167,9 @@ settings:
 			-
 				label: Catppuccin
 				value: catppuccin-dark
+			-
+				label: Cupertino
+				value: cupertino-dark
 			-
 				label: Dracula
 				value: dracula-dark
@@ -3178,6 +3184,7 @@ settings:
       margin: 0;
       background-color: var(--color-base-10);
       color: var(--color-base-100);
+      padding: 0 8px;
     }
   }
 }
