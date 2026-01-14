@@ -1,31 +1,29 @@
 body {
   --prompt-border-color: var(--background-modifier-border-hover);
   --prompt-input-height: 64px;
-}
-body.is-tablet {
-  --prompt-input-height: 64px;
-}
 
-.prompt {
-  -electron-corner-smoothing: var(--corner-smoothing);
-  background-color: var(--background-secondary);
-  animation: modalIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+  .prompt {
+    -electron-corner-smoothing: var(--corner-smoothing);
+    background-color: var(--background-secondary);
+    animation: modalIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
 
-  .prompt-input,
-  .prompt-input:hover,
-  .prompt-input:focus,
-  .prompt-input:focus-visible {
-    background-color: transparent;
-    border-bottom-color: var(--divider-color);
-  }
+    .prompt-input,
+    .prompt-input:hover,
+    .prompt-input:focus,
+    .prompt-input:focus-visible {
+      background-color: transparent;
+      border-bottom-color: var(--divider-color);
+    }
 
-  .prompt-results {
-    flex: 1;
-  }
-  .suggestion-item {
-    padding: 12px;
+    .prompt-results {
+      flex: 1;
+    }
+    .suggestion-item {
+      padding: 12px;
+    }
   }
 }
+
 body.is-phone {
   .prompt {
     animation: none;
@@ -52,7 +50,10 @@ body.is-phone {
     padding: calc(8px * var(--density-modifier)) 16px;
   }
 }
+
 body.is-tablet {
+  --prompt-input-height: 64px;
+
   .prompt {
     border: var(--prompt-border-width) solid var(--prompt-border-color);
     border-radius: var(--modal-radius);
