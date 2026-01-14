@@ -36,6 +36,7 @@
 @use "elements/fluent.scss";
 @use "elements/material.scss";
 @use "elements/tactile.scss";
+@use "elements/adwaita.scss" as element-adwaita;
 
 @use "features/alternative-checkboxes.scss";
 @use "features/banners.scss";
@@ -57,6 +58,7 @@
 
 @use "color-schemes/contrast.scss";
 @use "color-schemes/admin.scss";
+@use "color-schemes/adwaita.scss" as color-adwaita;
 @use "color-schemes/atom.scss";
 @use "color-schemes/ayu.scss";
 @use "color-schemes/catppuccin.scss";

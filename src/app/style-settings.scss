@@ -76,6 +76,9 @@ settings:
 				label: Admin
 				value: admin-light
 			-
+				label: Adwaita
+				value: adwaita-light
+			-
 				label: Atom
 				value: atom-light
 			-
@@ -158,6 +161,9 @@ settings:
 			-
 				label: Admin
 				value: admin-dark
+			-
+				label: Adwaita
+				value: adwaita-dark
 			-
 				label: Atom
 				value: atom-dark
@@ -705,6 +711,9 @@ settings:
 			-
 				label: Tactile
 				value: input-tactile
+			-
+				label: Adwaita
+				value: input-adwaita
 	-
 		id: status-bar-style
 		title: Status bar
@@ -739,6 +748,9 @@ settings:
 			-
 				label: Playful
 				value: cubic-bezier(0.1, 0, 0.1, 1.25)
+			-
+				label: Sharp
+				value: cubic-bezier(0.33, 1, 0.68, 1)
 			-
 				label: Refined
 				value: cubic-bezier(0.32, 0.72, 0, 1)
