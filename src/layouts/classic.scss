@@ -2,7 +2,7 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
   // Side panels
   .mod-sidedock {
     & > .workspace-leaf-resize-handle {
-      border-color: var(--background-modifier-border);
+      border-color: var(--divider-color);
     }
   }
 
@@ -38,7 +38,8 @@ body.layout-minimal {
     background-color: var(--background-primary);
   }
 
-  .mod-sidedock.mod-left-split {
+  .mod-sidedock.mod-left-split,
+  .workspace-drawer.mod-left {
     background-color: var(--background-secondary);
   }
 
@@ -52,5 +53,15 @@ body.layout-minimal {
     .mod-root .view-header {
       background-color: black !important;
     }
+  }
+}
+
+body.layout-minimal.is-tablet {
+  .workspace {
+    background-color: transparent;
+  }
+
+  .workspace-drawer.mod-right.is-pinned {
+    --mobile-sidebar-background: var(--background-primary);
   }
 }

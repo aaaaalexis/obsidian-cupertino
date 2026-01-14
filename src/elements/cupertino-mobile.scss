@@ -39,8 +39,11 @@ body.input-cupertino.is-mobile {
   &.theme-light .nav-files-container > div {
     background-color: var(--background-primary);
   }
-  &.theme-dark .nav-files-container > div {
+  &.is-phone.theme-dark .nav-files-container > div {
     background-color: var(--background-secondary);
+  }
+  &.is-tablet.theme-dark .nav-files-container > div {
+    background-color: var(--background-secondary-alt);
   }
   .nav-files-container > div {
     --nav-item-color-active: var(--text-on-accent);
