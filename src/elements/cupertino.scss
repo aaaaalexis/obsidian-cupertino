@@ -46,6 +46,7 @@ body.input-cupertino {
   }
   &.is-mobile.theme-light {
     --background-modifier-form-field: var(--interactive-normal);
+    --interactive-normal: var(--background-secondary);
   }
   &.is-mobile.theme-dark {
     --settings-background: var(--background-secondary);
