@@ -48,6 +48,12 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
 }
 
 // Light contrast: High contrast
+.theme-light.contrast-light-vivid:not(.layout-minimal) {
+  --graph-text: var(--text-faint) !important;
+  --graph-line: var(--text-muted) !important;
+  --graph-node: var(--text-faint) !important;
+  --graph-node-unresolved: var(--text-muted) !important;
+}
 .theme-light.contrast-light-vivid:not(.layout-minimal) .app-container,
 .theme-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split) {
   --tab-container-background: var(--background-secondary);
