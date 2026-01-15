@@ -185,7 +185,9 @@ body.input-cupertino {
   }
 
   // Dropdown
-  --dropdown-padding-start: var(--side-padding);
+  &.is-mobile {
+    --dropdown-padding-start: var(--side-padding);
+  }
 
   select:focus,
   .combobox-button:focus,
