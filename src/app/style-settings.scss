@@ -1315,6 +1315,12 @@ settings:
 		type: variable-text
 		default: '350px'
 	-
+		id: horizontal-tab-options
+		title: Horizontal tab options
+		description: Use horizontal tab options in mobile sidebars
+		type: class-toggle
+		default: false
+	-
 		id: settings
 		title: Settings
 		type: heading

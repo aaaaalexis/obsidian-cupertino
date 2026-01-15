@@ -174,6 +174,32 @@ body.is-mobile {
     }
   }
 
+  // Side panels: Horizontal tab selector
+  &.horizontal-tab-options .workspace-drawer-tab-options-list {
+    flex-direction: row;
+    z-index: 10;
+    overflow: visible;
+
+    .workspace-tab-header {
+      flex: 1;
+      animation: none !important;
+    }
+    .workspace-tab-header-inner {
+      padding-inline: 0 !important;
+    }
+    .workspace-tab-header:not(.is-swiping) .workspace-tab-header-inner-title {
+      opacity: 0;
+    }
+    .workspace-tab-header-inner-title {
+      position: fixed;
+      align-self: center;
+      inset: 0;
+      width: 100%;
+      color: var(--text-muted);
+      text-align: center;
+    }
+  }
+
   // Editor panels
   .workspace .mod-root .workspace-tab-header-container .clickable-icon,
   .view-header .clickable-icon,
@@ -401,6 +427,8 @@ body.is-tablet {
   --titlebar-background: var(--background-secondary) !important;
   --titlebar-background-focused: var(--background-secondary) !important;
 
+  --mobile-sidebar-min-width: unset;
+
   .workspace-tab-header {
     padding-bottom: 0 !important;
   }
@@ -427,17 +455,17 @@ body.is-tablet {
       padding: var(--touch-size-l) 0 0;
     }
 
-    &.mod-left {
-      max-width: var(--mobile-left-sidebar-width, 500px);
+    &:not(.is-pinned).mod-left {
+      max-width: var(--mobile-left-sidebar-width, var(--mobile-sidebar-max-width));
     }
-    &.mod-right {
-      max-width: var(--mobile-right-sidebar-width, 500px);
+    &:not(.is-pinned).mod-right {
+      max-width: var(--mobile-right-sidebar-width, var(--mobile-sidebar-max-width));
     }
     &.is-pinned.mod-left {
-      width: var(--mobile-left-sidebar-width-pinned, 320px);
+      width: var(--mobile-left-sidebar-width-pinned, var(--mobile-sidebar-width-pinned));
     }
     &.is-pinned.mod-right {
-      width: var(--mobile-right-sidebar-width-pinned, 320px);
+      width: var(--mobile-right-sidebar-width-pinned, var(--mobile-sidebar-width-pinned));
     }
     &:not(.is-pinned) {
       margin: var(--safe-area-inset-top) 16px var(--safe-area-inset-bottom);
