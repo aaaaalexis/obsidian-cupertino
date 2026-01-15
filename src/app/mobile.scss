@@ -146,9 +146,6 @@ body.is-mobile {
       margin-inline-start: 0;
     }
 
-    .workspace-drawer-tab-options-list {
-      padding: 0 0 var(--touch-size-l);
-    }
     .workspace-drawer-tab-options-list::before {
       position: fixed;
       inset: 0;
@@ -222,6 +219,9 @@ body.is-phone {
   // Side panels
   .workspace-drawer-header {
     z-index: 1;
+  }
+  .workspace-drawer-tab-options-list {
+    padding: 0 0 var(--touch-size-l);
   }
 
   // Editor panel
@@ -423,6 +423,10 @@ body.is-tablet {
   }
 
   .workspace-drawer {
+    .workspace-drawer-tab-options-list {
+      padding: var(--touch-size-l) 0 0;
+    }
+
     &.mod-left {
       max-width: var(--mobile-left-sidebar-width, 500px);
     }
