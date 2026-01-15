@@ -1,3 +1,5 @@
+@use "sass:math";
+
 body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner-off) {
   --banner-image-object-fit: cover;
   --banner-image-inset: 8px;
@@ -29,7 +31,7 @@ body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner
     $i: $n * 5;
     .banner.y#{$i} {
       img[alt="banner"] {
-        object-position: center #{percentage($i / 100)};
+        object-position: center #{math.percentage(math.div($i, 100))};
       }
     }
   }

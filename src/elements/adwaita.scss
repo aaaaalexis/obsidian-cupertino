@@ -230,19 +230,6 @@ body.input-adwaita:not(.mod-macos):not(.is-mobile) {
     -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3e%3cpath fill='%232E3434' d='M4.988 4.992v6.012H11V4.992H4.988Zm2 2H9v2.012H6.988V6.992Z'/%3e%3c/svg%3e");
   }
 
-  @keyframes modalIAdwaita {
-    from {
-      transform: scale(0.85);
-      opacity: 0;
-    }
-  }
-
-  // Prompt
-  .prompt {
-    border-radius: var(--radius-xl);
-    animation: modalIAdwaita var(--anim-duration-fast) var(--anim-motion-baseline) forwards;
-  }
-
   // Menu
   --menu-padding: 6px;
 
@@ -260,7 +247,20 @@ body.input-adwaita:not(.mod-macos):not(.is-mobile) {
     }
   }
 
+  // Prompt
+  .prompt {
+    border-radius: var(--radius-xl);
+    animation: modalIAdwaita var(--anim-duration-fast) var(--anim-motion-baseline) forwards;
+  }
+
   // Modal
+  @keyframes modalIAdwaita {
+    from {
+      transform: scale(0.85);
+      opacity: 0;
+    }
+  }
+
   .modal {
     animation: modalIAdwaita var(--anim-duration-fast) var(--anim-motion-baseline) forwards;
 
