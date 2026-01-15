@@ -47,7 +47,7 @@ body.nav-item-strong {
     --nav-item-color-active: var(--text-accent-active);
   }
 
-  &.input-cupertino.layout-macos .nav-files-container > div {
+  &.input-cupertino.layout-macos:not(.is-mobile) .nav-files-container > div {
     --nav-item-background-hover: transparent;
     --nav-item-background-active: var(--background-modifier-cover);
     --nav-item-color-active: var(--text-accent);

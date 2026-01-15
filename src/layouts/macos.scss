@@ -130,7 +130,7 @@ body.layout-macos.is-tablet {
   }
 
   .workspace-drawer.is-pinned {
-    background-color: var(--mobile-sidebar-background);
+    --mobile-sidebar-background: var(--background-primary);
   }
   .workspace-drawer.is-pinned.mod-left {
     box-shadow: var(--shadow-sidedock);
