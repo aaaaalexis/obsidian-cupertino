@@ -60,7 +60,7 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
   --background-secondary: #262626;
 }
 .theme-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder):is(.tabs-floating, .tabs-floating-center, .tabs-underline, .tabs-underline-accented) .mod-root .workspace-tab-header,
+.theme-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder):is(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented) .mod-root .workspace-tab-header,
 .theme-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .workspace-ribbon, .mod-sidedock),
 .theme-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split) {
   color-scheme: dark;

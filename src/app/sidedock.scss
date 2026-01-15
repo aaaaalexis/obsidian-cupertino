@@ -115,16 +115,16 @@ body.mod-macos:not(.is-hidden-frameless):not(.is-mobile) .workspace-ribbon.mod-l
   padding: 0;
   margin: 0 auto;
 }
-body:not(.mod-macos):not(.is-mobile).stacked-nav-off .workspace-ribbon.mod-left .sidebar-toggle-button {
+body:not(.mod-macos):not(.is-mobile):not(.tab-top-left-stacked).css-settings-manager .workspace-ribbon.mod-left .sidebar-toggle-button {
   height: calc(var(--header-height) - 16px);
 }
 
 // Desktop sidedock
 body:not(.is-mobile) {
-  &:not(.layout-macos).stacked-nav-off .mod-sidedock.mod-left-split .sidebar-toggle-button {
+  &:not(.layout-macos):not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split .sidebar-toggle-button {
     order: -1;
   }
-  &:not(.layout-macos):not(.input-cupertino).stacked-nav-off .mod-sidedock.mod-left-split .sidebar-toggle-button {
+  &:not(.layout-macos):not(.input-cupertino):not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split .sidebar-toggle-button {
     margin-right: 8px;
   }
 
@@ -144,6 +144,59 @@ body:not(.is-mobile) {
     > .node-insert-event {
       padding: 0;
     }
+  }
+}
+
+// Panel actions
+.nav-header,
+.nav-buttons-container,
+.nav-action-button,
+.nav-action-button::after,
+.nav-header svg {
+  transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color var(--anim-duration-fast);
+}
+
+body:not(.nav-action-center, .nav-action-left) .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover) .nav-buttons-container {
+  gap: 4px !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+
+  .nav-action-button {
+    padding: 2px !important;
+    width: 0 !important;
+    flex: 0;
+    background-color: var(--background-modifier-hover);
+    box-shadow: none !important;
+    min-width: 0;
+
+    &::after {
+      font-size: 0;
+      opacity: 0;
+    }
+  }
+  .nav-action-button.is-active {
+    background-color: var(--background-modifier-hover) !important;
+  }
+  .nav-action-button.clickable-icon[aria-disabled="true"] {
+    opacity: var(--icon-opacity);
+  }
+
+  svg {
+    width: 0px;
+    height: 0px;
+  }
+}
+body.nav-action-left .mod-sidedock .workspace-leaf-content .nav-header:first-child {
+  align-items: start;
+}
+body.nav-action-indicator .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover) .nav-buttons-container {
+  background-color: var(--background-modifier-hover) !important;
+  border-radius: 100vh;
+  width: 48px;
+
+  .nav-action-button {
+    background-color: transparent;
   }
 }
 

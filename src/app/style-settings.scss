@@ -774,27 +774,27 @@ settings:
 		type: variable-text
 		default: 48px
 	-
-		id: tabs-style
+		id: tab-style
 		title: Tab style
 		type: class-select
 		allowEmpty: false
-		default: tabs-default
+		default: tab-default
 		options:
 			-
 				label: Obsidian
-				value: tabs-default
+				value: tab-default
 			-
 				label: Floating
-				value: tabs-floating
+				value: tab-floating
 			-
 				label: Floating (Center)
-				value: tabs-floating-center
+				value: tab-floating-center
 			-
 				label: Underline
-				value: tabs-underline
+				value: tab-underline
 			-
 				label: Underline (Accented)
-				value: tabs-underline-accented
+				value: tab-underline-accented
 	-
 		id: tab-text-align
 		title: Tab label alignment
@@ -807,51 +807,6 @@ settings:
 			-
 				label: Center
 				value: center
-	-
-		id: labeled-tabs
-		title: Tab labels
-		type: class-select
-		allowEmpty: false
-		default: labeled-tabs-off
-		options:
-			-
-				label: Disable
-				value: labeled-tabs-off
-			-
-				label: All tabs
-				value: labeled-tabs-all
-			-
-				label: Single tab
-				value: labeled-tabs-single
-	-
-		id: compact-actions
-		title: Compact tab actions
-		type: class-select
-		allowEmpty: false
-		default: compact-actions-dot
-		options:
-			-
-				label: Disable 
-				value: compact-actions-left
-			-
-				label: Disable (Center)
-				value: compact-actions-off
-			-
-				label: Dot
-				value: compact-actions-dot
-			-
-				label: Indicator
-				value: compact-actions-indicator
-	-
-		id: stacked-nav-off
-		title: Disable stacked primary navigation
-		description: Turns off vertically stacked and labeled navigation tabs in the left sidebar
-		type: class-toggle
-	-
-		id: compact-tabs-off
-		title: Disable compact tab bars
-		description: Turns off auto hiding tabs for non-top panels
-		type: class-toggle
 	-
 		id: tab-stacks
 		title: Tab stacks
@@ -974,6 +929,166 @@ settings:
 		level: 2
 		collapsed: true
 	-
+		id: tab-top-left-style
+		title: 'Left sidebar: top panel tab style'
+		type: class-select
+		allowEmpty: false
+		default: tab-top-left-stacked
+		options:
+			-
+				label: Stacked
+				value: tab-top-left-stacked
+			-
+				label: Labeled
+				value: tab-top-left-labeled
+			-
+				label: Dropdown
+				value: tab-top-left-dropdown
+			-
+				label: Glyph
+				value: tab-top-left-icon
+	-
+		id: tab-left-style
+		title: 'Left sidebar: other panel tab style'
+		type: class-select
+		allowEmpty: false
+		default: tab-left-compact
+		options:
+			-
+				label: Labeled
+				value: tab-left-labeled
+			-
+				label: Dropdown
+				value: tab-left-dropdown
+			-
+				label: Glyph
+				value: tab-left-icon
+			-
+				label: Compact
+				value: tab-left-compact
+	-
+		id: tab-top-right-style
+		title: 'Right sidebar: top panel tab style'
+		type: class-select
+		allowEmpty: false
+		default: tab-top-right-icon
+		options:
+			-
+				label: Labeled
+				value: tab-top-right-labeled
+			-
+				label: Dropdown
+				value: tab-top-right-dropdown
+			-
+				label: Glyph
+				value: tab-top-right-icon
+	-
+		id: tab-right-style
+		title: 'Right sidebar: other panel tab style'
+		type: class-select
+		allowEmpty: false
+		default: tab-right-compact
+		options:
+			-
+				label: Labeled
+				value: tab-right-labeled
+			-
+				label: Dropdown
+				value: tab-right-dropdown
+			-
+				label: Glyph
+				value: tab-right-icon
+			-
+				label: Compact
+				value: tab-right-compact
+	-
+		id: nav-action
+		title: Panel actions
+		type: class-select
+		allowEmpty: false
+		default: nav-action-dot
+		options:
+			-
+				label: Left 
+				value: nav-action-left
+			-
+				label: Center
+				value: nav-action-center
+			-
+				label: Dot
+				value: nav-action-dot
+			-
+				label: Indicator
+				value: nav-action-indicator
+	-
+		id: hide-vault-switcher-off
+		title: Always show vault switcher
+		type: class-toggle
+		default: false
+	-
+		id: hover-sidebars
+		title: Hover reveal
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: hover-ribbon
+		title: Hover ribbon
+		description: Hover over window left edge to reveal
+		type: class-toggle
+		default: false
+	-
+		id: hover-sidedock
+		title: Hover sidebars
+		description: When sidebars are collapsed, hover over window edge to reveal
+		type: class-toggle
+		default: false
+	-
+		id: hover-sidedock-trigger-area
+		title: Hover sidebars trigger area
+		type: variable-select
+		description: Width of the detection area for revealing hover sidebars
+		default: 1px
+		options:
+			-
+				label: Edge
+				value: 1px
+			-
+				label: Small
+				value: 2px
+			-
+				label: Medium
+				value: 4px
+			-
+				label: Large
+				value: 8px
+	-
+		id: hover-sidedock-width
+		title: Hover sidebars width
+		type: variable-number
+		description: Width of the hover sidebars in pixels
+		default: 320
+		format: px
+	-
+		id: hover-sidedock-delay
+		title: Hover sidebars delay
+		type: variable-number
+		description: Delay before showing hover sidebars in milliseconds
+		default: 160
+		format: ms
+	-
+		id: hover-sidedock-active-off
+		title: Disable hover sidebars active state
+		description: Turns off hover sidebars staying after interaction
+		type: class-toggle
+		default: false
+	-
+		id: file-explorer
+		title: File explorer
+		type: heading
+		level: 2
+		collapsed: true
+	-
 		id: nav-item-active-style
 		title: Active file style
 		type: class-select
@@ -1039,74 +1154,6 @@ settings:
 		id: bold-folders
 		title: Bold folders name
 		type: class-toggle
-	-
-		id: hide-vault-switcher-off
-		title: Always show vault switcher
-		type: class-toggle
-		default: false
-	-
-		id: hover-sidebars
-		title: Hover reveal
-		type: heading
-		level: 2
-		collapsed: true
-	-
-		id: hover-ribbon
-		title: Hover ribbon
-		description: Hover over window left edge to reveal
-		type: class-toggle
-		default: false
-	-
-		id: hover-sidedock
-		title: Hover sidebars
-		description: When sidebars are collapsed, hover over window edge to reveal
-		type: class-toggle
-		default: false
-	-
-		id: hover-sidedock-trigger-area
-		title: Hover sidebars trigger area
-		type: variable-select
-		description: Width of the detection area for revealing hover sidebars
-		default: 1px
-		options:
-			-
-				label: Edge
-				value: 1px
-			-
-				label: Small
-				value: 2px
-			-
-				label: Medium
-				value: 4px
-			-
-				label: Large
-				value: 8px
-	-
-		id: hover-sidedock-width
-		title: Hover sidebars width
-		type: variable-number
-		description: Width of the hover sidebars in pixels
-		default: 320
-		format: px
-	-
-		id: hover-sidedock-delay
-		title: Hover sidebars delay
-		type: variable-number
-		description: Delay before showing hover sidebars in milliseconds
-		default: 160
-		format: ms
-	-
-		id: hover-sidedock-active-off
-		title: Disable hover sidebars active state
-		description: Turns off hover sidebars staying after interaction
-		type: class-toggle
-		default: false
-	-
-		id: nav-indentation-guide
-		title: Indentation guides
-		type: heading
-		level: 2
-		collapsed: true
 	-
 		id: nav-indentation-guide-width
 		title: Indentation guides thickness

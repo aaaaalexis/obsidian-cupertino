@@ -56,7 +56,7 @@ body.layout-viewfinder.is-tablet {
   }
 
   // Tab style
-  &:not(.tabs-floating, .tabs-floating-center, .tabs-underline, .tabs-underline-accented) .workspace-tab-header-container-inner {
+  &:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented) .workspace-tab-header-container-inner {
     padding-top: 8px !important;
   }
 }

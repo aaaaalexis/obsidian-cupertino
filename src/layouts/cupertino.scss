@@ -43,7 +43,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     }
 
     // macOS fix
-    &:not(.stacked-nav-off).mod-macos .mod-sidedock.mod-left-split.is-sidedock-collapsed .mod-top-left-space .workspace-tab-header-container {
+    &:is(.tab-top-left-stacked, :not(.css-settings-manager)).mod-macos .mod-sidedock.mod-left-split.is-sidedock-collapsed .mod-top-left-space .workspace-tab-header-container {
       padding-top: calc(var(--header-height) - 8px);
     }
   }

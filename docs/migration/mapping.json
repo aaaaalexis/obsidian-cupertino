@@ -231,12 +231,12 @@
     },
     "tabs-style": {
       "valueMapping": {
-        "__fallback": "tabs-default",
-        "tabs-default": "tabs-default",
-        "tabs-square": "tabs-default",
-        "tabs-modern": "tabs-floating",
-        "tabs-plain-square": "tabs-floating",
-        "tabs-underline": "tabs-underline"
+        "__fallback": "tab-default",
+        "tabs-default": "tab-default",
+        "tabs-square": "tab-default",
+        "tabs-modern": "tab-floating",
+        "tabs-plain-square": "tab-floating",
+        "tabs-underline": "tab-underline"
       }
     },
     "minimal-tab-text-color": {
@@ -1066,14 +1066,14 @@
       }
     },
     "anp-alt-tab-style": {
-      "newId": "tabs-style",
+      "newId": "tab-style",
       "valueMapping": {
-        "__fallback": "tabs-default",
-        "anp-default-tab": "tabs-default",
-        "anp-depth-tab-toggle": "tabs-default",
-        "anp-mini-tab-toggle": "tabs-underline",
-        "anp-alternate-tab-toggle": "tabs-floating",
-        "anp-safari-tab-toggle": "tabs-floating"
+        "__fallback": "tab-default",
+        "anp-default-tab": "tab-default",
+        "anp-depth-tab-toggle": "tab-default",
+        "anp-mini-tab-toggle": "tab-underline",
+        "anp-alternate-tab-toggle": "tab-floating",
+        "anp-safari-tab-toggle": "tab-floating"
       }
     },
     "anp-alt-tab-custom-height": {
@@ -1199,11 +1199,11 @@
       "name": "Auto hide left ribbon menu"
     },
     "nav-header-autohide": {
-      "newId": "sidebar-compact-actions",
+      "newId": "sidebar-nav-action",
       "valueMapping": {
-        "__fallback": "compact-actions-default",
-        "true": "compact-actions-default",
-        "false": "compact-actions-off"
+        "__fallback": "nav-action-default",
+        "true": "nav-action-default",
+        "false": "nav-action-center"
       }
     },
     "tab-title-bar-autohide": { "newId": "focus-view" },

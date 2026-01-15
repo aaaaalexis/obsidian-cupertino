@@ -26,7 +26,7 @@ body.colorful-frame.is-hidden-frameless:not(.is-mobile):not(.layout-macos, .layo
   }
 
   // Stacked nav spacing
-  &:not(.stacked-nav-off):not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
+  &:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.layout-cards, .layout-border) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
     gap: 8px;
   }
 
@@ -58,11 +58,11 @@ body.colorful-frame.is-hidden-frameless:not(.is-mobile):not(.layout-frame, .layo
     --colorful-frame-content-color: var(--text-on-accent-invert);
   }
 
-  &:not(.layout-viewfinder):not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top .sidebar-toggle-button,
-  &:not(.stacked-nav-off) .mod-root .workspace-tabs.mod-top .workspace-tab-header-container > div,
-  &:not(.layout-viewfinder):not(.stacked-nav-off) .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
+  &:not(.layout-viewfinder):is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-left-split .workspace-tabs.mod-top .sidebar-toggle-button,
+  &:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-root .workspace-tabs.mod-top .workspace-tab-header-container > div,
+  &:not(.layout-viewfinder):is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
   &.layout-cards .mod-sidedock.mod-right-split .workspace-tabs .workspace-tab-header-container,
-  &:not(.layout-viewfinder).stacked-nav-off .workspace-tabs.mod-top .workspace-tab-header-container,
+  &:not(.layout-viewfinder):not(.tab-top-left-stacked).css-settings-manager .workspace-tabs.mod-top .workspace-tab-header-container,
   &:not(.layout-viewfinder) .titlebar-inner,
   &:is(.layout-cards, .layout-border) .workspace-ribbon.mod-left {
     --icon-color: var(--colorful-frame-content-color);
@@ -74,7 +74,7 @@ body.colorful-frame.is-hidden-frameless:not(.is-mobile):not(.layout-frame, .layo
     z-index: 1;
   }
 
-  &:is(.tabs-underline, .tabs-underline-accented) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  &:is(.tab-underline, .tab-underline-accented) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     --tab-text-color: rgb(from var(--colorful-frame-content-color) r g b / 50%);
     --tab-text-color-focused: var(--tab-text-color);
     --tab-text-color-focused-active: var(--tab-text-color);

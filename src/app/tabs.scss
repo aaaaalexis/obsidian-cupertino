@@ -87,7 +87,7 @@ body:not(.is-phone) .workspace .mod-root {
 }
 
 // Editor panel: Floating
-body:is(.tabs-floating, .tabs-floating-center):not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
+body:is(.tab-floating, .tab-floating-center):not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
   --tab-radius-active: var(--tab-radius);
   --tab-curve: 0;
 
@@ -108,7 +108,7 @@ body:is(.tabs-floating, .tabs-floating-center):not(.is-phone) .workspace .mod-ro
     margin-bottom: 0;
   }
 }
-body:is(.tabs-floating, .tabs-floating-center).is-tablet .mod-root .workspace-tabs:not(.mod-stacked) {
+body:is(.tab-floating, .tab-floating-center).is-tablet .mod-root .workspace-tabs:not(.mod-stacked) {
   --header-height: 60px !important;
 
   .workspace-tab-header-container-inner {
@@ -120,7 +120,7 @@ body:is(.tabs-floating, .tabs-floating-center).is-tablet .mod-root .workspace-ta
 }
 
 // Editor panel: Floating (Center)
-body:not(.is-phone).tabs-floating-center .mod-root .workspace-tabs:not(.mod-stacked) {
+body:not(.is-phone).tab-floating-center .mod-root .workspace-tabs:not(.mod-stacked) {
   --tab-max-width: var(--tab-width);
   container-type: inline-size;
 
@@ -137,7 +137,7 @@ body:not(.is-phone).tabs-floating-center .mod-root .workspace-tabs:not(.mod-stac
   }
 }
 
-body.mod-macos:not(.is-mobile).tabs-floating-center {
+body.mod-macos:not(.is-mobile).tab-floating-center {
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
       // Both sidedocks hidden
@@ -160,7 +160,7 @@ body.mod-macos:not(.is-mobile).tabs-floating-center {
   }
 }
 
-body:not(.mod-macos):not(.is-mobile).tabs-floating-center {
+body:not(.mod-macos):not(.is-mobile).tab-floating-center {
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
       // Both sidedocks hidden
@@ -193,7 +193,7 @@ body:not(.mod-macos):not(.is-mobile).tabs-floating-center {
   }
 }
 
-body.is-tablet.tabs-floating-center {
+body.is-tablet.tab-floating-center {
   // Both drawer hidden
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
@@ -242,7 +242,7 @@ body.is-tablet.tabs-floating-center {
 }
 
 // Editor panel: Underline
-body:not(.is-phone):is(.tabs-underline, .tabs-underline-accented) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
+body:not(.is-phone):is(.tab-underline, .tab-underline-accented) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
   --tab-background-active: transparent;
 
   .workspace-tab-header-container-inner {
@@ -268,7 +268,7 @@ body:not(.is-phone):is(.tabs-underline, .tabs-underline-accented) .workspace .mo
     margin-bottom: 6px;
   }
 }
-body:not(.is-phone).tabs-underline-accented .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+body:not(.is-phone).tab-underline-accented .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
   border-color: var(--color-accent);
 }
 
@@ -369,8 +369,113 @@ body.is-tablet {
   }
 }
 
+// Side panels: Labeled tabs
+body.tab-top-left-labeled:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space,
+body.tab-top-right-labeled:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs.mod-top-right-space,
+body.tab-left-labeled:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top),
+body.tab-right-labeled:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) {
+  --sidebar-tab-text-display: flex;
+}
+
+// Side panels: Stacked tabs
+body:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-left-split .mod-top-left-space {
+  --sidebar-tab-text-display: flex;
+  --tab-font-weight: var(--font-medium);
+
+  .workspace-tab-header-container {
+    height: fit-content;
+    flex-direction: column;
+    padding: 0;
+  }
+  .workspace-tab-header-container-inner {
+    flex-direction: column;
+    width: -webkit-fill-available;
+    gap: calc(4px * var(--density-modifier));
+    animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+    padding: 0 16px;
+  }
+  .workspace-tab-header {
+    padding: 8px;
+  }
+  .workspace-tab-header-inner {
+    gap: 8px;
+    padding: 0;
+    border-radius: 0;
+  }
+  .workspace-tab-header-inner:hover {
+    color: var(--icon-color-hover);
+  }
+  .workspace-tab-header-spacer {
+    display: none;
+  }
+
+  .sidebar-toggle-button {
+    order: -1;
+    margin-left: auto;
+    max-height: var(--header-height);
+    min-height: var(--header-height);
+  }
+  .sidebar-toggle-button .clickable-icon {
+    margin: 8px;
+  }
+}
+body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(.layout-border) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner,
+body:is(.tab-top-left-stacked, :not(.css-settings-manager)).mod-macos:not(.is-hidden-frameless).show-ribbon .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+  margin-top: 8px;
+}
+
+// Side panels: Dropdown tabs
+body.tab-top-left-dropdown:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space,
+body.tab-top-right-dropdown:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs.mod-top-right-space,
+body.tab-left-dropdown:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top),
+body.tab-right-dropdown:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) {
+  --sidebar-tab-text-display: flex;
+
+  .workspace-tab-header-container-inner {
+    flex-direction: column;
+    align-self: flex-start;
+    gap: 0 !important;
+    z-index: 1;
+    padding: 0 !important;
+    width: 100%;
+    height: 100%;
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+  }
+  .workspace-tab-header {
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    padding: 8px 0;
+    height: calc(var(--header-height) - 8px * 2);
+    flex-shrink: 0;
+  }
+
+  .workspace-tab-header-container + .workspace-tab-container {
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+  }
+
+  .workspace-tab-header-container:hover {
+    .workspace-tab-header-container-inner {
+      height: calc-size(auto, size);
+      transition-delay: var(--anim-duration-moderate);
+    }
+    .workspace-tab-header {
+      transition-property: order, opacity;
+      transition-delay: var(--anim-duration-moderate), 0s;
+    }
+
+    + .workspace-tab-container {
+      opacity: 0;
+      pointer-events: none;
+      transition-delay: var(--anim-duration-moderate);
+    }
+  }
+  .workspace-tab-header-container:not(:hover) .workspace-tab-header.is-active {
+    order: -1;
+  }
+}
+
 // Side panels: Compact tabs
-body:not(.compact-tabs-off) .workspace .mod-sidedock {
+body:is(.tab-left-compact, :not(.css-settings-manager)) .mod-sidedock.mod-left-split,
+body:is(.tab-right-compact, :not(.css-settings-manager)) .mod-sidedock.mod-right-split {
   .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
     height: calc-size(auto, size);
 
@@ -384,14 +489,6 @@ body:not(.compact-tabs-off) .workspace .mod-sidedock {
       opacity: 0;
     }
   }
-}
-
-// Side panels: Tab names
-body.labeled-tabs-all {
-  --sidebar-tab-text-display: flex;
-}
-body.labeled-tabs-single .workspace-tab-header:only-child {
-  --sidebar-tab-text-display: flex;
 }
 
 // Side panels: Platforms

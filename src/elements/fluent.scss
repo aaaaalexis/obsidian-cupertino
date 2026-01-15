@@ -191,7 +191,7 @@ body.input-fluent:not(.is-mobile) {
   }
 
   // Panel actions
-  &:not(.compact-actions-off, .compact-actions-left) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
+  &:not(.nav-action-center, .nav-action-left) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
     padding: 0;
 
     .nav-action-button {

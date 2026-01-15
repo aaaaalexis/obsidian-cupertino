@@ -218,8 +218,8 @@ body.input-cupertino {
   }
 
   // Side panels
-  &:not(.is-mobile).stacked-nav-off .mod-sidedock .workspace-tab-header-container,
-  &:not(.is-mobile):not(.stacked-nav-off) .mod-sidedock .workspace-tabs:not(.mod-top-left-space) .workspace-tab-header-container {
+  &:not(.is-mobile):not(.tab-top-left-stacked).css-settings-manager .mod-sidedock .workspace-tab-header-container,
+  &:not(.is-mobile):is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock .workspace-tabs:not(.mod-top-left-space) .workspace-tab-header-container {
     .workspace-tab-header-container-inner {
       -webkit-app-region: no-drag;
       gap: 0px;
@@ -264,7 +264,7 @@ body.input-cupertino {
   }
 
   // Panel actions
-  &:not(.compact-actions-off, .compact-actions-left) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
+  &:not(.nav-action-center, .nav-action-left) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
     border-radius: var(--clickable-icon-radius);
     background-color: var(--background-modifier-hover);
     padding: 2px;

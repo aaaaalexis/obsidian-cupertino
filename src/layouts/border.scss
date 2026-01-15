@@ -62,7 +62,7 @@ body.layout-border:not(.is-mobile) {
       }
     }
   }
-  &:not(.stacked-nav-off) .mod-sidedock {
+  &:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock {
     &.mod-left-split .workspace-tabs.mod-top-left-space {
       .workspace-tab-header-container-inner {
         border-radius: var(--tab-radius) 0 0 0;
@@ -82,7 +82,7 @@ body.layout-border:not(.is-mobile) {
     }
   }
 
-  &:not(.stacked-nav-off).show-ribbon.hover-ribbon .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
+  &:is(.tab-top-left-stacked, :not(.css-settings-manager)).show-ribbon.hover-ribbon .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
     margin-left: 8px;
   }
 
@@ -155,7 +155,7 @@ body.layout-border:not(.is-mobile) {
       }
     }
 
-    &:not(.stacked-nav-off) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
+    &:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
       border: var(--divider-width) solid var(--divider-color);
       border-width: var(--divider-width) 0 0 var(--divider-width);
     }

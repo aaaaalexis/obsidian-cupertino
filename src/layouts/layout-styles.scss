@@ -51,8 +51,8 @@ body:is(.layout-cards, .layout-border, .layout-frame).is-tablet {
 body.mod-macos.is-hidden-frameless:not(.is-mobile) {
   &:is(.layout-classic, .layout-minimal) .workspace-ribbon.mod-left.is-collapsed,
   &:is(.layout-classic, .layout-minimal).hover-ribbon .workspace-ribbon.mod-left:not(.is-collapsed),
-  &.layout-cupertino:not(.tabs-floating, .tabs-floating-center) .workspace:not(.is-left-sidedock-open, .is-right-sidedock-open) .workspace-ribbon.mod-left.is-collapsed,
-  &.layout-macos:not(.tabs-floating, .tabs-floating-center) .workspace-ribbon.mod-left.is-collapsed {
+  &.layout-cupertino:not(.tab-floating, .tab-floating-center) .workspace:not(.is-left-sidedock-open, .is-right-sidedock-open) .workspace-ribbon.mod-left.is-collapsed,
+  &.layout-macos:not(.tab-floating, .tab-floating-center) .workspace-ribbon.mod-left.is-collapsed {
     margin-top: calc(var(--header-height) - 1px);
     padding-top: 8px;
     border-top: var(--tab-outline-width) solid var(--tab-outline-color);
@@ -62,8 +62,8 @@ body.mod-macos.is-hidden-frameless:not(.is-mobile) {
     padding-top: 0;
   }
 }
-body:not(.mod-macos):is(.layout-classic, .layout-minimal).stacked-nav-off .workspace-ribbon.mod-left,
-body.mod-macos:not(.is-hidden-frameless):is(.layout-classic, .layout-minimal).stacked-nav-off .workspace-ribbon.mod-left {
+body:not(.mod-macos):is(.layout-classic, .layout-minimal):not(.tab-top-left-stacked).css-settings-manager .workspace-ribbon.mod-left,
+body.mod-macos:not(.is-hidden-frameless):is(.layout-classic, .layout-minimal):not(.tab-top-left-stacked).css-settings-manager .workspace-ribbon.mod-left {
   &::before {
     content: "";
     height: var(--tab-outline-width);
@@ -81,7 +81,7 @@ body:not(.layout-cards, .layout-border, .layout-frame) .workspace-ribbon.mod-lef
 }
 
 // Stacked nav
-body:is(.layout-classic, .layout-minimal, .layout-frame):not(.is-mobile) .stacked-nav-off .workspace-tabs.mod-top {
+body:is(.layout-classic, .layout-minimal, .layout-frame):not(.is-mobile) :not(.tab-top-left-stacked).css-settings-manager .workspace-tabs.mod-top {
   .workspace-leaf-content > .nav-header,
   .workspace-leaf-content > .view-content > div:not(.nav-buttons-container):not(.graph-controls) {
     padding-bottom: 0;
@@ -97,7 +97,7 @@ body:not(.layout-classic, .layout-minimal):not(.is-mobile).hide-vault-switcher-o
 }
 
 // Tab styles
-body:not(.tabs-floating, .tabs-floating-center, .tabs-underline, .tabs-underline-accented) {
+body:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented) {
   &:is(.layout-minimal, .is-translucent, .contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.theme-dark.is-mobile),
   &:is(.layout-classic, .layout-cupertino):not(.contrast-light-vivid.theme-light),
   &:is(.layout-macos, .layout-frame, .layout-viewfinder:not(.colorful-frame)) {
@@ -110,7 +110,7 @@ body:not(.tabs-floating, .tabs-floating-center, .tabs-underline, .tabs-underline
   }
 }
 
-body:is(.tabs-floating, .tabs-floating-center) {
+body:is(.tab-floating, .tab-floating-center) {
   &:not(.layout-classic, .layout-frame, .layout-viewfinder):not(.colorful-frame) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     background-color: var(--background-modifier-hover);
   }
@@ -124,12 +124,12 @@ body:is(.tabs-floating, .tabs-floating-center) {
   }
 }
 
-body:is(.layout-classic, .layout-minimal, .layout-frame).stacked-nav-off .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed),
+body:is(.layout-classic, .layout-minimal, .layout-frame):not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed),
 body:is(.layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder:not(.colorful-frame)) .mod-root,
 body:is(.layout-classic, .layout-minimal, .layout-frame) .mod-sidedock.mod-right-split:not(.is-sidedock-collapsed),
-body.layout-cupertino:not(.tabs-floating, .tabs-floating-center):not(.is-mobile) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root,
-body.layout-macos:not(.tabs-floating, .tabs-floating-center) .mod-root,
-body:is(.layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder, .layout-macos):is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark):not(.tabs-floating, .tabs-floating-center) .mod-root {
+body.layout-cupertino:not(.tab-floating, .tab-floating-center):not(.is-mobile) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root,
+body.layout-macos:not(.tab-floating, .tab-floating-center) .mod-root,
+body:is(.layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder, .layout-macos):is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark):not(.tab-floating, .tab-floating-center) .mod-root {
   .workspace-tabs.mod-top .workspace-tab-header-container {
     border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
   }
