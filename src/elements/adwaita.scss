@@ -1,15 +1,11 @@
 body.input-adwaita {
-  --font-interface-theme: "Adwaita Sans Text", "Adwaita Sans";
-  --font-text-theme: "Adwaita Sans Text", "Adwaita Sans";
-  --font-print-theme: "Adwaita Sans Text", "Adwaita Sans";
-
   --shadow-s: 0 0 0 1px rgba(0, 0, 6, 3%), 0 1px 3px 1px rgba(0, 0, 6, 7%), 0 2px 6px 2px rgba(0, 0, 6, 3%);
   --shadow-l: 0 0 14px 5px rgba(0, 0, 0, 15%), 0 0 5px 2px rgba(0, 0, 0, 10%), 0 0 0 1px rgba(0, 0, 0, 5%);
 
   --input-border-width: 0;
   --input-shadow: none;
   --input-shadow-hover: none;
-  --input-font-weight: var(--font-bold);
+  --input-font-weight: calc(var(--font-weight) + var(--bold-modifier));
 
   --radius-s: calc(9px * var(--radius-modifier));
   --radius-m: calc(12px * var(--radius-modifier));
@@ -116,7 +112,7 @@ body.input-adwaita {
   // Settings
   --setting-group-heading-color: var(--text-normal);
   --setting-group-heading-size: var(--font-ui-medium);
-  --setting-group-heading-weight: var(--font-bold);
+  --setting-group-heading-weight: calc(var(--font-weight) + var(--bold-modifier));
   --setting-items-padding: 0px;
   --setting-items-shadow: 0 0 0 1px rgba(0, 0, 6, 3%), 0 1px 3px 1px rgba(0, 0, 6, 7%), 0 2px 6px 2px rgba(0, 0, 6, 3%);
 
@@ -195,7 +191,7 @@ body.input-adwaita {
   }
 }
 
-body.input-adwaita:not(.is-mobile) {
+body.input-adwaita:not(.mod-macos):not(.is-mobile) {
   // Title bar
   --frame-right-space: 124px;
 
@@ -273,8 +269,25 @@ body.input-adwaita:not(.is-mobile) {
       color: var(--text-normal);
       width: 24px;
       height: 24px;
-      padding: 5px;
+      padding: 4px;
       background-color: var(--interactive-normal);
+
+      path,
+      rect,
+      circle {
+        visibility: hidden;
+      }
+
+      svg {
+        background-color: currentcolor;
+        margin: 0;
+        -webkit-mask-size: 100% 100%;
+        -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3e%3cpath fill='%232E3436' d='M4 4h1.031c.254.012.512.129.688.313L8 6.592l2.313-2.28c.265-.231.445-.305.687-.313h1v1c0 .285-.035.55-.25.75L9.469 8.031l2.25 2.25c.187.188.281.453.281.719v1h-1c-.266 0-.531-.094-.719-.281L8 9.438l-2.281 2.28A1.016 1.016 0 0 1 5 12H4v-1c0-.266.094-.531.281-.719l2.282-2.25L4.28 5.75A.904.904 0 0 1 4 5V4Z'/%3e%3c/svg%3e");
+      }
+
+      &:hover {
+        background-color: var(--interactive-hover);
+      }
     }
   }
 }
@@ -286,7 +299,7 @@ body.input-adwaita:not(.is-phone) {
       box-shadow: none;
       border: none;
       font-size: var(--font-ui-large);
-      font-weight: var(--font-bold);
+      font-weight: calc(var(--font-weight) + var(--bold-modifier));
     }
     .prompt-results {
       padding: 8px;

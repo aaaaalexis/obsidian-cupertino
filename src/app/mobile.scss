@@ -204,7 +204,7 @@ body.is-mobile {
     }
   }
   .pull-action.pull-action.mod-activated {
-    font-weight: var(--font-bold);
+    font-weight: calc(var(--font-weight) + var(--bold-modifier));
     background-color: var(--interactive-accent);
     color: var(--text-on-accent);
     border-color: transparent;
