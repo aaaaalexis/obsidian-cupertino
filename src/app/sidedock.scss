@@ -99,8 +99,9 @@ body.bold-folders .nav-folder-title {
   width: var(--tab-action-width);
 
   &:hover {
+    box-shadow: none !important;
+    background-color: transparent !important;
     color: var(--text-normal);
-    background-color: transparent;
   }
 }
 
