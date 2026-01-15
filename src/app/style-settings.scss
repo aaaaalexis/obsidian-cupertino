@@ -1285,8 +1285,8 @@ settings:
 		step: 10
 		format: '%'
 	-
-		id: tablet
-		title: Tablet
+		id: mobile
+		title: Mobile
 		type: heading
 		level: 2
 		collapsed: true
@@ -1295,25 +1295,25 @@ settings:
 		title: Left sidebar width
 		description: Accepts valid CSS units
 		type: variable-text
-		default: '500px'
+		default: '450px'
 	-
 		id: mobile-right-sidebar-width
 		title: Right sidebar width
 		description: Accepts valid CSS units
 		type: variable-text
-		default: '500px'
+		default: '450px'
 	-
 		id: mobile-left-sidebar-width-pinned
 		title: Left sidebar width (pinned)
 		description: Accepts valid CSS units
 		type: variable-text
-		default: '320px'
+		default: '350px'
 	-
 		id: mobile-right-sidebar-width-pinned
 		title: Right sidebar width (pinned)
 		description: Accepts valid CSS units
 		type: variable-text
-		default: '320px'
+		default: '350px'
 	-
 		id: settings
 		title: Settings
