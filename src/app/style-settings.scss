@@ -1329,12 +1329,14 @@ settings:
 		type: class-toggle
 		description: Hide tabs and tab title bar when sidebars are collapsed
 		default: false
+		addCommand: true
 	-
 		id: mode-switcher-off
 		title: Disable quick mode switcher
 		type: class-toggle
 		description: Turns off mobile editor mode switcher quick access
 		default: false
+		addCommand: true
 	-
 		id: active-line
 		title: Active line
