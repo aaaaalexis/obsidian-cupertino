@@ -178,10 +178,10 @@ body.input-material {
       background-color: transparent;
       padding-inline: 0;
     }
+  }
 
-    .installed-plugins-container .setting-items .setting-item {
-      border: none;
-    }
+  &:not(.plugins-grid-off) .installed-plugins-container .setting-items .setting-item {
+    border: none;
   }
 }
 
