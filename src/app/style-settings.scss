@@ -619,6 +619,58 @@ settings:
 		default-light: '#'
 		default-dark: '#'
 	-
+		id: graph-palette
+		title: Graph colors
+		type: heading
+		level: 2
+		collapsed: true
+    - 
+        id: graph-info
+		description: Requires closing and reopening graph panes or restarting Obsidian to apply changes.
+        type: info-text
+	-
+		id: graph-line
+		title: Line color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: graph-node
+		title: Node color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: graph-node-focused
+		title: Active node color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-  
+		id: graph-node-tag
+		title: Tag node color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-  
+		id: graph-node-attachment
+		title: Attachment node color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-  
+		id: graph-node-unresolved
+		title: Unresolved node color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
 		id: interface
 		title: Interface
 		type: heading
@@ -644,7 +696,7 @@ settings:
 		type: variable-number-slider
 		default: 1
 		min: 0.5
-		max: 2
+		max: 1.5
 		step: 0.25
 	-
 		id: icon-stroke-modifier
@@ -653,7 +705,7 @@ settings:
 		default: 1
 		options:
 		min: 0.5
-		max: 1
+		max: 1.5
 		step: 0.25
 	-
 		id: layout-style
@@ -733,6 +785,24 @@ settings:
 			-
 				label: Full width
 				value: status-bar-full
+	-
+		id: accessibility
+		title: Accessibility
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: reduce-contrast-change
+		title: Reduce contrast change
+		description: Minimizes contrast changes and color flashing when Obsidian is unfocused
+		type: class-toggle
+		default: false
+	-
+		id: reduce-motion
+		title: Reduce motion
+		description: Minimizes animation effects across the interface
+		type: class-toggle
+		default: false
 	-
 		id: animation
 		title: Animation
@@ -930,7 +1000,7 @@ settings:
 		collapsed: true
 	-
 		id: tab-top-left-style
-		title: 'Left sidebar: top panel tab style'
+		title: Left sidebar tab style (Top panel)
 		type: class-select
 		allowEmpty: false
 		default: tab-top-left-stacked
@@ -949,7 +1019,7 @@ settings:
 				value: tab-top-left-icon
 	-
 		id: tab-left-style
-		title: 'Left sidebar: other panel tab style'
+		title: Left sidebar tab style
 		type: class-select
 		allowEmpty: false
 		default: tab-left-compact
@@ -968,7 +1038,7 @@ settings:
 				value: tab-left-compact
 	-
 		id: tab-top-right-style
-		title: 'Right sidebar: top panel tab style'
+		title: Right sidebar tab style (Top panel)
 		type: class-select
 		allowEmpty: false
 		default: tab-top-right-icon
@@ -984,7 +1054,7 @@ settings:
 				value: tab-top-right-icon
 	-
 		id: tab-right-style
-		title: 'Right sidebar: other panel tab style'
+		title: Right sidebar tab style
 		type: class-select
 		allowEmpty: false
 		default: tab-right-compact
@@ -1190,8 +1260,8 @@ settings:
 				label: Accent color
 				value: var(--color-accent)
 	-
-		id: window-frame
-		title: Window frame
+		id: desktop
+		title: Desktop
 		type: heading
 		level: 2
 		collapsed: true
@@ -1291,35 +1361,41 @@ settings:
 		level: 2
 		collapsed: true
 	-
-		id: mobile-left-sidebar-width
-		title: Left sidebar width
-		description: Accepts valid CSS units
-		type: variable-text
-		default: '450px'
-	-
-		id: mobile-right-sidebar-width
-		title: Right sidebar width
-		description: Accepts valid CSS units
-		type: variable-text
-		default: '450px'
-	-
-		id: mobile-left-sidebar-width-pinned
-		title: Left sidebar width (pinned)
-		description: Accepts valid CSS units
-		type: variable-text
-		default: '350px'
-	-
-		id: mobile-right-sidebar-width-pinned
-		title: Right sidebar width (pinned)
-		description: Accepts valid CSS units
-		type: variable-text
-		default: '350px'
-	-
 		id: horizontal-tab-options
 		title: Horizontal tab options
 		description: Use horizontal tab options in mobile sidebars
 		type: class-toggle
 		default: false
+	-
+		id: mobile-sidebar-width-override
+		title: Phone sidebar width
+		description: Accepts valid CSS units
+		type: variable-text
+		default: '100%'
+	-
+		id: mobile-left-sidebar-width
+		title: Tablet left sidebar width
+		description: Accepts valid CSS units
+		type: variable-text
+		default: '450px'
+	-
+		id: mobile-right-sidebar-width
+		title: Tablet right sidebar width
+		description: Accepts valid CSS units
+		type: variable-text
+		default: '450px'
+	-
+		id: mobile-left-sidebar-width-pinned
+		title: Tablet left sidebar width (pinned)
+		description: Accepts valid CSS units
+		type: variable-text
+		default: '350px'
+	-
+		id: mobile-right-sidebar-width-pinned
+		title: Tablet right sidebar width (pinned)
+		description: Accepts valid CSS units
+		type: variable-text
+		default: '350px'
 	-
 		id: settings
 		title: Settings
@@ -1330,24 +1406,6 @@ settings:
 		id: plugins-grid-off
 		title: Disable Community plugins grid layout
 		description: Turns off compact grid layout in Community plugins
-		type: class-toggle
-		default: false
-	-
-		id: accessibility
-		title: Accessibility
-		type: heading
-		level: 2
-		collapsed: true
-	-
-		id: reduce-contrast-change
-		title: Reduce contrast change
-		description: Minimizes contrast changes and color flashing when Obsidian is unfocused
-		type: class-toggle
-		default: false
-	-
-		id: reduce-motion
-		title: Reduce motion
-		description: Minimizes animation effects across the interface
 		type: class-toggle
 		default: false
 	-
@@ -2511,6 +2569,52 @@ settings:
 		default-light: '#'
 		default-dark: '#'
 	-
+		id: cards
+		title: Cards
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: cards-min-width
+		title: Card minimum width
+		type: variable-text
+		default: 160px
+	-
+		id: cards-max-width
+		title: Card maximum width
+		description: Default fills the available width, accepts valid CSS units
+		type: variable-text
+		default: 1fr
+	-
+		id: cards-mobile-width
+		title: Card minimum width (Mobile)
+		type: variable-text
+		default: 120px
+	-
+		id: cards-padding
+		title: Card padding
+		type: variable-text
+		default: 4px
+	-
+		id: cards-image-height
+		title: Card maximum image height
+		type: variable-text
+		default: 400px
+	- 
+		id: cards-background
+		title: Card background color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	- 
+		id: cards-background-hover
+		title: Card background color (hover)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
 		id: callouts
 		title: Callouts
 		type: heading
@@ -3081,110 +3185,6 @@ settings:
 			-
 				label: Circle
 				value: 100px
-	-
-		id: integrations
-		title: Integrations
-		type: heading
-		level: 1
-		collapsed: true
-	-
-		id: cards
-		title: Cards
-		type: heading
-		level: 2
-		collapsed: true
-	-
-		id: cards-min-width
-		title: Card minimum width
-		type: variable-text
-		default: 160px
-	-
-		id: cards-max-width
-		title: Card maximum width
-		description: Default fills the available width, accepts valid CSS units
-		type: variable-text
-		default: 1fr
-	-
-		id: cards-mobile-width
-		title: Card minimum width (Mobile)
-		type: variable-text
-		default: 120px
-	-
-		id: cards-padding
-		title: Card padding
-		type: variable-text
-		default: 4px
-	-
-		id: cards-image-height
-		title: Card maximum image height
-		type: variable-text
-		default: 400px
-	- 
-		id: cards-background
-		title: Card background color
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	- 
-		id: cards-background-hover
-		title: Card background color (hover)
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: graphs
-		title: Graphs
-		type: heading
-		level: 2
-		collapsed: true
-    - 
-        id: graphs-info
-		description: Requires closing and reopening graph panes or restarting Obsidian to apply changes.
-        type: info-text
-	-
-		id: graph-line
-		title: Line color
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: graph-node
-		title: Node color
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: graph-node-focused
-		title: Active node color
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-  
-		id: graph-node-tag
-		title: Tag node color
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-  
-		id: graph-node-attachment
-		title: Attachment node color
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-  
-		id: graph-node-unresolved
-		title: Unresolved node color
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
 */
 
 .view-content .style-settings-container .style-settings-container .setting-item {

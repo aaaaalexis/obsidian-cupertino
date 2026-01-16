@@ -243,6 +243,9 @@ body.is-phone {
   --mobile-sidebar-radius: 0;
 
   // Side panels
+  .workspace-drawer {
+    width: var(--mobile-sidebar-width-override, var(--mobile-sidebar-width));
+  }
   .workspace-drawer-header {
     z-index: 1;
   }
