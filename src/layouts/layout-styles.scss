@@ -4,7 +4,7 @@ body:is(.layout-classic, .layout-minimal, .layout-macos, .layout-frame, .layout-
     border-radius: 0;
   }
 }
-body:is(.layout-cupertino, .layout-viewfinder):not(.is-phone) {
+body:is(.layout-cupertino, .layout-fusion, .layout-viewfinder):not(.is-phone) {
   &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
     margin-left: 8px;
   }
@@ -36,7 +36,7 @@ body:is(.layout-cupertino, .layout-cards, .layout-border, .layout-frame).is-tabl
     background-color: var(--background-primary);
   }
 }
-body:is(.layout-macos, .layout-cards, .layout-border, .layout-frame).is-tablet {
+body:is(.layout-macos, .layout-fusion, .layout-cards, .layout-border, .layout-frame).is-tablet {
   .workspace-drawer.is-pinned .workspace-drawer-inner {
     padding-top: 0px;
   }
@@ -52,7 +52,7 @@ body.mod-macos.is-hidden-frameless:not(.is-mobile) {
   &:is(.layout-classic, .layout-minimal) .workspace-ribbon.mod-left.is-collapsed,
   &:is(.layout-classic, .layout-minimal).hover-ribbon .workspace-ribbon.mod-left:not(.is-collapsed),
   &.layout-cupertino:not(.tab-floating, .tab-floating-center) .workspace:not(.is-left-sidedock-open, .is-right-sidedock-open) .workspace-ribbon.mod-left.is-collapsed,
-  &.layout-macos:not(.tab-floating, .tab-floating-center) .workspace-ribbon.mod-left.is-collapsed {
+  &:is(.layout-macos, .layout-fusion):not(.tab-floating, .tab-floating-center) .workspace-ribbon.mod-left.is-collapsed {
     margin-top: calc(var(--header-height) - 1px);
     padding-top: 8px;
     border-top: var(--tab-outline-width) solid var(--tab-outline-color);
@@ -89,7 +89,7 @@ body:is(.layout-classic, .layout-minimal, .layout-frame):not(.is-mobile) :not(.t
 }
 
 // Vault switcher
-body:is(.layout-frame, .layout-macos):not(.is-mobile).hide-vault-switcher-off .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+body:is(.layout-frame, .layout-macos, .layout-fusion):not(.is-mobile).hide-vault-switcher-off .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
   background-color: inherit;
 }
 body:not(.layout-classic, .layout-minimal):not(.is-mobile).hide-vault-switcher-off .mod-sidedock.mod-left-split .workspace-sidedock-vault-profile {
@@ -99,8 +99,8 @@ body:not(.layout-classic, .layout-minimal):not(.is-mobile).hide-vault-switcher-o
 // Tab styles
 body:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented) {
   &:is(.layout-minimal, .is-translucent, .contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.theme-dark.is-mobile),
-  &:is(.layout-classic, .layout-cupertino):not(.contrast-light-vivid.theme-light),
-  &:is(.layout-macos, .layout-frame, .layout-viewfinder:not(.colorful-frame)) {
+  &:is(.layout-classic, .layout-cupertino, .layout-fusion):not(.contrast-light-vivid.theme-light),
+  &:is(.layout-macos, .layout-fusion.is-tablet, .layout-frame, .layout-viewfinder:not(.colorful-frame)) {
     .mod-root .workspace-tab-header {
       --tab-outline-width: 1px;
     }
@@ -111,14 +111,14 @@ body:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-acc
 }
 
 body:is(.tab-floating, .tab-floating-center) {
-  &:not(.layout-classic, .layout-frame, .layout-viewfinder):not(.colorful-frame) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  &:not(.layout-fusion, .layout-classic, .layout-frame, .layout-viewfinder):not(.colorful-frame) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     background-color: var(--background-modifier-hover);
   }
   &:is(.layout-classic:not(.colorful-frame), .layout-frame, .layout-viewfinder:not(.colorful-frame)) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     --tab-outline-width: 1px;
-    margin-inline: var(--tab-outline-width);
+    margin-inline: var(--tab-outline-width) !important;
   }
-  &:is(.layout-cupertino, .layout-macos):not(.is-mobile) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  &:is(.layout-cupertino, .layout-macos, .layout-fusion):not(.is-mobile) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     height: 32px;
     margin: auto 0;
   }
@@ -127,10 +127,10 @@ body:is(.tab-floating, .tab-floating-center) {
 body:is(.layout-classic, .layout-minimal, .layout-frame):not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed),
 body:is(.layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder:not(.colorful-frame)) .mod-root,
 body:is(.layout-classic, .layout-minimal, .layout-frame) .mod-sidedock.mod-right-split:not(.is-sidedock-collapsed),
-body.layout-cupertino:not(.tab-floating, .tab-floating-center):not(.is-mobile) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root,
 body.layout-macos:not(.tab-floating, .tab-floating-center) .mod-root,
+body.layout-fusion.is-tablet:not(.tab-floating, .tab-floating-center) .mod-root,
 body:is(.layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder, .layout-macos):is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark):not(.tab-floating, .tab-floating-center) .mod-root {
-  .workspace-tabs.mod-top .workspace-tab-header-container {
+  .workspace-tab-header-container {
     border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
   }
 
@@ -164,7 +164,7 @@ body:is(.layout-baseline, :not(.css-settings-manager)):not(.is-phone):is(.is-tra
 }
 
 // Mobile drawer
-body:not(.layout-classic, .layout-minimal, .layout-border, .layout-frame, .layout-macos):not(.contrast-light-tonal.theme-light:not(.layout-cupertino), .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark).is-tablet .workspace-drawer.is-pinned,
+body:not(.layout-classic, .layout-minimal, .layout-border, .layout-frame, .layout-macos, .layout-fusion):not(.contrast-light-tonal.theme-light:not(.layout-cupertino), .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark).is-tablet .workspace-drawer.is-pinned,
 body.layout-macos.is-tablet .workspace-drawer.is-pinned.mod-left {
   border: none;
 }

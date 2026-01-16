@@ -1,48 +1,29 @@
-body.layout-macos:not(.is-mobile) {
+body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
   --sidedock-background: color-mix(in srgb, var(--background-primary) 99%, var(--interactive-accent));
   --shadow-sidedock-spread: -32px 0 0 32px var(--background-primary);
 
   &.theme-light {
     --shadow-sidedock: 0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px white, 0 4px 32px rgba(0, 0, 0, 0.075);
+    // --shadow-sidedock-faint: 0 0 1px rgba(0, 0, 0, 0.2), inset 0 0 1px 1px rgba(255, 255, 255, 0.5), 0 4px 32px rgba(0, 0, 0, 0.075);
+    --shadow-sidedock-faint: 0 0 0 1px var(--tab-outline-color), inset 0 0 1px 1px rgba(255, 255, 255, 0.5), 0 4px 32px rgba(0, 0, 0, 0.075);
   }
   &.theme-dark {
-    --shadow-sidedock: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.35), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-
-  &.is-translucent .mod-root {
-    background-color: var(--background-primary) !important;
-  }
-  &.is-translucent:not(.is-focused):not(.reduce-contrast-change) .app-container {
-    background-color: var(--background-primary);
-  }
-  &:not(.is-translucent) .app-container {
-    background-color: var(--background-primary);
-
-    .mod-root,
-    .mod-root .workspace-split {
-      background-color: transparent;
-    }
-  }
-
-  &:not(.is-hidden-frameless) {
-    .titlebar {
-      background-color: var(--background-primary);
-    }
-    .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
-      top: 0;
-    }
+    --shadow-sidedock: 0 0 1px rgba(255, 255, 255, 0.8), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
+    // --shadow-sidedock-faint: 0 0 1px rgba(255, 255, 255, 0.4), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
+    --shadow-sidedock-faint: 0 0 0 1px var(--tab-outline-color), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
   &:not(.is-focused):not(.reduce-contrast-change) {
     --workspace-background-translucent: var(--background-secondary);
+    --tab-outline-color: transparent;
 
     .workspace-ribbon,
-    .mod-sidedock > div,
-    .mod-root .workspace-tab-header-container {
+    .mod-sidedock > div {
       opacity: 0.5;
     }
     .modal.mod-settings .vertical-tab-header,
-    .mod-sidedock {
+    .mod-sidedock.mod-left-split,
+    .mod-root .workspace-tab-container {
       background-color: var(--color-base-05) !important;
       box-shadow: none !important;
     }
@@ -58,9 +39,6 @@ body.layout-macos:not(.is-mobile) {
     }
   }
 
-  &:not(.is-translucent) .mod-sidedock {
-    background-color: var(--sidedock-background);
-  }
   &.show-ribbon {
     &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed),
     &.mod-macos.is-frameless:not(.is-hidden-frameless) .workspace-ribbon.mod-left:not(.is-collapsed) {
@@ -76,6 +54,10 @@ body.layout-macos:not(.is-mobile) {
       margin-left: calc(-1 * var(--ribbon-width) + 8px);
       padding-left: var(--ribbon-width);
     }
+  }
+
+  &:not(.is-translucent) .mod-sidedock {
+    background-color: var(--sidedock-background);
   }
   .mod-sidedock.mod-left-split {
     -electron-corner-smoothing: var(--corner-smoothing);
@@ -115,7 +97,7 @@ body.layout-macos:not(.is-mobile) {
   }
 }
 
-body.layout-macos.is-tablet {
+body:is(.layout-macos, .layout-fusion).is-tablet {
   &.theme-light {
     --shadow-sidedock: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025), 0 0 1px rgba(0, 0, 0, 0.25), 0 8px 16px 0 rgba(0, 0, 0, 0.05);
   }
@@ -160,5 +142,32 @@ body.layout-macos.is-tablet {
     z-index: 1;
     background-color: var(--raised-background);
     box-shadow: var(--shadow-sidedock);
+  }
+}
+
+body.layout-macos:not(.is-mobile) {
+  &:not(.is-hidden-frameless) {
+    .titlebar {
+      background-color: var(--background-primary);
+    }
+    .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
+      top: 0;
+    }
+  }
+
+  // Editor panel
+  &.is-translucent .mod-root {
+    background-color: var(--background-primary) !important;
+  }
+  &.is-translucent:not(.is-focused):not(.reduce-contrast-change) .app-container {
+    background-color: var(--background-primary);
+  }
+  &:not(.is-translucent) .app-container {
+    background-color: var(--background-primary);
+
+    .mod-root,
+    .mod-root .workspace-split {
+      background-color: transparent;
+    }
   }
 }

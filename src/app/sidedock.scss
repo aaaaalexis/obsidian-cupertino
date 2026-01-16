@@ -121,10 +121,11 @@ body:not(.mod-macos):not(.is-mobile):not(.tab-top-left-stacked).css-settings-man
 
 // Desktop sidedock
 body:not(.is-mobile) {
-  &:not(.layout-macos):not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split .sidebar-toggle-button {
+  &:not(.layout-macos, .layout-fusion):not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split .sidebar-toggle-button {
     order: -1;
+    z-index: 1;
   }
-  &:not(.layout-macos):not(.input-cupertino):not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split .sidebar-toggle-button {
+  &:not(.layout-macos, .layout-fusion):not(.input-cupertino):not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split .sidebar-toggle-button {
     margin-right: 8px;
   }
 
@@ -259,7 +260,7 @@ body:not(.is-mobile):not(.hide-vault-switcher-off) .mod-sidedock.mod-left-split 
     padding-bottom: 64px;
   }
 }
-body:not(.is-mobile):not(.hide-vault-switcher-off):not(.layout-cupertino, .layout-macos).hover-sidedock .mod-sidedock.mod-left-split.is-sidedock-collapsed .workspace-sidedock-vault-profile::before {
+body:not(.is-mobile):not(.hide-vault-switcher-off):not(.layout-cupertino, .layout-macos, .layout-fusion).hover-sidedock .mod-sidedock.mod-left-split.is-sidedock-collapsed .workspace-sidedock-vault-profile::before {
   background-color: var(--background-primary);
 }
 

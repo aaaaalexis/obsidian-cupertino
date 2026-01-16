@@ -1,5 +1,6 @@
 body {
   --header-height: 48px;
+  --tab-max-width: var(--tab-width);
 
   --tab-radius: var(--radius-s);
   --tab-radius-active: var(--tab-radius) var(--tab-radius) 0 0;
@@ -121,7 +122,6 @@ body:is(.tab-floating, .tab-floating-center).is-tablet .mod-root .workspace-tabs
 
 // Editor panel: Floating (Center)
 body:not(.is-phone).tab-floating-center .mod-root .workspace-tabs:not(.mod-stacked) {
-  --tab-max-width: var(--tab-width);
   container-type: inline-size;
 
   @container (min-width: 560px) {
@@ -364,7 +364,8 @@ body.is-tablet {
     gap: 8px;
   }
 
-  .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+  .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+  .workspace-tab-header.is-active .workspace-tab-header-inner-title {
     color: var(--icon-color-focused) !important;
   }
 }
@@ -453,7 +454,7 @@ body:is(.tab-top-left-stacked, :not(.css-settings-manager)).mod-macos:not(.is-hi
 }
 
 // Side panels: Dropdown tabs
-body.tab-top-left-dropdown.layout-macos:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header {
+body.tab-top-left-dropdown:is(.layout-macos, .layout-fusion):not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header {
   padding: 0;
 }
 body.tab-top-left-dropdown:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space,

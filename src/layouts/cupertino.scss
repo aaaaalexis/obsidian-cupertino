@@ -1,4 +1,4 @@
-body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
+body:is(.layout-cupertino, .layout-macos, .layout-fusion):not(.is-mobile) {
   --radius-window: 6px;
 
   @supports (corner-shape: squircle) {
@@ -53,39 +53,10 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   }
 }
 
-body.layout-cupertino:not(.is-phone) {
-  // Editor panel
-  &.theme-light .mod-root .workspace-tab-container {
-    box-shadow: rgba(0, 0, 0, 0.04) 0px 24px 48px, rgba(0, 0, 0, 0.02) 0px 4px 16px;
-  }
-  &.theme-dark .mod-root .workspace-tab-container {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 24px 48px, rgba(0, 0, 0, 0.12) 0px 4px 16px;
-  }
-
-  .workspace.is-left-sidedock-open .mod-root .workspace-tab-header-container {
-    overflow: hidden;
-  }
-  .mod-root {
-    z-index: 1;
-  }
-  .mod-root .workspace-tabs {
-    overflow: visible;
-  }
-  .mod-root .workspace-tab-container {
-    outline: var(--tab-outline-width) solid var(--tab-outline-color);
-  }
-}
-
-body.layout-cupertino:not(.is-mobile) {
-  .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
-    .mod-root {
-      background-color: var(--background-primary);
-      padding-bottom: 0;
-    }
-    .mod-root .workspace-tab-container {
-      box-shadow: none;
-      outline-color: transparent;
-    }
+body:is(.layout-cupertino, .layout-fusion):not(.is-mobile) {
+  .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
+    background-color: var(--background-primary);
+    padding-bottom: 0;
   }
 
   &:not(.status-bar-full) .mod-root {
@@ -95,5 +66,25 @@ body.layout-cupertino:not(.is-mobile) {
   // Windows & Linux fix
   &.is-hidden-frameless .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
     padding-right: var(--frame-right-space);
+  }
+}
+
+body.layout-cupertino:not(.is-phone) {
+  // Editor panel
+  &.theme-light .mod-root .workspace-tab-container {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 24px 48px, rgba(0, 0, 0, 0.02) 0px 4px 16px;
+  }
+  &.theme-dark .mod-root .workspace-tab-container {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 24px 48px, rgba(0, 0, 0, 0.12) 0px 4px 16px;
+  }
+
+  .mod-root {
+    z-index: 1;
+  }
+  .mod-root .workspace-tabs {
+    overflow: visible;
+  }
+  .mod-root .workspace-tab-container {
+    outline: var(--tab-outline-width) solid var(--tab-outline-color);
   }
 }

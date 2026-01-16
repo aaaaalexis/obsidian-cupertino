@@ -19,7 +19,7 @@ body.input-cupertino.is-mobile {
 
     @starting-style {
       opacity: 0;
-      filter: var(--raised-blur);
+      filter: blur(4px);
       transform: scale(0.75);
     }
   }

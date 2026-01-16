@@ -36,7 +36,7 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
     background-color: black !important;
   }
 
-  &:not(.is-mobile):not(.layout-cupertino, .layout-macos) {
+  &:not(.is-mobile):not(.layout-cupertino, .layout-macos, .layout-fusion) {
     .menu,
     .menu-scroll {
       background-color: black;

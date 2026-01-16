@@ -718,6 +718,9 @@ settings:
 				label: Baseline
 				value: layout-baseline
 			-
+				label: Fusion
+				value: layout-fusion
+			-
 				label: Cupertino
 				value: layout-cupertino
 			-
@@ -944,12 +947,6 @@ settings:
 		description: Tab title bar must be turned on in **Appearance** settings.
         type: info-text
 		markdown: true
-	-
-		id: file-header-fade
-		title: Tab title edge fade (Experimental)
-		description: Adds fading effect to content area on scroll
-		type: class-toggle
-		default: false
 	-
 		id: file-header-visibility
 		title: Tab title visibility
@@ -1309,10 +1306,6 @@ settings:
 		max: 100
 		step: 10
 		format: '%'
-	-
-		id: colorful-frame-invert
-		title: Invert icon and text color
-		type: class-toggle
 	-
 		id: titlebar
 		title: Frame title

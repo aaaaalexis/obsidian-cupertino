@@ -22,12 +22,6 @@ body.input-cupertino {
   --background-modifier-border-hover: var(--background-modifier-border);
   --background-modifier-border-focus: hsla(var(--interactive-accent-hsl), 0.5);
 
-  --nav-collapse-icon-color: rgb(var(--mono-rgb-100));
-  --nav-item-color: rgb(var(--mono-rgb-100));
-  --nav-item-color-hover: rgb(var(--mono-rgb-100));
-  --nav-item-color-active: rgb(var(--mono-rgb-100));
-  --nav-item-color-selected: rgb(var(--mono-rgb-100));
-
   &.is-mobile {
     --titlebar-background: transparent;
     --titlebar-background-focused: transparent;
