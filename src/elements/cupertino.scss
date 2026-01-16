@@ -218,8 +218,10 @@ body.input-cupertino {
   }
 
   // Side panels
-  &:not(.is-mobile):not(.tab-top-left-stacked).css-settings-manager .mod-sidedock .workspace-tab-header-container,
-  &:not(.is-mobile):is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock .workspace-tabs:not(.mod-top-left-space) .workspace-tab-header-container {
+  &:not(.is-mobile):not(.tab-top-left-stacked):not(.tab-top-left-dropdown) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space,
+  &:not(.is-mobile):not(.tab-top-right-dropdown) .mod-sidedock.mod-right-split .workspace-tabs.mod-top-right-space,
+  &:not(.is-mobile):not(.tab-left-dropdown) .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top),
+  &:not(.is-mobile):not(.tab-right-dropdown) .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) {
     .workspace-tab-header-container-inner {
       -webkit-app-region: no-drag;
       gap: 0px;

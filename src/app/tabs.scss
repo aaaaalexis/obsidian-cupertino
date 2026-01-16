@@ -375,6 +375,10 @@ body.tab-top-right-labeled:not(.is-grabbing) .mod-sidedock.mod-right-split .work
 body.tab-left-labeled:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top),
 body.tab-right-labeled:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) {
   --sidebar-tab-text-display: flex;
+
+  .workspace-tab-header-inner {
+    width: auto !important;
+  }
 }
 
 // Side panels: Stacked tabs
@@ -425,6 +429,9 @@ body:is(.tab-top-left-stacked, :not(.css-settings-manager)).mod-macos:not(.is-hi
 }
 
 // Side panels: Dropdown tabs
+body.tab-top-left-dropdown.layout-macos:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header {
+  padding: 0;
+}
 body.tab-top-left-dropdown:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space,
 body.tab-top-right-dropdown:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs.mod-top-right-space,
 body.tab-left-dropdown:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top),
