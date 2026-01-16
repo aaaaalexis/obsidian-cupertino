@@ -374,16 +374,40 @@ body.tab-top-left-labeled:not(.is-grabbing) .mod-sidedock.mod-left-split .worksp
 body.tab-top-right-labeled:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs.mod-top-right-space,
 body.tab-left-labeled:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top),
 body.tab-right-labeled:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) {
-  --sidebar-tab-text-display: flex;
+  --sidebar-tab-text-display: inline-block;
 
   .workspace-tab-header-inner {
     width: auto !important;
   }
 }
 
+// Side panels: Text tabs
+body.tab-top-left-text:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space,
+body.tab-top-right-text:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs.mod-top-right-space,
+body.tab-left-text:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top),
+body.tab-right-text:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) {
+  --sidebar-tab-text-display: inline-block;
+
+  .workspace-tab-header-container-inner {
+    gap: 0;
+  }
+  .workspace-tab-header.is-active {
+    font-weight: var(--font-medium);
+  }
+  .workspace-tab-header-inner {
+    width: auto !important;
+  }
+  .workspace-tab-header-inner-icon {
+    display: none;
+  }
+  .workspace-tab-header-inner-title {
+    text-transform: capitalize;
+  }
+}
+
 // Side panels: Stacked tabs
 body:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-left-split .mod-top-left-space {
-  --sidebar-tab-text-display: flex;
+  --sidebar-tab-text-display: inline-block;
   --tab-font-weight: var(--font-medium);
 
   .workspace-tab-header-container {
@@ -436,7 +460,7 @@ body.tab-top-left-dropdown:not(.is-grabbing) .mod-sidedock.mod-left-split .works
 body.tab-top-right-dropdown:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs.mod-top-right-space,
 body.tab-left-dropdown:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top),
 body.tab-right-dropdown:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) {
-  --sidebar-tab-text-display: flex;
+  --sidebar-tab-text-display: inline-block;
 
   .workspace-tab-header-container-inner {
     flex-direction: column;
