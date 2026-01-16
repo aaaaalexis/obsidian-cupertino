@@ -1,6 +1,10 @@
 body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
   --radius-window: 6px;
 
+  @supports (corner-shape: squircle) {
+    --radius-window: 8px;
+  }
+
   // Ribbon
   --ribbon-background: transparent;
   --ribbon-background-collapsed: var(--ribbon-background);

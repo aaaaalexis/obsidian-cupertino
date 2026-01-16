@@ -78,6 +78,7 @@ body.layout-macos:not(.is-mobile) {
     }
   }
   .mod-sidedock.mod-left-split {
+    -electron-corner-smoothing: var(--corner-smoothing);
     display: flex;
     z-index: var(--layer-sidedock);
     margin: 8px 0 8px 8px;
