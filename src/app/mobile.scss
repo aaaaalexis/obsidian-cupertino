@@ -430,7 +430,7 @@ body.is-tablet {
   --titlebar-background: var(--background-secondary) !important;
   --titlebar-background-focused: var(--background-secondary) !important;
 
-  --mobile-sidebar-min-width: unset;
+  --mobile-sidebar-min-width: var(--mobile-sidebar-width-pinned);
 
   .workspace-tab-header {
     padding-bottom: 0 !important;

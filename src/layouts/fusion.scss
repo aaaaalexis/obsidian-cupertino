@@ -1,7 +1,7 @@
 body.layout-fusion:not(.is-mobile) {
   // Editor panel
   .mod-root {
-    z-index: 6;
+    z-index: 5;
   }
   .mod-root .workspace-tab-container {
     box-shadow: var(--shadow-xxs);
