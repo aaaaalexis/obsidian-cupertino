@@ -153,10 +153,17 @@ body:not(.is-mobile) .view-content.notebook-navigator {
   .nn-navigation-pane-scroller,
   .nn-list-pane-scroller {
     margin-top: var(--nn-list-pane-overlay-height, 48px);
+    margin-bottom: var(--nn-nav-calendar-height);
   }
   .nn-navigation-pane-scroller > .nn-navigation-pane-overlay,
   .nn-list-pane-scroller > .nn-list-pane-overlay {
     position: fixed;
+    width: 100%;
+  }
+  .nn-navigation-pane-content {
+    padding-bottom: var(--nn-pane-bottom-toolbar-space);
+  }
+  .nn-navigation-calendar-overlay {
     width: 100%;
   }
 }
