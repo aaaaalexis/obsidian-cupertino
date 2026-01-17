@@ -87,6 +87,11 @@ body:not(.is-phone) .workspace .mod-root {
   }
 }
 
+// Editor panel: Baseline
+body:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented):is(.layout-cupertino, .layout-macos, .layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder) .mod-root .workspace-tab-header {
+  --tab-outline-width: 1px;
+}
+
 // Editor panel: Floating
 body:is(.tab-floating, .tab-floating-center):not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
   --tab-radius-active: var(--tab-radius);
@@ -99,6 +104,7 @@ body:is(.tab-floating, .tab-floating-center):not(.is-phone) .workspace .mod-root
   }
   .workspace-tab-header {
     padding: 0;
+    background-color: var(--background-modifier-hover);
   }
   .workspace-tab-header:not(.is-active):not(:hover) {
     opacity: 0.5;
@@ -301,7 +307,7 @@ body:not(.is-phone).tab-underline-accented .workspace .mod-root .workspace-tabs:
 body.is-tablet {
   .workspace .mod-root {
     .workspace-tab-header-container-inner {
-      padding: 0 var(--radius-s);
+      padding-inline: var(--radius-s);
     }
     .sidebar-toggle-button {
       padding-left: 0;

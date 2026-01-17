@@ -28,12 +28,7 @@
 
   body.colorful-headings-dot {
     .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
-    .cm-line.HyperMD-header-1,
-    .cm-line.HyperMD-header-2,
-    .cm-line.HyperMD-header-3,
-    .cm-line.HyperMD-header-4,
-    .cm-line.HyperMD-header-5,
-    .cm-line.HyperMD-header-6 {
+    .cm-line.HyperMD-header {
       &:not(:hover) .heading-collapse-indicator {
         opacity: 1;
 
@@ -77,12 +72,7 @@
 
   body.colorful-headings-side {
     .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
-    .cm-line.HyperMD-header-1,
-    .cm-line.HyperMD-header-2,
-    .cm-line.HyperMD-header-3,
-    .cm-line.HyperMD-header-4,
-    .cm-line.HyperMD-header-5,
-    .cm-line.HyperMD-header-6 {
+    .cm-line.HyperMD-header {
       position: relative;
       padding-inline-start: var(--font-ui-smaller);
 
@@ -141,12 +131,7 @@
 
   body.colorful-headings-side.colorful-headings-background {
     .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
-    .cm-line.HyperMD-header-1,
-    .cm-line.HyperMD-header-2,
-    .cm-line.HyperMD-header-3,
-    .cm-line.HyperMD-header-4,
-    .cm-line.HyperMD-header-5,
-    .cm-line.HyperMD-header-6 {
+    .cm-line.HyperMD-header {
       padding-inline-start: var(--font-ui-smaller);
 
       &::after {
@@ -157,12 +142,7 @@
 
   body.colorful-headings-background {
     .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
-    .cm-line.HyperMD-header-1,
-    .cm-line.HyperMD-header-2,
-    .cm-line.HyperMD-header-3,
-    .cm-line.HyperMD-header-4,
-    .cm-line.HyperMD-header-5,
-    .cm-line.HyperMD-header-6 {
+    .cm-line.HyperMD-header {
       position: relative;
       padding-inline-start: 8px;
 
@@ -210,12 +190,7 @@
   }
   body.colorful-headings-background:not(.colorful-headings-full-width) {
     .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
-    .HyperMD-header-1,
-    .HyperMD-header-2,
-    .HyperMD-header-3,
-    .HyperMD-header-4,
-    .HyperMD-header-5,
-    .HyperMD-header-6 {
+    .HyperMD-header {
       width: fit-content;
       justify-self: self-start;
       max-width: 100%;

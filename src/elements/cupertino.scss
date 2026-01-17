@@ -56,11 +56,13 @@ body.input-cupertino {
     --background-modifier-border: rgba(0, 0, 0, 0.075);
 
     --shadow-base: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025);
-    --shadow-border: 0 0 1px rgba(0, 0, 0, 0.4);
+    --shadow-edges: 0 0 1px rgba(0, 0, 0, 0.4);
+    --shadow-surface: 0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px rgba(255, 255, 255, 0.8), var(--shadow-xxs);
 
-    --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 0 8px rgba(0, 0, 0, 0.025), 0 4px 48px rgba(0, 0, 0, 0.15);
-    --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 16px rgba(0, 0, 0, 0.2);
-    --shadow-l: var(--shadow-border), inset 0 0 1px 1px white, 0 16px 64px rgba(0, 0, 0, 0.15);
+    --shadow-xxs: 0 4px 24px rgba(0, 0, 0, 0.075);
+    --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 0 8px rgba(0, 0, 0, 0.025), 0 4px 24px rgba(0, 0, 0, 0.075);
+    --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-edges), 0 8px 16px rgba(0, 0, 0, 0.2);
+    --shadow-l: var(--shadow-edges), inset 0 0 1px 1px white, 0 16px 64px rgba(0, 0, 0, 0.15);
   }
 
   &.theme-dark {
@@ -68,11 +70,13 @@ body.input-cupertino {
     --background-modifier-border: rgba(255, 255, 255, 0.075);
 
     --shadow-base: inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
-    --shadow-border: 0 0 1px rgba(255, 255, 255, 0.3);
+    --shadow-edges: 0 0 1px rgba(255, 255, 255, 0.3);
+    --shadow-surface: 0 0 1px rgba(255, 255, 255, 0.8), 0 0 1px rgba(0, 0, 0, 0.4), var(--shadow-xxs);
 
+    --shadow-xxs: 0 8px 16px rgba(0, 0, 0, 0.2);
     --shadow-xs: var(--shadow-base);
-    --shadow-s: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
-    --shadow-l: var(--shadow-border), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px rgba(0, 0, 0, 0.7), 0 16px 64px rgba(0, 0, 0, 0.3);
+    --shadow-s: var(--shadow-edges), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
+    --shadow-l: var(--shadow-edges), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px rgba(0, 0, 0, 0.7), 0 16px 64px rgba(0, 0, 0, 0.3);
   }
 
   // Button
@@ -94,7 +98,7 @@ body.input-cupertino {
     .clickable-icon:not([aria-disabled="true"]):hover,
     .clickable-icon.has-active-menu,
     .modal-close-button:hover {
-      box-shadow: var(--raised-shadow);
+      box-shadow: var(--shadow-xs);
       background-color: var(--raised-background);
     }
   }
@@ -234,7 +238,7 @@ body.input-cupertino {
     }
     .workspace-tab-header-container-inner:hover .workspace-tab-header.is-active {
       background-color: var(--background-primary);
-      box-shadow: var(--raised-shadow);
+      box-shadow: var(--shadow-xs);
 
       .workspace-tab-header-inner-icon {
         color: var(--text-normal) !important;

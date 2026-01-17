@@ -254,3 +254,21 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
   --vault-profile-color: var(--text-normal);
   --vault-profile-color-hover: var(--vault-profile-color);
 }
+
+// Default Workspace & Tabs
+body:is(.is-translucent, .contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark) {
+  &:is(.layout-baseline, :not(.css-settings-manager)):not(.is-phone) .mod-root {
+    z-index: 1;
+
+    .workspace-tabs {
+      overflow: visible;
+    }
+    .workspace-tab-container {
+      outline: var(--tab-outline-width) solid var(--tab-outline-color);
+    }
+  }
+
+  &:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented) .mod-root .workspace-tab-header {
+    --tab-outline-width: 1px;
+  }
+}

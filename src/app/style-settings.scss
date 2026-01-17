@@ -1275,38 +1275,6 @@ settings:
 		level: 2
 		collapsed: true
 	-
-		id: frameless-frame
-		title: Colorful frame
-		type: heading
-		level: 3
-		collapsed: true
-    - 
-        id: colorful-frame-info
-		description: Colorful frame requires **Hidden (default)** or **Obsidian** frame to be set in **Appearance** settings.
-        type: info-text
-		markdown: true
-	-
-		id: colorful-frame
-		title: Colorful frame
-		description: Add colored background to the window frame
-		type: class-toggle
-	-
-		id: colorful-frame-color
-		title: Colorful frame color
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: colorful-frame-opacity
-		title: Colorful frame opacity
-		type: variable-number-slider
-		default: 100
-		min: 10
-		max: 100
-		step: 10
-		format: '%'
-	-
 		id: titlebar
 		title: Frame title
 		type: heading
@@ -3430,8 +3398,6 @@ body.metadata-cupertino .style-settings-container .setting-item[data-id="metadat
 body.unstyled-tags .style-settings-container .setting-item[data-id="unstyled-tags"] ~ .setting-item,
 body:not(.colorful-headings-background) .style-settings-container .setting-item[data-id="colorful-headings-full-width"],
 body:not(.hr-dashed) .style-settings-container .setting-item[data-id="hr-dashed"] ~ .setting-item,
-body:not(.colorful-frame) .style-settings-container .setting-item[data-id="colorful-frame"] ~ .setting-item,
-body:not(.is-frameless) .style-settings-container .setting-item[data-id="colorful-frame-info"] ~ .setting-item,
 body:is(.is-hidden-frameless, :not(.is-frameless)) .style-settings-container .setting-item[data-id="titlebar-info"] ~ .setting-item,
 body:not(.is-translucent) .style-settings-container .setting-item[data-id="translucent-window-info"] ~ .setting-item {
   pointer-events: none;

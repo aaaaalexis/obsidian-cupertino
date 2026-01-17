@@ -1,3 +1,34 @@
+body:is(.layout-frame, .layout-viewfinder) {
+  // Tab styles
+  &:is(.tab-floating, .tab-floating-center) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+    --tab-outline-width: 1px;
+    margin-inline: var(--tab-outline-width) !important;
+    background-color: var(--tab-background-active);
+  }
+
+  .mod-root {
+    .workspace-tab-header-container {
+      border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
+    }
+    .workspace-tab-header-container-inner {
+      margin-bottom: -1px !important;
+    }
+  }
+
+  // Contrast
+  .contrast-light-vivid.theme-light .mod-root {
+    border: none;
+  }
+  &:not(.tab-floating, .tab-floating-center) .mod-root {
+    .workspace-tab-header-container {
+      border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
+    }
+    .workspace-tab-header-container-inner {
+      margin-bottom: -1px !important;
+    }
+  }
+}
+
 body.layout-frame:not(.is-mobile) {
   .workspace {
     padding: 4px;
@@ -10,6 +41,13 @@ body.layout-frame:not(.is-mobile) {
     border-radius: var(--radius-s);
     border: var(--border-width) solid var(--background-modifier-border);
     overflow: hidden;
+  }
+
+  .workspace-split.mod-root .workspace-tab-container {
+    border-radius: 0;
+  }
+  .workspace-ribbon.mod-left:not(.is-collapsed) {
+    padding-left: 4px;
   }
 
   // macOS fix
@@ -61,6 +99,11 @@ body.layout-frame:not(.is-mobile) {
     border: none;
   }
 
+  // Vault switcher background
+  &.hide-vault-switcher-off .workspace-sidedock-vault-profile {
+    background-color: inherit;
+  }
+
   // Style Settings: Status bar fix
   &.status-bar-full .workspace {
     padding-bottom: 0;
@@ -92,13 +135,31 @@ body.layout-frame.is-tablet {
   .workspace-drawer {
     margin-inline: 4px;
     padding-bottom: 0;
+  }
+  .workspace-drawer.mod-left.is-pinned {
+    margin-left: 0;
+  }
+  .workspace-drawer.mod-right.is-pinned {
+    margin-right: 0;
+  }
+  .workspace-drawer.is-pinned .workspace-drawer-inner {
+    padding-top: 0px;
+  }
+  .workspace-drawer-tab-options.is-collapsed,
+  .nav-buttons-container:after {
+    --mobile-sidebar-background: var(--background-primary);
+  }
 
-    &.mod-left.is-pinned {
-      margin-left: 0;
-    }
-    &.mod-right.is-pinned {
-      margin-right: 0;
-    }
+  .workspace-drawer.mod-left:not(.is-pinned) + .mod-root .workspace-tabs:first-of-type .workspace-tab-container {
+    margin-left: 8px;
+    border-top-left-radius: var(--safe-area-inset-top);
+    border-bottom-left-radius: var(--safe-area-inset-top);
+  }
+  .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tabs:last-of-type .workspace-tab-container {
+    margin-right: 8px;
+    border-top-right-radius: var(--safe-area-inset-top);
+    border-bottom-right-radius: var(--safe-area-inset-top);
+    background-color: var(--background-primary);
   }
 
   &.contrast-dark-black.theme-dark,

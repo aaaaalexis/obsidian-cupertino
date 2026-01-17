@@ -451,6 +451,7 @@ body.is-tablet {
   .workspace-drawer.is-pinned,
   .workspace-split.mod-root {
     background-color: transparent;
+    border-width: 0;
   }
 
   .workspace-drawer {
@@ -493,13 +494,13 @@ body.is-tablet {
     .workspace-drawer-tab-options {
       margin: 8px;
     }
-    .nav-buttons-container:after {
-      background: linear-gradient(to bottom, var(--mobile-sidebar-background) 50%, transparent);
-    }
 
     .workspace-leaf-content > .node-insert-event,
     .workspace-leaf-content > .view-content > .node-insert-event {
       padding-top: 0;
+    }
+    .workspace-leaf-content .nav-header ~ div:last-child {
+      padding-top: 48px !important;
     }
     .workspace-drawer-active-tab-container {
       background-color: transparent;

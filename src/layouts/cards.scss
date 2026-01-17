@@ -31,6 +31,9 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   }
 
   // Ribbon
+  .workspace-ribbon.mod-left:not(.is-collapsed) {
+    padding-left: 4px;
+  }
   &.show-ribbon:not(.hover-ribbon) {
     .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
     &:not(.hover-sidedock) .mod-sidedock.mod-left-split .workspace-tabs .workspace-tab-container,
@@ -40,6 +43,11 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
     &:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed),
     &:is(.tab-top-left-stacked, :not(.css-settings-manager)).mod-macos:not(.is-hidden-frameless) .workspace-ribbon.mod-left:not(.is-collapsed) {
       margin-top: var(--header-height);
+    }
+  }
+  &.mod-macos.is-hidden-frameless {
+    .workspace-ribbon.mod-left {
+      padding-top: 8px;
     }
   }
 
@@ -84,6 +92,25 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
 
 // Tablet
 body:is(.layout-cards, .layout-border).is-tablet {
+  // Editor panel
+  .mod-root {
+    padding-bottom: 8px;
+    height: auto;
+  }
+
+  .workspace-drawer.mod-left:not(.is-pinned) + .mod-root .workspace-tabs:first-of-type .workspace-tab-container {
+    margin-left: 8px;
+    border-top-left-radius: var(--safe-area-inset-top);
+    border-bottom-left-radius: var(--safe-area-inset-top);
+  }
+  .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tabs:last-of-type .workspace-tab-container {
+    margin-right: 8px;
+    border-top-right-radius: var(--safe-area-inset-top);
+    border-bottom-right-radius: var(--safe-area-inset-top);
+    background-color: var(--background-primary);
+  }
+
+  // Side panels
   .workspace-drawer.is-pinned {
     margin: 0 8px;
     margin-top: calc(var(--safe-area-inset-top) + var(--header-height));
@@ -92,7 +119,15 @@ body:is(.layout-cards, .layout-border).is-tablet {
     background-color: var(--background-primary);
     height: auto;
   }
+  .workspace-drawer.is-pinned .workspace-drawer-inner {
+    padding-top: 0px;
+  }
+  .workspace-drawer-tab-options.is-collapsed,
+  .nav-buttons-container:after {
+    --mobile-sidebar-background: var(--background-primary);
+  }
 
+  // Contrast
   &.contrast-light-tonal.theme-light,
   &.contrast-dark-tonal.theme-dark,
   &.contrast-dark-black.theme-dark,

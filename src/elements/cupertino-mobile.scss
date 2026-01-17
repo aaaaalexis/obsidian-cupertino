@@ -11,7 +11,7 @@ body.input-cupertino.is-mobile {
   .modal-close-button,
   .pull-action {
     backdrop-filter: var(--raised-blur);
-    box-shadow: var(--raised-shadow);
+    box-shadow: var(--shadow-xs);
     border: none;
     background-color: var(--raised-background);
     color: var(--text-normal);

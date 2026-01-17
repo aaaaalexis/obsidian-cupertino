@@ -1,17 +1,8 @@
 body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
-  --sidedock-background: color-mix(in srgb, var(--background-primary) 99%, var(--interactive-accent));
+  --sidedock-background: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
   --shadow-sidedock-spread: -32px 0 0 32px var(--background-primary);
 
-  &.theme-light {
-    --shadow-sidedock: 0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px white, 0 4px 32px rgba(0, 0, 0, 0.075);
-    // --shadow-sidedock-faint: 0 0 1px rgba(0, 0, 0, 0.2), inset 0 0 1px 1px rgba(255, 255, 255, 0.5), 0 4px 32px rgba(0, 0, 0, 0.075);
-    --shadow-sidedock-faint: 0 0 0 1px var(--tab-outline-color), inset 0 0 1px 1px rgba(255, 255, 255, 0.5), 0 4px 32px rgba(0, 0, 0, 0.075);
-  }
-  &.theme-dark {
-    --shadow-sidedock: 0 0 1px rgba(255, 255, 255, 0.8), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
-    // --shadow-sidedock-faint: 0 0 1px rgba(255, 255, 255, 0.4), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
-    --shadow-sidedock-faint: 0 0 0 1px var(--tab-outline-color), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
+  --shadow-surface: 0 0 0 1px var(--background-modifier-hover);
 
   &:not(.is-focused):not(.reduce-contrast-change) {
     --workspace-background-translucent: var(--background-secondary);
@@ -59,12 +50,15 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
   &:not(.is-translucent) .mod-sidedock {
     background-color: var(--sidedock-background);
   }
+  &.is-translucent .mod-sidedock.mod-left-split {
+    background-color: rgb(from var(--background-primary) r g b / 50%) !important;
+  }
   .mod-sidedock.mod-left-split {
     -electron-corner-smoothing: var(--corner-smoothing);
     display: flex;
     z-index: var(--layer-sidedock);
     margin: 8px 0 8px 8px;
-    box-shadow: var(--shadow-sidedock), var(--shadow-sidedock-spread);
+    box-shadow: var(--shadow-surface), var(--shadow-sidedock-spread);
     border-radius: var(--radius-window, var(--radius-m));
     height: -webkit-fill-available;
     overflow: hidden;
@@ -88,25 +82,33 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     border-color: var(--divider-color);
   }
 
+  // Ribbon
+  &.mod-macos.is-hidden-frameless:not(.tab-floating, .tab-floating-center) .workspace-ribbon.mod-left.is-collapsed {
+    margin-top: calc(var(--header-height) - 1px);
+    padding-top: 8px;
+    border-top: var(--tab-outline-width) solid var(--tab-outline-color);
+  }
+
   // Settings
   .modal.mod-settings .vertical-tab-header {
     margin: 8px 0 8px 8px;
-    box-shadow: var(--shadow-sidedock);
+    box-shadow: var(--shadow-surface);
     border-radius: max(calc(var(--modal-radius) - 8px), var(--radius-s));
     background-color: var(--sidedock-background);
+  }
+
+  // Vault switcher
+  &.hide-vault-switcher-off .workspace-sidedock-vault-profile {
+    background-color: inherit;
   }
 }
 
 body:is(.layout-macos, .layout-fusion).is-tablet {
   &.theme-light {
-    --shadow-sidedock: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025), 0 0 1px rgba(0, 0, 0, 0.25), 0 8px 16px 0 rgba(0, 0, 0, 0.05);
+    --shadow-surface: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025), 0 0 1px rgba(0, 0, 0, 0.25), 0 8px 16px 0 rgba(0, 0, 0, 0.05);
   }
   &.theme-dark {
-    --shadow-sidedock: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.5);
-  }
-
-  .workspace {
-    background-color: transparent;
+    --shadow-surface: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.5);
   }
 
   .workspace-drawer .workspace-drawer-header-name-text {
@@ -116,11 +118,9 @@ body:is(.layout-macos, .layout-fusion).is-tablet {
     color: var(--text-faint);
   }
 
-  .workspace-drawer.is-pinned {
-    --mobile-sidebar-background: var(--background-primary);
-  }
   .workspace-drawer.is-pinned.mod-left {
-    box-shadow: var(--shadow-sidedock);
+    box-shadow: var(--shadow-surface);
+    border: none;
   }
   .workspace-drawer.is-pinned.mod-left .workspace-drawer-header {
     padding-bottom: 20px;
@@ -134,6 +134,9 @@ body:is(.layout-macos, .layout-fusion).is-tablet {
     border-radius: var(--radius-l);
     height: auto;
   }
+  .workspace-drawer.is-pinned .workspace-drawer-inner {
+    padding-top: 0px;
+  }
 
   .modal.mod-settings .vertical-tab-header {
     margin: 8px 0 8px 8px;
@@ -141,10 +144,27 @@ body:is(.layout-macos, .layout-fusion).is-tablet {
     border: none;
     z-index: 1;
     background-color: var(--raised-background);
-    box-shadow: var(--shadow-sidedock);
+    box-shadow: var(--shadow-surface);
   }
 }
 
+// macOS specific
+body.layout-macos {
+  // Editor panel
+  .workspace-split.mod-root .workspace-tab-container {
+    border-radius: 0;
+  }
+
+  // Contrast
+  &:not(.tab-floating, .tab-floating-center) .mod-root {
+    .workspace-tab-header-container {
+      border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
+    }
+    .workspace-tab-header-container-inner {
+      margin-bottom: -1px !important;
+    }
+  }
+}
 body.layout-macos:not(.is-mobile) {
   &:not(.is-hidden-frameless) {
     .titlebar {
@@ -169,5 +189,17 @@ body.layout-macos:not(.is-mobile) {
     .mod-root .workspace-split {
       background-color: transparent;
     }
+  }
+}
+
+body.layout-macos.is-tablet {
+  .workspace {
+    background-color: transparent;
+  }
+  .workspace-drawer.is-pinned {
+    --mobile-sidebar-background: var(--background-primary);
+  }
+  .workspace-drawer.is-pinned.mod-right {
+    border-width: var(--divider-width);
   }
 }

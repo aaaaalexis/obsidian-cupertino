@@ -16,6 +16,8 @@ body.layout-viewfinder:not(.is-mobile) {
     border: var(--border-width) solid var(--background-modifier-border);
     overflow: hidden;
   }
+
+  // Side panels
   .workspace-ribbon.mod-left,
   .mod-sidedock {
     --header-height: var(--viewfinder-sidedock-header-height);
@@ -33,7 +35,15 @@ body.layout-viewfinder:not(.is-mobile) {
   }
 }
 
-// Mobile
+body.layout-viewfinder:not(.is-phone) {
+  &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
+    margin-left: 8px;
+  }
+  .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root {
+    margin-right: 8px;
+  }
+}
+
 body.layout-viewfinder.is-tablet {
   .mod-root {
     padding-top: 0;

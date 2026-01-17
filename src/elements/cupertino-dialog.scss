@@ -223,7 +223,7 @@ body.input-cupertino {
     overflow: visible;
   }
   &.is-mobile .notice {
-    box-shadow: var(--raised-shadow);
+    box-shadow: var(--shadow-xs);
   }
   .notice {
     margin-bottom: 0;

@@ -1,15 +1,32 @@
 body.layout-fusion:not(.is-mobile) {
   // Editor panel
-  --tab-outline-color: rgba(var(--mono-rgb-100), 0.05);
-
   .mod-root {
-    z-index: 1;
+    z-index: 6;
+  }
+  .mod-root .workspace-tab-container {
+    box-shadow: var(--shadow-xxs);
+  }
 
+  // Side panels
+  --shadow-sidedock-spread: 0 0 transparent;
+
+  .mod-sidedock.mod-left-split {
+    margin-right: 8px;
+  }
+  .mod-sidedock.mod-right-split {
+    background-color: transparent;
+
+    > .workspace-leaf-resize-handle {
+      border-color: transparent;
+    }
+  }
+}
+
+body.layout-fusion:not(.is-phone) {
+  // Editor panel
+  .mod-root {
     .workspace-tabs {
       overflow: visible;
-    }
-    .workspace-tab-container {
-      box-shadow: var(--shadow-sidedock-faint);
     }
 
     .workspace-leaf-content[data-type="markdown"] {
@@ -38,7 +55,7 @@ body.layout-fusion:not(.is-mobile) {
   }
 
   // Editor panel: Tabs
-  &:is(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented) .mod-root {
+  &:is(.tab-floating, .tab-floating-center) .mod-root {
     .workspace-leaf {
       background-color: rgb(from var(--background-primary) r g b / 75%) !important;
     }
@@ -47,43 +64,59 @@ body.layout-fusion:not(.is-mobile) {
       background-color: transparent;
     }
 
-    .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
-      overflow: visible;
-      contain: inline-size;
-      width: stretch;
-
-      .workspace-tab-header {
-        @starting-style {
-          filter: blur(4px);
-          scale: 0.75;
-          opacity: 0;
-        }
-
-        -electron-corner-smoothing: var(--corner-smoothing);
-        border-radius: var(--radius-m);
-        transition: background-color var(--anim-duration-moderate), opacity var(--anim-duration-moderate), filter var(--anim-duration-moderate) !important;
-      }
-      .workspace-tab-header.is-active {
-        background-color: rgb(from var(--background-primary) r g b / 50%);
-        box-shadow: var(--raised-shadow);
-      }
-      .workspace-tab-header-inner {
-        border-radius: inherit;
+    .workspace-tabs:not(.mod-stacked) {
+      .workspace-tab-header-container-inner {
+        overflow: visible;
+        contain: inline-size;
+        width: stretch;
       }
     }
   }
 
-  // Side panels
-  --shadow-sidedock-spread: 0 0 transparent;
+  // Editor panel: Tabs (Cupertino)
+  &.input-cupertino:is(.tab-floating, .tab-floating-center) .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tabs:not(.mod-stacked) {
+    .workspace-tab-header {
+      @starting-style {
+        filter: blur(4px);
+        scale: 0.75;
+        opacity: 0;
+      }
 
-  .mod-sidedock.mod-left-split {
-    margin-right: 8px;
+      background-color: transparent;
+      -electron-corner-smoothing: var(--corner-smoothing);
+      border-radius: var(--radius-m);
+      transition: background-color var(--anim-duration-moderate), opacity var(--anim-duration-moderate), filter var(--anim-duration-moderate) !important;
+    }
+    .workspace-tab-header.is-active {
+      background-color: rgb(from var(--background-primary) r g b / 50%);
+      box-shadow: var(--shadow-xs);
+    }
+    .workspace-tab-header-inner {
+      border-radius: inherit;
+    }
   }
-  .mod-sidedock.mod-right-split {
+
+  // Editor: Contrast
+  &:not(.tab-floating, .tab-floating-center):is(.is-translucent, .contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark) .mod-root {
+    .workspace-tab-container {
+      outline: var(--tab-outline-width) solid var(--tab-outline-color);
+    }
+    .workspace-tab-header-container-inner {
+      margin-bottom: -1px;
+    }
+  }
+}
+body.layout-fusion.is-tablet {
+  &:is(.tab-floating, .tab-floating-center) .workspace {
     background-color: transparent;
 
-    > .workspace-leaf-resize-handle {
-      border-color: transparent;
+    .workspace-drawer.is-pinned {
+      --mobile-sidebar-background: var(--background-primary);
     }
+  }
+
+  .workspace-drawer.mod-left.is-pinned {
+    --mobile-sidebar-background: var(--background-primary);
+    background-color: var(--mobile-sidebar-background);
   }
 }

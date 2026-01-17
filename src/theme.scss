@@ -26,7 +26,6 @@
 @use "layouts/cupertino.scss" as layout-cupertino;
 @use "layouts/macos.scss";
 @use "layouts/fusion.scss";
-@use "layouts/layout-styles.scss";
 
 @use "elements/baseline.scss";
 @use "elements/cupertino.scss" as element-cupertino;
@@ -49,7 +48,6 @@
 @use "features/image-filters.scss";
 @use "features/underline-headings.scss";
 @use "features/colorful-folders.scss";
-@use "features/colorful-frame.scss";
 @use "features/colorful-headings.scss";
 @use "features/focus-mode.scss";
 @use "features/hover-sidedock.scss";
