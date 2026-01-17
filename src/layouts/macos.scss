@@ -73,10 +73,6 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
   .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) .sidebar-toggle-button .clickable-icon {
     max-height: calc(var(--header-height) - 16px - 8px);
   }
-  &:is(.tab-left-compact, :not(.css-settings-manager)) .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner,
-  &:is(.tab-right-compact, :not(.css-settings-manager)) .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner {
-    gap: calc(8px * var(--density-modifier));
-  }
 
   .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
     border-color: var(--divider-color);

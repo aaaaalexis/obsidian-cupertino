@@ -124,11 +124,16 @@ body.input-cupertino {
 
   input[type="range"]::-webkit-slider-thumb {
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.1) !important;
+    box-shadow:
+      0 1px 4px rgba(0, 0, 0, 0.075),
+      0 1px 16px rgba(0, 0, 0, 0.1) !important;
 
     &:active {
       scale: 1.2;
-      box-shadow: inset 1px 1px 2px -2px rgba(var(--mono-rgb-100), 1), inset -1px -1px 2px -2px rgba(var(--mono-rgb-100), 1), var(--shadow-xs) !important;
+      box-shadow:
+        inset 1px 1px 2px -2px rgba(var(--mono-rgb-100), 1),
+        inset -1px -1px 2px -2px rgba(var(--mono-rgb-100), 1),
+        var(--shadow-xs) !important;
       background-color: var(--raised-background);
     }
   }
@@ -159,7 +164,9 @@ body.input-cupertino {
 
     &::after {
       transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.075), 0 1px 16px rgba(0, 0, 0, 0.1);
+      box-shadow:
+        0 1px 4px rgba(0, 0, 0, 0.075),
+        0 1px 16px rgba(0, 0, 0, 0.1);
     }
     &:active:after {
       --toggle-border-width: -2.5px;
@@ -169,7 +176,10 @@ body.input-cupertino {
       --toggle-s-thumb-height: var(--toggle-thumb-height);
       --toggle-s-thumb-width: var(--toggle-thumb-width);
 
-      box-shadow: inset 1px 1px 2px -2px rgba(var(--mono-rgb-100), 1), inset -1px -1px 2px -2px rgba(var(--mono-rgb-100), 1), var(--shadow-xs);
+      box-shadow:
+        inset 1px 1px 2px -2px rgba(var(--mono-rgb-100), 1),
+        inset -1px -1px 2px -2px rgba(var(--mono-rgb-100), 1),
+        var(--shadow-xs);
       background-color: var(--raised-background);
     }
   }
@@ -305,5 +315,9 @@ body.input-cupertino {
   &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"][data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
     background-color: var(--interactive-accent);
     color: var(--text-on-accent);
+  }
+  &:is(.tab-left-compact, :not(.css-settings-manager)) .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner,
+  &:is(.tab-right-compact, :not(.css-settings-manager)) .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner {
+    gap: calc(8px * var(--density-modifier));
   }
 }
