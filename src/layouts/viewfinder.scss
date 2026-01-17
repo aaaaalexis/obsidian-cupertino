@@ -1,15 +1,11 @@
 body.layout-viewfinder:not(.is-mobile) {
   --viewfinder-sidedock-header-height: calc(var(--header-height) + 16px);
 
-  &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root,
-  &.show-ribbon.hover-ribbon .workspace:not(.is-left-sidedock-open) .mod-root {
-    margin-left: 8px;
-  }
-  .workspace:not(.is-right-sidedock-open) .mod-root {
-    margin-right: 8px;
+  .workspace {
+    padding: 4px;
   }
   .mod-root {
-    margin-block: 8px;
+    margin: 4px;
     height: unset;
     background-color: var(--background-primary);
     border-radius: var(--radius-s);
@@ -17,17 +13,11 @@ body.layout-viewfinder:not(.is-mobile) {
     overflow: hidden;
   }
 
-  // Side panels
-  .workspace-ribbon.mod-left,
-  .mod-sidedock {
-    --header-height: var(--viewfinder-sidedock-header-height);
-  }
-
   // Windows & Linux fix
   &:not(.mod-macos).is-hidden-frameless .titlebar {
     height: var(--header-height);
-    top: 8px;
-    right: 8px;
+    top: 4px;
+    right: 4px;
 
     .titlebar-button {
       border-radius: var(--radius-s);
