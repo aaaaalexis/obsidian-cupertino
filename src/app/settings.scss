@@ -45,6 +45,15 @@ body:not(.is-phone) {
     }
   }
 
+  .installed-plugins-container .setting-item .setting-item-description {
+    color: var(--text-faint);
+
+    div:last-child {
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+  }
+
   &:not(.plugins-grid-off) .installed-plugins-container .setting-items {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
