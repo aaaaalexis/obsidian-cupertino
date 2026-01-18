@@ -4,6 +4,8 @@ body {
 
   --ribbon-background: transparent;
   --ribbon-background-collapsed: var(--ribbon-background);
+
+  --divider-vertical-height: 100% !important;
 }
 
 body.is-mobile {
