@@ -1,6 +1,6 @@
 @use "sass:math";
 
-body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner-off) {
+body:not(.banner-off) {
   --banner-image-object-fit: cover;
   --banner-image-inset: 8px;
   --banner-image-height: 320px;
