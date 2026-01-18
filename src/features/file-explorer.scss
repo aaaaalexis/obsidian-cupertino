@@ -1,7 +1,5 @@
 body:is(.nav-item-baseline, :not(.css-settings-manager)) .nav-files-container > div {
-  --nav-item-background-hover: transparent;
   --nav-item-background-active: transparent;
-  --nav-item-weight-hover: var(--font-medium);
   --nav-item-weight-active: var(--font-medium);
 
   .tree-item-self.is-active::before {
@@ -16,10 +14,8 @@ body:is(.nav-item-baseline, :not(.css-settings-manager)) .nav-files-container > 
 }
 
 body.nav-item-baseline.input-fluent .nav-files-container > div {
-  --nav-item-background-hover: var(--background-modifier-hover);
   --nav-item-background-active: var(--background-modifier-hover);
   --nav-item-color-active: var(--nav-item-color);
-  --nav-item-weight-hover: var(--nav-item-weight);
 
   .tree-item-self.is-active::before {
     position: absolute;

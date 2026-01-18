@@ -131,8 +131,8 @@ body.input-cupertino.is-phone {
     background-color: var(--background-secondary);
   }
   .nav-files-container > div {
-    --nav-item-color-active: var(--text-on-accent);
-    --nav-item-background-active: var(--interactive-accent);
+    --nav-item-color-active: var(--text-normal);
+    --nav-item-background-active: var(--background-modifier-hover);
     --nav-item-weight-hover: var(--font-normal);
     --nav-item-weight-active: var(--font-normal);
 
@@ -162,6 +162,13 @@ body.input-cupertino.is-phone {
     }
     .tree-item .tree-item-inner {
       flex: 1;
+    }
+
+    .tree-item:has(> .tree-item-self.is-active) {
+      &::before,
+      + .tree-item::before {
+        content: none !important;
+      }
     }
 
     .tree-item:not(.nav-files-container > div > div:nth-child(2)):not(:last-child:only-child):before {
