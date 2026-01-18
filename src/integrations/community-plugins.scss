@@ -165,6 +165,7 @@ body:not(.is-mobile) .view-content.notebook-navigator {
   }
   .nn-navigation-calendar-overlay {
     width: 100%;
+    position: fixed;
   }
 }
 body.is-mobile .view-content.notebook-navigator-mobile {
