@@ -119,8 +119,7 @@ body.is-mobile {
   .workspace-drawer {
     .workspace-leaf-content > .node-insert-event,
     .workspace-leaf-content > .view-content > .node-insert-event {
-      padding: var(--safe-area-inset-side) var(--safe-area-inset-side) calc(var(--navbar-bottom-padding) + 128px);
-      mask: linear-gradient(to top, transparent, black 96px);
+      padding-inline: var(--safe-area-inset-side);
     }
 
     .workspace-leaf-content:after {
@@ -495,13 +494,6 @@ body.is-tablet {
       margin: 8px;
     }
 
-    .workspace-leaf-content > .node-insert-event,
-    .workspace-leaf-content > .view-content > .node-insert-event {
-      padding-top: 0;
-    }
-    .workspace-leaf-content .nav-header ~ div:last-child {
-      padding-top: 48px !important;
-    }
     .workspace-drawer-active-tab-container {
       background-color: transparent;
     }
