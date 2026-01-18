@@ -222,9 +222,6 @@ body.input-cupertino {
     gap: 8px;
     overflow: visible;
   }
-  &.is-mobile .notice {
-    box-shadow: var(--shadow-xs);
-  }
   .notice {
     margin-bottom: 0;
     box-shadow: var(--shadow-l);
@@ -233,10 +230,15 @@ body.input-cupertino {
     color: var(--text-muted);
     overflow: hidden;
   }
-  .notice:last-child {
-    transition: var(--anim-duration-slow) var(--anim-motion-baseline) !important;
+  &:not(.is-mobile) .notice {
+    transition: var(--anim-duration-moderate) !important;
+  }
+  &.is-mobile .notice {
+    box-shadow: var(--shadow-xs);
   }
   &.is-phone .notice:last-child {
+    transition: var(--anim-duration-slow) var(--anim-motion-baseline) !important;
+
     @starting-style {
       transform: translateY(-50%) scaleX(0.5) !important;
       filter: blur(4px);
