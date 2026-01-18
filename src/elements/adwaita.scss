@@ -49,7 +49,9 @@ body.input-adwaita {
     box-shadow: 0 2px 4px rgba(0, 0, 6, 20%);
   }
   input[type="range"]::-webkit-slider-thumb {
-    box-shadow: 0 0 0 1px rgba(0, 0, 6, 10%), 0 2px 4px rgba(0, 0, 6, 20%) !important;
+    box-shadow:
+      0 0 0 1px rgba(0, 0, 6, 10%),
+      0 2px 4px rgba(0, 0, 6, 20%) !important;
     background-color: var(--toggle-thumb-color);
     transition: none;
   }
@@ -200,11 +202,11 @@ body.input-adwaita:not(.mod-macos):not(.is-mobile) {
     justify-content: space-evenly;
   }
 
-  .titlebar-button {
+  .titlebar-button-container.mod-right .titlebar-button {
     width: fit-content;
     height: fit-content;
     background-color: var(--interactive-normal);
-    border-radius: 100vh;
+    border-radius: 100vh !important;
     padding: 4px;
     flex: 0;
 

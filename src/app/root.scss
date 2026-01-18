@@ -154,7 +154,7 @@ body:not(.mod-macos):not(.is-mobile) {
   .titlebar-button-container.mod-right {
     width: var(--frame-right-space);
   }
-  .titlebar-button {
+  .titlebar-button-container.mod-right .titlebar-button {
     justify-content: center;
     flex: 1;
 
