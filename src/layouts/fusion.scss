@@ -24,34 +24,8 @@ body.layout-fusion:not(.is-mobile) {
 
 body.layout-fusion:not(.is-phone) {
   // Editor panel
-  .mod-root {
-    .workspace-tabs {
-      overflow: visible;
-    }
-
-    .workspace-leaf-content[data-type="markdown"] {
-      .view-header {
-        position: absolute;
-        inset: 0;
-      }
-      .view-header:hover {
-        transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
-      }
-
-      .view-content > div {
-        mask: linear-gradient(transparent, black var(--header-height));
-      }
-
-      .view-header + div:not(.view-content),
-      .view-header + .view-content > .markdown-source-view > div:not(.cm-editor):first-child,
-      .view-header + .view-content > .markdown-reading-view > div:not(.markdown-preview-view):first-child {
-        margin-top: var(--view-header-height, var(--header-height));
-      }
-      .view-header + .view-content:not(.pixel-banner) > .markdown-source-view > .cm-editor:first-child > .cm-scroller,
-      .view-header + .view-content:not(.pixel-banner) > .markdown-reading-view > .markdown-preview-view:first-child {
-        padding-top: calc(var(--view-header-height, var(--header-height)) + var(--file-margins-block));
-      }
-    }
+  .mod-root .workspace-tabs {
+    overflow: visible;
   }
 
   // Editor panel: Tabs
