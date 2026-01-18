@@ -5,13 +5,13 @@ body:is(.layout-cupertino, .layout-macos, .layout-fusion):not(.is-mobile) {
     --radius-window: 8px;
   }
 
+  &:not(.is-popout-window) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
+    background-color: var(--background-primary);
+  }
+
   // Ribbon
   --ribbon-background: transparent;
   --ribbon-background-collapsed: var(--ribbon-background);
-
-  .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
-    background-color: var(--background-primary);
-  }
 
   // Editor panel: Floating
   &:is(.tab-floating, .tab-floating-center).mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
@@ -61,7 +61,6 @@ body:is(.layout-cupertino, .layout-macos, .layout-fusion):not(.is-mobile) {
 
 body:is(.layout-cupertino, .layout-fusion):not(.is-mobile) {
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
-    background-color: var(--background-primary);
     padding-bottom: 0;
   }
 
