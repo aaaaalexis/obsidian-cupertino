@@ -101,22 +101,3 @@ body.layout-cupertino:not(.is-phone) {
     outline: var(--tab-outline-width) solid var(--tab-outline-color);
   }
 }
-
-body:is(.layout-cupertino, .layout-fusion).is-tablet {
-  .mod-root {
-    padding-bottom: 8px;
-    height: auto;
-  }
-
-  .workspace-drawer.mod-left:not(.is-pinned) + .mod-root .workspace-tabs:first-of-type .workspace-tab-container {
-    margin-left: 8px;
-    border-top-left-radius: var(--safe-area-inset-top);
-    border-bottom-left-radius: var(--safe-area-inset-top);
-  }
-  .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tabs:last-of-type .workspace-tab-container {
-    margin-right: 8px;
-    border-top-right-radius: var(--safe-area-inset-top);
-    border-bottom-right-radius: var(--safe-area-inset-top);
-    background-color: var(--background-primary);
-  }
-}
