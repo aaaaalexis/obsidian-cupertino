@@ -51,7 +51,7 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     background-color: var(--sidedock-background);
   }
   &.is-translucent .mod-sidedock.mod-left-split {
-    background-color: rgb(from var(--background-primary) r g b / 50%) !important;
+    background-color: var(--raised-background) !important;
   }
   .mod-sidedock.mod-left-split {
     -electron-corner-smoothing: var(--corner-smoothing);
@@ -107,6 +107,10 @@ body:is(.layout-macos, .layout-fusion).is-tablet {
     --shadow-surface: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.5);
   }
 
+  .workspace {
+    background-color: var(--background-primary);
+  }
+
   .workspace-drawer .workspace-drawer-header-name-text {
     font-size: var(--font-ui-small);
   }
@@ -114,24 +118,29 @@ body:is(.layout-macos, .layout-fusion).is-tablet {
     color: var(--text-faint);
   }
 
-  .workspace-drawer.is-pinned.mod-left {
-    box-shadow: var(--shadow-surface);
-    border: none;
-  }
-  .workspace-drawer.is-pinned.mod-left .workspace-drawer-header {
-    padding-bottom: 20px;
-  }
+  .workspace-drawer.is-pinned {
+    &.mod-left {
+      --mobile-sidebar-background: var(--background-primary-alt);
 
-  .workspace-drawer:not(.is-pinned) {
-    box-shadow: var(--shadow-s);
-  }
-  .workspace-drawer.is-pinned.mod-left {
-    margin: calc(var(--safe-area-inset-top) + 8px) 0 calc(var(--safe-area-inset-bottom) - var(--keyboard-height) - 20px) 8px;
-    border-radius: var(--radius-l);
-    height: auto;
-  }
-  .workspace-drawer.is-pinned .workspace-drawer-inner {
-    padding-top: 0px;
+      background-color: var(--mobile-sidebar-background);
+      box-shadow: var(--shadow-surface);
+      border: none;
+      margin: calc(var(--safe-area-inset-top) + 8px) 0 calc(var(--safe-area-inset-bottom) - var(--keyboard-height)) 8px;
+      border-radius: var(--radius-l);
+      height: auto;
+
+      .workspace-drawer-inner {
+        padding-block: 0px;
+      }
+
+      .workspace-drawer-header {
+        padding-bottom: var(--side-padding);
+      }
+    }
+
+    &.mod-right {
+      --mobile-sidebar-background: var(--background-primary);
+    }
   }
 
   .modal.mod-settings .vertical-tab-header {
@@ -189,12 +198,6 @@ body.layout-macos:not(.is-mobile) {
 }
 
 body.layout-macos.is-tablet {
-  .workspace {
-    background-color: transparent;
-  }
-  .workspace-drawer.is-pinned {
-    --mobile-sidebar-background: var(--background-primary);
-  }
   .workspace-drawer.is-pinned.mod-right {
     border-width: var(--divider-width);
   }
