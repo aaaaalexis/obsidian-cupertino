@@ -21,18 +21,20 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
   --mobile-sidebar-background: black;
   --tab-background-active: black;
 
+  --background-primary: black;
   --background-primary-alt: var(--color-base-05);
+  --background-secondary: black;
   --background-secondary-alt: var(--color-base-10);
   --background-modifier-border: var(--background-modifier-hover);
 
   background-color: black;
 
   &.is-tablet .mod-root .view-header,
-  &.is-mobile .vertical-tab-content,
   .workspace,
   .mod-root .workspace-tabs .workspace-leaf,
   .mod-root .view-header::before,
-  .mod-root .view-content {
+  .mod-root .view-content,
+  .vertical-tab-content {
     background-color: black !important;
   }
 
@@ -268,7 +270,11 @@ body:is(.is-translucent, .contrast-light-tonal.theme-light, .contrast-dark-tonal
     }
   }
 
-  &:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented) .mod-root .workspace-tab-header {
-    --tab-outline-width: 1px;
+  &:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented) .mod-root {
+    --tab-outline-color: var(--color-base-30);
+
+    .workspace-tab-header {
+      --tab-outline-width: 1px;
+    }
   }
 }
