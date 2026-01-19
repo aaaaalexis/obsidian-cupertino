@@ -3,8 +3,8 @@ body.layout-fusion:not(.is-mobile) {
   .mod-root {
     z-index: 5;
   }
-  .mod-root .workspace-tab-container {
-    box-shadow: var(--shadow-xxs);
+  .workspace-tabs {
+    overflow: visible;
   }
 
   // Side panels
@@ -24,57 +24,60 @@ body.layout-fusion:not(.is-mobile) {
 
 body.layout-fusion:not(.is-phone) {
   // Editor panel
-  .mod-root .workspace-tabs {
-    overflow: visible;
-  }
-
-  // Editor panel: Tabs
   &:is(.tab-floating, .tab-floating-center) .mod-root {
     .workspace-leaf {
-      background-color: var(--raised-background) !important;
-    }
-    .view-header,
-    .view-content {
       background-color: transparent;
     }
 
-    .workspace-tabs:not(.mod-stacked) {
+    .workspace-tab-container {
+      background-color: rgba(from var(--background-primary) r g b / 75%);
+    }
+
+    .view-header,
+    .document-search-container,
+    .view-content {
+      background-color: transparent;
+    }
+  }
+
+  // Editor panel: Tab style
+  &.input-cupertino:is(.tab-floating, .tab-floating-center) {
+    .mod-root .workspace-tabs:not(.mod-stacked) {
       .workspace-tab-header-container-inner {
         overflow: visible;
         contain: inline-size;
         width: stretch;
       }
-    }
-  }
+      .workspace-tab-header {
+        @starting-style {
+          filter: blur(4px);
+          scale: 0.75;
+          opacity: 0;
+        }
 
-  // Editor panel: Tabs (Cupertino)
-  &.input-cupertino:is(.tab-floating, .tab-floating-center) .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tabs:not(.mod-stacked) {
-    .workspace-tab-header {
-      @starting-style {
-        filter: blur(4px);
-        scale: 0.75;
-        opacity: 0;
+        -electron-corner-smoothing: var(--corner-smoothing);
+        border-radius: var(--radius-m);
+        transition:
+          background-color var(--anim-duration-moderate),
+          opacity var(--anim-duration-moderate),
+          filter var(--anim-duration-moderate) !important;
       }
-
-      background-color: transparent;
-      -electron-corner-smoothing: var(--corner-smoothing);
-      border-radius: var(--radius-m);
-      transition:
-        background-color var(--anim-duration-moderate),
-        opacity var(--anim-duration-moderate),
-        filter var(--anim-duration-moderate) !important;
+      .workspace-tab-header:not(.is-active) {
+        background-color: transparent;
+      }
+      .workspace-tab-header-inner {
+        border-radius: inherit;
+      }
     }
-    .workspace-tab-header.is-active {
-      background-color: var(--raised-background);
+
+    .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+      background-color: rgba(from var(--background-primary) r g b / 50%);
       box-shadow: var(--shadow-xs);
     }
-    .workspace-tab-header-inner {
-      border-radius: inherit;
-    }
   }
 
-  // Editor: Contrast
-  &:not(.tab-floating, .tab-floating-center):is(.is-translucent, .contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark) .mod-root {
+  // Contrast
+  &:not(.tab-floating, .tab-floating-center):is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark) .mod-root {
     .workspace-tab-container {
       outline: var(--tab-outline-width) solid var(--tab-outline-color);
     }
@@ -83,7 +86,13 @@ body.layout-fusion:not(.is-phone) {
     }
   }
 }
+
 body.layout-fusion.is-tablet {
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+    background-color: var(--raised-background) !important;
+    box-shadow: var(--shadow-xs);
+  }
+
   &:not(.tab-floating, .tab-floating-center) {
     .workspace {
       background-color: var(--background-secondary);
@@ -91,7 +100,6 @@ body.layout-fusion.is-tablet {
 
     .workspace-drawer.is-pinned.mod-right {
       --mobile-sidebar-background: var(--background-secondary);
-      border-width: var(--divider-width);
     }
   }
 }

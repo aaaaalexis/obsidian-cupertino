@@ -51,7 +51,7 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     background-color: var(--sidedock-background);
   }
   &.is-translucent .mod-sidedock.mod-left-split {
-    background-color: var(--raised-background) !important;
+    background-color: rgba(from var(--background-primary) r g b / 50%) !important;
   }
   .mod-sidedock.mod-left-split {
     -electron-corner-smoothing: var(--corner-smoothing);
@@ -125,7 +125,7 @@ body:is(.layout-macos, .layout-fusion).is-tablet {
       background-color: var(--mobile-sidebar-background);
       box-shadow: var(--shadow-surface);
       border: none;
-      margin: calc(var(--safe-area-inset-top) + 8px) 0 calc(var(--safe-area-inset-bottom) - var(--keyboard-height)) 8px;
+      margin: calc(var(--safe-area-inset-top) + 8px) 0 8px 8px;
       border-radius: var(--radius-l);
       height: auto;
 
