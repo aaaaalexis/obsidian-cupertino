@@ -139,6 +139,37 @@ body:not(.is-phone) {
 }
 
 body.is-phone {
+  &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-settings {
+    --setting-items-background: transparent;
+    --setting-items-padding: 0;
+
+    .vertical-tab-header {
+      padding-inline: 16px;
+    }
+    .vertical-tab-header-group {
+      padding-inline: 0;
+    }
+    .vertical-tab-header-group-items {
+      background-color: transparent;
+    }
+    .vertical-tab-nav-item {
+      border-radius: var(--radius-s);
+      padding-inline: 8px;
+    }
+    .vertical-tab-nav-item-title,
+    .vertical-tab-nav-item-chevron {
+      border-bottom: none;
+    }
+
+    .setting-item-heading {
+      padding-inline: 8px;
+    }
+    .setting-item:not(.setting-item-heading) {
+      padding-inline: 8px;
+      margin-bottom: 0;
+    }
+  }
+
   .modal.mod-sidebar-layout {
     box-shadow: none;
 
