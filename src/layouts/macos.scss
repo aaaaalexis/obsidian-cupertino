@@ -181,16 +181,11 @@ body.layout-macos:not(.is-mobile) {
   &.is-translucent .mod-root {
     background-color: var(--background-primary) !important;
   }
-  &.is-translucent:not(.is-focused):not(.reduce-contrast-change) .app-container {
+  &.is-translucent:not(.is-focused):not(.reduce-contrast-change) .workspace {
     background-color: var(--background-primary);
   }
-  &:not(.is-translucent) .app-container {
+  &:not(.is-translucent) .workspace {
     background-color: var(--background-primary);
-
-    .mod-root,
-    .mod-root .workspace-split {
-      background-color: transparent;
-    }
   }
 }
 

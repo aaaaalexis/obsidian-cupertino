@@ -102,18 +102,21 @@ body,
 }
 
 body:not(.is-mobile) {
-  .workspace,
   .app-container {
     transition: var(--anim-duration-moderate);
+    align-items: center;
   }
 
-  .app-container {
-    align-items: center;
+  &:not(.is-translucent) .workspace {
     background: var(--background-secondary);
+  }
+  .workspace {
+    transition: var(--anim-duration-moderate);
   }
 
   .workspace-split {
     transition: var(--anim-duration-moderate);
+    background-color: transparent;
   }
 }
 

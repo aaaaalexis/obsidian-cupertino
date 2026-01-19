@@ -55,7 +55,6 @@ body.is-mobile {
 
   .app-container {
     max-height: calc(100vh - var(--keyboard-height)) !important;
-    transition: var(--anim-duration-moderate);
   }
 
   // Non-Liquid Glass
