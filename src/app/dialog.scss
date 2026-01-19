@@ -167,7 +167,12 @@ body:not(.is-mobile) {
   }
 
   .modal-bg {
-    opacity: 0 !important;
+    @starting-style {
+      opacity: 0 !important;
+    }
+
+    background-color: rgba(0, 0, 0, 0.35);
+    transition: var(--anim-duration-fast);
   }
   .modal {
     box-shadow: var(--shadow-s);
