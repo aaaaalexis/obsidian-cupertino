@@ -321,7 +321,6 @@ body.input-adwaita.is-phone {
 
   // Editor
   .mobile-navbar,
-  .mobile-toolbar-options-list-container,
   &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     border: none !important;
   }

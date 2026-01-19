@@ -16,7 +16,6 @@ body.is-mobile {
 
   --mobile-sidebar-width: 100%;
   --view-header-height: var(--header-height);
-  --mobile-toolbar-height: var(--touch-size-m);
   --keyboard-spacing: 8px;
 
   --touch-size-l: 48px;
@@ -71,8 +70,7 @@ body.is-mobile {
     .mod-raised::after {
       content: none !important;
     }
-    .mobile-navbar,
-    .mobile-toolbar-options-list-container {
+    .mobile-navbar {
       background-color: var(--background-secondary) !important;
       border: var(--border-width) solid var(--background-modifier-border) !important;
     }
@@ -267,9 +265,12 @@ body.is-phone {
       top: 0;
       transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
       will-change: top;
+      z-index: 3;
+      padding: 0 var(--safe-area-inset-side);
     }
     .view-actions {
       padding: 0;
+      backdrop-filter: none;
     }
 
     .workspace-leaf-content[data-type="markdown"] > .view-content > div {
@@ -326,14 +327,7 @@ body.is-phone {
   }
 
   // Mode Switcher
-  .mod-root .view-header {
-    z-index: 3;
-    padding: 0 var(--safe-area-inset-side);
-  }
-  .mod-root .view-header .view-actions.mod-raised {
-    backdrop-filter: none;
-  }
-  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+  &:not(.mode-switcher-off):not(.mod-toolbar-open) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     position: fixed;
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
     right: var(--navbar-side-padding);
@@ -344,12 +338,6 @@ body.is-phone {
     height: var(--touch-size-l);
     background-color: var(--background-secondary);
     border: var(--border-width) solid var(--background-modifier-border);
-  }
-  &.mod-toolbar-open:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
-    width: var(--mobile-toolbar-height);
-    height: var(--mobile-toolbar-height);
-    right: var(--keyboard-spacing);
-    bottom: var(--keyboard-spacing);
   }
   & > .app-container > .horizontal-main-container:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content:not([data-type="markdown"])) .view-actions button:nth-last-child(2) {
     opacity: 0;
@@ -390,24 +378,11 @@ body.is-phone {
   }
 
   // Toolbar
-  &.mode-switcher-off .mobile-toolbar {
-    right: var(--keyboard-spacing);
-  }
-
-  .mobile-toolbar-spacer {
-    display: none;
-  }
-  .mobile-toolbar {
-    box-shadow: none;
-    top: calc(100vh - var(--keyboard-height) - var(--mobile-toolbar-height) - var(--keyboard-spacing));
-    left: var(--keyboard-spacing);
-    right: calc(var(--keyboard-spacing) * 2 + var(--touch-size-m));
-    width: auto;
-  }
   .mobile-toolbar-options-container {
-    margin-left: 0;
+    gap: 0;
     width: 100%;
-    height: var(--mobile-toolbar-height);
+    margin: 0;
+    border-radius: 0;
   }
 
   // Tab switcher
