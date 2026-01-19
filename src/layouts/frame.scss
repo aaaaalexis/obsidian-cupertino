@@ -122,7 +122,7 @@ body.layout-frame.is-tablet {
     background-color: var(--mobile-sidebar-background);
   }
   .mod-root,
-  .workspace-drawer {
+  .workspace-drawer.is-pinned {
     padding-top: 0;
     margin-top: var(--safe-area-inset-top);
     margin-bottom: 4px;
@@ -132,22 +132,23 @@ body.layout-frame.is-tablet {
     border: var(--border-width) solid var(--background-modifier-border);
     overflow: hidden;
   }
-  .workspace-drawer {
+  .workspace-drawer.is-pinned {
     margin-inline: 4px;
     padding-bottom: 0;
-  }
-  .workspace-drawer.mod-left.is-pinned {
-    margin-left: 0;
-  }
-  .workspace-drawer.mod-right.is-pinned {
-    margin-right: 0;
-  }
-  .workspace-drawer.is-pinned .workspace-drawer-inner {
-    padding-top: 0px;
-  }
-  .workspace-drawer-tab-options.is-collapsed,
-  .nav-buttons-container:after {
-    --mobile-sidebar-background: var(--background-primary);
+
+    &.mod-left {
+      margin-left: 0;
+    }
+    &.mod-right {
+      margin-right: 0;
+    }
+    .workspace-drawer-inner {
+      padding-top: 0px;
+    }
+    .workspace-drawer-tab-options.is-collapsed,
+    .nav-buttons-container:after {
+      --mobile-sidebar-background: var(--background-primary);
+    }
   }
 
   .workspace-drawer.mod-left:not(.is-pinned) + .mod-root .workspace-tabs:first-of-type .workspace-tab-container {

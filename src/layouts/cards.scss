@@ -118,13 +118,14 @@ body:is(.layout-cards, .layout-border).is-tablet {
     border-radius: var(--radius-s);
     background-color: var(--background-primary);
     height: auto;
-  }
-  .workspace-drawer.is-pinned .workspace-drawer-inner {
-    padding-top: 0px;
-  }
-  .workspace-drawer-tab-options.is-collapsed,
-  .nav-buttons-container:after {
-    --mobile-sidebar-background: var(--background-primary);
+
+    .workspace-drawer-inner {
+      padding-top: 0px;
+    }
+    .nav-buttons-container:after,
+    .workspace-drawer-tab-options.is-collapsed {
+      --mobile-sidebar-background: var(--background-primary);
+    }
   }
 
   // Contrast
