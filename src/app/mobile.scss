@@ -219,7 +219,10 @@ body.is-mobile {
     width: auto;
     color: var(--text-normal);
     font-size: var(--font-ui-small);
-    transition: var(--anim-duration-fast), opacity var(--anim-duration-slow), transform 0s !important;
+    transition:
+      var(--anim-duration-fast),
+      opacity var(--anim-duration-slow),
+      transform 0s !important;
 
     @starting-style {
       opacity: 0;
@@ -361,7 +364,9 @@ body.is-phone {
     overflow: hidden;
     padding: 4px;
     margin: 0;
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color var(--anim-duration-moderate);
+    transition:
+      var(--anim-duration-moderate) var(--anim-motion-baseline),
+      background-color var(--anim-duration-moderate);
     will-change: bottom;
   }
   .mobile-navbar-action {

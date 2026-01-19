@@ -59,7 +59,10 @@ body.layout-fusion:not(.is-phone) {
       background-color: transparent;
       -electron-corner-smoothing: var(--corner-smoothing);
       border-radius: var(--radius-m);
-      transition: background-color var(--anim-duration-moderate), opacity var(--anim-duration-moderate), filter var(--anim-duration-moderate) !important;
+      transition:
+        background-color var(--anim-duration-moderate),
+        opacity var(--anim-duration-moderate),
+        filter var(--anim-duration-moderate) !important;
     }
     .workspace-tab-header.is-active {
       background-color: rgb(from var(--background-primary) r g b / 50%);

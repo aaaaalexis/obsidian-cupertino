@@ -144,7 +144,9 @@ body:not(.banner-off) {
     }
 
     &.banner-icon.banner-title .inline-title {
-      transition: var(--anim-duration-moderate) var(--anim-motion-baseline), margin-left 0s;
+      transition:
+        var(--anim-duration-moderate) var(--anim-motion-baseline),
+        margin-left 0s;
 
       ~ .metadata-container {
         margin-top: var(--inline-title-margin-bottom);

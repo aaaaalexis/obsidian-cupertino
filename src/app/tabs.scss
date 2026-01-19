@@ -134,7 +134,9 @@ body:not(.is-phone).tab-floating-center .mod-root .workspace-tabs:not(.mod-stack
     .workspace-tab-header-container-inner {
       flex: 1;
       justify-content: safe center;
-      transition: padding-left var(--anim-duration-moderate) var(--anim-motion-baseline), padding-right var(--anim-duration-moderate) var(--anim-motion-baseline);
+      transition:
+        padding-left var(--anim-duration-moderate) var(--anim-motion-baseline),
+        padding-right var(--anim-duration-moderate) var(--anim-motion-baseline);
     }
 
     .workspace-tab-header-spacer {

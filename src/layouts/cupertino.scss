@@ -85,10 +85,14 @@ body:is(.layout-cupertino, .layout-fusion):not(.is-mobile) {
 body.layout-cupertino:not(.is-phone) {
   // Editor panel
   &.theme-light .mod-root .workspace-tab-container {
-    box-shadow: rgba(0, 0, 0, 0.04) 0px 24px 48px, rgba(0, 0, 0, 0.02) 0px 4px 16px;
+    box-shadow:
+      rgba(0, 0, 0, 0.04) 0px 24px 48px,
+      rgba(0, 0, 0, 0.02) 0px 4px 16px;
   }
   &.theme-dark .mod-root .workspace-tab-container {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 24px 48px, rgba(0, 0, 0, 0.12) 0px 4px 16px;
+    box-shadow:
+      rgba(0, 0, 0, 0.16) 0px 24px 48px,
+      rgba(0, 0, 0, 0.12) 0px 4px 16px;
   }
 
   .mod-root {

@@ -41,7 +41,9 @@ button,
 select,
 .dropdown {
   -electron-corner-smoothing: var(--corner-smoothing);
-  transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color var(--anim-duration-fast);
+  transition:
+    var(--anim-duration-moderate) var(--anim-motion-baseline),
+    background-color var(--anim-duration-fast);
 }
 
 button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button)) {
@@ -69,7 +71,9 @@ body.obsidian-app .checkbox-container {
   }
 
   &::after {
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color 0s;
+    transition:
+      var(--anim-duration-moderate) var(--anim-motion-baseline),
+      background-color 0s;
   }
   &:active:after {
     -electron-corner-smoothing: var(--corner-smoothing);

@@ -48,7 +48,9 @@ body.status-bar-cupertino .status-bar {
   --status-bar-border-width: var(--border-width);
   right: unset;
   justify-content: center;
-  transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color var(--anim-duration-moderate) ease;
+  transition:
+    var(--anim-duration-moderate) var(--anim-motion-baseline),
+    background-color var(--anim-duration-moderate) ease;
   border: none;
   border-radius: 100vh;
   max-width: 100%;
