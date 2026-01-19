@@ -2975,65 +2975,6 @@ settings:
 		level: 2
 		collapsed: true
 	-
-		id: table-text-size
-		title: Table font size
-		type: variable-text
-		default: 0.933em
-	-
-		id: row-lines
-		title: Row lines
-		description: Display borders between table rows globally
-		type: class-toggle
-		default: false
-	-
-		id: col-lines
-		title: Column lines
-		description: Display borders between table columns globally
-		type: class-toggle
-		default: false
-	-
-		id: table-lines
-		title: Table frame
-		description: Display border around table content globally
-		type: class-toggle
-		default: false 
-	-
-		id: row-alt
-		title: Striped rows
-		description: Display striped background in alternating table rows globally
-		type: class-toggle
-		default: false
-	-
-		id: col-alt
-		title: Striped columns
-		description: Display striped background in alternating table columns globally
-		type: class-toggle
-		default: false
-	-
-		id: table-tabular
-		title: Tabular figures
-		description: Use fixed width numbers in tables globally
-		type: class-toggle
-		default: false
-	-
-		id: table-numbers
-		title: Row numbers
-		description: Display row numbers in tables globally
-		type: class-toggle
-		default: false
-	-
-		id: table-fit-content
-		title: Fit content width
-		description: Fit table width to content
-		type: class-toggle
-		default: false
-	-
-		id: table-nowrap
-		title: Disable line wrap
-		description: Turns off line wrapping in table cells globally
-		type: class-toggle
-		default: false
-	-
 		id: table-text-align-header
 		title: Table header text alignment
 		type: variable-select
@@ -3066,9 +3007,78 @@ settings:
 				label: End
 				value: end
 	-
+		id: table-width
+		title: Table width
+		description: Fit table width to content
+		type: class-select
+		default: table-width-full
+		options:
+			-
+				label: Full width
+				value: table-width-full
+			-
+				label: Start
+				value: table-width-fit
+			-
+				label: Center
+				value: table-width-fit-center
+	-
+		id: table-text-size
+		title: Table font size
+		type: variable-text
+		default: 0.933em
+	-
+		id: table-nowrap
+		title: Disable line wrap
+		description: Turns off line wrapping in table cells globally
+		type: class-toggle
+		default: false
+	-
+		id: table-tabular
+		title: Tabular figures
+		description: Use fixed width numbers in tables globally
+		type: class-toggle
+		default: false
+	-
+		id: table-numbers
+		title: Row numbers
+		description: Display row numbers in tables globally
+		type: class-toggle
+		default: false
+	-
+		id: row-lines
+		title: Row lines
+		description: Display borders between table rows globally
+		type: class-toggle
+		default: false
+	-
+		id: col-lines
+		title: Column lines
+		description: Display borders between table columns globally
+		type: class-toggle
+		default: false
+	-
+		id: table-lines
+		title: Table frame
+		description: Display border around table content globally
+		type: class-toggle
+		default: false 
+	-
 		id: row-hover
 		title: Highlight active row
 		description: Highlight rows on hover
+		type: class-toggle
+		default: false
+	-
+		id: row-alt
+		title: Striped rows
+		description: Display striped background in alternating table rows globally
+		type: class-toggle
+		default: false
+	-
+		id: col-alt
+		title: Striped columns
+		description: Display striped background in alternating table columns globally
 		type: class-toggle
 		default: false
 	-
