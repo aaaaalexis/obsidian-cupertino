@@ -98,21 +98,6 @@ body.is-mobile {
     }
   }
 
-  // Icon color
-  .mod-root .view-header .view-action,
-  .mobile-navbar .mobile-navbar-actions,
-  .mobile-navbar .navbar-action-flair,
-  .mobile-toolbar-options-list,
-  .workspace-drawer-header-icon,
-  .workspace-drawer .nav-header .nav-buttons-container,
-  .modal-setting-back-button,
-  .modal-close-button,
-  .sidebar-toggle-button {
-    color: var(--text-normal);
-    --icon-color: var(--text-normal);
-    --icon-color-hover: var(--icon-color);
-  }
-
   // Side panels
   .workspace-drawer {
     .workspace-leaf-content > .node-insert-event,
@@ -164,14 +149,20 @@ body.is-mobile {
       overflow: visible;
     }
 
-    .nav-header,
-    .nav-buttons-container {
+    .nav-header {
       padding: 0;
     }
-    .nav-buttons-container .nav-action-button {
-      background-color: transparent;
+    .nav-buttons-container {
+      padding: 0 var(--safe-area-inset-side);
     }
-    .nav-buttons-container .nav-action-button.is-active {
+    .nav-action-button {
+      background-color: transparent;
+      min-width: 0;
+    }
+    .nav-action-button svg.svg-icon {
+      flex-shrink: 0;
+    }
+    .nav-action-button.is-active {
       color: var(--interactive-accent);
     }
   }
@@ -438,6 +429,10 @@ body.is-tablet {
   }
 
   .workspace-drawer {
+    .workspace-drawer-ribbon .side-dock-actions {
+      padding-block: 12px;
+    }
+
     .workspace-drawer-tab-options-list {
       padding: var(--touch-size-l) 0 0;
     }

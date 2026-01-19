@@ -129,12 +129,9 @@ body:is(.layout-macos, .layout-fusion).is-tablet {
       border-radius: var(--radius-l);
       height: auto;
 
+      .workspace-drawer-ribbon,
       .workspace-drawer-inner {
-        padding-block: 0px;
-      }
-
-      .workspace-drawer-header {
-        padding-bottom: var(--side-padding);
+        padding-block: 0px 16px;
       }
     }
 
