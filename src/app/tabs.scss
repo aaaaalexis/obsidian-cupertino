@@ -115,14 +115,16 @@ body:is(.tab-floating, .tab-floating-center):not(.is-phone) .workspace .mod-root
     margin-bottom: 0;
   }
 }
-body:is(.tab-floating, .tab-floating-center).is-tablet .mod-root .workspace-tabs:not(.mod-stacked) {
+body:is(.tab-floating, .tab-floating-center).is-tablet {
   --header-height: 60px !important;
 
-  .workspace-tab-header-container-inner {
-    padding: 0 !important;
-  }
-  .workspace-tab-header {
-    margin: 8px 0;
+  .mod-root .workspace-tabs:not(.mod-stacked) {
+    .workspace-tab-header-container-inner {
+      padding: 0 !important;
+    }
+    .workspace-tab-header {
+      margin: 8px 0;
+    }
   }
 }
 
