@@ -16,22 +16,30 @@ body {
   --button-radius: calc((8px * var(--radius-modifier)) * (1 - var(--radius-modifier-check)) + 100vh * var(--radius-modifier-check));
 }
 
-.theme-light {
-  --input-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border);
-  --input-shadow-hover: 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
-}
 .theme-dark {
-  --input-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
-  --input-shadow-hover: 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
-
   --background-modifier-form-field: var(--interactive-normal);
 }
 
 body:is(.input-baseline, :not(.css-settings-manager)) {
   --input-font-weight: var(--font-medium);
 
+  &.theme-light {
+    --input-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border);
+    --input-shadow-hover: 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
+  }
+  &.theme-dark {
+    --input-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
+    --input-shadow-hover: 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
+  }
+
   &.is-mobile {
     --input-border-width: var(--border-width);
+  }
+
+  button,
+  select,
+  .dropdown {
+    box-shadow: none;
   }
 }
 
