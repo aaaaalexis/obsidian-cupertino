@@ -12,6 +12,11 @@ body.is-mobile {
   --tab-radius: var(--radius-s);
   --tab-curve: var(--tab-radius);
 
+  --font-ui-smaller: calc(var(--font-text-size) * 0.75);
+  --font-ui-small: calc(var(--font-text-size) * 0.8125);
+  --font-ui-medium: calc(var(--font-text-size) * 0.875);
+  --font-ui-large: calc(var(--font-text-size) * 1.125);
+
   --interactive-normal: var(--background-primary);
 
   --mobile-sidebar-width: 100%;
@@ -87,14 +92,14 @@ body.is-mobile {
   }
 
   // iOS specific
-  &.is-ios {
+  &.mod-macos {
     --navbar-bottom-padding: 28px;
     --navbar-side-padding: var(--navbar-bottom-padding);
 
-    --font-ui-smaller: calc(var(--font-text-size) * 0.8 + 1px);
-    --font-ui-small: calc(var(--font-text-size) * 0.937 + 1px);
+    --font-ui-smaller: calc(var(--font-text-size) * 0.75);
+    --font-ui-small: calc(var(--font-text-size) * 0.9375);
     --font-ui-medium: calc(var(--font-text-size) + 1px);
-    --font-ui-large: calc(var(--font-text-size) * 1.2 + 1px);
+    --font-ui-large: calc(var(--font-text-size) * 1.25);
 
     .markdown-preview-view,
     .markdown-source-view {
@@ -203,14 +208,12 @@ body.is-mobile {
     }
   }
 
-  // Editor panels
-  .workspace .mod-root .workspace-tab-header-container .clickable-icon,
-  .view-header .clickable-icon,
-  .workspace-drawer-header-icon {
-    border-radius: 100vh;
-    padding: 10px;
-    position: relative;
-    margin-left: 0;
+  // Toolbar
+  .mobile-toolbar-spacer {
+    background-color: transparent;
+  }
+  .mobile-toolbar {
+    box-shadow: none;
   }
 
   // Pull action
