@@ -179,15 +179,10 @@ body.input-material {
       padding-inline: 0;
     }
   }
-
-  &:not(.plugins-grid-off) .installed-plugins-container .setting-items .setting-item {
-    border: none;
-  }
 }
 
 body.input-material.is-mobile {
   --nav-item-radius: var(--clickable-icon-radius);
-  --nav-item-padding: calc(16px * var(--density-modifier)) 24px;
 
   // Settings
   .modal.mod-settings {
@@ -285,13 +280,14 @@ body.input-material.is-phone {
   .modal.mod-settings {
     .vertical-tab-header-group-items {
       gap: 2px;
+      background-color: transparent;
     }
     .vertical-tab-nav-item {
       width: 100%;
       border-radius: var(--radius-s);
       padding: calc(16px * var(--density-modifier)) 20px;
       height: auto;
-      background-color: var(--background-primary);
+      background-color: var(--setting-items-background);
     }
     .vertical-tab-nav-item-title,
     .vertical-tab-nav-item-chevron {

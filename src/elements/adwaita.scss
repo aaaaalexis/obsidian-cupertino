@@ -171,15 +171,9 @@ body.input-adwaita {
       padding-inline: 16px;
     }
   }
-  &:not(.plugins-grid-off) .installed-plugins-container {
-    .setting-group-search + .setting-items {
-      box-shadow: none;
-      background-color: transparent;
-    }
-    .setting-items .setting-item {
-      border: none !important;
-      box-shadow: var(--setting-items-shadow);
-    }
+  &:not(.plugins-grid-off) .installed-plugins-container .setting-items {
+    box-shadow: none;
+    background-color: transparent;
   }
 
   .modal.mod-community-modal {
@@ -366,6 +360,16 @@ body.input-adwaita.is-phone {
 
     .setting-item {
       gap: calc(12px * var(--density-modifier));
+    }
+    .setting-item-heading {
+      padding-left: 8px;
+    }
+    .setting-item:not(.setting-item-heading) {
+      padding: calc(16px * var(--density-modifier)) 16px;
+    }
+
+    .installed-plugins-container .setting-items {
+      background-color: var(--setting-items-background);
     }
   }
 }

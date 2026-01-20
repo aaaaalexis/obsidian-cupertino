@@ -10,8 +10,18 @@ body:not(.is-phone) {
       padding: 0;
     }
 
+    .setting-group .setting-item:not(.setting-item-heading):not(:first-child) {
+      padding-top: 12px;
+    }
+    .setting-group .setting-item:not(.setting-item-heading):not(:last-child) {
+      padding-bottom: 12px;
+    }
+
+    .setting-item {
+      border-top: none;
+    }
     .setting-item:not(.setting-items > .setting-item):not(.setting-item-heading) {
-      padding-inline: 0;
+      padding: 12px 0;
       margin-bottom: 0;
       background-color: transparent;
     }
@@ -32,8 +42,9 @@ body:not(.is-phone) {
     }
     .vertical-tab-header-group-title,
     .vertical-tab-nav-item {
-      padding: calc(8px * var(--density-modifier)) 12px;
+      padding: calc(12px * var(--density-modifier)) 16px;
       align-items: center;
+      font-size: var(--font-ui-small);
     }
 
     .vertical-tab-content {
@@ -43,15 +54,14 @@ body:not(.is-phone) {
     .setting-item-name {
       overflow: visible;
     }
+    .setting-item-description {
+      color: var(--text-faint);
+    }
   }
 
-  .installed-plugins-container .setting-item .setting-item-description {
-    color: var(--text-faint);
-
-    div:last-child {
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
+  .installed-plugins-container .setting-item .setting-item-description div:last-child {
+    color: var(--text-muted);
+    margin-top: 4px;
   }
 
   &:not(.plugins-grid-off) .installed-plugins-container .setting-items {
@@ -64,9 +74,9 @@ body:not(.is-phone) {
       display: flex;
       flex-direction: column;
       margin: 0px !important;
-      border: 1px solid var(--background-modifier-border);
-      border-radius: var(--setting-items-radius);
-      background-color: var(--setting-items-background);
+      border: none;
+      border-radius: var(--setting-items-radius) !important;
+      background-color: var(--background-modifier-cover);
       padding: 16px !important;
       overflow: hidden;
     }
@@ -141,7 +151,7 @@ body:not(.is-phone) {
 body.is-phone {
   &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-settings {
     --setting-items-background: transparent;
-    --setting-items-padding: 0;
+    --setting-items-padding: 0 8px;
 
     .vertical-tab-header {
       padding-inline: 16px;
@@ -164,9 +174,17 @@ body.is-phone {
     .setting-item-heading {
       padding-inline: 8px;
     }
-    .setting-item:not(.setting-item-heading) {
-      padding-inline: 8px;
+    .setting-item:not(.setting-items > .setting-item):not(.setting-item-heading) {
+      padding: 16px 8px;
       margin-bottom: 0;
+      background-color: transparent;
+    }
+
+    .setting-group-search {
+      padding-inline: 0;
+    }
+    .setting-group-search + .setting-items {
+      padding-top: 16px;
     }
   }
 

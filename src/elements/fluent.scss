@@ -131,6 +131,7 @@ body.input-fluent {
     .vertical-tab-nav-item {
       padding: calc(8px * var(--density-modifier)) 16px;
       position: relative;
+      border-radius: var(--setting-items-radius);
     }
     .vertical-tab-nav-item.is-active {
       background-color: var(--background-modifier-hover);
@@ -337,9 +338,6 @@ body.input-fluent.is-phone {
   .modal.mod-settings {
     .vertical-tab-header-group-items {
       background-color: transparent;
-    }
-    .vertical-tab-nav-item {
-      padding-inline: 8px;
     }
     .vertical-tab-nav-item-chevron,
     .vertical-tab-nav-item-title {
