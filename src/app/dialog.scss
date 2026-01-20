@@ -109,9 +109,6 @@ body {
   --modal-background: var(--background-secondary);
   --modal-border-color: var(--background-modifier-border-hover);
 
-  .modal-container {
-    perspective: 240px;
-  }
   .modal {
     -electron-corner-smoothing: var(--corner-smoothing);
 
@@ -162,7 +159,7 @@ body:not(.is-mobile) {
     from {
       opacity: 0;
       filter: blur(4px);
-      transform: scale(0.95) rotateX(-1deg);
+      transform: scale(0.975);
     }
   }
 
@@ -181,10 +178,6 @@ body:not(.is-mobile) {
   .modal-title {
     margin-left: 0;
   }
-}
-
-body.is-mobile .modal-bg:has(+ .prompt) {
-  opacity: 0 !important;
 }
 
 body.is-phone {

@@ -252,20 +252,10 @@ body.input-adwaita:not(.mod-macos):not(.is-mobile) {
   // Prompt
   .prompt {
     border-radius: var(--radius-xl);
-    animation: modalIAdwaita var(--anim-duration-fast) var(--anim-motion-baseline) forwards;
   }
 
   // Modal
-  @keyframes modalIAdwaita {
-    from {
-      transform: scale(0.85);
-      opacity: 0;
-    }
-  }
-
   .modal {
-    animation: modalIAdwaita var(--anim-duration-fast) var(--anim-motion-baseline) forwards;
-
     .modal-close-button {
       --icon-stroke: 4px;
       color: var(--text-normal);
