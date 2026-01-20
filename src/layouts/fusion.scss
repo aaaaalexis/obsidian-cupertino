@@ -88,7 +88,7 @@ body.layout-fusion:not(.is-phone) {
 }
 
 body.layout-fusion.is-tablet {
-  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+  &:is(.tab-floating, .tab-floating-center) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
     background-color: var(--raised-background) !important;
     box-shadow: var(--shadow-xs);
   }
@@ -98,8 +98,19 @@ body.layout-fusion.is-tablet {
       background-color: var(--background-secondary);
     }
 
-    .workspace-drawer.is-pinned.mod-right {
-      --mobile-sidebar-background: var(--background-secondary);
+    .workspace-drawer.mod-left.is-pinned + .mod-root {
+      padding-bottom: 8px;
+
+      .workspace-tabs:first-of-type .workspace-tab-container {
+        margin-right: 8px;
+      }
+    }
+    .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) {
+      padding-bottom: 8px;
+
+      .workspace-tabs:last-of-type .workspace-tab-container {
+        margin-left: 8px;
+      }
     }
   }
 }

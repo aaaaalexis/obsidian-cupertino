@@ -1,12 +1,12 @@
 body.input-cupertino.is-mobile {
   // Liquid Glass
+  &.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2),
   &.is-phone .prompt-input,
   &.is-phone .prompt-input-container .prompt-input-cta:not(:empty),
   &.is-phone .prompt-input-container .search-input-clear-button,
-  &.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2),
   &.is-phone .workspace-drawer-header-icon,
-  &.is-phone .mobile-tab-switcher-menu-button,
-  &.is-phone .mobile-tab-switcher-menu-spacer .clickable-icon,
+  .mobile-tab-switcher-menu-button,
+  .mobile-tab-switcher-menu-spacer .clickable-icon,
   .modal-setting-back-button,
   .modal-close-button,
   .pull-action {
@@ -39,17 +39,16 @@ body.input-cupertino.is-mobile {
   &.theme-dark .mod-raised::after {
     content: none !important;
   }
-  &.is-ios.theme-light {
+  &.mod-macos.theme-light {
     .mod-raised::after,
+    &.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2)::after,
     &.is-phone .prompt-input-container::after,
     &.is-phone .prompt-input-container .prompt-input-cta:not(:empty)::before,
     &.is-phone .prompt-input-container .search-input-clear-button::before,
-    &.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2)::after,
-    &.is-phone .mobile-tab-switcher-menu-button::after,
-    &.is-phone .mobile-tab-switcher-menu-spacer .clickable-icon::before,
     &.is-tablet .menu::after,
     &.is-tablet .workspace-drawer:not(.is-pinned)::after,
-    .workspace-drawer-header-icon::after,
+    .mobile-tab-switcher-menu-button::after,
+    .mobile-tab-switcher-menu-spacer .clickable-icon::before,
     .modal-setting-back-button::after,
     .modal-close-button::after,
     .notice::after {
@@ -131,6 +130,7 @@ body.input-cupertino.is-phone {
     background-color: var(--background-secondary);
   }
   .nav-files-container > div {
+    --nav-item-color: var(--text-normal);
     --nav-item-color-active: var(--text-normal);
     --nav-item-background-active: var(--background-modifier-hover);
     --nav-item-weight-hover: var(--font-normal);

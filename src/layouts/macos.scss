@@ -120,23 +120,17 @@ body:is(.layout-macos, .layout-fusion).is-tablet {
 
   .workspace-drawer.is-pinned {
     &.mod-left {
-      --mobile-sidebar-background: var(--background-primary-alt);
-
-      background-color: var(--mobile-sidebar-background);
+      background-color: var(--raised-background);
       box-shadow: var(--shadow-surface);
       border: none;
       margin: calc(var(--safe-area-inset-top) + 8px) 0 8px 8px;
-      border-radius: var(--radius-l);
+      border-radius: calc(var(--safe-area-inset-bottom) - 8px);
       height: auto;
 
       .workspace-drawer-ribbon,
       .workspace-drawer-inner {
         padding-block: 0px 16px;
       }
-    }
-
-    &.mod-right {
-      --mobile-sidebar-background: var(--background-primary);
     }
   }
 

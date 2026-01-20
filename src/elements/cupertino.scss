@@ -27,8 +27,6 @@ body.input-cupertino {
     --titlebar-background-focused: transparent;
     --background-modifier-form-field: var(--interactive-normal);
 
-    --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
-
     --radius-s: calc(16px * var(--radius-modifier));
     --radius-m: calc(24px * var(--radius-modifier));
     --radius-l: calc(32px * var(--radius-modifier));
@@ -38,6 +36,10 @@ body.input-cupertino {
     --input-height: 48px;
     --input-padding: 0 var(--side-padding);
   }
+  &.is-phone {
+    --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
+  }
+
   &.is-mobile.theme-light {
     --background-modifier-form-field: var(--interactive-normal);
     --interactive-normal: var(--background-secondary);

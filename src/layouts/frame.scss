@@ -146,10 +146,6 @@ body.layout-frame.is-tablet {
     .workspace-drawer-inner {
       padding-block: 0px 16px;
     }
-    .workspace-drawer-tab-options.is-collapsed,
-    .nav-buttons-container:after {
-      --mobile-sidebar-background: var(--background-primary);
-    }
   }
 
   &.contrast-dark-black.theme-dark,
