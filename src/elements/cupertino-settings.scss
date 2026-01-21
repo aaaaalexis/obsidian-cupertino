@@ -1,10 +1,6 @@
 body.input-cupertino {
   --setting-nav-icon-background: var(--color-base-50);
 
-  .modal.mod-sidebar-layout .setting-item-description {
-    color: var(--text-muted);
-  }
-
   .modal.mod-settings .vertical-tab-nav-item {
     .vertical-tab-nav-item-icon {
       --icon-size: var(--icon-xs);

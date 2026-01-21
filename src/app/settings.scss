@@ -25,6 +25,10 @@ body:not(.is-phone) {
       margin-bottom: 0;
       background-color: transparent;
     }
+
+    .setting-item-description {
+      color: var(--text-faint);
+    }
   }
 
   --setting-items-radius: var(--radius-m);
@@ -53,9 +57,6 @@ body:not(.is-phone) {
 
     .setting-item-name {
       overflow: visible;
-    }
-    .setting-item-description {
-      color: var(--text-faint);
     }
   }
 
@@ -178,6 +179,9 @@ body.is-phone {
       padding: 16px 8px;
       margin-bottom: 0;
       background-color: transparent;
+    }
+    .setting-item-description {
+      color: var(--text-faint);
     }
 
     .setting-group-search {

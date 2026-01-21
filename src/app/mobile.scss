@@ -12,11 +12,6 @@ body.is-mobile {
   --tab-radius: var(--radius-s);
   --tab-curve: var(--tab-radius);
 
-  --font-ui-smaller: calc(var(--font-text-size) * 0.75);
-  --font-ui-small: calc(var(--font-text-size) * 0.8125);
-  --font-ui-medium: calc(var(--font-text-size) * 0.875);
-  --font-ui-large: calc(var(--font-text-size) * 1.125);
-
   --interactive-normal: var(--background-primary);
 
   --mobile-sidebar-width: 100%;
