@@ -105,11 +105,11 @@ body.layout-border:not(.is-mobile) {
   .workspace-split.mod-root .workspace-tab-container {
     border-radius: 0;
   }
-  .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tabs:first-of-type .workspace-tab-container {
+  .workspace:not(.is-left-sidedock-open) .mod-root > div:first-of-type .workspace-tab-container {
     border-top-left-radius: var(--tab-radius);
     border-bottom-left-radius: var(--tab-radius);
   }
-  .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tabs:last-of-type .workspace-tab-container {
+  .workspace:not(.is-right-sidedock-open) .mod-root > div:last-of-type .workspace-tab-container {
     border-top-right-radius: var(--tab-radius);
     border-bottom-right-radius: var(--tab-radius);
   }
@@ -164,6 +164,18 @@ body.layout-border.is-tablet {
   // Editor panel
   .workspace-split.mod-root .workspace-tab-container {
     border-radius: 0;
+  }
+  .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle {
+    top: var(--header-height);
+  }
+
+  .mod-root > div:first-of-type .workspace-tab-container {
+    border-top-left-radius: var(--tab-radius);
+    border-bottom-left-radius: var(--tab-radius);
+  }
+  .mod-root > div:last-of-type .workspace-tab-container {
+    border-top-right-radius: var(--tab-radius);
+    border-bottom-right-radius: var(--tab-radius);
   }
 
   // Side panels
