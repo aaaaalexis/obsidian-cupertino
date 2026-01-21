@@ -43,6 +43,9 @@ body.layout-fusion:not(.is-phone) {
   // Editor panel: Tab style
   &.input-cupertino:is(.tab-floating, .tab-floating-center) {
     .mod-root .workspace-tabs:not(.mod-stacked) {
+      .workspace-tab-header-container {
+        overflow: hidden;
+      }
       .workspace-tab-header-container-inner {
         overflow: visible;
         contain: inline-size;
