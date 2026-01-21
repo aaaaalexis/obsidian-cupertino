@@ -42,7 +42,7 @@ body:not(.is-phone) {
     }
     .vertical-tab-header-group-title,
     .vertical-tab-nav-item {
-      padding: calc(12px * var(--density-modifier)) 16px;
+      padding: calc(8px * var(--density-modifier)) 16px;
       align-items: center;
       font-size: var(--font-ui-small);
     }
@@ -76,7 +76,7 @@ body:not(.is-phone) {
       margin: 0px !important;
       border: none;
       border-radius: var(--setting-items-radius) !important;
-      background-color: var(--background-modifier-cover);
+      background-color: var(--background-modifier-hover);
       padding: 16px !important;
       overflow: hidden;
     }
@@ -221,6 +221,15 @@ body.is-phone {
   }
   .modal.mod-community-modal .modal-title {
     height: calc(var(--touch-size-m) + 16px);
+  }
+}
+
+body.is-tablet {
+  .modal.mod-sidebar-layout {
+    .vertical-tab-header-group-title,
+    .vertical-tab-nav-item {
+      padding: calc(12px * var(--density-modifier)) 16px;
+    }
   }
 }
 
