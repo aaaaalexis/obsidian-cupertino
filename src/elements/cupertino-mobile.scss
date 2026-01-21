@@ -130,6 +130,7 @@ body.input-cupertino.is-phone {
     background-color: var(--background-secondary);
   }
   .nav-files-container > div {
+    --nav-item-size: var(--font-ui-medium);
     --nav-item-color: var(--text-normal);
     --nav-item-color-active: var(--text-normal);
     --nav-item-background-active: var(--background-modifier-hover);
