@@ -116,8 +116,8 @@ body.mod-macos.is-hidden-frameless .workspace-ribbon.mod-left {
   }
 }
 
-body:not(.mod-macos):not(.is-mobile):not(.layout-frame) .workspace-ribbon.mod-left,
-body.mod-macos:not(.is-hidden-frameless):not(.is-mobile):not(.layout-frame) .workspace-ribbon.mod-left {
+body:not(.mod-macos):not(.is-mobile) .workspace-ribbon.mod-left,
+body.mod-macos:not(.is-hidden-frameless):not(.is-mobile) .workspace-ribbon.mod-left {
   margin-top: 0;
 }
 body:not(.mod-macos):not(.is-mobile) .workspace-ribbon.mod-left .sidebar-toggle-button,
@@ -126,20 +126,12 @@ body.mod-macos:not(.is-hidden-frameless):not(.is-mobile) .workspace-ribbon.mod-l
   padding: 0;
   margin: 0 auto;
 }
-body:not(.mod-macos):not(.is-mobile):not(.tab-top-left-stacked).css-settings-manager .workspace-ribbon.mod-left .sidebar-toggle-button {
+body:not(.mod-macos):not(.is-mobile) .workspace-ribbon.mod-left .sidebar-toggle-button {
   height: calc(var(--header-height) - 16px);
 }
 
 // Desktop sidedock
 body:not(.is-mobile) {
-  &:not(.layout-macos, .layout-fusion):not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split .sidebar-toggle-button {
-    order: -1;
-    z-index: 1;
-  }
-  &:not(.layout-macos, .layout-fusion):not(.input-cupertino):not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split .sidebar-toggle-button {
-    margin-right: 8px;
-  }
-
   .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
     border-color: transparent;
   }
@@ -275,9 +267,6 @@ body:not(.is-mobile):not(.hide-vault-switcher-off) .mod-sidedock.mod-left-split 
   .workspace-leaf-content > .view-content {
     padding-bottom: 64px;
   }
-}
-body:not(.is-mobile):not(.hide-vault-switcher-off):not(.layout-cupertino, .layout-macos, .layout-fusion).hover-sidedock .mod-sidedock.mod-left-split.is-sidedock-collapsed .workspace-sidedock-vault-profile::before {
-  background-color: var(--background-primary);
 }
 
 // Desktop sidedock: Style Settings

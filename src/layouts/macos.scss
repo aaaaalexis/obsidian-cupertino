@@ -1,4 +1,4 @@
-body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
+body.layout-fusion:not(.is-mobile) {
   --sidedock-background: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
   --shadow-sidedock-spread: -32px 0 0 32px var(--background-primary);
 
@@ -35,7 +35,7 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     &.mod-macos.is-frameless:not(.is-hidden-frameless) .workspace-ribbon.mod-left:not(.is-collapsed) {
       margin-block: 8px;
     }
-    &:not(.mod-macos):not(.tab-top-left-stacked).css-settings-manager .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button {
+    &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button {
       height: calc(var(--header-height) - 24px);
     }
     &:not(.hover-ribbon) .workspace-ribbon.mod-left:not(.is-collapsed) {
@@ -63,26 +63,19 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     height: -webkit-fill-available;
     overflow: hidden;
   }
-  &:not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
+  .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container .sidebar-toggle-button {
     min-height: calc(var(--header-height) - 8px);
     max-height: calc(var(--header-height) - 8px);
   }
-  &:not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-inner,
-  &:not(.tab-top-left-stacked).css-settings-manager .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button .clickable-icon,
+  .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-inner,
+  .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button .clickable-icon,
   .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) .sidebar-toggle-button .clickable-icon {
     max-height: calc(var(--header-height) - 16px - 8px);
   }
 
   .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
     border-color: var(--divider-color);
-  }
-
-  // Ribbon
-  &.mod-macos.is-hidden-frameless:not(.tab-floating, .tab-floating-center) .workspace-ribbon.mod-left.is-collapsed {
-    margin-top: calc(var(--header-height) - 1px);
-    padding-top: 8px;
-    border-top: var(--tab-outline-width) solid var(--tab-outline-color);
   }
 
   // Settings
@@ -99,7 +92,7 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
   }
 }
 
-body:is(.layout-macos, .layout-fusion).is-tablet {
+body.layout-fusion.is-tablet {
   &.theme-light {
     --shadow-surface: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025), 0 0 1px rgba(0, 0, 0, 0.25), 0 8px 16px 0 rgba(0, 0, 0, 0.05);
   }
@@ -141,50 +134,5 @@ body:is(.layout-macos, .layout-fusion).is-tablet {
     z-index: 1;
     background-color: var(--raised-background);
     box-shadow: var(--shadow-surface);
-  }
-}
-
-// macOS specific
-body.layout-macos {
-  // Editor panel
-  .workspace-split.mod-root .workspace-tab-container {
-    border-radius: 0;
-  }
-
-  // Contrast
-  &:not(.tab-floating, .tab-floating-center) .mod-root {
-    .workspace-tab-header-container {
-      border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
-    }
-    .workspace-tab-header-container-inner {
-      margin-bottom: -1px !important;
-    }
-  }
-}
-body.layout-macos:not(.is-mobile) {
-  &:not(.is-hidden-frameless) {
-    .titlebar {
-      background-color: var(--background-primary);
-    }
-    .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
-      top: 0;
-    }
-  }
-
-  // Editor panel
-  &.is-translucent .mod-root {
-    background-color: var(--background-primary) !important;
-  }
-  &.is-translucent:not(.is-focused):not(.reduce-contrast-change) .workspace {
-    background-color: var(--background-primary);
-  }
-  &:not(.is-translucent) .workspace {
-    background-color: var(--background-primary);
-  }
-}
-
-body.layout-macos.is-tablet {
-  .workspace-drawer.is-pinned.mod-right {
-    border-width: var(--divider-width);
   }
 }

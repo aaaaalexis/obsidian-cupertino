@@ -1,4 +1,4 @@
-body:is(.layout-cupertino, .layout-macos, .layout-fusion):not(.is-mobile) {
+body.layout-fusion:not(.is-mobile) {
   --radius-window: 8px;
 
   &:not(.is-popout-window) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
@@ -47,15 +47,10 @@ body:is(.layout-cupertino, .layout-macos, .layout-fusion):not(.is-mobile) {
         width: 8px;
       }
     }
-
-    // macOS fix
-    &:is(.tab-top-left-stacked, :not(.css-settings-manager)).mod-macos .mod-sidedock.mod-left-split.is-sidedock-collapsed .mod-top-left-space .workspace-tab-header-container {
-      padding-top: calc(var(--header-height) - 8px);
-    }
   }
 }
 
-body:is(.layout-cupertino, .layout-fusion):not(.is-mobile) {
+body.layout-fusion:not(.is-mobile) {
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
     padding-bottom: 0;
   }
@@ -74,47 +69,5 @@ body:is(.layout-cupertino, .layout-fusion):not(.is-mobile) {
   // Windows & Linux fix
   &.is-hidden-frameless .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
     padding-right: var(--frame-right-space);
-  }
-}
-
-// Cupertino specific
-body.layout-cupertino:not(.is-phone) {
-  // Editor panel
-  &.theme-light .mod-root .workspace-tab-container {
-    box-shadow:
-      rgba(0, 0, 0, 0.04) 0px 24px 48px,
-      rgba(0, 0, 0, 0.02) 0px 4px 16px;
-  }
-  &.theme-dark .mod-root .workspace-tab-container {
-    box-shadow:
-      rgba(0, 0, 0, 0.16) 0px 24px 48px,
-      rgba(0, 0, 0, 0.12) 0px 4px 16px;
-  }
-
-  .mod-root {
-    z-index: 5;
-  }
-  .mod-root .workspace-tabs {
-    overflow: visible;
-  }
-  .mod-root .workspace-tab-container {
-    outline: var(--tab-outline-width) solid var(--tab-outline-color);
-  }
-}
-
-body.layout-cupertino.is-tablet {
-  .workspace-drawer.mod-left.is-pinned + .mod-root {
-    padding-bottom: 8px;
-
-    .workspace-tabs:first-of-type .workspace-tab-container {
-      margin-right: 8px;
-    }
-  }
-  .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) {
-    padding-bottom: 8px;
-
-    .workspace-tabs:last-of-type .workspace-tab-container {
-      margin-left: 8px;
-    }
   }
 }

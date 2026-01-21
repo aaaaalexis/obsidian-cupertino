@@ -1,46 +1,58 @@
-![Screenshot of Baseline theme for Obsidian in 3 different colors, with large text "Baseline" on the left side of the image.](img/hero.png)
+![Screenshot of Cupertino theme for Obsidian running on macOS and iOS.](img/hero.png)
 
-### From the creator of [Cupertino](https://github.com/aaaaalexis/obsidian-cupertino/)
+### Best Theme of Obsidian [Gems of the Year 2024](https://obsidian.md/blog/2024-goty-winners/) awards
 
-Baseline sets a new standard for your Obsidian vault experience — sleek, familiar, and effortlessly minimal, offering endless ways to make it yours.
+Cupertino is an Obsidian theme, optimized for **desktop and mobile devices**. Bringing **clean, focused, comfortable** reading and writing experience to your vault.
 
-[Support me and my work](https://www.buymeacoffee.com/sevenaxis) so I can keep providing regular updates and fixes. You’re also welcome to submit pull requests.
+[Support me and my work](https://www.buymeacoffee.com/sevenaxis) so I can keep regular updates and fixes. You’re also welcomed to submit pull requests.
 
 <a href="https://www.buymeacoffee.com/sevenaxis" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
-And don’t forget to [support the amazing creators](#credits) whose work helped shape Baseline.
-
-## Quick Start
-
-### Migrate from other themes
-
-Seamlessly migrate your existing Style Settings from supported themes.
-
-**Get started with [Style Settings Migration Tool ↗](https://aaaaalexis.github.io/obsidian-baseline/migration)**
-
-### Start with style presets
-
-Discover and share Style Settings presets in Baseline Marketplace.
-
-**Check out [Baseline Marketplace ↗](https://aaaaalexis.github.io/obsidian-baseline/marketplace)**
-
 ## Overview
 
-- **Beautifully yours** — Customize your experience to your heart's content with [Style Settings](https://github.com/mgmeyers/obsidian-style-settings).
+![A screenshots showcasing Cupertino's light mode on macOS.](img/screenshot.png)
 
-  ![Screenshot of Baseline theme for Obsidian in 6 different color schemes.](img/colors.png)
+- **Native & minimal** — Clean, native look and feel on all of your devices, so you can focus on your content.
 
-- **Minimal interface** — Clean, organized look and feel, with playful animations and effects.
+  ![Two screenshots showcasing Cupertino on macOS. The first shows how Cupertino utilizes background blur. The second showcases the stylized text editor.](img/desktop.png)
 
-  ![Composite image of various interface elements from Baseline theme for Obsidian.](img/elements.png)
+- **Optimized for mobile** — Redesigned modals, menu, editor, search, and more, with comfortable spacing for usability.
 
-- **Optimized for mobile** — Enhanced navigation, menus, editor, and more, with comfortable spacing for better usability.
+  ![Three screenshots showcasing Cupertino on mobile. The first shows file navigation sidebar with comfortable spacing. The second highlights the mode switcher within the editor. The third displays a redesigned search interface.](img/mobile.png)
 
-  ![Screenshots of Baseline theme for Obsidian on mobile, on the left is a screenshot of the file navigation, on the right is a screenshot of the text editor.](img/mobile.png)
+- **Windows Mode** — Fluent Design interface for native feeling on Windows (Enabled by default, can be disabled with [Style Settings](https://github.com/mgmeyers/obsidian-style-settings))
+
+  ![Screenshot of Cupertino theme for Obsidian running on Windows.](img/windows.png)
+
+## Plugins
+
+All features are enable by default, following plugins can be installed to modify your installation. they are **_not_** required.
+
+### [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
+
+- Disable active line indicator
+- Disable alternative heading style
+- Disable auto hiding panel actions
+- Disable centered tabs
+- Disable compact status bar
+- Disable Windows mode
+  ... etc.
+
+### [Pseudo Mica](https://github.com/aaaaalexis/obsidian-cupertino-helper/) (Windows only)
+
+Adds pseudo-Mica (wallpaper as background) on Windows (Alternatively, wait for Obsidian native support)
+
+## Philosophy
+
+I’ve spent way too much time on customizing Obsidian, thousands of themes with millions of customizations, I believe a lot people do it too. It’s anti-productivity at this point, we need something that just works and is pleasant to use.
+
+1. **Less plugins.** — Style Settings is only used for disabling features and fixing issues instead of adding. Cupertino works perfectly out of the box.
+2. **Less customizations** — Customization is often more of a distraction that makes you waste more time on fiddling. Cupertino will never add customization.
+3. **Less visual noise** — Your content is the key. Low priority UI elements are auto hidden to maintain focusability on content.
 
 ## Features
 
-Baseline supports all helper classes (e.g. block width, cards, etc.) from [Minimal](https://github.com/kepano/obsidian-minimal).
+Cupertino supports most filter and helper classes from [Minimal](https://github.com/kepano/obsidian-minimal).
 
 ### Banner
 
@@ -159,34 +171,10 @@ Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
 | `- [P]` | Phone       |
 | `- [L]` | Love        |
 
-## Philosophy
-
-### Less _and_ more
-
-Baseline delivers a clean, modern, and polished foundation right out of the box, with endless customization options to let you tailor Obsidian to your heart's content. Every option is thoughtfully designed to ensure Baseline stays both simple and beautiful.
-
-### A love letter to the community
-
-Shaped by the community, Baseline gives back through a rich collection of innovations: polished interface, compact elements, hover sidebars, with more to come. Baseline aims to be more than just a theme, but a fresh starting point, a new baseline for the community going forward.
-
 ## Credits
 
-Special thanks to the community for helping make Baseline a reality. Please support them as well!
+- **@kepano** - **[Minimal](https://github.com/kepano/obsidian-minimal)**: Cards, Image filters, Table helpers
 
-### Community Themes
+## Licensing
 
-- **kepano - [Minimal](https://github.com/kepano/obsidian-minimal)**: Cards, Color schemes, Image filters, Table helpers, Style Settings [Buy them a coffee!](https://buymeacoffee.com/kepano)
-- **AnubisNekhet - [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin/)**: Catppuccin color schemes [Buy them a coffee!](https://buymeacoffee.com/anubisnekhet)
-- **jdanielmourao - [Sanctum](https://github.com/jdanielmourao/obsidian-sanctum)**: Sanctum color scheme, Elevated element style [Support them!](https://ko-fi.com/X8X56R5Q1)
-- **kyffa - [Iridium](https://github.com/kyffa/Iridium)**: Frame layout style
-- **vladstudio - [Tiniri](https://tiniri.vlad.studio/)**: Tiniri color scheme [Support them!](https://vlad.studio/signup/)
-
-### Extras
-
-- **Warren2060 - [ChillJinshuSong](https://github.com/Warren2060/ChillJinshuSong)**: Font for extended language support
-- **bwya77**: Admin color scheme, Block properties style
-
-## License
-
-Baseline is licensed under the [MIT license](LICENSE). You’re free to take any component of Baseline and build on top of it.
-Let’s make a better community by creating amazing themes for everyone!
+Cupertino is licensed under the [MIT license](LICENSE).

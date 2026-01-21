@@ -1,18 +1,3 @@
-body:is(.nav-item-baseline, :not(.css-settings-manager)) .nav-files-container > div {
-  --nav-item-background-active: transparent;
-  --nav-item-weight-active: var(--font-medium);
-
-  .tree-item-self.is-active::before {
-    position: absolute;
-    margin-left: -12px;
-    border-radius: var(--button-radius);
-    background-color: var(--nav-item-color-active);
-    width: 4px;
-    height: 4px;
-    content: "";
-  }
-}
-
 body.nav-item-baseline.input-fluent .nav-files-container > div {
   --nav-item-background-active: var(--background-modifier-hover);
   --nav-item-color-active: var(--nav-item-color);
@@ -43,32 +28,9 @@ body.nav-item-strong {
     --nav-item-color-active: var(--text-accent-active);
   }
 
-  &.input-cupertino.layout-macos:not(.is-mobile) .nav-files-container > div {
+  &.input-cupertino.layout-fusion:not(.is-mobile) .nav-files-container > div {
     --nav-item-background-hover: transparent;
     --nav-item-background-active: var(--background-modifier-cover);
     --nav-item-color-active: var(--text-accent);
-  }
-
-  &.input-tactile .nav-files-container > div {
-    .tree-item,
-    .tree-item-self,
-    .tree-item-inner {
-      -electron-corner-smoothing: var(--corner-smoothing);
-      transition: box-shadow var(--anim-duration-fast);
-    }
-    > .tree-item.nav-folder:not(.is-collapsed) {
-      background-color: var(--background-modifier-hover);
-      border-radius: var(--nav-item-radius);
-      box-shadow: var(--input-shadow-inset);
-    }
-    .tree-item-self.is-active {
-      background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25));
-      background-blend-mode: soft-light;
-      box-shadow: var(--input-shadow);
-    }
-    > .tree-item.nav-file > .tree-item-self:hover:not(.is-active),
-    > .tree-item.nav-folder.is-collapsed > .tree-item-self:hover:not(.is-active) {
-      box-shadow: var(--input-shadow-inset);
-    }
   }
 }

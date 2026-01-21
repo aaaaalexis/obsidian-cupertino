@@ -1,32 +1,4 @@
 body:not(.is-phone) {
-  &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-sidebar-layout {
-    .setting-group .setting-items,
-    .setting-group .setting-group-search {
-      padding-inline: 0;
-      padding-top: 0;
-      background-color: transparent;
-    }
-    .setting-item-heading {
-      padding: 0;
-    }
-
-    .setting-group .setting-item:not(.setting-item-heading):not(:first-child) {
-      padding-top: 12px;
-    }
-    .setting-group .setting-item:not(.setting-item-heading):not(:last-child) {
-      padding-bottom: 12px;
-    }
-
-    .setting-item {
-      border-top: none;
-    }
-    .setting-item:not(.setting-items > .setting-item):not(.setting-item-heading) {
-      padding: 12px 0;
-      margin-bottom: 0;
-      background-color: transparent;
-    }
-  }
-
   --setting-items-radius: var(--radius-m);
   --setting-items-padding: calc(16px * var(--density-modifier)) 16px;
   --setting-group-heading-color: var(--text-faint);
@@ -149,45 +121,6 @@ body:not(.is-phone) {
 }
 
 body.is-phone {
-  &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-settings {
-    --setting-items-background: transparent;
-    --setting-items-padding: 0 8px;
-
-    .vertical-tab-header {
-      padding-inline: 16px;
-    }
-    .vertical-tab-header-group {
-      padding-inline: 0;
-    }
-    .vertical-tab-header-group-items {
-      background-color: transparent;
-    }
-    .vertical-tab-nav-item {
-      border-radius: var(--radius-s);
-      padding-inline: 8px;
-    }
-    .vertical-tab-nav-item-title,
-    .vertical-tab-nav-item-chevron {
-      border-bottom: none;
-    }
-
-    .setting-item-heading {
-      padding-inline: 8px;
-    }
-    .setting-item:not(.setting-items > .setting-item):not(.setting-item-heading) {
-      padding: 16px 8px;
-      margin-bottom: 0;
-      background-color: transparent;
-    }
-
-    .setting-group-search {
-      padding-inline: 0;
-    }
-    .setting-group-search + .setting-items {
-      padding-top: 16px;
-    }
-  }
-
   .modal.mod-sidebar-layout {
     box-shadow: none;
 

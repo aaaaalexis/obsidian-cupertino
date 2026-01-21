@@ -1,5 +1,4 @@
 @use "app/root.scss";
-@use "app/fonts.scss";
 @use "app/icons.scss";
 @use "app/tabs.scss";
 @use "app/sidedock.scss";
@@ -18,11 +17,6 @@
 @use "editor/table.scss";
 @use "editor/bases.scss";
 
-@use "layouts/classic.scss";
-@use "layouts/cards.scss";
-@use "layouts/border.scss";
-@use "layouts/frame.scss";
-@use "layouts/viewfinder.scss";
 @use "layouts/cupertino.scss" as layout-cupertino;
 @use "layouts/macos.scss";
 @use "layouts/fusion.scss";
@@ -35,7 +29,6 @@
 @use "elements/cupertino-mobile.scss";
 @use "elements/fluent.scss";
 @use "elements/material.scss";
-@use "elements/tactile.scss";
 @use "elements/adwaita.scss" as element-adwaita;
 
 @use "features/alternative-checkboxes.scss";
@@ -46,38 +39,12 @@
 @use "features/dataview-cards.scss";
 @use "features/helpers-tables.scss";
 @use "features/image-filters.scss";
-@use "features/underline-headings.scss";
-@use "features/colorful-folders.scss";
-@use "features/colorful-headings.scss";
 @use "features/focus-mode.scss";
 @use "features/hover-sidedock.scss";
 @use "features/file-explorer.scss";
 
-@use "color-schemes/contrast.scss";
-@use "color-schemes/admin.scss";
 @use "color-schemes/adwaita.scss" as color-adwaita;
-@use "color-schemes/atom.scss";
-@use "color-schemes/ayu.scss";
-@use "color-schemes/catppuccin.scss";
 @use "color-schemes/cupertino.scss" as color-cupertino;
-@use "color-schemes/dracula.scss";
-@use "color-schemes/everforest.scss";
-@use "color-schemes/flexoki.scss";
-@use "color-schemes/frappe.scss";
-@use "color-schemes/gruvbox.scss";
-@use "color-schemes/latte.scss";
-@use "color-schemes/macchiato.scss";
-@use "color-schemes/melange.scss";
-@use "color-schemes/minimal.scss";
-@use "color-schemes/mocha.scss";
-@use "color-schemes/nord.scss";
-@use "color-schemes/notion.scss";
-@use "color-schemes/rose-pine.scss";
-@use "color-schemes/sanctum.scss";
-@use "color-schemes/sky.scss";
-@use "color-schemes/solarized.scss";
-@use "color-schemes/things.scss";
-@use "color-schemes/tiniri.scss";
 
 @use "integrations/core-plugins.scss";
 @use "integrations/community-plugins.scss";
