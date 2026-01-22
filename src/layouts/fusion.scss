@@ -93,6 +93,10 @@ body.layout-fusion:not(.is-phone) {
 }
 
 body.layout-fusion.is-tablet {
+  .workspace-drawer.mod-left.is-pinned {
+    margin-right: 8px;
+  }
+
   &.input-cupertino:is(.tab-floating, .tab-floating-center) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
     background-color: var(--raised-background) !important;
     box-shadow: var(--shadow-tab);
@@ -101,25 +105,6 @@ body.layout-fusion.is-tablet {
   &:not(.tab-floating, .tab-floating-center) {
     .workspace {
       background-color: var(--background-secondary);
-    }
-
-    .workspace-drawer.mod-left.is-pinned + .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) {
-      padding-bottom: 8px;
-    }
-
-    .workspace-drawer.mod-left.is-pinned + .mod-root,
-    .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) {
-      padding-bottom: 8px;
-    }
-
-    .workspace-drawer.mod-left.is-pinned + .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tabs:last-of-type .workspace-tab-container {
-      margin-right: 8px;
-    }
-    .mod-root .workspace-tabs:first-of-type .workspace-tab-container {
-      margin-left: 8px;
-    }
-    .workspace-drawer.mod-left:not(.is-pinned) + .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tabs:first-of-type .workspace-tab-container {
-      margin-left: 0;
     }
   }
 }

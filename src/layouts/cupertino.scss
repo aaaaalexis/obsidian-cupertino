@@ -85,10 +85,24 @@ body:is(.layout-cupertino, .layout-macos, .layout-fusion).is-mobile {
     gap: 0;
     backdrop-filter: var(--raised-blur);
     border-radius: 100vh;
-    background-color: var(--background-modifier-hover);
+    background-color: var(--background-modifier-border-hover);
     padding-inline: 8px;
     width: fit-content;
     margin-bottom: 16px;
+  }
+}
+
+body:is(.layout-cupertino, .layout-fusion).is-tablet {
+  .workspace-drawer.mod-left.is-pinned + .mod-root,
+  .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) {
+    padding-bottom: 8px;
+  }
+
+  .workspace-drawer.mod-left.is-pinned + .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tabs:last-of-type .workspace-tab-container {
+    margin-right: 8px;
+  }
+  .workspace-drawer.mod-left:not(.is-pinned) + .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) .workspace-tabs:first-of-type .workspace-tab-container {
+    margin-left: 8px;
   }
 }
 
@@ -114,23 +128,5 @@ body.layout-cupertino:not(.is-phone) {
   }
   .mod-root .workspace-tab-container {
     outline: var(--tab-outline-width) solid var(--tab-outline-color);
-  }
-}
-
-body.layout-cupertino.is-tablet {
-  .workspace-drawer.mod-left.is-pinned + .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) {
-    padding-bottom: 8px;
-  }
-
-  .workspace-drawer.mod-left.is-pinned + .mod-root,
-  .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) {
-    padding-bottom: 8px;
-  }
-
-  .workspace-drawer.mod-left.is-pinned + .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tabs:last-of-type .workspace-tab-container {
-    margin-right: 8px;
-  }
-  .workspace-drawer.mod-left:not(.is-pinned) + .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) .workspace-tabs:first-of-type .workspace-tab-container {
-    margin-left: 8px;
   }
 }
