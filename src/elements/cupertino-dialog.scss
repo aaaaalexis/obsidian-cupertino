@@ -97,6 +97,7 @@ body:is(.mod-macos, .adaptive-mode-off).is-phone {
 
   .menu .menu-item {
     min-height: 48px;
+    font-size: var(--font-ui-medium);
   }
   .menu .menu-item::after {
     content: none;

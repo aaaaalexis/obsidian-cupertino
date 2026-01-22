@@ -26,9 +26,6 @@ body:not(.is-phone) {
     .setting-item-name {
       overflow: visible;
     }
-    .setting-item-description {
-      color: var(--text-faint);
-    }
   }
 
   .installed-plugins-container .setting-item .setting-item-description div:last-child {

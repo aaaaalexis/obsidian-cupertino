@@ -63,3 +63,18 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
     padding-right: var(--frame-right-space);
   }
 }
+
+body:is(.mod-macos, .adaptive-mode-off).is-mobile {
+  --nav-item-color: var(--text-normal);
+
+  .workspace-drawer .nav-buttons-container {
+    justify-self: center;
+    gap: 0;
+    backdrop-filter: var(--raised-blur);
+    border-radius: 100vh;
+    background-color: var(--background-modifier-hover);
+    padding-inline: 8px;
+    width: fit-content;
+    margin-bottom: 16px;
+  }
+}

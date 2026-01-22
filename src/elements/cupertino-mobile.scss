@@ -1,10 +1,10 @@
 body:is(.mod-macos, .adaptive-mode-off).is-mobile {
   // Liquid Glass
-  &.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2),
-  &.is-phone .prompt-input,
-  &.is-phone .prompt-input-container .prompt-input-cta:not(:empty),
-  &.is-phone .prompt-input-container .search-input-clear-button,
-  &.is-phone .workspace-drawer-header-icon,
+  &:where(.is-phone):not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2),
+  &:where(.is-phone) .prompt-input,
+  &:where(.is-phone) .prompt-input-container .prompt-input-cta:not(:empty),
+  &:where(.is-phone) .prompt-input-container .search-input-clear-button,
+  &:where(.is-phone) .workspace-drawer-header-icon,
   .mobile-tab-switcher-menu-button,
   .mobile-tab-switcher-menu-spacer .clickable-icon,
   .modal-setting-back-button,
@@ -130,6 +130,7 @@ body:is(.mod-macos, .adaptive-mode-off).is-phone {
     background-color: var(--background-secondary);
   }
   .nav-files-container > div {
+    --nav-item-size: var(--font-ui-medium);
     --nav-item-color: var(--text-normal);
     --nav-item-color-active: var(--text-normal);
     --nav-item-background-active: var(--background-modifier-hover);

@@ -1,7 +1,5 @@
 body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
-  --sidedock-background: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
   --shadow-sidedock-spread: -32px 0 0 32px var(--background-primary);
-
   --shadow-surface: 0 0 0 1px var(--background-modifier-hover);
 
   &:not(.is-focused):not(.reduce-contrast-change) {
@@ -14,7 +12,8 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
     }
     .modal.mod-settings .vertical-tab-header,
     .mod-sidedock.mod-left-split,
-    .mod-root .workspace-tab-container {
+    .mod-root .workspace-tab-container,
+    &.input-cupertino:is(.tab-floating, .tab-floating-center) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
       background-color: var(--color-base-05) !important;
       box-shadow: none !important;
     }
@@ -47,17 +46,12 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
     }
   }
 
-  &:not(.is-translucent) .mod-sidedock {
-    background-color: var(--sidedock-background);
-  }
-  &.is-translucent .mod-sidedock.mod-left-split {
-    background-color: rgba(from var(--background-primary) r g b / 50%) !important;
-  }
   .mod-sidedock.mod-left-split {
     -electron-corner-smoothing: var(--corner-smoothing);
     display: flex;
     z-index: var(--layer-sidedock);
     margin: 8px 0 8px 8px;
+    background-color: rgba(from var(--background-primary) r g b / 50%) !important;
     box-shadow: var(--shadow-surface), var(--shadow-sidedock-spread);
     border-radius: var(--radius-window, var(--radius-m));
     height: -webkit-fill-available;
@@ -83,7 +77,7 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
     margin: 8px 0 8px 8px;
     box-shadow: var(--shadow-surface);
     border-radius: max(calc(var(--modal-radius) - 8px), var(--radius-s));
-    background-color: var(--sidedock-background);
+    background-color: rgba(from var(--background-primary) r g b / 75%);
   }
 
   // Vault switcher
@@ -111,19 +105,23 @@ body:is(.mod-macos, .adaptive-mode-off).is-tablet {
     color: var(--text-faint);
   }
 
-  .workspace-drawer.is-pinned {
-    &.mod-left {
-      background-color: var(--raised-background);
-      box-shadow: var(--shadow-surface);
-      border: none;
-      margin: calc(var(--safe-area-inset-top) + 8px) 0 8px 8px;
-      border-radius: calc(var(--safe-area-inset-bottom) - 8px);
-      height: auto;
+  .workspace-drawer:not(.is-pinned) {
+    background-color: var(--modal-background);
+    box-shadow: var(--raised-shadow);
+    backdrop-filter: var(--blur-l);
+  }
 
-      .workspace-drawer-ribbon,
-      .workspace-drawer-inner {
-        padding-block: 0px 16px;
-      }
+  .workspace-drawer.is-pinned.mod-left {
+    background-color: var(--raised-background);
+    box-shadow: var(--shadow-surface);
+    border: none;
+    margin: calc(var(--safe-area-inset-top) + 8px) 0 8px 8px;
+    border-radius: calc(env(safe-area-inset-bottom) - 8px);
+    height: auto;
+
+    .workspace-drawer-ribbon,
+    .workspace-drawer-inner {
+      padding-block: 0px 16px;
     }
   }
 

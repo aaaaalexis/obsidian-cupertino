@@ -59,9 +59,8 @@ body:is(.mod-macos, .adaptive-mode-off) {
 
     --shadow-base: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-edges: 0 0 1px rgba(0, 0, 0, 0.4);
-    --shadow-surface: 0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px rgba(255, 255, 255, 0.8), var(--shadow-xxs);
+    --shadow-surface: 0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px rgba(255, 255, 255, 0.8), 0 4px 24px rgba(0, 0, 0, 0.075);
 
-    --shadow-xxs: 0 4px 24px rgba(0, 0, 0, 0.075);
     --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 0 8px rgba(0, 0, 0, 0.025), 0 4px 24px rgba(0, 0, 0, 0.075);
     --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-edges), 0 8px 16px rgba(0, 0, 0, 0.2);
     --shadow-l: var(--shadow-edges), inset 0 0 1px 1px white, 0 16px 64px rgba(0, 0, 0, 0.15);
@@ -73,10 +72,9 @@ body:is(.mod-macos, .adaptive-mode-off) {
 
     --shadow-base: inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-edges: 0 0 1px rgba(255, 255, 255, 0.3);
-    --shadow-surface: 0 0 1px rgba(255, 255, 255, 0.8), 0 0 1px rgba(0, 0, 0, 0.4), var(--shadow-xxs);
+    --shadow-surface: 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
 
-    --shadow-xxs: 0 8px 16px rgba(0, 0, 0, 0.2);
-    --shadow-xs: var(--shadow-base);
+    --shadow-xs: var(--shadow-base), 0 4px 8px rgba(0, 0, 0, 0.1);
     --shadow-s: var(--shadow-edges), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
     --shadow-l: var(--shadow-edges), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px rgba(0, 0, 0, 0.7), 0 16px 64px rgba(0, 0, 0, 0.3);
   }
@@ -314,5 +312,6 @@ body:is(.mod-macos, .adaptive-mode-off) {
   &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"][data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
     background-color: var(--interactive-accent);
     color: var(--text-on-accent);
+    box-shadow: var(--shadow-xs);
   }
 }

@@ -24,6 +24,13 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
 
 body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
   // Editor panel
+  &.theme-light {
+    --shadow-tab: var(--shadow-base), 0 0 1px rgba(0, 0, 0, 0.2), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.025), 0 2px 4px rgba(0, 0, 0, 0.025);
+  }
+  &.theme-dark {
+    --shadow-tab: var(--shadow-base), 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
   .mod-root {
     .workspace-leaf {
       background-color: transparent;
@@ -34,8 +41,8 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
     }
 
     .view-header,
-    .document-search-container,
-    .view-content {
+    .view-content,
+    .document-search-container {
       background-color: transparent;
     }
   }
@@ -44,9 +51,7 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
   &:is(.mod-macos, .adaptive-mode-off) {
     .mod-root .workspace-tabs:not(.mod-stacked) {
       .workspace-tab-header-container-inner {
-        overflow: visible;
-        contain: inline-size;
-        width: stretch;
+        padding-inline: 4px;
       }
       .workspace-tab-header {
         @starting-style {
@@ -56,7 +61,7 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
         }
 
         -electron-corner-smoothing: var(--corner-smoothing);
-        border-radius: var(--radius-m);
+        border-radius: 100vh;
         transition:
           background-color var(--anim-duration-moderate),
           opacity var(--anim-duration-moderate),
@@ -71,8 +76,8 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
     }
 
     .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
-      background-color: rgba(from var(--background-primary) r g b / 50%);
-      box-shadow: var(--shadow-xs);
+      background-color: rgba(from var(--background-primary) r g b / 75%);
+      box-shadow: var(--shadow-tab);
     }
   }
 }
@@ -80,6 +85,6 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
 body:is(.mod-macos, .adaptive-mode-off).is-tablet {
   .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
     background-color: var(--raised-background) !important;
-    box-shadow: var(--shadow-xs);
+    box-shadow: var(--shadow-tab);
   }
 }
