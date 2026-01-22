@@ -77,16 +77,18 @@ body:is(.layout-cupertino, .layout-fusion):not(.is-mobile) {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos, .layout-fusion):not(.is-phone) {
+body:is(.layout-cupertino, .layout-macos, .layout-fusion).is-mobile {
   --nav-item-color: var(--text-normal);
 
   .workspace-drawer .nav-buttons-container {
-    background: var(--background-primary-alt);
+    justify-self: center;
+    gap: 0;
+    backdrop-filter: var(--raised-blur);
     border-radius: 100vh;
-    gap: unset;
-  }
-  .workspace-drawer .nav-buttons-container .nav-action-button {
-    width: 100%;
+    background-color: var(--background-modifier-hover);
+    padding-inline: 8px;
+    width: fit-content;
+    margin-bottom: 16px;
   }
 }
 

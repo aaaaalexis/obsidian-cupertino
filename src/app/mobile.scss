@@ -161,8 +161,7 @@ body.is-mobile {
       padding: 0;
     }
     .nav-buttons-container {
-      padding: 0;
-      margin: 0 var(--safe-area-inset-side);
+      padding: 0 var(--safe-area-inset-side);
     }
     .nav-buttons-container::after {
       content: none;
@@ -258,7 +257,8 @@ body.is-phone {
     margin: 0 0 var(--touch-size-l);
   }
   .workspace-drawer .workspace-leaf-content .nav-header ~ div:last-child {
-    mask: linear-gradient(to top, transparent, black 64px);
+    // cubic-bezier(0.35, 0, 1, 0.5)
+    mask: linear-gradient(to top, hsla(0, 0%, 0%, 0) 0px, hsla(0, 0%, 0%, 0.007) 5px, hsla(0, 0%, 0%, 0.025) 10px, hsla(0, 0%, 0%, 0.056) 15px, hsla(0, 0%, 0%, 0.097) 21px, hsla(0, 0%, 0%, 0.148) 27px, hsla(0, 0%, 0%, 0.208) 32px, hsla(0, 0%, 0%, 0.276) 38px, hsla(0, 0%, 0%, 0.351) 43px, hsla(0, 0%, 0%, 0.432) 48px, hsla(0, 0%, 0%, 0.519) 52px, hsla(0, 0%, 0%, 0.609) 56px, hsla(0, 0%, 0%, 0.704) 60px, hsla(0, 0%, 0%, 0.801) 62px, hsla(0, 0%, 0%, 0.9) 63px, hsl(0, 0%, 0%) 64px);
   }
 
   // Editor panel
@@ -457,7 +457,7 @@ body.is-tablet {
     }
 
     .workspace-leaf-content .nav-header ~ div:last-child {
-      mask: linear-gradient(to bottom, transparent, black 64px, black calc(100% - 64px), transparent);
+      mask: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0px, hsla(0, 0%, 0%, 0.007) 5px, hsla(0, 0%, 0%, 0.025) 10px, hsla(0, 0%, 0%, 0.056) 15px, hsla(0, 0%, 0%, 0.097) 21px, hsla(0, 0%, 0%, 0.148) 27px, hsla(0, 0%, 0%, 0.208) 32px, hsla(0, 0%, 0%, 0.276) 38px, hsla(0, 0%, 0%, 0.351) 43px, hsla(0, 0%, 0%, 0.432) 48px, hsla(0, 0%, 0%, 0.519) 52px, hsla(0, 0%, 0%, 0.609) 56px, hsla(0, 0%, 0%, 0.704) 60px, hsla(0, 0%, 0%, 0.801) 62px, hsla(0, 0%, 0%, 0.9) 63px, hsl(0, 0%, 0%) 64px, black calc(100% - 64px), transparent);
     }
 
     .workspace-drawer-tab-options-list {
