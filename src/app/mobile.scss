@@ -161,7 +161,8 @@ body.is-mobile {
       padding: 0;
     }
     .nav-buttons-container {
-      padding: 0 var(--safe-area-inset-side);
+      padding: 0;
+      margin: 0 var(--safe-area-inset-side);
     }
     .nav-buttons-container::after {
       content: none;
@@ -434,6 +435,15 @@ body.is-tablet {
     padding: 4px 0;
   }
 
+  .workspace .mod-root .workspace-tab-header-container .clickable-icon,
+  .view-header .clickable-icon,
+  .workspace-drawer-header-icon {
+    border-radius: 100vh;
+    padding: 10px;
+    position: relative;
+    margin-left: 0;
+  }
+
   .workspace-drawer.is-pinned,
   .workspace-split.mod-root,
   .workspace-split.mod-root .workspace-split {
@@ -467,7 +477,7 @@ body.is-tablet {
       width: var(--mobile-right-sidebar-width-pinned, var(--mobile-sidebar-width-pinned));
     }
     &:not(.is-pinned) {
-      margin: var(--safe-area-inset-top) 16px var(--safe-area-inset-bottom);
+      margin: var(--safe-area-inset-top) 8px calc(var(--keyboard-height) + 8px);
       padding-top: 0;
       border-radius: var(--mobile-sidebar-radius);
       height: auto;
