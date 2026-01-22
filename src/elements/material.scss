@@ -111,7 +111,7 @@ body.input-material {
 
   // Settings
   --setting-items-radius: var(--radius-l);
-  --setting-items-background: var(--background-primary);
+  --setting-items-background: var(--background-primary) !important;
 
   .modal.mod-sidebar-layout {
     background-color: var(--background-secondary);
