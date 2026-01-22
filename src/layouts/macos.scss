@@ -1,7 +1,5 @@
 body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
-  --sidedock-background: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
   --shadow-sidedock-spread: -32px 0 0 32px var(--background-primary);
-
   --shadow-surface: 0 0 0 1px var(--background-modifier-hover);
 
   &:not(.is-focused):not(.reduce-contrast-change) {
@@ -48,17 +46,12 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     }
   }
 
-  &:not(.is-translucent) .mod-sidedock {
-    background-color: var(--sidedock-background);
-  }
-  &.is-translucent .mod-sidedock.mod-left-split {
-    background-color: rgba(from var(--background-primary) r g b / 50%) !important;
-  }
   .mod-sidedock.mod-left-split {
     -electron-corner-smoothing: var(--corner-smoothing);
     display: flex;
     z-index: var(--layer-sidedock);
     margin: 8px 0 8px 8px;
+    background-color: rgba(from var(--background-primary) r g b / 50%) !important;
     box-shadow: var(--shadow-surface), var(--shadow-sidedock-spread);
     border-radius: var(--radius-window, var(--radius-m));
     height: -webkit-fill-available;
@@ -91,7 +84,7 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     margin: 8px 0 8px 8px;
     box-shadow: var(--shadow-surface);
     border-radius: max(calc(var(--modal-radius) - 8px), var(--radius-s));
-    background-color: var(--sidedock-background);
+    background-color: rgba(from var(--background-primary) r g b / 75%);
   }
 
   // Vault switcher

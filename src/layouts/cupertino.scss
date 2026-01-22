@@ -10,7 +10,7 @@ body:is(.layout-cupertino, .layout-macos, .layout-fusion):not(.is-mobile) {
   --ribbon-background-collapsed: var(--ribbon-background);
 
   // Editor panel: Floating
-  &:is(.tab-floating, .tab-floating-center).mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  &:is(.tab-floating, .tab-floating-center) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     height: 32px;
     margin: auto 0;
   }

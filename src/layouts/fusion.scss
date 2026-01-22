@@ -1,6 +1,6 @@
 body.layout-fusion {
   &.theme-light {
-    --shadow-tab: var(--shadow-base), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 0 8px rgba(0, 0, 0, 0.025), 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-tab: var(--shadow-base), 0 0 1px rgba(0, 0, 0, 0.2), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.025), 0 2px 4px rgba(0, 0, 0, 0.025);
   }
   &.theme-dark {
     --shadow-tab: var(--shadow-base), 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -43,8 +43,8 @@ body.layout-fusion:not(.is-phone) {
     }
 
     .view-header,
-    .document-search-container,
-    .view-content {
+    .view-content,
+    .document-search-container {
       background-color: transparent;
     }
   }
@@ -53,7 +53,7 @@ body.layout-fusion:not(.is-phone) {
   &.input-cupertino:is(.tab-floating, .tab-floating-center) {
     .mod-root .workspace-tabs:not(.mod-stacked) {
       .workspace-tab-header-container-inner {
-        padding-inline: 8px;
+        padding-inline: 4px;
       }
       .workspace-tab-header {
         @starting-style {
@@ -63,7 +63,7 @@ body.layout-fusion:not(.is-phone) {
         }
 
         -electron-corner-smoothing: var(--corner-smoothing);
-        border-radius: var(--radius-window, var(--radius-m));
+        border-radius: 100vh;
         transition:
           background-color var(--anim-duration-moderate),
           opacity var(--anim-duration-moderate),
@@ -78,7 +78,7 @@ body.layout-fusion:not(.is-phone) {
     }
 
     .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
-      background-color: rgba(from var(--background-primary) r g b / 50%);
+      background-color: rgba(from var(--background-primary) r g b / 75%);
       box-shadow: var(--shadow-tab);
     }
   }
