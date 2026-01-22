@@ -1,4 +1,4 @@
-body.layout-fusion:not(.is-mobile) {
+body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
   --sidedock-background: color-mix(in srgb, var(--background-primary) 98%, var(--interactive-accent));
   --shadow-sidedock-spread: -32px 0 0 32px var(--background-primary);
 
@@ -92,7 +92,7 @@ body.layout-fusion:not(.is-mobile) {
   }
 }
 
-body.layout-fusion.is-tablet {
+body:is(.mod-macos, .adaptive-mode-off).is-tablet {
   &.theme-light {
     --shadow-surface: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025), 0 0 1px rgba(0, 0, 0, 0.25), 0 8px 16px 0 rgba(0, 0, 0, 0.05);
   }

@@ -41,7 +41,7 @@
 body:not(.is-mobile) .omnisearch-input-container__buttons {
   display: none;
 }
-body.layout-fusion.is-phone {
+body:is(.mod-macos, .adaptive-mode-off).is-phone {
   @media only screen and (max-width: 600px) {
     .omnisearch-modal {
       --prompt-top: calc(var(--safe-area-inset-top) + var(--header-height)) !important;
@@ -203,7 +203,7 @@ body.is-phone.hider-sidebar-buttons {
     }
   }
 
-  &.status-bar-cupertino .status-bar {
+  &:not(.compact-status-bar-off) .status-bar {
     margin: 4px 0;
 
     &:hover {
@@ -216,7 +216,7 @@ body.is-phone.hider-sidebar-buttons {
 }
 
 // Novel Word Count https://github.com/isaaclyman/novel-word-count-obsidian
-body:not(.is-mobile):not(.nav-action-center, .nav-action-left) .mod-sidedock .workspace-leaf-content.novel-word-count--active > .nav-header {
+body:not(.is-mobile):not(.nav-action-center) .mod-sidedock .workspace-leaf-content.novel-word-count--active > .nav-header {
   &:not(:hover) .nav-buttons-container {
     .nav-action-button {
       opacity: 0;
@@ -239,7 +239,7 @@ body:not(.is-mobile):not(.nav-action-center, .nav-action-left) .mod-sidedock .wo
   }
 }
 
-body.layout-fusion.is-mobile .workspace-drawer .novel-word-count--active {
+body:is(.mod-macos, .adaptive-mode-off).is-mobile .workspace-drawer .novel-word-count--active {
   .nav-buttons-container {
     overflow: visible;
   }

@@ -1,9 +1,9 @@
 body,
 .theme-light,
 .theme-dark {
-  --font-interface-theme: Inter;
-  --font-text-theme: Inter;
-  --font-print-theme: Inter;
+  --font-interface-theme: system-ui, sans-serif;
+  --font-text-theme: system-ui, sans-serif;
+  --font-print-theme: system-ui, sans-serif;
 
   --titlebar-background: transparent;
   --titlebar-background-focused: transparent;
@@ -21,7 +21,7 @@ body,
   --shadow-tactile: rgba(0, 0, 0, 0.04) 0px 2px 8px -2px, rgba(var(--mono-rgb-100), 0.04) 0px 2px 4px -2px;
 
   --anim-speed-modifier: 1;
-  --anim-motion-baseline: cubic-bezier(0.1, 0, 0.1, 1.25);
+  --anim-motion-baseline: cubic-bezier(0.32, 0.72, 0, 1);
   --anim-duration-superfast: calc(80ms * var(--anim-speed-modifier));
   --anim-duration-fast: calc(160ms * var(--anim-speed-modifier));
   --anim-duration-moderate: calc(320ms * var(--anim-speed-modifier));
@@ -195,13 +195,6 @@ body.styled-scrollbars div:not(:hover)::-webkit-scrollbar-thumb {
 }
 
 // Style Settings
-body:not(.accented-interface) {
-  --interactive-accent: var(--color-base-100);
-  --interactive-accent-hover: rgb(from var(--color-base-100) r g b / 80%);
-  --text-on-accent: var(--color-base-00);
-  --text-on-accent-inverted: var(--color-base-00);
-}
-
 body.reduce-motion {
   --anim-speed-modifier: 0 !important;
 

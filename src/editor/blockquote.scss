@@ -74,34 +74,4 @@
       border-end-end-radius: var(--radius-s);
     }
   }
-
-  // Blockquote: Edge
-  body.blockquote-edge {
-    .markdown-rendered blockquote {
-      border-radius: calc(var(--blockquote-border-thickness) / 2) var(--radius-s) var(--radius-s) calc(var(--blockquote-border-thickness) / 2);
-      padding-inline: calc(var(--blockquote-border-thickness) + 20px) 16px;
-      padding-block: 8px;
-    }
-    .markdown-rendered blockquote::before {
-      top: 0;
-      bottom: 0;
-      inset-inline-start: 0;
-    }
-
-    .HyperMD-quote {
-      border-width: 0;
-    }
-    .HyperMD-quote:first-child,
-    .cm-line:not(.HyperMD-quote) + .HyperMD-quote {
-      border-top-width: 0;
-      border-start-start-radius: calc(var(--blockquote-border-thickness) / 2);
-      padding-top: 8px;
-    }
-    .HyperMD-quote:last-child,
-    .cm-line.HyperMD-quote:has(+ .cm-line:not(.HyperMD-quote)) {
-      border-bottom-width: 0;
-      border-end-start-radius: calc(var(--blockquote-border-thickness) / 2);
-      padding-bottom: 8px;
-    }
-  }
 }

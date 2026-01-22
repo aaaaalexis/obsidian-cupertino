@@ -1,4 +1,4 @@
-body.layout-fusion:not(.is-mobile) {
+body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
   --radius-window: 8px;
 
   &:not(.is-popout-window) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
@@ -10,17 +10,9 @@ body.layout-fusion:not(.is-mobile) {
   --ribbon-background-collapsed: var(--ribbon-background);
 
   // Editor panel: Floating
-  &:is(.tab-floating, .tab-floating-center).mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     height: 32px;
     margin: auto 0;
-  }
-
-  // Status bar
-  &.status-bar-full {
-    .horizontal-main-container,
-    .workspace {
-      overflow: visible;
-    }
   }
 
   // Hover sidedock
@@ -50,7 +42,7 @@ body.layout-fusion:not(.is-mobile) {
   }
 }
 
-body.layout-fusion:not(.is-mobile) {
+body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
     padding-bottom: 0;
   }
@@ -62,7 +54,7 @@ body.layout-fusion:not(.is-mobile) {
     margin-right: 8px;
   }
 
-  &:not(.status-bar-full) .mod-root {
+  .mod-root {
     padding-bottom: 8px;
   }
 

@@ -4,8 +4,7 @@ GNOME Project
 https://gitlab.gnome.org/GNOME/libadwaita/
 */
 
-.theme-light.adwaita-light,
-.theme-dark.adwaita-dark {
+body.mod-linux:not(.is-android):not(.adaptive-mode-off) {
   --background-modifier-border: rgb(from var(--text-normal) r g b / 15%); // --border-color
 
   --interactive-normal: rgb(from var(--text-normal) r g b / 10%);
@@ -15,13 +14,7 @@ https://gitlab.gnome.org/GNOME/libadwaita/
   --modal-border-color: rgb(from var(--text-normal) r g b / 10%);
   --prompt-border-color: rgb(from var(--text-normal) r g b / 10%);
 }
-.theme-light.adwaita-light.color-scheme-accent,
-.theme-dark.adwaita-dark.color-scheme-accent {
-  --accent-h: 213;
-  --accent-s: 76%;
-  --accent-l: 55%;
-}
-.theme-light.adwaita-light {
+body.mod-linux:not(.is-android):not(.adaptive-mode-off).theme-light {
   --color-red-rgb: 237, 51, 59;
   --color-orange-rgb: 255, 120, 0;
   --color-yellow-rgb: 246, 211, 45;
@@ -67,7 +60,7 @@ https://gitlab.gnome.org/GNOME/libadwaita/
   }
 }
 
-.theme-dark.adwaita-dark {
+body.mod-linux:not(.is-android):not(.adaptive-mode-off).theme-dark {
   --color-red-rgb: 224, 27, 36;
   --color-orange-rgb: 230, 97, 0;
   --color-yellow-rgb: 245, 194, 17;

@@ -1,4 +1,4 @@
-body.nav-item-baseline.input-fluent .nav-files-container > div {
+body.mod-windows:not(.adaptive-mode-off) .nav-files-container > div {
   --nav-item-background-active: var(--background-modifier-hover);
   --nav-item-color-active: var(--nav-item-color);
 
@@ -16,21 +16,14 @@ body.nav-item-baseline.input-fluent .nav-files-container > div {
   }
 }
 
-body.nav-item-strong {
-  .nav-files-container > div {
-    --nav-item-background-active: var(--interactive-accent);
-    --nav-item-color-active: var(--text-on-accent);
-  }
+body.is-android:not(.adaptive-mode-off) .nav-files-container > div {
+  --nav-item-background-active: var(--interactive-accent-active);
+  --nav-item-background-selected: var(--interactive-accent-active);
+  --nav-item-color-active: var(--text-accent-active);
+}
 
-  &.input-material .nav-files-container > div {
-    --nav-item-background-active: var(--interactive-accent-active);
-    --nav-item-background-selected: var(--interactive-accent-active);
-    --nav-item-color-active: var(--text-accent-active);
-  }
-
-  &.input-cupertino.layout-fusion:not(.is-mobile) .nav-files-container > div {
-    --nav-item-background-hover: transparent;
-    --nav-item-background-active: var(--background-modifier-cover);
-    --nav-item-color-active: var(--text-accent);
-  }
+body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) .nav-files-container > div {
+  --nav-item-background-hover: transparent;
+  --nav-item-background-active: var(--background-modifier-cover);
+  --nav-item-color-active: var(--text-accent);
 }

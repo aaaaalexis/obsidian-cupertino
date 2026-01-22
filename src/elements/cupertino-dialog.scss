@@ -1,4 +1,4 @@
-body.input-cupertino {
+body:is(.mod-macos, .adaptive-mode-off) {
   --background-modifier-message: var(--modal-background) !important;
   --modal-background: rgb(from var(--background-primary-alt) r g b / 75%) !important;
 
@@ -28,7 +28,7 @@ body.input-cupertino {
 }
 
 // Menu
-body.input-cupertino:not(.is-mobile) {
+body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
   .menu,
   .suggestion-container {
     animation: none;
@@ -66,7 +66,7 @@ body.input-cupertino:not(.is-mobile) {
   }
 }
 
-body.input-cupertino.is-mobile {
+body:is(.mod-macos, .adaptive-mode-off).is-mobile {
   .menu,
   .suggestion-container {
     .menu-scroll {
@@ -86,7 +86,7 @@ body.input-cupertino.is-mobile {
     }
   }
 }
-body.input-cupertino.is-phone {
+body:is(.mod-macos, .adaptive-mode-off).is-phone {
   --menu-shadow: var(--shadow-s);
   --menu-padding: 32px var(--safe-area-inset-side);
 
@@ -128,7 +128,7 @@ body.input-cupertino.is-phone {
     }
   }
 }
-body.input-cupertino.is-tablet {
+body:is(.mod-macos, .adaptive-mode-off).is-tablet {
   --menu-shadow: var(--shadow-l);
 
   .menu,
@@ -149,7 +149,7 @@ body.input-cupertino.is-tablet {
 }
 
 // Modal
-body.input-cupertino:not(.is-mobile) {
+body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
   @keyframes modalInCupertino {
     from {
       opacity: 1;
@@ -174,7 +174,7 @@ body.input-cupertino:not(.is-mobile) {
   }
 }
 
-body.input-cupertino.is-mobile {
+body:is(.mod-macos, .adaptive-mode-off).is-mobile {
   .modal-setting-back-button,
   .modal-close-button {
     --icon-size: var(--icon-xl);
@@ -182,7 +182,7 @@ body.input-cupertino.is-mobile {
   }
 }
 
-body.input-cupertino.is-phone {
+body:is(.mod-macos, .adaptive-mode-off).is-phone {
   --modal-radius: var(--radius-xl);
 
   .modal-container.mod-confirmation .modal {
@@ -215,7 +215,7 @@ body.input-cupertino.is-phone {
 }
 
 // Notice & Tooltip
-body.input-cupertino {
+body:is(.mod-macos, .adaptive-mode-off) {
   .notice-container {
     display: flex;
     flex-direction: column;
@@ -259,7 +259,7 @@ body.input-cupertino {
 }
 
 // Drag ghost
-body.input-cupertino:not(.is-mobile) {
+body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
   --drag-ghost-background: var(--background-primary);
   --drag-ghost-text-color: var(--text-normal);
 

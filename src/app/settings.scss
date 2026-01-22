@@ -166,7 +166,7 @@ body.is-tablet {
   }
 }
 
-body:is(.input-cupertino, .input-material) {
+body:is(.mod-macos, .adaptive-mode-off, .is-android:not(.adaptive-mode-off)) {
   .modal.mod-settings .vertical-tab-nav-item {
     &[data-setting-id="editor"] .vertical-tab-nav-item-icon {
       --setting-nav-icon-background: var(--color-blue);

@@ -3,8 +3,7 @@ Cupertino
 https://developer.apple.com/design/human-interface-guidelines/color
 */
 
-.theme-light.cupertino-light:not(.is-mobile),
-.theme-dark.cupertino-dark:not(.is-mobile) {
+body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
   --background-primary-alt: color-mix(in srgb, var(--background-primary), rgb(var(--mono-rgb-100)) 3%);
   --background-secondary: color-mix(in srgb, var(--background-primary), rgb(var(--mono-rgb-100)) 5%);
   --background-secondary-alt: color-mix(in srgb, var(--background-primary), rgb(var(--mono-rgb-100)) 8%);
@@ -17,12 +16,7 @@ https://developer.apple.com/design/human-interface-guidelines/color
   --text-faint: rgba(var(--mono-rgb-100), 25%);
 }
 
-.theme-light.cupertino-light.color-scheme-accent {
-  --accent-h: 208;
-  --accent-s: 100%;
-  --accent-l: 50%;
-}
-.theme-light.cupertino-light {
+body:is(.mod-macos, .adaptive-mode-off).theme-light {
   --color-red-rgb: 255, 56, 60;
   --color-orange-rgb: 255, 141, 40;
   --color-yellow-rgb: 255, 204, 0;
@@ -32,10 +26,10 @@ https://developer.apple.com/design/human-interface-guidelines/color
   --color-purple-rgb: 203, 48, 224;
   --color-pink-rgb: 255, 45, 85;
 }
-.theme-light.cupertino-light:not(.is-mobile) {
+body:is(.mod-macos, .adaptive-mode-off).theme-light:not(.is-mobile) {
   --background-primary: #fff;
 }
-.theme-light.cupertino-light.is-mobile {
+body:is(.mod-macos, .adaptive-mode-off).theme-light.is-mobile {
   --background-primary: #fff;
   --background-primary-alt: #fff;
   --background-secondary: #f2f2f7;
@@ -49,12 +43,7 @@ https://developer.apple.com/design/human-interface-guidelines/color
   --text-faint: rgba(60, 60, 67, 30%);
 }
 
-.theme-dark.cupertino-dark.color-scheme-accent {
-  --accent-h: 206;
-  --accent-s: 100%;
-  --accent-l: 50%;
-}
-.theme-dark.cupertino-dark {
+body:is(.mod-macos, .adaptive-mode-off).theme-dark {
   --color-red-rgb: 255, 66, 69;
   --color-orange-rgb: 255, 146, 48;
   --color-yellow-rgb: 255, 214, 0;
@@ -64,10 +53,10 @@ https://developer.apple.com/design/human-interface-guidelines/color
   --color-purple-rgb: 107, 52, 242;
   --color-pink-rgb: 255, 55, 95;
 }
-.theme-dark.cupertino-dark:not(.is-mobile) {
+body:is(.mod-macos, .adaptive-mode-off).theme-dark:not(.is-mobile) {
   --background-primary: #1e1e1e;
 }
-.theme-dark.cupertino-dark.is-mobile {
+body:is(.mod-macos, .adaptive-mode-off).theme-dark.is-mobile {
   --background-primary: #000;
   --background-primary-alt: #1c1c1e;
   --background-secondary: #1c1c1e;

@@ -5,9 +5,6 @@
   body.is-phone {
     --metadata-label-width: calc(7.5em * var(--metadata-label-width-multiplier, 1));
   }
-  body:not(.accented-interface) {
-    --collapse-icon-color-collapsed: var(--text-muted);
-  }
 
   body.is-mobile .metadata-content {
     transform: none;
@@ -46,61 +43,13 @@
     margin-top: var(--metadata-gap);
   }
 
-  // Metadata: Style Settings
-  body.metadata-heading-off .metadata-properties-heading {
-    display: none;
-  }
-  body.metadata-heading-off .hover-popover .metadata-container {
-    display: none;
-  }
-
-  body.metadata-add-property-off .metadata-add-button {
-    display: none;
-  }
-  body.metadata-icons-off .metadata-property-icon {
-    display: none;
-  }
-
-  body.metadata-link-nowrap .metadata-link .metadata-link-inner {
-    white-space: normal;
-  }
-
   .markdown-source-view .metadata-container,
   .markdown-preview-view .metadata-container {
     transform: none;
   }
 
-  // Metadata: Block
-  body.metadata-block {
-    --metadata-background: var(--background-primary-alt);
-    --metadata-border-width: var(--border-width);
-    --metadata-padding: 12px 16px;
-
-    &.is-phone .metadata-container {
-      --metadata-padding: 8px 12px;
-    }
-
-    .metadata-container {
-      border-radius: var(--radius-s);
-      transform: translateX(-8px);
-      width: calc(100% + 16px);
-    }
-
-    .metadata-properties-heading.is-collapsed {
-      margin-bottom: 0;
-    }
-
-    .metadata-properties-heading .collapse-indicator {
-      inset-inline-start: -16px;
-    }
-
-    .workspace-split:not(.mod-root) .metadata-container {
-      padding: 8px !important;
-    }
-  }
-
   // Metadata: Cupertino
-  body.metadata-cupertino {
+  body .workspace-split {
     --metadata-gap: 0;
     --metadata-padding: 0;
     --metadata-property-radius: var(--radius-m);

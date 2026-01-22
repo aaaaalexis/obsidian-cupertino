@@ -7,14 +7,9 @@
 
     --embed-block-shadow-hover: none;
   }
-  body:not(.table-width-fit, .table-width-fit-center) table,
-  body:not(.table-width-fit, .table-width-fit-center) .markdown-source-view.mod-cm6 .cm-table-widget .table-wrapper {
+  body:not(.full-width-media-off) table,
+  body:not(.full-width-media-off) .markdown-source-view.mod-cm6 .cm-table-widget .table-wrapper {
     min-width: 100%;
-  }
-  body.table-width-fit-center .el-table,
-  body.table-width-fit-center .markdown-source-view.mod-cm6 .cm-table-widget {
-    display: flex;
-    justify-content: center;
   }
 
   :root table {

@@ -1,4 +1,4 @@
-body.input-material {
+body.is-android:not(.adaptive-mode-off) {
   --clickable-icon-radius: 100vh;
   --input-font-weight: var(--font-medium);
   --input-border-width: 1px;
@@ -181,7 +181,7 @@ body.input-material {
   }
 }
 
-body.input-material.is-mobile {
+body.is-android:not(.adaptive-mode-off).is-mobile {
   --nav-item-radius: var(--clickable-icon-radius);
 
   // Settings
@@ -197,7 +197,7 @@ body.input-material.is-mobile {
   }
 }
 
-body.input-material:not(.is-phone) {
+body.is-android:not(.adaptive-mode-off):not(.is-phone) {
   @keyframes menuInMaterial {
     from {
       opacity: 0;
@@ -240,7 +240,7 @@ body.input-material:not(.is-phone) {
   }
 }
 
-body.input-material.is-phone {
+body.is-android:not(.adaptive-mode-off).is-phone {
   // Editor
   .mobile-navbar,
   &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {

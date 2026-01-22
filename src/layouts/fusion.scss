@@ -1,4 +1,4 @@
-body.layout-fusion:not(.is-mobile) {
+body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
   // Editor panel
   .mod-root {
     z-index: 5;
@@ -22,9 +22,9 @@ body.layout-fusion:not(.is-mobile) {
   }
 }
 
-body.layout-fusion:not(.is-phone) {
+body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
   // Editor panel
-  &:is(.tab-floating, .tab-floating-center) .mod-root {
+  .mod-root {
     .workspace-leaf {
       background-color: transparent;
     }
@@ -41,7 +41,7 @@ body.layout-fusion:not(.is-phone) {
   }
 
   // Editor panel: Tab style
-  &.input-cupertino:is(.tab-floating, .tab-floating-center) {
+  &:is(.mod-macos, .adaptive-mode-off) {
     .mod-root .workspace-tabs:not(.mod-stacked) {
       .workspace-tab-header-container-inner {
         overflow: visible;
@@ -77,8 +77,8 @@ body.layout-fusion:not(.is-phone) {
   }
 }
 
-body.layout-fusion.is-tablet {
-  &:is(.tab-floating, .tab-floating-center) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+body:is(.mod-macos, .adaptive-mode-off).is-tablet {
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
     background-color: var(--raised-background) !important;
     box-shadow: var(--shadow-xs);
   }

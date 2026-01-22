@@ -165,7 +165,7 @@ body:not(.is-mobile) {
     background-color var(--anim-duration-fast);
 }
 
-body:not(.nav-action-center, .nav-action-left) .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover) .nav-buttons-container {
+body:not(.nav-action-center) .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover) .nav-buttons-container {
   gap: 4px !important;
   padding: 0 !important;
   background-color: transparent !important;
@@ -194,18 +194,6 @@ body:not(.nav-action-center, .nav-action-left) .mod-sidedock .workspace-leaf-con
   svg {
     width: 0px;
     height: 0px;
-  }
-}
-body.nav-action-left .mod-sidedock .workspace-leaf-content .nav-header:first-child {
-  align-items: start;
-}
-body.nav-action-indicator .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover) .nav-buttons-container {
-  background-color: var(--background-modifier-hover) !important;
-  border-radius: 100vh;
-  width: 48px;
-
-  .nav-action-button {
-    background-color: transparent;
   }
 }
 

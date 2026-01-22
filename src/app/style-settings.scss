@@ -5,58 +5,10 @@ name: Cupertino
 id: cupertino
 settings:
     -
-        id: windows-off
-        title: ADAPTIVE MOVE
-        description: Turn off Windows specific styling.
+        id: adaptive-mode
+        title: Adaptive mode
         type: class-toggle
-    -
-        id: windows-off
-        title: FOCUS MODE
-        description: Turn off Windows specific styling.
-        type: class-toggle
-    -
-        id: windows-off
-        title: HOVER SIDEDOCK
-        description: Turn off Windows specific styling.
-        type: class-toggle
-    -
-        id: cupertino-desc
-        description: All following settings are for **turning off** Cupertino customizations. You don't need to change anything if you want to keep all default Cupertino optimizations.
-        type: info-text
-        markdown: true
-    -
-        id: windows-header
-        title: Windows
-        type: heading
-        level: 1
-    -
-        id: windows-off
-        title: Disable Windows mode
-        description: Turn off Windows specific styling.
-        type: class-toggle
-    -
-        id: android-header
-        title: Android
-        type: heading
-        level: 1
-    -
-        id: android-off
-        title: Disable Android mode
-        description: Turn off Android specific styling.
-        type: class-toggle
-    -
-        id: cupertino-header
-        title: Workspace
-        type: heading
-        level: 1
-    -
-        id: layout-cupertino
-        title: Disable floating sidebar
-        type: class-toggle
-    -
-        id: layout-macos-tint-off
-        title: Disable sidebar tinting
-        type: class-toggle
+        addCommand: true
     -
         id: editor-header
         title: Editor
@@ -75,7 +27,7 @@ settings:
         title: Disable block width
         type: class-toggle
     -
-        id: center-tabs-off
+        id: tab-floating-center-off
         title: Disable centered tabs
         type: class-toggle
     -
@@ -83,7 +35,7 @@ settings:
         title: Disable clean link style
         type: class-toggle
     -
-        id: media-dimming-off
+        id: media-muted-off
         title: Disable dark mode media dimming
         type: class-toggle
     -
@@ -95,10 +47,6 @@ settings:
         title: Disable full width elements
         type: class-toggle
     -
-        id: metadata-heading-off
-        title: Disable simplified properties
-        type: class-toggle
-    -
         id: mode-switcher-off
         title: Disable quick mode switcher
         type: class-toggle
@@ -108,11 +56,24 @@ settings:
         type: heading
         level: 1
     -
-        id: compact-actions-off
+        id: hover-ribbon
+        title: Hover to reveal ribbon
+        type: class-toggle
+    -
+        id: hover-sidedock
+        title: Hover to reveal sidebars
+        type: class-toggle
+    -
+        id: focus-view
+        title: Focus view
+        type: class-toggle
+        addCommand: true
+    -
+        id: nav-action-center
         title: Disable compact panel actions
         type: class-toggle
     -
-        id: compact-status-bar-off
+        id: status-bar-baseline
         title: Disable compact status bar
         type: class-toggle
     -

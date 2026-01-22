@@ -1,4 +1,4 @@
-body.input-cupertino {
+body:is(.mod-macos, .adaptive-mode-off) {
   --side-padding: 20px;
 
   --p-spacing: 1rem;
@@ -273,7 +273,7 @@ body.input-cupertino {
   }
 
   // Panel actions
-  &:not(.nav-action-center, .nav-action-left) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
+  &:not(.nav-action-center) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
     border-radius: var(--clickable-icon-radius);
     background-color: var(--background-modifier-hover);
     padding: 2px;

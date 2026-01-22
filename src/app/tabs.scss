@@ -8,6 +8,9 @@ body {
 
   --tab-text-align: left;
 }
+body.mod-macos {
+  --header-height: 52px;
+}
 body:not(.is-mobile) {
   --tab-action-width: 32px;
 }
@@ -88,7 +91,7 @@ body:not(.is-phone) .workspace .mod-root {
 }
 
 // Editor panel: Floating
-body:is(.tab-floating, .tab-floating-center):not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
+body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
   --tab-radius-active: var(--tab-radius);
   --tab-curve: 0;
 
@@ -110,7 +113,7 @@ body:is(.tab-floating, .tab-floating-center):not(.is-phone) .workspace .mod-root
     margin-bottom: 0;
   }
 }
-body:is(.tab-floating, .tab-floating-center).is-tablet {
+body.is-tablet {
   --header-height: 60px !important;
 
   .mod-root .workspace-tabs:not(.mod-stacked) {
@@ -124,7 +127,7 @@ body:is(.tab-floating, .tab-floating-center).is-tablet {
 }
 
 // Editor panel: Floating (Center)
-body:not(.is-phone).tab-floating-center .mod-root .workspace-tabs:not(.mod-stacked) {
+body:not(.is-phone):not(.tab-floating-center-off) .mod-root .workspace-tabs:not(.mod-stacked) {
   container-type: inline-size;
 
   @container (min-width: 560px) {
@@ -142,7 +145,7 @@ body:not(.is-phone).tab-floating-center .mod-root .workspace-tabs:not(.mod-stack
   }
 }
 
-body.mod-macos:not(.is-mobile).tab-floating-center {
+body.mod-macos:not(.is-mobile):not(.tab-floating-center-off) {
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
       // Both sidedocks hidden
@@ -165,7 +168,7 @@ body.mod-macos:not(.is-mobile).tab-floating-center {
   }
 }
 
-body:not(.mod-macos):not(.is-mobile).tab-floating-center {
+body:not(.mod-macos):not(.is-mobile):not(.tab-floating-center-off) {
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
       // Both sidedocks hidden
@@ -198,7 +201,7 @@ body:not(.mod-macos):not(.is-mobile).tab-floating-center {
   }
 }
 
-body.is-tablet.tab-floating-center {
+body.is-tablet:not(.tab-floating-center-off) {
   // Both drawer hidden
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {

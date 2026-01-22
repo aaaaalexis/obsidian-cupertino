@@ -1,4 +1,4 @@
-body.input-fluent {
+body.mod-windows:not(.adaptive-mode-off) {
   --radius-s: calc(5px * var(--radius-modifier));
   --radius-m: calc(5px * var(--radius-modifier));
   --radius-l: calc(10px * var(--radius-modifier));
@@ -174,7 +174,7 @@ body.input-fluent {
   }
 }
 
-body.input-fluent:not(.is-mobile) {
+body.mod-windows:not(.adaptive-mode-off):not(.is-mobile) {
   --menu-padding: 5px;
   --prompt-input-height: 64px;
   --tab-outline-color: rgba(var(--mono-rgb-100), 0.05);
@@ -192,7 +192,7 @@ body.input-fluent:not(.is-mobile) {
   }
 
   // Panel actions
-  &:not(.nav-action-center, .nav-action-left) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
+  &:not(.nav-action-center) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
     padding: 0;
 
     .nav-action-button {
@@ -326,7 +326,7 @@ body.input-fluent:not(.is-mobile) {
   }
 }
 
-body.input-fluent.is-phone {
+body.mod-windows:not(.adaptive-mode-off).is-phone {
   .mobile-navbar,
   &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     backdrop-filter: var(--blur-l);

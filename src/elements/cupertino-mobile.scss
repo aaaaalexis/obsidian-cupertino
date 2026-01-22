@@ -1,4 +1,4 @@
-body.input-cupertino.is-mobile {
+body:is(.mod-macos, .adaptive-mode-off).is-mobile {
   // Liquid Glass
   &.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2),
   &.is-phone .prompt-input,
@@ -83,7 +83,7 @@ body.input-cupertino.is-mobile {
   }
 }
 
-body.input-cupertino.is-phone {
+body:is(.mod-macos, .adaptive-mode-off).is-phone {
   // Editor panel
   .mod-root {
     .view-header-left,
