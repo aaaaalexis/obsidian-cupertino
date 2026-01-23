@@ -211,7 +211,7 @@ body.input-cupertino.is-phone {
   }
   .mobile-tab-switcher-menubar {
     background-color: var(--mobile-sidebar-background);
-    padding: 0 var(--navbar-side-padding) var(--navbar-bottom-padding);
+    padding: 0 var(--navbar-side-offset) var(--navbar-bottom-offset);
     border: none;
   }
   .mobile-tab-switcher-menu-button {

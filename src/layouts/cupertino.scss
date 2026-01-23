@@ -93,7 +93,11 @@ body:is(.layout-cupertino, .layout-macos, .layout-fusion).is-mobile {
     background-color: var(--background-modifier-border-hover);
     padding-inline: 8px;
     width: fit-content;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
+  }
+
+  &:not(.is-floating-nav) .workspace-drawer .nav-buttons-container {
+    margin-bottom: 0;
   }
 }
 
