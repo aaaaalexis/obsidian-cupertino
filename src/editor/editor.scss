@@ -403,8 +403,6 @@
   .theme-dark .workspace-leaf-content[data-type="markdown"],
   .theme-dark .workspace-leaf-content[data-type="bases"] {
     img:not([width], .cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]),
-    iframe,
-    video,
     .bases-cards-cover {
       transition: opacity var(--anim-duration-moderate);
 
