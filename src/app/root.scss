@@ -55,9 +55,6 @@ body,
 .theme-light {
   --workspace-background-translucent: rgb(from var(--background-secondary) r g b / var(--translucent-light-opacity));
 
-  --color-base-80: #494949;
-  --color-base-90: #363636;
-
   --color-red-rgb: 254, 112, 112;
   --color-orange-rgb: 242, 154, 100;
   --color-yellow-rgb: 224, 205, 99;
@@ -80,9 +77,6 @@ body,
 }
 .theme-dark {
   --workspace-background-translucent: rgb(from var(--background-secondary) r g b / var(--translucent-dark-opacity));
-
-  --color-base-80: #c0c0c0;
-  --color-base-90: #cdcdcd;
 
   --color-red-rgb: 217, 90, 95;
   --color-orange-rgb: 219, 134, 80;
