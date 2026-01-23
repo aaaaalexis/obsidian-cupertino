@@ -26,7 +26,7 @@ body.status-bar-baseline .status-bar:not(:hover)::before {
   opacity: 0;
 }
 
-body:not(.compact-status-bar-off) .status-bar {
+body:not(.status-bar-baseline) .status-bar {
   --status-bar-border-width: var(--border-width);
   right: unset;
   justify-content: center;
@@ -79,7 +79,7 @@ body:not(.compact-status-bar-off) .status-bar {
   }
 }
 
-body:not(.compact-status-bar-off):not(.is-grabbing) .app-container.no-transition .status-bar {
+body:not(.status-bar-baseline):not(.is-grabbing) .app-container.no-transition .status-bar {
   bottom: 4px;
   border-color: transparent;
   background-color: var(--color-accent);

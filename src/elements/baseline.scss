@@ -10,10 +10,7 @@ body {
 
   --background-modifier-form-field: var(--interactive-normal);
 
-  /* 0 when <1, 1 when >=1 */
-  --radius-modifier-check: clamp(0, (var(--radius-modifier) - 1) * 10000 + 1, 1);
-
-  --button-radius: calc((8px * var(--radius-modifier)) * (1 - var(--radius-modifier-check)) + 100vh * var(--radius-modifier-check));
+  --button-radius: calc(8px * var(--radius-modifier));
 }
 
 .theme-light {

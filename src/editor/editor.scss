@@ -43,7 +43,7 @@
     --file-header-border: none;
   }
 
-  body:not(.font-variant-off) .workspace-leaf-content .view-content {
+  body:is(.mod-macos, .adaptive-mode-off):not(.font-variant-off) .workspace-leaf-content .view-content {
     font-feature-settings:
       "ss01" 1,
       "ss07" 1,

@@ -314,4 +314,8 @@ body:is(.mod-macos, .adaptive-mode-off) {
     color: var(--text-on-accent);
     box-shadow: var(--shadow-xs);
   }
+
+  &:not(.tab-icon) .mod-sidedock .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner {
+    gap: calc(8px * var(--density-modifier));
+  }
 }

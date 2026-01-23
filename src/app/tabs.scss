@@ -327,6 +327,21 @@ body.is-tablet {
   }
 }
 
+// Side panels: Compact tabs
+body:not(.tab-icon) .mod-sidedock .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
+  height: calc-size(auto, size);
+
+  .workspace-tab-header {
+    background-color: var(--background-modifier-hover);
+    height: 4px;
+  }
+
+  .workspace-tab-header-inner-icon,
+  .workspace-tab-header-inner-title {
+    opacity: 0;
+  }
+}
+
 // Side panels: Platforms
 body:not(.mod-macos).is-hidden-frameless .mod-sidedock .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
   padding-right: var(--frame-right-space);

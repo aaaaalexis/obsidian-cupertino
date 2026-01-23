@@ -4,20 +4,70 @@
 name: Cupertino
 id: cupertino
 settings:
+    - 
+        id: cupertino-desc
+        description: "Cupertino offers simplified, native-style UI. For granular controls, try [Baseline](obsidian://show-theme?name=Baseline)."
+        type: info-text
+        markdown: true
     -
-        id: adaptive-mode
-        title: Adaptive mode
+        id: adaptive-mode-off
+        title: Disable adaptive mode
+        description: Prevent automatic styling based on your operating system
+        type: class-toggle
+    -
+        id: active-line-off
+        title: Disable active line highlight
+        type: class-toggle
+    -
+        id: tab-floating-center-off
+        title: Disable centered tabs
+        type: class-toggle
+    -
+        id: desktop-header
+        title: Desktop
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: hover-ribbon
+        title: Hover ribbon
+        description: Reveal ribbon by hovering over left window edge
         type: class-toggle
         addCommand: true
     -
-        id: editor-header
+        id: hover-sidedock
+        title: Hover sidebars
+        description: Reveal collapsed sidebars by hovering over window edges
+        type: class-toggle
+        addCommand: true
+    -
+        id: focus-view
+        title: Focus view
+        description: Hide tabs and title bar when sidebars are collapsed
+        type: class-toggle
+        addCommand: true
+    -
+        id: nav-action-center
+        title: Disable compact panel actions
+        type: class-toggle
+    -
+        id: tab-icon
+        title: Disable compact sidebar tabs
+        type: class-toggle
+    -
+        id: status-bar-baseline
+        title: Disable compact status bar
+        type: class-toggle
+    -
+        id: zoom-off
+        title: Disable media zoom
+        type: class-toggle
+    -
+        id: editor
         title: Editor
         type: heading
         level: 1
-    -
-        id: active-line-off
-        title: Disable active editing line highlight
-        type: class-toggle
+        collapsed: true
     -
         id: banner-off
         title: Disable banner
@@ -25,14 +75,6 @@ settings:
     -
         id: block-width-off
         title: Disable block width
-        type: class-toggle
-    -
-        id: tab-floating-center-off
-        title: Disable centered tabs
-        type: class-toggle
-    -
-        id: clean-link-off
-        title: Disable clean link style
         type: class-toggle
     -
         id: media-muted-off
@@ -44,60 +86,33 @@ settings:
         type: class-toggle
     -
         id: full-width-media-off
-        title: Disable full width elements
+        title: Disable full-width elements
         type: class-toggle
     -
         id: mode-switcher-off
         title: Disable quick mode switcher
         type: class-toggle
     -
-        id: desktop-header
-        title: Desktop
+        id: accessibility
+        title: Accessibility
         type: heading
         level: 1
+        collapsed: true
     -
-        id: hover-ribbon
-        title: Hover to reveal ribbon
+        id: reduce-contrast-change
+        title: Reduce contrast change
+        description: Minimize contrast shifts and color flashing when window loses focus
         type: class-toggle
     -
-        id: hover-sidedock
-        title: Hover to reveal sidebars
+        id: reduce-motion
+        title: Reduce motion
+        description: Minimize animation effects throughout the interface
         type: class-toggle
     -
-        id: focus-view
-        title: Focus view
+        id: clean-link-off
+        title: Underlined links
+        description: Always underline links for improved visibility
         type: class-toggle
-        addCommand: true
-    -
-        id: nav-action-center
-        title: Disable compact panel actions
-        type: class-toggle
-    -
-        id: status-bar-baseline
-        title: Disable compact status bar
-        type: class-toggle
-    -
-        id: zoom-off
-        title: Disable media zoom
-        type: class-toggle
-*/
-
-/*!
-/* @settings
-
-name: Cupertino Accessibility
-id: cupertino-accessibility
-settings:
-	-
-		id: reduce-contrast-change
-		title: Reduce contrast change
-		description: Minimizes contrast changes and color flashing when Obsidian is unfocused
-		type: class-toggle
-	-
-		id: reduce-motion
-		title: Reduce motion
-		description: Minimizes animation effects across the interface
-		type: class-toggle
 */
 
 .view-content .style-settings-container .style-settings-container .setting-item {
@@ -139,112 +154,4 @@ settings:
 .style-settings-container .setting-item:nth-last-child(1 of .setting-item:not(.setting-item-heading)) {
   border-bottom-right-radius: var(--setting-items-radius);
   border-bottom-left-radius: var(--setting-items-radius);
-}
-.style-settings-container .themed-color-wrapper {
-  display: flex;
-
-  > div {
-    gap: 8px;
-    margin-top: 0 !important;
-    background-color: transparent;
-    color: var(--color-base-100);
-
-    .pickr .pcr-button {
-      box-shadow: none;
-    }
-    .pickr .pcr-button::before {
-      border-radius: var(--button-radius);
-      background: var(--color-base-50);
-    }
-    .pickr .pcr-button::after {
-      border-radius: var(--button-radius);
-    }
-
-    .pickr-reset > button {
-      margin: 0;
-      background-color: var(--color-base-10);
-      color: var(--color-base-100);
-    }
-  }
-}
-.style-settings-container .pcr-app.visible {
-  box-shadow: var(--shadow-l);
-  border-radius: var(--modal-radius);
-  background-color: var(--modal-background);
-  padding: 8px;
-
-  .pcr-selection .pcr-palette,
-  .pcr-selection .pcr-palette::before {
-    border-radius: calc(var(--modal-radius) - 8px);
-  }
-  .pcr-selection .pcr-color-preview {
-    margin: 0;
-  }
-
-  .pcr-swatches {
-    margin: 8px 0;
-    padding: 0;
-
-    > button {
-      margin: 0;
-      box-shadow: none;
-      border-radius: 100vh;
-    }
-    > button.pcr-active {
-      box-shadow: 0 0 0 1px white;
-      border-radius: 100vh;
-    }
-  }
-
-  .pcr-interaction {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 8px;
-    margin: 0;
-    padding: 0;
-
-    input.pcr-type[value="HEX"],
-    input.pcr-type[value="RGB"],
-    input.pcr-type[value="HSL"],
-    input.pcr-type[value="HEXA"],
-    input.pcr-type[value="RGBA"],
-    input.pcr-type[value="HSLA"] {
-      grid-column: span 2;
-    }
-    input.pcr-save,
-    input.pcr-cancel {
-      grid-column: span 3;
-    }
-
-    input:focus {
-      box-shadow: none;
-    }
-    input.pcr-result {
-      grid-column: span 6;
-      margin: 0;
-      border-radius: var(--input-radius);
-      background: var(--background-modifier-form-field);
-      padding: var(--input-padding);
-      min-width: unset;
-      color: var(--text-normal);
-      caret-color: var(--text-normal);
-      font-size: var(--font-ui-small);
-    }
-    input[type="button"] {
-      margin: 0;
-      box-shadow: var(--input-shadow);
-      border-radius: var(--button-radius);
-      background-color: var(--interactive-normal);
-      padding: 8px 12px;
-      color: var(--text-normal);
-      font-weight: var(--input-font-weight);
-      font-size: var(--font-ui-small);
-      font-family: var(--font-interface);
-      letter-spacing: normal;
-    }
-    input.pcr-save {
-      background-color: var(--interactive-accent);
-      color: var(--text-on-accent);
-    }
-  }
 }

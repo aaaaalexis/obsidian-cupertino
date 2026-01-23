@@ -203,7 +203,7 @@ body.is-phone.hider-sidebar-buttons {
     }
   }
 
-  &:not(.compact-status-bar-off) .status-bar {
+  &:not(.status-bar-baseline) .status-bar {
     margin: 4px 0;
 
     &:hover {
