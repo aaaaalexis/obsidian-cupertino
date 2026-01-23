@@ -51,21 +51,13 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
   }
 
   // Ribbon
-  .workspace-ribbon.mod-left.is-collapsed {
+  &:not(.hover-ribbon) .workspace-ribbon.mod-left.is-collapsed {
     border-right: var(--divider-width) solid var(--divider-color);
   }
-
-  &.mod-macos.is-hidden-frameless {
-    .workspace-ribbon.mod-left.is-collapsed {
-      padding-top: 8px;
-    }
-
-    &.hover-ribbon .workspace-ribbon.mod-left:not(.is-collapsed),
-    .workspace-ribbon.mod-left.is-collapsed {
-      margin-top: calc(var(--header-height) - 1px);
-      padding-top: 8px;
-      border-top: var(--tab-outline-width) solid var(--tab-outline-color);
-    }
+  &.mod-macos.is-hidden-frameless:not(.hover-ribbon) .workspace-ribbon.mod-left.is-collapsed {
+    margin-top: calc(var(--header-height) - 1px);
+    padding-top: 8px;
+    border-top: var(--tab-outline-width) solid var(--tab-outline-color);
   }
 
   &:not(.mod-macos):not(.tab-top-left-stacked).css-settings-manager .workspace-ribbon.mod-left,

@@ -72,13 +72,6 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     border-color: var(--divider-color);
   }
 
-  // Ribbon
-  &.mod-macos.is-hidden-frameless:not(.tab-floating, .tab-floating-center) .workspace-ribbon.mod-left.is-collapsed {
-    margin-top: calc(var(--header-height) - 1px);
-    padding-top: 8px;
-    border-top: var(--tab-outline-width) solid var(--tab-outline-color);
-  }
-
   // Settings
   .modal.mod-settings .vertical-tab-header {
     margin: 8px 0 8px 8px;
@@ -91,6 +84,13 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
   &.hide-vault-switcher-off .workspace-sidedock-vault-profile {
     background-color: inherit;
   }
+}
+
+// Ribbon
+body:is(.layout-macos, .layout-fusion:not(.tab-floating, .tab-floating-center)):not(.is-mobile).mod-macos.is-hidden-frameless .workspace-ribbon.mod-left.is-collapsed {
+  margin-top: calc(var(--header-height) - 1px);
+  padding-top: 8px;
+  border-top: var(--tab-outline-width) solid var(--tab-outline-color);
 }
 
 body:is(.layout-macos, .layout-fusion).is-tablet {

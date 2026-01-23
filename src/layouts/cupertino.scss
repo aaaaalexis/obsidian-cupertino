@@ -49,6 +49,11 @@ body:is(.layout-cupertino, .layout-macos, .layout-fusion):not(.is-mobile) {
     }
 
     // macOS fix
+    &.mod-macos.is-hidden-frameless:not(.tab-floating, .tab-floating-center) .workspace-ribbon.mod-left.is-collapsed {
+      padding-top: 8px;
+      padding-left: 16px;
+    }
+
     &:is(.tab-top-left-stacked, :not(.css-settings-manager)).mod-macos .mod-sidedock.mod-left-split.is-sidedock-collapsed .mod-top-left-space .workspace-tab-header-container {
       padding-top: calc(var(--header-height) - 8px);
     }
