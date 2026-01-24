@@ -21,15 +21,6 @@ body.is-tablet {
 }
 
 // All panels
-body:not(.is-mobile) {
-  .workspace-ribbon svg.svg-icon,
-  .workspace-tab-header-container svg.svg-icon,
-  .mod-root .view-header svg.svg-icon,
-  .mod-sidedock .nav-action-button svg.svg-icon,
-  .modal .modal-close-button svg.svg-icon {
-    margin: -1px;
-  }
-}
 body:not(.is-phone) .workspace-tab-header-container {
   transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
   background-color: transparent;
@@ -426,7 +417,6 @@ body.tab-right-text:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-t
 // Side panels: Stacked tabs
 body:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-left-split .mod-top-left-space {
   --sidebar-tab-text-display: inline-block;
-  --tab-font-weight: var(--font-medium);
 
   .workspace-tab-header-container {
     height: fit-content;
@@ -436,7 +426,7 @@ body:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-le
   .workspace-tab-header-container-inner {
     flex-direction: column;
     width: -webkit-fill-available;
-    gap: calc(4px * var(--density-modifier));
+    gap: 0;
     animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
     padding: 0 16px;
   }

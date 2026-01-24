@@ -100,6 +100,12 @@ body,
 }
 
 body:not(.is-mobile) {
+  --icon-xs: 14px;
+  --icon-s: 16px;
+  --icon-m: 16px;
+  --icon-l: 16px;
+  --icon-xl: 32px;
+
   .app-container {
     transition: var(--anim-duration-moderate);
     align-items: center;
