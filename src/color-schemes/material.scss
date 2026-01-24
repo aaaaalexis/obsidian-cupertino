@@ -1,0 +1,34 @@
+/*
+Material Design
+https://m3.material.io/styles/color/system/overview
+*/
+
+body.theme-light.material-light {
+  --color-base-00: oklch(from var(--color-accent) 1 calc(c * 0.125) h);
+  --color-base-05: oklch(from var(--color-accent) 0.99 calc(c * 0.125) h);
+  --color-base-10: oklch(from var(--color-accent) 0.985 calc(c * 0.125) h);
+  --color-base-20: oklch(from var(--color-accent) 0.97 calc(c * 0.125) h);
+  --color-base-25: oklch(from var(--color-accent) 0.92 calc(c * 0.125) h);
+  --color-base-30: oklch(from var(--color-accent) 0.9 calc(c * 0.125) h);
+  --color-base-35: oklch(from var(--color-accent) 0.85 calc(c * 0.125) h);
+  --color-base-40: oklch(from var(--color-accent) 0.78 calc(c * 0.125) h);
+  --color-base-50: oklch(from var(--color-accent) 0.7 calc(c * 0.125) h);
+  --color-base-60: oklch(from var(--color-accent) 0.52 calc(c * 0.125) h);
+  --color-base-70: oklch(from var(--color-accent) 0.42 calc(c * 0.125) h);
+  --color-base-100: oklch(from var(--color-accent) 0.2 calc(c * 0.125) h);
+}
+
+body.theme-dark.material-dark {
+  --color-base-00: oklch(from var(--color-accent) 0.2 calc(c * 0.125) h);
+  --color-base-05: oklch(from var(--color-accent) 0.21 calc(c * 0.125) h);
+  --color-base-10: oklch(from var(--color-accent) 0.22 calc(c * 0.125) h);
+  --color-base-20: oklch(from var(--color-accent) 0.23 calc(c * 0.125) h);
+  --color-base-25: oklch(from var(--color-accent) 0.25 calc(c * 0.125) h);
+  --color-base-30: oklch(from var(--color-accent) 0.32 calc(c * 0.125) h);
+  --color-base-35: oklch(from var(--color-accent) 0.38 calc(c * 0.125) h);
+  --color-base-40: oklch(from var(--color-accent) 0.44 calc(c * 0.125) h);
+  --color-base-50: oklch(from var(--color-accent) 0.5 calc(c * 0.125) h);
+  --color-base-60: oklch(from var(--color-accent) 0.67 calc(c * 0.125) h);
+  --color-base-70: oklch(from var(--color-accent) 0.76 calc(c * 0.125) h);
+  --color-base-100: oklch(from var(--color-accent) 0.9 calc(c * 0.125) h);
+}

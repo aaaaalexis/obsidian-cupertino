@@ -1,4 +1,7 @@
 body.is-android:not(.adaptive-mode-off) {
+  --font-interface-theme: "Google Sans Flex", "Google Sans";
+  --font-text-theme: "Google Sans Flex", "Google Sans";
+
   --clickable-icon-radius: 100vh;
   --input-font-weight: var(--font-medium);
   --input-border-width: 1px;
@@ -22,8 +25,8 @@ body.is-android:not(.adaptive-mode-off) {
   --background-modifier-border: var(--color-base-30);
   --interactive-hover: var(--color-base-25);
   --interactive-normal: var(--background-primary);
-  --dropdown-background: var(--color-base-30);
-  --background-modifier-form-field: var(--color-base-30);
+  --dropdown-background: var(--background-modifier-hover);
+  --background-modifier-form-field: var(--background-modifier-hover);
 
   --menu-radius: var(--radius-l);
 
@@ -111,7 +114,7 @@ body.is-android:not(.adaptive-mode-off) {
 
   // Settings
   --setting-items-radius: var(--radius-l);
-  --setting-items-background: var(--background-primary);
+  --setting-items-background: var(--background-primary) !important;
 
   .modal.mod-sidebar-layout {
     background-color: var(--background-secondary);

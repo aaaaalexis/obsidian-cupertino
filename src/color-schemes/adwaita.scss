@@ -35,8 +35,6 @@ body.mod-linux:not(.is-android):not(.adaptive-mode-off).theme-light {
   --color-base-50: #9a9996;
   --color-base-60: #77767b;
   --color-base-70: #5e5c64;
-  --color-base-80: #3d3846;
-  --color-base-90: #241f31;
   --color-base-100: #000000;
 
   --mono-rgb-adwaita: 0, 0, 6;
@@ -70,20 +68,18 @@ body.mod-linux:not(.is-android):not(.adaptive-mode-off).theme-dark {
   --color-purple-rgb: 145, 65, 172;
   --color-pink-rgb: 213, 97, 170;
 
-  --color-base-100: #ffffff;
-  --color-base-90: #fbfafa;
-  --color-base-80: #f6f5f4;
-  --color-base-70: #e6e5e3;
-  --color-base-60: #c0bfbc;
-  --color-base-50: #9a9996;
-  --color-base-40: #77767b;
-  --color-base-35: #6b6970;
-  --color-base-30: #5e5c64;
-  --color-base-25: #4e4a55;
-  --color-base-20: #3d3846;
-  --color-base-10: #241f31;
-  --color-base-05: #121019;
   --color-base-00: #000000;
+  --color-base-05: #121019;
+  --color-base-10: #241f31;
+  --color-base-20: #3d3846;
+  --color-base-25: #4e4a55;
+  --color-base-30: #5e5c64;
+  --color-base-35: #6b6970;
+  --color-base-40: #77767b;
+  --color-base-50: #9a9996;
+  --color-base-60: #c0bfbc;
+  --color-base-70: #e6e5e3;
+  --color-base-100: #ffffff;
 
   --mono-rgb-adwaita: 255, 255, 255;
 

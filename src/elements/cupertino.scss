@@ -153,6 +153,10 @@ body:is(.mod-macos, .adaptive-mode-off) {
     --toggle-thumb-height: 24px;
     --toggle-thumb-width: 37px;
     --toggle-width: 68px;
+
+    .checkbox-container {
+      --interactive-accent: var(--color-green);
+    }
   }
 
   .checkbox-container {

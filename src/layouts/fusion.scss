@@ -83,6 +83,10 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
 }
 
 body:is(.mod-macos, .adaptive-mode-off).is-tablet {
+  .workspace-drawer.mod-left.is-pinned {
+    margin-right: 8px;
+  }
+  
   .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
     background-color: var(--raised-background) !important;
     box-shadow: var(--shadow-tab);

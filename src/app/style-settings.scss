@@ -12,7 +12,7 @@ settings:
     -
         id: adaptive-mode-off
         title: Disable adaptive mode
-        description: Prevent automatic styling based on your operating system
+        description: Prevent automatic styling based on operating system.
         type: class-toggle
     -
         id: active-line-off
@@ -31,19 +31,19 @@ settings:
     -
         id: hover-ribbon
         title: Hover ribbon
-        description: Reveal ribbon by hovering over left window edge
+        description: Reveal ribbon by hovering over left window edge.
         type: class-toggle
         addCommand: true
     -
         id: hover-sidedock
         title: Hover sidebars
-        description: Reveal collapsed sidebars by hovering over window edges
+        description: Reveal collapsed sidebars by hovering over window edges.
         type: class-toggle
         addCommand: true
     -
         id: focus-view
         title: Focus view
-        description: Hide tabs and title bar when sidebars are collapsed
+        description: Hide tabs and table title bar when both sidebars are collapsed.
         type: class-toggle
         addCommand: true
     -
@@ -101,17 +101,17 @@ settings:
     -
         id: reduce-contrast-change
         title: Reduce contrast change
-        description: Minimize contrast shifts and color flashing when window loses focus
+        description: Minimize contrast shifts when window loses focus.
         type: class-toggle
     -
         id: reduce-motion
         title: Reduce motion
-        description: Minimize animation effects throughout the interface
+        description: Minimize animation effects throughout the app.
         type: class-toggle
     -
         id: clean-link-off
         title: Underlined links
-        description: Always underline links for improved visibility
+        description: Always underline links for improved visibility.
         type: class-toggle
 */
 
@@ -146,6 +146,12 @@ settings:
 .style-settings-container .setting-item {
   margin-bottom: 0;
   border-radius: 0;
+}
+.style-settings-container .setting-item-description > div:last-child {
+  display: none;
+}
+.style-settings-container .setting-item:not(.style-settings-heading) > .setting-item-control {
+  min-height: var(--input-height);
 }
 .style-settings-container .setting-item:nth-child(1 of .setting-item:not(.setting-item-heading)) {
   border-top-right-radius: var(--setting-items-radius);

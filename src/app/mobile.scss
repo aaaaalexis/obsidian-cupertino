@@ -43,8 +43,7 @@ body.is-mobile {
   --navbar-width: 100%;
   --navbar-max-width: unset;
 
-  --navbar-bottom-padding: max(var(--safe-area-inset-bottom), 28px);
-  --navbar-side-padding: var(--safe-area-inset-side);
+  --navbar-side-offset: var(--safe-area-inset-side);
   --safe-area-inset-side: 16px;
 
   --mobile-left-sidebar-width: 360px;
@@ -88,8 +87,8 @@ body.is-mobile {
 
   // iOS specific
   &.mod-macos {
-    --navbar-bottom-padding: 28px;
-    --navbar-side-padding: var(--navbar-bottom-padding);
+    --navbar-bottom-offset: 28px;
+    --navbar-side-offset: var(--navbar-bottom-offset);
 
     --font-ui-smaller: calc(var(--font-text-size) * 0.75);
     --font-ui-small: calc(var(--font-text-size) * 0.9375);
@@ -110,7 +109,7 @@ body.is-mobile {
     }
 
     .workspace-leaf-content:after {
-      content: none;
+      content: none !important;
     }
 
     .workspace-drawer-inner {
@@ -257,8 +256,8 @@ body.is-phone {
     margin: 0 0 var(--touch-size-l);
   }
   .workspace-drawer .workspace-leaf-content .nav-header ~ div:last-child {
-    // cubic-bezier(0.35, 0, 1, 0.5)
-    mask: linear-gradient(to top, hsla(0, 0%, 0%, 0) 0px, hsla(0, 0%, 0%, 0.007) 5px, hsla(0, 0%, 0%, 0.025) 10px, hsla(0, 0%, 0%, 0.056) 15px, hsla(0, 0%, 0%, 0.097) 21px, hsla(0, 0%, 0%, 0.148) 27px, hsla(0, 0%, 0%, 0.208) 32px, hsla(0, 0%, 0%, 0.276) 38px, hsla(0, 0%, 0%, 0.351) 43px, hsla(0, 0%, 0%, 0.432) 48px, hsla(0, 0%, 0%, 0.519) 52px, hsla(0, 0%, 0%, 0.609) 56px, hsla(0, 0%, 0%, 0.704) 60px, hsla(0, 0%, 0%, 0.801) 62px, hsla(0, 0%, 0%, 0.9) 63px, hsl(0, 0%, 0%) 64px);
+    // cubic-bezier(0.4, 0, 0.6, 1)
+    mask: linear-gradient(to top, hsla(0, 0%, 0%, 0) 0px, hsla(0, 0%, 0%, 0.013) 5px, hsla(0, 0%, 0%, 0.049) 10px, hsla(0, 0%, 0%, 0.104) 14px, hsla(0, 0%, 0%, 0.175) 18px, hsla(0, 0%, 0%, 0.259) 22px, hsla(0, 0%, 0%, 0.352) 26px, hsla(0, 0%, 0%, 0.45) 30px, hsla(0, 0%, 0%, 0.55) 34px, hsla(0, 0%, 0%, 0.648) 38px, hsla(0, 0%, 0%, 0.741) 42px, hsla(0, 0%, 0%, 0.825) 46px, hsla(0, 0%, 0%, 0.896) 50px, hsla(0, 0%, 0%, 0.951) 54px, hsla(0, 0%, 0%, 0.987) 59px, hsl(0, 0%, 0%) 64px);
   }
 
   // Editor panel
@@ -270,7 +269,7 @@ body.is-phone {
       transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
       will-change: top;
       z-index: 3;
-      padding: 0 var(--safe-area-inset-side);
+      padding-inline: var(--safe-area-inset-side);
     }
     .view-actions {
       padding: 0;
@@ -282,7 +281,7 @@ body.is-phone {
     }
   }
   // Hide navigation on scroll
-  &.is-hidden-nav {
+  &.auto-full-screen.is-hidden-nav {
     .mod-root .view-header {
       transform: none;
       top: -32px;
@@ -290,7 +289,7 @@ body.is-phone {
     .mobile-navbar,
     &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-header .view-actions button:nth-last-child(2) {
       transform: none;
-      bottom: calc(var(--navbar-bottom-padding) - 32px);
+      bottom: calc(-1 * var(--navbar-bottom-offset));
     }
     .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::before,
     .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::after {
@@ -299,7 +298,7 @@ body.is-phone {
   }
 
   // Edge blur
-  &:not(.mod-toolbar-open) .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content {
+  &.is-floating-nav:not(.mod-toolbar-open) .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content {
     &::before,
     &::after {
       position: absolute;
@@ -317,7 +316,7 @@ body.is-phone {
     }
     &::after {
       bottom: 0;
-      mask: linear-gradient(to top, black var(--navbar-bottom-padding), transparent);
+      mask: linear-gradient(to top, black var(--navbar-bottom-offset), transparent);
       height: var(--view-bottom-spacing);
     }
   }
@@ -334,8 +333,8 @@ body.is-phone {
   &:not(.mode-switcher-off):not(.mod-toolbar-open) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     position: fixed;
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
-    right: var(--navbar-side-padding);
-    bottom: var(--navbar-bottom-padding);
+    right: var(--navbar-side-offset);
+    bottom: var(--navbar-bottom-offset);
     margin-bottom: 0;
     border-radius: 100%;
     width: var(--touch-size-l);
@@ -343,20 +342,24 @@ body.is-phone {
     background-color: var(--background-secondary);
     border: var(--border-width) solid var(--background-modifier-border);
   }
+  &:not(.is-floating-nav):not(.mode-switcher-off):not(.mod-toolbar-open) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+    right: 16px;
+    bottom: calc(var(--navbar-height) + 16px);
+  }
   & > .app-container > .horizontal-main-container:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content:not([data-type="markdown"])) .view-actions button:nth-last-child(2) {
     opacity: 0;
     pointer-events: none;
   }
 
   // Navigation bar
-  &.mode-switcher-off .mobile-navbar,
-  & > .app-container > .horizontal-main-container:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content:not([data-type="markdown"])) ~ .mobile-navbar {
-    max-width: calc(100% - var(--navbar-side-padding) * 2);
+  &.is-floating-nav.mode-switcher-off .mobile-navbar,
+  &.is-floating-nav > .app-container > .horizontal-main-container:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content:not([data-type="markdown"])) ~ .mobile-navbar {
+    max-width: calc(100% - var(--navbar-side-offset) * 2);
   }
 
   .mobile-navbar {
-    max-width: calc(100% - 8px - var(--touch-size-l) - var(--navbar-side-padding) * 2);
-    inset: auto var(--navbar-side-padding) var(--navbar-bottom-padding);
+    max-width: calc(100% - 8px - var(--touch-size-l) - var(--navbar-side-offset) * 2);
+    inset: auto var(--navbar-side-offset) var(--navbar-bottom-offset);
     overflow: hidden;
     padding: 4px;
     margin: 0;
@@ -379,6 +382,16 @@ body.is-phone {
   }
   .mobile-navbar-tabs-action {
     font-family: "Inter";
+  }
+
+  &:not(.is-floating-nav) .mobile-navbar {
+    margin: 0 auto;
+    inset: auto 0 0;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: var(--background-primary) !important;
+    padding: 0 8px var(--navbar-bottom-offset);
+    max-width: var(--navbar-max-width);
   }
 
   // Toolbar
@@ -451,13 +464,17 @@ body.is-tablet {
     border-width: 0;
   }
 
+  &:not(.is-floating-nav) .workspace-drawer .workspace-leaf-content .nav-header ~ div:last-child {
+    mask: linear-gradient(to bottom, transparent, black 16px, black calc(100% - 16px), transparent);
+  }
+
   .workspace-drawer {
     .workspace-drawer-ribbon .side-dock-actions {
       padding-block: 12px;
     }
 
     .workspace-leaf-content .nav-header ~ div:last-child {
-      mask: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0px, hsla(0, 0%, 0%, 0.007) 5px, hsla(0, 0%, 0%, 0.025) 10px, hsla(0, 0%, 0%, 0.056) 15px, hsla(0, 0%, 0%, 0.097) 21px, hsla(0, 0%, 0%, 0.148) 27px, hsla(0, 0%, 0%, 0.208) 32px, hsla(0, 0%, 0%, 0.276) 38px, hsla(0, 0%, 0%, 0.351) 43px, hsla(0, 0%, 0%, 0.432) 48px, hsla(0, 0%, 0%, 0.519) 52px, hsla(0, 0%, 0%, 0.609) 56px, hsla(0, 0%, 0%, 0.704) 60px, hsla(0, 0%, 0%, 0.801) 62px, hsla(0, 0%, 0%, 0.9) 63px, hsl(0, 0%, 0%) 64px, black calc(100% - 64px), transparent);
+      mask: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0px, hsla(0, 0%, 0%, 0.013) 5px, hsla(0, 0%, 0%, 0.049) 10px, hsla(0, 0%, 0%, 0.104) 14px, hsla(0, 0%, 0%, 0.175) 18px, hsla(0, 0%, 0%, 0.259) 22px, hsla(0, 0%, 0%, 0.352) 26px, hsla(0, 0%, 0%, 0.45) 30px, hsla(0, 0%, 0%, 0.55) 34px, hsla(0, 0%, 0%, 0.648) 38px, hsla(0, 0%, 0%, 0.741) 42px, hsla(0, 0%, 0%, 0.825) 46px, hsla(0, 0%, 0%, 0.896) 50px, hsla(0, 0%, 0%, 0.951) 54px, hsla(0, 0%, 0%, 0.987) 59px, hsl(0, 0%, 0%) 64px, black calc(100% - 64px), transparent);
     }
 
     .workspace-drawer-tab-options-list {
@@ -500,7 +517,7 @@ body.is-tablet {
     }
   }
 
-  .workspace-drawer-header-icon {
+  .workspace-drawer-header-icon.mod-raised {
     backdrop-filter: none;
     box-shadow: none;
     background-color: transparent;

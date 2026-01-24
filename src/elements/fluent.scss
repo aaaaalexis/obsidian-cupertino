@@ -1,4 +1,7 @@
 body.mod-windows:not(.adaptive-mode-off) {
+  --font-interface-theme: "Segoe UI Variable Display", "Segoe UI Variable";
+  --font-text-theme: "Segoe UI Variable Text", "Segoe UI Variable";
+
   --radius-s: calc(5px * var(--radius-modifier));
   --radius-m: calc(5px * var(--radius-modifier));
   --radius-l: calc(10px * var(--radius-modifier));

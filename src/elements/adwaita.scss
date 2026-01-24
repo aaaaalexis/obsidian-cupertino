@@ -1,4 +1,7 @@
 body.mod-linux:not(.is-android):not(.adaptive-mode-off) {
+  --font-interface-theme: "Adwaita Sans", "Adwaita Sans Text";
+  --font-text-theme: "Adwaita Sans", "Adwaita Sans Text";
+
   --shadow-s: 0 0 0 1px rgba(0, 0, 6, 3%), 0 1px 3px 1px rgba(0, 0, 6, 7%), 0 2px 6px 2px rgba(0, 0, 6, 3%);
   --shadow-l: 0 0 14px 5px rgba(0, 0, 0, 15%), 0 0 5px 2px rgba(0, 0, 0, 10%), 0 0 0 1px rgba(0, 0, 0, 5%);
 

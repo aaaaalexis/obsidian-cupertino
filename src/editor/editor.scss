@@ -1,6 +1,5 @@
 @media screen, print {
   body {
-    --text-normal-editor: var(--color-base-90);
     --inline-title-color: inherit;
 
     --inline-title-margin-bottom: calc(0.5em * var(--readable-spacing-modifier, 1));
@@ -256,8 +255,6 @@
   .theme-dark .workspace-leaf-content[data-type="markdown"],
   .theme-dark .workspace-leaf-content[data-type="bases"] {
     img:not([width], .cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]),
-    iframe,
-    video,
     .bases-cards-cover {
       transition: opacity var(--anim-duration-moderate);
 
