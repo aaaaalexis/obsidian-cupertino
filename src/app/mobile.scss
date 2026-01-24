@@ -163,7 +163,7 @@ body.is-mobile {
       padding: 0 var(--safe-area-inset-side);
     }
     .nav-buttons-container::after {
-      content: none;
+      content: none !important;
     }
     .nav-action-button {
       background-color: transparent;
