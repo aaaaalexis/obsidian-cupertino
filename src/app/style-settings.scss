@@ -12,7 +12,7 @@ settings:
 		collapsed: false
 	-
 		id: migrate
-		title: Migrate from other themes
+		title: Migrate configuration
 		type: info-text
 		level: 1
 		markdown: true
@@ -26,7 +26,7 @@ settings:
 		description: Discover and share Style Settings presets in **Baseline Marketplace**. ↗[](https://aaaaalexis.github.io/obsidian-baseline/marketplace/)
 	-
 		id: missing-font
-		title: Extended language support
+		title: Extended heading font
 		title.zh-TW: 擴充語言支援
 		title.zh: 扩展语言支持
 		title.jp: 拡張言語サポート
@@ -43,7 +43,6 @@ settings:
 		id: hide-baseline-info
 		title: Do not show again
 		type: class-toggle
-		default: false
 	-
 		id: colors
 		title: Colors
@@ -53,18 +52,16 @@ settings:
 	-
 		id: accented-interface
 		title: Interface accent
-		description: Use accent color for active state and buttons
+		description: Apply accent color throughout the app.
 		type: class-toggle
-		default: false
 	-
 		id: color-scheme-accent
 		title: Color scheme accent
-		description: Override accent color with color scheme predefined color 
+		description: Use color scheme preset accent color.
 		type: class-toggle
-		default: false
 	-
 		id: color-scheme-light
-		title: Light mode color scheme
+		title: Light color scheme
 		type: class-select
 		allowEmpty: false
 		default: default-light
@@ -137,7 +134,7 @@ settings:
 				value: tiniri-light
 	-
 		id: background-contrast-light
-		title: Light mode background contrast
+		title: Light contrast
 		type: class-select
 		allowEmpty: false
 		default: contrast-light
@@ -153,7 +150,7 @@ settings:
 				value: contrast-light-vivid
 	-
 		id: color-scheme-dark
-		title: Dark mode color scheme
+		title: Dark color scheme
 		type: class-select
 		allowEmpty: false
 		default: default-dark
@@ -235,7 +232,7 @@ settings:
 				value: tiniri-dark
 	-
 		id: background-contrast-dark
-		title: Dark mode background contrast
+		title: Dark contrast
 		type: class-select
 		allowEmpty: false
 		default: contrast-dark
@@ -261,15 +258,15 @@ settings:
 	-
 		id: background-primary
 		title: Primary background
-		description: Background color for the main window
+		description: Used in main editor area.
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: background-primary-alt
-		title: Primary background (Alternative)
-		description: Background color for blockquotes and tables
+		title: Primary background (Alt)
+		description: Used in blockquotes and tables.
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
@@ -277,14 +274,14 @@ settings:
 	-
 		id: background-secondary
 		title: Secondary background
-		description: Background color for sidebars and menus
+		description: Used in sidebars and menus.
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: background-secondary-alt
-		title: Secondary background (Alternative)
+		title: Secondary background (Alt)
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
@@ -292,7 +289,7 @@ settings:
 	-
 		id: interactive-normal
 		title: Interactive background
-		description: Background color for buttons and dropdowns
+		description: Used in buttons, dropdowns, and filled elements.
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -300,8 +297,7 @@ settings:
 		default-dark: '#'
 	-
 		id: interactive-hover
-		title: Hover interactive background
-		description: Used when hovering over buttons, dropdowns, and filled elements
+		title: Interactive background (Hover)
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -309,8 +305,8 @@ settings:
 		default-dark: '#'
 	-
 		id: background-modifier-hover
-		title: Hover background
-		description: Used when hovering over buttons, dividers, and outlined elements
+		title: Subtle background (Hover)
+		description: Used in menu items and outlined elements.
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -318,8 +314,7 @@ settings:
 		default-dark: '#'
 	-
 		id: background-modifier-active-hover
-		title: Hover active background 
-		description: Used when clicking buttons and outlined elements
+		title: Subtle background (Active) 
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -329,15 +324,13 @@ settings:
 		id: background-modifier-border
 		title: Border color
 		type: variable-themed-color
-		description: For buttons, divider lines, and outlined elements
 		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: background-modifier-border-hover
-		title: Hover border color
-		description: Used when hovering over buttons, dividers, and outlined elements
+		title: Border color (Hover)
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -345,8 +338,7 @@ settings:
 		default-dark: '#'
 	-
 		id: background-modifier-border-focus
-		title: Active border color
-		description: Used when clicking buttons and outlined elements
+		title: Border color (Active)
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -430,7 +422,7 @@ settings:
 		default-dark: '#'
 	-
 		id: icon-color-hover
-		title: Icon color (hover)
+		title: Icon color (Hover)
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -438,7 +430,7 @@ settings:
 		default-dark: '#'
 	-
 		id: icon-color-active
-		title: Icon color (active)
+		title: Icon color (Active)
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -446,7 +438,7 @@ settings:
 		default-dark: '#'
 	-
 		id: icon-color-focused
-		title: Icon color (focused)
+		title: Icon color (Focused)
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -458,17 +450,10 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-    - 
-        id: text-palette-info
-		title: Heading text color
-		description: Find headings customization in **Editor** section.
-        type: info-text
-		markdown: true
 	-
 		id: text-normal
-		title: Normal text color
+		title: Primary text color
 		type: variable-themed-color
-		description: Primary text color used by default across Obsidian
 		opacity: true
 		format: hex
 		default-light: '#'
@@ -477,15 +462,13 @@ settings:
 		id: text-normal-editor
 		title: Editor text color
 		type: variable-themed-color
-		description: Primary text color used by default in editor
 		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: text-muted
-		title: Muted text color
-		description: Secondary text such as sidebar note titles and table headings
+		title: Secondary text color
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -493,8 +476,7 @@ settings:
 		default-dark: '#'
 	-
 		id: text-faint
-		title: Faint text color
-		description: Tertiary text such as input placeholders, empty checkboxes, and disabled statuses
+		title: Tertiary text color
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -545,81 +527,78 @@ settings:
 		level: 2
 		collapsed: true
 	-
+		id: code-normal
+		title: Code default
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
 		id: code-comment
-		title: 'Syntax: comments'
-		description: Syntax highlighting for comments
+		title: Code comments
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-function
-		title: 'Syntax: functions'
-		description: Syntax highlighting for functions
+		title: Code functions
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-keyword
-		title: 'Syntax: keywords'
-		description: Syntax highlighting for keywords
+		title: Code keywords
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-important
-		title: 'Syntax: important'
-		description: Syntax highlighting for important text
+		title: Code important
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-operator
-		title: 'Syntax: operators'
-		description: Syntax highlighting for operators
+		title: Code operators
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-property
-		title: 'Syntax: properties'
-		description: Syntax highlighting for properties
+		title: Code properties
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-punctuation
-		title: 'Syntax: punctuation'
-		description: Syntax highlighting for punctuation
+		title: Code punctuation
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-string
-		title: 'Syntax: strings'
-		description: Syntax highlighting for strings
+		title: Code strings
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-tag
-		title: 'Syntax: tags'
-		description: Syntax highlighting for tags
+		title: Code tags
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-value
-		title: 'Syntax: values'
-		description: Syntax highlighting for values
+		title: Code values
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
@@ -632,7 +611,7 @@ settings:
 		collapsed: true
     - 
         id: graph-info
-		description: Requires closing and reopening graph panes or restarting Obsidian to apply changes.
+		description: Requires reloading to apply changes.
         type: info-text
 	-
 		id: graph-line
@@ -685,9 +664,8 @@ settings:
 	-
 		id: font-interface-override
 		title: Interface font
-		description: Name of the font as it appears on your system
 		type: variable-text
-		default: ''
+		default: 'Inter'
 	-
 		id: density-modifier
 		title: Density
@@ -803,15 +781,13 @@ settings:
 	-
 		id: reduce-contrast-change
 		title: Reduce contrast change
-		description: Minimizes contrast changes and color flashing when Obsidian is unfocused
+		description: Minimize contrast shifts when window loses focus.
 		type: class-toggle
-		default: false
 	-
 		id: reduce-motion
 		title: Reduce motion
-		description: Minimizes animation effects across the interface
+		description: Minimize animation effects throughout the app.
 		type: class-toggle
-		default: false
 	-
 		id: animation
 		title: Animation
@@ -853,8 +829,20 @@ settings:
 		type: variable-text
 		default: 48px
 	-
+		id: tab-text-align
+		title: Tab label alignment (Editor)
+		type: variable-select
+		default: left
+		options:
+			-
+				label: Left
+				value: left
+			-
+				label: Center
+				value: center
+	-
 		id: tab-style
-		title: Tab style
+		title: Tab style (Editor)
 		type: class-select
 		allowEmpty: false
 		default: tab-default
@@ -875,17 +863,90 @@ settings:
 				label: Underline (Accented)
 				value: tab-underline-accented
 	-
-		id: tab-text-align
-		title: Tab label alignment
-		type: variable-select
-		default: left
+		id: tab-top-left-style
+		title: Tab style (Left top)
+		type: class-select
+		allowEmpty: false
+		default: tab-top-left-stacked
 		options:
 			-
-				label: Left
-				value: left
+				label: Stacked
+				value: tab-top-left-stacked
 			-
-				label: Center
-				value: center
+				label: Labeled
+				value: tab-top-left-labeled
+			-
+				label: Dropdown
+				value: tab-top-left-dropdown
+			-
+				label: Glyph
+				value: tab-top-left-icon
+			-
+				label: Text
+				value: tab-top-left-text
+	-
+		id: tab-left-style
+		title: Tab style (Left)
+		type: class-select
+		allowEmpty: false
+		default: tab-left-compact
+		options:
+			-
+				label: Labeled
+				value: tab-left-labeled
+			-
+				label: Dropdown
+				value: tab-left-dropdown
+			-
+				label: Glyph
+				value: tab-left-icon
+			-
+				label: Text
+				value: tab-left-text
+			-
+				label: Compact
+				value: tab-left-compact
+	-
+		id: tab-top-right-style
+		title: Tab style (Right top)
+		type: class-select
+		allowEmpty: false
+		default: tab-top-right-icon
+		options:
+			-
+				label: Labeled
+				value: tab-top-right-labeled
+			-
+				label: Dropdown
+				value: tab-top-right-dropdown
+			-
+				label: Glyph
+				value: tab-top-right-icon
+			-
+				label: Text
+				value: tab-top-right-text
+	-
+		id: tab-right-style
+		title: Tab style (Right)
+		type: class-select
+		allowEmpty: false
+		default: tab-right-compact
+		options:
+			-
+				label: Labeled
+				value: tab-right-labeled
+			-
+				label: Dropdown
+				value: tab-right-dropdown
+			-
+				label: Glyph
+				value: tab-right-icon
+			-
+				label: Text
+				value: tab-right-text
+			-
+				label: Compact
+				value: tab-right-compact
 	-
 		id: tab-stacks
 		title: Tab stacks
@@ -894,18 +955,14 @@ settings:
 		collapsed: true
 	-
 		id: tab-stacked-pane-width
-		title: Stacked width
-		type: variable-number
-		description: Width of a stacked tab in pixels
-		default: 700
-		format: px
+		title: Stacked tab width
+		type: variable-text
+		default: 700px
 	-
 		id: tab-stacked-header-width
 		title: Spine width
-		type: variable-number
-		description: Width of the spine in pixels
-		default: 40
-		format: px
+		type: variable-text
+		default: 40px
 	-
 		id: tab-stacked-spine-orientation
 		title: Spine text orientation
@@ -950,13 +1007,12 @@ settings:
 		collapsed: true
     - 
         id: tab-title-bar-info
-		description: Tab title bar must be turned on in **Appearance** settings.
+		description: Requires **Show tab title bar** in **Appearance** settings.
         type: info-text
 		markdown: true
 	-
 		id: file-header-visibility
 		title: Tab title visibility
-		description: Visibility of the tab title text
 		type: class-select
 		default: view-header-title-hover
 		options:
@@ -972,9 +1028,8 @@ settings:
 	-
 		id: file-header-font-size
 		title: Tab title font size
-		description: Accepts any CSS font-size value
 		type: variable-text
-		default: ''
+		default: 'var(--font-ui-small)'
 	-
 		id: file-header-font-weight
 		title: Tab title font weight
@@ -1002,91 +1057,6 @@ settings:
 		level: 2
 		collapsed: true
 	-
-		id: tab-top-left-style
-		title: Left sidebar tab style (Top panel)
-		type: class-select
-		allowEmpty: false
-		default: tab-top-left-stacked
-		options:
-			-
-				label: Stacked
-				value: tab-top-left-stacked
-			-
-				label: Labeled
-				value: tab-top-left-labeled
-			-
-				label: Dropdown
-				value: tab-top-left-dropdown
-			-
-				label: Glyph
-				value: tab-top-left-icon
-			-
-				label: Text
-				value: tab-top-left-text
-	-
-		id: tab-left-style
-		title: Left sidebar tab style
-		type: class-select
-		allowEmpty: false
-		default: tab-left-compact
-		options:
-			-
-				label: Labeled
-				value: tab-left-labeled
-			-
-				label: Dropdown
-				value: tab-left-dropdown
-			-
-				label: Glyph
-				value: tab-left-icon
-			-
-				label: Text
-				value: tab-left-text
-			-
-				label: Compact
-				value: tab-left-compact
-	-
-		id: tab-top-right-style
-		title: Right sidebar tab style (Top panel)
-		type: class-select
-		allowEmpty: false
-		default: tab-top-right-icon
-		options:
-			-
-				label: Labeled
-				value: tab-top-right-labeled
-			-
-				label: Dropdown
-				value: tab-top-right-dropdown
-			-
-				label: Glyph
-				value: tab-top-right-icon
-			-
-				label: Text
-				value: tab-top-right-text
-	-
-		id: tab-right-style
-		title: Right sidebar tab style
-		type: class-select
-		allowEmpty: false
-		default: tab-right-compact
-		options:
-			-
-				label: Labeled
-				value: tab-right-labeled
-			-
-				label: Dropdown
-				value: tab-right-dropdown
-			-
-				label: Glyph
-				value: tab-right-icon
-			-
-				label: Text
-				value: tab-right-text
-			-
-				label: Compact
-				value: tab-right-compact
-	-
 		id: nav-action
 		title: Panel actions
 		type: class-select
@@ -1109,7 +1079,35 @@ settings:
 		id: hide-vault-switcher-off
 		title: Always show vault switcher
 		type: class-toggle
-		default: false
+	-
+		id: horizontal-tab-options
+		title: Mobile horizontal tab options
+		type: class-toggle
+	-
+		id: mobile-sidebar-width-override
+		title: Mobile sidebar width
+		type: variable-text
+		default: '100%'
+	-
+		id: mobile-left-sidebar-width
+		title: Tablet sidebar width (Left)
+		type: variable-text
+		default: '360px'
+	-
+		id: mobile-right-sidebar-width
+		title: Tablet sidebar width (Right)
+		type: variable-text
+		default: '360px'
+	-
+		id: mobile-left-sidebar-width-pinned
+		title: Tablet sidebar width (Left pinned)
+		type: variable-text
+		default: '300px'
+	-
+		id: mobile-right-sidebar-width-pinned
+		title: Tablet sidebar width (Right pinned)
+		type: variable-text
+		default: '300px'
 	-
 		id: hover-sidebars
 		title: Hover reveal
@@ -1119,20 +1117,17 @@ settings:
 	-
 		id: hover-ribbon
 		title: Hover ribbon
-		description: Hover over window left edge to reveal
+		description: Reveal ribbon by hovering over left window edge.
 		type: class-toggle
-		default: false
 	-
 		id: hover-sidedock
 		title: Hover sidebars
-		description: When sidebars are collapsed, hover over window edge to reveal
+		description: Reveal collapsed sidebars by hovering over window edges.
 		type: class-toggle
-		default: false
 	-
 		id: hover-sidedock-trigger-area
 		title: Hover sidebars trigger area
 		type: variable-select
-		description: Width of the detection area for revealing hover sidebars
 		default: 1px
 		options:
 			-
@@ -1150,23 +1145,18 @@ settings:
 	-
 		id: hover-sidedock-width
 		title: Hover sidebars width
-		type: variable-number
-		description: Width of the hover sidebars in pixels
-		default: 320
-		format: px
+		type: variable-text
+		default: 320px
 	-
 		id: hover-sidedock-delay
 		title: Hover sidebars delay
-		type: variable-number
-		description: Delay before showing hover sidebars in milliseconds
-		default: 160
-		format: ms
+		type: variable-text
+		default: 160ms
 	-
 		id: hover-sidedock-active-off
-		title: Disable hover sidebars active state
-		description: Turns off hover sidebars staying after interaction
+		title: Ignore interactions
+		description: Always collapse hover sidebars after cursor leaving.
 		type: class-toggle
-		default: false
 	-
 		id: file-explorer
 		title: File explorer
@@ -1192,7 +1182,6 @@ settings:
 	-
 		id: colorful-folders
 		title: Colorful folders
-		description: Adds colored indicator on folders
 		type: class-select
 		allowEmpty: false
 		default: colorful-folders-off
@@ -1221,43 +1210,29 @@ settings:
 	-
 		id: nav-item-size
 		title: Item name size
-		description: Accepts any CSS font-size value
 		type: variable-text
 		default: 13px
 	-
-		id: large-new-note
-		title: Large new note button
-		description: Adds text label and background on new note button in the left sidebar
-		type: class-toggle
-	-
 		id: full-item-name
 		title: Full item name
-		description: Display long file name without trimming
 		type: class-toggle
-		default: false
 	-
 		id: bold-folders
 		title: Bold folders name
 		type: class-toggle
 	-
+		id: large-new-note
+		title: Large new note button
+		type: class-toggle
+	-
 		id: nav-indentation-guide-width
 		title: Indentation guides thickness
-		type: variable-select
-		allowEmpty: false
-		default: 0px
-		options:
-			-
-				label: None
-				value: 0px
-			-
-				label: Thin
-				value: 1px
-			-
-				label: Medium
-				value: 2px
-			-
-				label: Thick
-				value: 3px
+		type: variable-number-slider
+		format: px
+		default: 0
+		min: 0
+		max: 3
+		step: 1
 	-
 		id: nav-indentation-guide-color
 		title: Indentation guides color
@@ -1275,26 +1250,19 @@ settings:
 				label: Accent color
 				value: var(--color-accent)
 	-
-		id: desktop
-		title: Desktop
-		type: heading
-		level: 2
-		collapsed: true
-	-
 		id: titlebar
 		title: Frame title
 		type: heading
-		level: 3
+		level: 2
 		collapsed: true
     - 
         id: titlebar-info
-		description: Frame title settings requires **Obsidian** frame to be set in **Appearance** settings.
+		description: Requires **Obsidian frame** in **Appearance** settings.
         type: info-text
 		markdown: true
 	-
 		id: titlebar-text-off
 		title: Hide frame title
-		description: Hide title in the custom title bar
 		type: class-toggle
 	-
 		id: titlebar-text-weight
@@ -1305,19 +1273,30 @@ settings:
 		max: 900
 		step: 50
 	-
-		id: translucent-window
-		title: Translucent window
+		id: settings
+		title: Settings
 		type: heading
-		level: 3
+		level: 2
+		collapsed: true
+	-
+		id: plugins-grid-off
+		title: Plugins list view
+		description: Disable plugins grid layout
+		type: class-toggle
+	-
+		id: translucent-window
+		title: Translucency
+		type: heading
+		level: 2
 		collapsed: true
     - 
         id: translucent-window-info
-		description: Translucent window settings requires **Translucent window** to be enabled in **Appearance** settings. For Windows users, install [Pseudo Mica](obsidian://show-plugin?id=pseudo-mica) to enable translucency.
+		description: Requires **Translucent window** in **Appearance** settings. For Windows users, install [Pseudo Mica](obsidian://show-plugin?id=pseudo-mica).
         type: info-text
 		markdown: true
 	-
 		id: translucent-light-opacity
-		title: Light mode translucent window opacity
+		title: Light translucent window opacity
 		type: variable-number-slider
 		default: 50
 		min: 0
@@ -1326,67 +1305,13 @@ settings:
 		format: '%'
 	-
 		id: translucent-dark-opacity
-		title: Dark mode translucent window opacity
+		title: Dark translucent window opacity
 		type: variable-number-slider
 		default: 50
 		min: 0
 		max: 100
 		step: 10
 		format: '%'
-	-
-		id: mobile
-		title: Mobile
-		type: heading
-		level: 2
-		collapsed: true
-	-
-		id: horizontal-tab-options
-		title: Horizontal tab options
-		description: Use horizontal tab options in mobile sidebars
-		type: class-toggle
-		default: false
-	-
-		id: mobile-sidebar-width-override
-		title: Phone sidebar width
-		description: Accepts valid CSS units
-		type: variable-text
-		default: '100%'
-	-
-		id: mobile-left-sidebar-width
-		title: Tablet left sidebar width
-		description: Accepts valid CSS units
-		type: variable-text
-		default: '360px'
-	-
-		id: mobile-right-sidebar-width
-		title: Tablet right sidebar width
-		description: Accepts valid CSS units
-		type: variable-text
-		default: '360px'
-	-
-		id: mobile-left-sidebar-width-pinned
-		title: Tablet left sidebar width (pinned)
-		description: Accepts valid CSS units
-		type: variable-text
-		default: '300px'
-	-
-		id: mobile-right-sidebar-width-pinned
-		title: Tablet right sidebar width (pinned)
-		description: Accepts valid CSS units
-		type: variable-text
-		default: '300px'
-	-
-		id: settings
-		title: Settings
-		type: heading
-		level: 2
-		collapsed: true
-	-
-		id: plugins-grid-off
-		title: Disable Community plugins grid layout
-		description: Turns off compact grid layout in Community plugins
-		type: class-toggle
-		default: false
 	-
 		id: editor
 		title: Editor
@@ -1396,36 +1321,24 @@ settings:
 	-
 		id: font-text-override
 		title: Editor font
-		description: Name of the font as it appears on your system
 		type: variable-text
-		default: ''
+		default: 'Inter'
 	-
 		id: font-monospace-override
 		title: Monospace font
-		description: Name of the font as it appears on your system
 		type: variable-text
-		default: ''
-	-
-		id: bold-modifier
-		title: Bold text modifier
-		type: variable-number-slider
-		default: 300
-		min: 100
-		max: 600
-		step: 50
+		default: 'ui-monospace'
 	-
 		id: focus-view
 		title: Focus view
 		type: class-toggle
-		description: Hide tabs and tab title bar when sidebars are collapsed
-		default: false
+		description: Hide tabs and title bar by collapsing both sidebars
 		addCommand: true
 	-
 		id: mode-switcher-off
 		title: Disable quick mode switcher
 		type: class-toggle
-		description: Turns off mobile editor mode switcher quick access
-		default: false
+		description: Always show editor mode toggle on top.
 		addCommand: true
 	-
 		id: active-line
@@ -1435,8 +1348,7 @@ settings:
 		collapsed: true
 	-
 		id: active-line-style
-		title: Highlight active line style
-		description: Adds an indicator to current line in editor
+		title: Active line highlight style
 		type: class-select
 		default: active-line-off
 		options:
@@ -1454,7 +1366,7 @@ settings:
 				value: active-line-background
 	-
 		id: active-line-color
-		title: Highlight active line color
+		title: Active line highlight color
 		type: class-select
 		default: active-line-color-default
 		options:
@@ -1473,30 +1385,25 @@ settings:
 	-
 		id: block-width-off
 		title: Disable block width
-		description: Turns off block width customization
 		type: class-toggle
-		default: false
     - 
         id: block-width-info
-		description: Block width requires **Readable line length** to be enabled in Obsidian **Editor** settings.
+		description: Requires **Readable line length** in **Editor** settings. [Usage guide](https://github.com/aaaaalexis/obsidian-baseline#block-width)
         type: info-text
 		markdown: true
 	-
 		id: line-width
 		title: Default line width
-		description: Accepts valid CSS units
 		type: variable-text
 		default: 700px
 	-
 		id: line-width-wide
 		title: Wide line width
-		description: Enable by adding "wide" in cssclasses property, accepts valid CSS units.
 		type: variable-text
 		default: 50rem
 	-
-		id: table-width
-		title: Table width
-		description: Default width for table blocks
+		id: table-block-width
+		title: Table block width
 		type: class-select
 		allowEmpty: false
 		default: table-normal
@@ -1514,9 +1421,8 @@ settings:
 				label: 100% pane width
 				value: table-100
 	-
-		id: bases-width
-		title: Bases width
-		description: Default width for Bases blocks
+		id: bases-block-width
+		title: Bases block width
 		type: class-select
 		allowEmpty: false
 		default: bases-normal
@@ -1534,9 +1440,8 @@ settings:
 				label: 100% pane width
 				value: bases-100
 	-
-		id: image-width
+		id: image-block-width
 		title: Image width
-		description: Default width for image blocks
 		type: class-select
 		allowEmpty: false
 		default: img-normal
@@ -1562,22 +1467,12 @@ settings:
 	-
 		id: indentation-guide-width
 		title: Indentation guides thickness
-		type: variable-select
-		allowEmpty: false
-		default: 0px
-		options:
-			-
-				label: None
-				value: 0px
-			-
-				label: Thin
-				value: 1px
-			-
-				label: Medium
-				value: 2px
-			-
-				label: Thick
-				value: 3px
+		type: variable-number-slider
+		format: px
+		default: 0
+		min: 0
+		max: 3
+		step: 1
 	-
 		id: indentation-guide-color
 		title: Indentation guides color
@@ -1602,7 +1497,7 @@ settings:
 		collapsed: true
 	-
 		id: metadata-style
-		title: Properties style
+		title: Property style
 		type: class-select
 		allowEmpty: false
 		default: metadata-default
@@ -1617,38 +1512,29 @@ settings:
 				label: Cupertino
 				value: metadata-cupertino
 	-
-		id: metadata-heading-off
-		title: Hide properties heading
-		description: Hide "Properties" heading above properties
-		type: class-toggle
-		default: false
-	-
-		id: metadata-add-property-off
-		title: Hide "Add property" button
-		description: Hide "Add property" button below properties
-		type: class-toggle
-		default: false
-	-
-		id: metadata-icons-off
-		title: Hide property icons
-		description: Hide icons next to property names
-		type: class-toggle
-		default: false
-	-
-		id: metadata-link-nowrap
-		title: Disable link line wrap
-		description: Turns off line wrapping for links in properties
-		type: class-toggle
-		default: false
-	-
 		id: metadata-label-width-modifier
 		title: Property name width
-		description: Width for the name of the property
 		type: variable-number-slider
 		default: 1
 		min: 0.5
 		max: 1.5
 		step: 0.1
+	-
+		id: metadata-heading-off
+		title: Hide property heading
+		type: class-toggle
+	-
+		id: metadata-icons-off
+		title: Hide property icons
+		type: class-toggle
+	-
+		id: metadata-add-property-off
+		title: Hide add property button
+		type: class-toggle
+	-
+		id: metadata-link-nowrap
+		title: Disable link line wrap
+		type: class-toggle
 	-
 		id: spacing
 		title: Spacing
@@ -1658,25 +1544,24 @@ settings:
 	-
 		id: heading-spacing
 		title: Heading spacing
-		description: Space between paragraphs and headings in reading mode
+		description: Adjust space between paragraphs and headings.
 		type: variable-text
 		default: 2em
 	-
 		id: p-spacing
 		title: Paragraph spacing
-		description: Space between paragraphs in reading mode
+		description: Adjust space between paragraphs.
 		type: variable-text
 		default: 1.75rem
 	-
 		id: readable-spacing
 		title: Readable spacing
-		description: Use readable spacing in reading and editing views
+		description: Use tighter spacing in editor.
 		type: class-toggle
-		default: false
 	-
 		id: readable-spacing-modifier
 		title: Readable spacing modifier
-		description: Lower value is tighter spacing after headings, relative to paragraph spacing
+		description: Relative to paragraph spacing value.
 		type: variable-number-slider
 		default: 0.25
 		min: 0
@@ -1690,24 +1575,21 @@ settings:
 		collapsed: true
     - 
         id: inline-title-info
-		description: Inline title must be turned on in **Appearance** settings.
+		description: Requires **Show inline title** in **Appearance** settings.
         type: info-text
 		markdown: true
 	-
 		id: inline-title-block-off
 		title: Disable inline title background
 		type: class-toggle
-		default: false
 	-
 		id: inline-title-font
 		title: Inline title font
-		description: Name of the font as it appears on your system
 		type: variable-text
-		default: ''
+		default: 'Instrument Serif'
 	-
 		id: inline-title-size
 		title: Inline title font size
-		description: Accepts any CSS font-size value
 		type: variable-text
 		default: 1.618em
 	-
@@ -1741,7 +1623,6 @@ settings:
 		id: colorful-headings-text
 		title: Colored heading text
 		type: class-toggle
-		default: false
 	-
 		id: colorful-headings
 		title: Heading indicator
@@ -1762,12 +1643,10 @@ settings:
 		id: colorful-headings-background
 		title: Heading background
 		type: class-toggle
-		default: false
 	-
 		id: colorful-headings-full-width
 		title: Full width background
 		type: class-toggle
-		default: false
     - 
         id: colorful-headings-info
 		description: Colorful headings color follow individual heading settings below.
@@ -1789,13 +1668,11 @@ settings:
 	-
 		id: h1-font
 		title: H1 font
-		description: Name of the font as it appears on your system
 		type: variable-text
-		default: ''
+		default: 'Instrument Serif'
 	-
 		id: h1-size
 		title: H1 font size
-		description: Accepts any CSS font-size value
 		type: variable-text
 		default: 1.618em
 	-
@@ -1856,10 +1733,8 @@ settings:
 				value: lowercase
 	-
 		id: h1-l
-		title: H1 divider line
-		description: Adds a border below the heading
+		title: H1 divider
 		type: class-toggle
-		default: false
 	-
 		id: level-2-headings
 		title: Level 2 Headings
@@ -1876,13 +1751,11 @@ settings:
 	-
 		id: h2-font
 		title: H2 font
-		description: Name of the font as it appears on your system
 		type: variable-text
-		default: ''
+		default: 'Instrument Serif'
 	-
 		id: h2-size
 		title: H2 font size
-		description: Accepts any CSS font-size value
 		type: variable-text
 		default: 1.462em
 	-
@@ -1943,10 +1816,8 @@ settings:
 				value: lowercase
 	-
 		id: h2-l
-		title: H2 divider line
-		description: Adds a border below the heading
+		title: H2 divider
 		type: class-toggle
-		default: false
 	-
 		id: level-3-headings
 		title: Level 3 Headings
@@ -1963,13 +1834,11 @@ settings:
 	-
 		id: h3-font
 		title: H3 font
-		description: Name of the font as it appears on your system
 		type: variable-text
-		default: ''
+		default: 'Instrument Serif'
 	-
 		id: h3-size
 		title: H3 font size
-		description: Accepts any CSS font-size value
 		type: variable-text
 		default: 1.318em
 	-
@@ -2030,10 +1899,8 @@ settings:
 				value: lowercase
 	-
 		id: h3-l
-		title: H3 divider line
-		description: Adds a border below the heading
+		title: H3 divider
 		type: class-toggle
-		default: false
 	-
 		id: level-4-headings
 		title: Level 4 Headings
@@ -2050,13 +1917,11 @@ settings:
 	-
 		id: h4-font
 		title: H4 font
-		description: Name of the font as it appears on your system
 		type: variable-text
-		default: ''
+		default: 'Instrument Serif'
 	-
 		id: h4-size
 		title: H4 font size
-		description: Accepts any CSS font-size value
 		type: variable-text
 		default: 1.188em
 	-
@@ -2117,8 +1982,7 @@ settings:
 				value: lowercase
 	-
 		id: h4-l
-		title: H4 divider line
-		description: Adds a border below the heading
+		title: H4 divider
 		type: class-toggle
 		default: false   
 	-
@@ -2137,13 +2001,11 @@ settings:
 	-
 		id: h5-font
 		title: H5 font
-		description: Name of the font as it appears on your system
 		type: variable-text
-		default: ''
+		default: 'Instrument Serif'
 	- 
 		id: h5-size
 		title: H5 font size
-		description: Accepts any CSS font-size value
 		type: variable-text
 		default: 1.076em
 	-
@@ -2204,10 +2066,8 @@ settings:
 				value: lowercase
 	-
 		id: h5-l
-		title: H5 divider line
-		description: Adds a border below the heading
+		title: H5 divider
 		type: class-toggle
-		default: false
 	-
 		id: level-6-headings
 		title: Level 6 Headings
@@ -2224,13 +2084,11 @@ settings:
 	-
 		id: h6-font
 		title: H6 font
-		description: Name of the font as it appears on your system
 		type: variable-text
-		default: ''
+		default: 'Instrument Serif'
 	-
 		id: h6-size
 		title: H6 font size
-		description: Accepts any CSS font-size value
 		type: variable-text
 		default: 1em
 	-
@@ -2291,10 +2149,8 @@ settings:
 				value: lowercase
 	-
 		id: h6-l
-		title: H6 divider line
+		title: H6 divider
 		type: class-toggle
-		description: Adds a border below the heading
-		default: false
 	-
 		id: horizontal-rule
 		title: Horizontal rule
@@ -2341,8 +2197,6 @@ settings:
 		id: hr-dashed
 		title: Dashed horizontal rule
 		type: class-toggle
-		description: Turn horizontal rule into dashed line
-		default: false
 	- 
 		id: hr-dashed-size
 		title: Dashed line size
@@ -2365,8 +2219,6 @@ settings:
 		id: banner-off
 		title: Disable banner
 		type: class-toggle
-		description: Turns off built-in banner styling for CSS snippet support
-		default: false
 	-
 		id: banner-icon-size
 		title: Banner icon size
@@ -2376,14 +2228,12 @@ settings:
 	- 
 		id: banner-image-height
 		title: Banner image height
-		description: Height for banner images on desktop
 		type: variable-text
 		allowEmpty: false
 		default: 320px
 	- 
 		id: banner-image-height-s
 		title: Banner image height (Mobile)
-		description: Height for banner images on mobile
 		type: variable-text
 		allowEmpty: false
 		default: 240px
@@ -2437,18 +2287,6 @@ settings:
 				label: Hidden
 				value: none
 	-
-		id: bases-row-alt
-		title: Striped rows
-		description: Display striped background in alternating Bases table rows
-		type: class-toggle
-		default: false
-	-
-		id: bases-col-alt
-		title: Striped columns
-		description: Display striped background in alternating Bases table columns
-		type: class-toggle
-		default: false
-	-
 		id: bases-table-header-icon-display
 		title: Table header icons
 		type: variable-select
@@ -2477,6 +2315,14 @@ settings:
 			-
 				label: Bottom
 				value: end
+	-
+		id: bases-row-alt
+		title: Alternating row background
+		type: class-toggle
+	-
+		id: bases-col-alt
+		title: Alternating column background
+		type: class-toggle
 	-
 		id: blockquotes
 		title: Blockquotes
@@ -2508,7 +2354,6 @@ settings:
 	-
 		id: blockquote-size
 		title: Blockquote font size
-		description: Accepts any CSS font-size value
 		type: variable-text
 		default: 1em
 	-
@@ -2533,7 +2378,7 @@ settings:
 		default-dark: '#'
 	-
 		id: blockquote-background-color
-		title: Blockquote background color
+		title: Blockquote background
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -2561,7 +2406,6 @@ settings:
 	-
 		id: cards-max-width
 		title: Card maximum width
-		description: Default fills the available width, accepts valid CSS units
 		type: variable-text
 		default: 1fr
 	-
@@ -2581,14 +2425,14 @@ settings:
 		default: 400px
 	- 
 		id: cards-background
-		title: Card background color
+		title: Card background
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	- 
 		id: cards-background-hover
-		title: Card background color (hover)
+		title: Card background (Hover)
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
@@ -2621,7 +2465,6 @@ settings:
 	-
 		id: callout-size
 		title: Callout font size
-		description: Accepts any CSS font-size value
 		type: variable-text
 		default: 1em
 	-
@@ -2640,14 +2483,13 @@ settings:
 	-
 		id: canvas-dot-pattern
 		title: Canvas dot pattern
-		description: Color for background dot pattern
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-blocks
-		title: Code blocks
+		title: Code
 		type: heading
 		level: 2
 		collapsed: true
@@ -2667,43 +2509,34 @@ settings:
 	-
 		id: code-size
 		title: Code font size
-		description: Accepts any CSS font-size value
 		type: variable-text
-		default: ''
+		default: 'var(--font-ui-smaller)'
+	-
+		id: code-background
+		title: Code background
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
 	-
 		id: code-line-numbers
 		title: Code line numbers
-		description: Line numbers for code blocks
 		type: class-toggle
-		default: false
 	-
 		id: code-scroll
-		title: Scroll long lines
-		description: Turns off line wrap for code blocks
+		title: Disable line wrap
 		type: class-toggle
-		default: false
-	-
-		id: code-background
-		title: Code background color
-		description: Background for code blocks
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: code-normal
-		title: Code text color
-		description: Color of code when syntax highlighting is not present
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
 	-
 		id: embeds
 		title: Embeds
 		type: heading
 		level: 2
 		collapsed: true
+	-
+		id: embed-max-height
+		title: Embed maximum height
+		type: variable-text
+		default: ''
 	-
 		id: embed-style
 		title: Embed style
@@ -2721,27 +2554,6 @@ settings:
 				label: Block background
 				value: embed-block
 	-
-		id: embed-border-thickness
-		title: Embed border thickness
-		type: variable-number-slider
-		format: px
-		default: 2
-		min: 0
-		max: 5
-		step: 1
-	-
-		id: embed-hide-title
-		title: Hide embed titles
-		description: Hide title of the embed file
-		type: class-toggle
-		default: false
-	-
-		id: embed-max-height
-		title: Maximum height of embeds
-		type: variable-text
-		description: Accepts valid CSS units
-		default: ''
-	-
 		id: embed-background
 		title: Embed background
 		type: variable-themed-color
@@ -2758,6 +2570,19 @@ settings:
 		default-light: '#'
 		default-dark: '#'
 	-
+		id: embed-border-thickness
+		title: Embed border thickness
+		type: variable-number-slider
+		format: px
+		default: 2
+		min: 0
+		max: 5
+		step: 1
+	-
+		id: embed-hide-title
+		title: Hide embed titles
+		type: class-toggle
+	-
 		id: links
 		title: Links
 		type: heading
@@ -2772,7 +2597,7 @@ settings:
 		default-dark: '#'
 	-
 		id: link-color-hover
-		title: Internal link color (hover)
+		title: Internal link color (Hover)
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
@@ -2799,7 +2624,7 @@ settings:
 		default-dark: '#'
 	-
 		id: link-external-color-hover
-		title: External link color (hover)
+		title: External link color (Hover)
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
@@ -2819,16 +2644,15 @@ settings:
 				value: none
 	-
 		id: lists
-		title: Lists
+		title: Lists & Tasks
 		type: heading
 		level: 2
 		collapsed: true
     -
         id: list-spacing
         title: List spacing
-        type: variable-number
-        default: 0.075
-        format: em
+        type: variable-text
+        default: 0.075em
     -
         id: list-marker-color
         title: List bullet color
@@ -2838,7 +2662,7 @@ settings:
         format: hex
     -
         id: list-numbered-style
-        title: Ordered list style
+        title: List order style
         type: variable-select
         default: decimal
         options:
@@ -2894,11 +2718,29 @@ settings:
                 label: Hebrew
                 value: hebrew
 	-
+		id: checkbox-radius
+		title: Checkbox shape
+		type: variable-select
+		allowEmpty: false
+		default: 4px
+		options:
+			-
+				label: Rounded
+				value: 4px
+			-
+				label: Circle
+				value: 100px
+	-
+		id: checkbox-color
+		title: Checkbox color (Completed)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
 		id: strike-lists-off
-		title: Disable strike completed tasks
-		description: Removes strikethrough line for completed tasks
+		title: Disable checkbox strikethrough (Completed)
 		type: class-toggle
-		default: false
 	-
 		id: media
 		title: Media
@@ -2906,14 +2748,8 @@ settings:
 		level: 2
 		collapsed: true
 	-
-		id: img-grid
-		title: Image grids
-		description: Turns consecutive images into columns — to make a new row, add an extra line break between images
-		type: class-toggle
-	-
 		id: media-radius
 		title: Media radius
-		description: Rounded corners for images and videos
 		type: variable-number-slider
 		default: 8
 		min: 0
@@ -2922,33 +2758,33 @@ settings:
 		format: px
 	-
 		id: media-muted
-		title: Media opacity in dark mode
-		description: Level of fading for media in dark mode. Hover over media to display at full brightness
+		title: Media dimming opacity in dark mode
 		type: variable-number-slider
 		default: 1
 		min: 0.2
 		max: 1
 		step: 0.1
 	-
+		id: img-grid
+		title: Image grids
+		type: class-toggle
+	-
 		id: full-width-media-off
 		title: Disable maximized media
-		description: Turns off images and videos taking full space
 		type: class-toggle
 	-
 		id: zoom-off
 		title: Disable image zoom
-		description: Turns off click + hold to zoom images
 		type: class-toggle
 	-
 		id: pdf
-		title: PDFs
+		title: PDF
 		type: heading
 		level: 2
 		collapsed: true
 	-
 		id: pdf-page-style
 		title: PDF page style
-		description: Borders and shadows around pages
 		type: class-select
 		allowEmpty: false
 		default: pdf-seamless
@@ -2957,12 +2793,11 @@ settings:
 				label: Seamless
 				value: pdf-seamless
 			-
-				label: Shadows
-				value: pdf-shadows
+				label: Shadow
+				value: pdf-shadow
 	-
 		id: pdf-muted
-		title: PDF opacity in dark mode
-		description: Level of fading for PDF pages in dark mode. Hover over a page to display at full brightness
+		title: PDF dimming opacity in dark mode
 		type: variable-number-slider
 		default: 1
 		min: 0.2
@@ -2970,16 +2805,34 @@ settings:
 		step: 0.1
 	-
 		id: pdf-invert-dark
-		title: Invert PDFs in dark mode
-		description: Best for working with black text on white pages
+		title: Invert PDF in dark mode
 		type: class-toggle
-		default: false
 	-
 		id: tables
 		title: Tables
 		type: heading
 		level: 2
 		collapsed: true
+	-
+		id: table-text-size
+		title: Table font size
+		type: variable-text
+		default: 0.933em
+	-
+		id: table-width
+		title: Table width
+		type: class-select
+		default: table-width-full
+		options:
+			-
+				label: Full width
+				value: table-width-full
+			-
+				label: Start
+				value: table-width-fit
+			-
+				label: Center
+				value: table-width-fit-center
 	-
 		id: table-text-align-header
 		title: Table header text alignment
@@ -3013,80 +2866,42 @@ settings:
 				label: End
 				value: end
 	-
-		id: table-width
-		title: Table width
-		description: Fit table width to content
-		type: class-select
-		default: table-width-full
-		options:
-			-
-				label: Full width
-				value: table-width-full
-			-
-				label: Start
-				value: table-width-fit
-			-
-				label: Center
-				value: table-width-fit-center
-	-
-		id: table-text-size
-		title: Table font size
-		type: variable-text
-		default: 0.933em
-	-
-		id: table-nowrap
-		title: Disable line wrap
-		description: Turns off line wrapping in table cells globally
+		id: row-hover
+		title: Highlight hovered row
 		type: class-toggle
-		default: false
 	-
-		id: table-tabular
-		title: Tabular figures
-		description: Use fixed width numbers in tables globally
+		id: row-alt
+		title: Alternating row background
 		type: class-toggle
-		default: false
 	-
-		id: table-numbers
-		title: Row numbers
-		description: Display row numbers in tables globally
+		id: col-alt
+		title: Alternating columns background
 		type: class-toggle
-		default: false
-	-
-		id: row-lines
-		title: Row lines
-		description: Display borders between table rows globally
-		type: class-toggle
-		default: false
-	-
-		id: col-lines
-		title: Column lines
-		description: Display borders between table columns globally
-		type: class-toggle
-		default: false
 	-
 		id: table-lines
-		title: Table frame
-		description: Display border around table content globally
+		title: Always show table frame
 		type: class-toggle
 		default: false 
 	-
-		id: row-hover
-		title: Highlight active row
-		description: Highlight rows on hover
+		id: row-lines
+		title: Always show row border
 		type: class-toggle
-		default: false
 	-
-		id: row-alt
-		title: Striped rows
-		description: Display striped background in alternating table rows globally
+		id: col-lines
+		title: Always show column border
 		type: class-toggle
-		default: false
 	-
-		id: col-alt
-		title: Striped columns
-		description: Display striped background in alternating table columns globally
+		id: table-numbers
+		title: Row line numbers
 		type: class-toggle
-		default: false
+	-
+		id: table-tabular
+		title: Fixed-width tabular figures
+		type: class-toggle
+	-
+		id: table-nowrap
+		title: Disable line wrap
+		type: class-toggle
 	-
 		id: tags
 		title: Tags
@@ -3096,9 +2911,8 @@ settings:
 	-
 		id: unstyled-tags
 		title: Plain tags
-		description: Tags will render as normal text, overrides settings below
+		description: Display tags as normal text
 		type: class-toggle
-		default: false
 	-
 		id: tag-radius
 		title: Tag shape
@@ -3116,7 +2930,7 @@ settings:
 				value: 0px
 	-
 		id: tag-border-width
-		title: Tag border width
+		title: Tag border thickness
 		type: variable-number-slider
 		default: 0
 		min: 0
@@ -3133,7 +2947,7 @@ settings:
 		default-dark: '#'
 	-
 		id: tag-background
-		title: Tag background color
+		title: Tag background
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -3141,39 +2955,12 @@ settings:
 		default-dark: '#'
 	-
 		id: tag-background-hover
-		title: Tag background color (hover)
+		title: Tag background (Hover)
 		type: variable-themed-color
 		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
-	-
-		id: tasks
-		title: Tasks
-		type: heading
-		level: 2
-		collapsed: true
-	-
-		id: checkbox-color
-		title: Checkbox color
-		description: Background color for completed tasks
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: checkbox-radius
-		title: Checkbox shape
-		type: variable-select
-		allowEmpty: false
-		default: 4px
-		options:
-			-
-				label: Rounded
-				value: 4px
-			-
-				label: Circle
-				value: 100px
 */
 
 .view-content .style-settings-container .style-settings-container .setting-item {
@@ -3208,6 +2995,12 @@ settings:
   margin-bottom: 0;
   border-radius: 0;
 }
+.style-settings-container .setting-item-description > div:last-child {
+  display: none;
+}
+.style-settings-container .setting-item:not(.style-settings-heading) > .setting-item-control {
+  min-height: var(--input-height);
+}
 .style-settings-container .setting-item:nth-child(1 of .setting-item:not(.setting-item-heading)) {
   border-top-right-radius: var(--setting-items-radius);
   border-top-left-radius: var(--setting-items-radius);
@@ -3224,6 +3017,7 @@ settings:
     margin-top: 0 !important;
     background-color: transparent;
     color: var(--color-base-100);
+    padding: 0 8px;
 
     .pickr .pcr-button {
       box-shadow: none;
