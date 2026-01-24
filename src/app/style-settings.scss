@@ -1332,14 +1332,13 @@ settings:
 		id: focus-view
 		title: Focus view
 		type: class-toggle
-		description: Hide tabs and title bar by collapsing both sidebars
+		description: Hide tabs and title bar when both sidebars are collapsed.
 		addCommand: true
 	-
 		id: mode-switcher-off
 		title: Disable quick mode switcher
 		type: class-toggle
 		description: Always show editor mode toggle on top.
-		addCommand: true
 	-
 		id: active-line
 		title: Active line
