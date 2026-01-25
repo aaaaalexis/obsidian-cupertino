@@ -6,16 +6,17 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
     --workspace-background-translucent: var(--background-secondary);
     --tab-outline-color: transparent;
 
+    .modal.mod-settings .vertical-tab-header > div,
     .workspace-ribbon,
     .mod-sidedock > div {
       opacity: 0.5;
     }
     .modal.mod-settings .vertical-tab-header,
     .mod-sidedock.mod-left-split,
-    .mod-root .workspace-tab-container,
     .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
-      background-color: var(--color-base-05) !important;
+      background-color: var(--color-base-25) !important;
       box-shadow: none !important;
+      transition: none;
     }
   }
 
@@ -46,6 +47,11 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
     }
   }
 
+  .mod-sidedock {
+    transition:
+      var(--anim-duration-moderate),
+      background-color 0s;
+  }
   .mod-sidedock.mod-left-split {
     -electron-corner-smoothing: var(--corner-smoothing);
     display: flex;

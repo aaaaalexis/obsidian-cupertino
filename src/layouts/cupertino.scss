@@ -65,8 +65,6 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
 }
 
 body:is(.mod-macos, .adaptive-mode-off).is-mobile {
-  --nav-item-color: var(--text-normal);
-
   .workspace-drawer .nav-buttons-container {
     justify-self: center;
     gap: 0;

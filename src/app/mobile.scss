@@ -163,7 +163,7 @@ body.is-mobile {
       padding: 0 var(--safe-area-inset-side);
     }
     .nav-buttons-container::after {
-      content: none;
+      content: none !important;
     }
     .nav-action-button {
       background-color: transparent;
@@ -262,7 +262,7 @@ body.is-phone {
 
   // Editor panel
   .mod-root {
-    mask-image: none;
+    mask-image: none !important;
 
     .view-header {
       top: 0;
@@ -358,6 +358,7 @@ body.is-phone {
   }
 
   .mobile-navbar {
+    width: 100%;
     max-width: calc(100% - 8px - var(--touch-size-l) - var(--navbar-side-offset) * 2);
     inset: auto var(--navbar-side-offset) var(--navbar-bottom-offset);
     overflow: hidden;
@@ -379,6 +380,7 @@ body.is-phone {
   }
   .mobile-navbar-actions {
     --icon-size: var(--icon-l);
+    --icon-stroke: var(--icon-l-stroke-width);
   }
   .mobile-navbar-tabs-action {
     font-family: "Inter";

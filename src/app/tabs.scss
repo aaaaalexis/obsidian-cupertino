@@ -24,15 +24,6 @@ body.is-tablet {
 }
 
 // All panels
-body:not(.is-mobile) {
-  .workspace-ribbon svg.svg-icon,
-  .workspace-tab-header-container svg.svg-icon,
-  .mod-root .view-header svg.svg-icon,
-  .mod-sidedock .nav-action-button svg.svg-icon,
-  .modal .modal-close-button svg.svg-icon {
-    margin: -1px;
-  }
-}
 body:not(.is-phone) .workspace-tab-header-container {
   transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
   background-color: transparent;
@@ -255,22 +246,20 @@ body.is-tablet:not(.tab-floating-center-off) {
 }
 
 // Editor panel: Tablet fix
-body.is-tablet {
-  .workspace .mod-root {
-    .workspace-tab-header-container-inner {
-      padding-inline: var(--radius-s);
-    }
-    .sidebar-toggle-button {
-      padding-left: 0;
-    }
-    .sidebar-toggle-button .clickable-icon {
-      margin: auto 0;
-    }
-    .workspace-tab-header-tab-list .clickable-icon,
-    .workspace-tab-header-new-tab .clickable-icon {
-      --icon-size: var(--icon-l);
-      --icon-stroke: var(--icon-l-stroke-width);
-    }
+body.is-tablet .workspace .mod-root {
+  .workspace-tab-header-container-inner {
+    padding-inline: var(--radius-s);
+  }
+  .sidebar-toggle-button {
+    padding-left: 0;
+  }
+  .sidebar-toggle-button .clickable-icon {
+    margin: auto 0;
+  }
+  .workspace-tab-header-tab-list .clickable-icon,
+  .workspace-tab-header-new-tab .clickable-icon {
+    --icon-size: var(--icon-l);
+    --icon-stroke: var(--icon-l-stroke-width);
   }
 }
 

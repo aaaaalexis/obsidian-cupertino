@@ -243,6 +243,7 @@ body.mod-windows:not(.adaptive-mode-off):not(.is-mobile) {
 
     .menu-item-icon .svg-icon {
       --icon-size: var(--icon-s);
+      --icon-stroke: var(--icon-s-stroke-width);
     }
   }
 

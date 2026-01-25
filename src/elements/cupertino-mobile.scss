@@ -132,6 +132,7 @@ body:is(.mod-macos, .adaptive-mode-off).is-phone {
   .nav-files-container > div {
     --nav-item-size: var(--font-ui-medium);
     --nav-item-color: var(--text-normal);
+    --nav-item-color-hover: var(--text-normal);
     --nav-item-color-active: var(--text-normal);
     --nav-item-background-active: var(--background-modifier-hover);
     --nav-item-weight-hover: var(--font-normal);
