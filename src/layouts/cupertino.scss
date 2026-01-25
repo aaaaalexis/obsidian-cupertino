@@ -83,8 +83,6 @@ body:is(.layout-cupertino, .layout-fusion):not(.is-mobile) {
 }
 
 body:is(.layout-cupertino, .layout-macos, .layout-fusion).is-mobile {
-  --nav-item-color: var(--text-normal);
-
   .workspace-drawer .nav-buttons-container {
     justify-self: center;
     gap: 0;
