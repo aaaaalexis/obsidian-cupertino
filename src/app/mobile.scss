@@ -262,7 +262,7 @@ body.is-phone {
 
   // Editor panel
   .mod-root {
-    mask-image: none;
+    mask-image: none !important;
 
     .view-header {
       top: 0;
