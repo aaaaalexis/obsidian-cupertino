@@ -13,12 +13,6 @@ body.input-adwaita {
   --radius-xl: calc(18px * var(--radius-modifier));
   --button-radius: var(--radius-s);
 
-  --icon-xs-stroke-width: calc(2.5px * var(--icon-stroke-modifier));
-  --icon-s-stroke-width: calc(2.5px * var(--icon-stroke-modifier));
-  --icon-m-stroke-width: calc(2.25px * var(--icon-stroke-modifier));
-  --icon-l-stroke-width: calc(2.25px * var(--icon-stroke-modifier));
-  --icon-xl-stroke-width: calc(1.75px * var(--icon-stroke-modifier));
-
   // Button
   button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button)) {
     padding: 5px 17px;

@@ -32,10 +32,10 @@ body,
   --anim-duration-slow: calc(480ms * var(--anim-speed-modifier));
 
   --icon-stroke-modifier: 1;
-  --icon-xs-stroke-width: calc(2px * var(--icon-stroke-modifier));
+  --icon-xs-stroke-width: calc(2.25px * var(--icon-stroke-modifier));
   --icon-s-stroke-width: calc(2px * var(--icon-stroke-modifier));
-  --icon-m-stroke-width: calc(1.75px * var(--icon-stroke-modifier));
-  --icon-l-stroke-width: calc(1.75px * var(--icon-stroke-modifier));
+  --icon-m-stroke-width: calc(2px * var(--icon-stroke-modifier));
+  --icon-l-stroke-width: calc(2px * var(--icon-stroke-modifier));
   --icon-xl-stroke-width: calc(1.25px * var(--icon-stroke-modifier));
 
   --density-modifier: 1;

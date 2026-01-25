@@ -306,22 +306,20 @@ body:not(.is-phone).tab-underline-accented .workspace .mod-root .workspace-tabs:
 }
 
 // Editor panel: Tablet fix
-body.is-tablet {
-  .workspace .mod-root {
-    .workspace-tab-header-container-inner {
-      padding-inline: var(--radius-s);
-    }
-    .sidebar-toggle-button {
-      padding-left: 0;
-    }
-    .sidebar-toggle-button .clickable-icon {
-      margin: auto 0;
-    }
-    .workspace-tab-header-tab-list .clickable-icon,
-    .workspace-tab-header-new-tab .clickable-icon {
-      --icon-size: var(--icon-l);
-      --icon-stroke: var(--icon-l-stroke-width);
-    }
+body.is-tablet .workspace .mod-root {
+  .workspace-tab-header-container-inner {
+    padding-inline: var(--radius-s);
+  }
+  .sidebar-toggle-button {
+    padding-left: 0;
+  }
+  .sidebar-toggle-button .clickable-icon {
+    margin: auto 0;
+  }
+  .workspace-tab-header-tab-list .clickable-icon,
+  .workspace-tab-header-new-tab .clickable-icon {
+    --icon-size: var(--icon-l);
+    --icon-stroke: var(--icon-l-stroke-width);
   }
 }
 

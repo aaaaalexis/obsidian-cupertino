@@ -4,6 +4,7 @@ body.input-cupertino {
   .modal.mod-settings .vertical-tab-nav-item {
     .vertical-tab-nav-item-icon {
       --icon-size: var(--icon-xs);
+      --icon-stroke: var(--icon-xs-stroke-width);
       box-shadow:
         inset 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.25),
         inset -0.5px -0.5px 0.5px rgba(255, 255, 255, 0.25),

@@ -109,6 +109,15 @@ body.input-material {
     border: none;
   }
 
+  // Menu
+  .menu,
+  .suggestion-container {
+    .menu-item-icon .svg-icon {
+      --icon-size: var(--icon-m);
+      --icon-stroke: var(--icon-m-stroke-width);
+    }
+  }
+
   // Settings
   --setting-items-radius: var(--radius-l);
   --setting-items-background: var(--background-primary) !important;
@@ -218,9 +227,6 @@ body.input-material:not(.is-phone) {
       cursor: pointer;
       gap: 12px;
     }
-    .menu-item-icon .svg-icon {
-      --icon-size: var(--icon-m);
-    }
   }
 
   // Prompt
@@ -270,9 +276,6 @@ body.input-material.is-phone {
     }
     .menu-item::after {
       content: none;
-    }
-    .menu-item-icon .svg-icon {
-      --icon-size: var(--icon-m);
     }
   }
 
