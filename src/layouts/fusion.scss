@@ -63,9 +63,9 @@ body.layout-fusion:not(.is-phone) {
         -electron-corner-smoothing: var(--corner-smoothing);
         border-radius: 100vh;
         transition:
-          background-color var(--anim-duration-moderate),
           opacity var(--anim-duration-moderate),
-          filter var(--anim-duration-moderate) !important;
+          filter var(--anim-duration-moderate),
+          background-color 0s;
       }
       .workspace-tab-header:not(.is-active) {
         background-color: transparent;
