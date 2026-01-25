@@ -42,7 +42,8 @@
     --file-header-border: none;
   }
 
-  body:is(.mod-macos, .adaptive-mode-off):not(.font-variant-off) .workspace-leaf-content .view-content {
+  body:is(.mod-macos, .adaptive-mode-off):not(.font-variant-off) .markdown-reading-view,
+  body:is(.mod-macos, .adaptive-mode-off):not(.font-variant-off) .markdown-source-view {
     font-feature-settings:
       "ss01" 1,
       "ss07" 1,
