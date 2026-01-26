@@ -225,6 +225,9 @@ body.is-phone {
   }
   .modal.mod-community-modal .modal-title {
     height: calc(var(--touch-size-m) + 16px);
+    display: flex;
+    align-items: center;
+    min-width: fit-content;
   }
 }
 
