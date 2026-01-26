@@ -1,0 +1,41 @@
+name: 🐞 Bug Report
+description: Report something that is not working
+body:
+  - type: input
+    attributes:
+      label: Baseline version
+      placeholder: e.g., 3.2.0
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Obsidian & Installer version
+      placeholder: e.g., 1.11.3
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Operating system
+      placeholder: macOS 26.3, Windows 11 25H2, iOS 26.3, etc.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Issue & Steps to reproduce
+      description: Describe the bug, and how can we recreate this issue.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected behavior
+      description: What did you expect to see?
+  - type: textarea
+    attributes:
+      label: Proposed solution
+      description: Do you have a suggestion on how to fix this?
+  - type: checkboxes
+    attributes:
+      label: Final check
+      options:
+        - label: I've confirmed that both Obsidian and Baseline is up to date.
+          required: true
