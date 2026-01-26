@@ -101,6 +101,19 @@ body.is-mobile {
     }
   }
 
+  // Android specific
+  &.is-android {
+    --font-ui-smaller: calc(var(--font-text-size) * 0.75);
+    --font-ui-small: calc(var(--font-text-size) * 0.875);
+    --font-ui-medium: var(--font-text-size);
+    --font-ui-large: calc(var(--font-text-size) * 1.375);
+
+    .markdown-preview-view,
+    .markdown-source-view {
+      font-size: var(--font-text-size);
+    }
+  }
+
   // Side panels
   .workspace-drawer {
     .workspace-leaf-content > .node-insert-event,
