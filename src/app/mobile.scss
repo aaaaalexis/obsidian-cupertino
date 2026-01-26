@@ -256,11 +256,17 @@ body.is-phone {
     align-items: center;
     margin: 8px;
     inset: var(--safe-area-inset-top) var(--safe-area-inset-side) auto;
+    gap: 8px;
+  }
+  .workspace-drawer-header-name {
+    white-space: nowrap;
+    min-width: 0;
   }
   .workspace-drawer-header-info {
     margin-top: 0;
     margin-left: auto;
     color: var(--text-faint);
+    white-space: nowrap;
   }
   .workspace-drawer-tab-options {
     position: fixed;
@@ -278,7 +284,7 @@ body.is-phone {
   .workspace-drawer .workspace-leaf-content > div:nth-child(1 of div:not(.nav-header):not(.view-header)) {
     padding-top: 48px !important;
   }
-  .workspace-drawer .workspace-leaf-content .nav-header ~ div:last-child {
+  .workspace-drawer .workspace-leaf-content .nav-header ~ div:last-child:not(.backlink-pane) {
     // cubic-bezier(0.4, 0, 0.6, 1)
     mask: linear-gradient(to top, hsla(0, 0%, 0%, 0) 0px, hsla(0, 0%, 0%, 0.013) 5px, hsla(0, 0%, 0%, 0.049) 10px, hsla(0, 0%, 0%, 0.104) 14px, hsla(0, 0%, 0%, 0.175) 18px, hsla(0, 0%, 0%, 0.259) 22px, hsla(0, 0%, 0%, 0.352) 26px, hsla(0, 0%, 0%, 0.45) 30px, hsla(0, 0%, 0%, 0.55) 34px, hsla(0, 0%, 0%, 0.648) 38px, hsla(0, 0%, 0%, 0.741) 42px, hsla(0, 0%, 0%, 0.825) 46px, hsla(0, 0%, 0%, 0.896) 50px, hsla(0, 0%, 0%, 0.951) 54px, hsla(0, 0%, 0%, 0.987) 59px, hsl(0, 0%, 0%) 64px, black calc(100% - 48px), transparent calc(100% - 16px));
   }
