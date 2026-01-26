@@ -121,10 +121,6 @@ body.is-mobile {
       padding-inline: var(--safe-area-inset-side);
       z-index: 1;
     }
-    .workspace-drawer-header-left {
-      margin: 8px;
-      align-items: center;
-    }
     .workspace-drawer-header-name-text {
       font-family: var(--h1-font);
     }
@@ -252,22 +248,14 @@ body.is-phone {
   }
   .workspace-drawer-header {
     z-index: 1;
-  }
-  .workspace-drawer-tab-options-list {
-    margin: 0 0 var(--touch-size-l);
-  }
-  .workspace-drawer .workspace-leaf-content .nav-header ~ div:last-child {
-    // cubic-bezier(0.4, 0, 0.6, 1)
-    mask: linear-gradient(to top, hsla(0, 0%, 0%, 0) 0px, hsla(0, 0%, 0%, 0.013) 5px, hsla(0, 0%, 0%, 0.049) 10px, hsla(0, 0%, 0%, 0.104) 14px, hsla(0, 0%, 0%, 0.175) 18px, hsla(0, 0%, 0%, 0.259) 22px, hsla(0, 0%, 0%, 0.352) 26px, hsla(0, 0%, 0%, 0.45) 30px, hsla(0, 0%, 0%, 0.55) 34px, hsla(0, 0%, 0%, 0.648) 38px, hsla(0, 0%, 0%, 0.741) 42px, hsla(0, 0%, 0%, 0.825) 46px, hsla(0, 0%, 0%, 0.896) 50px, hsla(0, 0%, 0%, 0.951) 54px, hsla(0, 0%, 0%, 0.987) 59px, hsl(0, 0%, 0%) 64px, black calc(100% - 48px), transparent calc(100% - 16px));
-  }
-
-  .workspace-drawer-header {
     justify-content: flex-end;
   }
   .workspace-drawer-header-left {
     position: absolute;
     flex-direction: row;
-    inset: max(var(--size-4-2), var(--safe-area-inset-top)) var(--safe-area-inset-side) auto;
+    align-items: center;
+    margin: 8px;
+    inset: var(--safe-area-inset-top) var(--safe-area-inset-side) auto;
   }
   .workspace-drawer-header-info {
     margin-top: 0;
@@ -276,7 +264,7 @@ body.is-phone {
   }
   .workspace-drawer-tab-options {
     position: fixed;
-    bottom: calc(max(var(--safe-area-inset-bottom), var(--size-4-4)) - var(--keyboard-height));
+    bottom: var(--safe-area-inset-bottom);
     z-index: 2;
     width: stretch;
   }
@@ -284,8 +272,15 @@ body.is-phone {
   .workspace-drawer-tab-select {
     width: fit-content;
   }
+  .workspace-drawer-tab-options-list {
+    margin: 0 0 var(--touch-size-l);
+  }
   .workspace-drawer .workspace-leaf-content > div:nth-child(1 of div:not(.nav-header):not(.view-header)) {
     padding-top: 48px !important;
+  }
+  .workspace-drawer .workspace-leaf-content .nav-header ~ div:last-child {
+    // cubic-bezier(0.4, 0, 0.6, 1)
+    mask: linear-gradient(to top, hsla(0, 0%, 0%, 0) 0px, hsla(0, 0%, 0%, 0.013) 5px, hsla(0, 0%, 0%, 0.049) 10px, hsla(0, 0%, 0%, 0.104) 14px, hsla(0, 0%, 0%, 0.175) 18px, hsla(0, 0%, 0%, 0.259) 22px, hsla(0, 0%, 0%, 0.352) 26px, hsla(0, 0%, 0%, 0.45) 30px, hsla(0, 0%, 0%, 0.55) 34px, hsla(0, 0%, 0%, 0.648) 38px, hsla(0, 0%, 0%, 0.741) 42px, hsla(0, 0%, 0%, 0.825) 46px, hsla(0, 0%, 0%, 0.896) 50px, hsla(0, 0%, 0%, 0.951) 54px, hsla(0, 0%, 0%, 0.987) 59px, hsl(0, 0%, 0%) 64px, black calc(100% - 48px), transparent calc(100% - 16px));
   }
 
   // Editor panel
@@ -533,6 +528,10 @@ body.is-tablet {
   .workspace-drawer {
     .workspace-drawer-ribbon .side-dock-actions {
       padding-block: 12px;
+    }
+
+    .workspace-drawer-header-left {
+      margin-left: 12px;
     }
 
     .workspace-leaf-content .nav-header ~ div:last-child {
