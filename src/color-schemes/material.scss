@@ -3,7 +3,7 @@ Material Design
 https://m3.material.io/styles/color/system/overview
 */
 
-body.theme-light.material-light {
+body.is-android:not(.adaptive-mode-off).theme-light {
   --color-base-00: oklch(from var(--color-accent) 1 calc(c * 0.125) h);
   --color-base-05: oklch(from var(--color-accent) 0.99 calc(c * 0.125) h);
   --color-base-10: oklch(from var(--color-accent) 0.985 calc(c * 0.125) h);
@@ -18,7 +18,7 @@ body.theme-light.material-light {
   --color-base-100: oklch(from var(--color-accent) 0.2 calc(c * 0.125) h);
 }
 
-body.theme-dark.material-dark {
+body.is-android:not(.adaptive-mode-off).theme-dark {
   --color-base-00: oklch(from var(--color-accent) 0.2 calc(c * 0.125) h);
   --color-base-05: oklch(from var(--color-accent) 0.21 calc(c * 0.125) h);
   --color-base-10: oklch(from var(--color-accent) 0.22 calc(c * 0.125) h);
