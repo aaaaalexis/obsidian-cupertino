@@ -286,13 +286,24 @@ body.is-phone {
     bottom: var(--safe-area-inset-bottom);
     z-index: 2;
     width: stretch;
+    margin-inline: var(--safe-area-inset-side);
+    height: var(--touch-size-m);
   }
-  .workspace-drawer-tab-options.is-collapsed,
+  .workspace-drawer-tab-options.is-collapsed {
+    margin-right: calc(var(--safe-area-inset-side) + var(--touch-size-m));
+  }
   .workspace-drawer-tab-select {
-    width: fit-content;
+    height: 100%;
+  }
+  .workspace-drawer-tab-select .workspace-tab-header-inner {
+    justify-content: flex-start;
+  }
+  .workspace-drawer-tab-select .workspace-tab-header-inner-title {
+    flex: unset;
+    width: auto;
   }
   .workspace-drawer-tab-options-list {
-    margin: 0 0 var(--touch-size-l);
+    margin: 0 0 var(--touch-size-m);
   }
   .workspace-drawer .workspace-leaf-content > div:nth-child(1 of div:not(.nav-header):not(.view-header)) {
     padding-top: 48px !important;
