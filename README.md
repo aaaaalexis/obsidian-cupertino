@@ -175,16 +175,21 @@ Special thanks to the community for helping make Baseline a reality. Please supp
 
 ### Community Themes
 
-- **kepano - [Minimal](https://github.com/kepano/obsidian-minimal)**: Cards, Color schemes, Image filters, Table helpers, Style Settings [Buy them a coffee!](https://buymeacoffee.com/kepano)
-- **AnubisNekhet - [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin/)**: Catppuccin color schemes [Buy them a coffee!](https://buymeacoffee.com/anubisnekhet)
-- **jdanielmourao - [Sanctum](https://github.com/jdanielmourao/obsidian-sanctum)**: Sanctum color scheme, Elevated element style [Support them!](https://ko-fi.com/X8X56R5Q1)
-- **kyffa - [Iridium](https://github.com/kyffa/Iridium)**: Frame layout style
-- **vladstudio - [Tiniri](https://tiniri.vlad.studio/)**: Tiniri color scheme [Support them!](https://vlad.studio/signup/)
+- **[kepano/obsidian-minimal](https://github.com/kepano/obsidian-minimal)**: Cards, Color schemes, Image filters, Table helpers, Style Settings [Buy them a coffee!](https://buymeacoffee.com/kepano)
+- **[AnubisNekhet/AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin/)**: Catppuccin color schemes [Buy them a coffee!](https://buymeacoffee.com/anubisnekhet)
+- **[Sanjdanielmourao/obsidian-sanctumctum](https://github.com/jdanielmourao/obsidian-sanctum)**: Sanctum color scheme [Support them!](https://ko-fi.com/X8X56R5Q1)
+- **[vladstudio/tiniri-obsidian](https://github.com/vladstudio/tiniri-obsidian/)**: Tiniri color scheme [Support them!](https://vlad.studio/signup/)
+- **[Akifyss/obsidian-border](https://github.com/Akifyss/obsidian-border)**: Border workspace
+- **[kyffa/Iridium](https://github.com/kyffa/Iridium)**: Frame workspace
 
 ### Extras
 
-- **Warren2060 - [ChillJinshuSong](https://github.com/Warren2060/ChillJinshuSong)**: Font for extended language support
-- **bwya77**: Admin color scheme, Block properties style
+- **[Warren2060/ChillJinshuSong](https://github.com/Warren2060/ChillJinshuSong)**: Heading font for extended language support
+- **[bwya77/obsidian-baseline-customization](https://github.com/bwya77/obsidian-baseline-customization)**: Admin color scheme, Block properties style
+
+### Inspiration
+
+- **[Craft Docs](https://www.craft.do/)**: Cupertino workspace, Fusion workspace
 
 ## License
 
