@@ -136,9 +136,9 @@ body:not(.is-mobile) {
   }
 }
 .is-translucent {
-  --blur-s: none;
-  --blur-m: none;
-  --blur-l: none;
+  --blur-s: none !important;
+  --blur-m: none !important;
+  --blur-l: none !important;
 
   --divider-color: var(--background-modifier-border) !important;
   --tab-outline-color: var(--background-modifier-border);
