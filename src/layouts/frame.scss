@@ -13,6 +13,9 @@ body:is(.layout-frame, .layout-viewfinder) {
     .workspace-tab-header-container-inner {
       margin-bottom: -1px !important;
     }
+    .workspace-tab-container {
+      border-radius: 0;
+    }
   }
 
   // Contrast
@@ -43,9 +46,6 @@ body.layout-frame:not(.is-mobile) {
     overflow: hidden;
   }
 
-  .workspace-split.mod-root .workspace-tab-container {
-    border-radius: 0;
-  }
   .workspace-ribbon.mod-left:not(.is-collapsed) {
     padding-left: 4px;
   }

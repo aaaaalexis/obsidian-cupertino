@@ -112,7 +112,7 @@ body.layout-minimal {
     border-bottom: none;
   }
   .workspace-split:not(.mod-left-split) .workspace-tabs {
-    background-color: var(--background-primary);
+    background-color: var(--background-primary) !important;
   }
 
   .mod-sidedock.mod-left-split,
