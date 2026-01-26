@@ -84,6 +84,9 @@ body.input-cupertino.is-mobile {
         --icon-stroke: var(--icon-m-stroke-width);
       }
     }
+    .suggestion-item {
+      border-radius: var(--radius-s);
+    }
   }
 }
 body.input-cupertino.is-phone {
