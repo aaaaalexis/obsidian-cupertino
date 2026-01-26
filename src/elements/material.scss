@@ -3,6 +3,7 @@ body.is-android:not(.adaptive-mode-off) {
   --font-text-theme: "Google Sans Flex", "Google Sans";
 
   --clickable-icon-radius: 100vh;
+  --button-radius: 100vh;
   --input-font-weight: var(--font-medium);
   --input-border-width: 1px;
   --input-height: 40px;
@@ -36,10 +37,12 @@ body.is-android:not(.adaptive-mode-off) {
   &.theme-light {
     --text-accent-active: hsl(calc(var(--accent-h) + 15), calc(var(--accent-s) * 0.93), calc(var(--accent-l) * 0.475));
     --interactive-accent-active: hsl(calc(var(--accent-h) - 9), calc(var(--accent-s) * 1.05), calc(var(--accent-l) * 1.375));
+    --setting-items-background: var(--background-primary);
   }
   &.theme-dark {
     --text-accent-active: hsl(calc(var(--accent-h) - 9), calc(var(--accent-s) * 1.05), calc(var(--accent-l) * 1.375));
     --interactive-accent-active: hsl(calc(var(--accent-h) + 7), calc(var(--accent-s) * 0.78), calc(var(--accent-l) * 0.45));
+    --setting-items-background: var(--background-secondary);
   }
 
   // Button
@@ -123,10 +126,12 @@ body.is-android:not(.adaptive-mode-off) {
 
   // Settings
   --setting-items-radius: var(--radius-l);
-  --setting-items-background: var(--background-primary) !important;
 
-  .modal.mod-sidebar-layout {
+  &.theme-light .modal.mod-sidebar-layout {
     background-color: var(--background-secondary);
+  }
+  &.theme-dark .modal.mod-sidebar-layout {
+    background-color: var(--background-primary);
   }
   .modal.mod-settings {
     .vertical-tab-header-group-title {
@@ -145,7 +150,7 @@ body.is-android:not(.adaptive-mode-off) {
       align-items: center;
     }
     .vertical-tab-nav-item.is-active {
-      background-color: var(--background-primary);
+      background-color: var(--setting-items-background);
     }
 
     .vertical-tab-nav-item .vertical-tab-nav-item-icon {
@@ -184,6 +189,9 @@ body.is-android:not(.adaptive-mode-off) {
     }
     .setting-item-name {
       font-weight: var(--font-medium);
+    }
+    .setting-item-description {
+      font-size: var(--font-ui-small);
     }
 
     .setting-group .setting-group-search {
@@ -262,7 +270,7 @@ body.is-android:not(.adaptive-mode-off).is-phone {
 
   // Menu
   .menu {
-    .menu-item {
+    .menu-item:not(.is-label) {
       border-radius: var(--radius-s);
     }
     .menu-item.is-label + .menu-item:not(.is-label),
@@ -280,6 +288,10 @@ body.is-android:not(.adaptive-mode-off).is-phone {
     .menu-item::after {
       content: none;
     }
+  }
+
+  .suggestion-container .suggestion-item {
+    border-radius: var(--radius-s);
   }
 
   // Settings
@@ -304,12 +316,16 @@ body.is-android:not(.adaptive-mode-off).is-phone {
   // Prompt
   .prompt {
     .prompt-input {
-      border-radius: 100vh;
-      border: 2px solid transparent;
-    }
-    .prompt-input:focus {
-      border-color: var(--interactive-accent);
       box-shadow: none;
+      border: none;
+      border-radius: 100vh;
+    }
+    .prompt-input-container {
+      margin: auto var(--navbar-side-offset) var(--navbar-side-offset);
+    }
+
+    .suggestion-item {
+      border-radius: var(--radius-xl);
     }
   }
 }

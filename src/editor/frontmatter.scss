@@ -24,6 +24,11 @@
     border-bottom: none !important;
     box-shadow: none !important;
   }
+  .metadata-input-longtext:not(:focus) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .metadata-link {
     width: 100%;
   }

@@ -65,13 +65,12 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
   }
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container .sidebar-toggle-button {
-    min-height: calc(var(--header-height) - 8px);
-    max-height: calc(var(--header-height) - 8px);
-  }
-  .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-inner,
-  .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button .clickable-icon,
-  .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) .sidebar-toggle-button .clickable-icon {
-    max-height: calc(var(--header-height) - 16px - 8px);
+    min-height: calc(var(--header-height) - 16px);
+    max-height: calc(var(--header-height) - 16px);
+
+    div:is(.workspace-tab-header-inner, .clickable-icon) {
+      padding-block: 4px;
+    }
   }
 
   .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
