@@ -120,10 +120,14 @@ body.input-material {
 
   // Settings
   --setting-items-radius: var(--radius-l);
-  --setting-items-background: var(--background-primary) !important;
 
-  .modal.mod-sidebar-layout {
+  &.theme-light .modal.mod-sidebar-layout {
+    --setting-items-background: var(--background-primary);
     background-color: var(--background-secondary);
+  }
+  &.theme-dark .modal.mod-sidebar-layout {
+    --setting-items-background: var(--background-secondary);
+    background-color: var(--background-primary);
   }
   .modal.mod-settings {
     .vertical-tab-header-group-title {
@@ -142,7 +146,7 @@ body.input-material {
       align-items: center;
     }
     .vertical-tab-nav-item.is-active {
-      background-color: var(--background-primary);
+      background-color: var(--setting-items-background);
     }
 
     .vertical-tab-nav-item .vertical-tab-nav-item-icon {
