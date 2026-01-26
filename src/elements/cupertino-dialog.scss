@@ -1,6 +1,6 @@
 body:is(.mod-macos, .adaptive-mode-off) {
-  --background-modifier-message: var(--modal-background) !important;
-  --modal-background: rgb(from var(--background-primary-alt) r g b / 75%) !important;
+  --background-modifier-message: var(--modal-background);
+  --modal-background: rgb(from var(--background-primary-alt) r g b / 75%);
 
   &.is-translucent {
     --modal-background: var(--background-primary);
@@ -83,6 +83,9 @@ body:is(.mod-macos, .adaptive-mode-off).is-mobile {
         --icon-size: var(--icon-m);
         --icon-stroke: var(--icon-m-stroke-width);
       }
+    }
+    .suggestion-item {
+      border-radius: var(--radius-s);
     }
   }
 }

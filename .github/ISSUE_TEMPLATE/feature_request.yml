@@ -1,0 +1,32 @@
+name: 💡 Feature request
+description: Suggest an idea for Cupertino
+body:
+  - type: input
+    attributes:
+      label: What would you like to achieve?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Describe the feature
+      placeholder: |
+        - How the feature would work?
+        - What's your workflow?
+        - What are you trying to accomplish?
+        - How would it look in the editor or reading mode?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Do you have a reference?
+      placeholder: Is there another theme, website, or app that does this well?
+  - type: dropdown
+    attributes:
+      label: How much would this improve your experience?
+      options:
+        - Nice to have
+        - Useful
+        - Game changer
+        - Critical (Accessibility)
+    validations:
+      required: true
