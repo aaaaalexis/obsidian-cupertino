@@ -13,6 +13,7 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     }
     .modal.mod-settings .vertical-tab-header,
     .mod-sidedock.mod-left-split,
+    &.layout-macos .mod-sidedock.mod-right-split,
     &.input-cupertino:is(.tab-floating, .tab-floating-center) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
       background-color: var(--color-base-25) !important;
       box-shadow: none !important;
@@ -52,6 +53,9 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
       var(--anim-duration-moderate),
       background-color 0s;
   }
+  &:not(.is-translucent).theme-dark .mod-sidedock {
+    background-color: color-mix(in srgb, var(--background-primary), black 15%) !important;
+  }
   .mod-sidedock.mod-left-split {
     -electron-corner-smoothing: var(--corner-smoothing);
     display: flex;
@@ -63,6 +67,7 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     height: -webkit-fill-available;
     overflow: hidden;
   }
+
   &:not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container .sidebar-toggle-button {
     min-height: calc(var(--header-height) - 16px);

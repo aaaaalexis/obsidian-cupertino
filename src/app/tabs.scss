@@ -370,6 +370,7 @@ body.is-tablet .workspace .mod-root {
     gap: 8px;
   }
 
+  .sidebar-toggle-button .clickable-icon,
   .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
   .workspace-tab-header.is-active .workspace-tab-header-inner-title {
     color: var(--icon-color-focused) !important;
