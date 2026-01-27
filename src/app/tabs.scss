@@ -427,10 +427,10 @@ body:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-le
     width: -webkit-fill-available;
     gap: 0;
     animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
-    padding: 0 16px;
+    padding: 0 8px;
   }
   .workspace-tab-header {
-    padding: 8px;
+    padding: 8px 12px;
   }
   .workspace-tab-header-inner {
     gap: 8px;
