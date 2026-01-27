@@ -384,6 +384,9 @@ body.tab-left-labeled:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-
 body.tab-right-labeled:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) {
   --sidebar-tab-text-display: inline-block;
 
+  .workspace-tab-header-container-inner {
+    gap: 0;
+  }
   .workspace-tab-header-inner {
     width: auto !important;
   }

@@ -132,14 +132,6 @@ body:not(.mod-macos):not(.is-mobile):not(.tab-top-left-stacked).css-settings-man
 
 // Desktop sidedock
 body:not(.is-mobile) {
-  &:not(.layout-macos, .layout-fusion):not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split .sidebar-toggle-button {
-    order: -1;
-    z-index: 1;
-  }
-  &:not(.layout-macos, .layout-fusion):not(.input-cupertino):not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split .sidebar-toggle-button {
-    margin-right: calc(8px * var(--density-modifier));
-  }
-
   .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
     border-color: transparent;
   }
