@@ -1,5 +1,5 @@
 body {
-  --nav-item-padding: calc(8px * var(--density-modifier)) 8px calc(8px * var(--density-modifier)) 24px;
+  --nav-item-padding: calc(8px * var(--density-modifier)) 16px calc(8px * var(--density-modifier)) 32px;
   --nav-indentation-guide-width: 0px;
 
   --ribbon-background: transparent;
@@ -146,7 +146,7 @@ body:not(.is-mobile) {
   // Sidedock padding
   .mod-sidedock .workspace-leaf-content > .node-insert-event,
   .mod-sidedock .workspace-leaf-content > .view-content {
-    padding: 2px 16px;
+    padding: 2px 8px;
 
     > .node-insert-event {
       padding: 0;

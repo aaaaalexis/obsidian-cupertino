@@ -52,6 +52,9 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
       var(--anim-duration-moderate),
       background-color 0s;
   }
+  &:not(.is-translucent).theme-dark .mod-sidedock {
+    background-color: color-mix(in srgb, var(--background-primary), black 15%) !important;
+  }
   .mod-sidedock.mod-left-split {
     -electron-corner-smoothing: var(--corner-smoothing);
     display: flex;
