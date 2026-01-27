@@ -46,7 +46,7 @@ body:not(.is-phone) {
     }
     .vertical-tab-header-group-title,
     .vertical-tab-nav-item {
-      padding: calc(8px * var(--density-modifier)) 16px;
+      padding: calc(8px * var(--density-modifier)) 12px;
       align-items: center;
       font-size: var(--font-ui-small);
     }
