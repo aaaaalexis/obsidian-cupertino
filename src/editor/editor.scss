@@ -251,21 +251,6 @@
     }
   }
 
-  body:not(.media-muted-off) {
-    --media-muted: 0.2;
-  }
-  .theme-dark .workspace-leaf-content[data-type="markdown"],
-  .theme-dark .workspace-leaf-content[data-type="bases"] {
-    img:not([width], .cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]),
-    .bases-cards-cover {
-      transition: opacity var(--anim-duration-moderate);
-
-      &:not(:hover) {
-        opacity: var(--media-muted, 1);
-      }
-    }
-  }
-
   // Image grid
   .img-grid .markdown-preview-section {
     .el-p > p:has(> .image-embed, > .image-embed):has(span:last-child) {
