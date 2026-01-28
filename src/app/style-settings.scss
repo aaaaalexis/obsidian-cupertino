@@ -789,6 +789,16 @@ settings:
 		description: Minimize animation effects throughout the app.
 		type: class-toggle
 	-
+		id: font-ui-modifier
+		title: Interface font size
+		description: Adjust the relative font size throughout the app.
+		type: variable-number-slider
+		default: 0
+		min: -8
+		max: 8
+		step: 1
+		format: px
+	-
 		id: animation
 		title: Animation
 		type: heading
