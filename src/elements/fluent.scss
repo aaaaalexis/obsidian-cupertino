@@ -172,6 +172,11 @@ body.input-fluent {
       background-color: transparent;
     }
   }
+
+  // Notice
+  .notice {
+    color: var(--text-muted);
+  }
 }
 
 body.input-fluent:not(.is-mobile) {
