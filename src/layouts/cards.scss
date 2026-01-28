@@ -1,9 +1,9 @@
 body:is(.layout-cards, .layout-border):not(.is-mobile) {
   // Editor panel
-  &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-left-sidedock-open) .mod-root > div:first-of-type .workspace-tab-container {
+  &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-left-sidedock-open) .mod-root {
     margin-left: 8px;
   }
-  .workspace:not(.is-right-sidedock-open) .mod-root > div:last-of-type .workspace-tab-container {
+  .workspace:not(.is-right-sidedock-open) .mod-root {
     margin-right: 8px;
   }
 
@@ -94,18 +94,13 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
 body:is(.layout-cards, .layout-border).is-tablet {
   // Editor panel
   .mod-root {
+    padding-inline: 8px;
     padding-bottom: 8px;
-  }
-  .workspace-drawer.mod-left:not(.is-pinned) + .mod-root > div:first-of-type .workspace-tab-container {
-    margin-left: 8px;
-  }
-  .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) > div:last-of-type .workspace-tab-container {
-    margin-right: 8px;
   }
 
   // Side panels
   .workspace-drawer.is-pinned {
-    margin: 0 8px;
+    margin: 0;
     margin-top: calc(var(--safe-area-inset-top) + var(--header-height));
     margin-bottom: 8px;
     border-radius: var(--radius-s);
@@ -115,6 +110,13 @@ body:is(.layout-cards, .layout-border).is-tablet {
     .workspace-drawer-ribbon,
     .workspace-drawer-inner {
       padding-block: 0px 16px;
+    }
+
+    &.mod-left {
+      margin-left: 8px;
+    }
+    &.mod-right {
+      margin-right: 8px;
     }
   }
 
@@ -151,24 +153,23 @@ body.layout-cards:not(.is-phone) {
   .workspace-split.mod-vertical {
     gap: 8px;
   }
-  .workspace-split > * > .workspace-leaf-resize-handle:not(:hover) {
-    border-color: transparent;
-  }
-}
-body.layout-cards:not(.is-mobile) {
-  // Editor panel
   .workspace-split.mod-root .workspace-tabs {
     overflow: visible;
   }
-  .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle {
+  .workspace-split:not(.mod-sidedock) > * > .workspace-leaf-resize-handle:not(:hover) {
+    border-color: transparent;
+  }
+  .workspace-split:not(.mod-sidedock).mod-vertical > * > .workspace-leaf-resize-handle {
     border-inline-end-width: 8px;
     transform: translateX(8px);
   }
-  .workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
+  .workspace-split:not(.mod-sidedock).mod-horizontal > * > .workspace-leaf-resize-handle {
     border-bottom-width: 8px;
     transform: translateY(8px);
   }
+}
 
+body.layout-cards:not(.is-mobile) {
   // Side panels
   .mod-sidedock .workspace-leaf-resize-handle:not(:hover) {
     border-color: transparent;

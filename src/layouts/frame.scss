@@ -1,4 +1,6 @@
 body:is(.layout-frame, .layout-viewfinder) {
+  --radius-window: 8px;
+
   // Tab styles
   &:is(.tab-floating, .tab-floating-center) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     --tab-outline-width: 1px;
@@ -36,12 +38,12 @@ body.layout-frame:not(.is-mobile) {
   .workspace {
     padding: 4px;
   }
-  .workspace-ribbon,
-  .workspace-split {
+  .workspace > .workspace-ribbon,
+  .workspace > .workspace-split {
     margin: 4px;
     height: unset;
     background-color: var(--background-primary);
-    border-radius: var(--radius-s);
+    border-radius: var(--radius-window);
     border: var(--border-width) solid var(--background-modifier-border);
     overflow: hidden;
   }
@@ -121,34 +123,22 @@ body.layout-frame:not(.is-mobile) {
 // Mobile
 body.layout-frame.is-tablet {
   .workspace {
-    padding: 0 4px;
+    padding: 0 4px 4px;
     background-color: var(--mobile-sidebar-background);
   }
   .mod-root,
   .workspace-drawer.is-pinned {
     padding-top: 0;
-    margin-top: var(--safe-area-inset-top);
-    margin-bottom: 4px;
+    margin: var(--safe-area-inset-top) 4px 4px;
     height: auto;
     background-color: var(--background-primary);
     border-radius: var(--radius-m);
     border: var(--border-width) solid var(--background-modifier-border);
     overflow: hidden;
   }
-  .workspace-drawer.is-pinned {
-    margin-inline: 4px;
-    padding-bottom: 0;
-
-    &.mod-left {
-      margin-left: 0;
-    }
-    &.mod-right {
-      margin-right: 0;
-    }
-    .workspace-drawer-ribbon,
-    .workspace-drawer-inner {
-      padding-block: 0px 16px;
-    }
+  .workspace-drawer-ribbon,
+  .workspace-drawer-inner {
+    padding-block: 0px 16px;
   }
 
   &.contrast-dark-black.theme-dark,
