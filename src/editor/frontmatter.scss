@@ -10,22 +10,30 @@
   }
 
   body.is-mobile .metadata-content {
-    transform: none;
-    border-radius: 0;
     background-color: transparent;
     padding: 0;
-    width: auto;
   }
   .metadata-container {
     --metadata-divider-width: 0 !important;
   }
+  .metadata-content {
+    transform: translateX(-8px) !important;
+    width: calc(100% + 16px) !important;
+  }
   .metadata-properties-heading {
+    padding-inline: 0;
     width: 100%;
+  }
+  .metadata-property-icon::before {
+    display: none;
+  }
+  .metadata-property-key {
+    padding: 4px 8px;
   }
   .metadata-property-key-input,
   .metadata-input {
-    border-bottom: none !important;
     box-shadow: none !important;
+    border-bottom: none !important;
   }
   .metadata-input-longtext:not(:focus) {
     overflow: hidden;
@@ -45,10 +53,19 @@
   // Editor panel
   .mod-root .metadata-container .metadata-show-source-button,
   .mod-root .metadata-container .metadata-add-button {
+    display: flex;
     gap: 8px;
-    padding-inline-start: 8px;
-    margin-left: -4px;
-    margin-top: var(--metadata-gap);
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    margin-top: 4px;
+    background-color: transparent;
+    padding-inline: 8px;
+    color: var(--text-faint);
+    font-weight: normal;
+    text-transform: lowercase;
+
+    &:hover {
+      color: var(--text-muted);
+    }
   }
 
   // Metadata: Style Settings
@@ -87,8 +104,6 @@
 
     .metadata-container {
       border-radius: var(--radius-s);
-      transform: translateX(-8px);
-      width: calc(100% + 16px);
     }
 
     .metadata-properties-heading.is-collapsed {
@@ -115,11 +130,6 @@
     .metadata-container {
       --input-padding: 8px;
 
-      .metadata-content {
-        transform: translateX(-8px);
-        width: calc(100% + 16px);
-      }
-
       .metadata-properties-heading {
         padding-inline: 0px;
       }
@@ -136,8 +146,10 @@
         --icon-size: var(--icon-s);
         --icon-stroke: var(--icon-s-stroke-width);
       }
-      .metadata-property-key {
-        padding: 8px 8px 8px 12px;
+      .metadata-property-key,
+      .metadata-show-source-button,
+      .metadata-add-button {
+        padding: 8px 16px;
       }
 
       .metadata-property[data-property-key="tags"] .multi-select-pill {
@@ -150,33 +162,11 @@
       padding: 8px !important;
     }
 
-    .metadata-container .metadata-show-source-button,
-    .metadata-container .metadata-add-button {
-      display: flex;
-      transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
-      margin-top: 4px;
-      margin-left: 0;
-      padding-block: 4px;
-      padding-inline-start: 12px;
-      padding-inline-end: 16px;
-      width: fit-content;
-    }
-
-    .markdown-reading-view {
-      .metadata-container:not(:hover) .metadata-show-source-button,
-      .metadata-container:not(:hover) .metadata-add-button {
-        opacity: 0;
-        margin-top: 0;
-        padding-block: 0;
-        height: 0;
-      }
-    }
-
-    &.is-phone {
-      .metadata-container .metadata-show-source-button,
-      .metadata-container .metadata-add-button {
-        padding: 8px 8px 8px 12px;
-      }
+    .markdown-reading-view .metadata-container:not(:hover) .metadata-show-source-button,
+    .markdown-reading-view .metadata-container:not(:hover) .metadata-add-button {
+      opacity: 0;
+      padding-block: 0;
+      height: 0;
     }
   }
 }
