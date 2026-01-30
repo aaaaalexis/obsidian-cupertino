@@ -3323,7 +3323,7 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
   &:not(:hover) .setting-item:last-child {
     visibility: hidden;
     opacity: 0;
-    padding-block: 0;
+    padding-block: 0 !important;
     height: 0px;
   }
 }
