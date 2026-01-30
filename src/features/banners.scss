@@ -64,8 +64,18 @@ body:not(.banner-off) {
     }
 
     // Banner image
+    &.banner-image-contain {
+      --banner-image-object-fit: contain;
+    }
+    &.banner-image-cover {
+      --banner-image-object-fit: cover;
+    }
+    &.banner-image-fill {
+      --banner-image-object-fit: fill;
+    }
+
     &.banner {
-      img[alt="banner"]:not(:active) {
+      img[alt="banner"]:not(:active):not([contenteditable]) {
         position: absolute;
         inset: var(--view-top-spacing-markdown) var(--banner-image-inset) auto;
         border-radius: var(--banner-image-radius, var(--media-radius));
