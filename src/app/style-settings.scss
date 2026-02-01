@@ -736,6 +736,9 @@ settings:
 		default: input-baseline
 		options:
 			-
+				label: Adwaita
+				value: input-adwaita
+			-
 				label: Baseline
 				value: input-baseline
 			-
@@ -750,9 +753,6 @@ settings:
 			-
 				label: Tactile
 				value: input-tactile
-			-
-				label: Adwaita
-				value: input-adwaita
 	-
 		id: status-bar-style
 		title: Status bar

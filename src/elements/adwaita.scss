@@ -131,6 +131,7 @@ body.input-adwaita {
       display: none;
     }
     .vertical-tab-nav-item {
+      font-size: calc(var(--font-ui-small) + 1px);
       padding: calc(12px * var(--density-modifier)) 14px;
     }
     .vertical-tab-nav-item-icon {
@@ -166,7 +167,7 @@ body.input-adwaita {
     }
   }
   &:not(.plugins-grid-off) .installed-plugins-container .setting-items {
-    box-shadow: none;
+    box-shadow: none !important;
     background-color: transparent;
   }
 
