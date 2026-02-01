@@ -38,9 +38,9 @@ body.nav-item-strong {
   }
 
   &.input-material .nav-files-container > div {
-    --nav-item-background-active: var(--interactive-accent-active);
-    --nav-item-background-selected: var(--interactive-accent-active);
-    --nav-item-color-active: var(--text-accent-active);
+    --nav-item-background-active: var(--background-primary);
+    --nav-item-background-selected: var(--background-primary);
+    --nav-item-color-active: var(--text-normal);
   }
 
   &.input-cupertino:is(.layout-macos, .layout-fusion):not(.is-mobile) .nav-files-container > div {

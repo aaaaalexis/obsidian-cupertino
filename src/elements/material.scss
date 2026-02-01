@@ -20,11 +20,17 @@ body.input-material {
   --slider-thumb-radius: 100vh;
   --slider-track-height: 16px;
 
+  --tab-font-weight: var(--font-medium);
+  --nav-item-weight: var(--font-medium);
+  --nav-item-weight-hover: var(--font-medium);
+  --nav-item-weight-active: var(--font-medium);
+  --nav-item-radius: 100vh;
+
   --background-modifier-border: var(--color-base-30);
+  --background-modifier-form-field: var(--background-modifier-hover);
   --interactive-hover: var(--color-base-25);
   --interactive-normal: var(--background-primary);
-  --dropdown-background: var(--background-modifier-hover);
-  --background-modifier-form-field: var(--background-modifier-hover);
+  --dropdown-background: var(--background-modifier-form-field);
 
   --menu-radius: var(--radius-l);
 
@@ -32,13 +38,9 @@ body.input-material {
   --shadow-l: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px !important;
 
   &.theme-light {
-    --text-accent-active: hsl(calc(var(--accent-h) + 15), calc(var(--accent-s) * 0.93), calc(var(--accent-l) * 0.475));
-    --interactive-accent-active: hsl(calc(var(--accent-h) - 9), calc(var(--accent-s) * 1.05), calc(var(--accent-l) * 1.375));
     --setting-items-background: var(--background-primary);
   }
   &.theme-dark {
-    --text-accent-active: hsl(calc(var(--accent-h) - 9), calc(var(--accent-s) * 1.05), calc(var(--accent-l) * 1.375));
-    --interactive-accent-active: hsl(calc(var(--accent-h) + 7), calc(var(--accent-s) * 0.78), calc(var(--accent-l) * 0.45));
     --setting-items-background: var(--background-secondary);
   }
 
@@ -63,7 +65,6 @@ body.input-material {
     border-color: var(--background-modifier-border-focus);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    cursor: pointer;
 
     &:focus {
       box-shadow: inset 0 -2px var(--interactive-accent);
@@ -199,8 +200,6 @@ body.input-material {
 }
 
 body.input-material.is-mobile {
-  --nav-item-radius: var(--clickable-icon-radius);
-
   // Settings
   .modal.mod-settings {
     .setting-group .setting-item:not(:last-child):not(.setting-item-heading) {
@@ -259,6 +258,7 @@ body.input-material.is-phone {
   .mobile-navbar,
   &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     border: none !important;
+    box-shadow: var(--shadow-s);
   }
   .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::before,
   .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::after {
