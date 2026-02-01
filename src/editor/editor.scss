@@ -56,6 +56,27 @@
     overflow: hidden;
   }
 
+  // Editor panel
+  body:is(.layout-baseline, :not(.css-settings-manager)):not(.is-phone) {
+    .workspace-split.mod-vertical {
+      gap: 8px;
+    }
+    .workspace-split.mod-root .workspace-tabs {
+      overflow: visible;
+    }
+    .workspace-split:not(.mod-sidedock) > * > .workspace-leaf-resize-handle:not(:hover) {
+      border-color: transparent;
+    }
+    .workspace-split:not(.mod-sidedock).mod-vertical > * > .workspace-leaf-resize-handle {
+      border-inline-end-width: 8px;
+      transform: translateX(8px);
+    }
+    .workspace-split:not(.mod-sidedock).mod-horizontal > * > .workspace-leaf-resize-handle {
+      border-bottom-width: 8px;
+      transform: translateY(8px);
+    }
+  }
+
   .markdown-preview-view,
   .markdown-source-view {
     color: var(--text-normal-editor, var(--text-normal));

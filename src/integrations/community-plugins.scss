@@ -108,45 +108,16 @@ body {
 body:not(.is-mobile) .view-content.notebook-navigator {
   padding: 0 !important;
 
-  .nn-split-container.nn-single-pane {
-    .nn-navigation-pane .nn-pane-header,
-    .nn-navigation-pane-scroller {
-      border-right: none;
-    }
+  .nn-single-pane .nn-navigation-pane {
+    border-right: none;
   }
-  .nn-virtual-container {
-    margin-bottom: 32px;
-  }
-  .nn-search-input {
-    height: 100% !important;
-  }
-
   .nn-pane-header {
-    padding: 8px 16px;
-    height: auto;
+    padding: 8px 12px;
   }
   .nn-header-actions button.nn-icon-button {
     padding: 8px;
     min-width: unset;
     height: auto;
-  }
-
-  .nn-navigation-pane-scroller,
-  .nn-list-pane-scroller {
-    margin-top: var(--nn-list-pane-overlay-height, 48px);
-    margin-bottom: var(--nn-nav-calendar-height);
-  }
-  .nn-navigation-pane-scroller > .nn-navigation-pane-overlay,
-  .nn-list-pane-scroller > .nn-list-pane-overlay {
-    position: fixed;
-    width: 100%;
-  }
-  .nn-navigation-pane-content {
-    padding-bottom: var(--nn-pane-bottom-toolbar-space);
-  }
-  .nn-navigation-calendar-overlay {
-    width: 100%;
-    position: fixed;
   }
 }
 body.is-mobile .view-content.notebook-navigator-mobile {

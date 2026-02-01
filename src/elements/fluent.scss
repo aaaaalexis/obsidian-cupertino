@@ -175,6 +175,11 @@ body.mod-windows:not(.adaptive-mode-off) {
       background-color: transparent;
     }
   }
+
+  // Notice
+  .notice {
+    color: var(--text-muted);
+  }
 }
 
 body.mod-windows:not(.adaptive-mode-off):not(.is-mobile) {

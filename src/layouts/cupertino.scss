@@ -64,6 +64,27 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
   }
 }
 
+body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
+  // Editor panel
+  .workspace-split.mod-vertical {
+    gap: 8px;
+  }
+  .workspace-split.mod-root .workspace-tabs {
+    overflow: visible;
+  }
+  .workspace-split:not(.mod-sidedock) > * > .workspace-leaf-resize-handle:not(:hover) {
+    border-color: transparent;
+  }
+  .workspace-split:not(.mod-sidedock).mod-vertical > * > .workspace-leaf-resize-handle {
+    border-inline-end-width: 8px;
+    transform: translateX(8px);
+  }
+  .workspace-split:not(.mod-sidedock).mod-horizontal > * > .workspace-leaf-resize-handle {
+    border-bottom-width: 8px;
+    transform: translateY(8px);
+  }
+}
+
 body:is(.mod-macos, .adaptive-mode-off).is-mobile {
   .workspace-drawer .nav-buttons-container {
     justify-self: center;
