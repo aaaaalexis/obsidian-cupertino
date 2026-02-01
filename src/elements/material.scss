@@ -31,6 +31,7 @@ body.input-material {
   --interactive-hover: var(--color-base-25);
   --interactive-normal: var(--background-primary);
   --dropdown-background: var(--background-modifier-form-field);
+  --dropdown-background-hover: var(--background-modifier-form-field);
 
   --menu-radius: var(--radius-l);
 
@@ -76,7 +77,7 @@ body.input-material {
 
   // Slider
   input[type="range"]::-webkit-slider-thumb {
-    outline: 6px solid var(--background-primary);
+    outline: 6px solid var(--setting-items-background);
     background-color: var(--interactive-accent);
   }
   input[type="range"]:active {
@@ -249,6 +250,10 @@ body.input-material:not(.is-phone) {
       border-radius: 100vh;
       background-color: var(--interactive-normal);
       font-size: var(--font-ui-large);
+    }
+
+    .suggestion-item {
+      border-radius: 100vh;
     }
   }
 }
