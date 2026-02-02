@@ -230,7 +230,7 @@ body.input-material:not(.is-phone) {
 
     .menu-item,
     .suggestion-item {
-      padding: 12px;
+      padding: calc(8px * var(--density-modifier)) 12px;
       font-weight: var(--font-medium);
       cursor: pointer;
       gap: 12px;
