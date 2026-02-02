@@ -81,7 +81,7 @@ body.is-android:not(.adaptive-mode-off) {
 
   // Text input
   textarea,
-  input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]),
+  input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]):not(.prompt-input),
   select,
   .combobox-button,
   .dropdown {
@@ -256,7 +256,7 @@ body.is-android:not(.adaptive-mode-off):not(.is-phone) {
 
     .menu-item,
     .suggestion-item {
-      padding: 12px;
+      padding: calc(8px * var(--density-modifier)) 12px;
       font-weight: var(--font-medium);
       cursor: pointer;
       gap: 12px;
@@ -271,7 +271,6 @@ body.is-android:not(.adaptive-mode-off):not(.is-phone) {
       margin: 16px 16px 0;
     }
     .prompt-input {
-      box-shadow: none;
       border: none;
       border-radius: 100vh;
       background-color: var(--interactive-normal);
