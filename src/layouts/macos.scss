@@ -47,10 +47,10 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
     }
   }
 
-  &:not(.is-translucent).theme-light .mod-sidedock {
+  &:not(.is-translucent).theme-light .mod-sidedock.mod-left-split {
     background-color: color-mix(in srgb, #fff, var(--interactive-accent) 2%);
   }
-  &:not(.is-translucent).theme-dark .mod-sidedock {
+  &:not(.is-translucent).theme-dark .mod-sidedock.mod-left-split {
     background-color: color-mix(in srgb, #171717, var(--interactive-accent) 2%);
   }
   &.is-translucent .mod-sidedock.mod-left-split {
