@@ -130,7 +130,7 @@ body:is(.layout-macos, .layout-fusion).is-tablet {
 
   .workspace-drawer:not(.is-pinned) {
     background-color: var(--modal-background);
-    box-shadow: var(--raised-shadow);
+    box-shadow: var(--shadow-xs);
     backdrop-filter: var(--blur-l);
   }
 
