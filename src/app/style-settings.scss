@@ -15,11 +15,7 @@ settings:
         description: Prevent automatic styling based on operating system.
         type: class-toggle
     -
-        id: active-line-off
-        title: Disable active line highlight
-        type: class-toggle
-    -
-        id: tab-floating-center-off
+        id: tab-floating
         title: Disable centered tabs
         type: class-toggle
     -
@@ -36,7 +32,7 @@ settings:
         addCommand: true
     -
         id: hover-sidedock
-        title: Hover sidebars
+        title: Hover sidebar
         description: Reveal collapsed sidebars by hovering over window edges.
         type: class-toggle
         addCommand: true
@@ -68,6 +64,10 @@ settings:
         type: heading
         level: 1
         collapsed: true
+    -
+        id: active-line-off
+        title: Disable active line highlight
+        type: class-toggle
     -
         id: banner-off
         title: Disable banner

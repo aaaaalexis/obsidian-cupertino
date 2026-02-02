@@ -118,7 +118,7 @@ body.is-tablet {
 }
 
 // Editor panel: Floating (Center)
-body:not(.is-phone):not(.tab-floating-center-off) .mod-root .workspace-tabs:not(.mod-stacked) {
+body:not(.is-phone):not(.tab-floating) .mod-root .workspace-tabs:not(.mod-stacked) {
   container-type: inline-size;
 
   @container (min-width: 560px) {
@@ -136,7 +136,7 @@ body:not(.is-phone):not(.tab-floating-center-off) .mod-root .workspace-tabs:not(
   }
 }
 
-body.mod-macos:not(.is-mobile):not(.tab-floating-center-off) {
+body.mod-macos:not(.is-mobile):not(.tab-floating) {
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
       // Both sidedocks hidden
@@ -159,7 +159,7 @@ body.mod-macos:not(.is-mobile):not(.tab-floating-center-off) {
   }
 }
 
-body:not(.mod-macos):not(.is-mobile):not(.tab-floating-center-off) {
+body:not(.mod-macos):not(.is-mobile):not(.tab-floating) {
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
       // Both sidedocks hidden
@@ -192,7 +192,7 @@ body:not(.mod-macos):not(.is-mobile):not(.tab-floating-center-off) {
   }
 }
 
-body.is-tablet:not(.tab-floating-center-off) {
+body.is-tablet:not(.tab-floating) {
   // Both drawer hidden
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {

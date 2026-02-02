@@ -201,7 +201,7 @@ body:not(.nav-action-center) .mod-sidedock .workspace-leaf-content .nav-header:f
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-drawer-vault-actions .clickable-icon:first-child {
   display: none;
 }
-body:not(.is-mobile):not(.hide-vault-switcher-off) .mod-sidedock.mod-left-split {
+body:not(.is-mobile) .mod-sidedock.mod-left-split {
   .workspace-sidedock-vault-profile {
     background-color: transparent;
     border-top: none;
@@ -254,21 +254,5 @@ body:not(.is-mobile):not(.hide-vault-switcher-off) .mod-sidedock.mod-left-split 
   .workspace-leaf-content > .node-insert-event,
   .workspace-leaf-content > .view-content {
     padding-bottom: 64px;
-  }
-}
-
-// Desktop sidedock: Style Settings
-body.large-new-note .mod-sidedock .workspace-leaf-content[data-type="file-explorer"] {
-  .nav-header .nav-action-button:first-child {
-    flex: 1;
-    box-shadow: inset 0 0 0 1px var(--background-modifier-border);
-  }
-
-  .nav-header .nav-action-button:first-child::after {
-    content: attr(aria-label);
-    font-size: var(--font-ui-smaller);
-    color: var(--icon-color);
-    white-space: nowrap;
-    margin-left: 8px;
   }
 }

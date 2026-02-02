@@ -239,11 +239,11 @@ body:is(.mod-macos, .adaptive-mode-off) {
   }
 }
 
-body.input-cupertino:not(.is-mobile) .notice {
+body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) .notice {
   transition: var(--anim-duration-moderate) !important;
 }
 
-body.input-cupertino.is-mobile .notice {
+body:is(.mod-macos, .adaptive-mode-off).is-mobile .notice {
   box-shadow: var(--shadow-xs);
 
   &:last-child {
