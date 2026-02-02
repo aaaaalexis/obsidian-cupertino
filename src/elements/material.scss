@@ -55,7 +55,7 @@ body.input-material {
 
   // Text input
   textarea,
-  input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]),
+  input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]):not(.prompt-input),
   select,
   .combobox-button,
   .dropdown {
@@ -245,7 +245,6 @@ body.input-material:not(.is-phone) {
       margin: 16px 16px 0;
     }
     .prompt-input {
-      box-shadow: none;
       border: none;
       border-radius: 100vh;
       background-color: var(--interactive-normal);

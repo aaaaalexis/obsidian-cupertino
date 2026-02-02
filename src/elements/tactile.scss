@@ -28,14 +28,7 @@ body.input-tactile {
   }
 
   textarea,
-  input[type="date"],
-  input[type="datetime-local"],
-  input[type="text"],
-  input[type="search"],
-  input[type="email"],
-  input[type="password"],
-  input[type="number"],
-  input[type="range"],
+  input:is([type="date"], [type="datetime-local"], [type="text"], [type="search"], [type="email"], [type="password"], [type="number"], [type="range"]),
   .checkbox-container {
     border: none;
     box-shadow: var(--input-shadow-inset);

@@ -200,7 +200,7 @@ body.input-cupertino {
     box-shadow: none;
   }
 
-  // Search bar fix
+  // Search bar
   .search-input-container {
     display: flex;
     align-items: center;
@@ -208,7 +208,7 @@ body.input-cupertino {
 
     &:before {
       top: unset !important;
-      inset-inline-start: 6px;
+      inset-inline-start: calc((var(--input-height) - var(--icon-s)) / 2);
       height: var(--icon-s);
       width: var(--icon-s);
     }
@@ -217,7 +217,15 @@ body.input-cupertino {
       padding-inline-start: var(--input-height) !important;
     }
   }
+  .mod-sidedock .search-input-container {
+    --input-height: 32px;
 
+    input[type="search"] {
+      border: none;
+      border-radius: 100vh;
+      background-color: var(--background-modifier-hover);
+    }
+  }
   &.is-mobile .search-input-container::before {
     inset-inline-start: 12px;
   }
