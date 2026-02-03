@@ -6,6 +6,7 @@
     --heading-spacing: 2em;
     --p-spacing: 1.75rem;
     --line-height-normal: 1.6;
+    --list-spacing: 0.175em;
 
     --file-margins-block: 32px;
     --file-margins-inline: 32px;
@@ -472,7 +473,7 @@
     --tag-color-hover: var(--text-accent-hover);
   }
 
-  // Tasks
+  // Lists
   body.strike-lists-off {
     --checklist-done-decoration: none;
     --checklist-done-color: var(--text-normal);
