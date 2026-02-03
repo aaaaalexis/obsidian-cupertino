@@ -104,11 +104,6 @@ body.layout-frame:not(.is-mobile) {
     border: none;
   }
 
-  // Vault switcher background
-  &.hide-vault-switcher-off .workspace-sidedock-vault-profile {
-    background-color: inherit;
-  }
-
   // Style Settings: Status bar fix
   &.status-bar-full .workspace {
     padding-bottom: 0;

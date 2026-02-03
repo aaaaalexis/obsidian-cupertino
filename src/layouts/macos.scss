@@ -95,11 +95,6 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     border-radius: max(calc(var(--modal-radius) - 8px), var(--radius-s));
     background-color: rgba(from var(--background-primary) r g b / 75%);
   }
-
-  // Vault switcher
-  &.hide-vault-switcher-off .workspace-sidedock-vault-profile {
-    background-color: inherit;
-  }
 }
 
 // Ribbon

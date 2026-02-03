@@ -79,11 +79,6 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
   &.status-bar-full {
     --status-bar-border-width: 1px 0 0 0;
   }
-
-  // Vault switcher
-  &.hide-vault-switcher-off .workspace-sidedock-vault-profile {
-    border-top: none;
-  }
 }
 
 body:is(.layout-classic, .layout-minimal).is-tablet {
