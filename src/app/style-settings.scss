@@ -3209,7 +3209,7 @@ body.layout-frame .style-settings-container .setting-item[data-id="layout-style"
 }
 
 // Disabling input
-body:not(.accented-interface:not(.default-light.default-dark)) .style-settings-container .setting-item[data-id="color-scheme-accent"],
+body:not(.accented-interface:not(.default-light.default-dark, .material-light.material-dark)) .style-settings-container .setting-item[data-id="color-scheme-accent"],
 body:not(.hover-sidedock) .style-settings-container .setting-item[data-id="hover-sidedock"] ~ .setting-item,
 body:not(.readable-spacing) .style-settings-container .setting-item[data-id="readable-spacing"] ~ .setting-item,
 body.view-header-title-hidden .style-settings-container .setting-item[data-id="file-header-visibility"] ~ .setting-item,
