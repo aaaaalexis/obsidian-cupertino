@@ -25,15 +25,6 @@ body.layout-viewfinder:not(.is-mobile) {
   }
 }
 
-body.layout-viewfinder:not(.is-phone) {
-  &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
-    margin-left: 8px;
-  }
-  .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root {
-    margin-right: 8px;
-  }
-}
-
 body.layout-viewfinder.is-tablet {
   .mod-root {
     padding-top: 0;
