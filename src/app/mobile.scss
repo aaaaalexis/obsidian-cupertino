@@ -42,8 +42,8 @@ body.is-mobile {
 
   --navbar-width: 100%;
   --navbar-max-width: unset;
+  --navbar-side-offset: min(var(--navbar-bottom-offset), 32px);
 
-  --navbar-side-offset: var(--safe-area-inset-side);
   --safe-area-inset-side: 16px;
 
   --mobile-left-sidebar-width: 360px;
@@ -88,7 +88,6 @@ body.is-mobile {
   // iOS specific
   &.mod-macos {
     --navbar-bottom-offset: 28px;
-    --navbar-side-offset: var(--navbar-bottom-offset);
 
     --font-ui-smaller: calc(var(--font-text-size) * 0.75);
     --font-ui-small: calc(var(--font-text-size) * 0.9375);
@@ -436,7 +435,7 @@ body.is-phone {
     max-width: calc(100% - 8px - var(--touch-size-l) - var(--navbar-side-offset) * 2);
     inset: auto var(--navbar-side-offset) var(--navbar-bottom-offset);
     overflow: hidden;
-    padding: 4px;
+    padding: 8px;
     margin: 0;
     transition:
       var(--anim-duration-moderate) var(--anim-motion-baseline),

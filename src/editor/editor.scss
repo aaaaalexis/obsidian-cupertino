@@ -6,6 +6,7 @@
     --heading-spacing: 2em;
     --p-spacing: 1.75rem;
     --line-height-normal: 1.6;
+    --list-spacing: 0.175em;
 
     --h1-size: 1.5em;
     --h2-size: 1.25em;
@@ -290,7 +291,7 @@
     --tag-color-hover: var(--text-accent-hover);
   }
 
-  // Tasks
+  // Lists
   .task-list-item {
     --indentation-guide-reading-indent: -1.05em;
   }

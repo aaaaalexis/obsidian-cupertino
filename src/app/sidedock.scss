@@ -201,9 +201,11 @@ body:not(.nav-action-center) .mod-sidedock .workspace-leaf-content .nav-header:f
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-drawer-vault-actions .clickable-icon:first-child {
   display: none;
 }
+body:not(.is-mobile) .mod-sidedock.mod-left-split .workspace-sidedock-vault-profile {
+  background-color: transparent;
+}
 body:not(.is-mobile) .mod-sidedock.mod-left-split {
   .workspace-sidedock-vault-profile {
-    background-color: transparent;
     border-top: none;
     position: absolute;
     inset: auto 0 0;
@@ -211,18 +213,8 @@ body:not(.is-mobile) .mod-sidedock.mod-left-split {
     align-items: unset;
     width: auto;
 
-    &::before {
-      transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      pointer-events: none;
-      mask: linear-gradient(to top, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.99) 18.4%, hsla(0, 0%, 0%, 0.963) 33.7%, hsla(0, 0%, 0%, 0.92) 46.4%, hsla(0, 0%, 0%, 0.864) 56.7%, hsla(0, 0%, 0%, 0.796) 64.8%, hsla(0, 0%, 0%, 0.72) 71.2%, hsla(0, 0%, 0%, 0.637) 76.1%, hsla(0, 0%, 0%, 0.55) 79.9%, hsla(0, 0%, 0%, 0.46) 82.8%, hsla(0, 0%, 0%, 0.37) 85.2%, hsla(0, 0%, 0%, 0.283) 87.3%, hsla(0, 0%, 0%, 0.2) 89.6%, hsla(0, 0%, 0%, 0.124) 92.3%, hsla(0, 0%, 0%, 0.056) 95.6%, hsla(0, 0%, 0%, 0) 100%);
-      background-color: var(--background-secondary);
+    &:hover ~ .workspace-tabs:last-child {
+      mask: linear-gradient(to top, transparent, black 64px);
     }
 
     .workspace-drawer-vault-switcher.has-active-menu {
@@ -237,10 +229,6 @@ body:not(.is-mobile) .mod-sidedock.mod-left-split {
         filter: blur(4px);
         pointer-events: none;
         transform: scale(0.95);
-      }
-
-      &::before {
-        opacity: 0;
       }
     }
   }

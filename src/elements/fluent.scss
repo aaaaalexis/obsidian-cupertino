@@ -61,6 +61,9 @@ body.mod-windows:not(.adaptive-mode-off) {
     --modal-background: rgb(from var(--color-base-20) r g b / 65%);
     --setting-items-background: var(--background-secondary);
   }
+  &.is-translucent {
+    --modal-background: var(--background-secondary);
+  }
 
   // Button
   button:active,
