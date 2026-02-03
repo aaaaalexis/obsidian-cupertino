@@ -25,12 +25,19 @@ body.is-android:not(.adaptive-mode-off) {
   --h5-weight: 500;
   --h6-weight: 500;
 
-  --clickable-icon-radius: 100vh;
-  --button-radius: 100vh;
   --input-font-weight: var(--font-medium);
   --input-border-width: 1px;
   --input-height: 40px;
+
   --input-radius: var(--radius-s);
+  --button-radius: 100vh;
+  --clickable-icon-radius: 100vh;
+  --radius-xs: calc(4px * var(--radius-modifier));
+  --radius-s: calc(8px * var(--radius-modifier));
+  --radius-m: calc(12px * var(--radius-modifier));
+  --radius-l: calc(16px * var(--radius-modifier));
+  --radius-xl: calc(28px * var(--radius-modifier));
+
   --toggle-border-width: 4px;
   --toggle-thumb-height: 24px;
   --toggle-thumb-width: 24px;
@@ -197,7 +204,7 @@ body.is-android:not(.adaptive-mode-off) {
 
     .setting-item:not(.setting-item-heading) {
       border-top: none;
-      border-radius: var(--radius-s);
+      border-radius: var(--radius-xs);
       background-color: var(--setting-items-background);
       padding: var(--setting-items-padding);
       margin-bottom: 2px;
@@ -290,9 +297,6 @@ body.is-android:not(.adaptive-mode-off).is-phone {
     border: none !important;
     box-shadow: var(--shadow-s);
   }
-  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
-    border-radius: var(--radius-s);
-  }
   &.is-floating-nav .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::before,
   &.is-floating-nav .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::after {
     content: none;
@@ -301,7 +305,7 @@ body.is-android:not(.adaptive-mode-off).is-phone {
   // Menu
   .menu {
     .menu-item:not(.is-label) {
-      border-radius: var(--radius-s);
+      border-radius: var(--radius-xs);
     }
     .menu-item.is-label + .menu-item:not(.is-label),
     .menu-item:first-child {
@@ -321,7 +325,7 @@ body.is-android:not(.adaptive-mode-off).is-phone {
   }
 
   .suggestion-container .suggestion-item {
-    border-radius: var(--radius-s);
+    border-radius: var(--radius-xs);
   }
 
   // Settings
@@ -332,7 +336,7 @@ body.is-android:not(.adaptive-mode-off).is-phone {
     }
     .vertical-tab-nav-item {
       width: 100%;
-      border-radius: var(--radius-s);
+      border-radius: var(--radius-xs);
       padding: calc(16px * var(--density-modifier)) 20px;
       height: auto;
       background-color: var(--setting-items-background);
@@ -355,7 +359,7 @@ body.is-android:not(.adaptive-mode-off).is-phone {
     }
 
     .suggestion-item {
-      border-radius: var(--radius-xl);
+      border-radius: 100vh;
     }
   }
 }

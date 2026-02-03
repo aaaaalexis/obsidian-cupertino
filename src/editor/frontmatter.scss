@@ -109,6 +109,14 @@
       }
     }
 
+    &.is-mobile .metadata-container {
+      .metadata-property-key,
+      .metadata-show-source-button,
+      .metadata-add-button {
+        padding: 4px 4px 4px 16px;
+      }
+    }
+
     .workspace-split:not(.mod-root) .metadata-container {
       padding: 8px !important;
     }
