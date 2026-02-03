@@ -3,8 +3,7 @@ Material Design
 https://m3.material.io/styles/color/system/overview
 */
 
-body.is-android:not(.adaptive-mode-off).theme-light,
-body.is-android:not(.adaptive-mode-off).theme-dark {
+body.is-android:not(.adaptive-mode-off).material-color {
   .modal:where(.mod-settings) .vertical-tab-nav-item .vertical-tab-nav-item-icon {
     --setting-nav-icon-background: var(--neutral-60);
     background-color: var(--setting-nav-icon-background);
@@ -82,7 +81,7 @@ body.is-android:not(.adaptive-mode-off).theme-dark {
   --neutral-variant-100: oklch(1 0 0);
 }
 
-body.is-android:not(.adaptive-mode-off).theme-light {
+body.is-android:not(.adaptive-mode-off).theme-light.material-color {
   .checkbox-container {
     --interactive-accent: var(--color-base-50);
     --text-muted: var(--neutral-30);
@@ -135,7 +134,7 @@ body.is-android:not(.adaptive-mode-off).theme-light {
   --background-modifier-border-focus: var(--neutral-variant-50);
 }
 
-body.is-android:not(.adaptive-mode-off).theme-dark {
+body.is-android:not(.adaptive-mode-off).theme-dark.material-color {
   .checkbox-container {
     --interactive-accent: var(--color-base-30);
     --text-muted: var(--neutral-60);

@@ -10,6 +10,11 @@ settings:
         type: info-text
         markdown: true
     -
+        id: material-color
+        title: Dynamic color
+        description: Apply dynamic theming based on accent color.
+        type: class-toggle
+    -
         id: adaptive-mode-off
         title: Disable adaptive mode
         description: Prevent automatic styling based on operating system.
@@ -167,4 +172,8 @@ settings:
 .style-settings-container .setting-item:nth-last-child(1 of .setting-item:not(.setting-item-heading)) {
   border-bottom-right-radius: var(--setting-items-radius);
   border-bottom-left-radius: var(--setting-items-radius);
+}
+
+body:not(.is-android:not(.adaptive-mode-off)) .setting-item[data-id="material-color"] {
+  display: none;
 }
