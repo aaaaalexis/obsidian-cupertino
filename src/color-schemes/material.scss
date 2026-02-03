@@ -90,13 +90,13 @@ https://m3.material.io/styles/color/system/overview
     }
 
     &.is-mobile .mobile-navbar {
-      background-color: var(--secondary-90) !important;
+      background-color: var(--secondary-95) !important;
     }
     &.is-mobile .mobile-navbar-action {
       --icon-color: var(--secondary-30);
     }
     &.is-mobile:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
-      background-color: var(--tertiary-90);
+      background-color: var(--tertiary-95);
       color: var(--tertiary-30);
     }
   }
@@ -148,11 +148,11 @@ https://m3.material.io/styles/color/system/overview
       background-color: var(--secondary-20) !important;
     }
     &.is-mobile .mobile-navbar-action {
-      --icon-color: var(--secondary-90);
+      --icon-color: var(--secondary-80);
     }
     &.is-mobile:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
       background-color: var(--tertiary-20);
-      color: var(--tertiary-90);
+      color: var(--tertiary-80);
     }
   }
 
