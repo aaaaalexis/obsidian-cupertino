@@ -264,9 +264,6 @@ body.input-material.is-phone {
     border: none !important;
     box-shadow: var(--shadow-s);
   }
-  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
-    border-radius: var(--radius-s);
-  }
   &.is-floating-nav .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::before,
   &.is-floating-nav .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::after {
     content: none;
