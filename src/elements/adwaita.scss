@@ -139,7 +139,8 @@ body.input-adwaita {
     }
 
     .setting-group .setting-items,
-    div:not(.setting-items, .hotkey-list-container, .style-settings-container) > .setting-item:not(.setting-item-heading) {
+    div:not(.setting-items, .hotkey-list-container, .style-settings-container) > .setting-item:not(.setting-item-heading),
+    &:not(.plugins-grid-off) .installed-plugins-container .setting-item:not(.setting-item-heading) {
       box-shadow: var(--setting-items-shadow);
     }
     .setting-item-heading {
@@ -360,10 +361,6 @@ body.input-adwaita.is-phone {
     }
     .setting-item:not(.setting-item-heading) {
       padding: calc(16px * var(--density-modifier)) 16px;
-    }
-
-    .installed-plugins-container .setting-items {
-      background-color: var(--setting-items-background);
     }
   }
 }

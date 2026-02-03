@@ -30,6 +30,9 @@ body:not(.is-phone) {
       color: var(--text-faint);
     }
   }
+  &:is(.input-baseline, :not(.css-settings-manager)):not(.plugins-grid-off) .installed-plugins-container .setting-item:not(.setting-item-heading) {
+    border: var(--border-width) solid var(--background-modifier-border);
+  }
 
   --setting-items-radius: var(--radius-m);
   --setting-items-padding: calc(16px * var(--density-modifier)) 16px;
@@ -77,7 +80,7 @@ body:not(.is-phone) {
       margin: 0px !important;
       border: none;
       border-radius: var(--setting-items-radius) !important;
-      background-color: var(--background-modifier-hover);
+      background-color: var(--background-primary);
       padding: 16px !important;
       overflow: hidden;
     }
