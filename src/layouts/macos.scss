@@ -48,11 +48,8 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     }
   }
 
-  &:not(.is-translucent).theme-light .mod-sidedock {
-    background-color: color-mix(in srgb, #fff, var(--interactive-accent) 2%);
-  }
   &:not(.is-translucent).theme-dark .mod-sidedock {
-    background-color: color-mix(in srgb, #171717, var(--interactive-accent) 2%);
+    background-color: hsl(from var(--background-primary) h s calc(l - 2));
   }
   &.is-translucent.layout-macos .mod-sidedock,
   &.is-translucent.layout-fusion .mod-sidedock.mod-left-split {
