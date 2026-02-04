@@ -95,16 +95,16 @@ body.layout-classic {
 
 // Minimal specific
 body.layout-minimal {
-  &.show-ribbon:not(.is-mobile) .workspace-ribbon:not(.is-collapsed) {
+  &:not(.is-translucent) .workspace {
+    background-color: var(--background-primary);
+  }
+  &.show-ribbon:not(.is-translucent):not(.is-mobile) .workspace-ribbon:not(.is-collapsed) {
     background-color: var(--background-secondary);
     box-shadow: 0 calc(-1 * var(--header-height)) var(--background-secondary);
   }
 
   .mod-sidedock .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
     border-bottom: none;
-  }
-  .workspace-split:not(.mod-left-split) .workspace-tabs {
-    background-color: var(--background-primary) !important;
   }
 
   .mod-sidedock.mod-left-split,
