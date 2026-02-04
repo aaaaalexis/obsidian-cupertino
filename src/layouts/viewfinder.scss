@@ -24,6 +24,16 @@ body.layout-viewfinder:not(.is-mobile) {
       border-radius: var(--radius-s);
     }
   }
+
+  // Title bar fix
+  &.is-frameless:not(.is-hidden-frameless) {
+    .workspace {
+      padding-top: 0;
+    }
+    .mod-root {
+      margin-top: 0;
+    }
+  }
 }
 
 body.layout-viewfinder.is-tablet {

@@ -65,6 +65,7 @@ body.layout-border:not(.is-mobile) {
       .workspace-tab-header-container-inner {
         border-radius: var(--tab-radius) 0 0 0;
         margin-left: 8px;
+        margin-top: 0;
       }
       .workspace-tab-container {
         border-top-left-radius: 0;
