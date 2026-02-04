@@ -117,7 +117,7 @@
   .markdown-rendered pre code {
     white-space: var(--code-white-space);
   }
-  .markdown-rendered pre {
+  body:is(.mod-macos, .adaptive-mode-off) .markdown-rendered pre {
     background: linear-gradient(var(--background-primary-alt), var(--background-secondary));
     box-shadow: var(--shadow-tactile);
   }
