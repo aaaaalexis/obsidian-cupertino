@@ -35,6 +35,8 @@ body:is(.layout-frame, .layout-viewfinder) {
 }
 
 body.layout-frame:not(.is-mobile) {
+  --tab-outline-width: 1px;
+
   .workspace {
     padding: 4px;
   }
@@ -55,7 +57,6 @@ body.layout-frame:not(.is-mobile) {
   // macOS fix
   &.mod-macos.is-hidden-frameless .workspace-ribbon.mod-left {
     padding-top: var(--header-height);
-    border-right: none;
   }
   &.mod-macos.is-hidden-frameless:not(.hover-ribbon) .workspace-ribbon.mod-left {
     --ribbon-width: 74px;

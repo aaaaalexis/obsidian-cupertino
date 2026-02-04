@@ -6,6 +6,8 @@ body {
   --tab-radius-active: var(--tab-radius) var(--tab-radius) 0 0;
   --tab-curve: calc(var(--tab-radius) + 4px);
 
+  --tab-outline-width: 0px;
+
   --tab-text-align: left;
 }
 body:not(.is-mobile) {

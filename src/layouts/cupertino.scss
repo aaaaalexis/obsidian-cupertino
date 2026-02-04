@@ -136,6 +136,8 @@ body:is(.layout-cupertino, .layout-fusion).is-tablet {
 
 // Cupertino specific
 body.layout-cupertino:not(.is-phone) {
+  --tab-outline-width: 1px;
+
   // Editor panel
   &.theme-light .mod-root .workspace-tab-container {
     box-shadow:

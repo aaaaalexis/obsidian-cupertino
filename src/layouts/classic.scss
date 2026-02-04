@@ -3,8 +3,8 @@ body:is(.layout-classic, .layout-minimal) {
     border-radius: 0;
   }
 
-  &:not(.tab-floating, .tab-floating-center) .mod-root {
-    .workspace-tab-header-container {
+  &:not(.tab-floating, .tab-floating-center) {
+    .mod-root .workspace-tab-header-container {
       border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
     }
     .workspace-tab-header-container-inner {
@@ -14,11 +14,11 @@ body:is(.layout-classic, .layout-minimal) {
 }
 
 body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
+  --titlebar-border-width: 1px;
+  --tab-outline-width: 1px;
+
   &.mod-macos.is-frameless:not(.is-hidden-frameless) {
     --titlebar-height: 38px;
-  }
-  &.is-frameless:not(.is-hidden-frameless) .titlebar {
-    border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
   }
 
   &:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-left-split {
@@ -31,9 +31,6 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
   }
   .workspace-tab-header-container {
     border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
-  }
-  .workspace-tab-header-container-inner {
-    margin-bottom: -1px !important;
   }
 
   // Side panels
