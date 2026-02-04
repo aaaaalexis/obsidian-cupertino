@@ -2,9 +2,6 @@ body.mod-linux:not(.is-android):not(.adaptive-mode-off) {
   --font-interface-theme: "Adwaita Sans", "Adwaita Sans Text";
   --font-text-theme: "Adwaita Sans", "Adwaita Sans Text";
 
-  --font-ui-small: calc(var(--font-text-size) * 0.875 + var(--font-ui-modifier));
-  --font-ui-large: calc(var(--font-text-size) * 1.25 + var(--font-ui-modifier));
-
   --shadow-s: 0 0 0 1px rgba(0, 0, 6, 3%), 0 1px 3px 1px rgba(0, 0, 6, 7%), 0 2px 6px 2px rgba(0, 0, 6, 3%);
   --shadow-l: 0 0 14px 5px rgba(0, 0, 0, 15%), 0 0 5px 2px rgba(0, 0, 0, 10%), 0 0 0 1px rgba(0, 0, 0, 5%);
 
@@ -118,10 +115,17 @@ body.mod-linux:not(.is-android):not(.adaptive-mode-off) {
   --setting-items-padding: 0px;
   --setting-items-shadow: 0 0 0 1px rgba(0, 0, 6, 3%), 0 1px 3px 1px rgba(0, 0, 6, 7%), 0 2px 6px 2px rgba(0, 0, 6, 3%);
 
+  &.theme-light {
+    --divider-color-alt: rgba(0, 0, 6, 7%);
+  }
+  &.theme-dark {
+    --divider-color-alt: rgba(0, 0, 6, 36%);
+  }
+
   .modal.mod-settings {
     .vertical-tab-header {
       background-color: var(--background-secondary);
-      border-right: var(--border-width) solid var(--divider-color);
+      border-right: var(--border-width) solid var(--divider-color-alt);
       padding: 6px;
     }
     .vertical-tab-header-group {
@@ -153,7 +157,7 @@ body.mod-linux:not(.is-android):not(.adaptive-mode-off) {
       padding-left: 0;
     }
     .setting-item:not(.setting-item-heading) {
-      border-color: var(--divider-color);
+      border-color: var(--divider-color-alt);
       padding: calc(12px * var(--density-modifier)) 14px;
     }
     .setting-item-description {

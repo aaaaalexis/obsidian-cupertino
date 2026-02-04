@@ -1,0 +1,73 @@
+body.mod-linux:not(.is-android):not(.adaptive-mode-off) {
+  .workspace-split.mod-root .workspace-tab-container {
+    border-radius: 0;
+  }
+}
+
+body.mod-linux:not(.is-android):not(.adaptive-mode-off):not(.is-mobile) {
+  --titlebar-border-width: 1px;
+  --tab-outline-width: 1px;
+
+  .workspace-tab-header-container {
+    border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
+  }
+
+  // Side panels
+  .mod-sidedock > .workspace-leaf-resize-handle {
+    border-color: var(--divider-color);
+  }
+  .mod-sidedock.mod-left-split > .workspace-leaf-resize-handle {
+    border-color: var(--divider-color-alt);
+  }
+
+  // Ribbon
+  &:not(.hover-ribbon) .workspace-ribbon.mod-left.is-collapsed {
+    border-right: var(--divider-width) solid var(--divider-color);
+  }
+
+  .workspace-ribbon.mod-left {
+    &::before {
+      content: "";
+      height: var(--tab-outline-width);
+      background-color: var(--tab-outline-color);
+      position: absolute;
+      inset: calc(var(--header-height) - 1px) 0 auto;
+    }
+
+    .side-dock-actions {
+      margin-top: 12px;
+    }
+  }
+}
+
+body.mod-linux:not(.is-android):not(.adaptive-mode-off).is-tablet {
+  .workspace-drawer.is-pinned {
+    border-width: var(--divider-width);
+  }
+}
+
+// Minimal specific
+body.mod-linux:not(.is-android):not(.adaptive-mode-off) {
+  &:not(.is-translucent) .workspace {
+    background-color: var(--background-primary);
+  }
+  &.show-ribbon:not(.is-translucent):not(.is-mobile) .workspace-ribbon:not(.is-collapsed) {
+    background-color: var(--background-secondary);
+    box-shadow: 0 calc(-1 * var(--header-height)) var(--background-secondary);
+  }
+
+  .mod-sidedock .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
+    border-bottom: none;
+  }
+
+  .mod-sidedock.mod-left-split,
+  .workspace-drawer.mod-left {
+    background-color: var(--background-secondary);
+  }
+}
+
+body.mod-linux:not(.is-android):not(.adaptive-mode-off).is-tablet {
+  .workspace {
+    background-color: transparent;
+  }
+}
