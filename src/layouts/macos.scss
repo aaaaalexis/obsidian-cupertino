@@ -16,7 +16,7 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     .mod-sidedock.mod-left-split,
     &.layout-macos .mod-sidedock.mod-right-split,
     &.input-cupertino:is(.tab-floating, .tab-floating-center) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
-      background-color: var(--color-base-25) !important;
+      background-color: var(--background-modifier-hover) !important;
       box-shadow: none !important;
       transition: none;
     }
