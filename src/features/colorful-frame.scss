@@ -3,6 +3,7 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
 
   // Non-labeled icon colo
   &:is(.layout-cards, .layout-border) .workspace-ribbon,
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-cards, .layout-border) .workspace-ribbon .sidebar-toggle-button,
   &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-cards, .layout-border) .workspace-tabs.mod-top .workspace-tab-header-container,
   &.layout-minimal .workspace-split:not(.mod-left-split) .workspace-tabs.mod-top .workspace-tab-header-container,
   &.layout-viewfinder .mod-root .workspace-tabs.mod-top .workspace-tab-header-container {
@@ -40,10 +41,18 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   &.layout-viewfinder .mod-root {
     background-image: linear-gradient(var(--colorful-frame-background, var(--color-accent)) calc(var(--header-height) - var(--tab-outline-width)), transparent calc(var(--header-height) - var(--tab-outline-width)));
   }
-  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal) .workspace-ribbon .side-dock-actions,
-  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal).tab-top-left-stacked .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+
+  // Fix: Stacked tabs spacing
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic) .workspace-ribbon .side-dock-actions,
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic).tab-top-left-stacked .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
     margin-top: 8px;
   }
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic):not(.mod-macos).tab-top-left-stacked .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner,
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic).mod-macos.is-frameless:not(.is-hidden-frameless).tab-top-left-stacked .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+    margin-top: calc(var(--header-height) + 8px);
+  }
+
+  // Fix: Resize handle position
   &:is(.layout-classic, .layout-minimal) .workspace-split > .workspace-leaf-resize-handle {
     top: var(--header-height);
   }
