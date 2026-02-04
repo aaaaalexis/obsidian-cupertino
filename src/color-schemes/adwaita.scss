@@ -14,6 +14,10 @@ https://gitlab.gnome.org/GNOME/libadwaita/
   --menu-border-color: rgb(from var(--text-normal) r g b / 10%);
   --modal-border-color: rgb(from var(--text-normal) r g b / 10%);
   --prompt-border-color: rgb(from var(--text-normal) r g b / 10%);
+
+  --code-background: var(--background-secondary-alt);
+  --blockquote-background-color: var(--background-secondary-alt);
+  --embed-background-color: var(--background-secondary-alt);
 }
 .theme-light.adwaita-light.color-scheme-accent,
 .theme-dark.adwaita-dark.color-scheme-accent {
