@@ -34,10 +34,11 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
   }
 
   // Side panels
-  .mod-sidedock {
-    & > .workspace-leaf-resize-handle {
-      border-color: var(--divider-color);
-    }
+  .mod-sidedock > .workspace-leaf-resize-handle {
+    border-color: var(--divider-color);
+  }
+  &.input-adwaita .mod-sidedock.mod-left-split > .workspace-leaf-resize-handle {
+    border-color: var(--divider-color-alt);
   }
   &.contrast-light-tonal.theme-light,
   &.contrast-dark-tonal.theme-dark,
