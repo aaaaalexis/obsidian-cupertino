@@ -78,6 +78,12 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
     background: var(--colorful-frame-background, var(--color-accent));
   }
 
+  // Fix: Window control icon color
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal, .layout-cards, .layout-border, .layout-frame).is-frameless .titlebar {
+    --titlebar-text-color: hsl(from var(--colorful-frame-icon-color) h s l / 0.7);
+    --titlebar-text-color-focused: var(--colorful-frame-icon-color);
+  }
+
   // Fix: Override underline tab style
   &:is(.tab-underline, .tab-underline-accented):is(.layout-cupertino, .layout-classic, .layout-minimal, .layout-viewfinder) .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     margin-bottom: 1px;
