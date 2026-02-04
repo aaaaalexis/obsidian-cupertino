@@ -10,14 +10,14 @@ settings:
         type: info-text
         markdown: true
     -
-        id: material-color
-        title: Dynamic color
-        description: Apply dynamic theming based on accent color.
-        type: class-toggle
-    -
         id: colorful-frame
         title: Tinted sidebar
         description: Apply a subtle tint to the sidebar based on accent color.
+        type: class-toggle
+    -
+        id: material-color
+        title: Dynamic color
+        description: Apply dynamic theming based on accent color.
         type: class-toggle
     -
         id: adaptive-mode-off
@@ -178,7 +178,7 @@ settings:
   border-bottom-right-radius: var(--setting-items-radius);
   border-bottom-left-radius: var(--setting-items-radius);
 }
-
+body:not(.mod-macos, .adaptive-mode-off) .setting-item[data-id="colorful-frame"],
 body:not(.is-android:not(.adaptive-mode-off)) .setting-item[data-id="material-color"] {
   display: none;
 }
