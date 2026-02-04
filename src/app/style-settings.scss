@@ -1294,6 +1294,31 @@ settings:
 		description: Disable plugins grid layout
 		type: class-toggle
 	-
+		id: colorful-frame
+		title: Tinted frame
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: colorful-frame
+		title: Tinted frame
+		type: class-toggle
+	-
+		id: colorful-frame-background
+		title: Tinted frame background
+		type: variable-themed-color
+		opacity: true
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: colorful-frame-icon-color
+		title: Tinted frame icon color
+		type: variable-themed-color
+		format: hex
+		default-light: '#FFFFFF'
+		default-dark: '#FFFFFF'
+	-
 		id: translucent-window
 		title: Translucency
 		type: heading

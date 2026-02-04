@@ -1,0 +1,80 @@
+body:not(.is-mobile):not(.is-translucent).colorful-frame {
+  --colorful-frame-icon-color: #ffffff;
+
+  // Non-labeled icon colo
+  &:is(.layout-cards, .layout-border) .workspace-ribbon,
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-cards, .layout-border) .workspace-tabs.mod-top .workspace-tab-header-container,
+  &.layout-minimal .workspace-split:not(.mod-left-split) .workspace-tabs.mod-top .workspace-tab-header-container,
+  &.layout-viewfinder .mod-root .workspace-tabs.mod-top .workspace-tab-header-container {
+    --icon-color: hsl(from var(--colorful-frame-icon-color) h s l / 0.7);
+    --icon-color-hover: var(--colorful-frame-icon-color);
+    --icon-color-active: var(--colorful-frame-icon-color);
+    --icon-color-focused: var(--colorful-frame-icon-color);
+  }
+
+  // Tab text & icon color
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-cards, .layout-border) .workspace-tabs.mod-top .workspace-tab-header-container-inner,
+  &.layout-minimal .workspace-split:not(.mod-left-split) .workspace-tabs.mod-top .workspace-tab-header-container-inner,
+  &.layout-viewfinder .mod-root .workspace-tabs.mod-top .workspace-tab-header-container-inner {
+    --tab-text-color: hsl(from var(--colorful-frame-icon-color) h s l / 0.5);
+    --tab-text-color-active: hsl(from var(--colorful-frame-icon-color) h s l / 0.7);
+    --tab-text-color-focused: hsl(from var(--colorful-frame-icon-color) h s l / 0.7);
+    --tab-text-color-focused-active: var(--colorful-frame-icon-color);
+  }
+
+  // Fix: tab text & icon color for non-tinted area
+  &.tab-top-left-stacked:not(.theme-light.contrast-light-vivid) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+    --colorful-frame-icon-color: initial;
+  }
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal, .layout-cards, .layout-border, .layout-viewfinder).tab-default .mod-root .workspace-tabs.mod-top .workspace-tab-header.is-active,
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal, .layout-cards, .layout-border, .layout-viewfinder).tab-top-left-dropdown .mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container-inner:hover .workspace-tab-header,
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal, .layout-cards, .layout-border, .layout-viewfinder).tab-top-right-dropdown .mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container-inner:hover .workspace-tab-header {
+    --tab-text-color: initial;
+    --tab-text-color-active: initial;
+    --tab-text-color-focused: initial;
+    --tab-text-color-focused-active: initial;
+  }
+
+  // Workspace: Using top space for tint
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal) .workspace,
+  &.layout-viewfinder .mod-root {
+    background-image: linear-gradient(var(--colorful-frame-background, var(--color-accent)) calc(var(--header-height) - var(--tab-outline-width)), transparent calc(var(--header-height) - var(--tab-outline-width)));
+  }
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal) .workspace-ribbon .side-dock-actions,
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal).tab-top-left-stacked .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+    margin-top: 8px;
+  }
+  &:is(.layout-classic, .layout-minimal) .workspace-split > .workspace-leaf-resize-handle {
+    top: var(--header-height);
+  }
+
+  // Workspace: Use full background for tint
+  &:is(.layout-cards, .layout-border, .layout-frame) .workspace {
+    background: var(--colorful-frame-background, var(--color-accent));
+  }
+
+  // Workspace: Use sidedock for tint
+  &:is(.layout-macos, .layout-fusion).theme-light .mod-sidedock {
+    background-color: color-mix(in srgb, #fff, var(--colorful-frame-background, var(--color-accent)) 2%);
+  }
+  &:is(.layout-macos, .layout-fusion).theme-dark .mod-sidedock {
+    background-color: color-mix(in srgb, #171717, var(--colorful-frame-background, var(--color-accent)) 2%);
+  }
+
+  // Fix: Obsidian frame color bleed
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-cards, .layout-border, .layout-frame).is-frameless:not(.is-hidden-frameless) .titlebar {
+    --titlebar-text-color: hsl(from var(--colorful-frame-icon-color) h s l / 0.7);
+    --titlebar-text-color-focused: var(--colorful-frame-icon-color);
+    border-bottom: none;
+    background: var(--colorful-frame-background, var(--color-accent));
+  }
+
+  // Fix: Override underline tab style
+  &:is(.tab-underline, .tab-underline-accented):is(.layout-cupertino, .layout-classic, .layout-minimal, .layout-viewfinder) .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+    margin-bottom: 1px;
+
+    &.is-active {
+      border-color: var(--tab-text-color-focused-active);
+    }
+  }
+}

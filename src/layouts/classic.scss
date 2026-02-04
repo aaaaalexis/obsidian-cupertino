@@ -85,7 +85,7 @@ body:is(.layout-classic, .layout-minimal).is-tablet {
 }
 
 // Classic specific
-body.layout-classic {
+body.layout-classic:not(.is-phone):not(.colorful-frame) {
   &:is(.tab-floating, .tab-floating-center) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     --tab-outline-width: 1px;
     margin-inline: var(--tab-outline-width) !important;

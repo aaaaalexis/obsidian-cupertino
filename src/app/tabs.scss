@@ -9,6 +9,8 @@ body {
   --tab-outline-width: 0px;
 
   --tab-text-align: left;
+
+  --tab-text-color-focused-active-current: unset;
 }
 body:not(.is-mobile) {
   --tab-action-width: 32px;
@@ -37,6 +39,9 @@ body:not(.is-phone) .workspace-tab-header-container {
 .sidebar-toggle-button .clickable-icon {
   width: fit-content;
   height: fit-content;
+}
+.workspace-tab-header-inner-icon {
+  color: inherit !important;
 }
 
 // Editor panel
@@ -373,12 +378,6 @@ body.is-tablet .workspace .mod-root {
   }
   .workspace-tab-header-inner {
     gap: 8px;
-  }
-
-  .sidebar-toggle-button .clickable-icon,
-  .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
-  .workspace-tab-header.is-active .workspace-tab-header-inner-title {
-    color: var(--icon-color-focused) !important;
   }
 }
 

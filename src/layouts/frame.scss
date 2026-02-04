@@ -2,7 +2,7 @@ body:is(.layout-frame, .layout-viewfinder) {
   --radius-window: 8px;
 
   // Tab styles
-  &:is(.tab-floating, .tab-floating-center) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  &:is(.tab-floating, .tab-floating-center):not(.colorful-frame) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     --tab-outline-width: 1px;
     margin-inline: var(--tab-outline-width) !important;
     background-color: var(--tab-background-active);
