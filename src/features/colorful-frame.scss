@@ -4,6 +4,6 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile):not(.is-translucent).col
     background-color: color-mix(in srgb, #fff, var(--color-accent) 2%);
   }
   &.theme-dark .mod-sidedock.mod-left-split {
-    background-color: color-mix(in srgb, #171717, var(--color-accent) 2%);
+    background-color: color-mix(in srgb, var(--background-modifier-cover), var(--color-accent) 2%);
   }
 }

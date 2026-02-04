@@ -10,7 +10,7 @@ body.is-android:not(.adaptive-mode-off).material-color {
   }
 
   /* Secondary Palette (chroma 16 in HCT ≈ 0.07 in OKLCH) */
-  --secondary-0: oklch(0 0 0);
+  --secondary-0: oklch(from var(--color-accent) 0 0.07 h);
   --secondary-10: oklch(from var(--color-accent) 0.17 0.07 h);
   --secondary-20: oklch(from var(--color-accent) 0.29 0.07 h);
   --secondary-30: oklch(from var(--color-accent) 0.41 0.07 h);
@@ -22,51 +22,51 @@ body.is-android:not(.adaptive-mode-off).material-color {
   --secondary-90: oklch(from var(--color-accent) 0.93 0.07 h);
   --secondary-95: oklch(from var(--color-accent) 0.96 0.06 h);
   --secondary-99: oklch(from var(--color-accent) 0.99 0.04 h);
-  --secondary-100: oklch(1 0 0);
+  --secondary-100: oklch(from var(--color-accent) 1 0.02 h);
 
   // Tertiary Palette (chroma 28 in HCT ≈ 0.12 in OKLCH)
-  --tertiary-0: oklch(0 0 0);
-  --tertiary-10: oklch(from var(--color-accent) 0.17 0.12 calc(h + 60));
-  --tertiary-20: oklch(from var(--color-accent) 0.29 0.12 calc(h + 60));
-  --tertiary-30: oklch(from var(--color-accent) 0.41 0.12 calc(h + 60));
-  --tertiary-40: oklch(from var(--color-accent) 0.53 0.12 calc(h + 60));
-  --tertiary-50: oklch(from var(--color-accent) 0.64 0.12 calc(h + 60));
-  --tertiary-60: oklch(from var(--color-accent) 0.73 0.12 calc(h + 60));
-  --tertiary-70: oklch(from var(--color-accent) 0.81 0.12 calc(h + 60));
-  --tertiary-80: oklch(from var(--color-accent) 0.87 0.12 calc(h + 60));
-  --tertiary-90: oklch(from var(--color-accent) 0.93 0.12 calc(h + 60));
-  --tertiary-95: oklch(from var(--color-accent) 0.96 0.1 calc(h + 60));
-  --tertiary-99: oklch(from var(--color-accent) 0.99 0.06 calc(h + 60));
-  --tertiary-100: oklch(1 0 0);
+  --tertiary-0: oklch(from var(--color-accent) 0 0.1 calc(h + 60));
+  --tertiary-10: oklch(from var(--color-accent) 0.17 0.1 calc(h + 60));
+  --tertiary-20: oklch(from var(--color-accent) 0.29 0.1 calc(h + 60));
+  --tertiary-30: oklch(from var(--color-accent) 0.41 0.1 calc(h + 60));
+  --tertiary-40: oklch(from var(--color-accent) 0.53 0.1 calc(h + 60));
+  --tertiary-50: oklch(from var(--color-accent) 0.64 0.1 calc(h + 60));
+  --tertiary-60: oklch(from var(--color-accent) 0.73 0.1 calc(h + 60));
+  --tertiary-70: oklch(from var(--color-accent) 0.81 0.1 calc(h + 60));
+  --tertiary-80: oklch(from var(--color-accent) 0.87 0.1 calc(h + 60));
+  --tertiary-90: oklch(from var(--color-accent) 0.93 0.1 calc(h + 60));
+  --tertiary-95: oklch(from var(--color-accent) 0.96 0.06 calc(h + 60));
+  --tertiary-99: oklch(from var(--color-accent) 0.99 0.04 calc(h + 60));
+  --tertiary-100: oklch(from var(--color-accent) 1 0.02 calc(h + 60));
 
   // Neutral Palette (chroma 5 in HCT ≈ 0.03 in OKLCH)
-  --neutral-0: oklch(0 0 0);
-  --neutral-4: oklch(from var(--color-accent) 0.06 0.03 h);
-  --neutral-6: oklch(from var(--color-accent) 0.1 0.03 h);
-  --neutral-10: oklch(from var(--color-accent) 0.17 0.03 h);
-  --neutral-12: oklch(from var(--color-accent) 0.19 0.03 h);
-  --neutral-17: oklch(from var(--color-accent) 0.25 0.03 h);
-  --neutral-20: oklch(from var(--color-accent) 0.29 0.03 h);
-  --neutral-22: oklch(from var(--color-accent) 0.31 0.03 h);
-  --neutral-24: oklch(from var(--color-accent) 0.33 0.03 h);
-  --neutral-30: oklch(from var(--color-accent) 0.41 0.03 h);
-  --neutral-40: oklch(from var(--color-accent) 0.53 0.03 h);
-  --neutral-50: oklch(from var(--color-accent) 0.64 0.03 h);
-  --neutral-60: oklch(from var(--color-accent) 0.73 0.03 h);
-  --neutral-70: oklch(from var(--color-accent) 0.81 0.03 h);
-  --neutral-80: oklch(from var(--color-accent) 0.87 0.03 h);
-  --neutral-87: oklch(from var(--color-accent) 0.89 0.03 h);
-  --neutral-90: oklch(from var(--color-accent) 0.93 0.03 h);
-  --neutral-92: oklch(from var(--color-accent) 0.94 0.03 h);
-  --neutral-94: oklch(from var(--color-accent) 0.95 0.03 h);
-  --neutral-95: oklch(from var(--color-accent) 0.96 0.03 h);
-  --neutral-96: oklch(from var(--color-accent) 0.97 0.03 h);
-  --neutral-98: oklch(from var(--color-accent) 0.98 0.018 h);
+  --neutral-0: oklch(from var(--color-accent) 0 0.026 h);
+  --neutral-4: oklch(from var(--color-accent) 0.06 0.026 h);
+  --neutral-6: oklch(from var(--color-accent) 0.1 0.026 h);
+  --neutral-10: oklch(from var(--color-accent) 0.17 0.026 h);
+  --neutral-12: oklch(from var(--color-accent) 0.19 0.026 h);
+  --neutral-17: oklch(from var(--color-accent) 0.25 0.026 h);
+  --neutral-20: oklch(from var(--color-accent) 0.29 0.026 h);
+  --neutral-22: oklch(from var(--color-accent) 0.31 0.026 h);
+  --neutral-24: oklch(from var(--color-accent) 0.33 0.026 h);
+  --neutral-30: oklch(from var(--color-accent) 0.41 0.026 h);
+  --neutral-40: oklch(from var(--color-accent) 0.53 0.026 h);
+  --neutral-50: oklch(from var(--color-accent) 0.64 0.026 h);
+  --neutral-60: oklch(from var(--color-accent) 0.73 0.026 h);
+  --neutral-70: oklch(from var(--color-accent) 0.81 0.026 h);
+  --neutral-80: oklch(from var(--color-accent) 0.87 0.026 h);
+  --neutral-87: oklch(from var(--color-accent) 0.89 0.026 h);
+  --neutral-90: oklch(from var(--color-accent) 0.93 0.026 h);
+  --neutral-92: oklch(from var(--color-accent) 0.94 0.026 h);
+  --neutral-94: oklch(from var(--color-accent) 0.95 0.026 h);
+  --neutral-95: oklch(from var(--color-accent) 0.96 0.026 h);
+  --neutral-96: oklch(from var(--color-accent) 0.97 0.026 h);
+  --neutral-98: oklch(from var(--color-accent) 0.98 0.016 h);
   --neutral-99: oklch(from var(--color-accent) 0.99 0.012 h);
-  --neutral-100: oklch(1 0 0);
+  --neutral-100: oklch(from var(--color-accent) 1 0.006 h);
 
   // Neutral Variant Palette (chroma 8.5 in HCT ≈ 0.037 in OKLCH = 5 * 1.7)
-  --neutral-variant-0: oklch(0 0 0);
+  --neutral-variant-0: oklch(from var(--color-accent) 0 0.04 h);
   --neutral-variant-10: oklch(from var(--color-accent) 0.17 0.037 h);
   --neutral-variant-20: oklch(from var(--color-accent) 0.29 0.037 h);
   --neutral-variant-30: oklch(from var(--color-accent) 0.41 0.037 h);
@@ -76,9 +76,9 @@ body.is-android:not(.adaptive-mode-off).material-color {
   --neutral-variant-70: oklch(from var(--color-accent) 0.81 0.037 h);
   --neutral-variant-80: oklch(from var(--color-accent) 0.87 0.037 h);
   --neutral-variant-90: oklch(from var(--color-accent) 0.93 0.037 h);
-  --neutral-variant-95: oklch(from var(--color-accent) 0.96 0.03 h);
+  --neutral-variant-95: oklch(from var(--color-accent) 0.96 0.026 h);
   --neutral-variant-99: oklch(from var(--color-accent) 0.99 0.02 h);
-  --neutral-variant-100: oklch(1 0 0);
+  --neutral-variant-100: oklch(from var(--color-accent) 1 0.01 h);
 }
 
 body.is-android:not(.adaptive-mode-off).theme-light.material-color {
@@ -98,8 +98,17 @@ body.is-android:not(.adaptive-mode-off).theme-light.material-color {
     color: var(--tertiary-30);
   }
 
+  --color-red: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-red-rgb))) max(l, 0.8) min(c, 0.12) h);
+  --color-orange: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-orange-rgb))) max(l, 0.8) min(c, 0.12) h);
+  --color-yellow: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-yellow-rgb))) max(l, 0.8) min(c, 0.12) h);
+  --color-green: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-green-rgb))) max(l, 0.8) min(c, 0.12) h);
+  --color-cyan: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-cyan-rgb))) max(l, 0.8) min(c, 0.12) h);
+  --color-blue: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-blue-rgb))) max(l, 0.8) min(c, 0.12) h);
+  --color-purple: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-purple-rgb))) max(l, 0.8) min(c, 0.12) h);
+  --color-pink: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-pink-rgb))) max(l, 0.8) min(c, 0.12) h);
+
   // Primary Palette (chroma 32 in HCT ≈ 0.14 in OKLCH)
-  --color-base-00: oklch(1 0 0);
+  --color-base-00: oklch(from var(--color-accent) 1 0.04 h);
   --color-base-05: oklch(from var(--color-accent) 0.99 0.08 h);
   --color-base-10: oklch(from var(--color-accent) 0.96 0.12 h);
   --color-base-20: oklch(from var(--color-accent) 0.93 0.14 h);
@@ -116,7 +125,7 @@ body.is-android:not(.adaptive-mode-off).theme-light.material-color {
   --text-faint: var(--neutral-60);
   --text-accent: var(--color-base-50);
 
-  --background-primary: var(--neutral-99);
+  --background-primary: var(--neutral-98);
   --background-primary-alt: var(--neutral-100);
   --background-secondary: var(--neutral-94);
   --background-secondary-alt: var(--neutral-96);
@@ -151,8 +160,17 @@ body.is-android:not(.adaptive-mode-off).theme-dark.material-color {
     color: var(--tertiary-80);
   }
 
+  --color-red: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-red-rgb))) min(l, 0.8) min(c, 0.12) h);
+  --color-orange: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-orange-rgb))) min(l, 0.8) min(c, 0.12) h);
+  --color-yellow: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-yellow-rgb))) min(l, 0.8) min(c, 0.12) h);
+  --color-green: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-green-rgb))) min(l, 0.8) min(c, 0.12) h);
+  --color-cyan: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-cyan-rgb))) min(l, 0.8) min(c, 0.12) h);
+  --color-blue: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-blue-rgb))) min(l, 0.8) min(c, 0.12) h);
+  --color-purple: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-purple-rgb))) min(l, 0.8) min(c, 0.12) h);
+  --color-pink: oklch(from color-mix(in oklch, var(--color-accent) 30%, rgb(var(--color-pink-rgb))) min(l, 0.8) min(c, 0.12) h);
+
   // Primary Palette (chroma 26 in HCT ≈ 0.11 in OKLCH)
-  --color-base-00: oklch(0 0 0);
+  --color-base-00: oklch(from var(--color-accent) 0 0.11 h);
   --color-base-05: oklch(from var(--color-accent) 0.17 0.11 h);
   --color-base-10: oklch(from var(--color-accent) 0.29 0.11 h);
   --color-base-20: oklch(from var(--color-accent) 0.41 0.11 h);
@@ -169,7 +187,7 @@ body.is-android:not(.adaptive-mode-off).theme-dark.material-color {
   --text-faint: var(--neutral-40);
 
   --background-primary: var(--neutral-10);
-  --background-primary-alt: var(--neutral-12);
+  --background-primary-alt: var(--neutral-17);
   --background-secondary: var(--neutral-17);
   --background-secondary-alt: var(--neutral-20);
 

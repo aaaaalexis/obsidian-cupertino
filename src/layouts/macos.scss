@@ -15,7 +15,7 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
     .modal.mod-settings .vertical-tab-header,
     .mod-sidedock.mod-left-split,
     .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
-      background-color: var(--color-base-25) !important;
+      background-color: var(--background-modifier-hover) !important;
       box-shadow: none !important;
       transition: none;
     }
