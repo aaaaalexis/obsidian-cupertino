@@ -15,6 +15,11 @@ settings:
         description: Apply dynamic theming based on accent color.
         type: class-toggle
     -
+        id: colorful-frame
+        title: Tinted sidebar
+        description: Apply a subtle tint to the sidebar based on accent color.
+        type: class-toggle
+    -
         id: adaptive-mode-off
         title: Disable adaptive mode
         description: Prevent automatic styling based on operating system.

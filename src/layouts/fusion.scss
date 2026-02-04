@@ -14,7 +14,7 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
     margin-right: 8px;
   }
   .mod-sidedock.mod-right-split {
-    background-color: transparent;
+    background-color: transparent !important;
 
     > .workspace-leaf-resize-handle {
       border-color: transparent;

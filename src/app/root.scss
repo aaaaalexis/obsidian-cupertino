@@ -148,7 +148,6 @@ body:not(.is-mobile) {
 // Title bar
 body.is-frameless:not(.is-hidden-frameless, .is-fullscreen) .titlebar {
   background-color: var(--background-secondary);
-  border-bottom: none;
 }
 body.titlebar-text-off .titlebar-text {
   display: none;
