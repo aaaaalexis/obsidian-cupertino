@@ -10,6 +10,7 @@ body {
 
   --tab-text-align: left;
 
+  --tab-text-color-focused-active: var(--text-normal);
   --tab-text-color-focused-active-current: unset;
 }
 body:not(.is-mobile) {
