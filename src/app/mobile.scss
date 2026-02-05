@@ -47,6 +47,7 @@ body.is-mobile {
 
   --navbar-width: 100%;
   --navbar-max-width: unset;
+  --navbar-bottom-offset: max(var(--safe-area-inset-bottom), var(--safe-area-inset-side));
   --navbar-side-offset: min(var(--navbar-bottom-offset), 32px);
 
   --safe-area-inset-side: 16px;
