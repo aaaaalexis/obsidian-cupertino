@@ -38,7 +38,7 @@ body.is-mobile {
 
   --mobile-sidebar-background: var(--background-secondary);
 
-  --tab-switcher-menubar-background: var(--background-secondary);
+  --tab-switcher-menubar-background: transparent;
   --tab-switcher-preview-radius: var(--radius-m);
 
   --icon-opacity-hover: var(--icon-opacity);
@@ -481,29 +481,6 @@ body.is-phone {
     width: 100%;
     margin: 0;
     border-radius: 0;
-  }
-
-  // Tab switcher
-  .mobile-tab-switcher-menubar {
-    border-top: none;
-  }
-  .mobile-tab-wrapper {
-    pointer-events: all;
-  }
-  .mobile-tab-switcher-scroll {
-    pointer-events: none;
-    background-color: transparent;
-  }
-  .mobile-tab-switcher-scroll,
-  .mobile-tab-switcher-menu-button,
-  .mobile-tab-switcher-menu-spacer:first-child {
-    z-index: 2;
-  }
-  .mobile-tab-switcher-menu-spacer:last-child .clickable-icon::after {
-    position: fixed;
-    z-index: 1;
-    inset: 0;
-    content: "";
   }
 }
 
