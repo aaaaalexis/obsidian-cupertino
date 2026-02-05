@@ -177,7 +177,7 @@ body:is(.mod-macos, .adaptive-mode-off, .is-android:not(.adaptive-mode-off)) {
       --setting-nav-icon-background: var(--color-blue);
     }
     &[data-setting-id="mobile"] .vertical-tab-nav-item-icon {
-      --setting-nav-icon-background: var(--color-red);
+      --setting-nav-icon-background: var(--color-blue);
     }
     &[data-setting-id="file"] .vertical-tab-nav-item-icon {
       --setting-nav-icon-background: var(--color-orange);

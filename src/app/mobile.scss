@@ -12,6 +12,11 @@ body.is-mobile {
   --tab-radius: var(--radius-s);
   --tab-curve: var(--tab-radius);
 
+  --font-ui-smaller: calc(var(--font-text-size) * 0.75 + var(--font-ui-modifier));
+  --font-ui-small: calc(var(--font-text-size) * 0.875 + var(--font-ui-modifier));
+  --font-ui-medium: calc(var(--font-text-size) + var(--font-ui-modifier));
+  --font-ui-large: calc(var(--font-text-size) * 1.375 + var(--font-ui-modifier));
+
   --interactive-normal: var(--background-primary);
 
   --mobile-sidebar-width: 100%;
@@ -42,6 +47,7 @@ body.is-mobile {
 
   --navbar-width: 100%;
   --navbar-max-width: unset;
+  --navbar-bottom-offset: max(var(--safe-area-inset-bottom), var(--safe-area-inset-side));
   --navbar-side-offset: min(var(--navbar-bottom-offset), 32px);
 
   --safe-area-inset-side: 16px;
@@ -89,27 +95,14 @@ body.is-mobile {
   &.mod-macos {
     --navbar-bottom-offset: 28px;
 
-    --font-ui-smaller: calc(var(--font-text-size) * 0.75);
-    --font-ui-small: calc(var(--font-text-size) * 0.9375);
-    --font-ui-medium: calc(var(--font-text-size) * 1.0625);
-    --font-ui-large: calc(var(--font-text-size) * 1.25);
+    --font-ui-smaller: calc(var(--font-text-size) * 0.75 + var(--font-ui-modifier));
+    --font-ui-small: calc(var(--font-text-size) * 0.9375 + var(--font-ui-modifier));
+    --font-ui-medium: calc(var(--font-text-size) * 1.0625 + var(--font-ui-modifier));
+    --font-ui-large: calc(var(--font-text-size) * 1.25 + var(--font-ui-modifier));
 
     .markdown-preview-view,
     .markdown-source-view {
       font-size: calc(var(--font-text-size) * 1.0625);
-    }
-  }
-
-  // Android specific
-  &.is-android {
-    --font-ui-smaller: calc(var(--font-text-size) * 0.75);
-    --font-ui-small: calc(var(--font-text-size) * 0.875);
-    --font-ui-medium: var(--font-text-size);
-    --font-ui-large: calc(var(--font-text-size) * 1.375);
-
-    .markdown-preview-view,
-    .markdown-source-view {
-      font-size: var(--font-text-size);
     }
   }
 
