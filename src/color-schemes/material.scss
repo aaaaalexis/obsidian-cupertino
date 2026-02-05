@@ -89,15 +89,21 @@ https://m3.material.io/styles/color/system/overview
       --text-muted: var(--neutral-30);
     }
 
-    &.is-mobile .mobile-navbar {
-      background-color: var(--secondary-95) !important;
-    }
-    &.is-mobile .mobile-navbar-action {
-      --icon-color: var(--secondary-30);
-    }
-    &.is-mobile:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
-      background-color: var(--tertiary-95);
-      color: var(--tertiary-30);
+    &.is-phone {
+      .mobile-navbar {
+        background-color: var(--secondary-95) !important;
+      }
+      .mobile-navbar-action {
+        --icon-color: var(--secondary-30);
+      }
+      &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+        background-color: var(--secondary-95);
+        color: var(--secondary-30);
+      }
+      &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"][data-mode="source"] .view-actions button:nth-last-child(2) {
+        background-color: var(--tertiary-95);
+        color: var(--tertiary-30);
+      }
     }
   }
 
@@ -153,15 +159,21 @@ https://m3.material.io/styles/color/system/overview
       --text-muted: var(--neutral-60);
     }
 
-    &.is-mobile .mobile-navbar {
-      background-color: var(--secondary-20) !important;
-    }
-    &.is-mobile .mobile-navbar-action {
-      --icon-color: var(--secondary-80);
-    }
-    &.is-mobile:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
-      background-color: var(--tertiary-20);
-      color: var(--tertiary-80);
+    &.is-phone {
+      .mobile-navbar {
+        background-color: var(--secondary-20) !important;
+      }
+      .mobile-navbar-action {
+        --icon-color: var(--secondary-80);
+      }
+      &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+        background-color: var(--secondary-20);
+        color: var(--secondary-80);
+      }
+      &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"][data-mode="source"] .view-actions button:nth-last-child(2) {
+        background-color: var(--tertiary-20);
+        color: var(--tertiary-80);
+      }
     }
   }
 
