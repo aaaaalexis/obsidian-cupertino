@@ -840,7 +840,7 @@ settings:
 		default: 48px
 	-
 		id: tab-text-align
-		title: Tab label alignment (Editor)
+		title: Editor tab label alignment
 		type: variable-select
 		default: left
 		options:
@@ -852,7 +852,7 @@ settings:
 				value: center
 	-
 		id: tab-style
-		title: Tab style (Editor)
+		title: Editor tab style
 		type: class-select
 		allowEmpty: false
 		default: tab-default
@@ -872,91 +872,6 @@ settings:
 			-
 				label: Underline (Accented)
 				value: tab-underline-accented
-	-
-		id: tab-top-left-style
-		title: Tab style (Left top)
-		type: class-select
-		allowEmpty: false
-		default: tab-top-left-stacked
-		options:
-			-
-				label: Stacked
-				value: tab-top-left-stacked
-			-
-				label: Labeled
-				value: tab-top-left-labeled
-			-
-				label: Dropdown
-				value: tab-top-left-dropdown
-			-
-				label: Glyph
-				value: tab-top-left-icon
-			-
-				label: Text
-				value: tab-top-left-text
-	-
-		id: tab-left-style
-		title: Tab style (Left)
-		type: class-select
-		allowEmpty: false
-		default: tab-left-compact
-		options:
-			-
-				label: Labeled
-				value: tab-left-labeled
-			-
-				label: Dropdown
-				value: tab-left-dropdown
-			-
-				label: Glyph
-				value: tab-left-icon
-			-
-				label: Text
-				value: tab-left-text
-			-
-				label: Compact
-				value: tab-left-compact
-	-
-		id: tab-top-right-style
-		title: Tab style (Right top)
-		type: class-select
-		allowEmpty: false
-		default: tab-top-right-icon
-		options:
-			-
-				label: Labeled
-				value: tab-top-right-labeled
-			-
-				label: Dropdown
-				value: tab-top-right-dropdown
-			-
-				label: Glyph
-				value: tab-top-right-icon
-			-
-				label: Text
-				value: tab-top-right-text
-	-
-		id: tab-right-style
-		title: Tab style (Right)
-		type: class-select
-		allowEmpty: false
-		default: tab-right-compact
-		options:
-			-
-				label: Labeled
-				value: tab-right-labeled
-			-
-				label: Dropdown
-				value: tab-right-dropdown
-			-
-				label: Glyph
-				value: tab-right-icon
-			-
-				label: Text
-				value: tab-right-text
-			-
-				label: Compact
-				value: tab-right-compact
 	-
 		id: tab-stacks
 		title: Tab stacks
@@ -1067,6 +982,91 @@ settings:
 		level: 2
 		collapsed: true
 	-
+		id: tab-top-left-style
+		title: Tab style (Left top)
+		type: class-select
+		allowEmpty: false
+		default: tab-top-left-stacked
+		options:
+			-
+				label: Stacked
+				value: tab-top-left-stacked
+			-
+				label: Labeled
+				value: tab-top-left-labeled
+			-
+				label: Dropdown
+				value: tab-top-left-dropdown
+			-
+				label: Glyph
+				value: tab-top-left-icon
+			-
+				label: Text
+				value: tab-top-left-text
+	-
+		id: tab-left-style
+		title: Tab style (Left)
+		type: class-select
+		allowEmpty: false
+		default: tab-left-compact
+		options:
+			-
+				label: Labeled
+				value: tab-left-labeled
+			-
+				label: Dropdown
+				value: tab-left-dropdown
+			-
+				label: Glyph
+				value: tab-left-icon
+			-
+				label: Text
+				value: tab-left-text
+			-
+				label: Compact
+				value: tab-left-compact
+	-
+		id: tab-top-right-style
+		title: Tab style (Right top)
+		type: class-select
+		allowEmpty: false
+		default: tab-top-right-icon
+		options:
+			-
+				label: Labeled
+				value: tab-top-right-labeled
+			-
+				label: Dropdown
+				value: tab-top-right-dropdown
+			-
+				label: Glyph
+				value: tab-top-right-icon
+			-
+				label: Text
+				value: tab-top-right-text
+	-
+		id: tab-right-style
+		title: Tab style (Right)
+		type: class-select
+		allowEmpty: false
+		default: tab-right-compact
+		options:
+			-
+				label: Labeled
+				value: tab-right-labeled
+			-
+				label: Dropdown
+				value: tab-right-dropdown
+			-
+				label: Glyph
+				value: tab-right-icon
+			-
+				label: Text
+				value: tab-right-text
+			-
+				label: Compact
+				value: tab-right-compact
+	-
 		id: nav-action
 		title: Panel actions
 		type: class-select
@@ -1089,35 +1089,6 @@ settings:
 		id: hide-vault-switcher-off
 		title: Always show vault switcher
 		type: class-toggle
-	-
-		id: horizontal-tab-options
-		title: Mobile horizontal tab options
-		type: class-toggle
-	-
-		id: mobile-sidebar-width-override
-		title: Mobile sidebar width
-		type: variable-text
-		default: '100%'
-	-
-		id: mobile-left-sidebar-width
-		title: Tablet sidebar width (Left)
-		type: variable-text
-		default: '360px'
-	-
-		id: mobile-right-sidebar-width
-		title: Tablet sidebar width (Right)
-		type: variable-text
-		default: '360px'
-	-
-		id: mobile-left-sidebar-width-pinned
-		title: Tablet sidebar width (Left pinned)
-		type: variable-text
-		default: '300px'
-	-
-		id: mobile-right-sidebar-width-pinned
-		title: Tablet sidebar width (Right pinned)
-		type: variable-text
-		default: '300px'
 	-
 		id: hover-sidebars
 		title: Hover reveal
@@ -1260,6 +1231,52 @@ settings:
 				label: Accent color
 				value: var(--color-accent)
 	-
+		id: mobile
+		title: Mobile
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: horizontal-tab-options
+		title: Horizontal tab list
+		type: class-toggle
+	-
+		id: mobile-sidebar-width-override
+		title: Sidebar width
+		type: variable-text
+		default: '100%'
+	-
+		id: mobile-left-sidebar-width
+		title: Tablet sidebar width (Left)
+		type: variable-text
+		default: '360px'
+	-
+		id: mobile-right-sidebar-width
+		title: Tablet sidebar width (Right)
+		type: variable-text
+		default: '360px'
+	-
+		id: mobile-left-sidebar-width-pinned
+		title: Tablet pinned sidebar width (Left)
+		type: variable-text
+		default: '300px'
+	-
+		id: mobile-right-sidebar-width-pinned
+		title: Tablet pinned sidebar width (Right)
+		type: variable-text
+		default: '300px'
+	-
+		id: settings
+		title: Settings
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: plugins-grid-off
+		title: Plugins list view
+		description: Disable plugins grid layout
+		type: class-toggle
+	-
 		id: titlebar
 		title: Frame title
 		type: heading
@@ -1282,17 +1299,6 @@ settings:
 		min: 100
 		max: 900
 		step: 50
-	-
-		id: settings
-		title: Settings
-		type: heading
-		level: 2
-		collapsed: true
-	-
-		id: plugins-grid-off
-		title: Plugins list view
-		description: Disable plugins grid layout
-		type: class-toggle
 	-
 		id: colorful-frame
 		title: Tinted frame
