@@ -329,7 +329,7 @@ body.input-material.is-phone {
       border-radius: 100vh;
     }
     .prompt-input-container {
-      margin: auto var(--navbar-side-offset) var(--navbar-side-offset);
+      margin: auto var(--safe-area-inset-side) var(--safe-area-inset-side);
     }
 
     .suggestion-item {
