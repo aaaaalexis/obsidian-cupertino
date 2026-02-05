@@ -522,10 +522,6 @@ body.is-tablet {
     border-width: 0;
   }
 
-  &:not(.is-floating-nav) .workspace-drawer .workspace-leaf-content .nav-header ~ div:last-child {
-    mask: linear-gradient(to bottom, transparent, black 16px, black calc(100% - 16px), transparent);
-  }
-
   .workspace-drawer {
     .workspace-drawer-ribbon .side-dock-actions {
       padding-block: 12px;
@@ -536,7 +532,7 @@ body.is-tablet {
     }
 
     .workspace-leaf-content .nav-header ~ div:last-child {
-      mask: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0px, hsla(0, 0%, 0%, 0.013) 5px, hsla(0, 0%, 0%, 0.049) 10px, hsla(0, 0%, 0%, 0.104) 14px, hsla(0, 0%, 0%, 0.175) 18px, hsla(0, 0%, 0%, 0.259) 22px, hsla(0, 0%, 0%, 0.352) 26px, hsla(0, 0%, 0%, 0.45) 30px, hsla(0, 0%, 0%, 0.55) 34px, hsla(0, 0%, 0%, 0.648) 38px, hsla(0, 0%, 0%, 0.741) 42px, hsla(0, 0%, 0%, 0.825) 46px, hsla(0, 0%, 0%, 0.896) 50px, hsla(0, 0%, 0%, 0.951) 54px, hsla(0, 0%, 0%, 0.987) 59px, hsl(0, 0%, 0%) 64px, black calc(100% - 64px), transparent);
+      mask: linear-gradient(to bottom, transparent, black 16px, black calc(100% - 16px), transparent);
     }
 
     .workspace-drawer-tab-options-list {
