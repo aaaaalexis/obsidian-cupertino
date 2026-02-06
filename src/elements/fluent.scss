@@ -1,8 +1,8 @@
 body.input-fluent {
-  --radius-s: calc(5px * var(--radius-modifier));
-  --radius-m: calc(5px * var(--radius-modifier));
-  --radius-l: calc(10px * var(--radius-modifier));
-  --radius-xl: calc(10px * var(--radius-modifier));
+  --radius-s: calc(4px * var(--radius-modifier));
+  --radius-m: calc(4px * var(--radius-modifier));
+  --radius-l: calc(8px * var(--radius-modifier));
+  --radius-xl: calc(8px * var(--radius-modifier));
   --input-radius: var(--radius-m);
   --button-radius: var(--input-radius);
   --clickable-icon-radius: var(--radius-m);
@@ -36,7 +36,7 @@ body.input-fluent {
     --slider-thumb-height: 24px;
   }
   &.theme-light {
-    --input-shadow: 0px 0px 0px var(--input-border-width) var(--background-modifier-border), 0 -0.5px 0 0 rgba(0, 0, 0, 0.25) inset !important;
+    --input-shadow: 0px 0px 0px var(--input-border-width) rgba(0, 0, 0, 0.05), 0 -0.5px 0 0 rgba(0, 0, 0, 0.25) inset !important;
     --input-shadow-hover: var(--input-shadow) !important;
     --input-shadow-active: inset 0 0 0 1px var(--background-modifier-border);
     --slider-thumb-border-color: var(--color-base-00);
@@ -141,7 +141,6 @@ body.input-fluent {
       padding: calc(8px * var(--density-modifier)) 16px;
       position: relative;
       border-radius: var(--setting-items-radius);
-      font-size: var(--font-ui-medium);
     }
     .vertical-tab-nav-item.is-active {
       background-color: var(--background-modifier-hover);
@@ -173,7 +172,7 @@ body.input-fluent {
       background-color: var(--setting-items-background);
 
       &:not(:first-child) {
-        margin-top: 6px;
+        margin-top: 4px;
       }
     }
 
@@ -190,7 +189,7 @@ body.input-fluent {
 }
 
 body.input-fluent:not(.is-mobile) {
-  --menu-padding: 5px;
+  --menu-padding: 4px;
   --prompt-input-height: 64px;
   --tab-outline-color: rgba(var(--mono-rgb-100), 0.05);
 
@@ -250,7 +249,7 @@ body.input-fluent:not(.is-mobile) {
     .menu-item,
     .suggestion-item {
       border-radius: var(--radius-m);
-      padding: 8px 10px;
+      padding: 8px;
     }
 
     .menu-item-icon .svg-icon {

@@ -14,10 +14,10 @@ body.input-adwaita {
   --button-radius: var(--radius-s);
 
   &.mod-linux {
-    --font-ui-smaller: calc(var(--font-ui-small) * 0.82);
-    --font-ui-small: calc(var(--font-ui-small) * 0.82);
+    --font-ui-smaller: calc(var(--font-ui-medium) * 0.82);
+    --font-ui-small: 11pt;
     --font-ui-medium: 11pt;
-    --font-ui-large: calc(var(--font-ui-small) * 1.36);
+    --font-ui-large: calc(var(--font-ui-medium) * 1.36);
   }
 
   // Button
@@ -146,7 +146,6 @@ body.input-adwaita {
     }
     .vertical-tab-nav-item {
       padding: calc(12px * var(--density-modifier)) 14px;
-      font-size: var(--font-ui-medium);
     }
     .vertical-tab-nav-item-icon {
       color: var(--text-normal);
@@ -197,43 +196,45 @@ body.input-adwaita {
   }
 }
 
-body.input-adwaita:not(.mod-macos):not(.is-mobile) {
+body.input-adwaita:not(.is-mobile) {
   // Title bar
-  --frame-right-space: 124px;
+  &:not(.mod-macos) {
+    --frame-right-space: 124px;
 
-  .titlebar-button-container.mod-right {
-    align-items: center;
-    justify-content: space-evenly;
-  }
-
-  .titlebar-button-container.mod-right .titlebar-button {
-    width: fit-content;
-    height: fit-content;
-    background-color: var(--interactive-normal);
-    border-radius: 100vh !important;
-    padding: 4px;
-    flex: 0;
-
-    svg {
-      height: 16px;
+    .titlebar-button-container.mod-right {
+      align-items: center;
+      justify-content: space-evenly;
     }
 
-    &:hover {
-      background-color: var(--interactive-hover);
-    }
-  }
+    .titlebar-button-container.mod-right .titlebar-button {
+      width: fit-content;
+      height: fit-content;
+      background-color: rgb(from var(--text-normal) r g b / 10%);
+      border-radius: 100vh !important;
+      padding: 4px;
+      flex: 0;
 
-  .titlebar-button.mod-minimize svg {
-    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3e%3cpath fill='%232E3436' d='M4 10.008h8v1.988H4v-1.988Z'/%3e%3c/svg%3e");
-  }
-  .titlebar-button.mod-maximize svg {
-    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3e%3cpath fill='%232E3436' d='M3.988 3.992v8.012H12V3.992H3.988Zm2 2H10v4.012H5.988V5.992Z'/%3e%3c/svg%3e");
-  }
-  .titlebar-button.mod-close svg {
-    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3e%3cpath fill='%232E3436' d='M4 4h1.031c.254.012.512.129.688.313L8 6.592l2.313-2.28c.265-.231.445-.305.687-.313h1v1c0 .285-.035.55-.25.75L9.469 8.031l2.25 2.25c.187.188.281.453.281.719v1h-1c-.266 0-.531-.094-.719-.281L8 9.438l-2.281 2.28A1.016 1.016 0 0 1 5 12H4v-1c0-.266.094-.531.281-.719l2.282-2.25L4.28 5.75A.904.904 0 0 1 4 5V4Z'/%3e%3c/svg%3e");
-  }
-  &.is-maximized .titlebar-button.mod-maximize svg {
-    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3e%3cpath fill='%232E3434' d='M4.988 4.992v6.012H11V4.992H4.988Zm2 2H9v2.012H6.988V6.992Z'/%3e%3c/svg%3e");
+      svg {
+        height: 16px;
+      }
+
+      &:hover {
+        background-color: rgb(from var(--text-normal) r g b / 15%);
+      }
+    }
+
+    .titlebar-button.mod-minimize svg {
+      -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3e%3cpath fill='%232E3436' d='M4 10.008h8v1.988H4v-1.988Z'/%3e%3c/svg%3e");
+    }
+    .titlebar-button.mod-maximize svg {
+      -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3e%3cpath fill='%232E3436' d='M3.988 3.992v8.012H12V3.992H3.988Zm2 2H10v4.012H5.988V5.992Z'/%3e%3c/svg%3e");
+    }
+    .titlebar-button.mod-close svg {
+      -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3e%3cpath fill='%232E3436' d='M4 4h1.031c.254.012.512.129.688.313L8 6.592l2.313-2.28c.265-.231.445-.305.687-.313h1v1c0 .285-.035.55-.25.75L9.469 8.031l2.25 2.25c.187.188.281.453.281.719v1h-1c-.266 0-.531-.094-.719-.281L8 9.438l-2.281 2.28A1.016 1.016 0 0 1 5 12H4v-1c0-.266.094-.531.281-.719l2.282-2.25L4.28 5.75A.904.904 0 0 1 4 5V4Z'/%3e%3c/svg%3e");
+    }
+    &.is-maximized .titlebar-button.mod-maximize svg {
+      -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3e%3cpath fill='%232E3434' d='M4.988 4.992v6.012H11V4.992H4.988Zm2 2H9v2.012H6.988V6.992Z'/%3e%3c/svg%3e");
+    }
   }
 
   // Menu
@@ -266,7 +267,7 @@ body.input-adwaita:not(.mod-macos):not(.is-mobile) {
       width: 24px;
       height: 24px;
       padding: 4px;
-      background-color: var(--interactive-normal);
+      background-color: rgb(from var(--text-normal) r g b / 10%);
 
       path,
       rect,
@@ -282,7 +283,7 @@ body.input-adwaita:not(.mod-macos):not(.is-mobile) {
       }
 
       &:hover {
-        background-color: var(--interactive-hover);
+        background-color: rgb(from var(--text-normal) r g b / 15%);
       }
     }
   }
