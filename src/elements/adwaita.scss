@@ -13,6 +13,13 @@ body.input-adwaita {
   --radius-xl: calc(18px * var(--radius-modifier));
   --button-radius: var(--radius-s);
 
+  &.mod-linux {
+    --font-ui-smaller: calc(var(--font-ui-small) * 0.82);
+    --font-ui-small: calc(var(--font-ui-small) * 0.82);
+    --font-ui-medium: 11pt;
+    --font-ui-large: calc(var(--font-ui-small) * 1.36);
+  }
+
   // Button
   button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button)) {
     padding: 5px 17px;
@@ -139,6 +146,7 @@ body.input-adwaita {
     }
     .vertical-tab-nav-item {
       padding: calc(12px * var(--density-modifier)) 14px;
+      font-size: var(--font-ui-medium);
     }
     .vertical-tab-nav-item-icon {
       color: var(--text-normal);

@@ -205,7 +205,7 @@ body.is-phone {
       z-index: 1;
     }
     .modal-title:not(:has(.modal-setting-back-button)) {
-      font-size: 1.5em;
+      font-size: 1.5rem;
       font-weight: calc(var(--font-weight) + var(--bold-modifier));
       max-width: 100%;
       padding-left: 20px;

@@ -23,6 +23,12 @@ body.input-fluent {
   --blur-m: blur(16px) saturate(0.75);
   --blur-l: blur(32px) saturate(0.75);
 
+  &.mod-windows {
+    --font-ui-smaller: 12px;
+    --font-ui-small: 12px;
+    --font-ui-medium: 14px;
+    --font-ui-large: 20px;
+  }
   &.is-mobile {
     --input-border-width: var(--border-width);
 
@@ -135,6 +141,7 @@ body.input-fluent {
       padding: calc(8px * var(--density-modifier)) 16px;
       position: relative;
       border-radius: var(--setting-items-radius);
+      font-size: var(--font-ui-medium);
     }
     .vertical-tab-nav-item.is-active {
       background-color: var(--background-modifier-hover);

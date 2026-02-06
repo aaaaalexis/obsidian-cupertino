@@ -4,12 +4,6 @@ body,
   --font-interface-theme: Inter;
   --font-text-theme: Inter;
 
-  --font-ui-modifier: 0px;
-  --font-ui-smaller: calc(var(--font-text-size) * 0.75 + var(--font-ui-modifier));
-  --font-ui-small: calc(var(--font-text-size) * 0.8125 + var(--font-ui-modifier));
-  --font-ui-medium: calc(var(--font-text-size) * 0.9375 + var(--font-ui-modifier));
-  --font-ui-large: calc(var(--font-text-size) * 1.0625 + var(--font-ui-modifier));
-
   --titlebar-background: transparent;
   --titlebar-background-focused: transparent;
 
