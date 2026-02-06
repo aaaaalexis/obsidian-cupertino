@@ -12,10 +12,10 @@ body.is-mobile {
   --tab-radius: var(--radius-s);
   --tab-curve: var(--tab-radius);
 
-  --font-ui-smaller: calc(var(--font-text-size) * 0.75 + var(--font-ui-modifier));
-  --font-ui-small: calc(var(--font-text-size) * 0.875 + var(--font-ui-modifier));
-  --font-ui-medium: calc(var(--font-text-size) + var(--font-ui-modifier));
-  --font-ui-large: calc(var(--font-text-size) * 1.375 + var(--font-ui-modifier));
+  --font-ui-smaller: 12px;
+  --font-ui-small: 14px;
+  --font-ui-medium: 16px;
+  --font-ui-large: 24px;
 
   --interactive-normal: var(--background-primary);
 
@@ -38,7 +38,7 @@ body.is-mobile {
 
   --mobile-sidebar-background: var(--background-secondary);
 
-  --tab-switcher-menubar-background: var(--background-secondary);
+  --tab-switcher-menubar-background: transparent;
   --tab-switcher-preview-radius: var(--radius-m);
 
   --icon-opacity-hover: var(--icon-opacity);
@@ -95,10 +95,10 @@ body.is-mobile {
   &.mod-macos {
     --navbar-bottom-offset: 28px;
 
-    --font-ui-smaller: calc(var(--font-text-size) * 0.75 + var(--font-ui-modifier));
-    --font-ui-small: calc(var(--font-text-size) * 0.9375 + var(--font-ui-modifier));
-    --font-ui-medium: calc(var(--font-text-size) * 1.0625 + var(--font-ui-modifier));
-    --font-ui-large: calc(var(--font-text-size) * 1.25 + var(--font-ui-modifier));
+    --font-ui-smaller: 13px;
+    --font-ui-small: 15px;
+    --font-ui-medium: 17px;
+    --font-ui-large: 20px;
 
     .markdown-preview-view,
     .markdown-source-view {
@@ -482,29 +482,6 @@ body.is-phone {
     margin: 0;
     border-radius: 0;
   }
-
-  // Tab switcher
-  .mobile-tab-switcher-menubar {
-    border-top: none;
-  }
-  .mobile-tab-wrapper {
-    pointer-events: all;
-  }
-  .mobile-tab-switcher-scroll {
-    pointer-events: none;
-    background-color: transparent;
-  }
-  .mobile-tab-switcher-scroll,
-  .mobile-tab-switcher-menu-button,
-  .mobile-tab-switcher-menu-spacer:first-child {
-    z-index: 2;
-  }
-  .mobile-tab-switcher-menu-spacer:last-child .clickable-icon::after {
-    position: fixed;
-    z-index: 1;
-    inset: 0;
-    content: "";
-  }
 }
 
 body.is-tablet {
@@ -545,10 +522,6 @@ body.is-tablet {
     border-width: 0;
   }
 
-  &:not(.is-floating-nav) .workspace-drawer .workspace-leaf-content .nav-header ~ div:last-child {
-    mask: linear-gradient(to bottom, transparent, black 16px, black calc(100% - 16px), transparent);
-  }
-
   .workspace-drawer {
     .workspace-drawer-ribbon .side-dock-actions {
       padding-block: 12px;
@@ -559,7 +532,7 @@ body.is-tablet {
     }
 
     .workspace-leaf-content .nav-header ~ div:last-child {
-      mask: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0px, hsla(0, 0%, 0%, 0.013) 5px, hsla(0, 0%, 0%, 0.049) 10px, hsla(0, 0%, 0%, 0.104) 14px, hsla(0, 0%, 0%, 0.175) 18px, hsla(0, 0%, 0%, 0.259) 22px, hsla(0, 0%, 0%, 0.352) 26px, hsla(0, 0%, 0%, 0.45) 30px, hsla(0, 0%, 0%, 0.55) 34px, hsla(0, 0%, 0%, 0.648) 38px, hsla(0, 0%, 0%, 0.741) 42px, hsla(0, 0%, 0%, 0.825) 46px, hsla(0, 0%, 0%, 0.896) 50px, hsla(0, 0%, 0%, 0.951) 54px, hsla(0, 0%, 0%, 0.987) 59px, hsl(0, 0%, 0%) 64px, black calc(100% - 64px), transparent);
+      mask: linear-gradient(to bottom, transparent, black 16px, black calc(100% - 16px), transparent);
     }
 
     .workspace-drawer-tab-options-list {

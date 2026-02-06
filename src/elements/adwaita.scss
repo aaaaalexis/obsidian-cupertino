@@ -16,6 +16,11 @@ body.mod-linux:not(.is-android):not(.adaptive-mode-off) {
   --radius-xl: calc(18px * var(--radius-modifier));
   --button-radius: var(--radius-s);
 
+  --font-ui-smaller: calc(var(--font-ui-medium) * 0.82);
+  --font-ui-small: 11pt;
+  --font-ui-medium: 11pt;
+  --font-ui-large: calc(var(--font-ui-medium) * 1.36);
+
   // Button
   button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button)) {
     padding: 5px 17px;
@@ -204,7 +209,7 @@ body.mod-linux:not(.is-android):not(.adaptive-mode-off):not(.is-mobile) {
   .titlebar-button-container.mod-right .titlebar-button {
     width: fit-content;
     height: fit-content;
-    background-color: var(--interactive-normal);
+    background-color: rgb(from var(--text-normal) r g b / 10%);
     border-radius: 100vh !important;
     padding: 4px;
     flex: 0;
@@ -214,7 +219,7 @@ body.mod-linux:not(.is-android):not(.adaptive-mode-off):not(.is-mobile) {
     }
 
     &:hover {
-      background-color: var(--interactive-hover);
+      background-color: rgb(from var(--text-normal) r g b / 15%);
     }
   }
 
@@ -261,7 +266,7 @@ body.mod-linux:not(.is-android):not(.adaptive-mode-off):not(.is-mobile) {
       width: 24px;
       height: 24px;
       padding: 4px;
-      background-color: var(--interactive-normal);
+      background-color: rgb(from var(--text-normal) r g b / 10%);
 
       path,
       rect,
@@ -277,7 +282,7 @@ body.mod-linux:not(.is-android):not(.adaptive-mode-off):not(.is-mobile) {
       }
 
       &:hover {
-        background-color: var(--interactive-hover);
+        background-color: rgb(from var(--text-normal) r g b / 15%);
       }
     }
   }

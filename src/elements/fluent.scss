@@ -7,10 +7,10 @@ body.mod-windows:not(.adaptive-mode-off) {
   --h3-size: 1.5rem;
   --h4-size: 1.25rem;
 
-  --radius-s: calc(5px * var(--radius-modifier));
-  --radius-m: calc(5px * var(--radius-modifier));
-  --radius-l: calc(10px * var(--radius-modifier));
-  --radius-xl: calc(10px * var(--radius-modifier));
+  --radius-s: calc(4px * var(--radius-modifier));
+  --radius-m: calc(4px * var(--radius-modifier));
+  --radius-l: calc(8px * var(--radius-modifier));
+  --radius-xl: calc(8px * var(--radius-modifier));
   --input-radius: var(--radius-m);
   --button-radius: var(--input-radius);
   --clickable-icon-radius: var(--radius-m);
@@ -31,6 +31,11 @@ body.mod-windows:not(.adaptive-mode-off) {
   --blur-m: blur(16px) saturate(0.75);
   --blur-l: blur(32px) saturate(0.75);
 
+  --font-ui-smaller: 12px;
+  --font-ui-small: 12px;
+  --font-ui-medium: 14px;
+  --font-ui-large: 20px;
+
   &.is-mobile {
     --input-border-width: var(--border-width);
 
@@ -38,7 +43,7 @@ body.mod-windows:not(.adaptive-mode-off) {
     --slider-thumb-height: 24px;
   }
   &.theme-light {
-    --input-shadow: 0px 0px 0px var(--input-border-width) var(--background-modifier-border), 0 -0.5px 0 0 rgba(0, 0, 0, 0.25) inset !important;
+    --input-shadow: 0px 0px 0px var(--input-border-width) rgba(0, 0, 0, 0.05), 0 -0.5px 0 0 rgba(0, 0, 0, 0.25) inset !important;
     --input-shadow-hover: var(--input-shadow) !important;
     --input-shadow-active: inset 0 0 0 1px var(--background-modifier-border);
     --slider-thumb-border-color: var(--color-base-00);
@@ -174,7 +179,7 @@ body.mod-windows:not(.adaptive-mode-off) {
       background-color: var(--setting-items-background);
 
       &:not(:first-child) {
-        margin-top: 6px;
+        margin-top: 4px;
       }
     }
 
@@ -191,7 +196,7 @@ body.mod-windows:not(.adaptive-mode-off) {
 }
 
 body.mod-windows:not(.adaptive-mode-off):not(.is-mobile) {
-  --menu-padding: 5px;
+  --menu-padding: 4px;
   --prompt-input-height: 64px;
   --tab-outline-color: rgba(var(--mono-rgb-100), 0.05);
 
@@ -251,7 +256,7 @@ body.mod-windows:not(.adaptive-mode-off):not(.is-mobile) {
     .menu-item,
     .suggestion-item {
       border-radius: var(--radius-m);
-      padding: 8px 10px;
+      padding: 8px;
     }
 
     .menu-item-icon .svg-icon {

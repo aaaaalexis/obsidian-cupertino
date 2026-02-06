@@ -58,6 +58,15 @@
   }
 
   // Editor panel
+  body:not(.mod-macos, .adaptive-mode-off):not(.is-phone) {
+    .workspace-split.mod-vertical {
+      gap: 8px;
+    }
+    .workspace-split:not(.mod-sidedock) > * > .workspace-leaf-resize-handle:not(:hover) {
+      border-color: transparent;
+    }
+  }
+
   .markdown-preview-view,
   .markdown-source-view {
     color: var(--text-normal-editor, var(--text-normal));

@@ -194,26 +194,15 @@ body:is(.mod-macos, .adaptive-mode-off).is-phone {
 
   // Tab switcher
   --tab-switcher-background: transparent;
-  --tab-switcher-menubar-background: var(--tab-switcher-background);
   --tab-switcher-preview-background-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  --tab-switcher-preview-radius: var(--radius-m);
 
   .mobile-tab-switcher {
     background: linear-gradient(rgba(var(--mono-rgb-0), 0.5), var(--mobile-sidebar-background)) !important;
     backdrop-filter: var(--blur-l);
-    justify-content: flex-end;
-    width: unset;
-    height: unset;
   }
 
-  .mobile-tab-switcher-scroll {
-    padding-top: 0;
-    height: unset;
-  }
   .mobile-tab-switcher-menubar {
-    background-color: var(--mobile-sidebar-background);
     padding: 0 var(--navbar-side-offset) var(--navbar-bottom-offset);
-    border: none;
   }
   .mobile-tab-switcher-menu-button {
     flex: 1;

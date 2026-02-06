@@ -1,6 +1,9 @@
-body:not(.block-width-off) {
+body {
   --file-line-width: var(--line-width);
   --line-width: 700px;
+}
+
+body:not(.block-width-off) {
   --line-width-wide: min(100cqw, 50rem);
 
   .wide {
