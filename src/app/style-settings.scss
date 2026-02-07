@@ -2799,6 +2799,11 @@ settings:
 		title: Image grids
 		type: class-toggle
 	-
+		id: img-grid-gap
+		title: Image grids spacing
+		type: variable-text
+		default: 4px
+	-
 		id: full-width-media-off
 		title: Disable maximized media
 		type: class-toggle

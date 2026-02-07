@@ -426,10 +426,11 @@
 
   // Image grid
   .img-grid .markdown-preview-section {
-    .el-p > p:has(> .image-embed, > .image-embed):has(span:last-child) {
+    .el-p > p:has(> .image-embed):has(span:last-child),
+    .el-p > p:not(:has(:not(img))) {
       --p-spacing: 4px;
       display: flex;
-      gap: 4px;
+      gap: var(--img-grid-gap, 4px);
 
       line-height: 0;
 
