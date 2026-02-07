@@ -83,7 +83,8 @@ body.is-phone {
       gap: 16px;
       border-radius: 0;
     }
-    .menu-item:only-child {
+    .menu-item:only-child,
+    .suggestion-item {
       border-radius: var(--radius-s);
     }
     .menu-separator {
