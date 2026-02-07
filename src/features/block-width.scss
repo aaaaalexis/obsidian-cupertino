@@ -46,7 +46,7 @@ body:not(.block-width-off) {
   }
   &.table-100,
   .table-100 {
-    --table-line-width: calc(100cqw + (var(--file-margins-inline) * 2));
+    --table-line-width: calc(100cqw + (var(--file-margins-x) * 2));
   }
 
   &.table-100,
@@ -93,7 +93,7 @@ body:not(.block-width-off) {
   }
   &.bases-100,
   .bases-100 {
-    --bases-line-width: calc(100cqw + (var(--file-margins-inline) * 2));
+    --bases-line-width: calc(100cqw + (var(--file-margins-x) * 2));
   }
 
   // Image
@@ -117,7 +117,7 @@ body:not(.block-width-off) {
   }
   &.img-100,
   .img-100 {
-    --img-line-width: calc(100cqw + (var(--file-margins-inline) * 2));
+    --img-line-width: calc(100cqw + (var(--file-margins-x) * 2));
   }
 
   &.img-100,
