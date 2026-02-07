@@ -81,6 +81,11 @@ body.input-cupertino.is-mobile {
   .bases-cards-label {
     padding: 0;
   }
+
+  // File explorer
+  .nav-files-container > div {
+    --nav-item-color: var(--text-normal);
+  }
 }
 
 body.input-cupertino.is-phone {
