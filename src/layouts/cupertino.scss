@@ -109,12 +109,13 @@ body:is(.layout-cupertino, .layout-macos, .layout-fusion).is-mobile {
   }
 }
 
-body:is(.layout-cupertino, .layout-fusion).is-tablet {
+body:is(.layout-cupertino, .layout-fusion:is(.tab-default)).is-tablet {
   .workspace-drawer.mod-left.is-pinned + .mod-root,
   .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) {
     padding-bottom: 8px;
   }
-
+}
+body:is(.layout-cupertino, .layout-fusion).is-tablet {
   .workspace-drawer.mod-left.is-pinned + .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tabs:last-of-type .workspace-tab-container {
     margin-right: 8px;
   }
