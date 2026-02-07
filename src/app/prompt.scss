@@ -28,26 +28,20 @@ body.is-phone {
   .prompt {
     animation: none;
     border-radius: var(--radius-l) var(--radius-l) 0 0;
-  }
-  .prompt .prompt-results {
-    padding: var(--safe-area-inset-side);
-  }
-  .prompt .prompt-input-container {
-    width: auto;
-    margin: auto var(--keyboard-spacing) var(--keyboard-spacing);
-  }
-  .prompt .prompt-input {
-    background-color: var(--background-primary);
-  }
-  .prompt .suggestion-item {
-    padding: calc(16px * var(--density-modifier)) 16px;
-  }
 
-  .suggestion-container {
-    border-radius: var(--radius-m);
-  }
-  .suggestion-item {
-    padding: calc(8px * var(--density-modifier)) 16px;
+    .prompt-results {
+      padding: var(--safe-area-inset-side);
+    }
+    .prompt-input-container {
+      width: auto;
+      margin: auto var(--keyboard-spacing) var(--keyboard-spacing);
+    }
+    .prompt-input {
+      background-color: var(--background-primary);
+    }
+    .suggestion-item {
+      padding: calc(16px * var(--density-modifier)) 16px;
+    }
   }
 }
 

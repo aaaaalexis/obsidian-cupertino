@@ -64,8 +64,7 @@ body.is-mobile {
 body.is-phone {
   --menu-padding: 32px 16px;
 
-  .menu,
-  .suggestion-container {
+  .menu {
     border-radius: var(--radius-l) var(--radius-l) 0 0;
     overflow: hidden;
 
@@ -83,12 +82,20 @@ body.is-phone {
       gap: 16px;
       border-radius: 0;
     }
-    .menu-item:only-child,
-    .suggestion-item {
+    .menu-item:only-child {
       border-radius: var(--radius-s);
     }
     .menu-separator {
       margin: calc(12px * var(--density-modifier)) 16px;
+    }
+  }
+
+  .suggestion-container {
+    border-radius: var(--radius-l);
+
+    .suggestion-item {
+      border-radius: var(--radius-m);
+      padding: calc(8px * var(--density-modifier)) 16px;
     }
   }
 }
