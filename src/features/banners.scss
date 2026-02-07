@@ -84,6 +84,7 @@ body:not(.banner-off) {
         overflow: hidden;
         object-fit: var(--banner-image-object-fit);
         line-height: 0;
+        max-width: calc(100% - var(--banner-image-inset) * 2);
       }
 
       .image-embed[alt="banner"] {
