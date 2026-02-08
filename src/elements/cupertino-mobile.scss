@@ -81,6 +81,11 @@ body:is(.mod-macos, .adaptive-mode-off).is-mobile {
   .bases-cards-label {
     padding: 0;
   }
+
+  // File explorer
+  .nav-files-container > div {
+    --nav-item-color: var(--text-normal);
+  }
 }
 
 body:is(.mod-macos, .adaptive-mode-off).is-phone {

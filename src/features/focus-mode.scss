@@ -1,5 +1,5 @@
 body.focus-view:not(.is-mobile):not(.is-popout-window) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
-  --file-margins: calc(var(--file-margins-block) + var(--header-height)) var(--file-margins-block);
+  --file-margins: calc(var(--file-margins-y) + var(--header-height)) var(--file-margins-y);
 
   .workspace-tab-header-container {
     height: 0;

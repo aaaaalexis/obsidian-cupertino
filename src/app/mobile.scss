@@ -5,7 +5,7 @@ body.is-mobile {
   --touch-radius-m: var(--radius-m);
   --touch-radius-l: var(--radius-l);
   --touch-radius-xl: var(--radius-xl);
-  --radius-s: calc(8px * var(--radius-modifier));
+  --radius-s: calc(16px * var(--radius-modifier));
   --radius-m: calc(16px * var(--radius-modifier));
   --radius-l: calc(24px * var(--radius-modifier));
   --radius-xl: calc(32px * var(--radius-modifier));
@@ -30,8 +30,8 @@ body.is-mobile {
   --divider-width: 1pt;
   --tab-outline-width: 1pt;
 
-  --file-margins-block: 8px;
-  --file-margins-inline: 24px;
+  --file-margins-y: 8px;
+  --file-margins-x: 24px;
 
   --view-top-fade-opacity: 0;
   --view-bottom-fade-opacity: 0;

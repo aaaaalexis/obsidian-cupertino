@@ -84,9 +84,6 @@ body:is(.mod-macos, .adaptive-mode-off).is-mobile {
         --icon-stroke: var(--icon-m-stroke-width);
       }
     }
-    .suggestion-item {
-      border-radius: var(--radius-s);
-    }
   }
 }
 body:is(.mod-macos, .adaptive-mode-off).is-phone {
@@ -130,6 +127,10 @@ body:is(.mod-macos, .adaptive-mode-off).is-phone {
       border-bottom-left-radius: var(--radius-m);
       border-bottom-right-radius: var(--radius-m);
     }
+  }
+
+  .suggestion-container {
+    border-radius: var(--radius-m);
   }
 }
 body:is(.mod-macos, .adaptive-mode-off).is-tablet {

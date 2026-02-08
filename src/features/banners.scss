@@ -16,7 +16,7 @@ body:not(.banner-off) {
 
     .markdown-preview-view:not(.banner),
     .markdown-source-view.is-live-preview:not(.banner) {
-      --banner-mobile-offset: 0;
+      --banner-mobile-offset: 0px;
     }
   }
 
@@ -84,10 +84,18 @@ body:not(.banner-off) {
         overflow: hidden;
         object-fit: var(--banner-image-object-fit);
         line-height: 0;
+        max-width: calc(100% - var(--banner-image-inset) * 2);
       }
 
-      .image-embed[alt="banner"] {
-        display: contents;
+      .image-embed[alt="banner"],
+      .image-embed[alt="banner"] > .image-resize-container {
+        display: contents !important;
+
+        &::before,
+        &::after,
+        .image-resize-handle {
+          display: none !important;
+        }
       }
       div:is(.mod-header, .inline-title, .metadata-container) {
         z-index: 1;

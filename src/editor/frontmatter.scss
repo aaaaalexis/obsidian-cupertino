@@ -13,7 +13,7 @@
   .metadata-container {
     --metadata-divider-width: 0 !important;
   }
-  .metadata-content {
+  .mod-root .metadata-content {
     transform: translateX(-8px) !important;
     width: calc(100% + 16px) !important;
   }

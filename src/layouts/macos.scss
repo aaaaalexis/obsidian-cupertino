@@ -57,11 +57,11 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
   .mod-sidedock {
     transition:
       var(--anim-duration-moderate),
-      background-color 0s;
+      background-color 0s,
+      box-shadow 0s;
   }
   .mod-sidedock.mod-left-split {
     -electron-corner-smoothing: var(--corner-smoothing);
-    display: flex;
     z-index: var(--layer-sidedock);
     margin: 8px 0 8px 8px;
     box-shadow: var(--shadow-surface), var(--shadow-sidedock-spread);

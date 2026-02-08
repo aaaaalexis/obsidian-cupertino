@@ -15,9 +15,9 @@
     --h5-size: 1em;
     --h6-size: 0.875em;
 
-    --file-margins-block: 32px;
-    --file-margins-inline: 32px;
-    --file-margins: var(--file-margins-block) var(--file-margins-inline);
+    --file-margins-y: 32px;
+    --file-margins-x: 32px;
+    --file-margins: var(--file-margins-y) var(--file-margins-x);
 
     --code-border-width: 1px;
     --code-size: var(--font-smallest);
@@ -264,10 +264,11 @@
 
   // Image grid
   .img-grid .markdown-preview-section {
-    .el-p > p:has(> .image-embed, > .image-embed):has(span:last-child) {
+    .el-p > p:has(> .image-embed):has(span:last-child),
+    .el-p > p:not(:has(:not(img))) {
       --p-spacing: 4px;
       display: flex;
-      gap: 4px;
+      gap: var(--img-grid-gap, 4px);
 
       line-height: 0;
 

@@ -29,14 +29,15 @@ body.is-android:not(.adaptive-mode-off) {
   --input-border-width: 1px;
   --input-height: 40px;
 
-  --input-radius: var(--radius-s);
-  --button-radius: 100vh;
-  --clickable-icon-radius: 100vh;
   --radius-xs: calc(4px * var(--radius-modifier));
   --radius-s: calc(8px * var(--radius-modifier));
   --radius-m: calc(12px * var(--radius-modifier));
   --radius-l: calc(16px * var(--radius-modifier));
   --radius-xl: calc(28px * var(--radius-modifier));
+  --input-radius: var(--radius-s);
+  --button-radius: 100vh;
+  --clickable-icon-radius: 100vh;
+  --tab-radius: var(--radius-m);
 
   --toggle-border-width: 4px;
   --toggle-thumb-height: 24px;
@@ -322,10 +323,6 @@ body.is-android:not(.adaptive-mode-off).is-phone {
     .menu-item::after {
       content: none;
     }
-  }
-
-  .suggestion-container .suggestion-item {
-    border-radius: var(--radius-xs);
   }
 
   // Settings

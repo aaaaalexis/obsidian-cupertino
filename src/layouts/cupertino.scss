@@ -20,8 +20,7 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
     .mod-sidedock.is-sidedock-collapsed[style*="display"] {
       box-shadow: var(--shadow-s);
       border-radius: var(--radius-window, var(--radius-m));
-      background-color: var(--modal-background) !important;
-      backdrop-filter: var(--blur-m);
+      background-color: var(--background-primary-alt) !important;
       height: -webkit-fill-available;
 
       &.mod-left-split {
@@ -92,11 +91,6 @@ body:is(.mod-macos, .adaptive-mode-off).is-mobile {
 }
 
 body:is(.mod-macos, .adaptive-mode-off).is-tablet {
-  .workspace-drawer.mod-left.is-pinned + .mod-root,
-  .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) {
-    padding-bottom: 8px;
-  }
-
   .workspace-drawer.mod-left.is-pinned + .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tabs:last-of-type .workspace-tab-container {
     margin-right: 8px;
   }

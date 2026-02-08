@@ -7,6 +7,7 @@ body {
   --tab-curve: calc(var(--tab-radius) + 4px);
 
   --tab-outline-width: 0px;
+  --tab-divider-color: var(--background-modifier-border);
 
   --tab-text-align: left;
 
@@ -66,9 +67,6 @@ body:not(.is-phone) .workspace .mod-root {
     padding-inline-end: 8px;
     margin-bottom: 8px;
     height: auto;
-  }
-  .workspace-tab-header-inner::after {
-    content: none;
   }
   .workspace-tab-header-inner-title {
     line-height: normal;
