@@ -14,10 +14,6 @@ https://gitlab.gnome.org/GNOME/libadwaita/
   --menu-border-color: rgb(from var(--text-normal) r g b / 10%);
   --modal-border-color: rgb(from var(--text-normal) r g b / 10%);
   --prompt-border-color: rgb(from var(--text-normal) r g b / 10%);
-
-  --code-background: var(--background-secondary-alt);
-  --blockquote-background-color: var(--background-secondary-alt);
-  --embed-background-color: var(--background-secondary-alt);
 }
 .theme-light.adwaita-light.color-scheme-accent,
 .theme-dark.adwaita-dark.color-scheme-accent {
@@ -55,12 +51,16 @@ https://gitlab.gnome.org/GNOME/libadwaita/
   --background-secondary: #ebebed; // --sidebar-bg-color
   --background-secondary-alt: #f3f3f5; // --secondary-sidebar-bg-color
 
-  --text-normal: rgba(var(--mono-rgb-adwaita), 80%);
-  --text-muted: rgba(var(--mono-rgb-adwaita), 64%);
-  --text-faint: rgba(var(--mono-rgb-adwaita), 48%);
+  --text-normal: #333338; // rgba(var(--mono-rgb-adwaita), 80%)
+  --text-muted: #5c5c60; // rgba(var(--mono-rgb-adwaita), 64%)
+  --text-faint: #858587; //rgba(var(--mono-rgb-adwaita), 48%)
 
   --menu-background: #fff; // --popover-bg-color
   --modal-background: #fafafb; // --window-bg-background
+
+  --code-background: var(--background-secondary-alt);
+  --blockquote-background-color: var(--background-secondary-alt);
+  --embed-background-color: var(--background-secondary-alt);
 
   &:not(.is-focused):not(.reduce-contrast-change) {
     --background-secondary: #f2f2f4;
@@ -96,13 +96,13 @@ https://gitlab.gnome.org/GNOME/libadwaita/
   --mono-rgb-adwaita: 255, 255, 255;
 
   --background-primary: #1d1d20; // --view-bg-color
-  --background-primary-alt: rgba(var(--mono-rgb-adwaita), 8%); // --card-bg-color
+  --background-primary-alt: #2e2e32; // --card-bg-color rgba(var(--mono-rgb-adwaita), 8%)
   --background-secondary: #2e2e32; // --sidebar-bg-color
   --background-secondary-alt: #28282c; // --secondary-sidebar-bg-color
 
-  --text-normal: rgb(var(--mono-rgb-adwaita));
-  --text-muted: rgba(var(--mono-rgb-adwaita), 80%);
-  --text-faint: rgba(var(--mono-rgb-adwaita), 55%);
+  --text-normal: #fff; // rgb(var(--mono-rgb-adwaita))
+  --text-muted: #d2d2d2; // rgba(var(--mono-rgb-adwaita), 80%)
+  --text-faint: #99999b; // rgba(var(--mono-rgb-adwaita), 55%)
 
   --menu-background: #36363a; // --popover-bg-color
   --modal-background: #222226; // --window-bg-background

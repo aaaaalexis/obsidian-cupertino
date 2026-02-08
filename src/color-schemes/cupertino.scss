@@ -11,10 +11,6 @@ https://developer.apple.com/design/human-interface-guidelines/color
 
   --interactive-normal: rgba(var(--mono-rgb-100), 5%);
   --interactive-hover: rgba(var(--mono-rgb-100), 5%);
-
-  --text-normal: rgba(var(--mono-rgb-100), 85%);
-  --text-muted: rgba(var(--mono-rgb-100), 55%);
-  --text-faint: rgba(var(--mono-rgb-100), 25%);
 }
 
 .theme-light.cupertino-light.color-scheme-accent {
@@ -34,6 +30,10 @@ https://developer.apple.com/design/human-interface-guidelines/color
 }
 .theme-light.cupertino-light:not(.is-mobile) {
   --background-primary: #fff;
+
+  --text-normal: #262626; // rgba(var(--mono-rgb-100), 85%)
+  --text-muted: #737373; // rgba(var(--mono-rgb-100), 55%)
+  --text-faint: #bfbfbf; // rgba(var(--mono-rgb-100), 25%)
 }
 .theme-light.cupertino-light.is-mobile {
   --background-primary: #fff;
@@ -45,8 +45,8 @@ https://developer.apple.com/design/human-interface-guidelines/color
   --interactive-hover: rgba(120, 120, 120, 20%);
 
   --text-normal: #000;
-  --text-muted: rgba(60, 60, 67, 60%);
-  --text-faint: rgba(60, 60, 67, 30%);
+  --text-muted: #8a8a8e; // rgba(60, 60, 67, 60%)
+  --text-faint: #c4c4c7; // rgba(60, 60, 67, 30%)
 }
 
 .theme-dark.cupertino-dark.color-scheme-accent {
@@ -69,6 +69,10 @@ https://developer.apple.com/design/human-interface-guidelines/color
 }
 .theme-dark.cupertino-dark:not(.is-mobile) {
   --background-primary: #1e1e1e;
+
+  --text-normal: #dddddd; // rgba(var(--mono-rgb-100), 85%)
+  --text-muted: #9a9a9a; // rgba(var(--mono-rgb-100), 55%)
+  --text-faint: #565656; // rgba(var(--mono-rgb-100), 25%)
 }
 .theme-dark.cupertino-dark.is-mobile {
   --background-primary: #000;
@@ -80,6 +84,6 @@ https://developer.apple.com/design/human-interface-guidelines/color
   --interactive-hover: rgba(120, 120, 120, 36%);
 
   --text-normal: #fff;
-  --text-muted: rgba(235, 235, 245, 60%);
-  --text-faint: rgba(235, 235, 245, 30%);
+  --text-muted: #8d8d93; //rgba(235, 235, 245, 60%)
+  --text-faint: #47474a; // rgba(235, 235, 245, 30%)
 }
