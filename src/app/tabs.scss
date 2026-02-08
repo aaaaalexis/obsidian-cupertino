@@ -343,9 +343,6 @@ body.tab-divider:is(.tab-underline, .tab-underline-accented):not(.is-phone) .mod
 
 // Editor panel: Tablet fix
 body.is-tablet .workspace .mod-root {
-  .workspace-tab-header-container-inner {
-    padding-inline: var(--radius-s);
-  }
   .sidebar-toggle-button {
     padding-left: 0;
   }
