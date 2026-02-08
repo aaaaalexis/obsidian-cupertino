@@ -109,7 +109,7 @@ body:is(.layout-cupertino, .layout-macos, .layout-fusion).is-mobile {
   }
 }
 
-body:is(.layout-cupertino, .layout-fusion:is(.tab-default)).is-tablet {
+body:is(.layout-cupertino, .layout-fusion.tab-default).is-tablet {
   .workspace-drawer.mod-left.is-pinned + .mod-root,
   .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) {
     padding-bottom: 8px;

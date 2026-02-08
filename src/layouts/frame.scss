@@ -146,7 +146,7 @@ body.layout-frame.is-tablet {
   }
 
   // Tab style
-  &:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented) .workspace-tab-header-container-inner {
+  &.tab-default .workspace-tab-header-container-inner {
     padding-top: 8px !important;
   }
 }

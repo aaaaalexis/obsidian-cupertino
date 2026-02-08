@@ -85,7 +85,8 @@ body:not(.is-phone) .workspace .mod-root {
 }
 
 // Editor panel: Baseline
-body:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented):is(.layout-cupertino, .layout-macos, .layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder) .mod-root {
+body.tab-default:is(.layout-cupertino, .layout-macos, .layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder) .mod-root,
+body.tab-default.layout-fusion .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
   --tab-outline-color: var(--color-base-25);
 
   .workspace-tab-header {
