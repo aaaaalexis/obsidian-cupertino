@@ -87,8 +87,15 @@ body:not(.banner-off) {
         max-width: calc(100% - var(--banner-image-inset) * 2);
       }
 
-      .image-embed[alt="banner"] {
-        display: contents;
+      .image-embed[alt="banner"],
+      .image-embed[alt="banner"] > .image-resize-container {
+        display: contents !important;
+
+        &::before,
+        &::after,
+        .image-resize-handle {
+          display: none !important;
+        }
       }
       div:is(.mod-header, .inline-title, .metadata-container) {
         z-index: 1;
