@@ -41,30 +41,30 @@ https://m3.material.io/styles/color/system/overview
   --tertiary-100: oklch(from var(--color-accent) 1 0.02 calc(h + 60));
 
   // Neutral Palette (chroma 5 in HCT ≈ 0.03 in OKLCH)
-  --neutral-0: oklch(from var(--color-accent) 0 0.026 h);
-  --neutral-4: oklch(from var(--color-accent) 0.06 0.026 h);
-  --neutral-6: oklch(from var(--color-accent) 0.1 0.026 h);
-  --neutral-10: oklch(from var(--color-accent) 0.17 0.026 h);
-  --neutral-12: oklch(from var(--color-accent) 0.19 0.026 h);
-  --neutral-17: oklch(from var(--color-accent) 0.25 0.026 h);
-  --neutral-20: oklch(from var(--color-accent) 0.29 0.026 h);
-  --neutral-22: oklch(from var(--color-accent) 0.31 0.026 h);
-  --neutral-24: oklch(from var(--color-accent) 0.33 0.026 h);
-  --neutral-30: oklch(from var(--color-accent) 0.41 0.026 h);
-  --neutral-40: oklch(from var(--color-accent) 0.53 0.026 h);
-  --neutral-50: oklch(from var(--color-accent) 0.64 0.026 h);
-  --neutral-60: oklch(from var(--color-accent) 0.73 0.026 h);
-  --neutral-70: oklch(from var(--color-accent) 0.81 0.026 h);
-  --neutral-80: oklch(from var(--color-accent) 0.87 0.026 h);
-  --neutral-87: oklch(from var(--color-accent) 0.89 0.026 h);
-  --neutral-90: oklch(from var(--color-accent) 0.93 0.026 h);
-  --neutral-92: oklch(from var(--color-accent) 0.94 0.026 h);
-  --neutral-94: oklch(from var(--color-accent) 0.95 0.026 h);
-  --neutral-95: oklch(from var(--color-accent) 0.96 0.026 h);
-  --neutral-96: oklch(from var(--color-accent) 0.97 0.026 h);
-  --neutral-98: oklch(from var(--color-accent) 0.98 0.016 h);
-  --neutral-99: oklch(from var(--color-accent) 0.99 0.012 h);
-  --neutral-100: oklch(from var(--color-accent) 1 0.006 h);
+  --neutral-0: oklch(from var(--color-accent) 0 0.035 h);
+  --neutral-4: oklch(from var(--color-accent) 0.06 0.035 h);
+  --neutral-6: oklch(from var(--color-accent) 0.1 0.035 h);
+  --neutral-10: oklch(from var(--color-accent) 0.17 0.035 h);
+  --neutral-12: oklch(from var(--color-accent) 0.19 0.035 h);
+  --neutral-17: oklch(from var(--color-accent) 0.25 0.035 h);
+  --neutral-20: oklch(from var(--color-accent) 0.29 0.035 h);
+  --neutral-22: oklch(from var(--color-accent) 0.31 0.035 h);
+  --neutral-24: oklch(from var(--color-accent) 0.33 0.035 h);
+  --neutral-30: oklch(from var(--color-accent) 0.41 0.035 h);
+  --neutral-40: oklch(from var(--color-accent) 0.53 0.035 h);
+  --neutral-50: oklch(from var(--color-accent) 0.64 0.035 h);
+  --neutral-60: oklch(from var(--color-accent) 0.73 0.035 h);
+  --neutral-70: oklch(from var(--color-accent) 0.81 0.035 h);
+  --neutral-80: oklch(from var(--color-accent) 0.87 0.035 h);
+  --neutral-87: oklch(from var(--color-accent) 0.89 0.035 h);
+  --neutral-90: oklch(from var(--color-accent) 0.93 0.035 h);
+  --neutral-92: oklch(from var(--color-accent) 0.94 0.035 h);
+  --neutral-94: oklch(from var(--color-accent) 0.95 0.035 h);
+  --neutral-95: oklch(from var(--color-accent) 0.96 0.035 h);
+  --neutral-96: oklch(from var(--color-accent) 0.97 0.035 h);
+  --neutral-98: oklch(from var(--color-accent) 0.98 0.026 h);
+  --neutral-99: oklch(from var(--color-accent) 0.99 0.016 h);
+  --neutral-100: oklch(from var(--color-accent) 1 0.012 h);
 
   // Neutral Variant Palette (chroma 8.5 in HCT ≈ 0.037 in OKLCH = 5 * 1.7)
   --neutral-variant-0: oklch(from var(--color-accent) 0 0.04 h);
