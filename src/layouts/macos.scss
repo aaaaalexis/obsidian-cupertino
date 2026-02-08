@@ -37,7 +37,7 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     &.mod-macos.is-frameless:not(.is-hidden-frameless) .workspace-ribbon.mod-left:not(.is-collapsed) {
       margin-block: 8px;
     }
-    &:not(.mod-macos):not(.tab-top-left-stacked).css-settings-manager .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button {
+    &:not(.mod-macos):not(.tab-top-left-stacked) .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button {
       height: calc(var(--header-height) - 24px);
     }
     &:not(.hover-ribbon) .workspace-ribbon.mod-left:not(.is-collapsed) {
@@ -72,7 +72,7 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     overflow: hidden;
   }
 
-  &:not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
+  &:not(.tab-top-left-stacked) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container .sidebar-toggle-button {
     min-height: calc(var(--header-height) - 16px);
     max-height: calc(var(--header-height) - 16px);

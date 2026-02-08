@@ -24,14 +24,6 @@ body:is(.layout-frame, .layout-viewfinder) {
   .contrast-light-vivid.theme-light .mod-root {
     border: none;
   }
-  &:not(.tab-floating, .tab-floating-center) .mod-root {
-    .workspace-tab-header-container {
-      border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
-    }
-    .workspace-tab-header-container-inner {
-      margin-bottom: -1px !important;
-    }
-  }
 }
 
 body.layout-frame:not(.is-mobile) {

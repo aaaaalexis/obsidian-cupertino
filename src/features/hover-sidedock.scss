@@ -77,7 +77,7 @@ body:not(.is-mobile).hover-sidedock {
   }
 
   // macOS fix
-  &:is(.tab-top-left-stacked, :not(.css-settings-manager)).mod-macos.is-hidden-frameless .mod-sidedock.mod-left-split.is-sidedock-collapsed .mod-top-left-space .workspace-tab-header-container {
+  &.tab-top-left-stacked.mod-macos.is-hidden-frameless .mod-sidedock.mod-left-split.is-sidedock-collapsed .mod-top-left-space .workspace-tab-header-container {
     padding-top: var(--header-height);
   }
 }
@@ -110,13 +110,13 @@ body:not(.is-mobile).hover-ribbon.show-ribbon {
 
   // macOS fix
   &.mod-macos:not(.is-fullscreen).is-hidden-frameless {
-    &:not(.tab-top-left-stacked).css-settings-manager .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
+    &:not(.tab-top-left-stacked) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
       transition-timing-function: ease;
     }
-    &:not(.tab-top-left-stacked).css-settings-manager .workspace-ribbon.mod-left:not(.is-collapsed):hover ~ .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
+    &:not(.tab-top-left-stacked) .workspace-ribbon.mod-left:not(.is-collapsed):hover ~ .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
       padding-left: 52px;
     }
-    &:not(.tab-top-left-stacked).css-settings-manager .workspace-ribbon.mod-left:not(.is-collapsed):not(:hover) ~ .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
+    &:not(.tab-top-left-stacked) .workspace-ribbon.mod-left:not(.is-collapsed):not(:hover) ~ .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
     .workspace-ribbon.mod-left.is-collapsed ~ .mod-root > div:first-of-type .workspace-tab-header-container {
       padding-left: 88px;
     }

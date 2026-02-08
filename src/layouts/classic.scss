@@ -2,14 +2,8 @@ body:is(.layout-classic, .layout-minimal) {
   .workspace-split.mod-root .workspace-tab-container {
     border-radius: 0;
   }
-
-  &:not(.tab-floating, .tab-floating-center) {
-    .mod-root .workspace-tab-header-container {
-      border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
-    }
-    .workspace-tab-header-container-inner {
-      margin-bottom: -1px !important;
-    }
+  &:not(.tab-floating, .tab-floating-center) .workspace-tab-header-container-inner {
+    margin-bottom: -1px !important;
   }
 }
 
@@ -21,7 +15,7 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
     --titlebar-height: 38px;
   }
 
-  &:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-left-split {
+  &.tab-top-left-stacked .mod-sidedock.mod-left-split {
     .workspace-tab-header-container {
       border: none;
     }
@@ -58,8 +52,8 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
     border-top: var(--tab-outline-width) solid var(--tab-outline-color);
   }
 
-  &:not(.mod-macos):not(.tab-top-left-stacked).css-settings-manager .workspace-ribbon.mod-left,
-  &.mod-macos:not(.is-hidden-frameless):not(.tab-top-left-stacked).css-settings-manager .workspace-ribbon.mod-left {
+  &:not(.mod-macos):not(.tab-top-left-stacked) .workspace-ribbon.mod-left,
+  &.mod-macos:not(.is-hidden-frameless):not(.tab-top-left-stacked) .workspace-ribbon.mod-left {
     &::before {
       content: "";
       height: var(--tab-outline-width);

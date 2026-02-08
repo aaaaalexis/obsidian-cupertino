@@ -259,7 +259,7 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
 
 // Default Workspace & Tabs
 body:is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark) {
-  &:is(.layout-baseline, :not(.css-settings-manager)):not(.is-phone) .mod-root {
+  &.is-baseline:not(.is-phone) .mod-root {
     z-index: 1;
 
     .workspace-tabs {

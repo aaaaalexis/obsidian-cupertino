@@ -36,8 +36,8 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
     .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
       margin-left: 0 !important;
     }
-    &:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed),
-    &:is(.tab-top-left-stacked, :not(.css-settings-manager)).mod-macos:not(.is-hidden-frameless) .workspace-ribbon.mod-left:not(.is-collapsed) {
+    &.tab-top-left-stacked:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed),
+    &.tab-top-left-stacked.mod-macos:not(.is-hidden-frameless) .workspace-ribbon.mod-left:not(.is-collapsed) {
       margin-top: var(--header-height);
     }
   }
@@ -48,23 +48,23 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   }
 
   // Stacked nav
-  &:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space {
+  &.tab-top-left-stacked .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space {
     .workspace-tab-header-container-inner {
       background-color: var(--background-primary);
       border-radius: var(--tab-radius);
       padding-block: 8px;
     }
   }
-  &.show-ribbon:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(.hover-sidedock) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
-  &.show-ribbon:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos).hover-sidedock .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
-  &.show-ribbon:is(.tab-top-left-stacked, :not(.css-settings-manager)).mod-macos:not(.is-hidden-frameless) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
+  &.show-ribbon.tab-top-left-stacked:not(.mod-macos):not(.hover-sidedock) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
+  &.show-ribbon.tab-top-left-stacked:not(.mod-macos).hover-sidedock .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
+  &.show-ribbon.tab-top-left-stacked.mod-macos:not(.is-hidden-frameless) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
     margin-top: var(--header-height);
     margin-left: 0;
   }
 
   // Hover sidedock {
   &.hover-sidedock {
-    &:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-left-split.is-sidedock-collapsed .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
+    &.tab-top-left-stacked .mod-sidedock.mod-left-split.is-sidedock-collapsed .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
     .mod-sidedock.is-sidedock-collapsed .workspace-tabs .workspace-tab-container {
       background-color: transparent;
       margin: 0;
@@ -159,7 +159,7 @@ body.layout-cards:not(.is-mobile) {
   .mod-sidedock .workspace-leaf-resize-handle:not(:hover) {
     border-color: transparent;
   }
-  &:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space {
+  &.tab-top-left-stacked .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space {
     .workspace-tab-header-container-inner {
       margin: 0 8px 8px;
     }
@@ -178,7 +178,7 @@ body.layout-cards:not(.is-mobile) {
   &.contrast-light-tonal.theme-light,
   &.contrast-dark-tonal.theme-dark,
   &.contrast-dark-black.theme-dark {
-    &:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
+    &.tab-top-left-stacked .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
     .mod-sidedock .workspace-tabs .workspace-tab-container,
     .mod-root .workspace-tab-container {
       border: var(--divider-width) solid var(--divider-color);
