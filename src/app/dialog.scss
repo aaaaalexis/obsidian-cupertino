@@ -129,19 +129,9 @@ body {
   .modal {
     -electron-corner-smoothing: var(--corner-smoothing);
 
-    &:not(.mod-sidebar-layout) {
-      border-radius: var(--modal-radius);
-
-      .modal-title {
-        font-size: var(--font-ui-large);
-        max-width: 100%;
-      }
-    }
-
     .modal-title {
       font-family: var(--h1-font);
       transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
-      max-width: 0;
       overflow: visible;
       text-align: left;
     }
@@ -179,11 +169,7 @@ body:not(.is-mobile) {
     }
   }
 
-  .modal-bg {
-    background-color: rgba(0, 0, 0, 0.35);
-  }
   .modal {
-    box-shadow: var(--shadow-s);
     animation: modalIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
   }
   .modal-title {

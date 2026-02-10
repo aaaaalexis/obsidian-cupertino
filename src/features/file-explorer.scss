@@ -45,7 +45,7 @@ body.nav-item-strong {
 
   &.input-cupertino:is(.layout-macos, .layout-fusion):not(.is-mobile) .nav-files-container > div {
     --nav-item-background-hover: transparent;
-    --nav-item-background-active: var(--background-modifier-cover);
+    --nav-item-background-active: var(--background-modifier-hover);
     --nav-item-color: var(--text-normal);
     --nav-item-color-hover: var(--text-normal);
     --nav-item-color-active: var(--text-accent);

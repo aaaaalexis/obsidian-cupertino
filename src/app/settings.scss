@@ -219,18 +219,18 @@ body.is-phone {
       display: none;
     }
   }
+  .modal.mod-sidebar-layout .modal-title {
+    display: flex;
+    align-items: center;
+    min-width: fit-content;
+    max-width: 0;
+  }
   .modal.mod-settings .modal-title {
     margin-top: var(--safe-area-inset-top);
     height: var(--touch-size-m);
-    display: flex;
-    align-items: center;
-    min-width: fit-content;
   }
   .modal.mod-community-modal .modal-title {
     height: calc(var(--touch-size-m) + 16px);
-    display: flex;
-    align-items: center;
-    min-width: fit-content;
   }
 }
 
