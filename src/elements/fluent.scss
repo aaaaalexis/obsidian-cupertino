@@ -131,9 +131,9 @@ body.mod-windows:not(.adaptive-mode-off) {
   .menu,
   .suggestion-container,
   .popover,
-  .cm-tooltip,
   .prompt,
   .modal,
+  .cm-tooltip,
   .notice {
     background-color: var(--modal-background) !important;
     backdrop-filter: var(--blur-l);

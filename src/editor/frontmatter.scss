@@ -13,10 +13,6 @@
   .metadata-container {
     --metadata-divider-width: 0 !important;
   }
-  .mod-root .metadata-content {
-    transform: translateX(-8px) !important;
-    width: calc(100% + 16px) !important;
-  }
   .metadata-properties-heading {
     padding-inline: 0;
     width: 100%;
@@ -32,6 +28,7 @@
     box-shadow: none !important;
     border-bottom: none !important;
   }
+
   .metadata-input-longtext:not(:focus) {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -39,6 +36,14 @@
   }
   .metadata-link {
     width: 100%;
+  }
+
+  .metadata-property-value[data-property-type="tags"] .multi-select-container {
+    padding-block: 0;
+    gap: 4px;
+  }
+  .multi-select-pill {
+    line-height: var(--line-height-tight) !important;
   }
 
   // Side panels
@@ -63,6 +68,10 @@
     &:hover {
       color: var(--text-muted);
     }
+  }
+  .mod-root .metadata-content {
+    transform: translateX(-8px) !important;
+    width: calc(100% + 16px) !important;
   }
 
   .markdown-source-view .metadata-container,
@@ -101,11 +110,6 @@
       .metadata-show-source-button,
       .metadata-add-button {
         padding: 8px 16px;
-      }
-
-      .metadata-property[data-property-key="tags"] .multi-select-pill {
-        font-weight: var(--font-medium);
-        font-size: var(--font-ui-smaller);
       }
     }
 

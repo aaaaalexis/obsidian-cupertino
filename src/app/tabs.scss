@@ -256,9 +256,6 @@ body.is-tablet:not(.tab-floating) {
 
 // Editor panel: Tablet fix
 body.is-tablet .workspace .mod-root {
-  .workspace-tab-header-container-inner {
-    padding-inline: var(--radius-s);
-  }
   .sidebar-toggle-button {
     padding-left: 0;
   }

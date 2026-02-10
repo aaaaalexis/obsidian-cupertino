@@ -45,6 +45,8 @@ body,
   --color-blue: rgb(var(--color-blue-rgb));
   --color-purple: rgb(var(--color-purple-rgb));
   --color-pink: rgb(var(--color-pink-rgb));
+
+  --background-modifier-cover: rgba(0, 0, 0, 0.35);
 }
 
 .theme-light {

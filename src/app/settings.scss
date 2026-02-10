@@ -127,6 +127,12 @@ body.is-phone {
       display: inline;
       z-index: 1;
     }
+    .modal-title {
+      display: flex;
+      align-items: center;
+      min-width: fit-content;
+      max-width: 0;
+    }
     .modal-title:not(:has(.modal-setting-back-button)) {
       font-size: 1.5rem;
       font-weight: calc(var(--font-weight) + var(--bold-modifier));
@@ -142,18 +148,13 @@ body.is-phone {
       display: none;
     }
   }
+
   .modal.mod-settings .modal-title {
     margin-top: var(--safe-area-inset-top);
     height: var(--touch-size-m);
-    display: flex;
-    align-items: center;
-    min-width: fit-content;
   }
   .modal.mod-community-modal .modal-title {
     height: calc(var(--touch-size-m) + 16px);
-    display: flex;
-    align-items: center;
-    min-width: fit-content;
   }
 }
 
