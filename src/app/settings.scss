@@ -261,7 +261,7 @@ body:is(.input-cupertino, .input-material) {
       --setting-nav-icon-background: var(--color-orange);
     }
     &[data-setting-id="appearance"] .vertical-tab-nav-item-icon {
-      --setting-nav-icon-background: var(--color-red);
+      --setting-nav-icon-background: var(--color-accent);
     }
     &[data-setting-id="hotkeys"] .vertical-tab-nav-item-icon {
       --setting-nav-icon-background: var(--color-pink);
