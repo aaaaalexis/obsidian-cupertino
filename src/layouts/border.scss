@@ -119,9 +119,11 @@ body.layout-border:not(.is-mobile) {
   &.contrast-light-tonal.theme-light,
   &.contrast-dark-tonal.theme-dark,
   &.contrast-dark-black.theme-dark {
+    .mod-root .workspace-leaf-resize-handle:not(:hover),
     .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
       border-color: transparent;
     }
+
     .mod-root {
       .workspace-tab-container {
         border: var(--divider-width) solid var(--divider-color);

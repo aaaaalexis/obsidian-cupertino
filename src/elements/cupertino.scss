@@ -52,7 +52,7 @@ body.input-cupertino {
 
   &.theme-light {
     --blur-background: rgba(255, 255, 255, 0.35);
-    --background-modifier-border: rgba(0, 0, 0, 0.075);
+    --background-modifier-border: color-mix(in srgb, var(--background-secondary), black 7.5%);
 
     --shadow-base: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-edges: 0 0 1px rgba(0, 0, 0, 0.4);
@@ -65,7 +65,7 @@ body.input-cupertino {
 
   &.theme-dark {
     --blur-background: rgba(255, 255, 255, 0.075);
-    --background-modifier-border: rgba(255, 255, 255, 0.075);
+    --background-modifier-border: color-mix(in srgb, var(--background-secondary), white 7.5%);
 
     --shadow-base: inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-edges: 0 0 1px rgba(255, 255, 255, 0.3);

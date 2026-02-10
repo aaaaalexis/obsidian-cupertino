@@ -6,14 +6,14 @@ https://gitlab.gnome.org/GNOME/libadwaita/
 
 .theme-light.adwaita-light,
 .theme-dark.adwaita-dark {
-  --background-modifier-border: rgb(from var(--text-normal) r g b / 15%); // --border-color
+  --background-modifier-border: color-mix(in srgb, var(--background-secondary), var(--text-normal) 15%); // --border-color
 
-  --interactive-normal: rgb(from var(--text-normal) r g b / 10%);
-  --interactive-hover: rgb(from var(--text-normal) r g b / 15%);
+  --interactive-normal: color-mix(in srgb, var(--background-secondary), var(--text-normal) 10%);
+  --interactive-hover: color-mix(in srgb, var(--background-secondary), var(--text-normal) 15%);
 
-  --menu-border-color: rgb(from var(--text-normal) r g b / 10%);
-  --modal-border-color: rgb(from var(--text-normal) r g b / 10%);
-  --prompt-border-color: rgb(from var(--text-normal) r g b / 10%);
+  --menu-border-color: color-mix(in srgb, var(--background-secondary), var(--text-normal) 10%);
+  --modal-border-color: color-mix(in srgb, var(--background-secondary), var(--text-normal) 10%);
+  --prompt-border-color: color-mix(in srgb, var(--background-secondary), var(--text-normal) 10%);
 }
 .theme-light.adwaita-light.color-scheme-accent,
 .theme-dark.adwaita-dark.color-scheme-accent {

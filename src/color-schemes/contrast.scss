@@ -259,9 +259,7 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
 
 // Default Workspace & Tabs
 body:is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark) {
-  &.is-baseline:not(.is-phone) .mod-root {
-    z-index: 1;
-
+  &.layout-baseline:not(.is-phone) .mod-root {
     .workspace-tabs {
       overflow: visible;
     }
@@ -271,6 +269,7 @@ body:is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .con
   }
 
   &.tab-default .mod-root {
+    --tab-outline-width: 1px;
     --tab-outline-color: var(--color-base-30);
 
     .workspace-tab-header {
