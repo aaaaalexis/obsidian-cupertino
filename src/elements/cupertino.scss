@@ -217,10 +217,13 @@ body.input-cupertino {
       padding-inline-start: var(--input-height) !important;
     }
   }
-  .mod-sidedock .search-input-container {
-    --input-height: 32px;
-
-    input[type="search"] {
+  .mod-sidedock,
+  .vertical-tab-header,
+  .community-modal-controls {
+    .search-input-container {
+      --input-height: 32px;
+    }
+    .search-input-container input[type="search"] {
       border: none;
       border-radius: 100vh;
       background-color: var(--background-modifier-hover);
