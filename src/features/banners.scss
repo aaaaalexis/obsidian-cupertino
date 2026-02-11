@@ -10,13 +10,16 @@ body:not(.banner-off) {
 
   // Mobile
   &:where(.is-mobile) {
-    --banner-mobile-offset: 1rem;
     --banner-image-height: var(--banner-image-height-s);
     --banner-image-height-s: 240px;
 
     .markdown-preview-view:not(.banner),
     .markdown-source-view.is-live-preview:not(.banner) {
       --banner-mobile-offset: 0px;
+    }
+    .markdown-preview-view.banner-icon:not(.banner),
+    .markdown-source-view.is-live-preview.banner-icon:not(.banner) {
+      --banner-mobile-offset: 1rem;
     }
   }
 
@@ -88,11 +91,13 @@ body:not(.banner-off) {
       }
 
       .image-embed[alt="banner"],
+      .image-embed[alt="banner"] > .image-wrapper,
       .image-embed[alt="banner"] > .image-resize-container {
         display: contents !important;
 
         &::before,
         &::after,
+        .image-resize-corner,
         .image-resize-handle {
           display: none !important;
         }

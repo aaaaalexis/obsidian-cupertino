@@ -399,8 +399,9 @@
     border-radius: var(--media-radius);
   }
 
-  .image-embed:not([width], [alt="banner"], [src$=".excalidraw"], .canvas-node-content) {
-    width: fit-content;
+  .image-embed {
+    padding-bottom: 0px;
+    padding-inline-end: 0px;
   }
 
   body:not(.full-width-media-off) .workspace-leaf-content[data-type="markdown"] {
