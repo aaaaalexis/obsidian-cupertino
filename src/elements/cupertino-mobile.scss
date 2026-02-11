@@ -171,7 +171,7 @@ body.input-cupertino.is-phone {
       flex: 1;
     }
 
-    .tree-item:has(> .tree-item-self.is-active) {
+    .tree-item:has(> .tree-item-self.is-active, .tree-item-self.mobile-tap) {
       &::before,
       + .tree-item::before {
         content: none !important;

@@ -107,6 +107,7 @@ body.input-cupertino.is-phone {
 
     .menu-item-title {
       position: relative;
+      overflow: visible;
     }
     .menu-item-title::after {
       position: absolute;
