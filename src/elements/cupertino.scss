@@ -220,7 +220,8 @@ body.input-cupertino {
   .mod-sidedock,
   .vertical-tab-header,
   .community-modal-controls {
-    .search-input-container {
+    .search-input-container,
+    input[type="search"] {
       --input-height: 32px;
     }
     .search-input-container input[type="search"] {
