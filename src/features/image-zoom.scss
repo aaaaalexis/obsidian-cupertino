@@ -24,39 +24,3 @@ body:not(.is-mobile):not(.zoom-off) .markdown-preview-view {
     border: none;
   }
 }
-
-body:not(.is-mobile):not(.zoom-off) .markdown-source-view {
-  .image-embed:not(.canvas-node-content):not(:has(> .image-resize-container)):active,
-  .cm-content > img:not(.image-resize-border):active {
-    position: fixed;
-    z-index: 1000;
-    cursor: zoom-out;
-    inset: var(--header-height) 0 0;
-    background-color: var(--background-primary);
-  }
-
-  .image-embed:not(.canvas-node-content):not(:has(> .image-resize-container)):active {
-    display: flex !important;
-    justify-content: center;
-
-    img:not(.image-resize-border) {
-      background-color: transparent;
-      width: 100%;
-      height: auto;
-      max-height: unset;
-      object-fit: contain;
-      mask: none;
-      position: relative;
-      padding: 0;
-      max-width: unset;
-      inset: auto;
-    }
-  }
-
-  .cm-content > img:not(.image-resize-border):active {
-    width: 100%;
-    height: calc(100% - var(--header-height));
-    max-height: unset;
-    object-fit: contain;
-  }
-}

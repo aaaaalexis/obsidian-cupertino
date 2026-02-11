@@ -55,7 +55,6 @@
   // Editor panel
   .mod-root .metadata-container .metadata-show-source-button,
   .mod-root .metadata-container .metadata-add-button {
-    display: flex;
     gap: 8px;
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
     margin-top: 4px;

@@ -21,6 +21,9 @@ body.mod-linux:not(.is-android):not(.adaptive-mode-off) {
   --font-ui-medium: 11pt;
   --font-ui-large: calc(var(--font-ui-medium) * 1.36);
 
+  --icon-m: 18px;
+  --icon-l: 18px;
+
   // Button
   button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button)) {
     padding: 5px 17px;

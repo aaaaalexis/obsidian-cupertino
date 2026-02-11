@@ -116,6 +116,7 @@ body:is(.mod-macos, .adaptive-mode-off).is-phone {
     transition: var(--anim-duration-moderate) !important;
     transform: none !important;
     overflow: visible;
+    box-shadow: none;
 
     @starting-style {
       opacity: 0;
