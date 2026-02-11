@@ -103,14 +103,14 @@ https://m3.material.io/styles/color/system/overview
     }
   }
 
-  --color-red: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-red-rgb))) max(l, 0.8) min(c, 0.12) h);
-  --color-orange: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-orange-rgb))) max(l, 0.8) min(c, 0.12) h);
-  --color-yellow: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-yellow-rgb))) max(l, 0.8) min(c, 0.12) h);
-  --color-green: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-green-rgb))) max(l, 0.8) min(c, 0.12) h);
-  --color-cyan: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-cyan-rgb))) max(l, 0.8) min(c, 0.12) h);
-  --color-blue: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-blue-rgb))) max(l, 0.8) min(c, 0.12) h);
-  --color-purple: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-purple-rgb))) max(l, 0.8) min(c, 0.12) h);
-  --color-pink: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-pink-rgb))) max(l, 0.8) min(c, 0.12) h);
+  --color-red: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-red-rgb))) max(l, 0.82) min(c, 0.12) h);
+  --color-orange: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-orange-rgb))) max(l, 0.82) min(c, 0.12) h);
+  --color-yellow: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-yellow-rgb))) max(l, 0.82) min(c, 0.12) h);
+  --color-green: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-green-rgb))) max(l, 0.82) min(c, 0.12) h);
+  --color-cyan: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-cyan-rgb))) max(l, 0.82) min(c, 0.12) h);
+  --color-blue: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-blue-rgb))) max(l, 0.82) min(c, 0.12) h);
+  --color-purple: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-purple-rgb))) max(l, 0.82) min(c, 0.12) h);
+  --color-pink: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-pink-rgb))) max(l, 0.82) min(c, 0.12) h);
 
   // Primary Palette (chroma 32 in HCT ≈ 0.14 in OKLCH)
   --color-base-00: oklch(from hsl(var(--color-accent-hsl)) 1 0.04 h);
@@ -172,18 +172,18 @@ https://m3.material.io/styles/color/system/overview
     }
   }
 
-  --color-accent: oklch(from hsl(var(--color-accent-hsl)) min(l, 0.8) min(c, 0.12) h);
-  --color-accent-1: oklch(from hsl(calc(var(--accent-h) - 3), calc(var(--accent-s) * 1.02), calc(var(--accent-l) * 1.15)) min(l, 0.8) min(c, 0.12) h);
-  --color-accent-2: oklch(from hsl(calc(var(--accent-h) - 5), calc(var(--accent-s) * 1.05), calc(var(--accent-l) * 1.29)) min(l, 0.8) min(c, 0.12) h);
+  --color-accent: oklch(from hsl(var(--color-accent-hsl)) min(l, 0.82) min(c, 0.12) h);
+  --color-accent-1: oklch(from hsl(calc(var(--accent-h) - 3), calc(var(--accent-s) * 1.02), calc(var(--accent-l) * 1.15)) min(l, 0.82) min(c, 0.12) h);
+  --color-accent-2: oklch(from hsl(calc(var(--accent-h) - 5), calc(var(--accent-s) * 1.05), calc(var(--accent-l) * 1.29)) min(l, 0.82) min(c, 0.12) h);
 
-  --color-red: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-red-rgb))) min(l, 0.8) min(c, 0.12) h);
-  --color-orange: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-orange-rgb))) min(l, 0.8) min(c, 0.12) h);
-  --color-yellow: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-yellow-rgb))) min(l, 0.8) min(c, 0.12) h);
-  --color-green: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-green-rgb))) min(l, 0.8) min(c, 0.12) h);
-  --color-cyan: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-cyan-rgb))) min(l, 0.8) min(c, 0.12) h);
-  --color-blue: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-blue-rgb))) min(l, 0.8) min(c, 0.12) h);
-  --color-purple: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-purple-rgb))) min(l, 0.8) min(c, 0.12) h);
-  --color-pink: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 30%, rgb(var(--color-pink-rgb))) min(l, 0.8) min(c, 0.12) h);
+  --color-red: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-red-rgb))) min(l, 0.82) min(c, 0.12) h);
+  --color-orange: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-orange-rgb))) min(l, 0.82) min(c, 0.12) h);
+  --color-yellow: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-yellow-rgb))) min(l, 0.82) min(c, 0.12) h);
+  --color-green: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-green-rgb))) min(l, 0.82) min(c, 0.12) h);
+  --color-cyan: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-cyan-rgb))) min(l, 0.82) min(c, 0.12) h);
+  --color-blue: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-blue-rgb))) min(l, 0.82) min(c, 0.12) h);
+  --color-purple: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-purple-rgb))) min(l, 0.82) min(c, 0.12) h);
+  --color-pink: oklch(from color-mix(in oklch, hsl(var(--color-accent-hsl)) 10%, rgb(var(--color-pink-rgb))) min(l, 0.82) min(c, 0.12) h);
 
   // Primary Palette (chroma 26 in HCT ≈ 0.11 in OKLCH)
   --color-base-00: oklch(from hsl(var(--color-accent-hsl)) 0 0.11 h);
