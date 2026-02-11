@@ -246,6 +246,11 @@ body.is-tablet:not(.tab-floating) {
   }
 }
 
+// Editor panel: Tab divider
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner::after {
+  content: none;
+}
+
 // Editor panel: Stacks
 .mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container-inner {
   display: none;
