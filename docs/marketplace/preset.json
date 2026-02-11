@@ -70,10 +70,28 @@
     "url": "https://qnury.es",
     "description": "A joyful, elegant preset focused on readability and ease of use."
   },
-    "stone-gnome": {
+  "stone-gnome": {
     "name": "Stone Gnome",
     "author": "Bean",
     "url": "https://github.com/broad-bean1",
     "description": "An Adwaita inspired theme for a native feel on Gnome, [extra snippets](https://github.com/broad-bean1/Stone-Gnome)"
+  },
+  "adwaita": {
+    "name": "Adwaita",
+    "author": "Alexis C",
+    "url": "https://github.com/aaaaalexis",
+    "description": "Refined sophistication of GNOME's modern design language."
+  },
+  "material": {
+    "name": "Material",
+    "author": "Alexis C",
+    "url": "https://github.com/aaaaalexis",
+    "description": "Vibrant layers and bold shadows from Google's Material Design."
+  },
+  "fusion": {
+    "name": "Cupertino Fusion",
+    "author": "Alexis C",
+    "url": "https://github.com/aaaaalexis",
+    "description": "Inspired by [Craft Docs](https://www.craft.do/), where elegance meets modern minimalism."
   }
 }

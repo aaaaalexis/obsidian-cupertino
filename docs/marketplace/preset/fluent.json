@@ -1,19 +1,17 @@
 {
   "baseline-style@@accented-interface": true,
-  "baseline-style@@font-interface-override": "Segoe UI Variable, Segoe UI Variable Text, Segoe UI",
-  "baseline-style@@layout-style": "layout-cupertino",
+  "baseline-style@@font-interface-override": "'Segoe UI Variable', 'Segoe UI Variable Text', 'Segoe UI'",
   "baseline-style@@element-style": "input-fluent",
   "baseline-style@@status-bar-style": "status-bar-cupertino",
   "baseline-style@@anim-motion-baseline": "cubic-bezier(0.32, 0.72, 0, 1)",
   "baseline-style@@tab-top-left-style": "tab-top-left-icon",
   "baseline-style@@tab-left-style": "tab-left-icon",
   "baseline-style@@tab-right-style": "tab-right-icon",
-  "baseline-style@@font-text-override": "Segoe UI Variable Text, Segoe UI Variable, Segoe UI",
-  "baseline-style@@font-monospace-override": "Cascadia Code, Cascadia Mono",
+  "baseline-style@@font-text-override": "'Segoe UI Variable', 'Segoe UI Variable Text', 'Segoe UI'",
+  "baseline-style@@font-monospace-override": "'Cascadia Code', 'Cascadia Mono'",
   "baseline-style@@inline-title-size": "2.5rem",
-  "baseline-style@@h1-size": "2.5rem",
-  "baseline-style@@h2-size": "1.8rem",
-  "baseline-style@@h3-size": "1.55rem",
-  "baseline-style@@h4-size": "1.25rem",
-  "baseline-style@@media-radius": 16
+  "baseline-style@@h1-size": "2rem",
+  "baseline-style@@h2-size": "1.75rem",
+  "baseline-style@@h3-size": "1.5rem",
+  "baseline-style@@h4-size": "1.25rem"
 }

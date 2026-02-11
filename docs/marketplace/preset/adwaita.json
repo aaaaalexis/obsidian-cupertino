@@ -1,0 +1,11 @@
+{
+  "baseline-style@@color-scheme-light": "adwaita-light",
+  "baseline-style@@color-scheme-dark": "adwaita-dark",
+  "baseline-style@@font-interface-override": "'Adwaita Sans', 'Adwaita Sans Text'",
+  "baseline-style@@layout-style": "layout-minimal",
+  "baseline-style@@element-style": "input-adwaita",
+  "baseline-style@@anim-motion-baseline": "cubic-bezier(0.33, 1, 0.68, 1)",
+  "baseline-style@@tab-style": "tab-floating",
+  "baseline-style@@nav-item-active-style": "nav-item-subtle",
+  "baseline-style@@font-text-override": "'Adwaita Sans', 'Adwaita Sans Text'"
+}

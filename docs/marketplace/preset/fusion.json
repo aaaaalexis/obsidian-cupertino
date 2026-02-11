@@ -3,7 +3,7 @@
   "baseline-style@@color-scheme-light": "cupertino-light",
   "baseline-style@@color-scheme-dark": "cupertino-dark",
   "baseline-style@@font-interface-override": "'SF Pro', 'system-ui'",
-  "baseline-style@@layout-style": "layout-macos",
+  "baseline-style@@layout-style": "layout-fusion",
   "baseline-style@@element-style": "input-cupertino",
   "baseline-style@@status-bar-style": "status-bar-cupertino",
   "baseline-style@@anim-motion-baseline": "cubic-bezier(0.32, 0.72, 0, 1)",
