@@ -115,9 +115,6 @@ body:is(.tab-floating, .tab-floating-center):not(.is-phone) .workspace .mod-root
     padding-inline-end: 8px;
     margin-bottom: 0;
   }
-  .workspace-tab-header-new-tab {
-    margin-left: 4px;
-  }
 }
 body:is(.tab-floating, .tab-floating-center).is-tablet {
   --header-height: 60px !important;
@@ -309,6 +306,15 @@ body.tab-divider:is(.tab-underline, .tab-underline-accented):not(.is-phone) .mod
   }
   .workspace-tab-header.is-active .workspace-tab-header-inner::after {
     opacity: 1;
+  }
+}
+
+// Editor panel: Full width
+body.tab-full-width {
+  --tab-width: auto;
+
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
+    flex: 100%;
   }
 }
 
