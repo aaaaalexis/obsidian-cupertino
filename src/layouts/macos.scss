@@ -69,6 +69,10 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
     height: -webkit-fill-available;
     overflow: hidden;
   }
+
+  .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
+    padding-block: 0px;
+  }
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container .sidebar-toggle-button {
     min-height: calc(var(--header-height) - 16px);
