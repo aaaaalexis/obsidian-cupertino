@@ -132,6 +132,7 @@ body:not(.banner-off) {
         display: flex;
         justify-content: center;
         overflow: visible;
+        box-shadow: none;
 
         .callout-title-inner {
           line-height: 1;
