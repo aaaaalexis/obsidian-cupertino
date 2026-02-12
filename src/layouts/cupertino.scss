@@ -97,7 +97,7 @@ body:is(.layout-cupertino, .layout-macos, .layout-fusion).is-mobile {
     gap: 0;
     backdrop-filter: var(--raised-blur);
     border-radius: 100vh;
-    background-color: var(--background-modifier-border-hover);
+    background-color: var(--background-modifier-hover);
     padding-inline: 8px;
     width: fit-content;
     margin-bottom: 8px;
