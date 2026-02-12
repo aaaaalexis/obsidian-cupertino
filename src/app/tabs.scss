@@ -19,6 +19,7 @@ body:not(.is-mobile) {
 }
 body.is-mobile {
   --header-height: 44px !important;
+  --tab-text-color-focused: var(--text-normal);
 }
 body.is-tablet {
   --header-height: 52px !important;
