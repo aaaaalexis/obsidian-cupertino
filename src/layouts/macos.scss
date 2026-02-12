@@ -72,6 +72,9 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     overflow: hidden;
   }
 
+  &:not(.tab-top-left-stacked) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
+    padding-block: 0px;
+  }
   &:not(.tab-top-left-stacked) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
   .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container .sidebar-toggle-button {
     min-height: calc(var(--header-height) - 16px);
