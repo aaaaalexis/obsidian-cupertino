@@ -1393,6 +1393,11 @@ settings:
 		type: variable-text
 		default: 'ui-monospace'
 	-
+		id: p-spacing
+		title: Paragraph spacing
+		type: variable-text
+		default: 1.75rem
+	-
 		id: focus-view
 		title: Focus view
 		type: class-toggle
@@ -1522,119 +1527,6 @@ settings:
 				label: 100% pane width
 				value: img-100
 	-
-		id: indentation-guide
-		title: Indentation guides
-		type: heading
-		level: 2
-		collapsed: true
-	-
-		id: indentation-guide-width
-		title: Indentation guides thickness
-		type: variable-number-slider
-		format: px
-		default: 0
-		min: 0
-		max: 3
-		step: 1
-	-
-		id: indentation-guide-color
-		title: Indentation guides color
-		type: variable-select
-		allowEmpty: false
-		default: rgba(var(--mono-rgb-100), 0.12)
-		options:
-			-
-				label: Subtle
-				value: rgba(var(--mono-rgb-100), 0.12)
-			-
-				label: Strong
-				value: var(--text-faint)
-			-
-				label: Accent color
-				value: var(--color-accent)
-	-
-		id: properties
-		title: Properties
-		type: heading
-		level: 2
-		collapsed: true
-	-
-		id: metadata-style
-		title: Property style
-		type: class-select
-		allowEmpty: false
-		default: metadata-default
-		options:
-			-
-				label: Default
-				value: metadata-default
-			-
-				label: Block
-				value: metadata-block
-			-
-				label: Cupertino
-				value: metadata-cupertino
-	-
-		id: metadata-label-width-modifier
-		title: Property name width
-		type: variable-number-slider
-		default: 1
-		min: 0.5
-		max: 1.5
-		step: 0.1
-	-
-		id: metadata-list-tags
-		title: Display list as tags
-		type: class-toggle
-	-
-		id: metadata-heading-off
-		title: Hide property heading
-		type: class-toggle
-	-
-		id: metadata-icons-off
-		title: Hide property icons
-		type: class-toggle
-	-
-		id: metadata-add-property-off
-		title: Hide add property button
-		type: class-toggle
-	-
-		id: metadata-link-nowrap
-		title: Disable link line wrap
-		type: class-toggle
-	-
-		id: spacing
-		title: Spacing
-		type: heading
-		level: 2
-		collapsed: true
-	-
-		id: heading-spacing
-		title: Heading spacing
-		description: Adjust space between paragraphs and headings.
-		type: variable-text
-		default: 2em
-	-
-		id: p-spacing
-		title: Paragraph spacing
-		description: Adjust space between paragraphs.
-		type: variable-text
-		default: 1.75rem
-	-
-		id: readable-spacing
-		title: Readable spacing
-		description: Use tighter spacing in editor.
-		type: class-toggle
-	-
-		id: readable-spacing-modifier
-		title: Readable spacing modifier
-		description: Relative to paragraph spacing value.
-		type: variable-number-slider
-		default: 0.25
-		min: 0
-		max: 1
-		step: 0.25
-	-
 		id: inline-title
 		title: Inline title
 		type: heading
@@ -1671,11 +1563,81 @@ settings:
 		default-light: '#'
 		default-dark: '#'
 	-
+		id: properties
+		title: Properties
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: metadata-style
+		title: Property style
+		type: class-select
+		allowEmpty: false
+		default: metadata-default
+		options:
+			-
+				label: Default
+				value: metadata-default
+			-
+				label: Block
+				value: metadata-block
+			-
+				label: Cupertino
+				value: metadata-cupertino
+	-
+		id: metadata-label-width-modifier
+		title: Property name width
+		type: variable-number-slider
+		default: 1
+		min: 0.5
+		max: 1.5
+		step: 0.1
+	-
+		id: metadata-heading-off
+		title: Hide property heading
+		type: class-toggle
+	-
+		id: metadata-icons-off
+		title: Hide property icons
+		type: class-toggle
+	-
+		id: metadata-add-property-off
+		title: Hide add property button
+		type: class-toggle
+	-
+		id: metadata-list-tags
+		title: Display list as tags
+		type: class-toggle
+	-
+		id: metadata-link-nowrap
+		title: Disable link line wrap
+		type: class-toggle
+	-
 		id: headings
 		title: Headings
 		type: heading
 		level: 2
 		collapsed: true
+	-
+		id: heading-spacing
+		title: Heading spacing
+		description: Adjust space between headings and paragraphs.
+		type: variable-text
+		default: 2em
+	-
+		id: readable-spacing
+		title: Readable spacing
+		description: Use tighter spacing in editor.
+		type: class-toggle
+	-
+		id: readable-spacing-modifier
+		title: Readable spacing modifier
+		description: Relative to paragraph spacing value.
+		type: variable-number-slider
+		default: 0.25
+		min: 0
+		max: 1
+		step: 0.25
 	-
 		id: colorful-headings
 		title: Colorful headings
@@ -2711,18 +2673,36 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
+	-
+		id: indentation-guide-width
+		title: Indentation guides thickness
+		type: variable-number-slider
+		format: px
+		default: 0
+		min: 0
+		max: 3
+		step: 1
+	-
+		id: indentation-guide-color
+		title: Indentation guides color
+		type: variable-select
+		allowEmpty: false
+		default: rgba(var(--mono-rgb-100), 0.12)
+		options:
+			-
+				label: Subtle
+				value: rgba(var(--mono-rgb-100), 0.12)
+			-
+				label: Strong
+				value: var(--text-faint)
+			-
+				label: Accent color
+				value: var(--color-accent)
     -
         id: list-spacing
         title: List spacing
         type: variable-text
         default: 0.175em
-    -
-        id: list-marker-color
-        title: List bullet color
-        type: variable-themed-color
-        default-light: '#'
-        default-dark: '#'
-        format: hex
     -
         id: list-numbered-style
         title: List order style
@@ -2780,6 +2760,20 @@ settings:
             -
                 label: Hebrew
                 value: hebrew
+    -
+        id: list-marker-color
+        title: List bullet color
+        type: variable-themed-color
+        default-light: '#'
+        default-dark: '#'
+        format: hex
+	-
+		id: checkbox-color
+		title: Checkbox color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
 	-
 		id: checkbox-radius
 		title: Checkbox shape
@@ -2794,15 +2788,8 @@ settings:
 				label: Circle
 				value: 100px
 	-
-		id: checkbox-color
-		title: Checkbox color (Completed)
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
 		id: strike-lists-off
-		title: Disable checkbox strikethrough (Completed)
+		title: Disable checkbox strikethrough
 		type: class-toggle
 	-
 		id: media
@@ -2810,6 +2797,19 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
+	-
+		id: img-grid
+		title: Image grids
+		type: class-toggle
+	-
+		id: img-grid-gap
+		title: Image grids spacing
+		type: variable-number-slider
+		default: 4
+		min: 0
+		max: 16
+		step: 1
+		format: px
 	-
 		id: media-radius
 		title: Media radius
@@ -2828,22 +2828,12 @@ settings:
 		max: 1
 		step: 0.1
 	-
-		id: img-grid
-		title: Image grids
+		id: full-width-media-off
+		title: Disable maximized media
 		type: class-toggle
-	-
-		id: img-grid-gap
-		title: Image grids spacing
-		type: variable-text
-		default: 4px
 	-
 		id: zoom-off
 		title: Disable image zoom
-		type: class-toggle
-	-
-		id: full-width-media-off
-		title: Display original size
-		description: Disable full-width display for media.
 		type: class-toggle
 	-
 		id: pdf
@@ -3273,7 +3263,7 @@ body:not(.accented-interface:not(.default-light.default-dark, .material-light.ma
 body:is(.tab-floating, .tab-floating-center) .style-settings-container .setting-item[data-id="tab-divider"],
 body:not(.hover-sidedock) .style-settings-container .setting-item[data-id="hover-sidedock"] ~ .setting-item,
 body:not(.layout-macos, .layout-fusion) .style-settings-container .setting-item[data-id="reduce-contrast-change"],
-body:not(.readable-spacing) .style-settings-container .setting-item[data-id="readable-spacing"] ~ .setting-item,
+body:not(.readable-spacing) .style-settings-container .setting-item[data-id="readable-spacing-modifier"],
 body.view-header-title-hidden .style-settings-container .setting-item[data-id="file-header-visibility"] ~ .setting-item,
 body.block-width-off .style-settings-container .setting-item[data-id="line-width"] ~ .setting-item,
 body.metadata-cupertino .style-settings-container .setting-item[data-id="metadata-heading-off"],

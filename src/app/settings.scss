@@ -1,5 +1,5 @@
 body:not(.is-phone) {
-  &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-sidebar-layout {
+  &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-settings {
     .setting-group .setting-items,
     .setting-group .setting-group-search {
       padding-inline: 0;
