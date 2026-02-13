@@ -104,3 +104,19 @@ body.bases-col-alt .bases-tbody .bases-tr > .bases-td:nth-child(2n + 2) {
     overflow: hidden;
   }
 }
+
+// Mobile
+body.is-phone {
+  --bases-embed-width: unset;
+  --bases-embed-transform: none;
+
+  .markdown-preview-sizer > .el-pre .bases-embed,
+  .markdown-preview-sizer > .el-p .bases-embed,
+  .cm-content > .bases-embed,
+  .cm-content > .cm-lang-base {
+    max-width: 100cqw !important;
+    width: 100cqw !important;
+    justify-self: center;
+    margin-inline: calc(-1 * var(--file-margins-x)) !important;
+  }
+}
