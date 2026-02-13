@@ -91,23 +91,6 @@ body:is(.layout-cupertino, .layout-fusion):not(.is-phone) {
   }
 }
 
-body:is(.layout-cupertino, .layout-macos, .layout-fusion).is-mobile {
-  .workspace-drawer .nav-buttons-container {
-    justify-self: center;
-    gap: 0;
-    backdrop-filter: blur(4px);
-    border-radius: 100vh;
-    background-color: var(--background-modifier-hover);
-    padding-inline: 8px;
-    width: fit-content;
-    margin-bottom: 8px;
-  }
-
-  &:not(.is-floating-nav) .workspace-drawer .nav-buttons-container {
-    margin-bottom: 0;
-  }
-}
-
 body:is(.layout-cupertino, .layout-fusion.tab-default).is-tablet {
   .workspace-drawer.mod-left.is-pinned + .mod-root,
   .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) {
