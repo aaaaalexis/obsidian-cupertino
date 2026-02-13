@@ -4,14 +4,21 @@ body,
   --font-interface-theme: Inter;
   --font-text-theme: Inter;
 
+  --font-ui-modifier: 0px;
+  --font-ui-smaller: calc(12px + var(--font-ui-modifier));
+  --font-ui-small: calc(13px + var(--font-ui-modifier));
+  --font-ui-medium: calc(15px + var(--font-ui-modifier));
+  --font-ui-large: calc(20px + var(--font-ui-modifier));
+
+  --bold-modifier: 300;
+
+  --icon-size-modifier: 0px;
+  --icon-opacity: 1;
+
   --titlebar-background: transparent;
   --titlebar-background-focused: transparent;
 
   --divider-color-hover: var(--color-base-50);
-
-  --bold-modifier: 300;
-
-  --icon-opacity: 1;
 
   --corner-smoothing: system-ui;
 
@@ -97,11 +104,11 @@ body,
 }
 
 body:not(.is-mobile) {
-  --icon-xs: 14px;
-  --icon-s: 16px;
-  --icon-m: 16px;
-  --icon-l: 16px;
-  --icon-xl: 32px;
+  --icon-xs: calc(14px + var(--icon-size-modifier));
+  --icon-s: calc(16px + var(--icon-size-modifier));
+  --icon-m: calc(16px + var(--icon-size-modifier));
+  --icon-l: calc(16px + var(--icon-size-modifier));
+  --icon-xl: calc(32px + var(--icon-size-modifier));
 
   .app-container {
     transition: var(--anim-duration-moderate);

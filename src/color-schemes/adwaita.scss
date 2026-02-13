@@ -62,7 +62,7 @@ https://gitlab.gnome.org/GNOME/libadwaita/
   --blockquote-background-color: var(--background-secondary-alt);
   --embed-background-color: var(--background-secondary-alt);
 
-  &:not(.is-focused):not(.reduce-contrast-change) {
+  &:not(.is-focused) {
     --background-secondary: #f2f2f4;
   }
 }
@@ -107,7 +107,7 @@ https://gitlab.gnome.org/GNOME/libadwaita/
   --menu-background: #36363a; // --popover-bg-color
   --modal-background: #222226; // --window-bg-background
 
-  &:not(.is-focused):not(.reduce-contrast-change) {
+  &:not(.is-focused) {
     --background-secondary: #28282c;
   }
 }

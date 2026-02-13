@@ -786,8 +786,33 @@ settings:
 	-
 		id: reduce-motion
 		title: Reduce motion
-		description: Minimize animation effects throughout the app.
+		description: Minimize animation effects.
 		type: class-toggle
+	-
+		id: dynamic-type-off
+		title: Standard font size
+		description: Disable operating system-based dynamic font sizes.
+		type: class-toggle
+	-
+		id: font-ui-modifier
+		title: Interface font size
+		description: Fine-tune interface text size.
+		type: variable-number-slider
+		default: 0
+		min: -8
+		max: 8
+		step: 1
+		format: px
+	-
+		id: icon-size-modifier
+		title: Icon size
+		description: Fine-tune icon size.
+		type: variable-number-slider
+		default: 0
+		min: -4
+		max: 4
+		step: 1
+		format: px
 	-
 		id: animation
 		title: Animation
@@ -1620,10 +1645,6 @@ settings:
 		description: Requires **Show inline title** in **Appearance** settings.
         type: info-text
 		markdown: true
-	-
-		id: inline-title-block-off
-		title: Disable inline title background
-		type: class-toggle
 	-
 		id: inline-title-font
 		title: Inline title font
@@ -2816,12 +2837,13 @@ settings:
 		type: variable-text
 		default: 4px
 	-
-		id: full-width-media-off
-		title: Disable maximized media
-		type: class-toggle
-	-
 		id: zoom-off
 		title: Disable image zoom
+		type: class-toggle
+	-
+		id: full-width-media-off
+		title: Display original size
+		description: Disable full-width display for media.
 		type: class-toggle
 	-
 		id: pdf
@@ -3250,6 +3272,7 @@ body.layout-frame .style-settings-container .setting-item[data-id="layout-style"
 body:not(.accented-interface:not(.default-light.default-dark, .material-light.material-dark)) .style-settings-container .setting-item[data-id="color-scheme-accent"],
 body:is(.tab-floating, .tab-floating-center) .style-settings-container .setting-item[data-id="tab-divider"],
 body:not(.hover-sidedock) .style-settings-container .setting-item[data-id="hover-sidedock"] ~ .setting-item,
+body:not(.layout-macos, .layout-fusion) .style-settings-container .setting-item[data-id="reduce-contrast-change"],
 body:not(.readable-spacing) .style-settings-container .setting-item[data-id="readable-spacing"] ~ .setting-item,
 body.view-header-title-hidden .style-settings-container .setting-item[data-id="file-header-visibility"] ~ .setting-item,
 body.block-width-off .style-settings-container .setting-item[data-id="line-width"] ~ .setting-item,

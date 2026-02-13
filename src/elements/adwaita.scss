@@ -13,14 +13,14 @@ body.input-adwaita {
   --radius-xl: calc(18px * var(--radius-modifier));
   --button-radius: var(--radius-s);
 
-  &.mod-linux {
-    --font-ui-smaller: calc(var(--font-ui-medium) * 0.82);
-    --font-ui-small: 11pt;
-    --font-ui-medium: 11pt;
-    --font-ui-large: calc(var(--font-ui-medium) * 1.36);
+  &.mod-linux:not(.dynamic-type-off) {
+    --font-ui-smaller: calc(var(--font-ui-medium) * 0.82 + var(--font-ui-modifier));
+    --font-ui-small: calc(11px + var(--font-ui-modifier));
+    --font-ui-medium: calc(11px + var(--font-ui-modifier));
+    --font-ui-large: calc(var(--font-ui-medium) * 1.36 + var(--font-ui-modifier));
 
-    --icon-m: 18px;
-    --icon-l: 18px;
+    --icon-m: calc(18px * var(--radius-modifier));
+    --icon-l: calc(18px * var(--radius-modifier));
   }
 
   // Button
