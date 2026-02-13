@@ -95,7 +95,7 @@ body:is(.layout-cupertino, .layout-macos, .layout-fusion).is-mobile {
   .workspace-drawer .nav-buttons-container {
     justify-self: center;
     gap: 0;
-    backdrop-filter: var(--raised-blur);
+    backdrop-filter: blur(4px);
     border-radius: 100vh;
     background-color: var(--background-modifier-hover);
     padding-inline: 8px;
