@@ -277,7 +277,7 @@ body.is-phone {
   }
   .workspace-drawer-tab-options {
     position: fixed;
-    bottom: var(--safe-area-inset-bottom);
+    bottom: var(--navbar-bottom-offset);
     z-index: 2;
     width: stretch;
     margin-inline: var(--safe-area-inset-side);
