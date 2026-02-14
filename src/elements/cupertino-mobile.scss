@@ -145,7 +145,7 @@ body.input-cupertino.is-phone {
   &.theme-light .nav-files-container > div {
     background-color: var(--background-primary);
   }
-  &.is-phone.theme-dark .nav-files-container > div {
+  &.theme-dark .nav-files-container > div {
     background-color: var(--background-secondary);
   }
   .nav-files-container > div {
@@ -153,20 +153,12 @@ body.input-cupertino.is-phone {
     --nav-item-color: var(--text-normal);
     --nav-item-color-hover: var(--text-normal);
     --nav-item-color-active: var(--text-normal);
+    --nav-item-background-hover: transparent;
     --nav-item-background-active: var(--background-modifier-hover);
     --nav-item-weight-hover: var(--font-normal);
     --nav-item-weight-active: var(--font-normal);
 
     border-radius: var(--radius-m);
-
-    > .tree-item:nth-child(2) > .tree-item-self {
-      border-top-left-radius: var(--radius-m);
-      border-top-right-radius: var(--radius-m);
-    }
-    > .tree-item:last-child > .tree-item-self {
-      border-bottom-left-radius: var(--radius-m);
-      border-bottom-right-radius: var(--radius-m);
-    }
 
     .tree-item {
       position: relative;
@@ -184,8 +176,13 @@ body.input-cupertino.is-phone {
     .tree-item .tree-item-inner {
       flex: 1;
     }
+    .tree-item-self.has-active-menu,
+    .tree-item-self.is-being-renamed {
+      box-shadow: none;
+      color: var(--text-accent);
+    }
 
-    .tree-item:has(> .tree-item-self.is-active, .tree-item-self.mobile-tap) {
+    .tree-item:has(> .tree-item-self.is-active) {
       &::before,
       + .tree-item::before {
         content: none !important;
