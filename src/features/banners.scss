@@ -4,6 +4,7 @@ body:not(.banner-off) {
   --banner-image-object-fit: cover;
   --banner-image-inset: 8px;
   --banner-image-height: 320px;
+  --banner-image-height-s: 240px;
   --banner-fade-height: 80px;
   --banner-icon-size: 3rem;
   --banner-mobile-offset: 0px;
@@ -11,20 +12,18 @@ body:not(.banner-off) {
   // Mobile
   &:where(.is-mobile) {
     --banner-image-height: var(--banner-image-height-s);
-    --banner-image-height-s: 240px;
 
     .markdown-preview-view:not(.banner),
-    .markdown-source-view.is-live-preview:not(.banner) {
+    .is-live-preview:not(.banner) {
       --banner-mobile-offset: 0px;
-    }
-    .markdown-preview-view.banner-icon:not(.banner),
-    .markdown-source-view.is-live-preview.banner-icon:not(.banner) {
-      --banner-mobile-offset: 1rem;
     }
   }
 
   &:not(.is-phone) {
     --view-top-spacing-markdown: 0px;
+  }
+  &.is-mobile .banner-icon {
+    --banner-mobile-offset: 1rem;
   }
   &.is-mobile .banner-icon.banner-title .inline-title {
     padding-top: 0;
@@ -39,7 +38,7 @@ body:not(.banner-off) {
     }
   }
 
-  .mod-root .view-content:not(.pixel-banner) div:is(.markdown-preview-view, .markdown-source-view.is-live-preview) {
+  .mod-root .view-content:not(.pixel-banner) div:is(.markdown-preview-view, .is-live-preview) {
     // Spacing
     .markdown-preview-sizer,
     .cm-editor > .cm-scroller > .cm-sizer {
