@@ -12,10 +12,10 @@ body.is-mobile {
   --tab-radius: var(--radius-s);
   --tab-curve: var(--tab-radius);
 
-  --font-ui-smaller: 12px;
-  --font-ui-small: 14px;
-  --font-ui-medium: 16px;
-  --font-ui-large: 24px;
+  --font-ui-smaller: calc(var(--font-text-size) * 0.8 + var(--font-ui-modifier));
+  --font-ui-small: calc(var(--font-text-size) * 0.937 + var(--font-ui-modifier));
+  --font-ui-medium: calc(var(--font-text-size) + var(--font-ui-modifier));
+  --font-ui-large: calc(var(--font-text-size) * 1.2 + var(--font-ui-modifier));
 
   --interactive-normal: var(--background-primary);
 
@@ -63,8 +63,23 @@ body.is-mobile {
     --color-base-20: #262626;
   }
 
-  .app-container {
-    max-height: calc(100vh - var(--keyboard-height)) !important;
+  // Adaptive font size
+  &:not(.mod-macos):not(.dynamic-type-off) {
+    --font-ui-smaller: calc(12px + var(--font-ui-modifier));
+    --font-ui-small: calc(14px + var(--font-ui-modifier));
+    --font-ui-medium: calc(16px + var(--font-ui-modifier));
+    --font-ui-large: calc(24px + var(--font-ui-modifier));
+
+    .markdown-preview-view,
+    .markdown-source-view {
+      font-size: calc(var(--font-text-size) * 1.0625);
+    }
+  }
+  &.mod-macos:not(.dynamic-type-off) {
+    --font-ui-smaller: calc(13px + var(--font-ui-modifier));
+    --font-ui-small: calc(15px + var(--font-ui-modifier));
+    --font-ui-medium: calc(17px + var(--font-ui-modifier));
+    --font-ui-large: calc(20px + var(--font-ui-modifier));
   }
 
   // Non-Liquid Glass
@@ -88,21 +103,6 @@ body.is-mobile {
     }
     &.is-mobile .prompt {
       background-color: var(--prompt-background);
-    }
-  }
-
-  // iOS specific
-  &.mod-macos {
-    --navbar-bottom-offset: 28px;
-
-    --font-ui-smaller: 13px;
-    --font-ui-small: 15px;
-    --font-ui-medium: 17px;
-    --font-ui-large: 20px;
-
-    .markdown-preview-view,
-    .markdown-source-view {
-      font-size: calc(var(--font-text-size) * 1.0625);
     }
   }
 
@@ -277,7 +277,7 @@ body.is-phone {
   }
   .workspace-drawer-tab-options {
     position: fixed;
-    bottom: var(--safe-area-inset-bottom);
+    bottom: var(--navbar-bottom-offset);
     z-index: 2;
     width: stretch;
     margin-inline: var(--safe-area-inset-side);

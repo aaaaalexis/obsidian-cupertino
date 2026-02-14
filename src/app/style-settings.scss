@@ -104,16 +104,41 @@ settings:
         type: heading
         level: 1
         collapsed: true
-    -
-        id: reduce-contrast-change
-        title: Reduce contrast change
-        description: Minimize contrast shifts when window loses focus.
-        type: class-toggle
-    -
-        id: reduce-motion
-        title: Reduce motion
-        description: Minimize animation effects throughout the app.
-        type: class-toggle
+	-
+		id: reduce-contrast-change
+		title: Reduce contrast change
+		description: Minimize contrast shifts when window loses focus.
+		type: class-toggle
+	-
+		id: reduce-motion
+		title: Reduce motion
+		description: Minimize animation effects.
+		type: class-toggle
+	-
+		id: dynamic-type-off
+		title: Standard font size
+		description: Disable operating system-based dynamic font sizes.
+		type: class-toggle
+	-
+		id: font-ui-modifier
+		title: Interface font size
+		description: Fine-tune interface text size.
+		type: variable-number-slider
+		default: 0
+		min: -8
+		max: 8
+		step: 1
+		format: px
+	-
+		id: icon-size-modifier
+		title: Icon size
+		description: Fine-tune icon size.
+		type: variable-number-slider
+		default: 0
+		min: -4
+		max: 4
+		step: 1
+		format: px
     -
         id: clean-link-off
         title: Underlined links

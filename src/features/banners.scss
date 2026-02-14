@@ -4,6 +4,7 @@ body:not(.banner-off) {
   --banner-image-object-fit: cover;
   --banner-image-inset: 8px;
   --banner-image-height: 320px;
+  --banner-image-height-s: 240px;
   --banner-fade-height: 80px;
   --banner-icon-size: 3rem;
   --banner-mobile-offset: 0px;
@@ -11,20 +12,18 @@ body:not(.banner-off) {
   // Mobile
   &:where(.is-mobile) {
     --banner-image-height: var(--banner-image-height-s);
-    --banner-image-height-s: 240px;
 
     .markdown-preview-view:not(.banner),
-    .markdown-source-view.is-live-preview:not(.banner) {
+    .is-live-preview:not(.banner) {
       --banner-mobile-offset: 0px;
-    }
-    .markdown-preview-view.banner-icon:not(.banner),
-    .markdown-source-view.is-live-preview.banner-icon:not(.banner) {
-      --banner-mobile-offset: 1rem;
     }
   }
 
   &:not(.is-phone) {
     --view-top-spacing-markdown: 0px;
+  }
+  &.is-mobile .banner-icon {
+    --banner-mobile-offset: 1rem;
   }
   &.is-mobile .banner-icon.banner-title .inline-title {
     padding-top: 0;
@@ -39,7 +38,7 @@ body:not(.banner-off) {
     }
   }
 
-  .mod-root .view-content:not(.pixel-banner) div:is(.markdown-preview-view, .markdown-source-view.is-live-preview) {
+  .mod-root .view-content:not(.pixel-banner) div:is(.markdown-preview-view, .is-live-preview) {
     // Spacing
     .markdown-preview-sizer,
     .cm-editor > .cm-scroller > .cm-sizer {
@@ -78,7 +77,7 @@ body:not(.banner-off) {
     }
 
     &.banner {
-      img[alt="banner"]:not(:active):not([contenteditable]) {
+      img[alt="banner"]:not([contenteditable]) {
         position: absolute;
         inset: var(--view-top-spacing-markdown) var(--banner-image-inset) auto;
         border-radius: var(--banner-image-radius, var(--media-radius));
@@ -108,7 +107,7 @@ body:not(.banner-off) {
     }
 
     // Banner image fade
-    &.banner.banner-fade img[alt="banner"]:not(:active) {
+    &.banner.banner-fade img[alt="banner"] {
       mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 14%, hsla(0, 0%, 0%, 0.951) 26.2%, hsla(0, 0%, 0%, 0.896) 36.8%, hsla(0, 0%, 0%, 0.825) 45.9%, hsla(0, 0%, 0%, 0.741) 53.7%, hsla(0, 0%, 0%, 0.648) 60.4%, hsla(0, 0%, 0%, 0.55) 66.2%, hsla(0, 0%, 0%, 0.45) 71.2%, hsla(0, 0%, 0%, 0.352) 75.6%, hsla(0, 0%, 0%, 0.259) 79.6%, hsla(0, 0%, 0%, 0.175) 83.4%, hsla(0, 0%, 0%, 0.104) 87.2%, hsla(0, 0%, 0%, 0.049) 91.1%, hsla(0, 0%, 0%, 0.013) 95.3%, hsla(0, 0%, 0%, 0) 100%);
     }
 
@@ -132,6 +131,7 @@ body:not(.banner-off) {
         display: flex;
         justify-content: center;
         overflow: visible;
+        box-shadow: none;
 
         .callout-title-inner {
           line-height: 1;
