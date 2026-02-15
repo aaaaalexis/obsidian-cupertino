@@ -3,6 +3,76 @@ body {
   --bases-table-header-color: var(--text-faint);
 }
 
+.bases-view {
+  border-radius: var(--radius-s);
+}
+
+.mod-sidedock {
+  .bases-table-container,
+  .bases-tbody {
+    background-color: transparent;
+  }
+}
+
+// Bases: Table view
+.bases-table-container.mod-multiline .bases-table-cell {
+  align-items: var(--bases-table-align-items, start);
+}
+
+.bases-thead .bases-table-header {
+  overflow: hidden;
+}
+.bases-thead .bases-td {
+  box-shadow: none;
+  border-radius: var(--radius-s);
+  overflow: visible;
+}
+.bases-thead .bases-td:hover {
+  --bases-table-header-color: var(--text-normal);
+}
+.bases-table-header-resizer {
+  border-radius: var(--radius-s);
+}
+
+.bases-table-cell > * {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+body.bases-row-alt .bases-tbody .bases-tr:nth-child(odd) {
+  background-color: var(--background-secondary);
+}
+body.bases-col-alt .bases-tbody .bases-tr > .bases-td:nth-child(2n + 2) {
+  background-color: var(--background-secondary);
+}
+
+// Bases: Cards view
+.bases-cards-item {
+  gap: 2px;
+}
+.bases-cards-label {
+  color: var(--text-faint);
+}
+
+// Embedded Bases
+.workspace-leaf-content[data-type="markdown"] .bases-embed .bases-view {
+  border: none;
+  border-radius: 0;
+
+  .bases-thead,
+  .bases-tbody,
+  .bases-tbody > .bases-tr:first-child,
+  .bases-tbody > .bases-tr > .bases-td:first-child {
+    box-shadow: none;
+  }
+
+  .bases-tbody {
+    border: var(--bases-embed-border-width) solid var(--bases-embed-border-color);
+    border-radius: var(--bases-embed-border-radius);
+    overflow: hidden;
+  }
+}
+
 // Menu
 .query-toolbar-menu,
 .bases-toolbar-menu,
@@ -36,72 +106,6 @@ body:not(.is-phone) .menu {
   }
   &.mod-filters .query-toolbar-section-header {
     padding: 8px;
-  }
-}
-
-// Bases: Table
-.bases-table-container,
-.bases-thead,
-.bases-tbody {
-  background-color: transparent;
-}
-.bases-table-container.mod-multiline .bases-table-cell {
-  align-items: var(--bases-table-align-items, start);
-}
-.bases-thead {
-  z-index: unset;
-}
-.bases-thead .bases-table-header {
-  overflow: hidden;
-}
-.bases-thead .bases-td {
-  box-shadow: none;
-  border-radius: var(--radius-s);
-  overflow: visible;
-}
-.bases-thead .bases-td:hover {
-  --bases-table-header-color: var(--text-normal);
-}
-.bases-table-header-resizer {
-  border-radius: var(--radius-s);
-}
-
-.bases-table-cell > * {
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-body.bases-row-alt .bases-tbody .bases-tr:nth-child(odd) {
-  background-color: var(--background-secondary);
-}
-body.bases-col-alt .bases-tbody .bases-tr > .bases-td:nth-child(2n + 2) {
-  background-color: var(--background-secondary);
-}
-
-// Bases: Cards
-.bases-cards-item {
-  gap: 2px;
-}
-.bases-cards-label {
-  color: var(--text-faint);
-}
-
-// Embedded Bases
-.workspace-leaf-content[data-type="markdown"] .bases-embed .bases-view {
-  border: none;
-  border-radius: 0;
-
-  .bases-thead,
-  .bases-tbody,
-  .bases-tbody > .bases-tr:first-child,
-  .bases-tbody > .bases-tr > .bases-td:first-child {
-    box-shadow: none;
-  }
-
-  .bases-tbody {
-    border: var(--bases-embed-border-width) solid var(--bases-embed-border-color);
-    border-radius: var(--bases-embed-border-radius);
-    overflow: hidden;
   }
 }
 
