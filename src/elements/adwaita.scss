@@ -170,10 +170,6 @@ body.input-adwaita {
       color: var(--text-faint);
     }
 
-    .setting-group-search {
-      padding-bottom: calc(12px * var(--density-modifier));
-      background-color: transparent;
-    }
     .setting-group-search + .setting-items {
       border-radius: var(--setting-items-radius);
     }

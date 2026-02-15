@@ -1,7 +1,6 @@
 body:not(.is-phone) {
   &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-settings {
-    .setting-group .setting-items,
-    .setting-group .setting-group-search {
+    .setting-group .setting-items {
       padding-inline: 0;
       padding-top: 0;
       background-color: transparent;
@@ -58,6 +57,11 @@ body:not(.is-phone) {
       background-color: var(--modal-sidebar-background);
     }
 
+    .setting-group-search {
+      padding: 0 0 8px;
+      background-color: transparent;
+    }
+
     .setting-item-name {
       overflow: visible;
     }
@@ -73,6 +77,8 @@ body:not(.is-phone) {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-auto-rows: 1fr;
     gap: 8px;
+    padding: 0;
+    background-color: transparent;
 
     .setting-item {
       display: flex;
@@ -80,8 +86,8 @@ body:not(.is-phone) {
       margin: 0px !important;
       border: none;
       border-radius: var(--setting-items-radius) !important;
-      background-color: var(--background-primary);
-      padding: 16px !important;
+      background-color: var(--setting-items-background);
+      padding: calc(16px * var(--density-modifier)) !important;
       overflow: hidden;
     }
     .setting-item-info {

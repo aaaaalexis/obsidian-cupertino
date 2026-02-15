@@ -58,16 +58,20 @@ body.input-cupertino:not(.is-mobile) {
       padding: 6px 8px;
     }
 
-    .setting-group .setting-item {
+    .setting-group-search + .setting-items {
+      border-radius: var(--setting-items-radius);
+    }
+
+    .setting-items .setting-item {
       padding: 12px 0;
     }
-    .setting-group .setting-item:first-child {
+    .setting-items .setting-item:first-child {
       padding-top: 0;
     }
-    .setting-group .setting-item:last-child {
+    .setting-items .setting-item:last-child {
       padding-bottom: 0;
     }
-    .setting-item:not(.setting-group .setting-item) {
+    .setting-item:not(.setting-item-heading, .setting-items .setting-item) {
       padding: var(--setting-items-padding);
     }
 
