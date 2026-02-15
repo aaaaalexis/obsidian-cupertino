@@ -99,5 +99,17 @@
     "author": "Dencel",
     "url": "https://github.com/dencelkbabu",
     "description": "Based on Admin theme, but darker."
+  },
+  "bluesahara": {
+    "name": "Blue Sahara",
+    "author": "Dencel",
+    "url": "https://github.com/dencelkbabu",
+    "description": "Based on Admin theme, but darker."
+  },
+  "midnightblue": {
+    "name": "Midnight Blue",
+    "author": "Daniel A",
+    "url": "https://danagafonov.info",
+    "description": "When everyone is asleep, except you."
   }
 }
