@@ -26,6 +26,10 @@ body.input-tactile {
     background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25));
     background-blend-mode: soft-light;
   }
+  .clickable-icon:hover {
+    background-color: var(--interactive-normal);
+    box-shadow: var(--input-shadow);
+  }
 
   textarea,
   input:is([type="date"], [type="datetime-local"], [type="text"], [type="search"], [type="email"], [type="password"], [type="number"], [type="range"]),
@@ -79,9 +83,9 @@ body.input-tactile:not(.is-mobile) {
   }
 
   // Settings
-  .modal.mod-sidebar-layout {
-    background-color: var(--background-primary);
+  --setting-items-background: var(--background-primary);
 
+  .modal.mod-sidebar-layout {
     .vertical-tab-content {
       transition: var(--anim-duration-slow) var(--anim-motion-baseline);
 
