@@ -28,7 +28,8 @@ body:is(.layout-cupertino, .layout-macos, .layout-fusion):not(.is-mobile) {
     .mod-sidedock.is-sidedock-collapsed[style*="display"] {
       box-shadow: var(--shadow-s);
       border-radius: var(--radius-window, var(--radius-m));
-      background-color: var(--background-primary-alt) !important;
+      background-color: var(--modal-background) !important;
+      backdrop-filter: var(--blur-m);
       height: -webkit-fill-available;
 
       &.mod-left-split {
