@@ -33,6 +33,11 @@ body:is(.input-baseline, :not(.css-settings-manager)) {
   &.is-mobile {
     --input-border-width: var(--border-width);
   }
+
+  button.mod-cta {
+    --input-shadow: inset 0 0 0 var(--input-border-width) var(--interactive-accent);
+    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--interactive-accent-hover);
+  }
 }
 
 // Button
