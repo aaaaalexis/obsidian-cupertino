@@ -23,7 +23,7 @@ body:not(.banner-off) {
     --view-top-spacing-markdown: 0px;
   }
   &.is-mobile .banner-icon {
-    --banner-mobile-offset: 1rem;
+    --banner-mobile-offset: 1.5rem;
   }
   &.is-mobile .banner-icon.banner-title .inline-title {
     padding-top: 0;
@@ -120,7 +120,7 @@ body:not(.banner-off) {
       .callout[data-callout="banner-icon"] {
         z-index: 1;
         position: absolute;
-        top: calc(var(--view-top-spacing-markdown) + var(--banner-image-height) - var(--banner-fade-height) + 1rem);
+        top: calc(var(--view-top-spacing-markdown) + var(--banner-image-height) - var(--banner-fade-height) + 1.5rem);
         margin: 0 !important;
         border: none !important;
         background: none !important;
@@ -172,7 +172,7 @@ body:not(.banner-off) {
         margin-left 0s;
 
       ~ .metadata-container {
-        margin-top: var(--inline-title-margin-bottom);
+        margin-top: 1rem;
       }
 
       &:focus-within {
@@ -180,7 +180,7 @@ body:not(.banner-off) {
       }
       &:not(:focus-within) {
         position: absolute;
-        top: calc(var(--view-top-spacing-markdown) + var(--banner-image-height) - var(--banner-fade-height) + 1rem);
+        top: calc(var(--view-top-spacing-markdown) + var(--banner-image-height) - var(--banner-fade-height) + 1.5rem);
         align-items: center;
         animation: bannerTitleEditOut var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
         margin-bottom: 0;
