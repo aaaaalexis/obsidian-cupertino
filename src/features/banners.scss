@@ -120,7 +120,7 @@ body:not(.banner-off) {
       .callout[data-callout="banner-icon"] {
         z-index: 1;
         position: absolute;
-        top: calc(var(--view-top-spacing-markdown) + var(--banner-image-height) - var(--banner-fade-height) + 1.5rem);
+        top: calc(var(--view-top-spacing-markdown) + var(--banner-image-height) - var(--banner-fade-height) + 1rem);
         margin: 0 !important;
         border: none !important;
         background: none !important;
@@ -171,16 +171,12 @@ body:not(.banner-off) {
         var(--anim-duration-moderate) var(--anim-motion-baseline),
         margin-left 0s;
 
-      ~ .metadata-container {
-        margin-top: 1rem;
-      }
-
       &:focus-within {
         animation: bannerTitleEditIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
       }
       &:not(:focus-within) {
         position: absolute;
-        top: calc(var(--view-top-spacing-markdown) + var(--banner-image-height) - var(--banner-fade-height) + 1.5rem);
+        top: calc(var(--view-top-spacing-markdown) + var(--banner-image-height) - var(--banner-fade-height) + 1rem);
         align-items: center;
         animation: bannerTitleEditOut var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
         margin-bottom: 0;
