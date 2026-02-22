@@ -1,7 +1,7 @@
 body:is(.layout-cupertino, .layout-macos, .layout-fusion):not(.is-mobile) {
   --radius-window: 8px;
 
-  &:not(.is-popout-window) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
+  .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
     background-color: var(--background-primary);
   }
 
