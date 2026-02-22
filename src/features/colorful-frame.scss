@@ -1,10 +1,11 @@
 body:not(.is-mobile):not(.is-translucent).colorful-frame {
   --colorful-frame-icon-color: #ffffff;
 
-  // Non-labeled icon colo
+  // Non-labeled icon color
   &:is(.layout-cards, .layout-border) .workspace-ribbon,
   &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-cards, .layout-border) .workspace-ribbon .sidebar-toggle-button,
-  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-cards, .layout-border) .workspace-tabs.mod-top .workspace-tab-header-container,
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-border) .workspace-tabs.mod-top .workspace-tab-header-container,
+  &.layout-cards .workspace-tabs .workspace-tab-header-container,
   &.layout-minimal .workspace-split:not(.mod-left-split) .workspace-tabs.mod-top .workspace-tab-header-container,
   &.layout-viewfinder .mod-root .workspace-tabs.mod-top .workspace-tab-header-container {
     --icon-color: hsl(from var(--colorful-frame-icon-color) h s l / 0.7);
@@ -14,7 +15,8 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   }
 
   // Tab text & icon color
-  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-cards, .layout-border) .workspace-tabs.mod-top .workspace-tab-header-container-inner,
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-border) .workspace-tabs.mod-top .workspace-tab-header-container-inner,
+  &.layout-cards .workspace-split .workspace-tabs .workspace-tab-header-container-inner,
   &.layout-minimal .workspace-split:not(.mod-left-split) .workspace-tabs.mod-top .workspace-tab-header-container-inner,
   &.layout-viewfinder .mod-root .workspace-tabs.mod-top .workspace-tab-header-container-inner {
     --tab-text-color: hsl(from var(--colorful-frame-icon-color) h s l / 0.5);
@@ -60,6 +62,12 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   // Workspace: Use full background for tint
   &:is(.layout-cards, .layout-border, .layout-frame) .workspace {
     background: var(--colorful-frame-background, var(--color-accent));
+  }
+
+  // Fix: Cards workspace indicator color for compact tabs
+  &.layout-cards.tab-left-compact .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) .workspace-tab-header,
+  &.layout-cards.tab-right-compact .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) .workspace-tab-header {
+    background-color: hsl(from var(--colorful-frame-icon-color) h s l / 0.5);
   }
 
   // Workspace: Use sidedock for tint
