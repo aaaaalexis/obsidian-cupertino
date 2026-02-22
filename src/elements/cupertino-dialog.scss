@@ -1,6 +1,6 @@
 body:is(.mod-macos, .adaptive-mode-off) {
   --background-modifier-message: var(--modal-background);
-  --modal-background: rgb(from var(--background-primary-alt) r g b / 75%);
+  --modal-background: rgb(from var(--background-secondary) r g b / 75%);
 
   &.is-translucent {
     --modal-background: var(--background-primary);

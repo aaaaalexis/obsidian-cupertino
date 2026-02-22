@@ -114,6 +114,7 @@ body.is-tablet {
 
     .menu-item {
       padding: calc(8px * var(--density-modifier)) 12px;
+      font-size: var(--font-ui-small);
     }
     .menu-item-title {
       max-width: 240px;

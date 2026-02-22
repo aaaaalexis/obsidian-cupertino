@@ -53,8 +53,7 @@
   }
 
   // Editor panel
-  .mod-root .metadata-container .metadata-show-source-button,
-  .mod-root .metadata-container .metadata-add-button {
+  .mod-root .metadata-container .text-icon-button {
     gap: 8px;
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
     margin-top: 4px;
@@ -101,22 +100,21 @@
       .metadata-property {
         min-height: 44px;
       }
-      .metadata-property-icon {
+      .metadata-property-icon,
+      .text-icon-button {
         --icon-size: var(--icon-s);
         --icon-stroke: var(--icon-s-stroke-width);
       }
       .metadata-property-key,
-      .metadata-show-source-button,
-      .metadata-add-button {
+      .text-icon-button {
         padding: 8px 16px;
       }
     }
 
     &.is-mobile .metadata-container {
       .metadata-property-key,
-      .metadata-show-source-button,
-      .metadata-add-button {
-        padding: 4px 4px 4px 16px;
+      .text-icon-button {
+        padding-inline-end: 4px;
       }
     }
 
@@ -124,8 +122,7 @@
       padding: 8px !important;
     }
 
-    .markdown-reading-view .metadata-container:not(:hover) .metadata-show-source-button,
-    .markdown-reading-view .metadata-container:not(:hover) .metadata-add-button {
+    .markdown-reading-view .metadata-container:not(:hover) .text-icon-button {
       opacity: 0;
       padding-block: 0;
       height: 0;

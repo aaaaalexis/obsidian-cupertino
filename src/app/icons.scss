@@ -16,6 +16,9 @@
   path[d="M5 12h14"] {
     display: none;
   }
+  path[d="m12 5 7 7-7 7"] {
+    transform: translateX(-2px);
+  }
 }
 .lucide-edit-3 {
   path[d="M13 21h8"] {
@@ -24,7 +27,7 @@
 }
 
 // Animations
-body:not(.reduce-motion) .workspace {
+body:not(.reduce-motion, .is-mobile) .workspace {
   svg.svg-icon {
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
   }

@@ -148,8 +148,14 @@ body:not(.is-mobile) {
   --tab-outline-color: var(--background-modifier-border);
 }
 
+// Popout window
+.is-popout-window {
+  --workspace-background-translucent: var(--background-secondary);
+  background-color: rgb(var(--mono-rgb-100));
+}
+
 // Title bar
-body.is-frameless:not(.is-hidden-frameless, .is-fullscreen) .titlebar {
+body.is-frameless:not(.is-translucent, .is-hidden-frameless, .is-fullscreen) .titlebar {
   background-color: var(--background-secondary);
 }
 body.titlebar-text-off .titlebar-text {

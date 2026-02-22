@@ -1,7 +1,7 @@
 body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
   --radius-window: 8px;
 
-  &:not(.is-popout-window) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
+  .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
     background-color: var(--background-primary);
   }
 
@@ -20,7 +20,8 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
     .mod-sidedock.is-sidedock-collapsed[style*="display"] {
       box-shadow: var(--shadow-s);
       border-radius: var(--radius-window, var(--radius-m));
-      background-color: var(--background-primary-alt) !important;
+      background-color: var(--modal-background) !important;
+      backdrop-filter: var(--blur-m);
       height: -webkit-fill-available;
 
       &.mod-left-split {
