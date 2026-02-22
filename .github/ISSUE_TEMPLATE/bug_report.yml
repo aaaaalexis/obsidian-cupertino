@@ -1,16 +1,28 @@
 name: 🐞 Bug Report
 description: Report something that is not working
 body:
+  - type: checkboxes
+    attributes:
+      label: Prerequisite
+      options:
+        - label: I've confirmed that my Obsidian, Obsidian installer and Baseline are up to date.
+          required: true
   - type: input
     attributes:
-      label: Baseline version
-      placeholder: e.g., 3.2.0
+      label: Obsidian version
+      placeholder: e.g., 1.11.7
     validations:
       required: true
   - type: input
     attributes:
-      label: Obsidian & Installer version
-      placeholder: e.g., 1.11.3
+      label: Obsidian installer version
+      placeholder: e.g., 1.11.7
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Baseline version
+      placeholder: e.g., 3.2.0
     validations:
       required: true
   - type: input
@@ -21,8 +33,14 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: Issue & Steps to reproduce
-      description: Describe the bug, and how can we recreate this issue.
+      label: Describe the issue
+      description: What is not working correctly?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: How can we recreate this issue?
     validations:
       required: true
   - type: textarea
@@ -32,10 +50,4 @@ body:
   - type: textarea
     attributes:
       label: Proposed solution
-      description: Do you have a suggestion on how to fix this?
-  - type: checkboxes
-    attributes:
-      label: Final check
-      options:
-        - label: I've confirmed that both Obsidian and Baseline is up to date.
-          required: true
+      description: Do you have suggestions on how to fix this?
