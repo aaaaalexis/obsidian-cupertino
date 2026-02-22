@@ -23,12 +23,6 @@ body.input-fluent {
   --blur-m: blur(16px) saturate(0.75);
   --blur-l: blur(32px) saturate(0.75);
 
-  &.mod-windows:not(.dynamic-type-off) {
-    --font-ui-smaller: calc(12px + var(--font-ui-modifier));
-    --font-ui-small: calc(12px + var(--font-ui-modifier));
-    --font-ui-medium: calc(14px + var(--font-ui-modifier));
-    --font-ui-large: calc(20px + var(--font-ui-modifier));
-  }
   &.is-mobile {
     --input-border-width: var(--border-width);
 
