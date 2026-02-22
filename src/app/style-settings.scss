@@ -1355,7 +1355,7 @@ settings:
 		collapsed: true
     - 
         id: translucent-window-info
-		description: Requires **Translucent window** in **Appearance** settings. For Windows users, install [Pseudo Mica](obsidian://show-plugin?id=pseudo-mica).
+		description: Requires **Translucent window** in **Appearance** settings.
         type: info-text
 		markdown: true
 	-
@@ -3271,7 +3271,7 @@ body.unstyled-tags .style-settings-container .setting-item[data-id="unstyled-tag
 body:not(.colorful-headings-background) .style-settings-container .setting-item[data-id="colorful-headings-full-width"],
 body:not(.hr-dashed) .style-settings-container .setting-item[data-id="hr-dashed"] ~ .setting-item,
 body:is(.is-hidden-frameless, :not(.is-frameless)) .style-settings-container .setting-item[data-id="titlebar-info"] ~ .setting-item,
-body:not(.is-translucent) .style-settings-container .setting-item[data-id="translucent-window-info"] ~ .setting-item {
+body:not(.is-translucent, .mod-macos) .style-settings-container .setting-item[data-id="translucent-window-info"] ~ .setting-item {
   pointer-events: none;
 
   > * {
