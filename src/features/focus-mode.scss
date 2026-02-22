@@ -23,6 +23,9 @@ body.focus-view:not(.is-mobile):not(.is-popout-window) .workspace:not(.is-left-s
       opacity: 0.5;
     }
   }
+  .workspace-leaf-content:not([data-type="markdown"]) > .view-content {
+    margin-top: var(--header-height);
+  }
 
   .sidebar-toggle-button {
     position: absolute;
