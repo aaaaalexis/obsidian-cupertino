@@ -242,6 +242,14 @@ body:is(.mod-macos, .adaptive-mode-off) {
     inset-inline-start: 12px;
   }
 
+  // Ribbon
+  .workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon:hover,
+  .workspace-ribbon.mod-left .side-dock-actions .side-dock-ribbon-action:hover {
+    box-shadow: none !important;
+    background-color: transparent !important;
+    color: var(--text-normal);
+  }
+
   // Side panels
   &:not(.is-mobile) .mod-sidedock .workspace-tabs {
     .workspace-tab-header-container-inner {

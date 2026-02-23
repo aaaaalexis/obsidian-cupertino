@@ -46,9 +46,6 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
   // Editor panel: Tab style
   &:is(.mod-macos, .adaptive-mode-off) {
     .mod-root .workspace-tabs:not(.mod-stacked) {
-      .workspace-tab-header-container-inner {
-        padding-inline: 4px;
-      }
       .workspace-tab-header {
         @starting-style {
           filter: blur(4px);

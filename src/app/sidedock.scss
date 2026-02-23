@@ -108,12 +108,6 @@ body.mod-macos.is-hidden-frameless .workspace-ribbon.mod-left {
 .workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon,
 .workspace-ribbon.mod-left .side-dock-actions .side-dock-ribbon-action {
   width: var(--tab-action-width);
-
-  &:hover {
-    box-shadow: none !important;
-    background-color: transparent !important;
-    color: var(--text-normal);
-  }
 }
 
 body:not(.mod-macos):not(.is-mobile) .workspace-ribbon.mod-left,
