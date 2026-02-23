@@ -77,12 +77,12 @@ body:is(.layout-cupertino, .layout-fusion):not(.is-mobile) {
   }
 
   // Windows & Linux fix
-  &.is-hidden-frameless .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+  &:not(.mod-macos).is-hidden-frameless .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
     padding-right: var(--frame-right-space);
   }
 }
 
-body:is(.layout-cupertino, .layout-fusion):not(.is-phone) {
+body:is(.layout-cupertino, .layout-fusion):not(.is-phone) .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) {
   // Editor panel
   .workspace-split.mod-vertical {
     gap: 8px;
@@ -112,24 +112,26 @@ body.layout-cupertino:not(.is-phone) {
   --tab-outline-width: 1px;
 
   // Editor panel
-  &.theme-light .mod-root .workspace-tab-container {
+  &.theme-light .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tab-container {
     box-shadow:
       rgba(0, 0, 0, 0.04) 0px 24px 48px,
       rgba(0, 0, 0, 0.02) 0px 4px 16px;
   }
-  &.theme-dark .mod-root .workspace-tab-container {
+  &.theme-dark .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tab-container {
     box-shadow:
       rgba(0, 0, 0, 0.16) 0px 24px 48px,
       rgba(0, 0, 0, 0.12) 0px 4px 16px;
   }
 
-  .mod-root {
+  .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root {
     z-index: 5;
-  }
-  .mod-root .workspace-tabs {
-    overflow: visible;
-  }
-  .mod-root .workspace-tab-container {
-    outline: var(--tab-outline-width) solid var(--tab-outline-color);
+
+    .workspace-tabs {
+      overflow: visible;
+    }
+
+    .workspace-tab-container {
+      outline: var(--tab-outline-width) solid var(--tab-outline-color);
+    }
   }
 }
