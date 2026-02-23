@@ -22,11 +22,22 @@ body:not(.banner-off) {
   &:not(.is-phone) {
     --view-top-spacing-markdown: 0px;
   }
-  &.is-mobile .banner-icon {
+
+  &.is-mobile .banner:not(.banner-icon) {
+    --banner-mobile-offset: 0.5rem;
+  }
+  &.is-mobile .banner.banner-icon {
     --banner-mobile-offset: 1.5rem;
   }
-  &.is-mobile .banner-icon.banner-title .inline-title {
-    padding-top: 0;
+
+  &:not(.is-phone) .banner-icon.banner-title .inline-title ~ .metadata-container {
+    padding-top: 0px;
+  }
+  &.is-mobile .banner-icon .inline-title {
+    padding-top: 0px;
+  }
+  &.is-phone .banner-icon.banner-title .inline-title ~ .metadata-container {
+    padding-top: 8px;
   }
 
   @for $n from 0 through 20 {
