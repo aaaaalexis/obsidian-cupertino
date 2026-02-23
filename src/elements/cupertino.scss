@@ -238,6 +238,14 @@ body.input-cupertino {
     inset-inline-start: 12px;
   }
 
+  // Ribbon
+  .workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon:hover,
+  .workspace-ribbon.mod-left .side-dock-actions .side-dock-ribbon-action:hover {
+    box-shadow: none !important;
+    background-color: transparent !important;
+    color: var(--text-normal);
+  }
+
   // Side panels
   &:not(.is-mobile):not(.tab-top-left-stacked, .tab-top-left-dropdown, .tab-top-left-text) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space,
   &:not(.is-mobile):not(.tab-top-right-dropdown, .tab-top-right-text) .mod-sidedock.mod-right-split .workspace-tabs.mod-top-right-space,
