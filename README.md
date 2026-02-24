@@ -1,54 +1,62 @@
-![Screenshot of Cupertino theme for Obsidian running on macOS and iOS.](img/hero.png)
+<div align="center">
 
-### Best Theme of Obsidian [Gems of the Year 2024](https://obsidian.md/blog/2024-goty-winners/) awards
+![](img/hero.png)
 
-Cupertino is an Obsidian theme, optimized for **desktop and mobile devices**. Bringing **clean, focused, comfortable** reading and writing experience to your vault.
+### Crafted for the way you think.
 
-[Support me and my work](https://www.buymeacoffee.com/sevenaxis) so I can keep regular updates and fixes. You’re also welcomed to submit pull requests.
+_Best Theme of [Obsidian Gems of the Year 2024](https://obsidian.md/blog/2024-goty-winners/)_
 
-<a href="https://www.buymeacoffee.com/sevenaxis" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+[![](https://img.shields.io/badge/Made%20in-Taiwan-blue?style=for-the-badge)](https://wikipedia.org/wiki/Taiwan)
+[![](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-green?style=for-the-badge&logo=buymeacoffee)](https://www.buymeacoffee.com/sevenaxis)
+[![](https://img.shields.io/badge/Obsidian-Install-purple?style=for-the-badge&logo=obsidian)](obsidian://show-theme?name=Cupertino)
+
+</div>
 
 ## Overview
 
-![A screenshots showcasing Cupertino's light mode on macOS.](img/screenshot.png)
+### Fresh. Familiar. Focused.
 
-- **Native & minimal** — Clean, native look and feel on all of your devices, so you can focus on your content.
+**A modern design that feels at home.** Clean typography, refined spacing, and native-inspired components make Cupertino feel like it belongs on your device.
 
-  ![Two screenshots showcasing Cupertino on macOS. The first shows how Cupertino utilizes background blur. The second showcases the stylized text editor.](img/desktop.png)
+![](img/desktop.png)
 
-- **Optimized for mobile** — Redesigned modals, menu, editor, search, and more, with comfortable spacing for usability.
+**Built for mobile.** Everything is redesigned for touch. One-hand reachability, comfortable spacing, and intuitive layout make your vault feel right in your pocket.
 
-  ![Three screenshots showcasing Cupertino on mobile. The first shows file navigation sidebar with comfortable spacing. The second highlights the mode switcher within the editor. The third displays a redesigned search interface.](img/mobile.png)
+![](img/mobile.png)
 
-- **Windows Mode** — Fluent Design interface for native feeling on Windows (Enabled by default, can be disabled with [Style Settings](https://github.com/mgmeyers/obsidian-style-settings))
+**Native everywhere.** Cupertino adapts to every platform, delivering a consistent and polished look whether you're on desktop or mobile.
 
-  ![Screenshot of Cupertino theme for Obsidian running on Windows.](img/windows.png)
-
-## Plugins
-
-All features are enable by default, following plugins can be installed to modify your installation. they are **_not_** required.
-
-### [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
-
-- Disable active line indicator
-- Disable alternative heading style
-- Disable auto hiding panel actions
-- Disable centered tabs
-- Disable compact status bar
-- Disable Windows mode
-  ... etc.
-
-### [Pseudo Mica](https://github.com/aaaaalexis/obsidian-cupertino-helper/) (Windows only)
-
-Adds pseudo-Mica (wallpaper as background) on Windows (Alternatively, wait for Obsidian native support)
+![](img/adaptive.png)
 
 ## Philosophy
 
-I’ve spent way too much time on customizing Obsidian, thousands of themes with millions of customizations, I believe a lot people do it too. It’s anti-productivity at this point, we need something that just works and is pleasant to use.
+### Less is more.
 
-1. **Less plugins.** — Style Settings is only used for disabling features and fixing issues instead of adding. Cupertino works perfectly out of the box.
-2. **Less customizations** — Customization is often more of a distraction that makes you waste more time on fiddling. Cupertino will never add customization.
-3. **Less visual noise** — Your content is the key. Low priority UI elements are auto hidden to maintain focusability on content.
+Cupertino exists because great tools should just work. No rabbit holes. No endless tweaking. Just a beautiful, distraction-free place to think and write.
+
+- **Fewer plugins**
+
+  Everything you need is here without plugins. Cupertino is complete the moment you install it.
+
+- **Fewer customizations**
+
+  Every option is an invitation to procrastinate. Cupertino keeps choices intentionally minimal so you stay in flow.
+
+- **Less visual noise**
+
+  Low-priority UI elements step back automatically. What remains is what matters.
+
+## Plugins
+
+Cupertino works beautifully on its own. These plugins let you fine-tune the experience if you'd like.
+
+### [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
+
+Enable focus view, hover sidebars. Or disable active line highlight, centered tabs, and compact status bar, and more.
+
+### [Pseudo Mica](https://github.com/aaaaalexis/obsidian-pseudo-mica)
+
+Bring translucent window effects to Windows and macOS for an even more native feel.
 
 ## Features
 
@@ -173,8 +181,10 @@ Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
 
 ## Credits
 
-- **@kepano** - **[Minimal](https://github.com/kepano/obsidian-minimal)**: Cards, Image filters, Table helpers
+- [**Craft Docs**](https://www.craft.do/) - Interface design inspiration
+- [**Yushan Main East Peak** by Huang Chung Yu](https://commons.wikimedia.org/wiki/File:Yushan_main_east_peak%2BHuang_Chung_Yu%E9%BB%83%E4%B8%AD%E4%BD%91%2B9030.png) - Yushan background
+- [**Minimal** by kepano](https://github.com/kepano/obsidian-minimal) ([Donate](https://www.buymeacoffee.com/kepano)) - Dataview cards, image filters, table helper classes
 
-## Licensing
+## License
 
 Cupertino is licensed under the [MIT license](LICENSE).
