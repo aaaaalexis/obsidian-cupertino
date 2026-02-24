@@ -8,7 +8,7 @@ _From the creator of [Cupertino](https://github.com/aaaaalexis/obsidian-cupertin
 
 [![](https://img.shields.io/badge/Made%20in-Taiwan-blue?style=for-the-badge)](https://wikipedia.org/wiki/Taiwan)
 [![](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-green?style=for-the-badge&logo=buymeacoffee)](https://www.buymeacoffee.com/sevenaxis)
-[![](https://img.shields.io/badge/Obsidian-Install-purple?style=for-the-badge&logo=obsidian)](obsidian://show-theme?name=Baseline)
+[![](https://img.shields.io/badge/Obsidian-Install-purple?style=for-the-badge&logo=obsidian)](https://aaaaalexis.github.io/obsidian-baseline/install?name=Baseline)
 
 </div>
 
