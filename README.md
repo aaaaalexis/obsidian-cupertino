@@ -1,46 +1,68 @@
-![Screenshot of Baseline theme for Obsidian in 3 different colors, with large text "Baseline" on the left side of the image.](img/hero.png)
+<div align="center">
 
-### From the creator of [Cupertino](https://github.com/aaaaalexis/obsidian-cupertino/)
+![](img/hero.png)
 
-Baseline sets a new standard for your Obsidian vault experience — sleek, familiar, and effortlessly minimal, offering endless ways to make it yours.
+### The baseline of your thoughts.
 
-[Support me and my work](https://www.buymeacoffee.com/sevenaxis) so I can keep providing regular updates and fixes. You’re also welcome to submit pull requests.
+_From the creator of [Cupertino](https://github.com/aaaaalexis/obsidian-cupertino)_
 
-<a href="https://www.buymeacoffee.com/sevenaxis" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+[![](https://img.shields.io/badge/Made%20in-Taiwan-blue?style=for-the-badge)](https://wikipedia.org/wiki/Taiwan)
+[![](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-green?style=for-the-badge&logo=buymeacoffee)](https://www.buymeacoffee.com/sevenaxis)
+[![](https://img.shields.io/badge/Obsidian-Install-purple?style=for-the-badge&logo=obsidian)](obsidian://show-theme?name=Baseline)
 
-And don’t forget to [support the amazing creators](#credits) whose work helped shape Baseline.
+</div>
 
 ## Quick Start
 
-### Migrate from other themes
+### Migrating from another theme?
 
 Seamlessly migrate your existing Style Settings from supported themes.
 
-**Get started with [Style Settings Migration Tool ↗](https://aaaaalexis.github.io/obsidian-baseline/migration)**
+**Carry your settings over with [Style Settings Migration Tool ↗](https://aaaaalexis.github.io/obsidian-baseline/migration)**
 
-### Start with style presets
+### Looking for inspiration?
 
 Discover and share Style Settings presets in Baseline Marketplace.
 
-**Check out [Baseline Marketplace ↗](https://aaaaalexis.github.io/obsidian-baseline/marketplace)**
+**Explore community-made presets in [Baseline Marketplace ↗](https://aaaaalexis.github.io/obsidian-baseline/marketplace)**
 
 ## Overview
 
-- **Beautifully yours** — Customize your experience to your heart's content with [Style Settings](https://github.com/mgmeyers/obsidian-style-settings).
+### Sleek by default. Yours by design.
 
-  ![Screenshot of Baseline theme for Obsidian in 6 different color schemes.](img/colors.png)
+**Beautiful starting point.** Clean layout, organized interface, and subtle animations make Baseline feel effortless from the first install.
 
-- **Minimal interface** — Clean, organized look and feel, with playful animations and effects.
+![](img/elements.png)
 
-  ![Composite image of various interface elements from Baseline theme for Obsidian.](img/elements.png)
+**Make it yours.** With deep [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) integration, every detail is yours to shape. Colors, spacing, typography, and beyond.
 
-- **Optimized for mobile** — Enhanced navigation, menus, editor, and more, with comfortable spacing for better usability.
+![](img/colors.png)
 
-  ![Screenshots of Baseline theme for Obsidian on mobile, on the left is a screenshot of the file navigation, on the right is a screenshot of the text editor.](img/mobile.png)
+**Built for mobile.** Enhanced navigation, refined menus, and comfortable spacing bring the same quality experience to every screen.
+
+![](img/mobile.png)
+
+## Philosophy
+
+### Less _and_ more.
+
+Baseline is built on a simple belief: a great theme should work beautifully without touching a single setting, and transform completely when you're ready to explore.
+
+- **Refined foundation**
+
+  Clean, modern, and polished from day one. Baseline sets a standard your vault can grow from.
+
+- **Thoughtful customization**
+
+  Every option is designed with care. So no matter how far you go, Baseline always looks intentional.
+
+- **More than a theme**
+
+  Hover sidebars, compact elements, polished interface... Baseline takes the best ideas from the community and gives them a home. More than a theme, this is a new starting point for everyone to built upon.
 
 ## Features
 
-Baseline supports all helper classes (e.g. block width, cards, etc.) from [Minimal](https://github.com/kepano/obsidian-minimal).
+Baseline supports all filter and helper classes from [Minimal](https://github.com/kepano/obsidian-minimal).
 
 ### Banner
 
@@ -124,7 +146,7 @@ Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
 
 ### [Alternate checkboxes](https://github.com/damiankorcz/Alternative-Checkboxes-Reference-Set)
 
-![Preview of alternate checkboxes.](img/checkbox.png)
+![](img/checkbox.png)
 
 | Syntax  | Description |
 | ------- | ----------- |
@@ -159,39 +181,30 @@ Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
 | `- [P]` | Phone       |
 | `- [L]` | Love        |
 
-## Philosophy
-
-### Less _and_ more
-
-Baseline delivers a clean, modern, and polished foundation right out of the box, with endless customization options to let you tailor Obsidian to your heart's content. Every option is thoughtfully designed to ensure Baseline stays both simple and beautiful.
-
-### A love letter to the community
-
-Shaped by the community, Baseline gives back through a rich collection of innovations: polished interface, compact elements, hover sidebars, with more to come. Baseline aims to be more than just a theme, but a fresh starting point, a new baseline for the community going forward.
-
 ## Credits
 
-Special thanks to the community for helping make Baseline a reality. Please support them as well!
+- **[Craft Docs](https://www.craft.do/)** - Interface design inspiration
+- **[Huang Chung Yu](https://commons.wikimedia.org/wiki/File:Yushan_main_east_peak%2BHuang_Chung_Yu%E9%BB%83%E4%B8%AD%E4%BD%91%2B9030.png)** - Yushan background
+- **[Minimal by kepano](https://github.com/kepano/obsidian-minimal)** ([Donate](https://www.buymeacoffee.com/kepano)) - Dataview cards, image filters, table helper classes
 
 ### Community Themes
 
-- **[kepano/obsidian-minimal](https://github.com/kepano/obsidian-minimal)**: Cards, Color schemes, Image filters, Table helpers, Style Settings [Buy them a coffee!](https://buymeacoffee.com/kepano)
-- **[AnubisNekhet/AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin/)**: Catppuccin color schemes [Buy them a coffee!](https://buymeacoffee.com/anubisnekhet)
-- **[Sanjdanielmourao/obsidian-sanctumctum](https://github.com/jdanielmourao/obsidian-sanctum)**: Sanctum color scheme [Support them!](https://ko-fi.com/X8X56R5Q1)
-- **[vladstudio/tiniri-obsidian](https://github.com/vladstudio/tiniri-obsidian/)**: Tiniri color scheme [Support them!](https://vlad.studio/signup/)
-- **[Akifyss/obsidian-border](https://github.com/Akifyss/obsidian-border)**: Border workspace
-- **[kyffa/Iridium](https://github.com/kyffa/Iridium)**: Frame workspace
+- [**Minimal** by kepano](https://github.com/kepano/obsidian-minimal) ([Donate](https://www.buymeacoffee.com/kepano)) - Dataview cards, color schemes, image filters, table helper classes
+- [**AnuPpuccin** by AnubisNekhet](https://github.com/AnubisNekhet/AnuPpuccin/) ([Donate](https://buymeacoffee.com/anubisnekhet)) - Catppuccin color schemes
+- [**Sanctum** by jdanielmourao](https://github.com/jdanielmourao/obsidian-sanctum) ([Donate](https://ko-fi.com/jdanielmourao)) - Sanctum color scheme
+- [**Tiniri** by vladstudio](https://github.com/vladstudio/tiniri-obsidian/) ([Donate](https://vlad.studio/signup)) - Tiniri color scheme
+- [**Border** by Akifyss](https://github.com/Akifyss/obsidian-border) - Border workspace
+- [**Iridium** by kyffa](https://github.com/kyffa/Iridium) - Frame workspace
 
 ### Extras
 
-- **[Warren2060/ChillJinshuSong](https://github.com/Warren2060/ChillJinshuSong)**: Heading font for extended language support
-- **[bwya77/obsidian-baseline-customization](https://github.com/bwya77/obsidian-baseline-customization)**: Admin color scheme, Block properties style
+- [**Chill Jinshu Song** by Warren2060](https://github.com/Warren2060/ChillJinshuSong) - Heading font for extended language support
+- [**Obsidian Baseline Theme Customization** by bwya77](https://github.com/bwya77/obsidian-baseline-customization) - Admin color scheme, Block properties style
 
 ### Inspiration
 
-- **[Craft Docs](https://www.craft.do/)**: Cupertino workspace, Fusion workspace
+- [**Craft Docs**](https://www.craft.do/) - Cupertino workspace, Fusion workspace
 
 ## License
 
-Baseline is licensed under the [MIT license](LICENSE). You’re free to take any component of Baseline and build on top of it.
-Let’s make a better community by creating amazing themes for everyone!
+Baseline is licensed under the [MIT license](LICENSE).
