@@ -19,6 +19,7 @@ body:not(.is-mobile) {
 }
 body.is-mobile {
   --header-height: 44px !important;
+  --tab-text-color-active: var(--text-normal);
   --tab-text-color-focused: var(--text-normal);
 }
 body.is-tablet {
@@ -174,7 +175,7 @@ body.mod-macos:not(.is-mobile).tab-floating-center {
       }
     }
   }
-  
+
   &.is-fullscreen .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
       // Both sidedocks hidden
