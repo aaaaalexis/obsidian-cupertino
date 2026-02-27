@@ -22,5 +22,7 @@
   "baseline-style@@h6-size": "0.875em",
   "baseline-style@@callouts-style": "callouts-tactile",
   "baseline-style@@code-style": "code-tactile",
-  "baseline-style@@checkbox-radius": "100px"
+  "baseline-style@@checkbox-radius": "100px",
+  "baseline-style@@translucent-light-opacity": 0,
+  "baseline-style@@translucent-dark-opacity": 0
 }
