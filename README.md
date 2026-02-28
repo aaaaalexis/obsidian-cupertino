@@ -183,13 +183,9 @@ Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
 
 ## Credits
 
-- **[Craft Docs](https://www.craft.do/)** - Interface design inspiration
-- **[Huang Chung Yu](https://commons.wikimedia.org/wiki/File:Yushan_main_east_peak%2BHuang_Chung_Yu%E9%BB%83%E4%B8%AD%E4%BD%91%2B9030.png)** - Yushan background
-- **[Minimal by kepano](https://github.com/kepano/obsidian-minimal)** ([Donate](https://www.buymeacoffee.com/kepano)) - Dataview cards, image filters, table helper classes
-
 ### Community Themes
 
-- [**Minimal** by kepano](https://github.com/kepano/obsidian-minimal) ([Donate](https://www.buymeacoffee.com/kepano)) - Dataview cards, color schemes, image filters, table helper classes
+- [**Minimal** by kepano](https://github.com/kepano/obsidian-minimal) ([Donate](https://www.buymeacoffee.com/kepano)) - Color schemes, Dataview cards, image filters, table helper classes
 - [**AnuPpuccin** by AnubisNekhet](https://github.com/AnubisNekhet/AnuPpuccin/) ([Donate](https://buymeacoffee.com/anubisnekhet)) - Catppuccin color schemes
 - [**Sanctum** by jdanielmourao](https://github.com/jdanielmourao/obsidian-sanctum) ([Donate](https://ko-fi.com/jdanielmourao)) - Sanctum color scheme
 - [**Tiniri** by vladstudio](https://github.com/vladstudio/tiniri-obsidian/) ([Donate](https://vlad.studio/signup)) - Tiniri color scheme
