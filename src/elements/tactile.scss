@@ -1,5 +1,4 @@
 body.input-tactile {
-  --corner-smoothing: 100%;
   --clickable-icon-radius: 100vh;
 
   --input-shadow-base: 0px 8px 4px -2px rgba(0, 0, 0, 0.01), 0px 2px 4px -1px rgba(0, 0, 0, 0.025), 0px 2px 2px -1px rgba(0, 0, 0, 0.025);
@@ -66,7 +65,6 @@ body.input-tactile:not(.is-mobile) {
     border-radius: var(--clickable-icon-radius);
     background: var(--background-modifier-hover);
     padding: 4px;
-    -electron-corner-smoothing: var(--corner-smoothing);
     box-shadow: var(--input-shadow-inset);
 
     .nav-action-button.is-active {
@@ -95,7 +93,6 @@ body.input-tactile:not(.is-mobile) {
     }
 
     .vertical-tab-nav-item {
-      -electron-corner-smoothing: var(--corner-smoothing);
       transition: box-shadow var(--anim-duration-fast);
     }
     .vertical-tab-nav-item:hover:not(.is-active) {

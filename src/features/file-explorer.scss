@@ -55,7 +55,7 @@ body.nav-item-strong {
     .tree-item,
     .tree-item-self,
     .tree-item-inner {
-      -electron-corner-smoothing: var(--corner-smoothing);
+      corner-shape: var(--corner-shape);
       transition: box-shadow var(--anim-duration-fast);
     }
     > .tree-item.nav-folder:not(.is-collapsed) {

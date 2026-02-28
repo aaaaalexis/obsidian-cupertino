@@ -45,7 +45,6 @@ button,
 .clickable-icon,
 select,
 .dropdown {
-  -electron-corner-smoothing: var(--corner-smoothing);
   transition:
     var(--anim-duration-moderate) var(--anim-motion-baseline),
     background-color var(--anim-duration-fast);
@@ -57,6 +56,7 @@ button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([dat
 }
 
 .clickable-icon {
+  corner-shape: round;
   padding: 8px;
   max-height: 100%;
 }
@@ -67,7 +67,6 @@ body:not(.accented-interface) .checkbox-container {
 }
 
 body.obsidian-app .checkbox-container {
-  -electron-corner-smoothing: var(--corner-smoothing);
   transition: var(--anim-duration-moderate);
   box-shadow: none;
 
@@ -81,7 +80,6 @@ body.obsidian-app .checkbox-container {
       background-color 0s;
   }
   &:active:after {
-    -electron-corner-smoothing: var(--corner-smoothing);
     box-shadow: none;
     width: calc(var(--toggle-thumb-width) + var(--toggle-border-width));
     height: var(--toggle-thumb-height);
@@ -94,6 +92,5 @@ body.obsidian-app .checkbox-container {
 
 // Slider
 input[type="range"]::-webkit-slider-thumb {
-  -electron-corner-smoothing: var(--corner-smoothing);
   box-shadow: none;
 }

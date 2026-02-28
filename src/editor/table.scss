@@ -42,7 +42,7 @@
 
       th,
       td {
-        -electron-corner-smoothing: var(--corner-smoothing);
+        corner-shape: var(--corner-shape);
       }
 
       > thead:only-child,

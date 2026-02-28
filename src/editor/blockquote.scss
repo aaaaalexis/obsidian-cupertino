@@ -9,7 +9,7 @@
 
   .markdown-rendered blockquote,
   .HyperMD-quote {
-    -electron-corner-smoothing: var(--corner-smoothing);
+    corner-shape: var(--corner-shape);
     font-size: var(--blockquote-size);
   }
 

@@ -63,7 +63,7 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
       box-shadow 0s;
   }
   .mod-sidedock.mod-left-split {
-    -electron-corner-smoothing: var(--corner-smoothing);
+    corner-shape: var(--corner-shape);
     z-index: var(--layer-sidedock);
     margin: 8px 0 8px 8px;
     box-shadow: var(--shadow-surface), var(--shadow-sidedock-spread);
