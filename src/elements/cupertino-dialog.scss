@@ -53,8 +53,6 @@ body.input-cupertino:not(.is-mobile) {
 
   .menu:hover,
   .suggestion-container:hover {
-    backdrop-filter: var(--blur-m);
-
     .menu-item.selected:not(.is-label):not(.is-disabled) {
       background-color: var(--interactive-accent);
       color: var(--text-on-accent);
