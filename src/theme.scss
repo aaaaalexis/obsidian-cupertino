@@ -9,6 +9,8 @@
 @use "app/status-bar.scss";
 @use "app/empty-state.scss";
 @use "app/mobile.scss";
+@use "app/core-plugins.scss";
+@use "app/community-plugins.scss";
 @use "app/style-settings.scss";
 
 @use "editor/editor.scss";
@@ -81,7 +83,3 @@
 @use "color-schemes/solarized.scss";
 @use "color-schemes/things.scss";
 @use "color-schemes/tiniri.scss";
-
-@use "integrations/core-plugins.scss";
-@use "integrations/community-plugins.scss";
-@use "integrations/flash-notice.scss";
