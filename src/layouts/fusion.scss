@@ -53,12 +53,19 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
           opacity: 0;
         }
 
-        -electron-corner-smoothing: var(--corner-smoothing);
+        corner-shape: var(--corner-shape);
         border-radius: 100vh;
         transition:
           opacity var(--anim-duration-moderate),
           filter var(--anim-duration-moderate),
           background-color 0s;
+
+        &:first-child {
+          margin-inline-start: 2px;
+        }
+        &:last-child {
+          margin-inline-end: 2px;
+        }
       }
       .workspace-tab-header:not(.is-active) {
         background-color: transparent;

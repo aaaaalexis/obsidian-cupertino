@@ -9,13 +9,11 @@
 
 .menu,
 .suggestion-container {
-  -electron-corner-smoothing: var(--corner-smoothing);
   border-radius: var(--menu-radius);
   padding: 0;
 
   .menu-item,
   .suggestion-item {
-    -electron-corner-smoothing: var(--corner-smoothing);
     padding: calc(6px * var(--density-modifier)) 8px;
     border-radius: calc(var(--menu-radius) - var(--menu-padding));
     margin-bottom: 0;
@@ -127,15 +125,11 @@ body {
   --modal-background: var(--background-secondary);
   --modal-border-color: var(--background-modifier-border-hover);
 
-  .modal {
-    -electron-corner-smoothing: var(--corner-smoothing);
-
-    .modal-title {
-      font-family: var(--h1-font);
-      transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
-      overflow: visible;
-      text-align: left;
-    }
+  .modal-title {
+    font-family: var(--h1-font);
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    overflow: visible;
+    text-align: left;
   }
   .modal-close-button {
     border-radius: 100vh;

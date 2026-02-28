@@ -20,7 +20,7 @@ body,
 
   --divider-color-hover: var(--color-base-50);
 
-  --corner-smoothing: system-ui;
+  --corner-shape: superellipse(1.1);
 
   --shadow-s: rgba(0, 0, 0, 0.08) 0px 12px 24px -4px, rgba(0, 0, 0, 0.04) 0px 8px 16px -4px;
   --shadow-l: 0 14px 62px #00000040;

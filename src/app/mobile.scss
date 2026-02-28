@@ -357,11 +357,6 @@ body.is-phone {
     }
   }
 
-  // Edge mask
-  &.is-hidden-nav {
-    --view-top-fade-mask: linear-gradient(to bottom, rgba(0, 0, 0, var(--view-top-fade-opacity)) 0%, black calc(var(--safe-area-inset-top) + var(--view-header-height) + 12px));
-  }
-
   // Edge blur
   &.is-floating-nav:not(.mod-toolbar-open) .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content {
     &::before,
