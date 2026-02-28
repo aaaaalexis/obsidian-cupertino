@@ -339,7 +339,7 @@ body:is(.mod-macos, .adaptive-mode-off) {
 
   &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"][data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
     background-color: var(--interactive-accent);
-    color: var(--text-on-accent);
+    color: oklch(from var(--interactive-accent) calc(l + 0.25) c h);
     box-shadow: var(--shadow-xs);
   }
 
