@@ -3,16 +3,6 @@ Cupertino
 https://developer.apple.com/design/human-interface-guidelines/color
 */
 
-.theme-light.cupertino-light:not(.is-mobile),
-.theme-dark.cupertino-dark:not(.is-mobile) {
-  --background-primary-alt: color-mix(in srgb, var(--background-primary), rgb(var(--mono-rgb-100)) 3%);
-  --background-secondary: color-mix(in srgb, var(--background-primary), rgb(var(--mono-rgb-100)) 5%);
-  --background-secondary-alt: color-mix(in srgb, var(--background-primary), rgb(var(--mono-rgb-100)) 8%);
-
-  --interactive-normal: rgba(var(--mono-rgb-100), 5%);
-  --interactive-hover: rgba(var(--mono-rgb-100), 5%);
-}
-
 .theme-light.cupertino-light.color-scheme-accent {
   --accent-h: 208;
   --accent-s: 100%;
@@ -30,6 +20,12 @@ https://developer.apple.com/design/human-interface-guidelines/color
 }
 .theme-light.cupertino-light:not(.is-mobile) {
   --background-primary: #fff;
+  --background-primary-alt: color-mix(in srgb, var(--background-primary), black 3%);
+  --background-secondary: color-mix(in srgb, var(--background-primary), black 5%);
+  --background-secondary-alt: color-mix(in srgb, var(--background-primary), black 8%);
+
+  --interactive-normal: hsl(0 0% 0% / 5%);
+  --interactive-hover: hsl(0 0% 0% / 5%);
 
   --text-normal: #262626; // rgba(var(--mono-rgb-100), 85%)
   --text-muted: #737373; // rgba(var(--mono-rgb-100), 55%)
@@ -69,6 +65,12 @@ https://developer.apple.com/design/human-interface-guidelines/color
 }
 .theme-dark.cupertino-dark:not(.is-mobile) {
   --background-primary: #1e1e1e;
+  --background-primary-alt: color-mix(in srgb, var(--background-primary), white 3%);
+  --background-secondary: color-mix(in srgb, var(--background-primary), white 5%);
+  --background-secondary-alt: color-mix(in srgb, var(--background-primary), white 8%);
+
+  --interactive-normal: hsl(0 0% 100% / 5%);
+  --interactive-hover: hsl(0 0% 100% / 5%);
 
   --text-normal: #dddddd; // rgba(var(--mono-rgb-100), 85%)
   --text-muted: #9a9a9a; // rgba(var(--mono-rgb-100), 55%)
