@@ -1,7 +1,5 @@
 body:is(.layout-cupertino, .layout-macos, .layout-fusion):not(.is-mobile) {
   --radius-window: 8px;
-  --translucent-light-opacity: 0%;
-  --translucent-dark-opacity: 0%;
 
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
     background-color: var(--background-primary);
