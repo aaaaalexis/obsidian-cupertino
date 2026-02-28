@@ -327,7 +327,7 @@ body.is-mobile .kanban-plugin__item-input-wrapper {
 
 // Minimal Theme Settings https://github.com/kepano/obsidian-minimal-settings
 body.minimal-theme .workspace::before {
-  content: "Community plugin “Minimal Theme Settings” conflicts with Baseline.\APlease disable the plugin to avoid visual bugs and instability.";
+  content: "Minimal Theme Settings is not compatible with Baseline.\APlease disable the plugin to avoid visual glitches and instability.";
   text-align: center;
   white-space: pre-wrap;
   position: fixed;
