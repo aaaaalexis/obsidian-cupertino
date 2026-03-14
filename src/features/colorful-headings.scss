@@ -159,6 +159,10 @@
       }
     }
 
+    .markdown-source-view:not(.is-live-preview) .cm-line.HyperMD-header::after {
+      inset-block: 0;
+    }
+
     .HyperMD-header:not(.cm-line.HyperMD-header + .cm-line:not(.HyperMD-header):has(> br:only-child) + .cm-line.HyperMD-header)::after {
       margin-top: var(--p-spacing);
     }
