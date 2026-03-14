@@ -238,3 +238,24 @@ body.reduce-motion {
     }
   }
 }
+
+// Version check
+@supports not (interpolate-size: allow-keywords) {
+  body.obsidian-app.obsidian-app.obsidian-app {
+    --modal-background: var(--background-secondary) !important;
+  }
+  body:not(.is-popout-window) .mod-root::before {
+    content: "Baseline is not supported on your current Obsidian installer version.\A\ATo use this theme, download and install the latest version of Obsidian.";
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    z-index: 49;
+    inset: 0;
+    background-color: var(--background-primary);
+    color: var(--text-muted);
+    font-size: var(--font-ui-medium);
+    text-align: center;
+    white-space: pre-wrap;
+  }
+}
