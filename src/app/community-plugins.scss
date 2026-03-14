@@ -327,19 +327,19 @@ body.is-mobile .kanban-plugin__item-input-wrapper {
 
 // Minimal Theme Settings https://github.com/kepano/obsidian-minimal-settings
 body.minimal-theme .workspace::before {
-  content: "Minimal Theme Settings is not compatible with Baseline.\APlease disable the plugin to avoid visual glitches and instability.";
+  content: "Baseline is not compatible with Minimal Theme Settings.\A\ATo use this theme, disable Minimal Theme Settings in Community plugins.";
   text-align: center;
   white-space: pre-wrap;
   position: fixed;
   inset: 0;
   color: var(--text-muted);
-  font-size: var(--font-smaller);
+  font-size: var(--font-ui-medium);
   z-index: 49;
   pointer-events: none;
   background-color: var(--background-primary);
   align-self: center;
   justify-self: center;
   padding: 32px;
-  border-radius: 100vh;
+  border-radius: var(--radius-l);
   box-shadow: var(--shadow-l);
 }
