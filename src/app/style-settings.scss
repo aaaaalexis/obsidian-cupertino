@@ -1297,7 +1297,7 @@ settings:
 	-
 		id: plugins-grid-off
 		title: Plugins list view
-		description: Disable plugins grid layout
+		description: Disable plugins grid layout.
 		type: class-toggle
 	-
 		id: titlebar
@@ -2493,6 +2493,11 @@ settings:
 		type: variable-text
 		default: 1em
 	-
+		id: callout-lucide
+		title: Disable custom icons
+		description: Use default Lucide icons in callouts.
+		type: class-toggle
+	-
 		id: canvas
 		title: Canvas
 		type: heading
@@ -2970,7 +2975,7 @@ settings:
 	-
 		id: unstyled-tags
 		title: Plain tags
-		description: Display tags as normal text
+		description: Display tags as normal text.
 		type: class-toggle
 	-
 		id: tag-radius
