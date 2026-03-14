@@ -11,7 +11,7 @@
     --inline-title-margin-bottom: calc(0.5em * var(--readable-spacing-modifier, 1));
 
     --inline-title-color: inherit;
-    --inline-title-font:  var(--font-text-override), "Instrument Serif";
+    --inline-title-font: var(--font-text-override), "Instrument Serif";
 
     --h1-font: var(--font-text-override), "Instrument Serif";
     --h2-font: var(--font-text-override), "Instrument Serif";
@@ -212,7 +212,7 @@
   body.code-scroll {
     --code-white-space: pre;
 
-    .HyperMD-codeblock {
+    .HyperMD-codeblock:not(.HyperMD-codeblock-begin) {
       overflow-y: scroll;
       white-space: pre;
     }
