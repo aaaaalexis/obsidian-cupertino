@@ -2,6 +2,8 @@
   body {
     --table-text-size: var(--font-small);
 
+    --table-border-color: var(--background-modifier-border);
+
     --table-add-button-border-width: 0;
     --table-header-border-color: transparent;
 
@@ -22,17 +24,7 @@
     border-spacing: 0;
   }
 
-  div:not([class]),
-  .cm-html-embed,
-  blockquote,
-  .callout,
-  .el-table,
-  .cm-table-widget,
-  .block-language-dataview,
-  .block-language-dataviewjs,
-  .block-language-datacorejsx {
-    --table-border-color: var(--background-modifier-border);
-
+  div:is(.markdown-preview-view, .is-live-preview) {
     table {
       position: relative;
 
