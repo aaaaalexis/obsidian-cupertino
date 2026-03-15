@@ -91,25 +91,3 @@
     border-right: none;
   }
 }
-
-.table-lines .workspace-leaf-content[data-type="markdown"] div:not(.el-table):not(.table-wrapper) > table {
-  > tbody > tr > td {
-    border: var(--table-border-width) solid var(--table-border-color);
-  }
-
-  > tbody > tr:not(:first-child) > td {
-    border-top: none;
-  }
-
-  > tbody > tr:not(:last-child) > td {
-    border-bottom: none;
-  }
-
-  > tbody > tr > td:not(:first-child) {
-    border-left: none;
-  }
-
-  > tbody > tr > td:not(:last-child) {
-    border-right: none;
-  }
-}

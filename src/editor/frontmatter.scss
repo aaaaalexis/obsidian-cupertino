@@ -1,9 +1,9 @@
 @media screen, print {
   body {
-    --metadata-label-width: calc(9em * var(--metadata-label-width-multiplier, 1));
+    --metadata-label-width: calc(9em * var(--metadata-label-width-modifier, 1));
   }
   body.is-phone {
-    --metadata-label-width: calc(7.5em * var(--metadata-label-width-multiplier, 1));
+    --metadata-label-width: calc(7.5em * var(--metadata-label-width-modifier, 1));
   }
   body:not(.accented-interface) {
     --collapse-icon-color-collapsed: var(--text-muted);
@@ -85,11 +85,16 @@
   body.metadata-add-property-off .metadata-add-button {
     display: none;
   }
-  body.metadata-icons-off .metadata-property-icon {
-    display: none;
+  body.metadata-icons-off {
+    .metadata-property-icon {
+      display: none;
+    }
+    .metadata-property-key-input {
+      padding-inline: 0;
+    }
   }
 
-  body.metadata-nowrap {
+  body.metadata-longtext {
     --metadata-input-longtext-lines: unset;
 
     .metadata-input-longtext:not(:focus) {
