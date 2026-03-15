@@ -49,7 +49,7 @@ body:not(.banner-off) {
     }
   }
 
-  .mod-root .view-content:not(.pixel-banner) div:is(.markdown-preview-view, .is-live-preview) {
+  .mod-root .view-content:not(.pixel-banner, .has-banner) div:is(.markdown-preview-view, .is-live-preview) {
     // Spacing
     .markdown-preview-sizer,
     .cm-editor > .cm-scroller > .cm-sizer {

@@ -2,6 +2,8 @@
   body {
     --table-text-size: var(--font-small);
 
+    --table-border-color: var(--background-modifier-border);
+
     --table-add-button-border-width: 0;
     --table-header-border-color: transparent;
 
@@ -17,15 +19,7 @@
     border-spacing: 0;
   }
 
-  blockquote,
-  .callout,
-  .el-table,
-  .cm-table-widget,
-  .block-language-dataview,
-  .block-language-dataviewjs,
-  .block-language-datacorejsx {
-    --table-border-color: var(--background-modifier-border);
-
+  div:is(.markdown-preview-view, .is-live-preview) {
     table {
       position: relative;
 
@@ -53,11 +47,15 @@
         border-radius: var(--radius-s);
       }
 
+      > tbody > tr:not(:last-child) > th,
       > tbody > tr:not(:last-child) > td {
         border-bottom: none;
       }
+    }
 
+    &:not([dir="rtl"]) table:not([dir="rtl"]) {
       > thead > tr > th:not(:last-child),
+      > tbody > tr > th:not(:last-child),
       > tbody > tr > td:not(:last-child) {
         border-right: none;
       }
@@ -78,29 +76,30 @@
       > :is(thead, tbody) > tr:last-child > :is(th, td):last-child .table-cell-wrapper {
         border-bottom-right-radius: var(--radius-s);
       }
+    }
 
-      &[dir="rtl"] {
-        > thead > tr > th:not(:last-child),
-        > tbody > tr > td:not(:last-child) {
-          border-left: none;
-        }
+    &[dir="rtl"] table,
+    table[dir="rtl"] {
+      > thead > tr > th:not(:last-child),
+      > tbody > tr > td:not(:last-child) {
+        border-left: none;
+      }
 
-        > :is(thead, tbody) > tr:first-child > :is(th, td):first-child,
-        > :is(thead, tbody) > tr:first-child > :is(th, td):first-child .table-cell-wrapper {
-          border-top-right-radius: var(--radius-s);
-        }
-        > :is(thead, tbody) > tr:first-child > :is(th, td):last-child,
-        > :is(thead, tbody) > tr:first-child > :is(th, td):last-child .table-cell-wrapper {
-          border-top-left-radius: var(--radius-s);
-        }
-        > :is(thead, tbody) > tr:last-child > :is(th, td):first-child,
-        > :is(thead, tbody) > tr:last-child > :is(th, td):first-child .table-cell-wrapper {
-          border-bottom-right-radius: var(--radius-s);
-        }
-        > :is(thead, tbody) > tr:last-child > :is(th, td):last-child,
-        > :is(thead, tbody) > tr:last-child > :is(th, td):last-child .table-cell-wrapper {
-          border-bottom-left-radius: var(--radius-s);
-        }
+      > :is(thead, tbody) > tr:first-child > :is(th, td):first-child,
+      > :is(thead, tbody) > tr:first-child > :is(th, td):first-child .table-cell-wrapper {
+        border-top-right-radius: var(--radius-s);
+      }
+      > :is(thead, tbody) > tr:first-child > :is(th, td):last-child,
+      > :is(thead, tbody) > tr:first-child > :is(th, td):last-child .table-cell-wrapper {
+        border-top-left-radius: var(--radius-s);
+      }
+      > :is(thead, tbody) > tr:last-child > :is(th, td):first-child,
+      > :is(thead, tbody) > tr:last-child > :is(th, td):first-child .table-cell-wrapper {
+        border-bottom-right-radius: var(--radius-s);
+      }
+      > :is(thead, tbody) > tr:last-child > :is(th, td):last-child,
+      > :is(thead, tbody) > tr:last-child > :is(th, td):last-child .table-cell-wrapper {
+        border-bottom-left-radius: var(--radius-s);
       }
     }
   }

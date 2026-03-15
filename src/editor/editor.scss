@@ -1,12 +1,12 @@
 @media screen, print {
   body {
-    --inline-title-color: inherit;
-
-    --inline-title-margin-bottom: calc(0.5em * var(--readable-spacing-modifier, 1));
     --heading-spacing: 2em;
     --p-spacing: 1.75rem;
     --line-height-normal: 1.6;
     --list-spacing: 0.175em;
+    --inline-title-margin-bottom: calc(0.5em * var(--readable-spacing-modifier, 1));
+
+    --inline-title-color: inherit;
 
     --h1-size: 1.5em;
     --h2-size: 1.25em;
@@ -105,7 +105,7 @@
   }
 
   // Active line
-  body:not(.active-line-off) .markdown-source-view .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::after {
+  body:not(.active-line-off) .markdown-source-view .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::before {
     position: absolute;
     top: 4px;
     bottom: 4px;
