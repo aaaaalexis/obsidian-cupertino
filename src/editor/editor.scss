@@ -315,35 +315,45 @@
     }
   }
 
+  .inline-title {
+    text-align: var(--inline-title-align);
+  }
+
   .markdown-rendered h1,
   .HyperMD-header-1,
   .HyperMD-list-line .cm-header-1 {
     text-transform: var(--h1-transform);
+    text-align: var(--h1-align);
   }
   .markdown-rendered h2,
   .HyperMD-header-2,
   .HyperMD-list-line .cm-header-2 {
     text-transform: var(--h2-transform);
+    text-align: var(--h2-align);
   }
   .markdown-rendered h3,
   .HyperMD-header-3,
   .HyperMD-list-line .cm-header-3 {
     text-transform: var(--h3-transform);
+    text-align: var(--h3-align);
   }
   .markdown-rendered h4,
   .HyperMD-header-4,
   .HyperMD-list-line .cm-header-4 {
     text-transform: var(--h4-transform);
+    text-align: var(--h4-align);
   }
   .markdown-rendered h5,
   .HyperMD-header-5,
   .HyperMD-list-line .cm-header-5 {
     text-transform: var(--h5-transform);
+    text-align: var(--h5-align);
   }
   .markdown-rendered h6,
   .HyperMD-header-6,
   .HyperMD-list-line .cm-header-6 {
     text-transform: var(--h6-transform, uppercase);
+    text-align: var(--h6-align);
   }
 
   .inline-title:not([data-level]),

@@ -1548,6 +1548,19 @@ settings:
 		type: variable-text
 		default: 1.618em
 	-
+		id: inline-title-align
+		title: Inline title alignment
+		type: variable-select
+		allowEmpty: false
+		default: start
+		options:
+			-
+				label: Start
+				value: start
+			-
+				label: Center
+				value: center
+	-
 		id: inline-title-weight
 		title: Inline title font weight
 		type: variable-number-slider
@@ -1761,6 +1774,19 @@ settings:
 				label: Lowercase
 				value: lowercase
 	-
+		id: h1-align
+		title: H1 alignment
+		type: variable-select
+		allowEmpty: false
+		default: start
+		options:
+			-
+				label: Start
+				value: start
+			-
+				label: Center
+				value: center
+	-
 		id: h1-l
 		title: H1 divider
 		type: class-toggle
@@ -1843,6 +1869,19 @@ settings:
 			-
 				label: Lowercase
 				value: lowercase
+	-
+		id: h2-align
+		title: H2 alignment
+		type: variable-select
+		allowEmpty: false
+		default: start
+		options:
+			-
+				label: Start
+				value: start
+			-
+				label: Center
+				value: center
 	-
 		id: h2-l
 		title: H2 divider
@@ -1927,6 +1966,19 @@ settings:
 				label: Lowercase
 				value: lowercase
 	-
+		id: h3-align
+		title: H3 alignment
+		type: variable-select
+		allowEmpty: false
+		default: start
+		options:
+			-
+				label: Start
+				value: start
+			-
+				label: Center
+				value: center
+	-
 		id: h3-l
 		title: H3 divider
 		type: class-toggle
@@ -2009,6 +2061,19 @@ settings:
 			-
 				label: Lowercase
 				value: lowercase
+	-
+		id: h4-align
+		title: H4 alignment
+		type: variable-select
+		allowEmpty: false
+		default: start
+		options:
+			-
+				label: Start
+				value: start
+			-
+				label: Center
+				value: center
 	-
 		id: h4-l
 		title: H4 divider
@@ -2094,6 +2159,19 @@ settings:
 				label: Lowercase
 				value: lowercase
 	-
+		id: h5-align
+		title: H5 alignment
+		type: variable-select
+		allowEmpty: false
+		default: start
+		options:
+			-
+				label: Start
+				value: start
+			-
+				label: Center
+				value: center
+	-
 		id: h5-l
 		title: H5 divider
 		type: class-toggle
@@ -2176,6 +2254,19 @@ settings:
 			-
 				label: Lowercase
 				value: lowercase
+	-
+		id: h6-align
+		title: H6 alignment
+		type: variable-select
+		allowEmpty: false
+		default: start
+		options:
+			-
+				label: Start
+				value: start
+			-
+				label: Center
+				value: center
 	-
 		id: h6-l
 		title: H6 divider
