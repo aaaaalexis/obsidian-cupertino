@@ -53,7 +53,7 @@
       }
     }
 
-    &:not([dir="rtl"]) table:not([dir="rtl"]) {
+    div:not([dir="rtl"]) > table:not([dir="rtl"]) {
       > thead > tr > th:not(:last-child),
       > tbody > tr > th:not(:last-child),
       > tbody > tr > td:not(:last-child) {
@@ -78,9 +78,10 @@
       }
     }
 
-    &[dir="rtl"] table,
+    div[dir="rtl"] > table,
     table[dir="rtl"] {
       > thead > tr > th:not(:last-child),
+      > tbody > tr > th:not(:last-child),
       > tbody > tr > td:not(:last-child) {
         border-left: none;
       }
