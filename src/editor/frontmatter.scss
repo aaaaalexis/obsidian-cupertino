@@ -201,4 +201,25 @@
       height: 0;
     }
   }
+
+  // Compact Metadata
+  body.metadata-compact {
+    --metadata-gap: 0px;
+
+    .metadata-container {
+      font-size: var(--font-small);
+    }
+    .metadata-property-icon {
+      --icon-size: var(--icon-xs);
+      --icon-stroke: var(--icon-xs-stroke-width);
+    }
+
+    &.metadata-cupertino .metadata-container .metadata-property {
+      min-height: unset;
+    }
+    &.metadata-cupertino .metadata-container .metadata-property-key,
+    &.metadata-cupertino .metadata-container .text-icon-button {
+      padding: 4px 12px;
+    }
+  }
 }
