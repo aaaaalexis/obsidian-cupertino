@@ -234,10 +234,10 @@ body.reduce-motion {
 
 // Version check
 @supports not (interpolate-size: allow-keywords) {
-  body.obsidian-app.obsidian-app.obsidian-app {
+  body:not(.is-mobile).obsidian-app.obsidian-app.obsidian-app {
     --modal-background: var(--background-secondary) !important;
   }
-  body:not(.is-popout-window) .mod-root::before {
+  body:not(.is-mobile):not(.is-popout-window) .mod-root::before {
     content: "Cupertino is not supported on your current Obsidian installer version.\A\ATo use this theme, download and install the latest version of Obsidian.";
     display: flex;
     position: absolute;
