@@ -134,6 +134,9 @@
   body:not(.is-phone).view-header-title-hidden .view-header-title-container > div {
     visibility: hidden;
   }
+  body.is-phone .view-header-title {
+    font-size: inherit;
+  }
 
   .document-search-buttons,
   .document-replace-buttons {

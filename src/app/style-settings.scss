@@ -1260,6 +1260,11 @@ settings:
 		level: 2
 		collapsed: true
 	-
+		id: auto-full-screen-title
+		title: Informative full screen
+		description: Display current page title when interface elements are hidden.
+		type: class-toggle
+	-
 		id: horizontal-tab-options
 		title: Horizontal tab list
 		type: class-toggle
@@ -1407,7 +1412,7 @@ settings:
 		id: mode-switcher-off
 		title: Disable quick mode switcher
 		type: class-toggle
-		description: Always show editor mode toggle on top.
+		description: Display editor mode toggle at the top of the editor.
 	-
 		id: active-line
 		title: Active line
@@ -1615,7 +1620,7 @@ settings:
 		type: class-toggle
 	-
 		id: metadata-longtext
-		title: Always show long text
+		title: Show longer text
 		type: class-toggle
 	-
 		id: metadata-heading-off

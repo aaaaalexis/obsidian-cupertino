@@ -340,6 +340,51 @@ body.is-phone {
     }
   }
 
+  // Show page title on scroll
+  &.auto-full-screen-title .workspace-leaf-content[data-type="markdown"] {
+    .view-header-title-parent,
+    .view-header-title {
+      transition: none;
+    }
+    .view-header-left,
+    .view-actions {
+      transition: var(--anim-duration-moderate);
+    }
+  }
+  &.auto-full-screen-title.is-hidden-nav .workspace-leaf-content[data-type="markdown"] {
+    .view-header-title-container {
+      margin-inline: auto;
+      inset: auto var(--navbar-side-offset) 16px;
+      border-radius: 100vh;
+      background-color: rgb(from var(--background-primary) r g b / 50%);
+      padding: 8px 16px;
+      width: fit-content;
+      line-height: 1;
+      position: fixed;
+      flex: none;
+      opacity: 0;
+      backdrop-filter: blur(4px);
+      display: flex !important;
+    }
+    .view-header-title-parent,
+    .view-header-title {
+      font-weight: var(--font-normal);
+      font-size: var(--font-ui-smaller);
+    }
+    .view-header-title {
+      color: var(--text-muted) !important;
+    }
+    .view-header,
+    .view-header-title-container {
+      opacity: 1;
+    }
+    .view-header-left,
+    .view-actions {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
   // Hide navigation on scroll
   &.auto-full-screen.is-hidden-nav {
     .mod-root .view-header {
