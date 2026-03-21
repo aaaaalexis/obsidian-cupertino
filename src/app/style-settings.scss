@@ -2946,14 +2946,14 @@ settings:
 		title: PDF page style
 		type: class-select
 		allowEmpty: false
-		default: pdf-seamless
+		default: pdf-shadow
 		options:
+			-
+				label: Paged
+				value: pdf-shadow
 			-
 				label: Seamless
 				value: pdf-seamless
-			-
-				label: Shadow
-				value: pdf-shadow
 	-
 		id: pdf-muted
 		title: PDF dimming opacity in dark mode

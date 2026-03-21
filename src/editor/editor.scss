@@ -488,14 +488,19 @@
   body.pdf-seamless {
     --pdf-shadow: none;
   }
-  .theme-dark.pdf-invert-dark .pdf-container .pdfViewer .page {
-    filter: invert(1) hue-rotate(180deg) contrast(0.75);
+  .pdf-container .pdfViewer .canvasWrapper {
+    contain: content;
+    border-radius: var(--radius-s);
+    overflow: hidden;
   }
   .pdf-container .pdfViewer .page {
     transition-duration: var(--anim-duration-moderate);
     transition-property: filter, opacity;
-    &:not(:hover) {
-      opacity: var(--pdf-muted, 1);
-    }
+  }
+  .theme-dark .pdf-container .pdfViewer .page:not(:hover) {
+    opacity: var(--pdf-muted, 1);
+  }
+  .theme-dark.pdf-invert-dark .pdf-container .pdfViewer .page {
+    filter: invert(1) hue-rotate(180deg) contrast(0.75);
   }
 }
