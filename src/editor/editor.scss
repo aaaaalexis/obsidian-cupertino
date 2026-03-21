@@ -141,7 +141,7 @@
   }
 
   // Active line
-  body.active-line-side .markdown-source-view .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::before {
+  body.active-line-side .view-content > .markdown-source-view .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::before {
     position: absolute;
     top: 4px;
     bottom: 4px;
@@ -150,7 +150,7 @@
     border-radius: var(--input-radius);
     content: "";
   }
-  body.active-line-block .markdown-source-view {
+  body.active-line-block .view-content > .markdown-source-view {
     .cm-line.cm-active:not(.cm-gutterElement, .HyperMD-callout, .HyperMD-codeblock-bg, .HyperMD-quote)::before {
       position: absolute;
       inset: -2px -4px;
@@ -163,7 +163,7 @@
       background-color: var(--background-modifier-hover) !important;
     }
   }
-  body.active-line-background .markdown-source-view {
+  body.active-line-background .view-content > .markdown-source-view {
     .cm-scroller {
       overflow-x: hidden;
       overflow-y: scroll;
@@ -183,10 +183,10 @@
       }
     }
   }
-  body.active-line-color-accent.active-line-side .markdown-source-view .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::before {
+  body.active-line-color-accent.active-line-side .view-content > .markdown-source-view .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::before {
     border-color: var(--color-accent);
   }
-  body.active-line-color-accent:is(.active-line-block, .active-line-background) .markdown-source-view .cm-line.cm-active::before {
+  body.active-line-color-accent:is(.active-line-block, .active-line-background) .view-content > .markdown-source-view .cm-line.cm-active::before {
     background-color: var(--background-modifier-active-hover);
   }
 
