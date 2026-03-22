@@ -1,9 +1,9 @@
 @media screen, print {
   body {
-    --metadata-label-width: calc(9em * var(--metadata-label-width-multiplier, 1));
+    --metadata-label-width: calc(9em * var(--metadata-label-width-modifier, 1));
   }
   body.is-phone {
-    --metadata-label-width: calc(7.5em * var(--metadata-label-width-multiplier, 1));
+    --metadata-label-width: calc(7.5em * var(--metadata-label-width-modifier, 1));
   }
 
   body.is-mobile .metadata-content {

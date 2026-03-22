@@ -296,6 +296,15 @@ body:is(.mod-macos, .adaptive-mode-off) {
       height: fit-content;
       z-index: 1;
     }
+
+    .workspace-tab-header-status-container {
+      margin-left: -8px;
+    }
+    .workspace-tab-header-status-icon,
+    .workspace-tab-header-inner-close-button {
+      --icon-size: 12px;
+      color: var(--text-muted);
+    }
   }
 
   // Panel actions

@@ -85,27 +85,15 @@ body.bases-col-alt .bases-tbody .bases-tr > .bases-td:nth-child(2n + 2) {
   border-radius: var(--clickable-icon-radius);
 }
 
-body:not(.is-phone) .menu {
-  &.bases-toolbar-menu {
-    align-items: unset;
-  }
-  &.bases-toolbar-menu .bases-toolbar-menu-form {
-    padding: var(--menu-padding);
-    overflow: visible;
-  }
-  &.bases-toolbar-menu .search-input-container {
+body:not(.is-phone) .menu.bases-toolbar-menu {
+  align-items: unset;
+
+  .search-input-container {
     margin: var(--menu-padding) var(--menu-padding) 0;
     padding-bottom: 0;
     background: var(--background-modifier-form-field);
     border: var(--input-border-width) solid var(--background-modifier-border);
     border-radius: var(--input-radius);
-  }
-
-  &.mod-filters {
-    padding: 4px;
-  }
-  &.mod-filters .query-toolbar-section-header {
-    padding: 8px;
   }
 }
 

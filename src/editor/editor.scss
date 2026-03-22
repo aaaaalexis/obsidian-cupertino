@@ -98,6 +98,9 @@
   .view-header:not(.view-header-always-show):not(:hover) .view-header-title-container > div:not(:focus-within) {
     opacity: 0 !important;
   }
+  body.is-phone .view-header-title {
+    font-size: inherit;
+  }
 
   .document-search-buttons,
   .document-replace-buttons {
@@ -105,7 +108,7 @@
   }
 
   // Active line
-  body:not(.active-line-off) .markdown-source-view .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::before {
+  body:not(.active-line-off) .view-content > .markdown-source-view .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::before {
     position: absolute;
     top: 4px;
     bottom: 4px;
@@ -308,15 +311,10 @@
   }
 
   // PDF Viewer
-  .theme-dark.pdf-invert-dark .pdf-container .pdfViewer .page {
-    filter: invert(1) hue-rotate(180deg) contrast(0.75);
-  }
-  .pdf-container .pdfViewer .page {
-    transition-duration: var(--anim-duration-moderate);
-    transition-property: filter, opacity;
-    &:not(:hover) {
-      opacity: var(--pdf-muted, 1);
-    }
+  .pdf-container .pdfViewer .canvasWrapper {
+    contain: content;
+    border-radius: var(--radius-s);
+    overflow: hidden;
   }
 
   // Links

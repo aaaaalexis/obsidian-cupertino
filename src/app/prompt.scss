@@ -1,5 +1,5 @@
 body {
-  --prompt-border-color: var(--background-modifier-border-hover);
+  --prompt-border-width: 0px;
   --prompt-input-height: 64px;
 
   .prompt {
@@ -48,7 +48,6 @@ body.is-tablet {
   --prompt-input-height: 64px;
 
   .prompt {
-    border: var(--prompt-border-width) solid var(--prompt-border-color);
     border-radius: var(--modal-radius);
   }
   .prompt-input {

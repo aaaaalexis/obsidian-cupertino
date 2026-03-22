@@ -17,6 +17,7 @@
   :root table {
     border-collapse: separate;
     border-spacing: 0;
+    word-break: break-word;
   }
 
   div:is(.markdown-preview-view, .is-live-preview) {
