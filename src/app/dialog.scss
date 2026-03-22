@@ -2,7 +2,6 @@
 @keyframes menuIn {
   from {
     opacity: 0;
-    filter: blur(4px);
     transform: translateY(-8px);
   }
 }
@@ -159,7 +158,6 @@ body:not(.is-mobile) {
   @keyframes modalIn {
     from {
       opacity: 0;
-      filter: blur(4px);
       transform: scale(0.975);
     }
   }
