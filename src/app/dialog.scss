@@ -122,7 +122,7 @@ body.is-tablet {
 // Modal
 body {
   --modal-background: var(--background-secondary);
-  --modal-border-color: var(--background-modifier-border-hover);
+  --modal-border-width: 0px;
 
   .modal-title {
     font-family: var(--h1-font);
