@@ -190,7 +190,7 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
   --nav-tag-color-hover: var(--text-muted);
   --nav-tag-color-active: var(--text-muted);
   --menu-background: var(--background-secondary);
-  --menu-border-color: var(--background-modifier-border-hover);
+  --menu-border-color: var(--background-modifier-border);
   --metadata-border-color: var(--background-modifier-border);
   --metadata-divider-color: var(--background-modifier-border);
   --metadata-property-background-active: var(--background-modifier-hover);
@@ -224,7 +224,7 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
   --tab-text-color-focused-active: var(--text-muted);
   --tab-text-color-focused-highlighted: var(--text-accent);
   --tab-text-color-focused-active-current: var(--text-normal);
-  --tab-divider-color: var(--background-modifier-border-hover);
+  --tab-divider-color: var(--background-modifier-border);
   --tab-outline-color: var(--divider-color);
   --tab-switcher-menubar-background: var(--mobile-sidebar-background);
   --tab-switcher-background: var(--background-secondary);

@@ -1,6 +1,6 @@
 body {
-  --prompt-border-width: 0px;
   --prompt-input-height: 64px;
+  --prompt-border-color: var(--background-modifier-border);
 
   .prompt {
     background-color: var(--background-secondary);

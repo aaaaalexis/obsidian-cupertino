@@ -253,6 +253,10 @@ body.input-material:not(.is-phone) {
       font-size: var(--font-ui-large);
     }
 
+    .prompt-results {
+      padding: 16px;
+    }
+
     .suggestion-item {
       border-radius: 100vh;
     }
