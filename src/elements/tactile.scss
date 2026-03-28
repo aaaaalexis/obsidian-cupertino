@@ -13,9 +13,9 @@ body.input-tactile {
   }
 
   &.theme-dark {
-    --input-shadow: inset 0 0.5px rgba(255, 255, 255, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.1), var(--input-shadow-base);
+    --input-shadow: inset 0 0.5px rgba(255, 255, 255, 0.1), inset 0 0 0 0.5px rgba(255, 255, 255, 0.1), var(--input-shadow-base);
     --input-shadow-hover: inset 0 0 0 0.5px rgba(255, 255, 255, 0.1);
-    --input-shadow-inset: 0 1px rgba(255, 255, 255, 0.15);
+    --input-shadow-inset: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px rgba(255, 255, 255, 0.15);
 
     --shadow-s: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-l: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.05), 0 16px 96px rgba(0, 0, 0, 0.25), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.25);
