@@ -45,8 +45,7 @@ body.is-mobile {
 
   --input-border-width-focus: 0;
 
-  --navbar-width: 100%;
-  --navbar-max-width: unset;
+  --navbar-max-width: auto !important;
   --navbar-bottom-offset: max(var(--safe-area-inset-bottom), var(--safe-area-inset-side));
   --navbar-side-offset: min(var(--navbar-bottom-offset), 32px);
 
@@ -394,7 +393,7 @@ body.is-phone {
     .mobile-navbar,
     &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-header .view-actions button:nth-last-child(2) {
       transform: none;
-      bottom: calc(-1 * var(--navbar-bottom-offset));
+      margin-bottom: calc(-1 * var(--navbar-bottom-offset));
     }
     .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::before,
     .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::after {
@@ -443,11 +442,14 @@ body.is-phone {
     position: fixed;
     transition:
       var(--anim-duration-moderate) var(--anim-motion-baseline),
+      right 0s,
+      bottom 0s,
       height 0s,
       opacity 0s !important;
-    right: var(--navbar-side-offset);
-    bottom: var(--navbar-bottom-offset);
-    margin-bottom: 0;
+    margin-right: var(--navbar-side-offset);
+    margin-bottom: var(--navbar-bottom-offset);
+    bottom: 0;
+    right: 0;
     border-radius: 100%;
     width: var(--touch-size-l);
     height: var(--touch-size-l);
@@ -457,15 +459,15 @@ body.is-phone {
   &.mod-toolbar-open:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     width: var(--touch-size-m);
     height: var(--touch-size-m);
-    right: var(--keyboard-spacing);
-    bottom: var(--keyboard-spacing);
+    margin-right: var(--keyboard-spacing);
+    margin-bottom: var(--keyboard-spacing);
   }
   &:not(.is-floating-nav):not(.mode-switcher-off):not(.mod-toolbar-open) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
-    right: 16px;
-    bottom: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
   }
   &:not(.is-floating-nav).auto-full-screen:not(.mode-switcher-off):not(.mod-toolbar-open) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
-    bottom: calc(var(--navbar-height) + 16px);
+    margin-bottom: calc(var(--navbar-height) + 16px);
   }
   & > .app-container > .horizontal-main-container:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content:not([data-type="markdown"])) .view-actions button:nth-last-child(2) {
     opacity: 0;
@@ -475,21 +477,18 @@ body.is-phone {
   // Navigation bar
   &.is-floating-nav.mode-switcher-off .mobile-navbar,
   &.is-floating-nav > .app-container > .horizontal-main-container:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content:not([data-type="markdown"])) ~ .mobile-navbar {
-    max-width: calc(100% - var(--navbar-side-offset) * 2);
+    margin-right: var(--navbar-side-offset);
   }
 
-  .mobile-navbar {
-    width: 100%;
-    max-width: calc(100% - 8px - var(--touch-size-l) - var(--navbar-side-offset) * 2);
-    inset: auto var(--navbar-side-offset) var(--navbar-bottom-offset);
-    overflow: hidden;
+  &.is-floating-nav .mobile-navbar {
+    width: auto;
+    margin: auto calc(8px + var(--touch-size-l) + var(--navbar-side-offset)) var(--navbar-bottom-offset) var(--navbar-side-offset);
     padding: 8px;
-    margin: 0;
     transition:
       var(--anim-duration-moderate) var(--anim-motion-baseline),
       background-color var(--anim-duration-moderate);
-    will-change: bottom;
   }
+
   .mobile-navbar-action {
     min-width: 0;
     margin-inline-start: 0;
@@ -503,13 +502,9 @@ body.is-phone {
   }
 
   &:not(.is-floating-nav) .mobile-navbar {
-    margin: 0 auto;
-    inset: auto 0 0;
-    box-shadow: none !important;
     border: none !important;
     background-color: var(--background-primary) !important;
-    padding: 0 8px var(--navbar-bottom-offset);
-    max-width: var(--navbar-max-width);
+    transition: var(--anim-duration-moderate) !important;
   }
 
   // Toolbar
@@ -524,7 +519,6 @@ body.is-phone {
     display: none;
   }
   .mobile-toolbar {
-    box-shadow: none;
     top: auto;
     bottom: var(--keyboard-spacing);
     left: var(--keyboard-spacing);
