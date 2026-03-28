@@ -435,7 +435,7 @@
       transition: opacity var(--anim-duration-moderate);
 
       &:not(:hover) {
-        opacity: 0.2;
+        opacity: 0.7;
       }
     }
   }
@@ -505,7 +505,7 @@
     border-radius: 0px;
   }
   body.theme-dark.pdf-muted .pdf-container .pdfViewer .page:not(:hover) {
-    opacity: 0.2;
+    opacity: 0.7;
   }
   body.theme-dark.pdf-invert-dark .pdf-container .pdfViewer .page {
     filter: invert(1) hue-rotate(180deg) contrast(0.75);
