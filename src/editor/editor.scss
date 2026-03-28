@@ -307,11 +307,9 @@
       transition: var(--anim-duration-fast);
       border: var(--border-width) solid transparent;
     }
+    &:hover::before,
     &:focus-within::before {
       border-color: var(--background-modifier-border);
-    }
-    &:hover:not(:focus-within)::before {
-      background-color: var(--background-modifier-hover);
     }
     &:not(:focus-within) {
       cursor: pointer;
