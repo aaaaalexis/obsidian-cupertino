@@ -1130,7 +1130,7 @@ settings:
 		type: class-toggle
 	-
 		id: hover-sidedock-trigger-area
-		title: Hover sidebars trigger area
+		title: Hover sidebars sensitivity
 		type: variable-select
 		default: 1px
 		options:
@@ -1139,13 +1139,13 @@ settings:
 				value: 1px
 			-
 				label: Small
-				value: 2px
-			-
-				label: Medium
 				value: 4px
 			-
-				label: Large
+				label: Medium
 				value: 8px
+			-
+				label: Large
+				value: 16px
 	-
 		id: hover-sidedock-width
 		title: Hover sidebars width
