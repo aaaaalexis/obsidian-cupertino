@@ -2903,8 +2903,20 @@ settings:
 		level: 2
 		collapsed: true
 	-
-		id: img-grid
-		title: Image grids
+		id: media-muted
+		title: Dim media in dark mode
+		type: class-toggle
+	-
+		id: full-width-media-off
+		title: Disable maximized media
+		type: class-toggle
+	-
+		id: zoom-off
+		title: Disable image zoom
+		type: class-toggle
+	-
+		id: img-radius-off
+		title: Disable rounded media
 		type: class-toggle
 	-
 		id: img-grid-gap
@@ -2915,31 +2927,6 @@ settings:
 		max: 16
 		step: 1
 		format: px
-	-
-		id: media-radius
-		title: Media radius
-		type: variable-number-slider
-		default: 8
-		min: 0
-		max: 24
-		step: 1
-		format: px
-	-
-		id: media-muted
-		title: Media dimming opacity in dark mode
-		type: variable-number-slider
-		default: 1
-		min: 0.2
-		max: 1
-		step: 0.1
-	-
-		id: full-width-media-off
-		title: Disable maximized media
-		type: class-toggle
-	-
-		id: zoom-off
-		title: Disable image zoom
-		type: class-toggle
 	-
 		id: pdf
 		title: PDF
@@ -2960,16 +2947,16 @@ settings:
 				label: Seamless
 				value: pdf-seamless
 	-
-		id: pdf-muted
-		title: PDF dimming opacity in dark mode
-		type: variable-number-slider
-		default: 1
-		min: 0.2
-		max: 1
-		step: 0.1
-	-
 		id: pdf-invert-dark
-		title: Invert PDF in dark mode
+		title: Invert PDF color in dark mode
+		type: class-toggle
+	-
+		id: pdf-muted
+		title: Dim PDF pages in dark mode
+		type: class-toggle
+	-
+		id: pdf-radius-off
+		title: Disable rounded PDF pages
 		type: class-toggle
 	-
 		id: tables
