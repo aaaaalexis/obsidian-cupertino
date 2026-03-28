@@ -40,8 +40,6 @@ body.input-cupertino:not(.is-mobile) {
     .menu-item,
     .suggestion-item {
       padding: calc(4px * var(--density-modifier)) 12px;
-      align-items: center;
-      display: flex;
     }
     .suggestion-item {
       min-height: 32px;
