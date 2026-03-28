@@ -291,7 +291,6 @@ settings:
 		title: Interactive background
 		description: Used in buttons, dropdowns, and filled elements.
 		type: variable-themed-color
-		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
@@ -299,7 +298,6 @@ settings:
 		id: interactive-hover
 		title: Interactive background (Hover)
 		type: variable-themed-color
-		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
@@ -316,7 +314,6 @@ settings:
 		id: background-modifier-active-hover
 		title: Subtle background (Active) 
 		type: variable-themed-color
-		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
@@ -324,7 +321,6 @@ settings:
 		id: background-modifier-border
 		title: Border color
 		type: variable-themed-color
-		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
@@ -332,7 +328,6 @@ settings:
 		id: background-modifier-border-hover
 		title: Border color (Hover)
 		type: variable-themed-color
-		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
@@ -340,7 +335,6 @@ settings:
 		id: background-modifier-border-focus
 		title: Border color (Active)
 		type: variable-themed-color
-		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
@@ -416,7 +410,6 @@ settings:
 		id: icon-color
 		title: Icon color
 		type: variable-themed-color
-		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
@@ -424,7 +417,6 @@ settings:
 		id: icon-color-hover
 		title: Icon color (Hover)
 		type: variable-themed-color
-		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
@@ -432,7 +424,6 @@ settings:
 		id: icon-color-active
 		title: Icon color (Active)
 		type: variable-themed-color
-		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
@@ -440,7 +431,6 @@ settings:
 		id: icon-color-focused
 		title: Icon color (Focused)
 		type: variable-themed-color
-		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
@@ -454,7 +444,6 @@ settings:
 		id: text-normal
 		title: Primary text color
 		type: variable-themed-color
-		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
@@ -462,7 +451,6 @@ settings:
 		id: text-normal-editor
 		title: Editor text color
 		type: variable-themed-color
-		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
@@ -470,7 +458,6 @@ settings:
 		id: text-muted
 		title: Secondary text color
 		type: variable-themed-color
-		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
@@ -478,7 +465,6 @@ settings:
 		id: text-faint
 		title: Tertiary text color
 		type: variable-themed-color
-		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
