@@ -82,9 +82,17 @@
     display: none;
   }
 
-  body.metadata-add-property-off .metadata-add-button {
+  body.metadata-add-property-hover .markdown-reading-view .metadata-container:not(:hover) .text-icon-button {
+    opacity: 0;
+    height: 0;
+    padding-block: 0px;
+    margin-block: 0px;
+    display: flex;
+  }
+  body.metadata-add-property-hidden .markdown-reading-view .metadata-add-button {
     display: none;
   }
+
   body.metadata-icons-off {
     .metadata-property-icon {
       display: none;
@@ -198,12 +206,6 @@
 
     .workspace-split:not(.mod-root) .metadata-container {
       padding: 8px !important;
-    }
-
-    .markdown-reading-view .metadata-container:not(:hover) .text-icon-button {
-      opacity: 0;
-      padding-block: 0;
-      height: 0;
     }
   }
 

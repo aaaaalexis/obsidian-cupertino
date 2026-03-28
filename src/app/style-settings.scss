@@ -965,14 +965,14 @@ settings:
 		default: view-header-title-hover
 		options:
 			-
+				label: Always
+				value: view-header-title-always
+			-
 				label: Hover only
 				value: view-header-title-hover
 			-
 				label: Hidden
 				value: view-header-title-hidden
-			-
-				label: Always
-				value: view-header-title-always
 	-
 		id: file-header-font-size
 		title: Tab title font size
@@ -1603,6 +1603,22 @@ settings:
 				label: Cupertino
 				value: metadata-cupertino
 	-
+		id: metadata-add-property
+		title: Add property button visibility
+		type: class-select
+		allowEmpty: false
+		default: metadata-add-property-always
+		options:
+			-
+				label: Always
+				value: metadata-add-property-always
+			-
+				label: Hover only
+				value: metadata-add-property-hover
+			-
+				label: Hidden
+				value: metadata-add-property-hidden
+	-
 		id: metadata-label-width-modifier
 		title: Property name width
 		type: variable-number-slider
@@ -1629,10 +1645,6 @@ settings:
 	-
 		id: metadata-icons-off
 		title: Hide property icons
-		type: class-toggle
-	-
-		id: metadata-add-property-off
-		title: Hide add property button
 		type: class-toggle
 	-
 		id: headings
