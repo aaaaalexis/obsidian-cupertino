@@ -1116,9 +1116,9 @@ settings:
 		type: class-toggle
 	-
 		id: hover-sidedock-trigger-area
-		title: Hover sidebars sensitivity
+		title: Hover trigger area
 		type: variable-select
-		default: 1px
+		default: 4px
 		options:
 			-
 				label: Edge
@@ -3346,7 +3346,7 @@ body.layout-frame .style-settings-container .setting-item[data-id="layout-style"
 // Disabling input
 body:not(.accented-interface:not(.default-light.default-dark, .material-light.material-dark)) .style-settings-container .setting-item[data-id="color-scheme-accent"],
 body:is(.tab-floating, .tab-floating-center) .style-settings-container .setting-item[data-id="tab-divider"],
-body:not(.hover-sidedock) .style-settings-container .setting-item[data-id="hover-sidedock"] ~ .setting-item,
+body:not(.hover-sidedock) .style-settings-container .setting-item[data-id="hover-sidedock-trigger-area"] ~ .setting-item,
 body:not(.layout-macos, .layout-fusion) .style-settings-container .setting-item[data-id="reduce-contrast-change"],
 body:not(.readable-spacing) .style-settings-container .setting-item[data-id="readable-spacing-modifier"],
 body.view-header-title-hidden .style-settings-container .setting-item[data-id="file-header-visibility"] ~ .setting-item,

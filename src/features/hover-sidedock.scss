@@ -1,7 +1,7 @@
 body:not(.is-mobile) {
   --hover-sidedock-width: 320px;
   --hover-sidedock-delay: 160ms;
-  --hover-sidedock-trigger-area: 1px;
+  --hover-sidedock-trigger-area: 4px;
 }
 
 // Window drag fix
