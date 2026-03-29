@@ -314,3 +314,8 @@ body.minimal-theme .workspace::before {
   border-radius: var(--radius-l);
   box-shadow: var(--shadow-l);
 }
+
+// Excalidraw https://github.com/zsviczian/obsidian-excalidraw-plugin
+.excalidraw {
+  --input-height: 32px;
+}

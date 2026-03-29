@@ -18,7 +18,7 @@ body {
   --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
 }
 .theme-dark {
-  --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
+  --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border);
   --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
 
   --background-modifier-form-field: var(--interactive-normal);

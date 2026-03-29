@@ -5,6 +5,7 @@ body:not(.banner-off) {
   --banner-image-inset: 8px;
   --banner-image-height: 320px;
   --banner-image-height-s: 240px;
+  --banner-image-radius: var(--radius-s);
   --banner-fade-height: 80px;
   --banner-icon-size: 3rem;
   --banner-mobile-offset: 0px;
@@ -91,7 +92,7 @@ body:not(.banner-off) {
       img[alt="banner"]:not([contenteditable]) {
         position: absolute;
         inset: var(--view-top-spacing-markdown) var(--banner-image-inset) auto;
-        border-radius: var(--banner-image-radius, var(--media-radius));
+        border-radius: var(--banner-image-radius);
         width: stretch;
         height: var(--banner-image-height);
         overflow: hidden;

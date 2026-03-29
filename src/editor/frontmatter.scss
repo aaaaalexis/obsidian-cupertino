@@ -71,6 +71,18 @@
     width: calc(100% + 16px) !important;
   }
 
+  .metadata-properties-heading {
+    display: none;
+  }
+
+  .markdown-reading-view .metadata-container:not(:hover) .text-icon-button {
+    opacity: 0;
+    height: 0;
+    padding-block: 0px;
+    margin-block: 0px;
+    display: flex;
+  }
+
   .markdown-source-view .metadata-container,
   .markdown-preview-view .metadata-container {
     transform: none;
@@ -119,12 +131,6 @@
 
     .workspace-split:not(.mod-root) .metadata-container {
       padding: 8px !important;
-    }
-
-    .markdown-reading-view .metadata-container:not(:hover) .text-icon-button {
-      opacity: 0;
-      padding-block: 0;
-      height: 0;
     }
   }
 }

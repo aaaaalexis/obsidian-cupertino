@@ -131,6 +131,7 @@ body.mod-windows:not(.adaptive-mode-off) {
   .notice {
     background-color: var(--modal-background) !important;
     backdrop-filter: var(--blur-l);
+    border: none;
   }
 
   // Settings

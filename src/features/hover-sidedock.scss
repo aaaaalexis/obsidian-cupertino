@@ -1,7 +1,7 @@
 body:not(.is-mobile) {
   --hover-sidedock-width: 320px;
   --hover-sidedock-delay: 160ms;
-  --hover-sidedock-trigger-area: 1px;
+  --hover-sidedock-trigger-area: 4px;
 }
 
 // Window drag fix
@@ -83,7 +83,7 @@ body:not(.is-mobile).hover-ribbon.show-ribbon {
     z-index: 12;
     height: -webkit-fill-available;
     opacity: 0;
-    transform: translateX(calc(-1 * var(--ribbon-width) + 1px));
+    transform: translateX(calc(-1 * var(--ribbon-width) + var(--hover-sidedock-trigger-area)));
     background-color: transparent;
   }
   .workspace-ribbon.mod-left:hover {
