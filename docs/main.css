@@ -221,6 +221,7 @@ button svg {
   flex: 1;
   background-color: var(--mono-rgb-100);
   color: var(--color-base-00);
+  border: none;
 }
 .copy-btn:hover {
   background-color: var(--mono-rgb-100);

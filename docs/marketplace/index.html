@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -140,9 +140,9 @@
               const desc = meta.description ? mdLinks(meta.description) : "No description available.";
               const imageHTML = `<picture class="loading"><div class="preset-img-loader"></div><source data-srcset="${img.dark}" media="(prefers-color-scheme: dark)"><source data-srcset="${img.light}" media="(prefers-color-scheme: light)"><img loading="lazy" decoding="async" data-base="${img.base}" data-light="${img.light}" data-dark="${img.dark}"></picture>`;
               const authorHTML = meta.url ? `<a href="${meta.url}">${meta.author}</a>` : meta.author;
-              const html = `<div class="preset-panel" data-preset="${id}"><div class="preset-info"><h2>${meta.name}</h2><p>By ${authorHTML}</p></div>${imageHTML}<p>${desc}</p><div class="panel-actions"><button class="copy-btn"><span><i data-lucide="copy"></i>Copy</span></button><a class="download-btn" href="preset/${presetFile}" download="baseline-${presetFile}"><button>Download</button></a></div></div>`;
+              const html = `<div class="preset-panel" data-preset="${id}"><div class="preset-info"><h2>${meta.name}</h2><p>By ${authorHTML}</p></div>${imageHTML}<p>${desc}</p><div class="panel-actions"><button class="copy-btn"><span><i data-lucide="copy"></i>Copy</span></button><a class="download-btn" href="preset/${presetFile}" download="baseline-${presetFile}"><button><i data-lucide="download"></i></button></a></div></div>`;
               return { name: meta.name, id, meta, html, searchable: `${meta.name} ${meta.author || ""} ${meta.description || ""}`.toLowerCase() };
-            })
+            }),
           );
 
           const container = document.querySelector(".panel-container");
