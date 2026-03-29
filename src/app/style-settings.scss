@@ -3206,6 +3206,8 @@ settings:
 
     .pickr .pcr-button {
       box-shadow: none;
+      border-radius: 100vh;
+      border: var(--input-border-width) solid var(--background-modifier-border);
     }
     .pickr .pcr-button::before {
       border-radius: var(--button-radius);
@@ -3235,6 +3237,9 @@ settings:
   }
   .pcr-selection .pcr-color-preview {
     margin: 0;
+  }
+  .pcr-selection .pcr-color-preview .pcr-current-color {
+    border: var(--input-border-width) solid var(--background-modifier-border);
   }
 
   .pcr-swatches {
