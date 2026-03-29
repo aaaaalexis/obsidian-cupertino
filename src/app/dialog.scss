@@ -163,6 +163,9 @@ body:not(.is-mobile) {
     }
   }
 
+  .modal-bg {
+    opacity: 0.2 !important;
+  }
   .modal {
     animation: modalIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
   }
