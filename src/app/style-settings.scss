@@ -250,8 +250,8 @@ settings:
 				label: Black (Mobile)
 				value: contrast-dark-black-mobile
 	-
-		id: base-palette
-		title: Base colors
+		id: interface-palette
+		title: Interface colors
 		type: heading
 		level: 2
 		collapsed: true
@@ -265,7 +265,7 @@ settings:
 		default-dark: '#'
 	-
 		id: background-primary-alt
-		title: Primary background (Alt)
+		title: On primary background
 		description: Used in blockquotes and tables.
 		type: variable-themed-color
 		format: hex
@@ -281,42 +281,34 @@ settings:
 		default-dark: '#'
 	-
 		id: background-secondary-alt
-		title: Secondary background (Alt)
+		title: On secondary background
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: interactive-normal
-		title: Interactive background
-		description: Used in buttons, dropdowns, and filled elements.
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: interactive-hover
-		title: Interactive background (Hover)
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: background-modifier-hover
-		title: Subtle background (Hover)
-		description: Used in menu items and outlined elements.
+		id: divider-color
+		title: Divider color
+		description: Used in separating tabs and sidebars.
 		type: variable-themed-color
 		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: background-modifier-active-hover
-		title: Subtle background (Active) 
+		id: background-modifier-hover
+		title: Hover background
 		type: variable-themed-color
+		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
+    - 
+        id: border-palette
+        title: Borders
+        type: heading
+        level: 3
+		collapsed: true
 	-
 		id: background-modifier-border
 		title: Border color
@@ -334,6 +326,54 @@ settings:
 	-
 		id: background-modifier-border-focus
 		title: Border color (Active)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+    - 
+        id: input-palette
+        title: Elements
+        type: heading
+        level: 3
+		collapsed: true
+	-
+		id: interactive-normal
+		title: Interaction background
+		description: Used in buttons, dropdowns, and text inputs.
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: interactive-hover
+		title: Interaction background (Hover)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+    - 
+        id: dialog-palette
+        title: Dialog
+        type: heading
+        level: 3
+		collapsed: true
+	-
+		id: prompt-background
+		title: Command palette background
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: menu-background
+		title: Menu background
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: modal-background
+		title: Modal background
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
