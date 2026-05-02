@@ -255,12 +255,52 @@
     padding-inline-end: 0px;
   }
 
+  // Default image alignment, configurable via Style Settings.
+  // Works for both source mode and reading mode image blocks.
+  .workspace-leaf-content[data-type="markdown"] {
+    --image-align-margin-start: auto;
+    --image-align-margin-end: auto;
+  }
+  body.image-align-left .workspace-leaf-content[data-type="markdown"] {
+    --image-align-margin-start: 0;
+    --image-align-margin-end: auto;
+  }
+  body.image-align-center .workspace-leaf-content[data-type="markdown"] {
+    --image-align-margin-start: auto;
+    --image-align-margin-end: auto;
+  }
+  body.image-align-right .workspace-leaf-content[data-type="markdown"] {
+    --image-align-margin-start: auto;
+    --image-align-margin-end: 0;
+  }
+
+  .workspace-leaf-content[data-type="markdown"] {
+    .image-embed,
+    img:not(.link-favicon, .emoji, [alt="banner"]) {
+      display: block;
+      margin-inline-start: var(--image-align-margin-start);
+      margin-inline-end: var(--image-align-margin-end);
+    }
+  }
+
   body:not(.full-width-media-off) .workspace-leaf-content[data-type="markdown"] {
     img:not([width], .cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]),
     iframe,
     video {
-      width: 100%;
       border-radius: var(--media-radius);
+    }
+
+    // Avoid forcing very tall images to full line width in Reading view.
+    // Keep natural size but never overflow the note container.
+    img:not([width], .cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]) {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    iframe,
+    video {
+      width: 100%;
     }
   }
 

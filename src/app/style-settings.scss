@@ -95,6 +95,23 @@ settings:
         title: Disable full-width elements
         type: class-toggle
     -
+        id: image-align
+        title: Image alignment
+        description: Set default image alignment in editor and reading view.
+        type: class-select
+        allowEmpty: false
+        default: image-align-center
+        options:
+            -
+                label: Left
+                value: image-align-left
+            -
+                label: Center
+                value: image-align-center
+            -
+                label: Right
+                value: image-align-right
+    -
         id: mode-switcher-off
         title: Disable quick mode switcher
         type: class-toggle
