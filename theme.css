@@ -65,6 +65,12 @@ body,
   --code-string: #0d97b3;
   --code-tag: #e45749;
   --code-value: #a626a4;
+  /* Markdown links: fixed system blue / indigo (independent of accent) */
+  --link-color: #006edc;
+  --link-color-hover: #0055b0;
+  --link-external-color: #006edc;
+  --link-external-color-hover: #0055b0;
+  --link-unresolved-color: #4a7db5;
 }
 
 .theme-dark {
@@ -87,6 +93,12 @@ body,
   --code-string: #58b6c2;
   --code-tag: #e16d76;
   --code-value: #c678de;
+  /* Markdown links: system blue on dark UI */
+  --link-color: #5cadff;
+  --link-color-hover: #8ac4ff;
+  --link-external-color: #5cadff;
+  --link-external-color-hover: #8ac4ff;
+  --link-unresolved-color: #7a9ab8;
 }
 
 body:not(.is-mobile) {
