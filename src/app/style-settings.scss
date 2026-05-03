@@ -1,166 +1,229 @@
 /*!
 /* @settings
 
-name: Cupertino
+name: Cupertino · 库比蒂诺
 id: cupertino
 settings:
-    - 
+    -
         id: cupertino-desc
         description: "Cupertino offers simplified, native-style UI. For granular controls, try [Baseline](obsidian://show-theme?name=Baseline)."
+        description.zh: "Cupertino 提供简洁的原生风格界面。若需要更细粒度选项，可尝试 [Baseline](obsidian://show-theme?name=Baseline)。"
         type: info-text
         markdown: true
     -
         id: colorful-frame
         title: Tinted sidebar
+        title.zh: 侧边栏着色
         description: Apply a subtle tint to the sidebar based on accent color.
+        description.zh: 根据强调色为侧边栏施加淡淡着色。
         type: class-toggle
     -
         id: material-color
         title: Dynamic color
+        title.zh: 动态配色
         description: Apply dynamic theming based on accent color.
+        description.zh: 根据强调色应用动态主题配色。
         type: class-toggle
     -
         id: adaptive-mode-off
         title: Disable adaptive mode
+        title.zh: 关闭自适应模式
         description: Prevent automatic styling based on operating system.
+        description.zh: 停止根据操作系统自动调整样式。
         type: class-toggle
     -
         id: tab-floating
         title: Disable centered tabs
+        title.zh: 取消标签居中
+        description: Use left-aligned tabs instead of centered tabs in the tab bar.
+        description.zh: 将标签栏改为传统左侧对齐，而非居中排列。
         type: class-toggle
     -
         id: desktop-header
         title: Desktop
+        title.zh: 桌面端
         type: heading
         level: 1
         collapsed: true
     -
         id: hover-ribbon
         title: Hover ribbon
+        title.zh: 悬停显示功能区
         description: Reveal ribbon by hovering over left window edge.
+        description.zh: 鼠标靠近左侧窗口边缘时显示功能区（Ribbon）。
         type: class-toggle
         addCommand: true
     -
         id: hover-sidedock
         title: Hover sidebar
+        title.zh: 悬停显示侧边栏
         description: Reveal collapsed sidebars by hovering over window edges.
+        description.zh: 鼠标靠近窗口边缘时展开已收起的侧边栏。
         type: class-toggle
         addCommand: true
     -
         id: focus-view
         title: Focus view
+        title.zh: 专注视图
         description: Hide tabs and table title bar when both sidebars are collapsed.
+        description.zh: 当两侧栏均收起时隐藏标签与表格标题栏。
         type: class-toggle
         addCommand: true
     -
         id: nav-action-center
         title: Disable compact panel actions
+        title.zh: 取消紧凑面板操作区
+        description: Use default alignment for narrow sidebar header actions.
+        description.zh: 窄侧边栏顶栏操作按钮恢复默认对齐，不再居中紧凑排列。
         type: class-toggle
     -
         id: tab-icon
         title: Disable compact sidebar tabs
+        title.zh: 取消紧凑侧边栏标签
+        description: Keep full sidebar tab labels instead of icon-only compact tabs.
+        description.zh: 保留侧边栏标签的完整文字，而非仅图标的紧凑标签。
         type: class-toggle
     -
         id: status-bar-baseline
         title: Disable compact status bar
+        title.zh: 取消紧凑状态栏
+        description: Use a taller default-style status bar instead of the compact row.
+        description.zh: 使用更高的默认风格状态栏，而非单行紧凑状态栏。
         type: class-toggle
     -
         id: zoom-off
         title: Disable media zoom
+        title.zh: 关闭媒体缩放
+        description: Disable click-to-zoom behavior on images and media.
+        description.zh: 关闭图片与媒体的点击放大效果。
         type: class-toggle
     -
         id: editor
         title: Editor
+        title.zh: 编辑器
         type: heading
         level: 1
         collapsed: true
     -
         id: active-line-off
         title: Disable active line highlight
+        title.zh: 关闭当前行高亮
+        description: Turn off background highlight for the active line in the editor.
+        description.zh: 关闭编辑器中当前行的背景高亮。
         type: class-toggle
     -
         id: banner-off
         title: Disable banner
+        title.zh: 关闭 Banner
+        description: Disable styling for banner areas used by banner-style plugins.
+        description.zh: 关闭 Banner 类插件常用的顶部横幅区域样式。
         type: class-toggle
     -
         id: block-width-off
         title: Disable block width
+        title.zh: 关闭块级宽度
+        description: Do not widen blocks beyond the default reading column.
+        description.zh: 不将块元素加宽到默认阅读栏之外。
         type: class-toggle
     -
         id: font-variant-off
         title: Disable font variants
+        title.zh: 关闭字体变体
+        description: Disable OpenType stylistic alternates for interface fonts.
+        description.zh: 关闭界面字体的 OpenType 变体与替代字形特性。
         type: class-toggle
     -
         id: full-width-media-off
         title: Disable full-width elements
+        title.zh: 关闭全宽元素
+        description: Keep embeds and wide elements within the main text column.
+        description.zh: 将嵌入与全宽元素限制在正文主栏宽度内。
         type: class-toggle
     -
         id: image-align
         title: Image alignment
+        title.zh: 图片对齐
         description: Set default image alignment in editor and reading view.
+        description.zh: 设置编辑与阅读模式下的默认图片对齐方式。
         type: class-select
         allowEmpty: false
         default: image-align-center
         options:
             -
-                label: Left
+                label: Left / 左
                 value: image-align-left
             -
-                label: Center
+                label: Center / 居中
                 value: image-align-center
             -
-                label: Right
+                label: Right / 右
                 value: image-align-right
+    -
+        id: clean-link-off
+        title: Underlined links
+        title.zh: 链接始终下划线
+        description: Always underline links for improved visibility.
+        description.zh: 始终为链接添加下划线以提高辨识度。
+        type: class-toggle
     -
         id: mode-switcher-off
         title: Disable quick mode switcher
+        title.zh: 关闭快速配色切换
+        description: Hide the quick light/dark switch in the status bar area.
+        description.zh: 隐藏状态栏区域的快速明暗配色切换入口。
         type: class-toggle
     -
         id: accessibility
         title: Accessibility
+        title.zh: 辅助功能
         type: heading
         level: 1
         collapsed: true
-	-
-		id: reduce-contrast-change
-		title: Reduce contrast change
-		description: Minimize contrast shifts when window loses focus.
-		type: class-toggle
-	-
-		id: reduce-motion
-		title: Reduce motion
-		description: Minimize animation effects.
-		type: class-toggle
-	-
-		id: dynamic-type-off
-		title: Standard font size
-		description: Disable operating system-based dynamic font sizes.
-		type: class-toggle
-	-
-		id: font-ui-modifier
-		title: Interface font size
-		description: Fine-tune interface text size.
-		type: variable-number-slider
-		default: 0
-		min: -8
-		max: 8
-		step: 1
-		format: px
-	-
-		id: icon-size-modifier
-		title: Icon size
-		description: Fine-tune icon size.
-		type: variable-number-slider
-		default: 0
-		min: -4
-		max: 4
-		step: 1
-		format: px
     -
-        id: clean-link-off
-        title: Underlined links
-        description: Always underline links for improved visibility.
+        id: reduce-contrast-change
+        title: Reduce contrast change
+        title.zh: 减弱失焦对比变化
+        description: Minimize contrast shifts when window loses focus.
+        description.zh: 减轻窗口失焦时的对比度变化。
         type: class-toggle
+    -
+        id: reduce-motion
+        title: Reduce motion
+        title.zh: 减少动态效果
+        description: Minimize animation effects.
+        description.zh: 尽量减少动画与过渡效果。
+        type: class-toggle
+    -
+        id: dynamic-type-off
+        title: Standard font size
+        title.zh: 固定界面字号层级
+        description: Disable operating system-based dynamic font sizes.
+        description.zh: 关闭随系统「动态字体」调整的界面字号层级。
+        type: class-toggle
+    -
+        id: font-ui-modifier
+        title: Interface font size
+        title.zh: 界面字号微调
+        description: Fine-tune interface text size.
+        description.zh: 细调界面文字大小。
+        type: variable-number-slider
+        default: 0
+        min: -8
+        max: 8
+        step: 1
+        format: px
+    -
+        id: icon-size-modifier
+        title: Icon size
+        title.zh: 图标尺寸微调
+        description: Fine-tune icon size.
+        description.zh: 细调界面图标大小。
+        type: variable-number-slider
+        default: 0
+        min: -4
+        max: 4
+        step: 1
+        format: px
 */
 
 .view-content .style-settings-container .style-settings-container .setting-item {
