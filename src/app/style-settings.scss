@@ -4,7 +4,7 @@
 # 主文案为中文，保证任意语言回退时仍为中文；英文界面通过 Style Settings 的 title.en / description.en 读取。
 # Primary strings are Chinese so UI stays Chinese even when title.zh does not match Obsidian’s language code.
 
-name: 库比蒂诺（Cupertino）
+name: Cupertino · 库比蒂诺
 id: cupertino
 settings:
     -
@@ -153,13 +153,13 @@ settings:
         default: image-align-center
         options:
             -
-                label: 左
+                label: Left / 左
                 value: image-align-left
             -
-                label: 居中
+                label: Center / 居中
                 value: image-align-center
             -
-                label: 右
+                label: Right / 右
                 value: image-align-right
     -
         id: clean-link-off
