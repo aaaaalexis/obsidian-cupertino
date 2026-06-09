@@ -94,6 +94,31 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
     border-color: var(--divider-color);
   }
 
+  // Tabs
+  &.is-translucent.theme-light .mod-root .workspace-tabs:not(.mod-stacked) {
+    --tab-text-color-focused: var(--text-muted);
+
+    .workspace-tab-header:not(.is-active):not(:hover) {
+      opacity: 1;
+      background-color: rgba(from var(--background-primary) r g b / 55%) !important;
+    }
+    .workspace-tab-header.is-active {
+      background-color: rgba(from var(--background-primary) r g b / 88%) !important;
+    }
+  }
+
+  &.is-translucent.theme-dark .mod-root .workspace-tabs:not(.mod-stacked) {
+    --tab-text-color-focused: var(--text-muted);
+
+    .workspace-tab-header:not(.is-active):not(:hover) {
+      opacity: 1;
+      background-color: rgba(from var(--background-primary) r g b / 45%) !important;
+    }
+    .workspace-tab-header.is-active {
+      background-color: rgba(from var(--background-primary) r g b / 82%) !important;
+    }
+  }
+
   // Settings
   .modal.mod-settings .vertical-tab-header {
     margin: 8px 0 8px 8px;
