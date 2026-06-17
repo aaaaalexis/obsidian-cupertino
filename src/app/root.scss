@@ -203,8 +203,34 @@ body:not(.mod-macos):not(.is-mobile) {
 }
 
 // Scrollbar
-body.styled-scrollbars div:not(:hover)::-webkit-scrollbar-thumb {
-  background-color: transparent;
+body.styled-scrollbars {
+  --cupertino-scrollbar-size: 6px;
+  --cupertino-scrollbar-thumb: rgba(0, 0, 0, 0.06);
+
+  &.theme-dark {
+    --cupertino-scrollbar-thumb: rgba(255, 255, 255, 0.07);
+  }
+
+  *::-webkit-scrollbar,
+  *::-webkit-scrollbar:hover {
+    width: var(--cupertino-scrollbar-size) !important;
+    height: var(--cupertino-scrollbar-size) !important;
+  }
+
+  *::-webkit-scrollbar-track,
+  *::-webkit-scrollbar-corner {
+    background: transparent !important;
+  }
+
+  *::-webkit-scrollbar-thumb,
+  *::-webkit-scrollbar-thumb:hover,
+  *::-webkit-scrollbar-thumb:active,
+  *::-webkit-scrollbar-thumb:window-inactive {
+    border: 2px solid transparent !important;
+    border-radius: 100vh !important;
+    background-color: var(--cupertino-scrollbar-thumb) !important;
+    background-clip: content-box !important;
+  }
 }
 
 // Style Settings

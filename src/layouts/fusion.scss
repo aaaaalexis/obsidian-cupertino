@@ -27,20 +27,72 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
   &.theme-light {
     --shadow-tab: var(--shadow-base), 0 0 1px rgba(0, 0, 0, 0.2), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.025), 0 2px 4px rgba(0, 0, 0, 0.025);
   }
-  &.theme-dark {
+  &.theme-dark:not(.is-mobile) {
     --shadow-tab: var(--shadow-base), 0 4px 8px rgba(0, 0, 0, 0.1);
+    --cupertino-workspace-surface: rgba(38, 38, 42, 0.5);
+    --cupertino-workspace-border: rgba(255, 255, 255, 0.09);
+    --cupertino-workspace-primary: rgba(38, 38, 42, 0.5);
+    --cupertino-workspace-primary-alt: rgba(48, 48, 52, 0.5);
+    --cupertino-tab-surface-active: rgba(52, 52, 56, 0.5);
+    --cupertino-tab-border-active: rgba(255, 255, 255, 0.12);
+    --cupertino-tab-text-rest: color-mix(in srgb, var(--text-muted), var(--text-normal) 12%);
+    --cupertino-header-icon-rest: color-mix(in srgb, var(--text-muted), var(--text-normal) 18%);
+    --cupertino-workspace-divider: rgba(255, 255, 255, 0.12);
+  }
+  &.theme-light:not(.is-mobile) {
+    --cupertino-workspace-divider: rgba(0, 0, 0, 0.16);
   }
 
-  &:not(.is-popout-window) .workspace-tabs:not(.mod-stacked) .mod-root {
+  &:not(.is-mobile):not(.is-popout-window) .mod-root .workspace-tabs:not(.mod-stacked) {
+    --background-primary: var(--cupertino-workspace-primary);
+    --background-primary-alt: var(--cupertino-workspace-primary-alt);
+    --tab-background-active: var(--cupertino-tab-surface-active);
+    --tab-background-active-focused: var(--cupertino-tab-surface-active);
+    --tab-outline-color: var(--cupertino-tab-border-active);
+
     .workspace-tab-container {
-      background-color: rgba(from var(--background-primary) r g b / 75%);
+      border-radius: 0 !important;
+      background: transparent !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      overflow: visible;
     }
 
+    .workspace-leaf,
+    .workspace-leaf-content,
     .view-header,
     .view-content,
+    .markdown-reading-view,
+    .markdown-preview-view,
+    .markdown-source-view,
     .document-search-container {
-      background-color: transparent;
+      background: transparent !important;
+      background-color: transparent !important;
     }
+  }
+  &:not(.is-mobile) .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .workspace-split.mod-vertical {
+    gap: 0;
+  }
+  &:not(.is-mobile) .mod-sidedock.mod-right-split {
+    position: relative;
+    border-left: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      bottom: auto;
+      left: 0;
+      width: 2px;
+      height: 12.5%;
+      border-radius: 100vh;
+      background-color: var(--cupertino-workspace-divider);
+      pointer-events: none;
+      transform: translateY(-50%);
+    }
+  }
+  &.workspace-divider-off:not(.is-mobile) .mod-sidedock.mod-right-split::after {
+    display: none;
   }
 
   // Editor panel: Tab style
@@ -75,9 +127,20 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
       }
     }
 
-    .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
-      background-color: rgba(from var(--background-primary) r g b / 75%);
-      box-shadow: var(--shadow-tab);
+    &.theme-dark:not(.is-mobile) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+      background: var(--cupertino-tab-surface-active, rgba(52, 52, 56, 0.5)) !important;
+      background-color: var(--cupertino-tab-surface-active, rgba(52, 52, 56, 0.5)) !important;
+      box-shadow: inset 0 0 0 1px var(--cupertino-tab-border-active, transparent), var(--shadow-tab);
+
+      &::before,
+      &::after,
+      .workspace-tab-header-inner,
+      .workspace-tab-header-inner::before,
+      .workspace-tab-header-inner::after {
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+      }
     }
   }
 }

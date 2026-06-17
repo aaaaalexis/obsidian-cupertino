@@ -325,6 +325,20 @@ body:is(.mod-macos, .adaptive-mode-off) {
       box-shadow: none;
     }
   }
+  &:is(.theme-dark, .theme-light):not(.is-mobile) {
+    .view-header .clickable-icon:not(.is-active),
+    .mod-root .workspace-tab-header-new-tab .clickable-icon,
+    .mod-root .workspace-tab-header-tab-list .clickable-icon,
+    .workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon,
+    .workspace-ribbon.mod-left .side-dock-actions .side-dock-ribbon-action,
+    .mod-sidedock .nav-action-button:not(.is-active) {
+      color: var(--cupertino-header-icon-rest, var(--text-muted));
+    }
+
+    .mod-sidedock .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-icon {
+      color: var(--cupertino-header-icon-rest, var(--text-muted)) !important;
+    }
+  }
 
   .mod-sidedock .workspace-tab-container,
   .mod-sidedock .workspace-leaf,

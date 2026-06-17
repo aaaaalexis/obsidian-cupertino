@@ -53,6 +53,11 @@ settings:
         type: class-toggle
         addCommand: true
     -
+        id: workspace-divider-off
+        title: Hide workspace divider
+        description: Hide the short divider between the editor and right sidebar.
+        type: class-toggle
+    -
         id: nav-action-center
         title: Disable compact panel actions
         type: class-toggle
