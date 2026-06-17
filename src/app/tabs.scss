@@ -112,6 +112,23 @@ body:not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
     margin-bottom: 0;
   }
 }
+body:is(.mod-macos, .adaptive-mode-off):is(.theme-dark, .theme-light):not(.is-mobile) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
+  .workspace-tab-header:not(.is-active):not(:hover) {
+    opacity: 1;
+    color: var(--cupertino-tab-text-rest, var(--text-muted));
+  }
+  .workspace-tab-header:not(.is-active):hover {
+    color: var(--text-normal);
+  }
+  .workspace-tab-header.is-active {
+    color: var(--text-normal);
+  }
+  .workspace-tab-header-new-tab .clickable-icon,
+  .workspace-tab-header-tab-list .clickable-icon,
+  .sidebar-toggle-button .clickable-icon {
+    color: var(--cupertino-header-icon-rest, var(--text-muted));
+  }
+}
 body.is-tablet {
   --header-height: 60px !important;
 

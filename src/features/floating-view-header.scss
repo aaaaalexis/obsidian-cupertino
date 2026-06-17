@@ -1,0 +1,122 @@
+body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile):not(.is-popout-window) {
+  --cupertino-floating-view-header-width: 72px;
+  --cupertino-floating-view-header-height: 32px;
+}
+
+body:is(.mod-macos, .adaptive-mode-off).theme-light:not(.is-mobile):not(.is-popout-window) {
+  --cupertino-floating-view-header-background-hover: rgb(246, 246, 247);
+  --cupertino-floating-view-header-icon: rgba(0, 0, 0, 0.62);
+}
+
+body:is(.mod-macos, .adaptive-mode-off).theme-dark:not(.is-mobile):not(.is-popout-window) {
+  --cupertino-floating-view-header-background-hover: rgb(42, 47, 51);
+  --cupertino-floating-view-header-icon: color-mix(in srgb, var(--text-muted), var(--text-normal) 32%);
+}
+
+body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile):not(.is-popout-window) .mod-root {
+  .workspace-leaf-content[data-type="markdown"] {
+    position: relative;
+
+    > .view-header {
+      position: absolute !important;
+      top: 12px;
+      right: 14px !important;
+      left: auto !important;
+      display: flex !important;
+      align-items: center;
+      gap: 2px;
+      z-index: 20;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 100vh;
+      background: transparent !important;
+      background-color: transparent !important;
+      box-shadow: none;
+      padding: 2px 6px !important;
+      width: var(--cupertino-floating-view-header-width);
+      max-width: calc(100% - 28px);
+      height: var(--cupertino-floating-view-header-height);
+      min-height: var(--cupertino-floating-view-header-height);
+      overflow: hidden;
+      opacity: 0;
+      -webkit-app-region: no-drag !important;
+      backdrop-filter: none;
+      transition:
+        width var(--anim-duration-moderate) var(--anim-motion-baseline),
+        opacity var(--anim-duration-fast),
+        background-color var(--anim-duration-fast),
+        box-shadow var(--anim-duration-fast);
+
+      &::before {
+        content: none;
+      }
+
+      &:hover {
+        background: var(--cupertino-floating-view-header-background-hover) !important;
+        background-color: var(--cupertino-floating-view-header-background-hover) !important;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+        width: max-content;
+        opacity: 1;
+        backdrop-filter: none;
+      }
+    }
+
+    > .view-header .view-header-title-container {
+      display: none !important;
+    }
+
+    > .view-header .view-header-left {
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+      min-width: 0;
+    }
+
+    > .view-header .view-header-nav-buttons,
+    > .view-header .view-actions {
+      display: flex !important;
+      align-items: center;
+      gap: 0 !important;
+      flex: 0 0 auto;
+      min-width: 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(6px);
+      transition:
+        opacity var(--anim-duration-fast),
+        transform var(--anim-duration-fast);
+    }
+
+    > .view-header:hover .view-header-nav-buttons,
+    > .view-header:hover .view-actions {
+      opacity: 1;
+      pointer-events: auto;
+      transform: none;
+    }
+
+    > .view-header .view-actions {
+      margin-inline-start: 4px;
+      overflow: hidden;
+    }
+
+    > .view-header .view-header-nav-buttons .clickable-icon,
+    > .view-header .view-actions .clickable-icon,
+    > .view-header .view-actions button {
+      flex: 0 0 auto;
+      border-radius: 100vh;
+      width: 28px;
+      height: 28px;
+      padding: 6px;
+    }
+
+    > .view-header .view-header-nav-buttons .clickable-icon:not(.is-active),
+    > .view-header .view-actions .clickable-icon:not(.is-active),
+    > .view-header .view-actions button:not(.is-active) {
+      color: var(--cupertino-floating-view-header-icon);
+    }
+
+    > .view-header .clickable-icon[aria-disabled="true"] {
+      opacity: 0.38;
+    }
+  }
+}
