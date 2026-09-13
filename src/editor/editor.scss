@@ -44,7 +44,7 @@
     --embed-padding: 16px;
     --embed-max-height: none;
     --embed-background: var(--background-primary-alt);
-    --embed-border-start: var(--embed-border-thickness, 1px) solid var(--embed-border-color, var(--color-base-50));
+    --embed-border-start: var(--embed-border-thickness, 2px) solid var(--embed-border-color, var(--background-modifier-border-focus));
 
     --media-radius: var(--radius-s);
 
@@ -265,7 +265,6 @@
     --embed-padding: 0;
   }
   .embed-block {
-    --embed-background: var(--background-primary-alt);
     --embed-border-start: none;
     --embed-padding: 16px;
 

@@ -1,13 +1,11 @@
 body {
-  --setting-group-heading-color: var(--text-faint);
+  --setting-group-heading-color: var(--text-muted);
   --setting-group-heading-size: var(--font-ui-small);
+  --setting-group-heading-weight: var(--font-medium);
+  --setting-items-background: var(--background-secondary);
   --setting-items-border-color: var(--background-modifier-hover);
   --setting-items-radius: var(--radius-m);
   --setting-items-padding-y: calc(16px * var(--density-modifier));
-
-  &:is(.input-baseline, :not(.css-settings-manager), .input-tactile) {
-    --setting-items-border-width: var(--border-width);
-  }
 
   .modal.mod-sidebar-layout {
     .vertical-tab-header-group-container:hover,
@@ -73,7 +71,7 @@ body:not(.is-phone) {
       background-color: transparent;
       border: none;
       box-shadow: none;
-      padding: 8px;
+      padding-block: 12px;
     }
 
     .setting-group-search {
@@ -99,7 +97,6 @@ body:not(.is-phone) {
       display: flex;
       padding: 16px;
       font-weight: var(--input-font-weight);
-      color: var(--text-faint);
       border: none;
     }
     .setting-group-filter:hover {
@@ -109,10 +106,6 @@ body:not(.is-phone) {
       background-color: var(--background-modifier-hover);
       border-color: var(--interactive-accent);
       color: var(--text-normal);
-    }
-
-    .setting-item-name {
-      overflow: visible;
     }
   }
 
@@ -127,7 +120,7 @@ body:not(.is-phone) {
       row-gap: 8px;
       flex-wrap: wrap;
       align-items: center;
-      padding: 8px;
+      padding: 12px;
       width: 100%;
       height: auto;
     }
