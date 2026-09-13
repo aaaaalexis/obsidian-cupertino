@@ -40,9 +40,13 @@ body:not(.is-phone) .workspace-tab-header-container {
 }
 
 .sidebar-toggle-button {
-  height: fit-content;
+  height: var(--header-height);
   padding-bottom: 8px;
   align-items: center;
+
+  .clickable-icon {
+    min-width: var(--tab-action-width);
+  }
 }
 .workspace-tab-header-new-tab,
 .workspace-tab-header-tab-list {

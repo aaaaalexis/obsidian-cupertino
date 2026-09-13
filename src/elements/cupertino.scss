@@ -114,8 +114,6 @@ body.input-cupertino {
   &:not(.is-mobile) {
     .clickable-icon {
       transition: var(--anim-duration-superfast);
-      padding: 10px;
-      box-shadow: 0 0 transparent;
     }
     .clickable-icon:not([aria-disabled="true"]):hover,
     .clickable-icon.has-active-menu,
