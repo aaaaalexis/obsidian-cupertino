@@ -98,7 +98,7 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button
   width: var(--tab-action-width);
 }
 
-body:not(.mod-macos):not(.is-mobile):not(.layout-frame) .workspace-ribbon,
+body:not(.mod-macos):not(.is-mobile) .workspace-ribbon,
 body.mod-macos:not(.is-hidden-frameless):not(.is-mobile):not(.layout-frame) .workspace-ribbon {
   margin-top: 0;
 }

@@ -156,6 +156,10 @@ body:not(.is-mobile) {
   .modal {
     animation: modalIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
   }
+  .modal-header-button {
+    inset-block-start: 12px;
+    inset-inline-end: 12px;
+  }
   .modal-title {
     margin-left: 0;
   }
