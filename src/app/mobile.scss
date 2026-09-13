@@ -54,6 +54,18 @@ body.is-mobile {
   --mobile-left-sidebar-width-pinned: 300px;
   --mobile-right-sidebar-width-pinned: 300px;
 
+  // Default override
+  &.theme-dark {
+    --settings-background: var(--background-primary);
+    --setting-items-background: var(--background-secondary);
+    --setting-items-divider-color: var(--background-modifier-hover);
+    --menu-divider-color: var(--background-modifier-hover);
+    --mobile-sidebar-background: var(--background-primary);
+    --modal-background: var(--background-primary);
+    --interactive-normal: color-mix(in srgb, var(--background-primary), white 5%);
+    --interactive-hover: color-mix(in srgb, var(--interactive-normal), black 5%);
+  }
+
   // Adaptive font size
   &:not(.mod-macos):not(.dynamic-type-off) {
     --font-ui-smaller: calc(12px + var(--font-ui-modifier));
