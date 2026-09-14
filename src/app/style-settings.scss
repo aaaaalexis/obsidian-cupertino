@@ -110,9 +110,6 @@ settings:
 				label: Latte
 				value: latte-light
 			-
-				label: Material
-				value: material-light
-			-
 				label: Melange
 				value: melange-light
 			-
@@ -243,9 +240,6 @@ settings:
 			-
 				label: Macchiato
 				value: macchiato-dark
-			-
-				label: Material
-				value: material-dark
 			-
 				label: Melange
 				value: melange-dark
@@ -1290,7 +1284,7 @@ settings:
 				label: Large
 				value: 16px
 	-
-		id: hover-sidedock-solid
+		id: hover-sidedock-style
 		title: Hover sidebars style
 		type: class-select
 		allowEmpty: false
