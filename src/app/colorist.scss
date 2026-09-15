@@ -365,7 +365,7 @@ body.obsidian-app.theme-dark {
   --colorist-l-30: 0.92;
   --colorist-l-35: 0.9;
   --colorist-l-40: 0.88;
-  --colorist-l-50: 0.64;
+  --colorist-l-50: 0.76;
   --colorist-l-60: 0.56;
   --colorist-l-70: 0.48;
   --colorist-l-100: 0.24;
@@ -423,18 +423,18 @@ body.obsidian-app.theme-dark {
   }
 }
 .theme-dark.material-dark {
-  --colorist-l-00: 0.18;
-  --colorist-l-05: 0.2;
-  --colorist-l-10: 0.22;
-  --colorist-l-20: 0.24;
-  --colorist-l-25: 0.26;
-  --colorist-l-30: 0.28;
-  --colorist-l-35: 0.32;
-  --colorist-l-40: 0.36;
-  --colorist-l-50: 0.56;
-  --colorist-l-60: 0.64;
-  --colorist-l-70: 0.72;
-  --colorist-l-100: 0.88;
+  --colorist-l-00: 0.2;
+  --colorist-l-05: 0.22;
+  --colorist-l-10: 0.24;
+  --colorist-l-20: 0.26;
+  --colorist-l-25: 0.28;
+  --colorist-l-30: 0.3;
+  --colorist-l-35: 0.34;
+  --colorist-l-40: 0.38;
+  --colorist-l-50: 0.58;
+  --colorist-l-60: 0.66;
+  --colorist-l-70: 0.74;
+  --colorist-l-100: 0.9;
 
   --colorist-c-00: 0.025;
   --colorist-c-05: 0.025;
@@ -450,36 +450,36 @@ body.obsidian-app.theme-dark {
   --colorist-c-100: 0.04;
 
   --color-red: oklch(
-    from color-mix(in srgb, rgb(var(--color-red-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.56) min(c, 0.1)
+    from color-mix(in srgb, rgb(var(--color-red-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.68) min(c, 0.12)
       h
   );
   --color-orange: oklch(
-    from color-mix(in srgb, rgb(var(--color-orange-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.56)
-      min(c, 0.1) h
+    from color-mix(in srgb, rgb(var(--color-orange-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.68)
+      min(c, 0.12) h
   );
   --color-yellow: oklch(
-    from color-mix(in srgb, rgb(var(--color-yellow-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.56)
-      min(c, 0.1) h
+    from color-mix(in srgb, rgb(var(--color-yellow-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.68)
+      min(c, 0.12) h
   );
   --color-green: oklch(
-    from color-mix(in srgb, rgb(var(--color-green-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.56)
-      min(c, 0.1) h
+    from color-mix(in srgb, rgb(var(--color-green-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.68)
+      min(c, 0.12) h
   );
   --color-cyan: oklch(
-    from color-mix(in srgb, rgb(var(--color-cyan-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.56) min(c, 0.1)
-      h
+    from color-mix(in srgb, rgb(var(--color-cyan-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.68)
+      min(c, 0.12) h
   );
   --color-blue: oklch(
-    from color-mix(in srgb, rgb(var(--color-blue-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.56) min(c, 0.1)
-      h
+    from color-mix(in srgb, rgb(var(--color-blue-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.68)
+      min(c, 0.12) h
   );
   --color-purple: oklch(
-    from color-mix(in srgb, rgb(var(--color-purple-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.56)
-      min(c, 0.1) h
+    from color-mix(in srgb, rgb(var(--color-purple-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.68)
+      min(c, 0.12) h
   );
   --color-pink: oklch(
-    from color-mix(in srgb, rgb(var(--color-pink-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.56) min(c, 0.1)
-      h
+    from color-mix(in srgb, rgb(var(--color-pink-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 5%) min(l, 0.68)
+      min(c, 0.12) h
   );
 
   &.color-scheme-accent {
