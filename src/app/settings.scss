@@ -146,7 +146,13 @@ body:not(.is-phone) {
     }
     .community-modal-search-results {
       gap: 8px;
-      padding: 8px;
+    }
+    .community-modal-search {
+      padding: 0;
+      margin: 0;
+    }
+    .community-item {
+      border: none;
     }
     .community-modal-search {
       padding: 0;
@@ -191,7 +197,7 @@ body.is-tablet .modal.mod-sidebar-layout {
   }
 }
 
-body:is(.input-cupertino, .input-material) {
+body:is(.mod-macos, .adaptive-mode-off, .is-android:not(.adaptive-mode-off)) {
   .modal.mod-settings .vertical-tab-nav-item {
     &[data-setting-id="editor"] .vertical-tab-nav-item-icon {
       --setting-nav-icon-background: var(--color-blue);

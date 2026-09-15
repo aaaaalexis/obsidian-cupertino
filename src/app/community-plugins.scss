@@ -41,26 +41,7 @@
 body:not(.is-mobile) .omnisearch-input-container__buttons {
   display: none;
 }
-body:is(.layout-cards, .layout-border) {
-  @media only screen and (max-width: 600px) {
-    .omnisearch-input-container__buttons {
-      padding: 0;
-    }
-  }
-  @media only screen and (min-width: 600px) {
-    .omnisearch-input-container__buttons {
-      margin-inline-end: 0;
-    }
-    .omnisearch-input-container__buttons button {
-      height: var(--prompt-input-height);
-    }
-  }
-  .omnisearch-input-container {
-    margin: 8px 8px 0;
-    border-bottom-width: 0;
-  }
-}
-body:is(.layout-cupertino, .layout-macos, .layout-tahoe, .layout-fusion).is-phone {
+body:is(.mod-macos, .adaptive-mode-off).is-phone {
   @media only screen and (max-width: 600px) {
     .omnisearch-modal {
       --prompt-top: calc(var(--safe-area-inset-top) + var(--header-height)) !important;
@@ -193,7 +174,7 @@ body.is-phone.hider-sidebar-buttons {
     }
   }
 
-  &.status-bar-cupertino .status-bar {
+  &:not(.status-bar-baseline) .status-bar {
     margin: 4px 0;
 
     &:hover {
@@ -203,20 +184,10 @@ body.is-phone.hider-sidebar-buttons {
       border: none;
     }
   }
-
-  &:is(.layout-cupertino, .layout-cards, .layout-border):not(.is-mobile) {
-    .workspace-split {
-      padding-bottom: 0 !important;
-    }
-    .status-bar {
-      bottom: 8px;
-      right: 8px;
-    }
-  }
 }
 
 // Novel Word Count https://github.com/isaaclyman/novel-word-count-obsidian
-body:not(.is-mobile):not(.nav-action-center, .nav-action-left) .mod-sidedock .workspace-leaf-content.novel-word-count--active > .nav-header {
+body:not(.is-mobile):not(.nav-action-center) .mod-sidedock .workspace-leaf-content.novel-word-count--active > .nav-header {
   &:not(:hover) .nav-buttons-container {
     .nav-action-button {
       opacity: 0;
@@ -239,7 +210,7 @@ body:not(.is-mobile):not(.nav-action-center, .nav-action-left) .mod-sidedock .wo
   }
 }
 
-body:is(.layout-cupertino, .layout-macos, .layout-tahoe, .layout-fusion).is-mobile .workspace-drawer .novel-word-count--active {
+body:is(.mod-macos, .adaptive-mode-off).is-mobile .workspace-drawer .novel-word-count--active {
   .nav-buttons-container {
     overflow: visible;
   }
@@ -327,7 +298,7 @@ body.is-mobile .kanban-plugin__item-input-wrapper {
 
 // Minimal Theme Settings https://github.com/kepano/obsidian-minimal-settings
 body.minimal-theme .workspace::before {
-  content: "Baseline is not compatible with Minimal Theme Settings.\A\ATo use this theme, disable Minimal Theme Settings in Community plugins.";
+  content: "Cupertino is not compatible with Minimal Theme Settings.\A\ATo use this theme, disable Minimal Theme Settings in Community plugins.";
   text-align: center;
   white-space: pre-wrap;
   position: fixed;

@@ -1,4 +1,11 @@
-body.input-fluent {
+body.mod-windows:not(.adaptive-mode-off) {
+  --font-interface-theme: "Segoe UI Variable Display", "Segoe UI Variable";
+  --font-text-theme: "Segoe UI Variable Text", "Segoe UI Variable";
+
+  --h1-size: 1.75rem;
+  --h2-size: 1.5rem;
+  --h3-size: 1.25rem;
+
   --radius-s: calc(4px * var(--radius-modifier));
   --radius-m: calc(4px * var(--radius-modifier));
   --radius-l: calc(8px * var(--radius-modifier));
@@ -190,7 +197,7 @@ body.input-fluent {
   }
 }
 
-body.input-fluent:not(.is-mobile) {
+body.mod-windows:not(.adaptive-mode-off):not(.is-mobile) {
   --menu-padding: 4px;
   --prompt-input-height: 64px;
   --tab-outline-color: hsl(from var(--mono-100) h s l / 0.05);
@@ -208,7 +215,7 @@ body.input-fluent:not(.is-mobile) {
   }
 
   // Panel actions
-  &:not(.nav-action-center, .nav-action-left) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
+  &:not(.nav-action-center) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
     padding: 0;
 
     .nav-action-button {
@@ -340,28 +347,5 @@ body.input-fluent:not(.is-mobile) {
   // Settings
   .modal.mod-sidebar-layout .vertical-tab-content {
     animation: workspaceLeafInFluent var(--anim-duration-moderate);
-  }
-}
-
-body.input-fluent.is-phone {
-  .mobile-navbar,
-  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
-    backdrop-filter: var(--blur-l);
-    box-shadow: var(--shadow-s);
-    border-radius: var(--radius-l);
-    background-color: var(--modal-background) !important;
-  }
-
-  .modal.mod-settings {
-    .vertical-tab-header-group-items {
-      background-color: transparent;
-    }
-    .vertical-tab-nav-item-chevron,
-    .vertical-tab-nav-item-title {
-      border-bottom: none;
-    }
-    .vertical-tab-content {
-      background-color: var(--settings-background);
-    }
   }
 }

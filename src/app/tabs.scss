@@ -15,6 +15,9 @@ body {
   --tab-text-color-focused-active: var(--text-normal);
   --tab-text-color-focused-active-current: unset;
 }
+body.mod-macos {
+  --header-height: 52px;
+}
 body:not(.is-mobile) {
   --tab-action-width: 32px;
 }
@@ -83,23 +86,8 @@ body:not(.is-phone) .workspace .mod-root {
   }
 }
 
-// Editor panel: Baseline
-body.is-tablet:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented):not(
-    .layout-macos,
-    .layout-tahoe,
-    .layout-classic,
-    .layout-minimal,
-    .layout-border,
-    .layout-frame
-  )
-  .workspace-drawer.is-pinned.mod-left
-  + .mod-root
-  .workspace-tab-header-container {
-  padding-left: var(--tab-radius);
-}
-
 // Editor panel: Floating
-body:is(.tab-floating, .tab-floating-center):not(.is-phone) {
+body:not(.is-phone) {
   --tab-background-active: var(--background-modifier-hover);
   --tab-radius-active: var(--tab-radius);
   --tab-curve: 0;
@@ -124,7 +112,7 @@ body:is(.tab-floating, .tab-floating-center):not(.is-phone) {
     }
   }
 }
-body:is(.tab-floating, .tab-floating-center).is-tablet {
+body.is-tablet {
   --header-height: 60px !important;
 
   .mod-root .workspace-tabs:not(.mod-stacked) {
@@ -138,7 +126,7 @@ body:is(.tab-floating, .tab-floating-center).is-tablet {
 }
 
 // Editor panel: Floating (Center)
-body:not(.is-phone).tab-floating-center .mod-root .workspace-tabs:not(.mod-stacked) {
+body:not(.is-phone):not(.tab-floating) .mod-root .workspace-tabs:not(.mod-stacked) {
   container-type: inline-size;
 
   @container (min-width: 560px) {
@@ -156,7 +144,7 @@ body:not(.is-phone).tab-floating-center .mod-root .workspace-tabs:not(.mod-stack
   }
 }
 
-body.mod-macos:not(.is-mobile).tab-floating-center {
+body.mod-macos:not(.is-mobile):not(.tab-floating) {
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
       // Right sidedock hidden
@@ -197,7 +185,7 @@ body.mod-macos:not(.is-mobile).tab-floating-center {
   }
 }
 
-body:not(.mod-macos):not(.is-mobile).tab-floating-center {
+body:not(.mod-macos):not(.is-mobile):not(.tab-floating) {
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
       // Both sidedocks hidden
@@ -231,7 +219,7 @@ body:not(.mod-macos):not(.is-mobile).tab-floating-center {
   }
 }
 
-body.is-tablet.tab-floating-center {
+body.is-tablet:not(.tab-floating) {
   // Both drawer hidden
   .mod-root .workspace-tabs:not(.mod-stacked) {
     @container (min-width: 560px) {
@@ -279,119 +267,14 @@ body.is-tablet.tab-floating-center {
   }
 }
 
-// Editor panel: Floating (Cupertino Personality)
-body.input-cupertino:not(.is-phone):is(.tab-floating, .tab-floating-center) {
-  .mod-root .workspace-tabs:not(.mod-stacked) {
-    .workspace-tab-header {
-      corner-shape: var(--corner-shape);
-      border-radius: 100vh;
-
-      &:first-child {
-        margin-inline-start: 2px;
-      }
-      &:last-child {
-        margin-inline-end: 2px;
-      }
-
-      &.is-active {
-        background-color: var(--blur-background);
-        box-shadow: var(--shadow-xs);
-      }
-    }
-    .workspace-tab-header-inner {
-      border-radius: inherit;
-    }
-  }
-}
-
-// Editor panel: Underline
-body:not(.is-phone):is(.tab-underline, .tab-underline-accented) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
-  .workspace-tab-header-container-inner {
-    padding-top: 0;
-    gap: 0;
-  }
-  .workspace-tab-header {
-    --tab-background-active: transparent;
-    --tab-outline-width: 0px;
-    border-bottom: 2px solid transparent;
-    padding-top: 8px;
-  }
-  .workspace-tab-header.is-active {
-    border-color: var(--text-muted);
-  }
-  .workspace-tab-header:not(.is-active):hover {
-    border-color: var(--background-modifier-border);
-
-    .workspace-tab-header-inner {
-      background-color: transparent;
-    }
-  }
-  .workspace-tab-header-inner {
-    margin-bottom: 6px;
-  }
-}
-body:not(.is-phone).tab-underline-accented .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
-  border-color: var(--color-accent);
-}
-
 // Editor panel: Tab divider
-body:not(.tab-divider):not(.is-phone) .mod-root .workspace-tabs:not(.mod-stacked),
-body.tab-divider:is(.tab-floating, .tab-floating-center):not(.is-phone) .mod-root .workspace-tabs:not(.mod-stacked) {
-  .workspace-tab-header-inner::after {
-    content: none;
-  }
-}
-body.tab-divider.tab-default:not(.is-phone) .mod-root .workspace-tabs:not(.mod-stacked) {
-  .workspace-tab-header:has(+ .workspace-tab-header.is-active) .workspace-tab-header-inner::after,
-  .workspace-tab-header:last-child .workspace-tab-header-inner::after {
-    content: none;
-  }
-  .workspace-tab-header-inner::after {
-    inset-inline-end: -5px;
-    width: 2px;
-  }
-}
-body.tab-divider:is(.tab-underline, .tab-underline-accented):not(.is-phone) .mod-root .workspace-tabs:not(.mod-stacked) {
-  .workspace-tab-header:last-child .workspace-tab-header-inner::after {
-    content: none;
-  }
-  .workspace-tab-header.is-active .workspace-tab-header-inner::after {
-    opacity: 1;
-  }
-}
-
-// Editor panel: Full width
-body.tab-full-width {
-  --tab-width: auto;
-
-  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
-    flex: 100%;
-  }
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner::after {
+  content: none;
 }
 
 // Editor panel: Stacks
 .mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container-inner {
   display: none;
-}
-.tab-stack-top-flipped {
-  --tab-stacked-text-transform: rotate(180deg);
-  --tab-stacked-text-align: right;
-}
-.tab-stack-center {
-  --tab-stacked-text-align: center;
-}
-.tab-stack-center-flipped {
-  --tab-stacked-text-transform: rotate(180deg);
-  --tab-stacked-text-align: center;
-}
-.tab-stack-bottom {
-  --tab-stacked-text-transform: rotate(180deg);
-}
-.tab-stack-bottom-flipped {
-  --tab-stacked-text-align: right;
-}
-.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner {
-  flex-direction: var(--tab-stacked-spine-order);
 }
 
 // Editor panel: Tablet fix
@@ -450,115 +333,11 @@ body.is-tablet .workspace .mod-root {
   }
 }
 
-// Side panels: Labeled tabs
-body.tab-top-left-labeled:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space,
-body.tab-top-right-labeled:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs.mod-top-right-space,
-body.tab-left-labeled:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top),
-body.tab-right-labeled:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) {
-  --sidebar-tab-text-display: inline-block;
-
-  .workspace-tab-header-container-inner {
-    gap: 0;
-  }
-}
-
-// Side panels: Text tabs
-body.tab-top-left-text:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space,
-body.tab-top-right-text:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs.mod-top-right-space,
-body.tab-left-text:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top),
-body.tab-right-text:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) {
-  --sidebar-tab-text-display: inline-block;
-
-  .workspace-tab-header-container-inner {
-    gap: 0;
-  }
-  .workspace-tab-header.is-active {
-    font-weight: var(--font-medium);
-  }
-  .workspace-tab-header-inner-icon {
-    display: none;
-  }
-  .workspace-tab-header-inner-title {
-    text-transform: capitalize;
-  }
-}
-
-// Side panels: Stacked tabs
-body:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-left-split .mod-top-left-space {
-  --sidebar-tab-text-display: inline-block;
-
-  .workspace-tab-header-container {
-    height: fit-content;
-    flex-direction: column;
-    padding: 0;
-  }
-  .workspace-tab-header-container-inner {
-    flex-direction: column;
-    width: stretch;
-    gap: 0;
-    padding: 0 8px;
-    max-height: unset;
-  }
-  .workspace-tab-header {
-    padding: 8px 12px;
-    height: auto;
-  }
-  .workspace-tab-header-inner {
-    gap: 8px;
-    padding: 0;
-    border-radius: 0;
-  }
-  .workspace-tab-header-spacer {
-    display: none;
-  }
-
-  .sidebar-toggle-button {
-    order: -1;
-    margin-left: auto;
-    max-height: var(--header-height);
-    min-height: var(--header-height);
-  }
-  .sidebar-toggle-button .clickable-icon {
-    margin: 8px;
-  }
-}
-
-body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(.layout-border):not(.show-ribbon)
-  .mod-sidedock.mod-left-split
-  .mod-top-left-space
-  .workspace-tab-header-container-inner {
-  margin-top: calc(-1 * var(--header-height) + 8px);
-  margin-right: 48px;
-}
-body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(.layout-border).show-ribbon
-  .mod-sidedock.mod-left-split
-  .mod-top-left-space
-  .workspace-tab-header-container-inner {
-  margin-top: 8px;
-}
-
-body.tab-top-left-stacked:not(.mod-macos):is(.layout-tahoe, .layout-fusion):not(.show-ribbon)
-  .mod-sidedock.mod-left-split
-  .mod-top-left-space
-  .workspace-tab-header-container-inner {
-  margin-top: calc(-1 * var(--header-height) + 24px);
-}
-
-body:is(.tab-top-left-stacked, :not(.css-settings-manager)).mod-macos:not(.is-hidden-frameless).show-ribbon
-  .mod-sidedock.mod-left-split
-  .mod-top-left-space
-  .workspace-tab-header-container-inner {
-  margin-top: 8px;
-}
-
 // Side panels: Compact tabs
-body:is(.tab-left-compact, :not(.css-settings-manager)) .mod-sidedock.mod-left-split,
-body:is(.tab-right-compact, :not(.css-settings-manager)) .mod-sidedock.mod-right-split {
-  .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
-    height: var(--header-height);
-  }
+body:not(.tab-icon) .mod-sidedock .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
+  height: var(--header-height);
 
-  .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
+  &:not(:hover) {
     height: calc-size(auto, size);
 
     .workspace-tab-header {

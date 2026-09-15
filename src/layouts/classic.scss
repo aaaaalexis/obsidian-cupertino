@@ -1,28 +1,15 @@
-body:is(.layout-classic, .layout-minimal) .mod-root .workspace-tab-container {
+body.mod-linux:not(.is-android):not(.adaptive-mode-off) .mod-root .workspace-tab-container {
   border-radius: 0;
 }
 
-body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
+body.mod-linux:not(.is-android):not(.adaptive-mode-off):not(.is-mobile) {
   --titlebar-border-width: 1px;
-
-  &.mod-macos.is-frameless:not(.is-hidden-frameless) {
-    --titlebar-height: 38px;
-  }
-
-  &.tab-top-left-stacked .mod-sidedock.mod-left-split {
-    .workspace-tab-header-container {
-      border: none;
-    }
-    .workspace-tab-header-container-inner {
-      margin-bottom: 0 !important;
-    }
-  }
 
   // Side panels
   .mod-sidedock > .workspace-leaf-resize-handle {
     border-color: var(--divider-color);
   }
-  &.input-adwaita .mod-sidedock.mod-left-split > .workspace-leaf-resize-handle {
+  .mod-sidedock.mod-left-split > .workspace-leaf-resize-handle {
     border-color: var(--divider-color-alt);
   }
 
@@ -30,30 +17,16 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
   &:not(.hover-ribbon) .workspace-ribbon.is-collapsed {
     border-right: var(--divider-width) solid var(--divider-color);
   }
-  &.mod-macos.is-hidden-frameless:not(.hover-ribbon) .workspace-ribbon.is-collapsed {
-    padding-top: 8px;
-    box-shadow: 0 calc(-1 * var(--tab-outline-width)) var(--tab-outline-color);
-  }
-
-  // Status bar
-  &.status-bar-full {
-    --status-bar-border-width: 1px 0 0 0;
-  }
 }
 
-body:is(.layout-classic, .layout-minimal).is-tablet {
+body.mod-linux:not(.is-android):not(.adaptive-mode-off).is-tablet {
   .workspace-drawer.is-pinned {
     border-width: var(--divider-width);
   }
 }
 
-// Classic specific
-body.layout-classic:is(.tab-floating, .tab-floating-center):not(.is-phone):not(.colorful-frame) {
-  --tab-background-active: var(--background-primary);
-}
-
 // Minimal specific
-body.layout-minimal {
+body.mod-linux:not(.is-android):not(.adaptive-mode-off) {
   &:not(.is-translucent) .workspace {
     background-color: var(--background-primary);
   }
@@ -72,7 +45,7 @@ body.layout-minimal {
   }
 }
 
-body.layout-minimal.is-tablet {
+body.mod-linux:not(.is-android):not(.adaptive-mode-off).is-tablet {
   .workspace {
     background-color: transparent;
   }

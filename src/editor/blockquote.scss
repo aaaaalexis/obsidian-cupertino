@@ -27,68 +27,40 @@
   }
 
   // Blockquote: Block
-  body:is(.blockquote-block, :not(.css-settings-manager)) {
-    .markdown-rendered blockquote {
-      border-radius: var(--radius-s);
-      padding-inline: calc(var(--blockquote-border-thickness) + 32px) 16px;
-      padding-block: 16px;
-      border: var(--border-width) solid var(--background-modifier-border);
+  .markdown-rendered blockquote {
+    border-radius: var(--radius-s);
+    padding-inline: calc(var(--blockquote-border-thickness) + 32px) 16px;
+    padding-block: 16px;
+    border: var(--border-width) solid var(--background-modifier-border);
 
-      &::before {
-        inset: 16px;
-      }
+    &::before {
+      inset: 16px;
     }
-    .markdown-rendered blockquote > blockquote {
-      padding-inline-start: calc(var(--blockquote-border-thickness) + 16px);
-      padding-block: 0;
-      border: none;
+  }
+  .markdown-rendered blockquote > blockquote {
+    padding-inline-start: calc(var(--blockquote-border-thickness) + 16px);
+    padding-block: 0;
+    border: none;
 
-      &::before {
-        inset: 0;
-      }
-    }
-
-    .HyperMD-quote {
-      border: 0px solid var(--blockquote-background-color);
-      border-width: 0 16px;
-    }
-    .HyperMD-quote:first-child,
-    .cm-line:not(.HyperMD-quote) + .HyperMD-quote {
-      border-top-width: 16px;
-      border-start-start-radius: var(--radius-s);
-      border-start-end-radius: var(--radius-s);
-    }
-    .HyperMD-quote:last-child,
-    .cm-line.HyperMD-quote:has(+ .cm-line:not(.HyperMD-quote)) {
-      border-bottom-width: 16px;
-      border-end-start-radius: var(--radius-s);
-      border-end-end-radius: var(--radius-s);
+    &::before {
+      inset: 0;
     }
   }
 
-  // Blockquote: Edge
-  body.blockquote-edge {
-    .markdown-rendered blockquote {
-      border-radius: calc(var(--blockquote-border-thickness) / 2) var(--radius-s) var(--radius-s) calc(var(--blockquote-border-thickness) / 2);
-      padding-inline: calc(var(--blockquote-border-thickness) + 16px) 16px;
-      padding-block: 8px;
-
-      &::before {
-        inset: 0;
-      }
-    }
-
-    .HyperMD-quote:first-child,
-    .cm-line:not(.HyperMD-quote) + .HyperMD-quote {
-      border-start-start-radius: calc(var(--blockquote-border-thickness) / 2);
-      border-start-end-radius: var(--radius-s);
-      padding-top: 8px;
-    }
-    .HyperMD-quote:last-child,
-    .cm-line.HyperMD-quote:has(+ .cm-line:not(.HyperMD-quote)) {
-      border-end-start-radius: calc(var(--blockquote-border-thickness) / 2);
-      border-end-end-radius: var(--radius-s);
-      padding-bottom: 8px;
-    }
+  .HyperMD-quote {
+    border: 0px solid var(--blockquote-background-color);
+    border-width: 0 16px;
+  }
+  .HyperMD-quote:first-child,
+  .cm-line:not(.HyperMD-quote) + .HyperMD-quote {
+    border-top-width: 16px;
+    border-start-start-radius: var(--radius-s);
+    border-start-end-radius: var(--radius-s);
+  }
+  .HyperMD-quote:last-child,
+  .cm-line.HyperMD-quote:has(+ .cm-line:not(.HyperMD-quote)) {
+    border-bottom-width: 16px;
+    border-end-start-radius: var(--radius-s);
+    border-end-end-radius: var(--radius-s);
   }
 }

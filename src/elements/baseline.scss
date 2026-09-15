@@ -28,9 +28,6 @@ body {
   --dropdown-padding-start: var(--font-ui-small);
 
   // Toggle
-  &:not(.accented-interface) .checkbox-container {
-    --interactive-accent: var(--color-green);
-  }
   &.obsidian-app {
     --toggle-thumb-color: #fff;
     --toggle-border-width: 2px;
@@ -54,17 +51,6 @@ body {
     --toggle-thumb-height: 24px;
     --toggle-thumb-width: 24px;
     --toggle-width: 48px;
-  }
-}
-
-body:is(.input-baseline, :not(.css-settings-manager)) {
-  --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border);
-  --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
-  --input-font-weight: var(--font-medium);
-
-  // Slider
-  input[type="range"]::-webkit-slider-thumb {
-    border: none;
   }
 }
 

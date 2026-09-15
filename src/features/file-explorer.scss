@@ -1,19 +1,4 @@
-body.nav-item-dot .nav-files-container > div {
-  --nav-item-background-active: transparent;
-  --nav-item-weight-active: var(--font-medium);
-
-  .tree-item-self.is-active::before {
-    position: absolute;
-    margin-left: -12px;
-    border-radius: var(--button-radius);
-    background-color: var(--nav-item-color-active);
-    width: 4px;
-    height: 4px;
-    content: "";
-  }
-}
-
-body.nav-item-subtle.input-fluent .nav-files-container > div {
+body.mod-windows:not(.adaptive-mode-off) .nav-files-container > div {
   --nav-item-background-active: var(--background-modifier-hover);
   --nav-item-color-active: var(--nav-item-color);
 
@@ -31,23 +16,16 @@ body.nav-item-subtle.input-fluent .nav-files-container > div {
   }
 }
 
-body.nav-item-strong {
-  .nav-files-container > div {
-    --nav-item-background-active: var(--interactive-accent);
-    --nav-item-color-active: var(--text-on-accent);
-  }
+body.is-android:not(.adaptive-mode-off) .nav-files-container > div {
+  --nav-item-background-active: var(--background-primary);
+  --nav-item-background-selected: var(--background-primary);
+  --nav-item-color-active: var(--text-normal);
+}
 
-  &.input-material .nav-files-container > div {
-    --nav-item-background-active: var(--background-primary);
-    --nav-item-background-selected: var(--background-primary);
-    --nav-item-color-active: var(--text-normal);
-  }
-
-  &.input-cupertino:is(.layout-macos, .layout-tahoe, .layout-fusion):not(.is-mobile) .nav-files-container > div {
-    --nav-item-background-hover: transparent;
-    --nav-item-background-active: var(--background-modifier-hover);
-    --nav-item-color: var(--text-normal);
-    --nav-item-color-hover: var(--text-normal);
-    --nav-item-color-active: var(--text-accent);
-  }
+body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) .nav-files-container > div {
+  --nav-item-background-hover: transparent;
+  --nav-item-background-active: var(--background-modifier-hover);
+  --nav-item-color: var(--text-normal);
+  --nav-item-color-hover: var(--text-normal);
+  --nav-item-color-active: var(--text-accent);
 }

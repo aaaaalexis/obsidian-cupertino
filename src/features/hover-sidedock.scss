@@ -67,17 +67,10 @@ body:not(.is-mobile).hover-sidedock {
     }
   }
 
-  // Hover sidedock: Solid
-  &.hover-sidedock-solid .mod-sidedock.is-sidedock-collapsed[style*="display"]::before {
-    width: 100%;
-    background: var(--background-primary) !important;
-    box-shadow: var(--shadow-s);
-  }
-
   // Hover sidedock: Hovered
   .mod-sidedock.is-sidedock-collapsed[style*="display"]:hover,
   &.hover-ribbon .workspace-ribbon.is-collapsed:hover + .mod-sidedock,
-  &:not(.hover-sidedock-active-off) > .app-container > .horizontal-main-container > .workspace > .mod-sidedock:has(> .workspace-tabs.mod-active) {
+  .mod-sidedock:has(> .workspace-tabs.mod-active) {
     transition-delay: var(--hover-sidedock-delay);
     transform: none;
     opacity: 1;
@@ -85,15 +78,6 @@ body:not(.is-mobile).hover-sidedock {
     &::before {
       opacity: 1;
     }
-  }
-
-  // macOS fix
-  &.tab-top-left-stacked.mod-macos.is-hidden-frameless .mod-sidedock.mod-left-split.is-sidedock-collapsed .mod-top-left-space .workspace-tab-header-container {
-    padding-top: var(--header-height);
-    transition-delay: var(--hover-sidedock-delay);
-  }
-  &.tab-top-left-stacked.mod-macos.is-hidden-frameless .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
-    transition: 0s;
   }
 }
 
@@ -126,17 +110,13 @@ body:not(.is-mobile).hover-ribbon.show-ribbon {
 
   // macOS fix
   &.mod-macos:not(.is-fullscreen).is-hidden-frameless {
-    &:not(.tab-top-left-stacked) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
+    .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
       transition-timing-function: ease;
     }
-    &:not(.tab-top-left-stacked) .workspace-ribbon:not(.is-collapsed):hover ~ .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
+    .workspace-ribbon:not(.is-collapsed):hover ~ .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
       padding-left: 52px;
     }
-    &:not(.tab-top-left-stacked)
-      .workspace-ribbon:not(.is-collapsed):not(:hover)
-      ~ .mod-sidedock.mod-left-split
-      .mod-top-left-space
-      .workspace-tab-header-container,
+    .workspace-ribbon:not(.is-collapsed):not(:hover) ~ .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
     .workspace-ribbon.is-collapsed ~ .mod-root > div:first-of-type .workspace-tab-header-container {
       padding-left: 88px;
     }

@@ -6,7 +6,7 @@ body:
     attributes:
       label: Prerequisite
       options:
-        - label: I've confirmed that this feature is not currently achievable with Style Settings plugin.
+        - label: I've confirmed that this feature is not currently achievable with Style Settings plugin in both Cupertino and Baseline.
           required: true
   - type: textarea
     attributes:

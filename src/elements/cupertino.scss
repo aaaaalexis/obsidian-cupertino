@@ -1,4 +1,4 @@
-body.input-cupertino {
+body:is(.mod-macos, .adaptive-mode-off) {
   --side-padding: 20px;
 
   --p-spacing: 1rem;
@@ -174,6 +174,10 @@ body.input-cupertino {
     --toggle-thumb-height: 24px;
     --toggle-thumb-width: 37px;
     --toggle-width: 68px;
+
+    .checkbox-container {
+      --interactive-accent: var(--color-green);
+    }
   }
 
   .checkbox-container {
@@ -257,10 +261,7 @@ body.input-cupertino {
   }
 
   // Side panels
-  &:not(.is-mobile):not(.tab-top-left-stacked, .tab-top-left-text) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space,
-  &:not(.is-mobile):not(.tab-top-right-text) .mod-sidedock.mod-right-split .workspace-tabs.mod-top-right-space,
-  &:not(.is-mobile):not(.tab-left-text) .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top),
-  &:not(.is-mobile):not(.tab-right-text) .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) {
+  &:not(.is-mobile) .mod-sidedock .workspace-tabs {
     .workspace-tab-header-container-inner {
       -webkit-app-region: no-drag;
       gap: 0px;
@@ -314,7 +315,7 @@ body.input-cupertino {
   }
 
   // Panel actions
-  &:not(.nav-action-center, .nav-action-left) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
+  &:not(.nav-action-center) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
     border-radius: var(--clickable-icon-radius);
     padding: 4px;
     box-shadow: var(--shadow-xs);
@@ -355,16 +356,7 @@ body.input-cupertino {
     opacity: 0;
   }
 
-  &.tab-left-compact
-    .mod-sidedock.mod-left-split
-    .workspace-tabs:not(.mod-top)
-    .workspace-tab-header-container:not(:hover)
-    .workspace-tab-header-container-inner,
-  &.tab-right-compact
-    .mod-sidedock.mod-right-split
-    .workspace-tabs:not(.mod-top)
-    .workspace-tab-header-container:not(:hover)
-    .workspace-tab-header-container-inner {
+  &:not(.tab-icon) .mod-sidedock .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner {
     gap: calc(8px * var(--density-modifier));
   }
 }

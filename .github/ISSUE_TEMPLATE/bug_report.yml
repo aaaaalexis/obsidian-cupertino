@@ -16,7 +16,7 @@ body:
       required: true
   - type: input
     attributes:
-      label: Baseline version
+      label: Cupertino version
       placeholder: e.g., 3.2.0
     validations:
       required: true

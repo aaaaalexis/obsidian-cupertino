@@ -1,8 +1,8 @@
 body,
 .theme-light,
 .theme-dark {
-  --font-interface-theme: Inter;
-  --font-text-theme: Inter;
+  --font-interface-theme: "SF Pro";
+  --font-text-theme: "SF Pro";
 
   --font-ui-modifier: 0px;
   --font-ui-smaller: calc(12px + var(--font-ui-modifier));
@@ -30,7 +30,7 @@ body,
   --shadow-surface: 0 0 0 1px var(--background-modifier-hover);
 
   --anim-speed-modifier: 1;
-  --anim-motion-baseline: cubic-bezier(0.1, 0, 0.1, 1.25);
+  --anim-motion-baseline: cubic-bezier(0.32, 0.72, 0, 1);
   --anim-duration-superfast: calc(80ms * var(--anim-speed-modifier));
   --anim-duration-fast: calc(160ms * var(--anim-speed-modifier));
   --anim-duration-moderate: calc(320ms * var(--anim-speed-modifier));
@@ -44,8 +44,8 @@ body,
   --icon-xl-stroke-width: calc(1.25px * var(--icon-stroke-modifier));
 
   --density-modifier: 1;
-  --translucent-light-opacity: 50%;
-  --translucent-dark-opacity: 50%;
+  --translucent-light-opacity: 0%;
+  --translucent-dark-opacity: 0%;
 
   --color-red: rgb(var(--color-red-rgb));
   --color-orange: rgb(var(--color-orange-rgb));
@@ -247,13 +247,6 @@ body.styled-scrollbars div:not(:hover)::-webkit-scrollbar-thumb {
 }
 
 // Style Settings
-body:not(.accented-interface) {
-  --interactive-accent: var(--color-base-100);
-  --interactive-accent-hover: hsl(from var(--color-base-100) h s l/ 80%);
-  --text-on-accent: var(--color-base-00);
-  --text-on-accent-inverted: var(--color-base-00);
-}
-
 body.reduce-motion {
   --anim-speed-modifier: 0 !important;
 
@@ -274,7 +267,7 @@ body.reduce-motion {
     --modal-background: var(--background-secondary) !important;
   }
   body:not(.is-mobile):not(.is-popout-window) .mod-root::before {
-    content: "Baseline requires a newer Obsidian installer. Download and run the latest installer from obsidian.md to remove this message.";
+    content: "Cupertino requires a newer Obsidian installer. Download and run the latest installer from obsidian.md to remove this message.";
     display: flex;
     position: absolute;
     justify-content: center;

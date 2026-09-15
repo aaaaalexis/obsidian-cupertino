@@ -5,9 +5,6 @@
   body.is-phone {
     --metadata-label-width: calc(7.5em * var(--metadata-label-width-modifier, 1));
   }
-  body:not(.accented-interface) {
-    --collapse-icon-color-collapsed: var(--text-muted);
-  }
 
   body.is-mobile .metadata-content {
     background-color: transparent;
@@ -74,43 +71,16 @@
     width: calc(100% + 16px) !important;
   }
 
-  // Style Settings
-  body.metadata-heading-off .metadata-properties-heading {
-    display: none;
-  }
-  body.metadata-heading-off .hover-popover .metadata-container {
+  .metadata-properties-heading {
     display: none;
   }
 
-  body.metadata-add-property-hover .markdown-reading-view .metadata-container:not(:hover) .text-icon-button {
+  .markdown-reading-view .metadata-container:not(:hover) .text-icon-button {
     opacity: 0;
     height: 0;
     padding-block: 0px;
     margin-block: 0px;
     display: flex;
-  }
-  body.metadata-add-property-hidden .markdown-reading-view .metadata-add-button {
-    display: none;
-  }
-
-  body.metadata-icons-off {
-    .metadata-property-icon {
-      display: none;
-    }
-    .metadata-property-key-input {
-      padding-inline: 0;
-    }
-  }
-
-  body.metadata-longtext {
-    --metadata-input-longtext-lines: unset;
-
-    .metadata-input-longtext:not(:focus) {
-      white-space: pre-wrap;
-    }
-    .metadata-link-inner {
-      white-space: pre-wrap;
-    }
   }
 
   .markdown-source-view .metadata-container,
@@ -118,53 +88,8 @@
     transform: none;
   }
 
-  // Tags styling for list
-  .metadata-list-tags {
-    --pill-weight: var(--tag-weight);
-    --pill-background: var(--background-modifier-hover);
-    --pill-background-hover: var(--background-modifier-hover);
-
-    .multi-select-container {
-      padding-block: 0;
-      gap: 4px;
-    }
-
-    .multi-select-pill {
-      --pill-padding-x: var(--tag-padding-x);
-      --pill-padding-y: var(--tag-padding-y);
-      --pill-radius: var(--tag-radius);
-    }
-  }
-
-  // Metadata: Block
-  body.metadata-block {
-    --metadata-background: var(--background-primary-alt);
-    --metadata-border-width: var(--border-width);
-    --metadata-padding: 12px 16px;
-
-    &.is-phone .metadata-container {
-      --metadata-padding: 8px 12px;
-    }
-
-    .metadata-container {
-      border-radius: var(--radius-s);
-    }
-
-    .metadata-properties-heading.is-collapsed {
-      margin-bottom: 0;
-    }
-
-    .metadata-properties-heading .collapse-indicator {
-      inset-inline-start: -16px;
-    }
-
-    .workspace-split:not(.mod-root) .metadata-container {
-      padding: 8px !important;
-    }
-  }
-
   // Metadata: Cupertino
-  body.metadata-cupertino {
+  body .workspace-split {
     --metadata-gap: 0;
     --metadata-padding: 0;
     --metadata-property-radius: var(--radius-m);
@@ -206,27 +131,6 @@
 
     .workspace-split:not(.mod-root) .metadata-container {
       padding: 8px !important;
-    }
-  }
-
-  // Compact Metadata
-  body.metadata-compact {
-    --metadata-gap: 0px;
-
-    .metadata-container {
-      font-size: var(--font-small);
-    }
-    .metadata-property-icon {
-      --icon-size: var(--icon-xs);
-      --icon-stroke: var(--icon-xs-stroke-width);
-    }
-
-    &.metadata-cupertino .metadata-container .metadata-property {
-      min-height: unset;
-    }
-    &.metadata-cupertino .metadata-container .metadata-property-key,
-    &.metadata-cupertino .metadata-container .text-icon-button {
-      padding: 4px 12px;
     }
   }
 }

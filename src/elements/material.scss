@@ -1,4 +1,30 @@
-body.input-material {
+body.is-android:not(.adaptive-mode-off) {
+  @font-face {
+    font-family: "Google Sans System";
+    font-style: normal;
+    font-weight: 1 1000;
+    src: local("GoogleSansFlex-Regular"), local("Google Sans Flex");
+  }
+  @font-face {
+    font-family: "Google Sans System";
+    font-style: italic;
+    font-weight: 1 1000;
+    src: local("GoogleSans-Italic"), local("Google Sans Italic");
+  }
+
+  --font-interface-theme: "Google Sans System", "Google Sans Flex", "Google Sans";
+  --font-text-theme: "Google Sans System", "Google Sans Flex", "Google Sans";
+
+  --h1-size: 2.25rem;
+  --h1-weight: 400;
+  --h2-size: 1.75rem;
+  --h2-weight: 400;
+  --h3-size: 1.375rem;
+  --h3-weight: 400;
+  --h4-weight: 500;
+  --h5-weight: 500;
+  --h6-weight: 500;
+
   --input-font-weight: var(--font-medium);
   --input-border-width: 1px;
   --input-height: 40px;
@@ -173,7 +199,7 @@ body.input-material {
   }
 }
 
-body.input-material.is-mobile {
+body.is-android:not(.adaptive-mode-off).is-mobile {
   // Settings
   .modal.mod-settings {
     .setting-group .setting-item:not(:last-child):not(.setting-item-heading) {
@@ -187,7 +213,7 @@ body.input-material.is-mobile {
   }
 }
 
-body.input-material:not(.is-phone) {
+body.is-android:not(.adaptive-mode-off):not(.is-phone) {
   // Menu
   .menu,
   .suggestion-container {
@@ -226,7 +252,7 @@ body.input-material:not(.is-phone) {
   }
 }
 
-body.input-material.is-phone {
+body.is-android:not(.adaptive-mode-off).is-phone {
   // Editor
   .mobile-navbar,
   &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {

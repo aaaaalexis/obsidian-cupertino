@@ -2,67 +2,65 @@
 
 ![](img/hero.png)
 
-### The baseline of your thoughts.
+### Crafted for the way you think.
 
-_From the creator of [Cupertino](https://github.com/aaaaalexis/obsidian-cupertino)_
+_Best Theme of [Obsidian Gems of the Year 2024](https://obsidian.md/blog/2024-goty-winners/)_
 
 [![](https://img.shields.io/badge/Made%20in-Taiwan-blue?style=for-the-badge)](https://wikipedia.org/wiki/Taiwan)
 [![](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-green?style=for-the-badge&logo=buymeacoffee)](https://www.buymeacoffee.com/sevenaxis)
-[![](https://img.shields.io/badge/Obsidian-Install-purple?style=for-the-badge&logo=obsidian)](https://aaaaalexis.github.io/obsidian-baseline/install?name=Baseline)
+[![](https://img.shields.io/badge/Obsidian-Install-purple?style=for-the-badge&logo=obsidian)](https://aaaaalexis.github.io/obsidian-baseline/install?name=Cupertino)
 
 </div>
 
-## Quick Start
-
-### Migrating from another theme?
-
-Seamlessly migrate your existing Style Settings from supported themes.
-
-**Carry your settings over with [Style Settings Migration Tool ↗](https://aaaaalexis.github.io/obsidian-baseline/migration)**
-
-### Looking for inspiration?
-
-Discover and share Style Settings presets in Baseline Marketplace.
-
-**Explore community-made presets in [Baseline Marketplace ↗](https://aaaaalexis.github.io/obsidian-baseline/marketplace)**
-
 ## Overview
 
-### Sleek by default. Yours by design.
+### Fresh. Familiar. Focused.
 
-**Beautiful starting point.** Clean layout, organized interface, and subtle animations make Baseline feel effortless from the first install.
+**A modern design that feels at home.** Clean typography, refined spacing, and native-inspired components make Cupertino feel like it belongs on your device.
 
-![](img/elements.png)
+![](img/desktop.png)
 
-**Make it yours.** With deep [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) integration, every detail is yours to shape. Colors, spacing, typography, and beyond.
-
-![](img/colors.png)
-
-**Built for mobile.** Enhanced navigation, refined menus, and comfortable spacing bring the same quality experience to every screen.
+**Built for mobile.** Everything is redesigned for touch. One-hand reachability, comfortable spacing, and intuitive layout make your vault feel right in your pocket.
 
 ![](img/mobile.png)
 
+**Native everywhere.** Cupertino adapts to every platform, delivering a consistent and polished look whether you're on desktop or mobile.
+
+![](img/adaptive.png)
+
 ## Philosophy
 
-### Less _and_ more.
+### Less is more.
 
-Baseline is built on a simple belief: a great theme should work beautifully without touching a single setting, and transform completely when you're ready to explore.
+Cupertino exists because great tools should just work. No rabbit holes. No endless tweaking. Just a beautiful, distraction-free place to think and write.
 
-- **Refined foundation**
+- **Fewer plugins**
 
-  Clean, modern, and polished from day one. Baseline sets a standard your vault can grow from.
+  Everything you need is here without plugins. Cupertino is complete the moment you install it.
 
-- **Thoughtful customization**
+- **Fewer customizations**
 
-  Every option is designed with care. So no matter how far you go, Baseline always looks intentional.
+  Every option is an invitation to procrastinate. Cupertino keeps choices intentionally minimal so you stay in flow.
 
-- **More than a theme**
+- **Less visual noise**
 
-  Hover sidebars, compact elements, polished interface... Baseline takes the best ideas from the community and gives them a home. More than a theme, this is a new starting point for everyone to built upon.
+  Low-priority UI elements step back automatically. What remains is what matters.
+
+## Plugins
+
+Cupertino works beautifully on its own. These plugins let you fine-tune the experience if you'd like.
+
+### [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
+
+Enable focus view, hover sidebars. Or disable active line highlight, centered tabs, and compact status bar, and more.
+
+### [Pseudo Mica](https://github.com/aaaaalexis/obsidian-pseudo-mica)
+
+Bring translucent window effects to Windows and macOS for an even more native feel.
 
 ## Features
 
-Baseline supports all filter and helper classes from [Minimal](https://github.com/kepano/obsidian-minimal).
+Cupertino supports most filter and helper classes from [Minimal](https://github.com/kepano/obsidian-minimal).
 
 ### Banner
 
@@ -152,7 +150,7 @@ Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
 
 ### [Alternate checkboxes](https://github.com/damiankorcz/Alternative-Checkboxes-Reference-Set)
 
-![](img/checkbox.png)
+![Preview of alternate checkboxes.](img/checkbox.png)
 
 | Syntax  | Description |
 | ------- | ----------- |
@@ -189,24 +187,10 @@ Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
 
 ## Credits
 
-### Community Themes
-
-- [**Minimal** by kepano](https://github.com/kepano/obsidian-minimal) ([Donate](https://www.buymeacoffee.com/kepano)) - Color schemes, Dataview cards, image filters, table helper classes
-- [**AnuPpuccin** by AnubisNekhet](https://github.com/AnubisNekhet/AnuPpuccin/) ([Donate](https://buymeacoffee.com/anubisnekhet)) - Catppuccin color schemes
-- [**Sanctum** by jdanielmourao](https://github.com/jdanielmourao/obsidian-sanctum) ([Donate](https://ko-fi.com/jdanielmourao)) - Sanctum color scheme
-- [**Tiniri** by vladstudio](https://github.com/vladstudio/tiniri-obsidian/) ([Donate](https://vlad.studio/signup)) - Tiniri color scheme
-- [**Border** by Akifyss](https://github.com/Akifyss/obsidian-border) - Border workspace
-- [**Iridium** by kyffa](https://github.com/kyffa/Iridium) - Frame workspace
-
-### Extras
-
-- [**Chill Jinshu Song** by Warren2060](https://github.com/Warren2060/ChillJinshuSong) - Heading font for extended language support
-- [**Obsidian Baseline Theme Customization** by bwya77](https://github.com/bwya77/obsidian-baseline-customization) - Admin color scheme, Block properties style
-
-### Inspiration
-
-- [**Craft Docs**](https://www.craft.do/) - Cupertino workspace, Fusion workspace
+- [**Craft Docs**](https://www.craft.do/) - Interface design inspiration
+- [**Yushan Main East Peak** by Huang Chung Yu](https://commons.wikimedia.org/wiki/File:Yushan_main_east_peak%2BHuang_Chung_Yu%E9%BB%83%E4%B8%AD%E4%BD%91%2B9030.png) - Yushan background
+- [**Minimal** by kepano](https://github.com/kepano/obsidian-minimal) ([Donate](https://www.buymeacoffee.com/kepano)) - Dataview cards, image filters, table helper classes
 
 ## License
 
-Baseline is licensed under the [MIT license](LICENSE).
+Cupertino is licensed under the [MIT license](LICENSE).
