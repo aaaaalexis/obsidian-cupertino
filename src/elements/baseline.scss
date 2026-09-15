@@ -1,6 +1,7 @@
 body {
   --input-height: 32px;
-  --button-transition: scale var(--anim-duration-fast) var(--anim-motion-baseline);
+  --input-transition: var(--anim-duration-superfast), box-shadow var(--anim-duration-fast);
+  --button-transition: var(--input-transition), scale var(--anim-duration-fast) var(--anim-motion-baseline);
 
   /* 0 when <1, 1 when >=1 */
   --radius-modifier-check: clamp(0, (var(--radius-modifier) - 1) * 10000 + 1, 1);
@@ -66,16 +67,16 @@ body:is(.input-baseline, :not(.css-settings-manager)) {
   input[type="range"]::-webkit-slider-thumb {
     border: none;
   }
+
+  // Button
+  button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button)):active {
+    scale: 0.975;
+  }
 }
 
-// Button
 button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button)) {
   padding: var(--font-ui-small);
   display: inline-flex;
-
-  &:active {
-    scale: 0.975;
-  }
 }
 
 .clickable-icon {
@@ -86,7 +87,7 @@ button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([dat
 
 // Toggle
 .obsidian-app .checkbox-container {
-  transition: var(--anim-duration-moderate);
+  transition: var(--anim-duration-fast);
   box-shadow: none;
 
   &::after {

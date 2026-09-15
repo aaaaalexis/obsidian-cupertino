@@ -975,11 +975,14 @@ settings:
 				label: Playful
 				value: cubic-bezier(0.1, 0, 0.1, 1.25)
 			-
+				label: Refined
+				value: cubic-bezier(0.32, 0.72, 0, 1)
+			-
 				label: Sharp
 				value: cubic-bezier(0.33, 1, 0.68, 1)
 			-
-				label: Refined
-				value: cubic-bezier(0.32, 0.72, 0, 1)
+				label: Fluent
+				value: cubic-bezier(0, 0, 0, 1)
 	-
 		id: anim-speed-modifier
 		title: Animation speed
