@@ -42,8 +42,8 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
 }
 
 body:is(.layout-classic, .layout-minimal).is-tablet {
-  .workspace-drawer.is-pinned {
-    border-width: var(--divider-width);
+  .workspace-drawer.is-pinned > .workspace-leaf-resize-handle:not(:hover) {
+    border-color: var(--divider-color);
   }
 }
 

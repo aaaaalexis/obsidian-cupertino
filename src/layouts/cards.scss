@@ -92,6 +92,8 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
 
 // Tablet
 body:is(.layout-cards, .layout-border).is-tablet {
+  --tab-outline-color: transparent;
+
   // Editor panel
   .mod-root {
     padding-inline: 8px;

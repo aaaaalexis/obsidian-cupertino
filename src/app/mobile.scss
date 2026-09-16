@@ -60,7 +60,7 @@ body.is-mobile {
     --setting-items-background: var(--background-secondary);
     --setting-items-divider-color: var(--background-modifier-hover);
     --menu-divider-color: var(--background-modifier-hover);
-    --mobile-sidebar-background: var(--background-primary);
+    --mobile-sidebar-background: var(--background-secondary);
     --modal-background: var(--background-primary);
     --interactive-normal: color-mix(in srgb, var(--background-primary), white 5%);
     --interactive-hover: color-mix(in srgb, var(--interactive-normal), black 5%);

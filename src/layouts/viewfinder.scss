@@ -20,3 +20,8 @@ body.layout-viewfinder:not(.is-phone) {
     }
   }
 }
+
+body.layout-viewfinder.is-tablet .mod-root {
+  padding-top: 0;
+  margin-top: var(--safe-area-inset-top);
+}

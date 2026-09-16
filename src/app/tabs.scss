@@ -84,13 +84,14 @@ body:not(.is-phone) .workspace .mod-root {
 }
 
 // Editor panel: Baseline
-body.is-tablet:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented):not(
+body.is-tablet:is(.tab-default, :not(.css-settings-manager)):not(
     .layout-macos,
     .layout-tahoe,
     .layout-classic,
     .layout-minimal,
     .layout-border,
-    .layout-frame
+    .layout-frame,
+    .layout-viewfinder
   )
   .workspace-drawer.is-pinned.mod-left
   + .mod-root

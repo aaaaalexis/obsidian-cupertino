@@ -70,6 +70,9 @@ body.layout-frame.is-tablet {
     padding: 0 4px 4px;
     background-color: var(--mobile-sidebar-background);
   }
+  .mod-root .workspace-tab-container {
+    border-radius: 0;
+  }
   .mod-root,
   .workspace-drawer.is-pinned {
     padding-top: 0;

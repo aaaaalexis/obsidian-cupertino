@@ -115,6 +115,9 @@ body.layout-border.is-tablet {
     top: var(--header-height);
   }
 
+  .mod-root .workspace-tab-container {
+    border-radius: 0;
+  }
   .workspace-drawer.is-pinned.mod-left + .mod-root {
     padding-left: 0;
   }
@@ -131,6 +134,10 @@ body.layout-border.is-tablet {
   }
 
   // Side panels
+  .workspace-drawer > .workspace-leaf-resize-handle:not(:hover) {
+    border-color: var(--divider-color);
+  }
+
   .workspace-drawer.is-pinned {
     border-width: var(--divider-width);
   }
