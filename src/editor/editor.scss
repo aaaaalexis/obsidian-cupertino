@@ -499,6 +499,13 @@
       top: 8px;
       inset-inline-end: 8px;
       opacity: 0.5;
+      background: none !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+
+      &::after {
+        content: none !important;
+      }
     }
     .lightbox-titlebar {
       --lightbox-close-top: 8px;
