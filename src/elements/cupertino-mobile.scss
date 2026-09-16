@@ -33,7 +33,11 @@ body:is(.mod-macos, .adaptive-mode-off).is-mobile {
     .mobile-tab-switcher-menu-button::after,
     .mobile-tab-switcher-menu-spacer .clickable-icon::after,
     .notice::after,
-    .pull-action::after {
+    .pull-action::after,
+    .modal:not(.mod-sidebar-layout)::after,
+    .menu::after,
+    .suggestion-container::after,
+    .popover::after {
       display: var(--raised-mask-display);
       position: absolute;
       content: "";

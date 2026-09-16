@@ -4,15 +4,6 @@ GNOME Project
 https://gitlab.gnome.org/GNOME/libadwaita/
 */
 
-body.mod-linux:not(.is-android):not(.adaptive-mode-off).theme-light,
-body.mod-linux:not(.is-android):not(.adaptive-mode-off).theme-dark {
-  &.color-scheme-accent {
-    --accent-h: 213;
-    --accent-s: 76%;
-    --accent-l: 55%;
-  }
-}
-
 body.mod-linux:not(.is-android):not(.adaptive-mode-off).theme-light {
   --background-primary: #fff;
   --background-primary-alt: #fff;

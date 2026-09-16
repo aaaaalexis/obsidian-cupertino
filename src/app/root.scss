@@ -19,8 +19,9 @@ body,
   --border-width: 1px;
   --border-width-offset: calc(-1 * var(--border-width));
   --divider-width: var(--border-width);
-  --raised-mask-border-width: 0px !important;
 
+  --raised-mask: radial-gradient(200% 100%, white, transparent) padding-box, linear-gradient(white, white) border-box;
+  --raised-mask-border-width: 0px !important;
   --raised-mask-background: transparent;
 
   --divider-color-hover: var(--color-base-50);
@@ -44,8 +45,8 @@ body,
   --icon-xl-stroke-width: calc(1.25px * var(--icon-stroke-modifier));
 
   --density-modifier: 1;
-  --translucent-light-opacity: 0%;
-  --translucent-dark-opacity: 0%;
+  --translucent-light-opacity: 50%;
+  --translucent-dark-opacity: 50%;
 
   --color-red: rgb(var(--color-red-rgb));
   --color-orange: rgb(var(--color-orange-rgb));

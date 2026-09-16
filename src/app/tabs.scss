@@ -15,7 +15,7 @@ body {
   --tab-text-color-focused-active: var(--text-normal);
   --tab-text-color-focused-active-current: unset;
 }
-body.mod-macos {
+body:is(.mod-macos, .adaptive-mode-off) {
   --header-height: 52px;
 }
 body:not(.is-mobile) {
@@ -90,7 +90,7 @@ body:not(.is-phone) .workspace .mod-root {
 body:not(.is-phone) {
   --tab-background-active: var(--background-modifier-hover);
   --tab-radius-active: var(--tab-radius);
-  --tab-curve: 0;
+  --tab-curve: 0 !important;
 
   .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
     .workspace-tab-header-container-inner {
@@ -267,8 +267,32 @@ body.is-tablet:not(.tab-floating) {
   }
 }
 
-// Editor panel: Tab divider
-.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner::after {
+// Editor panel: Floating (Cupertino Personality)
+body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
+  .mod-root .workspace-tabs:not(.mod-stacked) {
+    .workspace-tab-header {
+      corner-shape: var(--corner-shape);
+      border-radius: 100vh;
+
+      &:first-child {
+        margin-inline-start: 2px;
+      }
+      &:last-child {
+        margin-inline-end: 2px;
+      }
+
+      &.is-active {
+        background-color: var(--blur-background);
+        box-shadow: var(--shadow-xs);
+      }
+    }
+    .workspace-tab-header-inner {
+      border-radius: inherit;
+    }
+  }
+}
+
+body:not(.is-phone) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner::after {
   content: none;
 }
 

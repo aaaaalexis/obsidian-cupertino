@@ -1,3 +1,6 @@
-body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile):not(.is-translucent).colorful-frame .workspace {
-  background-color: color-mix(in srgb, var(--background-primary-alt), var(--color-accent) 2%);
+body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile):not(.is-translucent).colorful-frame {
+  .workspace,
+  .vertical-tab-header {
+    background-color: color-mix(in srgb, var(--background-primary-alt), var(--color-accent) 2%);
+  }
 }

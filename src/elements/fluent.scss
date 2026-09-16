@@ -16,8 +16,6 @@ body.mod-windows:not(.adaptive-mode-off) {
   --checkbox-radius: var(--radius-m);
   --tab-radius: var(--radius-l);
 
-  --border-width: 1px;
-
   --toggle-thumb-height: 12px;
   --toggle-thumb-width: 12px;
   --toggle-width: 40px;
@@ -25,6 +23,7 @@ body.mod-windows:not(.adaptive-mode-off) {
   --toggle-s-thumb-width: 12px;
   --toggle-s-width: 40px;
   --toggle-border-width: 4px;
+  --slider-thumb-border-color: var(--interactive-normal);
   --slider-thumb-border-width: 4px;
   --slider-thumb-width: 18px;
   --slider-thumb-height: 18px;
@@ -36,8 +35,10 @@ body.mod-windows:not(.adaptive-mode-off) {
   --blur-radius-l: 32px;
   --blur-saturation: 0.75;
 
-  --interactive-normal: var(--background-primary);
-  --interactive-hover: var(--background-primary-alt);
+  --interactive-normal: color-mix(in srgb, var(--background-primary), white 10%);
+  --interactive-hover: color-mix(in srgb, var(--interactive-normal), var(--mono-100) 2.5%);
+  --interactive-active: color-mix(in srgb, var(--interactive-normal), var(--mono-0) 2.5%);
+  --background-modifier-form-field: var(--interactive-normal);
 
   &.is-mobile {
     --input-border-width: var(--border-width);
@@ -46,26 +47,24 @@ body.mod-windows:not(.adaptive-mode-off) {
     --slider-thumb-height: 24px;
   }
   &.theme-light {
-    --input-shadow: 0px 0px 0px var(--input-border-width) hsl(0 0% 0% / 0.05), 0 var(--border-width-offset) 0 0 hsl(0 0% 0% / 0.25) inset !important;
-    --input-shadow-hover: var(--input-shadow) !important;
-    --input-shadow-active: inset 0 0 0 1px var(--background-modifier-border);
-    --slider-thumb-border-color: var(--color-base-00);
+    --input-shadow: inset 0 var(--border-width-offset) hsl(0 0% 0% / 0.1), inset 0 0 0 var(--input-border-width) var(--background-modifier-border);
+    --input-shadow-hover: var(--input-shadow);
+    --input-shadow-active: inset 0 0 0 var(--input-border-width) var(--background-modifier-border);
 
     --shadow-s: 0px 1px 2px hsl(0 0% 0% / 0.028), 0px 3.4px 6.7px hsl(0 0% 0% / 0.042), 0px 15px 30px hsl(0 0% 0% / 0.07);
     --shadow-l: 0px 32px 64px 0px hsl(0 0% 0% / 0.19), 0px 2px 21px 0px hsl(0 0% 0% / 0.15);
 
-    --modal-background: hsl(from white h s l / 85%);
+    --modal-background: hsl(from var(--background-primary) h s l / 85%);
   }
   &.theme-dark {
-    --input-shadow: 0px 0px 0px var(--input-border-width) hsl(0 0% 0% / 0.1), 0 var(--border-width) 0 hsl(0 0% 100% / 0.1) inset !important;
-    --input-shadow-hover: var(--input-shadow) !important;
-    --input-shadow-active: inset 0 0 1px var(--background-modifier-border);
-    --slider-thumb-border-color: var(--color-base-35);
+    --input-shadow: inset 0 var(--input-border-width) var(--background-modifier-hover), 0 0 0 var(--input-border-width) hsl(0 0% 0% / 0.05);
+    --input-shadow-hover: var(--input-shadow);
+    --input-shadow-active: inset 0 0 0 var(--input-border-width) var(--background-modifier-hover);
 
     --shadow-s: 0px 1px 2px hsl(0 0% 0% / 0.028), 0px 3.4px 6.7px hsl(0 0% 0% / 0.042), 0px 15px 30px hsl(0 0% 0% / 0.07);
     --shadow-l: 0px 32px 64px 0px hsl(0 0% 0% / 0.37), 0px 2px 21px 0px hsl(0 0% 0% / 0.37);
 
-    --modal-background: hsl(from var(--color-base-20) h s l / 65%);
+    --modal-background: hsl(from var(--background-secondary) h s l / 85%);
   }
   &.is-translucent {
     --modal-background: var(--background-secondary);
@@ -76,7 +75,8 @@ body.mod-windows:not(.adaptive-mode-off) {
   select:focus,
   .combobox-button:focus,
   .dropdown:focus {
-    opacity: 0.75;
+    color: var(--text-muted);
+    background-color: var(--interactive-active);
     box-shadow: var(--input-shadow-active);
   }
   &:not(.is-mobile) {
@@ -92,13 +92,18 @@ body.mod-windows:not(.adaptive-mode-off) {
 
   // Text input
   input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]):not(.prompt-input) {
-    box-shadow: 0 var(--border-width-offset) 0 var(--color-base-50) inset;
+    box-shadow: inset 0 var(--border-width-offset) 0 var(--color-base-50);
+
+    &:hover {
+      background-color: var(--interactive-hover);
+    }
 
     &:active,
     &:focus,
     &:focus-visible {
-      box-shadow: 0 -2px 0 var(--interactive-accent) inset;
-      border-color: var(--background-modifier-border);
+      border-color: var(--background-modifier-border-hover);
+      background-color: var(--interactive-active);
+      box-shadow: inset 0 -2px 0 var(--interactive-accent);
     }
   }
 
@@ -119,7 +124,7 @@ body.mod-windows:not(.adaptive-mode-off) {
     &:not(.is-enabled) {
       --toggle-thumb-color: var(--text-muted);
       outline: 1px solid var(--text-faint);
-      background-color: var(--color-base-10);
+      background-color: var(--color-base-25);
     }
     &:hover {
       --toggle-thumb-height: 16px;
@@ -141,8 +146,7 @@ body.mod-windows:not(.adaptive-mode-off) {
   }
 
   // Settings
-  --settings-background: var(--modal-background);
-  --setting-items-background: var(--background-primary);
+  --setting-items-background: var(--background-secondary-alt);
   --setting-items-padding-x: calc(16px * var(--density-modifier));
   --setting-items-padding-y: calc(16px * var(--density-modifier));
 
@@ -181,7 +185,7 @@ body.mod-windows:not(.adaptive-mode-off) {
     }
 
     .setting-item:not(.setting-item-heading) {
-      border: var(--border-width) solid hsl(0 0% 0% / 0.1);
+      border: var(--border-width) solid hsl(0 0% 0% / 0.05);
       border-radius: var(--radius-m);
       background-color: var(--setting-items-background);
 
@@ -198,10 +202,6 @@ body.mod-windows:not(.adaptive-mode-off) {
 }
 
 body.mod-windows:not(.adaptive-mode-off):not(.is-mobile) {
-  --menu-padding: 4px;
-  --prompt-input-height: 64px;
-  --tab-outline-color: hsl(from var(--mono-100) h s l / 0.05);
-
   // Side panels
   @keyframes workspaceLeafInFluent {
     from {
