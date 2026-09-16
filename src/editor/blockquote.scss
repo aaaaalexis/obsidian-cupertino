@@ -32,7 +32,6 @@
       border-radius: var(--radius-s);
       padding-inline: calc(var(--blockquote-border-thickness) + 32px) 16px;
       padding-block: 16px;
-      border: var(--border-width) solid var(--background-modifier-border);
 
       &::before {
         inset: 16px;
