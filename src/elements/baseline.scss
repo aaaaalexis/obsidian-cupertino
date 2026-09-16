@@ -65,7 +65,7 @@ body:is(.input-baseline, :not(.css-settings-manager)) {
 
   // Slider
   input[type="range"]::-webkit-slider-thumb {
-    border: none;
+    border: var(--border-width) solid var(--background-modifier-border);
   }
 
   // Button
